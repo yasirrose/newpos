@@ -75,6 +75,7 @@
 <script>
 import Vue from 'vue'
 import VueForm from "vue-form";
+import {AuthenticationStore} from '../../main.js'
 import options from "src/validations/validations.js";
 Vue.use(VueForm, options);
 export default {
@@ -85,8 +86,8 @@ export default {
             model: {
                 email: '',
                 password: '',
+                client_secret: AuthenticationStore.client_secret,
                 client_id : 2, 
-                client_secret: '4kRbNGR95XVayf31TiZFPRdHPGEfrgOjX2Xi1Vd8',
                 grant_type: 'password'
 
             }

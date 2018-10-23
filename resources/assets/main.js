@@ -51,6 +51,14 @@ router.beforeEach((to, from, next) => {
     else next()
 });
 
+
+export const AuthenticationStore = new Vue({
+  data: {
+    client_secret: '4kRbNGR95XVayf31TiZFPRdHPGEfrgOjX2Xi1Vd8',
+
+
+  }
+})
 // Remove the productionTip in dev tool console
 Vue.config.productionTip = false
 
