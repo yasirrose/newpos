@@ -105,6 +105,11 @@
                             <i class="fa fa-user-o"></i> Reports
                         </router-link>
                     </div>
+                    <div class="dropdown btn-group">
+                        <router-link to="/plugins" exact class="user_name_max drpodowtext">
+                            <i class="fa fa-user-o"></i> Add Plugins
+                        </router-link>
+                    </div>
                     <b-dropdown class="user user-menu bell_bg user_btn" right link >
                         <span slot="text">
                             

@@ -63,6 +63,15 @@ const layout = [{
     }
 },
 
+{
+    path: '/plugins',
+    component: resolve => require(['pages/plugins'], resolve),
+    meta: {
+        title: "Plugins",
+        forAuth : true,
+    }
+},
+
 // 19-Oct-2018
  {
     path: '/index2',
