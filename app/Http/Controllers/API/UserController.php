@@ -2,9 +2,11 @@
 namespace App\Http\Controllers\API;
 use Illuminate\Http\Request; 
 use App\Http\Controllers\Controller; 
-use App\User; 
+use App\Model\Cheersadmin\User; 
 use Illuminate\Support\Facades\Auth; 
 use Validator;
+use Session;
+use DB;
 class UserController extends Controller 
 {
 public $successStatus = 200;
@@ -13,11 +15,33 @@ public $successStatus = 200;
      * 
      * @return \Illuminate\Http\Response 
      */ 
-    public function login(){ 
-        if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){ 
+    public function login(Request $request){ 
+        if($request->remember == true)
+        {
+            $remember = $request->remember;
+        }else{
+            $remember = false;
+        }
+        if(Auth::attempt(['user_email' => request('email'), 'password' => request('password')],$remember)){ 
             $user = Auth::user(); 
-            $success['token'] =  $user->createToken('MyApp')-> accessToken; 
+            if($user != "" || $user != null)
+            {
+                $userID = $user->user_id;
+            }else
+            {
+                $userID = 0;
+            }
+            $success['token'] =  $user->createToken('Laravel Password Grant Client')-> accessToken; 
+            Session()->put('token', $success['token']);
+            Session()->put('userId', $userID);
             
+            $updateToken['user_token'] =  $success['token'];
+            User::updateData($userID,$updateToken);
+            if($remember == true)
+            {
+                $updateQuery['user_remember_token'] = 'Yes';
+                User::updateData($userID,$updateQuery);
+            }
             return response()->json(['success' => $success], $this-> successStatus); 
         } 
         else{ 
