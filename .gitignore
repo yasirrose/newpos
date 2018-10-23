@@ -5,3 +5,7 @@ vendor/
 #Ignore folder named node_modules
 
 node_modules/
+
+#Ignore file named webpack.mix.js
+
+webpack.mix.js

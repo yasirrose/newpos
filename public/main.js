@@ -190,19 +190,12 @@ module.exports = function escape(url) {
 
 /***/ }),
 
-/***/ 275:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(276);
-
-
-/***/ }),
-
-/***/ 276:
+/***/ 260:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthenticationStore", function() { return AuthenticationStore; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App__ = __webpack_require__(296);
@@ -229,52 +222,66 @@ var google_analytics_key = __WEBPACK_IMPORTED_MODULE_4__store_store_js__["a" /* 
 
 if (google_analytics_key && google_analytics_key.length) {
 
-    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vue_analytics___default.a, {
-        id: google_analytics_key,
-        router: __WEBPACK_IMPORTED_MODULE_3__router__["a" /* default */],
-        checkDuplicatedScript: true,
-        autoTracking: {
-            pageviewTemplate: function pageviewTemplate(route) {
-                return {
-                    page: 'default/' + route.path
-                };
-            }
-        }
-    });
+  __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vue_analytics___default.a, {
+    id: google_analytics_key,
+    router: __WEBPACK_IMPORTED_MODULE_3__router__["a" /* default */],
+    checkDuplicatedScript: true,
+    autoTracking: {
+      pageviewTemplate: function pageviewTemplate(route) {
+        return {
+          page: 'default/' + route.path
+        };
+      }
+    }
+  });
 }
 
 __WEBPACK_IMPORTED_MODULE_3__router__["a" /* default */].beforeEach(function (to, from, next) {
 
-    if (to.matched.some(function (record) {
-        return record.meta.forVisitors;
-    })) {
-        if (__WEBPACK_IMPORTED_MODULE_0_vue___default.a.auth.isAuthenticated()) {
-            next({
-                path: '/'
-            });
-        } else next();
-    } else if (to.matched.some(function (record) {
-        return record.meta.forAuth;
-    })) {
-        if (!__WEBPACK_IMPORTED_MODULE_0_vue___default.a.auth.isAuthenticated()) {
-            next({
-                path: '/login'
-            });
-        } else next();
+  if (to.matched.some(function (record) {
+    return record.meta.forVisitors;
+  })) {
+    if (__WEBPACK_IMPORTED_MODULE_0_vue___default.a.auth.isAuthenticated()) {
+      next({
+        path: '/'
+      });
     } else next();
+  } else if (to.matched.some(function (record) {
+    return record.meta.forAuth;
+  })) {
+    if (!__WEBPACK_IMPORTED_MODULE_0_vue___default.a.auth.isAuthenticated()) {
+      next({
+        path: '/login'
+      });
+    } else next();
+  } else next();
 });
 
+var AuthenticationStore = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
+  data: {
+    client_secret: '4kRbNGR95XVayf31TiZFPRdHPGEfrgOjX2Xi1Vd8'
+
+  }
+});
 // Remove the productionTip in dev tool console
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.config.productionTip = false;
 
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-    el: '#app',
-    router: __WEBPACK_IMPORTED_MODULE_3__router__["a" /* default */],
-    store: __WEBPACK_IMPORTED_MODULE_4__store_store_js__["a" /* default */],
-    render: function render(h) {
-        return h(__WEBPACK_IMPORTED_MODULE_1__App___default.a);
-    }
+  el: '#app',
+  router: __WEBPACK_IMPORTED_MODULE_3__router__["a" /* default */],
+  store: __WEBPACK_IMPORTED_MODULE_4__store_store_js__["a" /* default */],
+  render: function render(h) {
+    return h(__WEBPACK_IMPORTED_MODULE_1__App___default.a);
+  }
 });
+
+/***/ }),
+
+/***/ 276:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(260);
+
 
 /***/ }),
 
@@ -454,42 +461,42 @@ exports.push([module.i, "/*!\n *  Font Awesome 4.7.0 by @davegandy - http://font
 /***/ 302:
 /***/ (function(module, exports) {
 
-module.exports = "/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.eot?674f50d287a8c48dc19ba404d20fe713";
+module.exports = "/GitHub/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.eot?674f50d287a8c48dc19ba404d20fe713";
 
 /***/ }),
 
 /***/ 303:
 /***/ (function(module, exports) {
 
-module.exports = "/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.eot?674f50d287a8c48dc19ba404d20fe713";
+module.exports = "/GitHub/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.eot?674f50d287a8c48dc19ba404d20fe713";
 
 /***/ }),
 
 /***/ 304:
 /***/ (function(module, exports) {
 
-module.exports = "/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.woff2?af7ae505a9eed503f8b8e6982036873e";
+module.exports = "/GitHub/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.woff2?af7ae505a9eed503f8b8e6982036873e";
 
 /***/ }),
 
 /***/ 305:
 /***/ (function(module, exports) {
 
-module.exports = "/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.woff?fee66e712a8a08eef5805a46892932ad";
+module.exports = "/GitHub/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.woff?fee66e712a8a08eef5805a46892932ad";
 
 /***/ }),
 
 /***/ 306:
 /***/ (function(module, exports) {
 
-module.exports = "/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.ttf?b06871f281fee6b241d60582ae9369b9";
+module.exports = "/GitHub/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.ttf?b06871f281fee6b241d60582ae9369b9";
 
 /***/ }),
 
 /***/ 307:
 /***/ (function(module, exports) {
 
-module.exports = "/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.svg?912ec66d7572ff821749319396470bde";
+module.exports = "/GitHub/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.svg?912ec66d7572ff821749319396470bde";
 
 /***/ }),
 
@@ -4267,7 +4274,7 @@ var layout = [{
 }, {
     path: '/plugins',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(41).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(715)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(42).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(715)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Plugins",
@@ -4335,7 +4342,7 @@ var layout = [{
 }, {
     path: 'form_validations',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(42).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(723)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(41).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(723)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: " Form Validations"
@@ -6878,7 +6885,7 @@ var mutations = {
 /***/ 709:
 /***/ (function(module, exports) {
 
-module.exports = "/newpos/public/images/prf4.jpg?fb9fdb254b4b4b10a738dce89ae99078";
+module.exports = "/GitHub/newpos/public/images/prf4.jpg?fb9fdb254b4b4b10a738dce89ae99078";
 
 /***/ }),
 
@@ -7118,4 +7125,4 @@ function applyToTag (styleElement, obj) {
 
 /***/ })
 
-},[275]);
+},[276]);

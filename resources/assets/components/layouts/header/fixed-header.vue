@@ -15,15 +15,9 @@
                 <div>
                     <div class="dropdown hidden-xs-down btn-group">
                         <router-link to="/accounts" exact class="user_name_max drpodowtext">
-                            <i class="fa fa-user-o"></i> Accountssssss
+                            <i class="fa fa-user-o"></i> Accounts
                         </router-link>
                     </div>
-                    <div class="dropdown hidden-xs-down btn-group">
-                        <router-link to="/accounts" exact class="user_name_max drpodowtext">
-                            <i class="fa fa-user-o"></i> POS
-                        </router-link>
-                    </div>
-
                     <b-dropdown class="user user-menu bell_bg user_btn" right link>
                         <span slot="text">
                             <!-- User name-->

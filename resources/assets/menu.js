@@ -88,6 +88,11 @@ const menu_items = [{
             icon: 'fa fa-plus'
         }]
     },
+    {
+        name: 'Modals',
+        link: '/modals',
+        icon: 'fa fa-angle-double-right'
+    },
 
     // 19-Oct-2018
     

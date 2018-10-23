@@ -12,6 +12,9 @@
 */
 Route::post('/login', 'API\UserController@login');
 Route::post('/register', 'API\UserController@register');
-Route::group(['middleware' => 'auth:api'], function(){
+Route::get('/getPlugins', 'API\Cheersadmin\PluginController@getPlugins');
+Route::post('/addPlugins', 'API\Cheersadmin\PluginController@addPlugins');
+Route::group(['middleware' => 'auth:api'], function(){	
 Route::post('/details', 'API\UserController@details');
+
 });
