@@ -13,6 +13,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
     <style>
+    
         #preloader{
             position: fixed;
             top:0;
