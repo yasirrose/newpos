@@ -35,7 +35,6 @@ public $successStatus = 200;
             }
             //$success['token'] =  $user->createToken('Laravel Password Grant Client')-> accessToken; 
             $tokenResult = $user->createToken('Personal Access Token');
-            dd($tokenResult);
             $success['token'] = $tokenResult->accessToken;
             Session()->put('token', $success['token']);
             Session()->put('userId', $userID);

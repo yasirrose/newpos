@@ -31,8 +31,8 @@ class CreateCheersadminUsersTable extends Migration
             $table->string('user_image')->nullable();
             $table->string('user_carrier')->nullable();
             $table->integer('user_status')->default('1');
-            $table->integer('user_token')->nullable();
-            $table->string('user_remember_token')->nullable();
+            $table->text('user_token')->nullable();
+            $table->text('user_remember_token')->nullable();
             $table->timestamp('user_created_at')->nullable();
             $table->timestamp('user_updated_at')->nullable();
         });
