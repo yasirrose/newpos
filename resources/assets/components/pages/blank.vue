@@ -264,7 +264,7 @@
         },
         // ===Code to be executed when Component is mounted
         mounted() {
-
+            this.$store.commit('left_menu', 'close')
         },
         // ===Computed properties for the component
         computed: {

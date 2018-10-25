@@ -313,7 +313,9 @@ export default {
     components: {
         vScroll
     },
-    mounted: function() {},
+    mounted: function() {
+        this.$store.commit('left_menu', 'close')
+    },
     destroyed: function() {}
 }
 </script>

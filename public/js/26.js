@@ -1,12 +1,12 @@
 webpackJsonp([26],{
 
-/***/ 1695:
+/***/ 1700:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1696);
+var content = __webpack_require__(1701);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -27,7 +27,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1696:
+/***/ 1701:
 /***/ (function(module, exports, __webpack_require__) {
 
 var escape = __webpack_require__(244);
@@ -36,23 +36,23 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "\n.login-content[data-v-30189407] {\n    margin-top: 8%;\n    margin-bottom: 7%;\n    -webkit-box-shadow: 0 0 30px #ccc;\n            box-shadow: 0 0 30px #ccc;\n    background-size: 100% 100%;\n}\n.user-img[data-v-30189407] {\n    margin-bottom: 10px;\n}\n.img_backgrond[data-v-30189407] {\n    background-image: url(" + escape(__webpack_require__(828)) + ");\n    background-size: cover;\n    height: 100vh;\n    background-repeat: no-repeat;\n    width: 100%;\n    padding: 75px 15px;\n}\nlabel[data-v-30189407] {\n    font-size: 14px !important;\n}\n[data-v-30189407]::-webkit-input-placeholder {\n    font-size: 14px;\n}\n", ""]);
+exports.push([module.i, "\n.login-content[data-v-30189407] {\n    margin-top: 8%;\n    margin-bottom: 7%;\n    -webkit-box-shadow: 0 0 30px #ccc;\n            box-shadow: 0 0 30px #ccc;\n    background-size: 100% 100%;\n}\n.user-img[data-v-30189407] {\n    margin-bottom: 10px;\n}\n.img_backgrond[data-v-30189407] {\n    background-image: url(" + escape(__webpack_require__(829)) + ");\n    background-size: cover;\n    height: 100vh;\n    background-repeat: no-repeat;\n    width: 100%;\n    padding: 75px 15px;\n}\nlabel[data-v-30189407] {\n    font-size: 14px !important;\n}\n[data-v-30189407]::-webkit-input-placeholder {\n    font-size: 14px;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 1697:
+/***/ 1702:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form__ = __webpack_require__(784);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form__ = __webpack_require__(785);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_form__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_src_validations_validations_js__ = __webpack_require__(785);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_src_validations_validations_js__ = __webpack_require__(786);
 //
 //
 //
@@ -122,7 +122,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 
 /***/ }),
 
-/***/ 1698:
+/***/ 1703:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -258,7 +258,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-lg-12 col-12 mt-4" }, [
         _c("h2", { staticClass: "text-center" }, [
           _c("img", {
-            attrs: { src: __webpack_require__(811), alt: "Logo" }
+            attrs: { src: __webpack_require__(812), alt: "Logo" }
           })
         ])
       ]),
@@ -267,7 +267,7 @@ var staticRenderFns = [
         _c("h3", { staticClass: "page-name text-center" }, [
           _c("img", {
             staticClass: "rounded-circle img-thumbnail user-img",
-            attrs: { src: __webpack_require__(1699), alt: "user" }
+            attrs: { src: __webpack_require__(1704), alt: "user" }
           })
         ])
       ])
@@ -285,26 +285,26 @@ if (false) {
 
 /***/ }),
 
-/***/ 1699:
+/***/ 1704:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/User-01.png?683c81ea32070f3ec422da6e1d612f51";
+module.exports = "/GitHub/newpos/public/images/User-01.png?683c81ea32070f3ec422da6e1d612f51";
 
 /***/ }),
 
-/***/ 767:
+/***/ 768:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(1695)
+  __webpack_require__(1700)
 }
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(1697)
+var __vue_script__ = __webpack_require__(1702)
 /* template */
-var __vue_template__ = __webpack_require__(1698)
+var __vue_template__ = __webpack_require__(1703)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -344,7 +344,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 784:
+/***/ 785:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -1673,7 +1673,7 @@ return VueForm;
 
 /***/ }),
 
-/***/ 785:
+/***/ 786:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1693,17 +1693,17 @@ var options = {
 
 /***/ }),
 
-/***/ 811:
+/***/ 812:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/logo_black.png?fbee0a480ceaa0fa450dae20c38ebe20";
+module.exports = "/GitHub/newpos/public/images/logo_black.png?fbee0a480ceaa0fa450dae20c38ebe20";
 
 /***/ }),
 
-/***/ 828:
+/***/ 829:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/Login-03-01.png?d74e560d86ea931916bcf7f875a009be";
+module.exports = "/GitHub/newpos/public/images/Login-03-01.png?d74e560d86ea931916bcf7f875a009be";
 
 /***/ })
 

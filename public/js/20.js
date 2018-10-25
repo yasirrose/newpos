@@ -1,19 +1,19 @@
 webpackJsonp([20],{
 
-/***/ 1082:
+/***/ 1083:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/timeline1.jpeg?c24ea823560e1624047db1dd2350f682";
+module.exports = "/GitHub/newpos/public/images/timeline1.jpeg?c24ea823560e1624047db1dd2350f682";
 
 /***/ }),
 
-/***/ 1502:
+/***/ 1507:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1503);
+var content = __webpack_require__(1508);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -34,7 +34,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1503:
+/***/ 1508:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(49)(false);
@@ -42,14 +42,14 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "\n.timeline-container[data-v-215f2ff1] {\n    background-color: #FAFAFA;\n}\n.timeline[data-v-215f2ff1] {\n    list-style: none;\n    padding: 1px 0 30px;\n    position: relative;\n}\n.timeline p[data-v-215f2ff1] {\n    margin: 0;\n}\n.timeline[data-v-215f2ff1]:before {\n    top: 0;\n    bottom: 0;\n    position: absolute;\n    content: \" \";\n    width: 2px;\n    background-color: #CCC;\n    left: 50.2%;\n    margin-left: -1.5px;\n}\n.timeline > li[data-v-215f2ff1] {\n    position: relative;\n    margin-top: 40px;\n}\n.timeline > li[data-v-215f2ff1]:before,\n.timeline > li[data-v-215f2ff1]:after {\n    content: \" \";\n    display: table;\n}\n.timeline > li[data-v-215f2ff1]:after {\n    clear: both;\n}\n.timeline > li > .timeline-card[data-v-215f2ff1] {\n    width: 43%;\n    float: left;\n    border: 1px solid #D4D4D4;\n    border-radius: 2px;\n    position: relative;\n    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);\n            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);\n    margin-top: 26px;\n    background-color: #FFF;\n}\n.timeline > li > .timeline-badge[data-v-215f2ff1] {\n    color: #FFF;\n    width: 55px;\n    height: 55px;\n    line-height: 44px;\n    font-size: 22px;\n    text-align: center;\n    position: absolute;\n    top: -10px;\n    left: 50.02%;\n    margin-left: -25px;\n    z-index: 100;\n    border: 5px solid #FAFAFA;\n    border-radius: 50% 50% 50% 0;\n    -webkit-transform: rotate(16deg);\n            transform: rotate(16deg);\n}\n.timeline > li.timeline-right > .timeline-badge[data-v-215f2ff1] {\n    border-radius: 50% 50% 0 50%;\n    -webkit-transform: rotate(-13deg);\n            transform: rotate(-13deg);\n}\n.timeline > li > .timeline-badge i[data-v-215f2ff1] {\n    -webkit-transform: rotate(-16deg);\n            transform: rotate(-16deg);\n}\n.timeline > li.timeline-right > .timeline-badge i[data-v-215f2ff1] {\n    -webkit-transform: rotate(14deg);\n            transform: rotate(14deg);\n}\n.timeline .timeline-details[data-v-215f2ff1] {\n    left: 55%;\n    position: absolute;\n}\n.timeline .timeline-details-inverse[data-v-215f2ff1] {\n    right: 54%;\n    position: absolute;\n    text-align: right;\n}\n.timeline .timeline-details-inverse h4[data-v-215f2ff1],\n.timeline .timeline-details h4[data-v-215f2ff1] {\n    font-size: 18px;\n    margin: 0;\n}\n.timeline > li.timeline-left > .timeline-card[data-v-215f2ff1] {\n    left: 2%;\n}\n.timeline > li.timeline-right > .timeline-card[data-v-215f2ff1] {\n    float: right;\n    right: 2%;\n}\n.timeline-title[data-v-215f2ff1] {\n    margin-top: 0;\n    color: inherit;\n}\n.timeline-body > p[data-v-215f2ff1] {\n    margin-bottom: 0;\n    overflow: hidden;\n}\n.timeline-body > p + p[data-v-215f2ff1] {\n    margin-top: 5px;\n}\n.timeline_panel[data-v-215f2ff1] {\n    padding-bottom: 26px;\n}\n.text-default-gray[data-v-215f2ff1] {\n    color: #777;\n}\n.bg-info[data-v-215f2ff1] {\n    background-color: #5bc0de;\n}\n.bg-warning[data-v-215f2ff1] {\n    background-color: #ec971f;\n}\n.timeline .author-image[data-v-215f2ff1] {\n}\n.timeline .sharedpost-image[data-v-215f2ff1] {\n    width: 100%;\n    height: 220px;\n}\n.timeline .posted-image[data-v-215f2ff1] {\n    width: 100%;\n    height: 270px;\n}\n.circle-author-image[data-v-215f2ff1] {\n    border-radius: 50px;\n    width: 70px;\n}\n.p-20[data-v-215f2ff1] {\n    padding: 20px;\n}\n.p-10[data-v-215f2ff1] {\n    padding: 10px;\n}\n.p-l-20[data-v-215f2ff1] {\n    padding-left: 20px;\n}\n.timeline .action-icons i[data-v-215f2ff1] {\n    font-size: 21px;\n    color: #777;\n    padding-top: 0;\n}\n.timeline .blog-link[data-v-215f2ff1] {\n    position: absolute;\n    bottom: 0;\n    padding: 10px 20px;\n    background-color: rgba(0, 0, 0, .3);\n    width: 100%;\n    color: #CCC;\n}\n.timeline .blog-link a[data-v-215f2ff1] {\n    color: #FFF;\n}\n@media screen and (max-width: 767px) {\n.timeline > li.timeline-left > .timeline-card[data-v-215f2ff1],\n    .timeline > li.timeline-right > .timeline-card[data-v-215f2ff1] {\n        width: 82%;\n        float: right;\n        left: -3%;\n        margin-top: 11px;\n}\n.timeline[data-v-215f2ff1]:before {\n        left: 5%;\n}\n.timeline > li > .timeline-badge[data-v-215f2ff1] {\n        left: 4.5%;\n        border-radius: 50% 50% 0 50%;\n        -webkit-transform: rotate(-13deg);\n                transform: rotate(-13deg);\n}\n.timeline .timeline-details[data-v-215f2ff1],\n    .timeline .timeline-details-inverse[data-v-215f2ff1] {\n        left: 17%;\n        position: relative;\n        text-align: left;\n}\n.timeline-badge i[data-v-215f2ff1],\n    .timeline > li > .timeline-badge i[data-v-215f2ff1] {\n        -webkit-transform: rotate(14deg);\n                transform: rotate(14deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.timeline-container[data-v-215f2ff1] {\r\n    background-color: #FAFAFA;\n}\n.timeline[data-v-215f2ff1] {\r\n    list-style: none;\r\n    padding: 1px 0 30px;\r\n    position: relative;\n}\n.timeline p[data-v-215f2ff1] {\r\n    margin: 0;\n}\n.timeline[data-v-215f2ff1]:before {\r\n    top: 0;\r\n    bottom: 0;\r\n    position: absolute;\r\n    content: \" \";\r\n    width: 2px;\r\n    background-color: #CCC;\r\n    left: 50.2%;\r\n    margin-left: -1.5px;\n}\n.timeline > li[data-v-215f2ff1] {\r\n    position: relative;\r\n    margin-top: 40px;\n}\n.timeline > li[data-v-215f2ff1]:before,\r\n.timeline > li[data-v-215f2ff1]:after {\r\n    content: \" \";\r\n    display: table;\n}\n.timeline > li[data-v-215f2ff1]:after {\r\n    clear: both;\n}\n.timeline > li > .timeline-card[data-v-215f2ff1] {\r\n    width: 43%;\r\n    float: left;\r\n    border: 1px solid #D4D4D4;\r\n    border-radius: 2px;\r\n    position: relative;\r\n    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);\r\n            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);\r\n    margin-top: 26px;\r\n    background-color: #FFF;\n}\n.timeline > li > .timeline-badge[data-v-215f2ff1] {\r\n    color: #FFF;\r\n    width: 55px;\r\n    height: 55px;\r\n    line-height: 44px;\r\n    font-size: 22px;\r\n    text-align: center;\r\n    position: absolute;\r\n    top: -10px;\r\n    left: 50.02%;\r\n    margin-left: -25px;\r\n    z-index: 100;\r\n    border: 5px solid #FAFAFA;\r\n    border-radius: 50% 50% 50% 0;\r\n    -webkit-transform: rotate(16deg);\r\n            transform: rotate(16deg);\n}\n.timeline > li.timeline-right > .timeline-badge[data-v-215f2ff1] {\r\n    border-radius: 50% 50% 0 50%;\r\n    -webkit-transform: rotate(-13deg);\r\n            transform: rotate(-13deg);\n}\n.timeline > li > .timeline-badge i[data-v-215f2ff1] {\r\n    -webkit-transform: rotate(-16deg);\r\n            transform: rotate(-16deg);\n}\n.timeline > li.timeline-right > .timeline-badge i[data-v-215f2ff1] {\r\n    -webkit-transform: rotate(14deg);\r\n            transform: rotate(14deg);\n}\n.timeline .timeline-details[data-v-215f2ff1] {\r\n    left: 55%;\r\n    position: absolute;\n}\n.timeline .timeline-details-inverse[data-v-215f2ff1] {\r\n    right: 54%;\r\n    position: absolute;\r\n    text-align: right;\n}\n.timeline .timeline-details-inverse h4[data-v-215f2ff1],\r\n.timeline .timeline-details h4[data-v-215f2ff1] {\r\n    font-size: 18px;\r\n    margin: 0;\n}\n.timeline > li.timeline-left > .timeline-card[data-v-215f2ff1] {\r\n    left: 2%;\n}\n.timeline > li.timeline-right > .timeline-card[data-v-215f2ff1] {\r\n    float: right;\r\n    right: 2%;\n}\n.timeline-title[data-v-215f2ff1] {\r\n    margin-top: 0;\r\n    color: inherit;\n}\n.timeline-body > p[data-v-215f2ff1] {\r\n    margin-bottom: 0;\r\n    overflow: hidden;\n}\n.timeline-body > p + p[data-v-215f2ff1] {\r\n    margin-top: 5px;\n}\n.timeline_panel[data-v-215f2ff1] {\r\n    padding-bottom: 26px;\n}\n.text-default-gray[data-v-215f2ff1] {\r\n    color: #777;\n}\n.bg-info[data-v-215f2ff1] {\r\n    background-color: #5bc0de;\n}\n.bg-warning[data-v-215f2ff1] {\r\n    background-color: #ec971f;\n}\n.timeline .author-image[data-v-215f2ff1] {\n}\n.timeline .sharedpost-image[data-v-215f2ff1] {\r\n    width: 100%;\r\n    height: 220px;\n}\n.timeline .posted-image[data-v-215f2ff1] {\r\n    width: 100%;\r\n    height: 270px;\n}\n.circle-author-image[data-v-215f2ff1] {\r\n    border-radius: 50px;\r\n    width: 70px;\n}\n.p-20[data-v-215f2ff1] {\r\n    padding: 20px;\n}\n.p-10[data-v-215f2ff1] {\r\n    padding: 10px;\n}\n.p-l-20[data-v-215f2ff1] {\r\n    padding-left: 20px;\n}\n.timeline .action-icons i[data-v-215f2ff1] {\r\n    font-size: 21px;\r\n    color: #777;\r\n    padding-top: 0;\n}\n.timeline .blog-link[data-v-215f2ff1] {\r\n    position: absolute;\r\n    bottom: 0;\r\n    padding: 10px 20px;\r\n    background-color: rgba(0, 0, 0, .3);\r\n    width: 100%;\r\n    color: #CCC;\n}\n.timeline .blog-link a[data-v-215f2ff1] {\r\n    color: #FFF;\n}\n@media screen and (max-width: 767px) {\n.timeline > li.timeline-left > .timeline-card[data-v-215f2ff1],\r\n    .timeline > li.timeline-right > .timeline-card[data-v-215f2ff1] {\r\n        width: 82%;\r\n        float: right;\r\n        left: -3%;\r\n        margin-top: 11px;\n}\n.timeline[data-v-215f2ff1]:before {\r\n        left: 5%;\n}\n.timeline > li > .timeline-badge[data-v-215f2ff1] {\r\n        left: 4.5%;\r\n        border-radius: 50% 50% 0 50%;\r\n        -webkit-transform: rotate(-13deg);\r\n                transform: rotate(-13deg);\n}\n.timeline .timeline-details[data-v-215f2ff1],\r\n    .timeline .timeline-details-inverse[data-v-215f2ff1] {\r\n        left: 17%;\r\n        position: relative;\r\n        text-align: left;\n}\n.timeline-badge i[data-v-215f2ff1],\r\n    .timeline > li > .timeline-badge i[data-v-215f2ff1] {\r\n        -webkit-transform: rotate(14deg);\r\n                transform: rotate(14deg);\n}\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 1504:
+/***/ 1509:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -247,7 +247,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1505:
+/***/ 1510:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -278,7 +278,7 @@ var staticRenderFns = [
             _c("img", {
               staticClass: "author-image float-right img-fluid",
               attrs: {
-                src: __webpack_require__(771),
+                src: __webpack_require__(772),
                 alt: "timeline image1"
               }
             }),
@@ -318,7 +318,7 @@ var staticRenderFns = [
                 _c("img", {
                   staticClass: "circle-author-image p-10 img-fluid",
                   attrs: {
-                    src: __webpack_require__(814),
+                    src: __webpack_require__(815),
                     alt: "author image"
                   }
                 }),
@@ -333,7 +333,7 @@ var staticRenderFns = [
               _c("img", {
                 staticClass: "sharedpost-image img-fluid",
                 attrs: {
-                  src: __webpack_require__(878),
+                  src: __webpack_require__(879),
                   alt: "timeline image2"
                 }
               })
@@ -363,7 +363,7 @@ var staticRenderFns = [
               _c("img", {
                 staticClass: "posted-image p-10 img-fluid",
                 attrs: {
-                  src: __webpack_require__(1082),
+                  src: __webpack_require__(1083),
                   alt: "timeline image2"
                 }
               })
@@ -401,7 +401,7 @@ var staticRenderFns = [
                 _c("img", {
                   staticClass: "circle-author-image p-10 img-fluid",
                   attrs: {
-                    src: __webpack_require__(806),
+                    src: __webpack_require__(807),
                     alt: "author image"
                   }
                 }),
@@ -469,7 +469,7 @@ var staticRenderFns = [
               _c("img", {
                 staticClass: "sharedpost-image img-fluid",
                 attrs: {
-                  src: __webpack_require__(878),
+                  src: __webpack_require__(879),
                   alt: "timeline image2"
                 }
               })
@@ -522,7 +522,7 @@ var staticRenderFns = [
                 _c("img", {
                   staticClass: "circle-author-image p-10 img-fluid",
                   attrs: {
-                    src: __webpack_require__(1506),
+                    src: __webpack_require__(1511),
                     alt: "author image"
                   }
                 }),
@@ -580,7 +580,7 @@ var staticRenderFns = [
                 _c("img", {
                   staticClass: "posted-image img-fluid",
                   attrs: {
-                    src: __webpack_require__(1082),
+                    src: __webpack_require__(1083),
                     alt: "timeline image2"
                   }
                 })
@@ -603,26 +603,26 @@ if (false) {
 
 /***/ }),
 
-/***/ 1506:
+/***/ 1511:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/health.png?a62090e1f7199d7547f04ae0036c5b71";
+module.exports = "/GitHub/newpos/public/images/health.png?a62090e1f7199d7547f04ae0036c5b71";
 
 /***/ }),
 
-/***/ 736:
+/***/ 737:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(1502)
+  __webpack_require__(1507)
 }
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(1504)
+var __vue_script__ = __webpack_require__(1509)
 /* template */
-var __vue_template__ = __webpack_require__(1505)
+var __vue_template__ = __webpack_require__(1510)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -662,31 +662,31 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 771:
+/***/ 772:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
+module.exports = "/GitHub/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
 
 /***/ }),
 
-/***/ 806:
+/***/ 807:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/avatar5.jpg?4f52473b866c8d274fce38e90ee4883d";
+module.exports = "/GitHub/newpos/public/images/avatar5.jpg?4f52473b866c8d274fce38e90ee4883d";
 
 /***/ }),
 
-/***/ 814:
+/***/ 815:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/avatar6.jpg?7a7ee17a5a77782a7d07b499cde37807";
+module.exports = "/GitHub/newpos/public/images/avatar6.jpg?7a7ee17a5a77782a7d07b499cde37807";
 
 /***/ }),
 
-/***/ 878:
+/***/ 879:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/timeline.jpeg?e0be5e2ba70609c6a4127e4753f5e9fa";
+module.exports = "/GitHub/newpos/public/images/timeline.jpeg?e0be5e2ba70609c6a4127e4753f5e9fa";
 
 /***/ })
 

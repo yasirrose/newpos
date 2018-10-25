@@ -10,6 +10,11 @@ const menu_items = [{
         link: '/accounts',
         icon: ' fa fa-home'
     },
+    {
+        name: 'Account',
+        link: '/add_accounts',
+        icon: ' fa fa-home'
+    },
 
     {
         name: 'Distributors',

@@ -1,12 +1,12 @@
 webpackJsonp([28],{
 
-/***/ 1436:
+/***/ 1442:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1437);
+var content = __webpack_require__(1443);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -27,7 +27,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1437:
+/***/ 1443:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(49)(false);
@@ -35,14 +35,14 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "\n.wrapper .primarycheck .custom-control-input:checked ~  .custom-control-label::before,\n.wrapper .primaryradio .custom-control-input:checked ~  .custom-control-label::before{\n    background-color: #428bca !important;\n}\n.wrapper .infocheck .custom-control-input:checked ~  .custom-control-label::before,\n.wrapper .inforadio .custom-control-input:checked ~  .custom-control-label::before{\n    background-color: #4fc1e9 !important;\n}\n.wrapper .warningcheck .custom-control-input:checked ~  .custom-control-label::before,\n.wrapper .warningradio .custom-control-input:checked ~  .custom-control-label::before{\n    background-color: #ffb65f !important;\n}\n.wrapper .dangercheck .custom-control-input:checked ~  .custom-control-label::before,\n.wrapper .dangerradio .custom-control-input:checked ~  .custom-control-label::before{\n    background-color: #fb8678 !important;\n}\n.wrapper .successcheck .custom-control-input:checked ~  .custom-control-label::before,\n.wrapper .successradio .custom-control-input:checked ~  .custom-control-label::before{\n    background-color: #22d69d !important;\n}\n.wrapper .defaultcheck .custom-control-input:checked ~  .custom-control-label::before,\n.wrapper .defaultradio .custom-control-input:checked ~  .custom-control-label::before {\n    background-color: #CCC !important;\n}\ninput {\n    cursor: pointer;\n}\n.cur {\n    cursor: not-allowed;\n}\n", ""]);
+exports.push([module.i, "\n.wrapper .primarycheck .custom-control-input:checked ~  .custom-control-label::before,\r\n.wrapper .primaryradio .custom-control-input:checked ~  .custom-control-label::before{\r\n    background-color: #428bca !important;\n}\n.wrapper .infocheck .custom-control-input:checked ~  .custom-control-label::before,\r\n.wrapper .inforadio .custom-control-input:checked ~  .custom-control-label::before{\r\n    background-color: #4fc1e9 !important;\n}\n.wrapper .warningcheck .custom-control-input:checked ~  .custom-control-label::before,\r\n.wrapper .warningradio .custom-control-input:checked ~  .custom-control-label::before{\r\n    background-color: #ffb65f !important;\n}\n.wrapper .dangercheck .custom-control-input:checked ~  .custom-control-label::before,\r\n.wrapper .dangerradio .custom-control-input:checked ~  .custom-control-label::before{\r\n    background-color: #fb8678 !important;\n}\n.wrapper .successcheck .custom-control-input:checked ~  .custom-control-label::before,\r\n.wrapper .successradio .custom-control-input:checked ~  .custom-control-label::before{\r\n    background-color: #22d69d !important;\n}\n.wrapper .defaultcheck .custom-control-input:checked ~  .custom-control-label::before,\r\n.wrapper .defaultradio .custom-control-input:checked ~  .custom-control-label::before {\r\n    background-color: #CCC !important;\n}\ninput {\r\n    cursor: pointer;\n}\n.cur {\r\n    cursor: not-allowed;\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 1438:
+/***/ 1444:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -331,8 +331,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-__webpack_require__(1439);
-__webpack_require__(1441);
+__webpack_require__(1445);
+__webpack_require__(1447);
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "radios_checkboxes",
     data: function data() {
@@ -354,13 +354,13 @@ __webpack_require__(1441);
 
 /***/ }),
 
-/***/ 1439:
+/***/ 1445:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1440);
+var content = __webpack_require__(1446);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -386,7 +386,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1440:
+/***/ 1446:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(49)(false);
@@ -401,13 +401,13 @@ exports.push([module.i, "/*\n * checkbox.css\n * v1.1.3\n * \n * Tiny set of CSS
 
 /***/ }),
 
-/***/ 1441:
+/***/ 1447:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1442);
+var content = __webpack_require__(1448);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -433,7 +433,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1442:
+/***/ 1448:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(49)(false);
@@ -448,7 +448,7 @@ exports.push([module.i, "/*\n * radiobox.css\n * v1.0.1\n * \n * Tiny set of CSS
 
 /***/ }),
 
-/***/ 1443:
+/***/ 1449:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1232,19 +1232,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 726:
+/***/ 727:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(1436)
+  __webpack_require__(1442)
 }
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(1438)
+var __vue_script__ = __webpack_require__(1444)
 /* template */
-var __vue_template__ = __webpack_require__(1443)
+var __vue_template__ = __webpack_require__(1449)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */

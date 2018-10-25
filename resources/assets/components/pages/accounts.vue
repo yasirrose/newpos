@@ -151,6 +151,8 @@ export default {
             .catch(function(error) {
 
             });
+
+            this.$store.commit('left_menu', 'close')
     }
 }
 </script>

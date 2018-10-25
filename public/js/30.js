@@ -1,12 +1,12 @@
 webpackJsonp([30],{
 
-/***/ 1691:
+/***/ 1696:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1692);
+var content = __webpack_require__(1697);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -27,7 +27,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1692:
+/***/ 1697:
 /***/ (function(module, exports, __webpack_require__) {
 
 var escape = __webpack_require__(244);
@@ -36,23 +36,23 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "\n.login-content[data-v-2add6c3b] {\n    margin-top: 7%;\n    margin-bottom: 7%;\n    padding-bottom: 20px;\n    -webkit-box-shadow: 0 0 30px #ccc;\n            box-shadow: 0 0 30px #ccc;\n    background-repeat: no-repeat;\n    background-size: 100% 100%;\n}\n.img_backgrond[data-v-2add6c3b] {\n    background-image: url(" + escape(__webpack_require__(828)) + ");\n    background-size: cover;\n    height: 100vh;\n    width: 100%;\n}\nlabel[data-v-2add6c3b] {\n    font-size: 14px !important;\n}\n[data-v-2add6c3b]::-webkit-input-placeholder {\n    font-size: 14px;\n}\n.user-message[data-v-2add6c3b] {\n    padding: 15px 0;\n    font-size: 14px;\n    color: #777;\n}\n", ""]);
+exports.push([module.i, "\n.login-content[data-v-2add6c3b] {\n    margin-top: 7%;\n    margin-bottom: 7%;\n    padding-bottom: 20px;\n    -webkit-box-shadow: 0 0 30px #ccc;\n            box-shadow: 0 0 30px #ccc;\n    background-repeat: no-repeat;\n    background-size: 100% 100%;\n}\n.img_backgrond[data-v-2add6c3b] {\n    background-image: url(" + escape(__webpack_require__(829)) + ");\n    background-size: cover;\n    height: 100vh;\n    width: 100%;\n}\nlabel[data-v-2add6c3b] {\n    font-size: 14px !important;\n}\n[data-v-2add6c3b]::-webkit-input-placeholder {\n    font-size: 14px;\n}\n.user-message[data-v-2add6c3b] {\n    padding: 15px 0;\n    font-size: 14px;\n    color: #777;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 1693:
+/***/ 1698:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form__ = __webpack_require__(784);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form__ = __webpack_require__(785);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_form__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_src_validations_validations_js__ = __webpack_require__(785);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_src_validations_validations_js__ = __webpack_require__(786);
 //
 //
 //
@@ -136,7 +136,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 
 /***/ }),
 
-/***/ 1694:
+/***/ 1699:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -364,7 +364,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-sm-12 mt-4" }, [
         _c("h2", { staticClass: "text-center" }, [
           _c("img", {
-            attrs: { src: __webpack_require__(811), alt: "Logo" }
+            attrs: { src: __webpack_require__(812), alt: "Logo" }
           })
         ])
       ]),
@@ -388,19 +388,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 766:
+/***/ 767:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(1691)
+  __webpack_require__(1696)
 }
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(1693)
+var __vue_script__ = __webpack_require__(1698)
 /* template */
-var __vue_template__ = __webpack_require__(1694)
+var __vue_template__ = __webpack_require__(1699)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -440,7 +440,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 784:
+/***/ 785:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -1769,7 +1769,7 @@ return VueForm;
 
 /***/ }),
 
-/***/ 785:
+/***/ 786:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1789,17 +1789,17 @@ var options = {
 
 /***/ }),
 
-/***/ 811:
+/***/ 812:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/logo_black.png?fbee0a480ceaa0fa450dae20c38ebe20";
+module.exports = "/GitHub/newpos/public/images/logo_black.png?fbee0a480ceaa0fa450dae20c38ebe20";
 
 /***/ }),
 
-/***/ 828:
+/***/ 829:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/Login-03-01.png?d74e560d86ea931916bcf7f875a009be";
+module.exports = "/GitHub/newpos/public/images/Login-03-01.png?d74e560d86ea931916bcf7f875a009be";
 
 /***/ })
 

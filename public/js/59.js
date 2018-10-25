@@ -1,6 +1,6 @@
 webpackJsonp([59],{
 
-/***/ 1563:
+/***/ 1566:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10,7 +10,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_echarts_v3_src_full_js__ = __webpack_require__(246);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_chart_line__ = __webpack_require__(249);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_chart_line___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_echarts_lib_chart_line__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_chart_bar__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_chart_bar__ = __webpack_require__(261);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_chart_bar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_echarts_lib_chart_bar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_dataZoom__ = __webpack_require__(258);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_dataZoom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_dataZoom__);
@@ -18,7 +18,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_echarts_lib_component_legend___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_echarts_lib_component_legend__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_echarts_lib_component_tooltip__ = __webpack_require__(248);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_echarts_lib_component_tooltip___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_echarts_lib_component_tooltip__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_echarts_lib_chart_effectScatter__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_echarts_lib_chart_effectScatter__ = __webpack_require__(271);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_echarts_lib_chart_effectScatter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_echarts_lib_chart_effectScatter__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_echarts_lib_component_title__ = __webpack_require__(251);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_echarts_lib_component_title___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_echarts_lib_component_title__);
@@ -558,7 +558,7 @@ var unsub;
 
 /***/ }),
 
-/***/ 1564:
+/***/ 1567:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -750,15 +750,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 745:
+/***/ 746:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(1563)
+var __vue_script__ = __webpack_require__(1566)
 /* template */
-var __vue_template__ = __webpack_require__(1564)
+var __vue_template__ = __webpack_require__(1567)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */

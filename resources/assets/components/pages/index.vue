@@ -629,7 +629,7 @@
                 .catch(function (error) {
 
                 });
-
+            this.$store.commit('left_menu', 'close')
         },
         beforeRouteLeave(to, from, next) {
             unsub();

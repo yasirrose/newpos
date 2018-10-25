@@ -6,7 +6,7 @@
             </router-link>
             <!-- Sidebar toggle button-->
             <div class="float-left">
-                <a href="javascript:void(0)" class="sidebar-toggle" @click="toggle_menu">
+                <a href="javascript:void(0)" class="sidebar-toggle" >
                     <i class="fa fa-bars"></i>
                 </a>
             </div>
@@ -129,11 +129,11 @@
 
                 <!--drop downs-->
                 <div>
-                    <div class="dropdown hidden-xs-down btn-group fullscreen" v-if="fullscreen">
+                    <!--<div class="dropdown hidden-xs-down btn-group fullscreen" v-if="fullscreen">
                         <a href="javascript:void(0)" @click="fullscreen">
                             <i class="fa fa-arrows-alt"></i>
                         </a>
-                    </div>
+                    </div>-->
 
                     <!-- User Account: style can be found in dropdown-->
                     <b-dropdown class="user user-menu bell_bg user_btn" right link>

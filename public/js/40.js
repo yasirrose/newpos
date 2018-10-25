@@ -1,12 +1,12 @@
 webpackJsonp([40],{
 
-/***/ 1430:
+/***/ 1436:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1431);
+var content = __webpack_require__(1437);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -27,7 +27,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1431:
+/***/ 1437:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(49)(false);
@@ -42,13 +42,13 @@ exports.push([module.i, "/*!\r\n * Hover.css (http://ianlunn.github.io/Hover/)\r
 
 /***/ }),
 
-/***/ 1432:
+/***/ 1438:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1433);
+var content = __webpack_require__(1439);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -69,7 +69,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1433:
+/***/ 1439:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(49)(false);
@@ -77,14 +77,14 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "\n.btn_rounded[data-v-544d8501] {\n    border-radius: 50px;\n}\n.effects .btn[data-v-544d8501] {\n    margin: .4em;\n    padding: 1em;\n    cursor: pointer;\n    background: #dcdcdc;\n    text-decoration: none;\n    color: #333;\n}\n.iconsbtn .btn[data-v-544d8501] {\n    padding-right: 3em;\n}\n.btn[data-v-544d8501] {\n    cursor: pointer;\n}", ""]);
+exports.push([module.i, "\n.btn_rounded[data-v-544d8501] {\r\n    border-radius: 50px;\n}\n.effects .btn[data-v-544d8501] {\r\n    margin: .4em;\r\n    padding: 1em;\r\n    cursor: pointer;\r\n    background: #dcdcdc;\r\n    text-decoration: none;\r\n    color: #333;\n}\n.iconsbtn .btn[data-v-544d8501] {\r\n    padding-right: 3em;\n}\n.btn[data-v-544d8501] {\r\n    cursor: pointer;\n}", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 1434:
+/***/ 1440:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -279,7 +279,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1435:
+/***/ 1441:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1378,20 +1378,20 @@ if (false) {
 
 /***/ }),
 
-/***/ 725:
+/***/ 726:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(1430)
-  __webpack_require__(1432)
+  __webpack_require__(1436)
+  __webpack_require__(1438)
 }
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(1434)
+var __vue_script__ = __webpack_require__(1440)
 /* template */
-var __vue_template__ = __webpack_require__(1435)
+var __vue_template__ = __webpack_require__(1441)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */

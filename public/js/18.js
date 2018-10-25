@@ -1,18 +1,18 @@
 webpackJsonp([18],{
 
-/***/ 1091:
+/***/ 1092:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(1092)
+  __webpack_require__(1093)
 }
 var normalizeComponent = __webpack_require__(243)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(1094)
+var __vue_template__ = __webpack_require__(1095)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,13 +52,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1092:
+/***/ 1093:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1093);
+var content = __webpack_require__(1094);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -79,7 +79,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1093:
+/***/ 1094:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(49)(false);
@@ -87,14 +87,14 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*social-widget*/\n.social-widget .user-pic[data-v-34452bec] {\n    border-radius: 50%;\n    width: 106px;\n}\n.social-widget .social-icons[data-v-34452bec] {\n    font-size: 20px;\n    padding-top: 5px;\n    padding-bottom: 5px;\n}\n.border_bottom[data-v-34452bec]{\n    border-bottom:1px solid #ccc;\n}\n.post-fllow[data-v-34452bec] {\n    background-color: #fff !important;\n}\n.social-widget .post-fllow[data-v-34452bec] {\n    background-color: #e5e5e5;\n    padding-bottom: 4px;\n    padding-top: 18px;\n    border-top: 1px solid #ccc;\n}\n.social-widget .post-fllow[data-v-34452bec]:not(:last-child) {\n    border-right: 1px solid #CCC;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*social-widget*/\n.social-widget .user-pic[data-v-34452bec] {\r\n    border-radius: 50%;\r\n    width: 106px;\n}\n.social-widget .social-icons[data-v-34452bec] {\r\n    font-size: 20px;\r\n    padding-top: 5px;\r\n    padding-bottom: 5px;\n}\n.border_bottom[data-v-34452bec]{\r\n    border-bottom:1px solid #ccc;\n}\n.post-fllow[data-v-34452bec] {\r\n    background-color: #fff !important;\n}\n.social-widget .post-fllow[data-v-34452bec] {\r\n    background-color: #e5e5e5;\r\n    padding-bottom: 4px;\r\n    padding-top: 18px;\r\n    border-top: 1px solid #ccc;\n}\n.social-widget .post-fllow[data-v-34452bec]:not(:last-child) {\r\n    border-right: 1px solid #CCC;\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 1094:
+/***/ 1095:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -115,7 +115,7 @@ var staticRenderFns = [
             _c("img", {
               staticClass: "user-pic mt-3 mb-2",
               attrs: {
-                src: __webpack_require__(791),
+                src: __webpack_require__(792),
                 alt: "profile image"
               }
             }),
@@ -197,13 +197,13 @@ if (false) {
 
 /***/ }),
 
-/***/ 1529:
+/***/ 1534:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1530);
+var content = __webpack_require__(1535);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -224,7 +224,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1530:
+/***/ 1535:
 /***/ (function(module, exports, __webpack_require__) {
 
 var escape = __webpack_require__(244);
@@ -233,14 +233,14 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "/*tabs styles*/\n.tab-pane .card[data-v-f3b125a2] {\n    margin: 0;\n    border: none;\n}\n.name_center[data-v-f3b125a2]{\n    margin-left: 12px;\n    margin-top: 5px;\n}\n.name_font[data-v-f3b125a2]{\n    font-size: 16px;\n    color: #7B7B7B;\n}\n.number_font[data-v-f3b125a2]{\n    font-size: 15px;\n}\n.text_color[data-v-f3b125a2]{\n    color: #ccc;\n}\n/*panel style*/\n.panel[data-v-f3b125a2] {\n    border: 1px solid #e5e5e5;\n    border-radius: 0;\n    -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, .1);\n            box-shadow: 0 1px 30px rgba(0, 0, 0, .1);\n}\n\n\n/*user-profile*/\n.user-profile[data-v-f3b125a2] {\n    color: #777;\n}\n.user-profile .profile-img[data-v-f3b125a2] {\n    width: 110px;\n    margin-right: 25px;\n}\n.user-profile .profile-details[data-v-f3b125a2] {\n    padding: 10px 0;\n}\n.user-profile .table.account-details > tbody > tr > td[data-v-f3b125a2] {\n    padding: 17px 16px;\n}\n.account-details tbody tr[data-v-f3b125a2]:hover {\n    background-color: #EEE;\n}\n\n\n/*twitter profile*/\n.tweet-profile .card-header[data-v-f3b125a2] {\n    padding-bottom: 45px;\n    background-color: #4cb6e5;\n    color: #FFF;\n}\n.tweet-profile .profile-img img[data-v-f3b125a2] {\n    width: 100px;\n    height: 100px;\n    border-radius: 50%;\n    border: 5px solid #fff;\n    margin-top: -50px;\n}\n.tweet-profile .tweet-details[data-v-f3b125a2] {\n    font-size: 14px;\n    color: #555;\n    margin-bottom: 15px;\n}\n.tweet-profile .tweet-details .count[data-v-f3b125a2] {\n    margin: 0;\n    font-size: 22px;\n}\n.tweet-profile .tweet-details .row div[data-v-f3b125a2]:not(:last-child) {\n    border-right: 1px solid #ccc;\n}\n.tweet-profile .events[data-v-f3b125a2] {\n    border: 1px solid #bbb;\n    padding-top: 2px;\n    padding-bottom: 2px;\n    margin-top: 15px;\n    margin-right: -20px;\n    font-size: 18px;\n    color: #555;\n}\n.tweet-profile .btn-tweet[data-v-f3b125a2] {\n    padding: 5px;\n    margin-top: 14px;\n}\n\n\n/*user page*/\n.m-0[data-v-f3b125a2] {\n    margin: 0;\n}\n.user-page .cover-image[data-v-f3b125a2] {\n    height: 220px;\n    width: 100%;\n}\n.user-page .user-pic[data-v-f3b125a2] {\n    width: 90px;\n    padding: 10px;\n}\n.user-page .post-details[data-v-f3b125a2] {\n    display: block;\n    padding-top: 25px;\n    font-size: 14px;\n    color: #777;\n}\n.user-page .views[data-v-f3b125a2] {\n    background-color: #e5e5e5;\n    padding-top: 12px;\n    padding-bottom: 12px;\n    color: #555;\n}\n.user-page .views[data-v-f3b125a2]:not(:last-child) {\n    border-right: 1px solid #FFF;\n}\n\n\n/*top tabbed panel*/\n.tabbbed-bg[data-v-f3b125a2] {\n    padding: 0;\n    background-color: #418AC9;\n    border-bottom: 0;\n}\n.tabbbed-bg a[data-v-f3b125a2] {\n    color: #FFF;\n}\n.tabbbed-bg + .panel-body[data-v-f3b125a2] {\n    min-height: 313px;\n}\n.desc-img img[data-v-f3b125a2] {\n    width: 50px;\n    height: 50px;\n    border-radius: 22px;\n    margin-right: 13px;\n}\n.nav-tabs.nav-justified > li > a[data-v-f3b125a2] {\n    border-bottom: 0;\n}\n.panel-heading .nav > li.active > a[data-v-f3b125a2],\n.panel-heading .nav > li > a[data-v-f3b125a2]:hover {\n    color: #777;\n    background: #fff;\n    border-bottom: 1px solid #fff;\n}\n.tab-pane .d-head[data-v-f3b125a2] {\n    font-size: 14px;\n    color: #337ab7;\n    font-weight: bold;\n}\n.tab-pane .c-head[data-v-f3b125a2] {\n    font-size: 14px;\n}\n.tab-content .media[data-v-f3b125a2] {\n    padding-top: 5px;\n    padding-bottom: 5px;\n}\n\n\n/*weekly data line chart*/\n.stats-chart[data-v-f3b125a2] {\n    height: 244px;\n    background-color: #3399ff;\n    font-size: 22px;\n}\n\n\n/*echart*/\n.echarts[data-v-f3b125a2] {\n    width: 100%;\n    height: 100%;\n}\n.weekly-stats .shots-likes[data-v-f3b125a2] {\n    font-weight: bold;\n    font-size: 24px;\n    padding-top: 15px;\n}\n.weekly-stats .weekly-shots[data-v-f3b125a2]:after {\n    content: '';\n    width: 1px;\n    height: 75px;\n    position: absolute;\n    right: 0;\n    top: 10px;\n    border-right: 2px solid #ddd;\n}\n.email-tabs[data-v-f3b125a2] {\n    background-color: #efefef;\n    border-bottom: 0;\n}\ntextarea[data-v-f3b125a2] {\n    resize: vertical;\n}\nul.mail-list[data-v-f3b125a2] {\n    padding: 0;\n}\n.table.mail-list[data-v-f3b125a2] {\n    margin: 0;\n    table-layout: fixed;\n    width: 100%;\n}\n.mail-list tbody tr[data-v-f3b125a2] {\n    height: 45px\n}\n.mail-list tbody tr[data-v-f3b125a2]:hover {\n    background-color: #EEE;\n}\n.mail-list td[data-v-f3b125a2]:nth-child(1),\n.mail-list td[data-v-f3b125a2]:nth-child(2) {\n    width: 10%;\n}\n.mail-list td[data-v-f3b125a2]:nth-child(4) {\n    width: 40%;\n    overflow: hidden;\n    text-overflow: ellipsis;\n}\n.mail-list .custom-checkbox[data-v-f3b125a2]{\n    margin-bottom: 0;\n    margin-top: 7px;\n}\n\n\n/*contact widget*/\n.contact-cover[data-v-f3b125a2] {\n    height: 175px;\n    width: 100%;\n    background-image: url(" + escape(__webpack_require__(846)) + ");\n    background-size: cover;\n    color: #FFF;\n}\n.contact-widget i[data-v-f3b125a2] {\n    cursor: pointer;\n}\n.contact-cover .profile-img[data-v-f3b125a2] {\n    width: 60%;\n    height: 100%;\n    padding-top: 37px;\n    padding-left: 6%;\n}\n.contact-cover .profile-img .follow[data-v-f3b125a2] {\n    position: absolute;\n    top: 110px;\n    left: 35%;\n    font-size: 16px;\n}\n.contact-cover .profile-img img[data-v-f3b125a2] {\n    width: 90px;\n    border-radius: 50px;\n    border: 3px solid white;\n}\n.contact-cover .group-icon[data-v-f3b125a2] {\n    width: 20%;\n    height: 100%;\n    background-color: rgba(255, 255, 255, 0.19);\n    font-size: 24px;\n    line-height: 180px;\n}\n.contact-cover .search-icon[data-v-f3b125a2] {\n    width: 20%;\n    height: 100%;\n    background-color: rgba(255, 255, 255, 0.31);\n    font-size: 24px;\n    line-height: 180px;\n}\n.contact-widget .contact-details[data-v-f3b125a2] {\n    font-size: 18px;\n}\n.contact-widget .contact-details h4[data-v-f3b125a2] {\n    font-size: 16px;\n    color: #777;\n}\n\n\n/*weather widget*/\n.weather-widget .card-header[data-v-f3b125a2] {\n    background-color: #3AAB88;\n    color: #FFF;\n}\n.weather-widget .location i[data-v-f3b125a2] {\n    font-size: 60px;\n}\n.weather-widget .location span[data-v-f3b125a2] {\n    font-size: 16px;\n}\n.weather-widget .temperature[data-v-f3b125a2] {\n    font-size: 54px;\n}\n.weather-widget .details[data-v-f3b125a2] {\n    color: #666;\n    font-size: 14px;\n}\n.weather-widget .details[data-v-f3b125a2]:not(:last-child) {\n    border-right: 1px solid #CCC;\n}\n\n\n/*profile 2*/\n.profile-2[data-v-f3b125a2] {\n    background-color: #7D5BAA;\n    border-color: #ccc;\n}\n.profile-2 .head[data-v-f3b125a2] {\n    padding-top: 14px;\n    padding-bottom: 5px;\n    font-size: 18px;\n    background-color: #FFF;\n}\n.profile-2 .data[data-v-f3b125a2] {\n    font-size: 15px;\n    padding-top: 7px;\n    padding-bottom: 6px;\n    color: #FFF;\n}\n.border-right[data-v-f3b125a2]:after {\n    content: '';\n    width: 1px;\n    height: 64px;\n    position: absolute;\n    right: 0;\n    top: 0;\n    border-right: 1px solid #FFF;\n}\n.profile-2 .border-bottom[data-v-f3b125a2]:after {\n    content: '';\n    width: 100%;\n    height: 1px;\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    border-bottom: 1px solid #FFF;\n}\n.card-body .form-control[data-v-f3b125a2]{\n    -webkit-transition: initial;\n    transition: initial;\n}", ""]);
+exports.push([module.i, "/*tabs styles*/\n.tab-pane .card[data-v-f3b125a2] {\r\n    margin: 0;\r\n    border: none;\n}\n.name_center[data-v-f3b125a2]{\r\n    margin-left: 12px;\r\n    margin-top: 5px;\n}\n.name_font[data-v-f3b125a2]{\r\n    font-size: 16px;\r\n    color: #7B7B7B;\n}\n.number_font[data-v-f3b125a2]{\r\n    font-size: 15px;\n}\n.text_color[data-v-f3b125a2]{\r\n    color: #ccc;\n}\r\n/*panel style*/\n.panel[data-v-f3b125a2] {\r\n    border: 1px solid #e5e5e5;\r\n    border-radius: 0;\r\n    -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, .1);\r\n            box-shadow: 0 1px 30px rgba(0, 0, 0, .1);\n}\r\n\r\n\r\n/*user-profile*/\n.user-profile[data-v-f3b125a2] {\r\n    color: #777;\n}\n.user-profile .profile-img[data-v-f3b125a2] {\r\n    width: 110px;\r\n    margin-right: 25px;\n}\n.user-profile .profile-details[data-v-f3b125a2] {\r\n    padding: 10px 0;\n}\n.user-profile .table.account-details > tbody > tr > td[data-v-f3b125a2] {\r\n    padding: 17px 16px;\n}\n.account-details tbody tr[data-v-f3b125a2]:hover {\r\n    background-color: #EEE;\n}\r\n\r\n\r\n/*twitter profile*/\n.tweet-profile .card-header[data-v-f3b125a2] {\r\n    padding-bottom: 45px;\r\n    background-color: #4cb6e5;\r\n    color: #FFF;\n}\n.tweet-profile .profile-img img[data-v-f3b125a2] {\r\n    width: 100px;\r\n    height: 100px;\r\n    border-radius: 50%;\r\n    border: 5px solid #fff;\r\n    margin-top: -50px;\n}\n.tweet-profile .tweet-details[data-v-f3b125a2] {\r\n    font-size: 14px;\r\n    color: #555;\r\n    margin-bottom: 15px;\n}\n.tweet-profile .tweet-details .count[data-v-f3b125a2] {\r\n    margin: 0;\r\n    font-size: 22px;\n}\n.tweet-profile .tweet-details .row div[data-v-f3b125a2]:not(:last-child) {\r\n    border-right: 1px solid #ccc;\n}\n.tweet-profile .events[data-v-f3b125a2] {\r\n    border: 1px solid #bbb;\r\n    padding-top: 2px;\r\n    padding-bottom: 2px;\r\n    margin-top: 15px;\r\n    margin-right: -20px;\r\n    font-size: 18px;\r\n    color: #555;\n}\n.tweet-profile .btn-tweet[data-v-f3b125a2] {\r\n    padding: 5px;\r\n    margin-top: 14px;\n}\r\n\r\n\r\n/*user page*/\n.m-0[data-v-f3b125a2] {\r\n    margin: 0;\n}\n.user-page .cover-image[data-v-f3b125a2] {\r\n    height: 220px;\r\n    width: 100%;\n}\n.user-page .user-pic[data-v-f3b125a2] {\r\n    width: 90px;\r\n    padding: 10px;\n}\n.user-page .post-details[data-v-f3b125a2] {\r\n    display: block;\r\n    padding-top: 25px;\r\n    font-size: 14px;\r\n    color: #777;\n}\n.user-page .views[data-v-f3b125a2] {\r\n    background-color: #e5e5e5;\r\n    padding-top: 12px;\r\n    padding-bottom: 12px;\r\n    color: #555;\n}\n.user-page .views[data-v-f3b125a2]:not(:last-child) {\r\n    border-right: 1px solid #FFF;\n}\r\n\r\n\r\n/*top tabbed panel*/\n.tabbbed-bg[data-v-f3b125a2] {\r\n    padding: 0;\r\n    background-color: #418AC9;\r\n    border-bottom: 0;\n}\n.tabbbed-bg a[data-v-f3b125a2] {\r\n    color: #FFF;\n}\n.tabbbed-bg + .panel-body[data-v-f3b125a2] {\r\n    min-height: 313px;\n}\n.desc-img img[data-v-f3b125a2] {\r\n    width: 50px;\r\n    height: 50px;\r\n    border-radius: 22px;\r\n    margin-right: 13px;\n}\n.nav-tabs.nav-justified > li > a[data-v-f3b125a2] {\r\n    border-bottom: 0;\n}\n.panel-heading .nav > li.active > a[data-v-f3b125a2],\r\n.panel-heading .nav > li > a[data-v-f3b125a2]:hover {\r\n    color: #777;\r\n    background: #fff;\r\n    border-bottom: 1px solid #fff;\n}\n.tab-pane .d-head[data-v-f3b125a2] {\r\n    font-size: 14px;\r\n    color: #337ab7;\r\n    font-weight: bold;\n}\n.tab-pane .c-head[data-v-f3b125a2] {\r\n    font-size: 14px;\n}\n.tab-content .media[data-v-f3b125a2] {\r\n    padding-top: 5px;\r\n    padding-bottom: 5px;\n}\r\n\r\n\r\n/*weekly data line chart*/\n.stats-chart[data-v-f3b125a2] {\r\n    height: 244px;\r\n    background-color: #3399ff;\r\n    font-size: 22px;\n}\r\n\r\n\r\n/*echart*/\n.echarts[data-v-f3b125a2] {\r\n    width: 100%;\r\n    height: 100%;\n}\n.weekly-stats .shots-likes[data-v-f3b125a2] {\r\n    font-weight: bold;\r\n    font-size: 24px;\r\n    padding-top: 15px;\n}\n.weekly-stats .weekly-shots[data-v-f3b125a2]:after {\r\n    content: '';\r\n    width: 1px;\r\n    height: 75px;\r\n    position: absolute;\r\n    right: 0;\r\n    top: 10px;\r\n    border-right: 2px solid #ddd;\n}\n.email-tabs[data-v-f3b125a2] {\r\n    background-color: #efefef;\r\n    border-bottom: 0;\n}\ntextarea[data-v-f3b125a2] {\r\n    resize: vertical;\n}\nul.mail-list[data-v-f3b125a2] {\r\n    padding: 0;\n}\n.table.mail-list[data-v-f3b125a2] {\r\n    margin: 0;\r\n    table-layout: fixed;\r\n    width: 100%;\n}\n.mail-list tbody tr[data-v-f3b125a2] {\r\n    height: 45px\n}\n.mail-list tbody tr[data-v-f3b125a2]:hover {\r\n    background-color: #EEE;\n}\n.mail-list td[data-v-f3b125a2]:nth-child(1),\r\n.mail-list td[data-v-f3b125a2]:nth-child(2) {\r\n    width: 10%;\n}\n.mail-list td[data-v-f3b125a2]:nth-child(4) {\r\n    width: 40%;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\n}\n.mail-list .custom-checkbox[data-v-f3b125a2]{\r\n    margin-bottom: 0;\r\n    margin-top: 7px;\n}\r\n\r\n\r\n/*contact widget*/\n.contact-cover[data-v-f3b125a2] {\r\n    height: 175px;\r\n    width: 100%;\r\n    background-image: url(" + escape(__webpack_require__(847)) + ");\r\n    background-size: cover;\r\n    color: #FFF;\n}\n.contact-widget i[data-v-f3b125a2] {\r\n    cursor: pointer;\n}\n.contact-cover .profile-img[data-v-f3b125a2] {\r\n    width: 60%;\r\n    height: 100%;\r\n    padding-top: 37px;\r\n    padding-left: 6%;\n}\n.contact-cover .profile-img .follow[data-v-f3b125a2] {\r\n    position: absolute;\r\n    top: 110px;\r\n    left: 35%;\r\n    font-size: 16px;\n}\n.contact-cover .profile-img img[data-v-f3b125a2] {\r\n    width: 90px;\r\n    border-radius: 50px;\r\n    border: 3px solid white;\n}\n.contact-cover .group-icon[data-v-f3b125a2] {\r\n    width: 20%;\r\n    height: 100%;\r\n    background-color: rgba(255, 255, 255, 0.19);\r\n    font-size: 24px;\r\n    line-height: 180px;\n}\n.contact-cover .search-icon[data-v-f3b125a2] {\r\n    width: 20%;\r\n    height: 100%;\r\n    background-color: rgba(255, 255, 255, 0.31);\r\n    font-size: 24px;\r\n    line-height: 180px;\n}\n.contact-widget .contact-details[data-v-f3b125a2] {\r\n    font-size: 18px;\n}\n.contact-widget .contact-details h4[data-v-f3b125a2] {\r\n    font-size: 16px;\r\n    color: #777;\n}\r\n\r\n\r\n/*weather widget*/\n.weather-widget .card-header[data-v-f3b125a2] {\r\n    background-color: #3AAB88;\r\n    color: #FFF;\n}\n.weather-widget .location i[data-v-f3b125a2] {\r\n    font-size: 60px;\n}\n.weather-widget .location span[data-v-f3b125a2] {\r\n    font-size: 16px;\n}\n.weather-widget .temperature[data-v-f3b125a2] {\r\n    font-size: 54px;\n}\n.weather-widget .details[data-v-f3b125a2] {\r\n    color: #666;\r\n    font-size: 14px;\n}\n.weather-widget .details[data-v-f3b125a2]:not(:last-child) {\r\n    border-right: 1px solid #CCC;\n}\r\n\r\n\r\n/*profile 2*/\n.profile-2[data-v-f3b125a2] {\r\n    background-color: #7D5BAA;\r\n    border-color: #ccc;\n}\n.profile-2 .head[data-v-f3b125a2] {\r\n    padding-top: 14px;\r\n    padding-bottom: 5px;\r\n    font-size: 18px;\r\n    background-color: #FFF;\n}\n.profile-2 .data[data-v-f3b125a2] {\r\n    font-size: 15px;\r\n    padding-top: 7px;\r\n    padding-bottom: 6px;\r\n    color: #FFF;\n}\n.border-right[data-v-f3b125a2]:after {\r\n    content: '';\r\n    width: 1px;\r\n    height: 64px;\r\n    position: absolute;\r\n    right: 0;\r\n    top: 0;\r\n    border-right: 1px solid #FFF;\n}\n.profile-2 .border-bottom[data-v-f3b125a2]:after {\r\n    content: '';\r\n    width: 100%;\r\n    height: 1px;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    border-bottom: 1px solid #FFF;\n}\n.card-body .form-control[data-v-f3b125a2]{\r\n    -webkit-transition: initial;\r\n    transition: initial;\n}", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 1531:
+/***/ 1536:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -252,7 +252,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_chart_line___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_echarts_lib_chart_line__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_tooltip__ = __webpack_require__(248);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_tooltip___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_tooltip__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_components_widgets_portfolio_portfolio_vue__ = __webpack_require__(1091);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_components_widgets_portfolio_portfolio_vue__ = __webpack_require__(1092);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_components_widgets_portfolio_portfolio_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_components_widgets_portfolio_portfolio_vue__);
 //
 //
@@ -914,7 +914,7 @@ var unsub;
 
 /***/ }),
 
-/***/ 1532:
+/***/ 1537:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -960,7 +960,7 @@ var render = function() {
                           _c("article", { staticClass: "media" }, [
                             _c("a", { staticClass: "float-left desc-img" }, [
                               _c("img", {
-                                attrs: { src: __webpack_require__(1533) }
+                                attrs: { src: __webpack_require__(1538) }
                               })
                             ]),
                             _vm._v(" "),
@@ -985,7 +985,7 @@ var render = function() {
                           _c("article", { staticClass: "media" }, [
                             _c("a", { staticClass: "float-left desc-img" }, [
                               _c("img", {
-                                attrs: { src: __webpack_require__(1534) }
+                                attrs: { src: __webpack_require__(1539) }
                               })
                             ]),
                             _vm._v(" "),
@@ -1010,7 +1010,7 @@ var render = function() {
                           _c("article", { staticClass: "media" }, [
                             _c("a", { staticClass: "float-left desc-img" }, [
                               _c("img", {
-                                attrs: { src: __webpack_require__(1535) }
+                                attrs: { src: __webpack_require__(1540) }
                               })
                             ]),
                             _vm._v(" "),
@@ -1045,7 +1045,7 @@ var render = function() {
                             _c("a", { staticClass: "float-left desc-img" }, [
                               _c("img", {
                                 attrs: {
-                                  src: __webpack_require__(780)
+                                  src: __webpack_require__(781)
                                 }
                               })
                             ]),
@@ -1075,7 +1075,7 @@ var render = function() {
                             _c("a", { staticClass: "float-left  desc-img" }, [
                               _c("img", {
                                 attrs: {
-                                  src: __webpack_require__(774)
+                                  src: __webpack_require__(775)
                                 }
                               })
                             ]),
@@ -1105,7 +1105,7 @@ var render = function() {
                             _c("a", { staticClass: "float-left  desc-img" }, [
                               _c("img", {
                                 attrs: {
-                                  src: __webpack_require__(771)
+                                  src: __webpack_require__(772)
                                 }
                               })
                             ]),
@@ -1815,7 +1815,7 @@ var staticRenderFns = [
             _c("img", {
               staticClass: "img-fluid ml-3 mt-3 mb-3",
               attrs: {
-                src: __webpack_require__(777),
+                src: __webpack_require__(778),
                 alt: "profile image"
               }
             })
@@ -1876,7 +1876,7 @@ var staticRenderFns = [
           _c("img", {
             staticClass: "cover-image img-fluid",
             attrs: {
-              src: __webpack_require__(878),
+              src: __webpack_require__(879),
               alt: "cover-image"
             }
           })
@@ -1887,7 +1887,7 @@ var staticRenderFns = [
             _c("img", {
               staticClass: "user-pic",
               attrs: {
-                src: __webpack_require__(777),
+                src: __webpack_require__(778),
                 alt: "profile image"
               }
             })
@@ -1968,7 +1968,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "contact-cover" }, [
             _c("div", { staticClass: "profile-img float-left" }, [
               _c("img", {
-                attrs: { src: __webpack_require__(774), alt: "" }
+                attrs: { src: __webpack_require__(775), alt: "" }
               }),
               _vm._v(" "),
               _c("span", { staticClass: "follow" }, [
@@ -2162,7 +2162,7 @@ var staticRenderFns = [
             _c("img", {
               staticClass: "img-fluid",
               attrs: {
-                src: __webpack_require__(777),
+                src: __webpack_require__(778),
                 alt: "profile image"
               }
             })
@@ -2248,40 +2248,40 @@ if (false) {
 
 /***/ }),
 
-/***/ 1533:
+/***/ 1538:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/item1.jpg?a070b3eac2f293237851573900872285";
+module.exports = "/GitHub/newpos/public/images/item1.jpg?a070b3eac2f293237851573900872285";
 
 /***/ }),
 
-/***/ 1534:
+/***/ 1539:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/item2.jpg?d8a38c6621c8b7003e3f90b5e7dab24e";
+module.exports = "/GitHub/newpos/public/images/item2.jpg?d8a38c6621c8b7003e3f90b5e7dab24e";
 
 /***/ }),
 
-/***/ 1535:
+/***/ 1540:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/item3.jpg?2af48f89052facfbca22df11efaa95f9";
+module.exports = "/GitHub/newpos/public/images/item3.jpg?2af48f89052facfbca22df11efaa95f9";
 
 /***/ }),
 
-/***/ 741:
+/***/ 742:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(1529)
+  __webpack_require__(1534)
 }
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(1531)
+var __vue_script__ = __webpack_require__(1536)
 /* template */
-var __vue_template__ = __webpack_require__(1532)
+var __vue_template__ = __webpack_require__(1537)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2321,52 +2321,52 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 771:
+/***/ 772:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
+module.exports = "/GitHub/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
 
 /***/ }),
 
-/***/ 774:
+/***/ 775:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
+module.exports = "/GitHub/newpos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
 
 /***/ }),
 
-/***/ 777:
+/***/ 778:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/avatar4.jpg?2bb4ec334d9b5a47d6369df5a4b7cd11";
+module.exports = "/GitHub/newpos/public/images/avatar4.jpg?2bb4ec334d9b5a47d6369df5a4b7cd11";
 
 /***/ }),
 
-/***/ 780:
+/***/ 781:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/avatar1.jpg?2b0314ed7a43445517ca523400549d2d";
+module.exports = "/GitHub/newpos/public/images/avatar1.jpg?2b0314ed7a43445517ca523400549d2d";
 
 /***/ }),
 
-/***/ 791:
+/***/ 792:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/avatar.jpg?cd23a4a129679a15e2583c823c594af2";
+module.exports = "/GitHub/newpos/public/images/avatar.jpg?cd23a4a129679a15e2583c823c594af2";
 
 /***/ }),
 
-/***/ 846:
+/***/ 847:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/profile-coverbg.jpeg?f9d529b73b0abf32afba166473c78231";
+module.exports = "/GitHub/newpos/public/images/profile-coverbg.jpeg?f9d529b73b0abf32afba166473c78231";
 
 /***/ }),
 
-/***/ 878:
+/***/ 879:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/timeline.jpeg?e0be5e2ba70609c6a4127e4753f5e9fa";
+module.exports = "/GitHub/newpos/public/images/timeline.jpeg?e0be5e2ba70609c6a4127e4753f5e9fa";
 
 /***/ })
 

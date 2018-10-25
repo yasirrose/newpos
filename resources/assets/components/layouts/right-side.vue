@@ -16,7 +16,12 @@ export default {
     name: "right-side",
     methods: {
 
-    }
+    },
+    mounted()
+        {
+            this.$store.commit('left_menu', 'close')
+        },
+
 }
 </script>
 <style lang="scss" scoped>

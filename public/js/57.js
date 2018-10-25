@@ -1,6 +1,6 @@
 webpackJsonp([57],{
 
-/***/ 1559:
+/***/ 1568:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,65 +8,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_echarts_v3_src_full_js__ = __webpack_require__(246);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_chart_line__ = __webpack_require__(249);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_chart_line___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_echarts_lib_chart_line__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_chart_map__ = __webpack_require__(262);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_chart_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_echarts_lib_chart_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_chart_treemap__ = __webpack_require__(263);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_chart_treemap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_echarts_lib_chart_treemap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_echarts_lib_chart_graph__ = __webpack_require__(264);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_echarts_lib_chart_graph___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_echarts_lib_chart_graph__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_echarts_lib_chart_gauge__ = __webpack_require__(265);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_echarts_lib_chart_gauge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_echarts_lib_chart_gauge__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_echarts_lib_chart_funnel__ = __webpack_require__(266);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_echarts_lib_chart_funnel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_echarts_lib_chart_funnel__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_echarts_lib_chart_parallel__ = __webpack_require__(267);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_echarts_lib_chart_parallel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_echarts_lib_chart_parallel__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_echarts_lib_chart_sankey__ = __webpack_require__(268);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_echarts_lib_chart_sankey___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_echarts_lib_chart_sankey__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_echarts_lib_chart_boxplot__ = __webpack_require__(269);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_echarts_lib_chart_boxplot___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_echarts_lib_chart_boxplot__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_echarts_lib_component_graphic__ = __webpack_require__(271);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_echarts_lib_component_graphic___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_echarts_lib_component_graphic__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_echarts_lib_component_grid__ = __webpack_require__(272);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_echarts_lib_component_grid___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_echarts_lib_component_grid__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_echarts_lib_component_legend__ = __webpack_require__(250);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_echarts_lib_component_legend___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_echarts_lib_component_legend__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_echarts_lib_component_tooltip__ = __webpack_require__(248);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_echarts_lib_component_tooltip___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_echarts_lib_component_tooltip__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_echarts_lib_component_title__ = __webpack_require__(251);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_echarts_lib_component_title___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_echarts_lib_component_title__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_echarts_lib_component_dataZoom__ = __webpack_require__(258);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_echarts_lib_component_dataZoom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_echarts_lib_component_dataZoom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_echarts_lib_component_visualMap__ = __webpack_require__(273);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_echarts_lib_component_visualMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_echarts_lib_component_visualMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_echarts_lib_component_markPoint__ = __webpack_require__(254);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_echarts_lib_component_markPoint___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_echarts_lib_component_markPoint__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_echarts_lib_component_markLine__ = __webpack_require__(255);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_echarts_lib_component_markLine___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19_echarts_lib_component_markLine__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_echarts_lib_component_markArea__ = __webpack_require__(274);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_echarts_lib_component_markArea___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20_echarts_lib_component_markArea__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_echarts_lib_component_timeline__ = __webpack_require__(256);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_echarts_lib_component_timeline___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21_echarts_lib_component_timeline__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_echarts_lib_component_toolbox__ = __webpack_require__(257);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_echarts_lib_component_toolbox___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22_echarts_lib_component_toolbox__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_zrender_lib_vml_vml__ = __webpack_require__(252);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_zrender_lib_vml_vml___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23_zrender_lib_vml_vml__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_zrender_lib_graphic_LinearGradient__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_zrender_lib_graphic_LinearGradient___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_zrender_lib_graphic_LinearGradient__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_chart_pie__ = __webpack_require__(262);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_chart_pie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_echarts_lib_chart_pie__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_legend__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_legend___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_legend__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_tooltip__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_tooltip___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_tooltip__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_echarts_lib_component_title__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_echarts_lib_component_title___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_echarts_lib_component_title__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_echarts_lib_component_markPoint__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_echarts_lib_component_markPoint___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_echarts_lib_component_markPoint__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_echarts_lib_component_markLine__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_echarts_lib_component_markLine___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_echarts_lib_component_markLine__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_echarts_lib_component_timeline__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_echarts_lib_component_timeline___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_echarts_lib_component_timeline__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_echarts_lib_component_toolbox__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_echarts_lib_component_toolbox___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_echarts_lib_component_toolbox__);
 //
 //
 //
@@ -106,39 +63,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 //uncomment below line to import all charts at once
 // import IEcharts from 'vue-echarts-v3';
-//use only necessary charts to reduce size of package
-
-
-// import 'echarts/lib/chart/bar';
-
-// import 'echarts/lib/chart/pie';
-// import 'echarts/lib/chart/scatter';
-// import 'echarts/lib/chart/radar';
-
-
-
-
-
-
-
-
-
-
-// import 'echarts/lib/chart/candlestick';
-// import 'echarts/lib/chart/effectScatter';
-// import 'echarts/lib/chart/lines';
-// import 'echarts/lib/chart/heatmap';
-
-
-
-
-
-
-// import 'echarts/lib/component/polar';
-// import 'echarts/lib/component/geo';
-// import 'echarts/lib/component/parallel';
-// import 'echarts/lib/component/singleAxis';
-// import 'echarts/lib/component/brush';
+// use only necessary charts to reduce size of package
 
 
 
@@ -166,363 +91,254 @@ var unsub;
             instances: [],
             loading: false,
             ajaxloading: true,
-            //================line chart data start======
-            line: {
-                tooltip: {},
-                grid: {
-                    top: 10,
-                    bottom: 35,
-                    right: '7%'
-                },
-                xAxis: {
-                    axisLine: {
-                        lineStyle: {
-                            color: '#4d8a77'
-                        }
-                    },
-                    data: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-                },
-                yAxis: {
-                    axisLine: {
-                        lineStyle: {
-                            color: '#4d8a77'
-                        }
-                    },
-                    axisTick: {
-                        show: true,
-                        alignWithLabel: false,
-                        interval: 'auto',
-                        inside: false,
-                        length: 5
-                    }
-                },
-                series: [{
-                    name: 'item 1',
-                    type: 'line',
-                    symbolSize: 5,
-                    data: [8, 13, 10, 25, 20, 27, 38],
-                    color: '#4d8a77'
-                }, {
-                    name: 'item 2',
-                    type: 'line',
-                    symbolSize: 5,
-                    data: [11, 9, 6, 16, 19, 19, 33],
-                    color: '#4d8a77'
-
-                }]
-            },
-            //================line chart data end======
-            //=========AJAX linechart start=======
-            serverline: {
-                tooltip: {},
-                grid: {
-                    top: 10,
-                    bottom: 35,
-                    right: '7%'
-                },
-                xAxis: {
-                    axisLine: {
-                        lineStyle: {
-                            color: '#46a092'
-                        }
-                    },
-                    data: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-                },
-                yAxis: {
-                    axisLine: {
-                        lineStyle: {
-                            color: '#46a092'
-                        }
-                    },
-                    axisTick: {
-                        show: true,
-                        alignWithLabel: false,
-                        interval: 'auto',
-                        inside: false,
-                        length: 5
-                    }
-                },
-                series: [{
-                    name: 'item 1',
-                    type: 'line',
-                    symbolSize: 5,
-                    data: [],
-                    color: '#46a092'
-                }, {
-                    name: 'item 2',
-                    type: 'line',
-                    symbolSize: 5,
-                    data: [],
-                    color: '#46a092'
-                }]
-            },
-            //=========AJAX linechart end=========
-            //=======stacked line chart start==========
-            stackedline: {
+            //==========basic pie chart data start=====
+            pie: {
                 tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        type: 'cross',
-                        label: {
-                            backgroundColor: '#ccc'
-                        }
-                    }
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
                 },
                 legend: {
+                    orient: 'vertical',
+                    left: 'left',
                     data: ['A', 'B', 'C', 'D', 'E']
                 },
-                toolbox: {
-                    feature: {
-                        saveAsImage: {
-                            title: "Save"
+                series: [{
+                    name: 'Source',
+                    type: 'pie',
+                    radius: '80%',
+                    center: ['50%', '50%'],
+                    data: [{
+                        value: 335,
+                        name: 'A',
+
+                        itemStyle: {
+                            normal: {
+                                color: '#9bbdb3'
+                            }
+                        }
+                    }, {
+                        value: 310,
+                        name: 'B',
+
+                        itemStyle: {
+                            normal: {
+                                color: '#6eb09c'
+                            }
+                        }
+                    }, {
+                        value: 234,
+                        name: 'C',
+
+                        itemStyle: {
+                            normal: {
+                                color: '#6ebabe'
+                            }
+                        }
+                    }, {
+                        value: 135,
+                        name: 'D',
+
+                        itemStyle: {
+                            normal: {
+                                color: '#78bbbf'
+                            }
+                        }
+                    }, {
+                        value: 1548,
+                        name: 'E',
+
+                        itemStyle: {
+                            normal: {
+                                color: '#83b3a4'
+                            }
+                        }
+                    }],
+
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
                         }
                     }
+                }]
+            },
+            //==========basic pie chart data end=====
+            //==========AJAX pie chart data start=====
+            ajaxpie: {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
                 },
-                grid: {
-                    left: '3%',
-                    right: '4%',
-                    bottom: '3%',
-                    containLabel: true
+                legend: {
+                    orient: 'vertical',
+                    left: 'left',
+                    data: []
                 },
-                xAxis: [{
-                    type: 'category',
-                    boundaryGap: false,
-                    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-                }],
-                yAxis: [{
-                    type: 'value'
-                }],
                 series: [{
-                    name: 'A',
-                    type: 'line',
-                    stack: 'A',
-                    areaStyle: {
-                        normal: {}
-                    },
-                    data: [120, 132, 101, 134, 90, 230, 210]
-                }, {
-                    name: 'B',
-                    type: 'line',
-                    stack: 'B',
-                    areaStyle: {
-                        normal: {}
-                    },
-                    data: [220, 182, 191, 234, 290, 330, 310]
-                }, {
-                    name: 'C',
-                    type: 'line',
-                    stack: 'C',
-                    areaStyle: {
-                        normal: {}
-                    },
-                    data: [150, 232, 201, 154, 190, 330, 410]
-                }, {
-                    name: 'D',
-                    type: 'line',
-                    stack: 'D',
-                    areaStyle: {
-                        normal: {}
-                    },
-                    data: [320, 332, 301, 334, 390, 330, 320]
-                }, {
-                    name: 'E',
-                    type: 'line',
-                    stack: 'E',
+                    name: 'Source',
+                    type: 'pie',
+                    radius: '80%',
+                    center: ['50%', '50%'],
+                    data: [],
+                    color: ['#d69292', '#8599c1', '#4f699c', '#8fa9dc', '#d4ab6e']
+
+                }]
+            },
+            //==========AJAX pie chart data end=====
+            //==========Doughnut chart data start=====
+            doughnut: {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b}: {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    x: 'left',
+                    data: ['A', 'B', 'C', 'D', 'E']
+                },
+                series: [{
+                    name: 'Sales',
+                    type: 'pie',
+                    radius: ['50%', '70%'],
+                    avoidLabelOverlap: false,
                     label: {
                         normal: {
+                            show: false,
+                            position: 'center'
+                        },
+                        emphasis: {
                             show: true,
-                            position: 'top'
+                            textStyle: {
+                                fontSize: '30',
+                                fontWeight: 'bold'
+                            }
                         }
                     },
-                    areaStyle: {
-                        normal: {}
+                    labelLine: {
+                        normal: {
+                            show: false
+                        }
                     },
-                    data: [820, 932, 901, 934, 1290, 1330, 1320]
+                    data: [{
+                        value: 335,
+                        name: 'A',
+
+                        itemStyle: {
+                            normal: {
+                                color: '#f5918d'
+                            }
+                        }
+                    }, {
+                        value: 310,
+                        name: 'B',
+
+                        itemStyle: {
+                            normal: {
+                                color: '#6eb09c'
+                            }
+                        }
+
+                    }, {
+                        value: 234,
+                        name: 'C',
+                        itemStyle: {
+                            normal: {
+                                color: '#1badb5'
+                            }
+                        }
+
+                    }, {
+                        value: 135,
+                        name: 'D',
+                        itemStyle: {
+                            normal: {
+                                color: '#f5918d'
+                            }
+                        }
+
+                    }, {
+                        value: 1548,
+                        name: 'E',
+
+                        itemStyle: {
+                            normal: {
+                                color: '#6ebabe'
+                            }
+                        }
+                    }]
                 }]
             },
-            //=======stacked line chart end==========
-            //=======pointers line chart start============
-            pointers: {
+            //==========Doughnut chart data end=====
+            //==========nested pie data start=====
+            nested: {
+                color: ['#f5918d', '#6ebabe', '#6ebabe', '#6eb09c', '#1badb5'],
                 tooltip: {
-                    trigger: 'axis'
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b}: {c} ({d}%)"
                 },
                 legend: {
-                    data: ['A', 'B']
-                },
-                xAxis: {
-                    type: 'category',
-                    boundaryGap: false,
-                    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-                },
-                yAxis: {
-                    type: 'value',
-                    axisLabel: {
-                        formatter: '{value} °C'
-                    }
+                    orient: 'vertical',
+                    x: 'left',
+                    data: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
                 },
                 series: [{
-                    name: 'A',
-                    type: 'line',
+                    name: 'ITEM2',
+                    type: 'pie',
+                    selectedMode: 'single',
+                    radius: [0, '30%'],
 
-                    data: [11, 11, 15, 13, 12, 13, 10],
-                    markPoint: {
-                        data: [{
-                            type: 'max',
-                            name: 'max'
-                        }, {
-                            type: 'min',
-                            name: 'min'
-                        }]
+                    label: {
+                        normal: {
+                            position: 'inner'
+                        }
                     },
-                    markLine: {
-                        data: [{
-                            type: 'average',
-                            name: 'average'
-                        }]
-                    }
+                    labelLine: {
+                        normal: {
+                            show: false
+                        }
+                    },
+                    data: [{
+                        value: 335,
+                        name: 'A',
+                        selected: true
+                    }, {
+                        value: 679,
+                        name: 'B'
+                    }, {
+                        value: 1548,
+                        name: 'C'
+                    }]
                 }, {
-                    name: 'B',
-                    type: 'line',
-                    data: [1, -2, 2, 5, 3, 2, 0],
-                    markPoint: {
-                        data: [{
-                            name: 'week',
-                            value: -2,
-                            xAxis: 1,
-                            yAxis: -1.5
-                        }]
-                    },
-                    markLine: {
-                        data: [{
-                            type: 'average',
-                            name: 'average'
-                        }, [{
-                            symbol: 'none',
-                            x: '90%',
-                            yAxis: 'max'
-                        }, {
-                            symbol: 'circle',
-                            label: {
-                                normal: {
-                                    position: 'start',
-                                    formatter: 'max'
-                                }
-                            },
-                            type: 'max',
-                            name: 'max'
-                        }]]
-                    }
+                    name: 'ITEM1',
+                    type: 'pie',
+                    radius: ['40%', '55%'],
+
+                    data: [{
+                        value: 310,
+                        name: 'D'
+                    }, {
+                        value: 234,
+                        name: 'E'
+                    }, {
+                        value: 135,
+                        name: 'F'
+                    }, {
+                        value: 1048,
+                        name: 'G'
+                    }, {
+                        value: 251,
+                        name: 'H'
+                    }, {
+                        value: 147,
+                        name: 'I'
+                    }, {
+                        value: 102,
+                        name: 'J'
+                    }]
                 }]
-            },
-            //=======pointers line chart end============
-            // ======area chart start================
-            area_chart: {
-                title: {
-                    text: '',
-                    subtext: ''
-                },
-                tooltip: {
-                    trigger: 'axis'
-                },
-                legend: {
-                    data: ['A', 'B', 'C']
-                },
-
-                calculable: true,
-                xAxis: [{
-                    type: 'category',
-                    boundaryGap: false,
-                    data: ['Mon', 'Tue', 'Wen', 'Thr', 'Fri', 'Sat', 'Sun']
-                }],
-                yAxis: [{
-                    type: 'value'
-                }],
-                series: [{
-                    name: 'A',
-                    type: 'line',
-                    smooth: true,
-
-                    itemStyle: {
-                        normal: {
-                            areaStyle: {
-                                type: 'default',
-                                color: '#e29e9f'
-                            }
-                        }
-                    },
-                    data: [10, 12, 21, 54, 260, 830, 710]
-                }, {
-                    name: 'B',
-                    type: 'line',
-                    smooth: true,
-                    itemStyle: {
-                        normal: {
-                            areaStyle: {
-                                type: 'default',
-                                color: '#8db4b7'
-                            }
-                        }
-                    },
-                    data: [30, 182, 434, 791, 390, 30, 10]
-                }, {
-                    name: 'C',
-                    type: 'line',
-                    smooth: true,
-                    itemStyle: {
-                        normal: {
-                            areaStyle: {
-                                type: 'default',
-                                color: '#82a779'
-                            }
-                        }
-                    },
-                    data: [1320, 1132, 601, 234, 120, 90, 20]
-                }]
-            },
-            // =============area chart end==========
-            // =================dischart Start==========
-            dischart: {
-                tooltip: {
-                    trigger: 'axis'
-                },
-
-                dataZoom: {
-                    show: true,
-                    realtime: true,
-                    y: 36,
-                    height: 20,
-                    start: 40,
-                    end: 60
-                },
-                xAxis: [{
-                    type: 'category',
-                    boundaryGap: false,
-                    data: function () {
-                        var list = [];
-                        var n = 0;
-                        while (n++ < 150) {
-                            list.push(n);
-                        }
-                        return list;
-                    }()
-                }],
-                yAxis: [{
-                    type: 'value'
-                }],
-                series: [{
-                    name: 'dz',
-                    type: 'line',
-                    data: function () {
-                        var list = [];
-                        for (var i = 1; i <= 150; i++) {
-                            list.push(Math.round(Math.random() * 30));
-                        }
-                        return list;
-                    }()
-                }],
-                calculable: false
-            }
-        };
+                //==========nested pie data end=====
+            } };
     },
 
     mounted: function mounted() {
@@ -537,10 +353,11 @@ var unsub;
                 });
             }
         });
-        axios.get("http://www.filltext.com/?rows=2&chartdata={numberArray|7,50}").then(function (response) {
-            for (var i = 0; i < response.data.length; i++) {
-                _this.serverline.series[i].data = response.data[i].chartdata;
-            }
+        axios.get("http://www.filltext.com/?rows=5&value={number|50}&name={usState|abbr}").then(function (response) {
+            _this.ajaxpie.series[0].data = response.data;
+            response.data.forEach(function (item, index) {
+                _this.ajaxpie.legend.data.push(item.name);
+            });
             _this.ajaxloading = false;
         }).catch(function (error) {});
     },
@@ -557,7 +374,7 @@ var unsub;
 
 /***/ }),
 
-/***/ 1560:
+/***/ 1569:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -574,7 +391,7 @@ var render = function() {
             "b-card",
             {
               staticClass: "bg-primary-card",
-              attrs: { header: "Basic Line chart", "header-tag": "h4" }
+              attrs: { header: "Basic Pie chart", "header-tag": "h4" }
             },
             [
               _c(
@@ -582,7 +399,37 @@ var render = function() {
                 { staticStyle: { height: "350px" } },
                 [
                   _c("IEcharts", {
-                    attrs: { option: _vm.line, loading: _vm.loading },
+                    attrs: { option: _vm.pie, loading: _vm.loading },
+                    on: { ready: _vm.onReady }
+                  })
+                ],
+                1
+              )
+            ]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-lg-6 mb-3" },
+        [
+          _c(
+            "b-card",
+            {
+              staticClass: "bg-warning-card",
+              attrs: { header: "AJAX Pie chart", "header-tag": "h4" }
+            },
+            [
+              _c("h3", { staticClass: "card-title" }),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticStyle: { height: "350px" } },
+                [
+                  _c("IEcharts", {
+                    attrs: { option: _vm.ajaxpie, loading: _vm.ajaxloading },
                     on: { ready: _vm.onReady }
                   })
                 ],
@@ -602,7 +449,7 @@ var render = function() {
             "b-card",
             {
               staticClass: "bg-success-card",
-              attrs: { header: "AJAX Line chart", "header-tag": "h4" }
+              attrs: { header: "Doughnut chart", "header-tag": "h4" }
             },
             [
               _c(
@@ -610,7 +457,7 @@ var render = function() {
                 { staticStyle: { height: "350px" } },
                 [
                   _c("IEcharts", {
-                    attrs: { option: _vm.serverline, loading: _vm.ajaxloading },
+                    attrs: { option: _vm.doughnut, loading: _vm.loading },
                     on: { ready: _vm.onReady }
                   })
                 ],
@@ -624,108 +471,21 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-lg-12 mb-3" },
-        [
-          _c(
-            "b-card",
-            {
-              staticClass: "bg-primary-card",
-              attrs: { header: "Stacked Area chart", "header-tag": "h4" }
-            },
-            [
-              _c(
-                "div",
-                { staticStyle: { height: "350px" } },
-                [
-                  _c("IEcharts", {
-                    attrs: { option: _vm.stackedline, loading: _vm.loading },
-                    on: { ready: _vm.onReady }
-                  })
-                ],
-                1
-              )
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-12 mb-3" },
-        [
-          _c(
-            "b-card",
-            {
-              staticClass: "bg-success-card",
-              attrs: { header: "Line chart with Pointers", "header-tag": "h4" }
-            },
-            [
-              _c(
-                "div",
-                { staticStyle: { height: "350px" } },
-                [
-                  _c("IEcharts", {
-                    attrs: { option: _vm.pointers, loading: _vm.loading },
-                    on: { ready: _vm.onReady }
-                  })
-                ],
-                1
-              )
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-12 mb-3" },
+        { staticClass: "col-lg-6 mb-3" },
         [
           _c(
             "b-card",
             {
               staticClass: "bg-info-card",
-              attrs: {
-                header: "Data Area Control Line Chart",
-                "header-tag": "h4"
-              }
+              attrs: { header: "Nested Pie chart", "header-tag": "h4" }
             },
             [
               _c(
                 "div",
-                { staticStyle: { height: "400px" } },
+                { staticStyle: { height: "350px" } },
                 [
                   _c("IEcharts", {
-                    attrs: { option: _vm.dischart, loading: _vm.loading },
-                    on: { ready: _vm.onReady }
-                  })
-                ],
-                1
-              )
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-12 mb-3" },
-        [
-          _c(
-            "b-card",
-            {
-              staticClass: "bg-info-card",
-              attrs: { header: " Area  Chart", "header-tag": "h4" }
-            },
-            [
-              _c(
-                "div",
-                { staticStyle: { height: "400px" } },
-                [
-                  _c("IEcharts", {
-                    attrs: { option: _vm.area_chart, loading: _vm.loading },
+                    attrs: { option: _vm.nested, loading: _vm.loading },
                     on: { ready: _vm.onReady }
                   })
                 ],
@@ -745,21 +505,21 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-1b37dfda", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7c485c07", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 744:
+/***/ 747:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(1559)
+var __vue_script__ = __webpack_require__(1568)
 /* template */
-var __vue_template__ = __webpack_require__(1560)
+var __vue_template__ = __webpack_require__(1569)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -776,7 +536,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/components/pages/e_linecharts.vue"
+Component.options.__file = "resources/assets/components/pages/e_piecharts.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -785,9 +545,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1b37dfda", Component.options)
+    hotAPI.createRecord("data-v-7c485c07", Component.options)
   } else {
-    hotAPI.reload("data-v-1b37dfda", Component.options)
+    hotAPI.reload("data-v-7c485c07", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true

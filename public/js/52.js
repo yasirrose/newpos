@@ -1,22 +1,22 @@
 webpackJsonp([52],{
 
-/***/ 1704:
+/***/ 1705:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1705);
+var content = __webpack_require__(1706);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(93)("440e18bc", content, false, {});
+var update = __webpack_require__(93)("a7b57324", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7387cf38\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./404.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7387cf38\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./404.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-af94a716\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./500.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-af94a716\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./500.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -27,7 +27,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1705:
+/***/ 1706:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(49)(false);
@@ -35,14 +35,14 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "\n.bg-color[data-v-7387cf38] {\n    background-color: #EEE;\n}\n.container[data-v-7387cf38] {\n    min-height: 100vh;\n    color: #FFF;\n}\n.error_content[data-v-7387cf38] {\n    margin-top: 7%;\n}\n.error[data-v-7387cf38] {\n    font-size: 150px;\n    line-height: 160px;\n    color: #555;\n}\n.error-type[data-v-7387cf38] {\n    font-size: 28px;\n    color: #999;\n}\n.error-msg[data-v-7387cf38] {\n    font-size: 18px;\n    margin: 45px 0;\n    color: #333;\n}\n.seperator[data-v-7387cf38] {\n    border: 0;\n    height: 2px;\n    margin: 20px 0;\n    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, .6)), to(rgba(0, 0, 0, 0)));\n    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .6), rgba(0, 0, 0, 0));\n}\n", ""]);
+exports.push([module.i, "\n.bg-color[data-v-af94a716] {\r\n    background-color: #EEE;\n}\n.container[data-v-af94a716] {\r\n    min-height: 100vh;\r\n    color: #FFF;\n}\n.error_content[data-v-af94a716] {\r\n    margin-top: 7%;\n}\n.error[data-v-af94a716] {\r\n    font-size: 150px;\r\n    line-height: 160px;\r\n    color: #555;\n}\n.error-type[data-v-af94a716] {\r\n    font-size: 28px;\r\n    color: #999;\n}\n.error-msg[data-v-af94a716] {\r\n    font-size: 18px;\r\n    margin: 45px 0;\r\n    color: #333;\n}\n.seperator[data-v-af94a716] {\r\n    border: 0;\r\n    height: 2px;\r\n    margin: 20px 0;\r\n    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, .6)), to(rgba(0, 0, 0, 0)));\r\n    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .6), rgba(0, 0, 0, 0));\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 1706:
+/***/ 1707:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -81,7 +81,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1707:
+/***/ 1708:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -139,16 +139,16 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", [
-      _c("div", { staticClass: "error" }, [_c("span", [_vm._v("404")])]),
+      _c("div", { staticClass: "error" }, [_c("span", [_vm._v("500")])]),
       _vm._v(" "),
       _c("div", { staticClass: "error-type" }, [
-        _c("span", [_vm._v("PAGE NOT FOUND")])
+        _c("span", [_vm._v("INTERNAL SERVER ERROR")])
       ]),
       _vm._v(" "),
       _c("div", [
         _c("p", { staticClass: "error-msg" }, [
           _vm._v(
-            "This is not the place you are looking for, you may try the below actions. "
+            "Something went wrong at our end, we are working on it. Mean while try below options. "
           )
         ])
       ])
@@ -160,7 +160,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7387cf38", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-af94a716", module.exports)
   }
 }
 
@@ -172,19 +172,19 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(1704)
+  __webpack_require__(1705)
 }
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(1706)
+var __vue_script__ = __webpack_require__(1707)
 /* template */
-var __vue_template__ = __webpack_require__(1707)
+var __vue_template__ = __webpack_require__(1708)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-7387cf38"
+var __vue_scopeId__ = "data-v-af94a716"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -195,7 +195,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/components/pages/404.vue"
+Component.options.__file = "resources/assets/components/pages/500.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -204,9 +204,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7387cf38", Component.options)
+    hotAPI.createRecord("data-v-af94a716", Component.options)
   } else {
-    hotAPI.reload("data-v-7387cf38", Component.options)
+    hotAPI.reload("data-v-af94a716", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true

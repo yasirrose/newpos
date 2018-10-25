@@ -1,6 +1,6 @@
 webpackJsonp([58],{
 
-/***/ 1561:
+/***/ 1564:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10,30 +10,50 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_echarts_v3_src_full_js__ = __webpack_require__(246);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_chart_line__ = __webpack_require__(249);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_chart_line___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_echarts_lib_chart_line__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_chart_bar__ = __webpack_require__(260);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_chart_bar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_echarts_lib_chart_bar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_dataZoom__ = __webpack_require__(258);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_dataZoom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_echarts_lib_component_dataZoom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_echarts_lib_component_legend__ = __webpack_require__(250);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_echarts_lib_component_legend___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_echarts_lib_component_legend__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_echarts_lib_component_tooltip__ = __webpack_require__(248);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_echarts_lib_component_tooltip___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_echarts_lib_component_tooltip__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_echarts_lib_chart_effectScatter__ = __webpack_require__(270);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_echarts_lib_chart_effectScatter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_echarts_lib_chart_effectScatter__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_echarts_lib_component_title__ = __webpack_require__(251);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_echarts_lib_component_title___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_echarts_lib_component_title__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_echarts_lib_component_markPoint__ = __webpack_require__(254);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_echarts_lib_component_markPoint___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_echarts_lib_component_markPoint__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_echarts_lib_component_markLine__ = __webpack_require__(255);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_echarts_lib_component_markLine___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_echarts_lib_component_markLine__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_echarts_lib_component_timeline__ = __webpack_require__(256);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_echarts_lib_component_timeline___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_echarts_lib_component_timeline__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_echarts_lib_component_toolbox__ = __webpack_require__(257);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_echarts_lib_component_toolbox___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_echarts_lib_component_toolbox__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_zrender_lib_vml_vml__ = __webpack_require__(252);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_zrender_lib_vml_vml___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_zrender_lib_vml_vml__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_zrender_lib_graphic_LinearGradient__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_zrender_lib_graphic_LinearGradient___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_zrender_lib_graphic_LinearGradient__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_chart_map__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_chart_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_echarts_lib_chart_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_chart_treemap__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_echarts_lib_chart_treemap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_echarts_lib_chart_treemap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_echarts_lib_chart_graph__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_echarts_lib_chart_graph___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_echarts_lib_chart_graph__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_echarts_lib_chart_gauge__ = __webpack_require__(266);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_echarts_lib_chart_gauge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_echarts_lib_chart_gauge__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_echarts_lib_chart_funnel__ = __webpack_require__(267);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_echarts_lib_chart_funnel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_echarts_lib_chart_funnel__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_echarts_lib_chart_parallel__ = __webpack_require__(268);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_echarts_lib_chart_parallel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_echarts_lib_chart_parallel__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_echarts_lib_chart_sankey__ = __webpack_require__(269);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_echarts_lib_chart_sankey___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_echarts_lib_chart_sankey__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_echarts_lib_chart_boxplot__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_echarts_lib_chart_boxplot___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_echarts_lib_chart_boxplot__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_echarts_lib_component_graphic__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_echarts_lib_component_graphic___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_echarts_lib_component_graphic__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_echarts_lib_component_grid__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_echarts_lib_component_grid___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_echarts_lib_component_grid__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_echarts_lib_component_legend__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_echarts_lib_component_legend___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_echarts_lib_component_legend__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_echarts_lib_component_tooltip__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_echarts_lib_component_tooltip___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_echarts_lib_component_tooltip__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_echarts_lib_component_title__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_echarts_lib_component_title___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_echarts_lib_component_title__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_echarts_lib_component_dataZoom__ = __webpack_require__(258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_echarts_lib_component_dataZoom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_echarts_lib_component_dataZoom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_echarts_lib_component_visualMap__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_echarts_lib_component_visualMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_echarts_lib_component_visualMap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_echarts_lib_component_markPoint__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_echarts_lib_component_markPoint___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_echarts_lib_component_markPoint__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_echarts_lib_component_markLine__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_echarts_lib_component_markLine___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19_echarts_lib_component_markLine__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_echarts_lib_component_markArea__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_echarts_lib_component_markArea___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20_echarts_lib_component_markArea__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_echarts_lib_component_timeline__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_echarts_lib_component_timeline___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21_echarts_lib_component_timeline__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_echarts_lib_component_toolbox__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_echarts_lib_component_toolbox___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22_echarts_lib_component_toolbox__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_zrender_lib_vml_vml__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_zrender_lib_vml_vml___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23_zrender_lib_vml_vml__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_zrender_lib_graphic_LinearGradient__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_zrender_lib_graphic_LinearGradient___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_zrender_lib_graphic_LinearGradient__);
 //
 //
 //
@@ -89,6 +109,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //use only necessary charts to reduce size of package
 
 
+// import 'echarts/lib/chart/bar';
+
+// import 'echarts/lib/chart/pie';
+// import 'echarts/lib/chart/scatter';
+// import 'echarts/lib/chart/radar';
+
+
+
+
+
+
+
+
+
+
+// import 'echarts/lib/chart/candlestick';
+// import 'echarts/lib/chart/effectScatter';
+// import 'echarts/lib/chart/lines';
+// import 'echarts/lib/chart/heatmap';
+
+
+
+
+
+
+// import 'echarts/lib/component/polar';
+// import 'echarts/lib/component/geo';
+// import 'echarts/lib/component/parallel';
+// import 'echarts/lib/component/singleAxis';
+// import 'echarts/lib/component/brush';
 
 
 
@@ -116,111 +166,117 @@ var unsub;
             instances: [],
             loading: false,
             ajaxloading: true,
-            //===========basic chart data start=========
-            bar: {
+            //================line chart data start======
+            line: {
+                tooltip: {},
                 grid: {
-                    top: 25,
-                    bottom: 40,
+                    top: 10,
+                    bottom: 35,
                     right: '7%'
                 },
                 xAxis: {
-                    data: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'],
-                    axisLabel: {
-                        inside: true,
-                        textStyle: {
-                            color: '#fff'
+                    axisLine: {
+                        lineStyle: {
+                            color: '#4d8a77'
                         }
                     },
-                    axisTick: {
-                        show: false
-                    },
-                    axisLine: {
-                        show: false
-                    },
-                    z: 10
+                    data: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
                 },
                 yAxis: {
                     axisLine: {
-                        show: false
+                        lineStyle: {
+                            color: '#4d8a77'
+                        }
                     },
                     axisTick: {
-                        show: false
-                    },
-                    axisLabel: {
-                        textStyle: {
-                            color: '#999'
-                        }
-                    }
-                },
-                series: [{
-                    type: 'bar',
-                    itemStyle: {
-                        normal: {
-                            color: '#6ebabe'
-                        }
-                    },
-                    data: [220, 182, 191, 234, 290, 330, 310, 123, 442, 321, 90, 149]
-                }]
-            },
-            //===========basic chart data end=========
-            //===========AJAX chart data start=========
-            ajaxbar: {
-                grid: {
-                    top: 25,
-                    bottom: 40,
-                    right: '7%'
-                },
-                xAxis: {
-                    data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                    axisLabel: {
+                        show: true,
+                        alignWithLabel: false,
+                        interval: 'auto',
                         inside: false,
-                        textStyle: {
-                            color: '#000'
-                        }
-                    },
-                    axisTick: {
-                        show: false
-                    },
-                    axisLine: {
-                        show: false
-                    },
-                    z: 10
-                },
-                yAxis: {
-                    axisLine: {
-                        show: false
-                    },
-                    axisTick: {
-                        show: false
-                    },
-                    axisLabel: {
-                        textStyle: {
-                            color: '#999'
-                        }
+                        length: 5
                     }
                 },
                 series: [{
-                    type: 'bar',
-                    itemStyle: {
-                        normal: {
-                            color: '#6f8dd5'
-                        }
-                    },
-                    data: []
+                    name: 'item 1',
+                    type: 'line',
+                    symbolSize: 5,
+                    data: [8, 13, 10, 25, 20, 27, 38],
+                    color: '#4d8a77'
+                }, {
+                    name: 'item 2',
+                    type: 'line',
+                    symbolSize: 5,
+                    data: [11, 9, 6, 16, 19, 19, 33],
+                    color: '#4d8a77'
+
                 }]
             },
-            //===========AJAX chart data end=========
-            //===========Negative chart data end=========
-            negativebar: {
-                color: ['#83b394', '#6f8dd5'],
+            //================line chart data end======
+            //=========AJAX linechart start=======
+            serverline: {
+                tooltip: {},
+                grid: {
+                    top: 10,
+                    bottom: 35,
+                    right: '7%'
+                },
+                xAxis: {
+                    axisLine: {
+                        lineStyle: {
+                            color: '#46a092'
+                        }
+                    },
+                    data: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+                },
+                yAxis: {
+                    axisLine: {
+                        lineStyle: {
+                            color: '#46a092'
+                        }
+                    },
+                    axisTick: {
+                        show: true,
+                        alignWithLabel: false,
+                        interval: 'auto',
+                        inside: false,
+                        length: 5
+                    }
+                },
+                series: [{
+                    name: 'item 1',
+                    type: 'line',
+                    symbolSize: 5,
+                    data: [],
+                    color: '#46a092'
+                }, {
+                    name: 'item 2',
+                    type: 'line',
+                    symbolSize: 5,
+                    data: [],
+                    color: '#46a092'
+                }]
+            },
+            //=========AJAX linechart end=========
+            //=======stacked line chart start==========
+            stackedline: {
                 tooltip: {
                     trigger: 'axis',
                     axisPointer: {
-                        type: 'shadow'
+                        type: 'cross',
+                        label: {
+                            backgroundColor: '#ccc'
+                        }
                     }
                 },
                 legend: {
-                    data: ['A', 'B', 'C']
+                    data: ['A', 'B', 'C', 'D', 'E']
+                },
+                toolbox: {
+                    feature: {
+                        saveAsImage: {
+                            title: "Save"
+                        }
+                    }
                 },
                 grid: {
                     left: '3%',
@@ -229,68 +285,8 @@ var unsub;
                     containLabel: true
                 },
                 xAxis: [{
-                    type: 'value'
-                }],
-                yAxis: [{
                     type: 'category',
-                    axisTick: {
-                        show: false
-                    },
-                    data: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-                }],
-                series: [{
-                    name: 'A',
-                    type: 'bar',
-                    label: {
-                        normal: {
-                            show: true,
-                            position: 'inside'
-                        }
-                    },
-                    data: [200, 170, 240, 244, 200, 220, 210]
-                }, {
-                    name: 'C',
-                    type: 'bar',
-                    stack: 'Total',
-                    label: {
-                        normal: {
-                            show: true
-                        }
-                    },
-                    data: [320, 302, 341, 374, 390, 450, 420]
-                }, {
-                    name: 'B',
-                    type: 'bar',
-                    stack: 'Total',
-                    label: {
-                        normal: {
-                            show: true,
-                            position: 'left'
-                        }
-                    },
-                    data: [-120, -132, -101, -134, -190, -230, -210]
-                }]
-            },
-            //===========Negative chart data end=========
-            //===========Stacked bar chart start===============
-            stacked: {
-                title: {
-
-                    subtext: ''
-                },
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: { //  Axis indicator, coordinate trigger effective
-                        type: 'shadow' // The default is a straight line：'line' | 'shadow'
-                    }
-                },
-                legend: {
-                    data: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
-                },
-
-                calculable: true,
-                xAxis: [{
-                    type: 'category',
+                    boundaryGap: false,
                     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
                 }],
                 yAxis: [{
@@ -298,235 +294,236 @@ var unsub;
                 }],
                 series: [{
                     name: 'A',
-                    type: 'bar',
-                    data: [320, 332, 301, 334, 390, 330, 320]
-                }, {
-                    name: 'B',
-                    type: 'bar',
-                    stack: 'advertising',
+                    type: 'line',
+                    stack: 'A',
+                    areaStyle: {
+                        normal: {}
+                    },
                     data: [120, 132, 101, 134, 90, 230, 210]
                 }, {
-                    name: 'C',
-                    type: 'bar',
-                    stack: '',
+                    name: 'B',
+                    type: 'line',
+                    stack: 'B',
+                    areaStyle: {
+                        normal: {}
+                    },
                     data: [220, 182, 191, 234, 290, 330, 310]
                 }, {
-                    name: 'D',
-                    type: 'bar',
-                    stack: 'advertising',
+                    name: 'C',
+                    type: 'line',
+                    stack: 'C',
+                    areaStyle: {
+                        normal: {}
+                    },
                     data: [150, 232, 201, 154, 190, 330, 410]
                 }, {
+                    name: 'D',
+                    type: 'line',
+                    stack: 'D',
+                    areaStyle: {
+                        normal: {}
+                    },
+                    data: [320, 332, 301, 334, 390, 330, 320]
+                }, {
                     name: 'E',
-                    type: 'bar',
-                    data: [862, 1018, 964, 1026, 1679, 1600, 1570],
-                    markLine: {
-                        itemStyle: {
-                            normal: {
-                                lineStyle: {
-                                    type: 'dashed'
-                                }
-                            }
-                        },
-                        data: [[{
-                            type: 'min'
-                        }, {
-                            type: 'max'
-                        }]]
-                    }
-                }, {
-                    name: 'F',
-                    type: 'bar',
-                    barWidth: 5,
-                    stack: 'search engine',
-                    data: [620, 732, 701, 734, 1090, 1130, 1120]
-                }, {
-                    name: 'G',
-                    type: 'bar',
-                    stack: 'search engine',
-                    data: [120, 132, 101, 134, 290, 230, 220]
-                }, {
-                    name: 'H',
-                    type: 'bar',
-                    stack: 'search engine',
-                    data: [60, 72, 71, 74, 190, 130, 110]
-                }, {
-                    name: 'I',
-                    type: 'bar',
-                    stack: 'search engine',
-                    data: [62, 82, 91, 84, 109, 110, 120]
-                }]
-            },
-            //===========Stacked bar chart end===============
-
-
-            //========Colored bars chart Start===============
-
-            colored: {
-                title: {
-                    x: 'center'
-                },
-                tooltip: {
-                    trigger: 'item'
-                },
-
-                calculable: true,
-                grid: {
-                    borderWidth: 0,
-                    y: 80,
-                    y2: 60
-                },
-                xAxis: [{
-                    type: 'category',
-                    show: false,
-                    data: ['Line', 'Bar', 'Scatter', 'K', 'Pie', 'Radar', 'Chord', 'Force', 'Map', 'Gauge', 'Funnel']
-                }],
-                yAxis: [{
-                    type: 'value',
-                    show: false
-                }],
-                series: [{
-                    name: 'ECharts Number of examples',
-                    type: 'bar',
-                    itemStyle: {
+                    type: 'line',
+                    stack: 'E',
+                    label: {
                         normal: {
-                            color: function color(params) {
-                                // build a color map as your need.
-                                var colorList = ['#c16989', '#a3ab60', '#d2bf6f', '#e6995b', '#4ca1ab', '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD', '#D7504B', '#dcba42', '#F4E001', '#F0809A', '#26C0C0'];
-                                return colorList[params.dataIndex];
-                            },
-                            label: {
-                                show: true,
-                                position: 'top',
-                                formatter: '{b}\n{c}'
-                            }
+                            show: true,
+                            position: 'top'
                         }
                     },
-                    data: [12, 21, 10, 4, 12, 5, 6, 5, 25, 23, 7],
-                    markPoint: {
-                        tooltip: {
-                            trigger: 'item',
-                            backgroundColor: 'rgba(0,0,0,0)',
-                            formatter: function formatter(params) {
-                                return {};
-                            }
-                        },
-                        data: [{
-                            xAxis: 0,
-                            y: 350,
-                            name: 'Line',
-                            symbolSize: 0
-
-                        }, {
-                            xAxis: 1,
-                            y: 350,
-                            name: 'Bar',
-                            symbolSize: 0
-                        }, {
-                            xAxis: 2,
-                            y: 350,
-                            name: 'Scatter',
-                            symbolSize: 0
-
-                        }, {
-                            xAxis: 3,
-                            y: 350,
-                            name: 'K',
-                            symbolSize: 0
-                        }, {
-                            xAxis: 4,
-                            y: 350,
-                            name: 'Pie',
-                            symbolSize: 0
-                        }]
-                    }
+                    areaStyle: {
+                        normal: {}
+                    },
+                    data: [820, 932, 901, 934, 1290, 1330, 1320]
                 }]
             },
-            // ===============colored chart end============
-            // ================mixed chart start===========
-            mixed: {
-                color: ['#cce5a1'],
-                title: {
-                    subtext: ''
-                },
+            //=======stacked line chart end==========
+            //=======pointers line chart start============
+            pointers: {
                 tooltip: {
                     trigger: 'axis'
                 },
                 legend: {
                     data: ['A', 'B']
                 },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLabel: {
+                        formatter: '{value} °C'
+                    }
+                },
+                series: [{
+                    name: 'A',
+                    type: 'line',
+
+                    data: [11, 11, 15, 13, 12, 13, 10],
+                    markPoint: {
+                        data: [{
+                            type: 'max',
+                            name: 'max'
+                        }, {
+                            type: 'min',
+                            name: 'min'
+                        }]
+                    },
+                    markLine: {
+                        data: [{
+                            type: 'average',
+                            name: 'average'
+                        }]
+                    }
+                }, {
+                    name: 'B',
+                    type: 'line',
+                    data: [1, -2, 2, 5, 3, 2, 0],
+                    markPoint: {
+                        data: [{
+                            name: 'week',
+                            value: -2,
+                            xAxis: 1,
+                            yAxis: -1.5
+                        }]
+                    },
+                    markLine: {
+                        data: [{
+                            type: 'average',
+                            name: 'average'
+                        }, [{
+                            symbol: 'none',
+                            x: '90%',
+                            yAxis: 'max'
+                        }, {
+                            symbol: 'circle',
+                            label: {
+                                normal: {
+                                    position: 'start',
+                                    formatter: 'max'
+                                }
+                            },
+                            type: 'max',
+                            name: 'max'
+                        }]]
+                    }
+                }]
+            },
+            //=======pointers line chart end============
+            // ======area chart start================
+            area_chart: {
+                title: {
+                    text: '',
+                    subtext: ''
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: ['A', 'B', 'C']
+                },
+
+                calculable: true,
+                xAxis: [{
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['Mon', 'Tue', 'Wen', 'Thr', 'Fri', 'Sat', 'Sun']
+                }],
+                yAxis: [{
+                    type: 'value'
+                }],
+                series: [{
+                    name: 'A',
+                    type: 'line',
+                    smooth: true,
+
+                    itemStyle: {
+                        normal: {
+                            areaStyle: {
+                                type: 'default',
+                                color: '#e29e9f'
+                            }
+                        }
+                    },
+                    data: [10, 12, 21, 54, 260, 830, 710]
+                }, {
+                    name: 'B',
+                    type: 'line',
+                    smooth: true,
+                    itemStyle: {
+                        normal: {
+                            areaStyle: {
+                                type: 'default',
+                                color: '#8db4b7'
+                            }
+                        }
+                    },
+                    data: [30, 182, 434, 791, 390, 30, 10]
+                }, {
+                    name: 'C',
+                    type: 'line',
+                    smooth: true,
+                    itemStyle: {
+                        normal: {
+                            areaStyle: {
+                                type: 'default',
+                                color: '#82a779'
+                            }
+                        }
+                    },
+                    data: [1320, 1132, 601, 234, 120, 90, 20]
+                }]
+            },
+            // =============area chart end==========
+            // =================dischart Start==========
+            dischart: {
+                tooltip: {
+                    trigger: 'axis'
+                },
 
                 dataZoom: {
-                    show: false,
-                    start: 0,
-                    end: 100
+                    show: true,
+                    realtime: true,
+                    y: 36,
+                    height: 20,
+                    start: 40,
+                    end: 60
                 },
                 xAxis: [{
                     type: 'category',
-                    boundaryGap: true,
+                    boundaryGap: false,
                     data: function () {
-                        var now = new Date();
-                        var res = [];
-                        var len = 10;
-                        while (len--) {
-                            res.unshift(now.toLocaleTimeString().replace(/^\D*/, ''));
-                            now = new Date(now - 2000);
+                        var list = [];
+                        var n = 0;
+                        while (n++ < 150) {
+                            list.push(n);
                         }
-                        return res;
-                    }()
-                }, {
-                    type: 'category',
-                    boundaryGap: true,
-                    data: function () {
-                        var res = [];
-                        var len = 10;
-                        while (len--) {
-                            res.push(len + 1);
-                        }
-                        return res;
+                        return list;
                     }()
                 }],
                 yAxis: [{
-                    type: 'value',
-                    scale: true,
-                    name: 'A',
-                    boundaryGap: [0.2, 0.2]
-                }, {
-                    type: 'value',
-                    scale: true,
-                    name: 'B',
-                    boundaryGap: [0.2, 0.2]
+                    type: 'value'
                 }],
                 series: [{
-                    name: 'B',
-                    type: 'bar',
-                    xAxisIndex: 1,
-                    yAxisIndex: 1,
-                    data: function () {
-                        var res = [];
-                        var len = 10;
-                        while (len--) {
-                            res.push(Math.round(Math.random() * 1000));
-                        }
-                        return res;
-                    }()
-                }, {
-                    name: 'A',
+                    name: 'dz',
                     type: 'line',
                     data: function () {
-                        var res = [];
-                        var len = 10;
-                        while (len--) {
-                            res.push((Math.random() * 10 + 5).toFixed(1) - 0);
+                        var list = [];
+                        for (var i = 1; i <= 150; i++) {
+                            list.push(Math.round(Math.random() * 30));
                         }
-                        return res;
+                        return list;
                     }()
-                }]
-                // ================mixed chart end===========
-
-
-            } };
+                }],
+                calculable: false
+            }
+        };
     },
-
 
     mounted: function mounted() {
         var _this = this;
@@ -540,8 +537,10 @@ var unsub;
                 });
             }
         });
-        axios.get("http://www.filltext.com/?rows=1&chartdata={numberArray|12,100}").then(function (response) {
-            _this.ajaxbar.series[0].data = response.data[0].chartdata;
+        axios.get("http://www.filltext.com/?rows=2&chartdata={numberArray|7,50}").then(function (response) {
+            for (var i = 0; i < response.data.length; i++) {
+                _this.serverline.series[i].data = response.data[i].chartdata;
+            }
             _this.ajaxloading = false;
         }).catch(function (error) {});
     },
@@ -558,7 +557,7 @@ var unsub;
 
 /***/ }),
 
-/***/ 1562:
+/***/ 1565:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -569,13 +568,13 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c(
         "div",
-        { staticClass: "col-lg-12 mb-3" },
+        { staticClass: "col-lg-6 mb-3" },
         [
           _c(
             "b-card",
             {
-              staticClass: "bg-success-card",
-              attrs: { header: "Basic Bar chart", "header-tag": "h4" }
+              staticClass: "bg-primary-card",
+              attrs: { header: "Basic Line chart", "header-tag": "h4" }
             },
             [
               _c(
@@ -583,7 +582,91 @@ var render = function() {
                 { staticStyle: { height: "350px" } },
                 [
                   _c("IEcharts", {
-                    attrs: { option: _vm.bar, loading: _vm.loading },
+                    attrs: { option: _vm.line, loading: _vm.loading },
+                    on: { ready: _vm.onReady }
+                  })
+                ],
+                1
+              )
+            ]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-lg-6 mb-3" },
+        [
+          _c(
+            "b-card",
+            {
+              staticClass: "bg-success-card",
+              attrs: { header: "AJAX Line chart", "header-tag": "h4" }
+            },
+            [
+              _c(
+                "div",
+                { staticStyle: { height: "350px" } },
+                [
+                  _c("IEcharts", {
+                    attrs: { option: _vm.serverline, loading: _vm.ajaxloading },
+                    on: { ready: _vm.onReady }
+                  })
+                ],
+                1
+              )
+            ]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-lg-12 mb-3" },
+        [
+          _c(
+            "b-card",
+            {
+              staticClass: "bg-primary-card",
+              attrs: { header: "Stacked Area chart", "header-tag": "h4" }
+            },
+            [
+              _c(
+                "div",
+                { staticStyle: { height: "350px" } },
+                [
+                  _c("IEcharts", {
+                    attrs: { option: _vm.stackedline, loading: _vm.loading },
+                    on: { ready: _vm.onReady }
+                  })
+                ],
+                1
+              )
+            ]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-lg-12 mb-3" },
+        [
+          _c(
+            "b-card",
+            {
+              staticClass: "bg-success-card",
+              attrs: { header: "Line chart with Pointers", "header-tag": "h4" }
+            },
+            [
+              _c(
+                "div",
+                { staticStyle: { height: "350px" } },
+                [
+                  _c("IEcharts", {
+                    attrs: { option: _vm.pointers, loading: _vm.loading },
                     on: { ready: _vm.onReady }
                   })
                 ],
@@ -603,91 +686,10 @@ var render = function() {
             "b-card",
             {
               staticClass: "bg-info-card",
-              attrs: { header: "AJAX Bar chart", "header-tag": "h4" }
-            },
-            [
-              _c(
-                "div",
-                { staticStyle: { height: "350px" } },
-                [
-                  _c("IEcharts", {
-                    attrs: { option: _vm.ajaxbar, loading: _vm.ajaxloading },
-                    on: { ready: _vm.onReady }
-                  })
-                ],
-                1
-              )
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-12 mb-3" },
-        [
-          _c(
-            "b-card",
-            {
-              staticClass: "bg-success-card",
-              attrs: { header: "Stacked Bar Chart", "header-tag": "h4" }
-            },
-            [
-              _c(
-                "div",
-                { staticStyle: { height: "350px" } },
-                [
-                  _c("IEcharts", {
-                    attrs: { option: _vm.stacked, loading: _vm.loading },
-                    on: { ready: _vm.onReady }
-                  })
-                ],
-                1
-              )
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-12 mb-3" },
-        [
-          _c(
-            "b-card",
-            {
-              staticClass: "bg-primary-card",
-              attrs: { header: "Colored Bars", "header-tag": "h4" }
-            },
-            [
-              _c(
-                "div",
-                { staticStyle: { height: "350px" } },
-                [
-                  _c("IEcharts", {
-                    attrs: { option: _vm.colored, loading: _vm.loading },
-                    on: { ready: _vm.onReady }
-                  })
-                ],
-                1
-              )
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-12 mb-3" },
-        [
-          _c(
-            "b-card",
-            {
-              staticClass: "bg-warning-card",
-              attrs: { header: "Negative Bar chart", "header-tag": "h4" }
+              attrs: {
+                header: "Data Area Control Line Chart",
+                "header-tag": "h4"
+              }
             },
             [
               _c(
@@ -695,7 +697,7 @@ var render = function() {
                 { staticStyle: { height: "400px" } },
                 [
                   _c("IEcharts", {
-                    attrs: { option: _vm.negativebar, loading: _vm.loading },
+                    attrs: { option: _vm.dischart, loading: _vm.loading },
                     on: { ready: _vm.onReady }
                   })
                 ],
@@ -714,8 +716,8 @@ var render = function() {
           _c(
             "b-card",
             {
-              staticClass: "bg-primary-card",
-              attrs: { header: "Mixed Chart", "header-tag": "h4" }
+              staticClass: "bg-info-card",
+              attrs: { header: " Area  Chart", "header-tag": "h4" }
             },
             [
               _c(
@@ -723,8 +725,7 @@ var render = function() {
                 { staticStyle: { height: "400px" } },
                 [
                   _c("IEcharts", {
-                    ref: "dynamicchart",
-                    attrs: { option: _vm.mixed, loading: _vm.loading },
+                    attrs: { option: _vm.area_chart, loading: _vm.loading },
                     on: { ready: _vm.onReady }
                   })
                 ],
@@ -744,7 +745,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-79a42c64", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-1b37dfda", module.exports)
   }
 }
 
@@ -756,9 +757,9 @@ if (false) {
 var disposed = false
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(1561)
+var __vue_script__ = __webpack_require__(1564)
 /* template */
-var __vue_template__ = __webpack_require__(1562)
+var __vue_template__ = __webpack_require__(1565)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -775,7 +776,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/components/pages/e_barcharts.vue"
+Component.options.__file = "resources/assets/components/pages/e_linecharts.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -784,9 +785,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-79a42c64", Component.options)
+    hotAPI.createRecord("data-v-1b37dfda", Component.options)
   } else {
-    hotAPI.reload("data-v-79a42c64", Component.options)
+    hotAPI.reload("data-v-1b37dfda", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true

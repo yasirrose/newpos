@@ -1,26 +1,26 @@
 webpackJsonp([12],{
 
-/***/ 1083:
-/***/ (function(module, exports) {
-
-module.exports = "/cheerspos/public/images/chat_background2.jpeg?7ef0d5f54a1e706071d96e179f086f6e";
-
-/***/ }),
-
 /***/ 1084:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/chat_background3.jpg?5e4f394c357c2550b46126586071ddd0";
+module.exports = "/GitHub/newpos/public/images/chat_background2.jpeg?7ef0d5f54a1e706071d96e179f086f6e";
 
 /***/ }),
 
-/***/ 1106:
+/***/ 1085:
+/***/ (function(module, exports) {
+
+module.exports = "/GitHub/newpos/public/images/chat_background3.jpg?5e4f394c357c2550b46126586071ddd0";
+
+/***/ }),
+
+/***/ 1108:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var chat = [{
     user: "Rickey",
-    image: __webpack_require__(774),
+    image: __webpack_require__(775),
     status: "Lorem ipsum dolor sit ametm  elit.",
     mbl_num: "9876543210",
     work: "Google",
@@ -63,7 +63,7 @@ var chat = [{
     }]
 }, {
     user: "Jenny",
-    image: __webpack_require__(777),
+    image: __webpack_require__(778),
     status: "Consec  ipsum  adipisicing.Lorem   elit.",
     mbl_num: "8907654231",
     work: "Apple",
@@ -102,7 +102,7 @@ var chat = [{
     }]
 }, {
     user: "David",
-    image: __webpack_require__(771),
+    image: __webpack_require__(772),
     status: "Lorem ipsum dolor ipsum dolor  elit",
     mbl_num: "7894561203",
     work: "Microsoft",
@@ -137,7 +137,7 @@ var chat = [{
     }]
 }, {
     user: "Roysingh",
-    image: __webpack_require__(806),
+    image: __webpack_require__(807),
     status: "Dolor ipsum amet elitLorem ipsum ",
     mbl_num: "9587643210",
     work: "Yahoo",
@@ -160,7 +160,7 @@ var chat = [{
     }]
 }, {
     user: "Joe",
-    image: __webpack_require__(814),
+    image: __webpack_require__(815),
     status: "Dolor ipsum amet elitLorem ipsum ",
     mbl_num: "8974613215",
     work: "Amazon",
@@ -183,7 +183,7 @@ var chat = [{
     }]
 }, {
     user: "Shasla",
-    image: __webpack_require__(791),
+    image: __webpack_require__(792),
     status: "Dolor ipsum dolor dolor elitLorem ",
     mbl_num: "7598642130",
     work: "IBM",
@@ -210,55 +210,55 @@ var chat = [{
 
 /***/ }),
 
-/***/ 1113:
+/***/ 1115:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/20.jpg?9d2e66d09f7971f3a965e944bd390d58";
-
-/***/ }),
-
-/***/ 1130:
-/***/ (function(module, exports) {
-
-module.exports = "/cheerspos/public/images/14.jpg?c4b420cf6b3dd25f99b82b307b8ab973";
-
-/***/ }),
-
-/***/ 1131:
-/***/ (function(module, exports) {
-
-module.exports = "/cheerspos/public/images/15.jpg?7a1f50aa5b80cb03f921bc71f5143b60";
+module.exports = "/GitHub/newpos/public/images/20.jpg?9d2e66d09f7971f3a965e944bd390d58";
 
 /***/ }),
 
 /***/ 1132:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/16.jpg?2b143ffe9c0cf5c28b6db3c3ff2d7dc0";
+module.exports = "/GitHub/newpos/public/images/14.jpg?c4b420cf6b3dd25f99b82b307b8ab973";
 
 /***/ }),
 
 /***/ 1133:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/17.jpg?ecea01436ffda158002f09296d16177f";
+module.exports = "/GitHub/newpos/public/images/15.jpg?7a1f50aa5b80cb03f921bc71f5143b60";
 
 /***/ }),
 
 /***/ 1134:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/18.jpg?0f36f952d47a3cbb691431424e2511cc";
+module.exports = "/GitHub/newpos/public/images/16.jpg?2b143ffe9c0cf5c28b6db3c3ff2d7dc0";
 
 /***/ }),
 
-/***/ 1507:
+/***/ 1135:
+/***/ (function(module, exports) {
+
+module.exports = "/GitHub/newpos/public/images/17.jpg?ecea01436ffda158002f09296d16177f";
+
+/***/ }),
+
+/***/ 1136:
+/***/ (function(module, exports) {
+
+module.exports = "/GitHub/newpos/public/images/18.jpg?0f36f952d47a3cbb691431424e2511cc";
+
+/***/ }),
+
+/***/ 1512:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1508);
+var content = __webpack_require__(1513);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -279,7 +279,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1508:
+/***/ 1513:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(49)(false);
@@ -294,16 +294,16 @@ exports.push([module.i, "\n.chat[data-v-1aabd0f0] {\n  min-height: calc(100vh - 
 
 /***/ }),
 
-/***/ 1509:
+/***/ 1514:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_components_widgets_chat_component_chat_large_vue__ = __webpack_require__(1510);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_components_widgets_chat_component_chat_large_vue__ = __webpack_require__(1515);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_components_widgets_chat_component_chat_large_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_components_widgets_chat_component_chat_large_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_assets_js_chat_data__ = __webpack_require__(1106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_assets_js_chat_data__ = __webpack_require__(1108);
 //
 //
 //
@@ -339,19 +339,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1510:
+/***/ 1515:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(1511)
+  __webpack_require__(1516)
 }
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(1513)
+var __vue_script__ = __webpack_require__(1518)
 /* template */
-var __vue_template__ = __webpack_require__(1514)
+var __vue_template__ = __webpack_require__(1519)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -391,13 +391,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1511:
+/***/ 1516:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1512);
+var content = __webpack_require__(1517);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -418,7 +418,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1512:
+/***/ 1517:
 /***/ (function(module, exports, __webpack_require__) {
 
 var escape = __webpack_require__(244);
@@ -427,19 +427,19 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "\n.desc-img[data-v-add05e6c] {\n  height: 40px;\n  width: 40px;\n}\n.chat_block[data-v-add05e6c] {\n  border-bottom: 1px solid #f4f2f2;\n}\n.chatalign[data-v-add05e6c] {\n  background-color: #fff !important;\n  height: 100%;\n}\n.chatalign ul[data-v-add05e6c] {\n    padding: 0;\n}\n.chatalign[data-v-add05e6c] .ss-container {\n    padding-right: 10px;\n}\n.converstion_back[data-v-add05e6c] {\n  height: 100%;\n  overflow: hidden;\n  background: #fff !important;\n  border: 1px solid #d8d6d6;\n}\n.converstion_back ul[data-v-add05e6c] {\n    padding: 0;\n}\n.converstion_back > .chat_header[data-v-add05e6c] {\n    background-color: #eaf5ff;\n    padding: 4px;\n    font-size: 20px;\n    font-weight: 500;\n}\n.converstion_back > .chat_header label[data-v-add05e6c] {\n      width: 25px;\n      height: 25px;\n}\n.converstion_back > .chat_header .bg1[data-v-add05e6c] {\n      background-image: url(" + escape(__webpack_require__(879)) + ");\n}\n.converstion_back > .chat_header .bg2[data-v-add05e6c] {\n      background-image: url(" + escape(__webpack_require__(1083)) + ");\n}\n.converstion_back > .chat_header .bg3[data-v-add05e6c] {\n      background-image: url(" + escape(__webpack_require__(1084)) + ");\n}\n.converstion_back[data-v-add05e6c] .ss-wrapper {\n    height: 90%;\n}\n.received div p[data-v-add05e6c],\n.sent div p[data-v-add05e6c] {\n  border-radius: 7px;\n  display: inline-block;\n  padding: 7px 12px;\n  position: relative;\n  border: 1px solid #d4d2d2;\n}\n.received div p[data-v-add05e6c]::after {\n  content: ' ';\n  position: absolute;\n  width: 0;\n  height: 0;\n  left: -12px;\n  right: auto;\n  top: 0px;\n  bottom: auto;\n  border: 12px solid;\n  border-color: #dbf2fa transparent transparent transparent;\n}\n.received div p[data-v-add05e6c]::before {\n  content: ' ';\n  position: absolute;\n  width: 0;\n  height: 0;\n  left: -12px;\n  right: auto;\n  top: -1px;\n  bottom: auto;\n  border: 12px solid;\n  border-color: #d4d2d2 transparent transparent transparent;\n}\n.sent div p[data-v-add05e6c]::before {\n  content: ' ';\n  position: absolute;\n  width: 0;\n  height: 0;\n  right: -13px;\n  top: -1px;\n  bottom: auto;\n  border: 12px solid;\n  border-color: #d4d2d2 transparent transparent transparent;\n}\n.sent div p[data-v-add05e6c]::after {\n  content: ' ';\n  position: absolute;\n  width: 0;\n  height: 0;\n  right: -12px;\n  top: 0;\n  bottom: auto;\n  border: 12px solid;\n  border-color: #fff transparent transparent transparent;\n}\n.self[data-v-add05e6c] {\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-align: end;\n      -ms-flex-align: end;\n          align-items: flex-end;\n}\n.self .msg[data-v-add05e6c] {\n  -webkit-box-ordinal-group: 2;\n      -ms-flex-order: 1;\n          order: 1;\n  border-bottom-right-radius: 0px;\n  -webkit-box-shadow: 1px 2px 0px #D4D4D4;\n          box-shadow: 1px 2px 0px #D4D4D4;\n}\n.sent > div[data-v-add05e6c] {\n  text-align: right;\n  padding: 0 17px 0 17px;\n}\n.sent > div .msg_time[data-v-add05e6c] {\n    font-size: 9px;\n}\n.sent > div p[data-v-add05e6c] {\n    background-color: #fff;\n}\n.received > div[data-v-add05e6c] {\n  text-align: left;\n  padding: 0 17px 0 17px;\n}\n.received > div .msg_time[data-v-add05e6c] {\n    font-size: 9px;\n}\n.received > div p[data-v-add05e6c] {\n    background-color: #dbf2fa;\n}\n.chat_content[data-v-add05e6c] {\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.send-btn[data-v-add05e6c] {\n  border-radius: 0;\n}\n.status-online[data-v-add05e6c] {\n  width: 12px;\n  height: 12px;\n  border-radius: 6px;\n  background-color: #63c17f;\n  position: relative;\n  top: 40px;\n  left: -8px;\n  border: 2px solid #fff;\n}\n.person_name[data-v-add05e6c]:before {\n  content: ' \\25CF';\n  font-size: 21px;\n  position: relative;\n  top: -11px;\n  left: -27px;\n  color: #63c17f;\n}\n.profile[data-v-add05e6c] {\n  padding-bottom: 15px;\n  border: none;\n  height: 100%;\n  overflow-y: auto;\n  background-color: #FFFFFF;\n}\n.wrapper .converstion_back .ss-container[data-v-add05e6c] {\n  background-image: url(" + escape(__webpack_require__(879)) + ");\n}\n.bgcolor[data-v-add05e6c] {\n  border: 2px solid #fff;\n  height: 10px;\n  width: 10px;\n}\n.colors[data-v-add05e6c] {\n  line-height: 1rem;\n  margin-top: 2px;\n}\n.colors span[data-v-add05e6c] {\n    font-size: 10px;\n}\n", ""]);
+exports.push([module.i, "\n.desc-img[data-v-add05e6c] {\n  height: 40px;\n  width: 40px;\n}\n.chat_block[data-v-add05e6c] {\n  border-bottom: 1px solid #f4f2f2;\n}\n.chatalign[data-v-add05e6c] {\n  background-color: #fff !important;\n  height: 100%;\n}\n.chatalign ul[data-v-add05e6c] {\n    padding: 0;\n}\n.chatalign[data-v-add05e6c] .ss-container {\n    padding-right: 10px;\n}\n.converstion_back[data-v-add05e6c] {\n  height: 100%;\n  overflow: hidden;\n  background: #fff !important;\n  border: 1px solid #d8d6d6;\n}\n.converstion_back ul[data-v-add05e6c] {\n    padding: 0;\n}\n.converstion_back > .chat_header[data-v-add05e6c] {\n    background-color: #eaf5ff;\n    padding: 4px;\n    font-size: 20px;\n    font-weight: 500;\n}\n.converstion_back > .chat_header label[data-v-add05e6c] {\n      width: 25px;\n      height: 25px;\n}\n.converstion_back > .chat_header .bg1[data-v-add05e6c] {\n      background-image: url(" + escape(__webpack_require__(880)) + ");\n}\n.converstion_back > .chat_header .bg2[data-v-add05e6c] {\n      background-image: url(" + escape(__webpack_require__(1084)) + ");\n}\n.converstion_back > .chat_header .bg3[data-v-add05e6c] {\n      background-image: url(" + escape(__webpack_require__(1085)) + ");\n}\n.converstion_back[data-v-add05e6c] .ss-wrapper {\n    height: 90%;\n}\n.received div p[data-v-add05e6c],\n.sent div p[data-v-add05e6c] {\n  border-radius: 7px;\n  display: inline-block;\n  padding: 7px 12px;\n  position: relative;\n  border: 1px solid #d4d2d2;\n}\n.received div p[data-v-add05e6c]::after {\n  content: ' ';\n  position: absolute;\n  width: 0;\n  height: 0;\n  left: -12px;\n  right: auto;\n  top: 0px;\n  bottom: auto;\n  border: 12px solid;\n  border-color: #dbf2fa transparent transparent transparent;\n}\n.received div p[data-v-add05e6c]::before {\n  content: ' ';\n  position: absolute;\n  width: 0;\n  height: 0;\n  left: -12px;\n  right: auto;\n  top: -1px;\n  bottom: auto;\n  border: 12px solid;\n  border-color: #d4d2d2 transparent transparent transparent;\n}\n.sent div p[data-v-add05e6c]::before {\n  content: ' ';\n  position: absolute;\n  width: 0;\n  height: 0;\n  right: -13px;\n  top: -1px;\n  bottom: auto;\n  border: 12px solid;\n  border-color: #d4d2d2 transparent transparent transparent;\n}\n.sent div p[data-v-add05e6c]::after {\n  content: ' ';\n  position: absolute;\n  width: 0;\n  height: 0;\n  right: -12px;\n  top: 0;\n  bottom: auto;\n  border: 12px solid;\n  border-color: #fff transparent transparent transparent;\n}\n.self[data-v-add05e6c] {\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-align: end;\n      -ms-flex-align: end;\n          align-items: flex-end;\n}\n.self .msg[data-v-add05e6c] {\n  -webkit-box-ordinal-group: 2;\n      -ms-flex-order: 1;\n          order: 1;\n  border-bottom-right-radius: 0px;\n  -webkit-box-shadow: 1px 2px 0px #D4D4D4;\n          box-shadow: 1px 2px 0px #D4D4D4;\n}\n.sent > div[data-v-add05e6c] {\n  text-align: right;\n  padding: 0 17px 0 17px;\n}\n.sent > div .msg_time[data-v-add05e6c] {\n    font-size: 9px;\n}\n.sent > div p[data-v-add05e6c] {\n    background-color: #fff;\n}\n.received > div[data-v-add05e6c] {\n  text-align: left;\n  padding: 0 17px 0 17px;\n}\n.received > div .msg_time[data-v-add05e6c] {\n    font-size: 9px;\n}\n.received > div p[data-v-add05e6c] {\n    background-color: #dbf2fa;\n}\n.chat_content[data-v-add05e6c] {\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.send-btn[data-v-add05e6c] {\n  border-radius: 0;\n}\n.status-online[data-v-add05e6c] {\n  width: 12px;\n  height: 12px;\n  border-radius: 6px;\n  background-color: #63c17f;\n  position: relative;\n  top: 40px;\n  left: -8px;\n  border: 2px solid #fff;\n}\n.person_name[data-v-add05e6c]:before {\n  content: ' \\25CF';\n  font-size: 21px;\n  position: relative;\n  top: -11px;\n  left: -27px;\n  color: #63c17f;\n}\n.profile[data-v-add05e6c] {\n  padding-bottom: 15px;\n  border: none;\n  height: 100%;\n  overflow-y: auto;\n  background-color: #FFFFFF;\n}\n.wrapper .converstion_back .ss-container[data-v-add05e6c] {\n  background-image: url(" + escape(__webpack_require__(880)) + ");\n}\n.bgcolor[data-v-add05e6c] {\n  border: 2px solid #fff;\n  height: 10px;\n  width: 10px;\n}\n.colors[data-v-add05e6c] {\n  line-height: 1rem;\n  margin-top: 2px;\n}\n.colors span[data-v-add05e6c] {\n    font-size: 10px;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 1513:
+/***/ 1518:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__plugins_scroll_vScroll_vue__ = __webpack_require__(802);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__plugins_scroll_vScroll_vue__ = __webpack_require__(803);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__plugins_scroll_vScroll_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__plugins_scroll_vScroll_vue__);
 //
 //
@@ -552,7 +552,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             images: ['~img/pages/chat_background.png', '~img/pages/chat_background.png', '~img/pages/chat_background.png'],
-            bgColor: __webpack_require__(879),
+            bgColor: __webpack_require__(880),
             className: '',
             newmessage: '',
             selected_user_index: 0
@@ -583,7 +583,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1514:
+/***/ 1519:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -697,48 +697,21 @@ var render = function() {
                   staticClass: "d-none",
                   attrs: { type: "radio" },
                   domProps: {
-                    value: __webpack_require__(879),
+                    value: __webpack_require__(880),
                     checked: _vm._q(
                       _vm.bgColor,
-                      __webpack_require__(879)
+                      __webpack_require__(880)
                     )
                   },
                   on: {
                     change: function($event) {
-                      _vm.bgColor = __webpack_require__(879)
+                      _vm.bgColor = __webpack_require__(880)
                     }
                   }
                 })
               ]),
               _vm._v(" "),
               _c("label", { staticClass: "bg2" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.bgColor,
-                      expression: "bgColor"
-                    }
-                  ],
-                  staticClass: "d-none",
-                  attrs: { type: "radio" },
-                  domProps: {
-                    value: __webpack_require__(1083),
-                    checked: _vm._q(
-                      _vm.bgColor,
-                      __webpack_require__(1083)
-                    )
-                  },
-                  on: {
-                    change: function($event) {
-                      _vm.bgColor = __webpack_require__(1083)
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("label", { staticClass: "bg3" }, [
                 _c("input", {
                   directives: [
                     {
@@ -760,6 +733,33 @@ var render = function() {
                   on: {
                     change: function($event) {
                       _vm.bgColor = __webpack_require__(1084)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("label", { staticClass: "bg3" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.bgColor,
+                      expression: "bgColor"
+                    }
+                  ],
+                  staticClass: "d-none",
+                  attrs: { type: "radio" },
+                  domProps: {
+                    value: __webpack_require__(1085),
+                    checked: _vm._q(
+                      _vm.bgColor,
+                      __webpack_require__(1085)
+                    )
+                  },
+                  on: {
+                    change: function($event) {
+                      _vm.bgColor = __webpack_require__(1085)
                     }
                   }
                 })
@@ -919,20 +919,6 @@ var staticRenderFns = [
         _c("div", { staticClass: "col-4 mt-2" }, [
           _c("img", {
             staticClass: "img-fluid",
-            attrs: { src: __webpack_require__(1130), alt: "" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-4 mt-2" }, [
-          _c("img", {
-            staticClass: "img-fluid",
-            attrs: { src: __webpack_require__(1131), alt: "" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-4 mt-2" }, [
-          _c("img", {
-            staticClass: "img-fluid",
             attrs: { src: __webpack_require__(1132), alt: "" }
           })
         ]),
@@ -954,7 +940,21 @@ var staticRenderFns = [
         _c("div", { staticClass: "col-4 mt-2" }, [
           _c("img", {
             staticClass: "img-fluid",
-            attrs: { src: __webpack_require__(1113), alt: "" }
+            attrs: { src: __webpack_require__(1135), alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-4 mt-2" }, [
+          _c("img", {
+            staticClass: "img-fluid",
+            attrs: { src: __webpack_require__(1136), alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-4 mt-2" }, [
+          _c("img", {
+            staticClass: "img-fluid",
+            attrs: { src: __webpack_require__(1115), alt: "" }
           })
         ])
       ])
@@ -972,7 +972,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 1515:
+/***/ 1520:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -993,19 +993,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 737:
+/***/ 738:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(1507)
+  __webpack_require__(1512)
 }
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(1509)
+var __vue_script__ = __webpack_require__(1514)
 /* template */
-var __vue_template__ = __webpack_require__(1515)
+var __vue_template__ = __webpack_require__(1520)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1045,47 +1045,47 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 771:
+/***/ 772:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
+module.exports = "/GitHub/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
 
 /***/ }),
 
-/***/ 774:
+/***/ 775:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
+module.exports = "/GitHub/newpos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
 
 /***/ }),
 
-/***/ 777:
+/***/ 778:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/avatar4.jpg?2bb4ec334d9b5a47d6369df5a4b7cd11";
+module.exports = "/GitHub/newpos/public/images/avatar4.jpg?2bb4ec334d9b5a47d6369df5a4b7cd11";
 
 /***/ }),
 
-/***/ 791:
+/***/ 792:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/avatar.jpg?cd23a4a129679a15e2583c823c594af2";
+module.exports = "/GitHub/newpos/public/images/avatar.jpg?cd23a4a129679a15e2583c823c594af2";
 
 /***/ }),
 
-/***/ 802:
+/***/ 803:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(815)
+  __webpack_require__(816)
 }
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(817)
+var __vue_script__ = __webpack_require__(818)
 /* template */
-var __vue_template__ = __webpack_require__(818)
+var __vue_template__ = __webpack_require__(819)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1125,27 +1125,27 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 806:
+/***/ 807:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/avatar5.jpg?4f52473b866c8d274fce38e90ee4883d";
-
-/***/ }),
-
-/***/ 814:
-/***/ (function(module, exports) {
-
-module.exports = "/cheerspos/public/images/avatar6.jpg?7a7ee17a5a77782a7d07b499cde37807";
+module.exports = "/GitHub/newpos/public/images/avatar5.jpg?4f52473b866c8d274fce38e90ee4883d";
 
 /***/ }),
 
 /***/ 815:
+/***/ (function(module, exports) {
+
+module.exports = "/GitHub/newpos/public/images/avatar6.jpg?7a7ee17a5a77782a7d07b499cde37807";
+
+/***/ }),
+
+/***/ 816:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(816);
+var content = __webpack_require__(817);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -1166,7 +1166,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 816:
+/***/ 817:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(49)(false);
@@ -1174,14 +1174,14 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "\n.ss-wrapper {\n    overflow: hidden;\n    width: 100%;\n    height: 100%;\n    position: relative;\n    z-index: 1;\n    float: left;\n}\n.ss-content {\n    height: 100%;\n    width: 100%;\n    padding: 0 18px 0 0;\n    position: relative;\n    right: -18px;\n    overflow: auto;\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n}\n.ss-scroll {\n    position: relative;\n    background: rgba(0, 0, 0, 0.1);\n    width: 9px;\n    border-radius: 4px;\n    top: 0;\n    z-index: 2;\n    cursor: pointer;\n    opacity: 0;\n    -webkit-transition: opacity 0.25s linear;\n    transition: opacity 0.25s linear;\n}\n.ss-hidden {\n    display: none;\n}\n.ss-container:hover .ss-scroll,\n.ss-scroll.ss-grabbed,\n.ss-scroll.visible {\n    opacity: 1;\n}\n.ss-grabbed {\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n}\n", ""]);
+exports.push([module.i, "\n.ss-wrapper {\r\n    overflow: hidden;\r\n    width: 100%;\r\n    height: 100%;\r\n    position: relative;\r\n    z-index: 1;\r\n    float: left;\n}\n.ss-content {\r\n    height: 100%;\r\n    width: 100%;\r\n    padding: 0 18px 0 0;\r\n    position: relative;\r\n    right: -18px;\r\n    overflow: auto;\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\n}\n.ss-scroll {\r\n    position: relative;\r\n    background: rgba(0, 0, 0, 0.1);\r\n    width: 9px;\r\n    border-radius: 4px;\r\n    top: 0;\r\n    z-index: 2;\r\n    cursor: pointer;\r\n    opacity: 0;\r\n    -webkit-transition: opacity 0.25s linear;\r\n    transition: opacity 0.25s linear;\n}\n.ss-hidden {\r\n    display: none;\n}\n.ss-container:hover .ss-scroll,\r\n.ss-scroll.ss-grabbed,\r\n.ss-scroll.visible {\r\n    opacity: 1;\n}\n.ss-grabbed {\r\n    -webkit-user-select: none;\r\n       -moz-user-select: none;\r\n        -ms-user-select: none;\r\n            user-select: none;\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 817:
+/***/ 818:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1271,7 +1271,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 818:
+/***/ 819:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1323,10 +1323,10 @@ if (false) {
 
 /***/ }),
 
-/***/ 879:
+/***/ 880:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/chat_background.png?43832ad56f84e37348a04973c4977af2";
+module.exports = "/GitHub/newpos/public/images/chat_background.png?43832ad56f84e37348a04973c4977af2";
 
 /***/ })
 

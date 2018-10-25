@@ -1,12 +1,12 @@
 webpackJsonp([33],{
 
-/***/ 1599:
+/***/ 1604:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1600);
+var content = __webpack_require__(1605);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -27,7 +27,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1600:
+/***/ 1605:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(49)(false);
@@ -35,14 +35,14 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "\n.dropzone_wrapper[data-v-4a4d30e0] {\n    width: 100%;\n}\n[data-v-4a4d30e0].quill-editor .ql-tooltip.ql-editing{\n    z-index:99;\n}\n", ""]);
+exports.push([module.i, "\n.dropzone_wrapper[data-v-4a4d30e0] {\r\n    width: 100%;\n}\n[data-v-4a4d30e0].quill-editor .ql-tooltip.ql-editing{\r\n    z-index:99;\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 1601:
+/***/ 1606:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51,11 +51,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_dropzone__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_dropzone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue2_dropzone__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue2_dropzone_dist_vue2Dropzone_css__ = __webpack_require__(849);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue2_dropzone_dist_vue2Dropzone_css__ = __webpack_require__(850);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue2_dropzone_dist_vue2Dropzone_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue2_dropzone_dist_vue2Dropzone_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_form__ = __webpack_require__(784);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_form__ = __webpack_require__(785);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_form___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_form__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_src_validations_validations_js__ = __webpack_require__(785);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_src_validations_validations_js__ = __webpack_require__(786);
 //
 //
 //
@@ -335,13 +335,15 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vue_
             this.$refs.user_image.removeAllFiles();
         }
     },
-    mounted: function mounted() {},
+    mounted: function mounted() {
+        this.$store.commit('left_menu', 'close');
+    },
     destroyed: function destroyed() {}
 });
 
 /***/ }),
 
-/***/ 1602:
+/***/ 1607:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1561,19 +1563,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 755:
+/***/ 756:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(1599)
+  __webpack_require__(1604)
 }
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(1601)
+var __vue_script__ = __webpack_require__(1606)
 /* template */
-var __vue_template__ = __webpack_require__(1602)
+var __vue_template__ = __webpack_require__(1607)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1613,7 +1615,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 784:
+/***/ 785:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -2942,7 +2944,7 @@ return VueForm;
 
 /***/ }),
 
-/***/ 785:
+/***/ 786:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2962,13 +2964,13 @@ var options = {
 
 /***/ }),
 
-/***/ 849:
+/***/ 850:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(850);
+var content = __webpack_require__(851);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -2994,7 +2996,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 850:
+/***/ 851:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(49)(false);

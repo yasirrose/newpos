@@ -1,12 +1,12 @@
 webpackJsonp([39],{
 
-/***/ 1607:
+/***/ 1612:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1608);
+var content = __webpack_require__(1613);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -27,7 +27,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1608:
+/***/ 1613:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(49)(false);
@@ -35,14 +35,14 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "\n#printableArea[data-v-ee815aa6] {\n    border: 1px solid #ccc;\n}\n.card-header[data-v-ee815aa6] {\n    border-bottom: 1px solid #ccc;\n}\n.card-block[data-v-ee815aa6] {\n    padding: 25px;\n}\n.card-header span[data-v-ee815aa6] {\n    margin-top: -33px;\n    font-size: 18px;\n}\n.invoice_address[data-v-ee815aa6] {\n    margin: 10px 0;\n}\n.table[data-v-ee815aa6] {\n    table-layout: fixed;\n    border: 1px solid #ccc;\n}\n.table tbody > tr[data-v-ee815aa6] {\n    height: 50px;\n}\ntd[data-v-ee815aa6],\nth[data-v-ee815aa6] {\n    word-wrap: break-word;\n}\n.terms_conditions[data-v-ee815aa6] {\n    list-style: initial;\n    padding-left: 25px;\n}\n.table thead > tr > th[data-v-ee815aa6] {\n    padding: 10px 8px;\n    width: 80px;\n    background-color: #ccc;\n}\n.table thead > tr > th[data-v-ee815aa6]:nth-child(2) {\n    max-width: 180px;\n}\n.table-responsive > .table > tbody > tr > td[data-v-ee815aa6],\n.table-responsive > .table > tfoot > tr > td[data-v-ee815aa6] {\n    padding: 15px 8px;\n    white-space: normal;\n}\n@media screen and (min-width: 768px) {\n.invoice_address[data-v-ee815aa6] {\n        margin: 20px 0;\n}\n}\n@media print {\n.btn-section[data-v-ee815aa6] {\n        display: none !important;\n}\n.table-responsive[data-v-ee815aa6] {\n        display: inline-table;\n        width: 100%;\n}\n}\n", ""]);
+exports.push([module.i, "\n#printableArea[data-v-ee815aa6] {\r\n    border: 1px solid #ccc;\n}\n.card-header[data-v-ee815aa6] {\r\n    border-bottom: 1px solid #ccc;\n}\n.card-block[data-v-ee815aa6] {\r\n    padding: 25px;\n}\n.card-header span[data-v-ee815aa6] {\r\n    margin-top: -33px;\r\n    font-size: 18px;\n}\n.invoice_address[data-v-ee815aa6] {\r\n    margin: 10px 0;\n}\n.table[data-v-ee815aa6] {\r\n    table-layout: fixed;\r\n    border: 1px solid #ccc;\n}\n.table tbody > tr[data-v-ee815aa6] {\r\n    height: 50px;\n}\ntd[data-v-ee815aa6],\r\nth[data-v-ee815aa6] {\r\n    word-wrap: break-word;\n}\n.terms_conditions[data-v-ee815aa6] {\r\n    list-style: initial;\r\n    padding-left: 25px;\n}\n.table thead > tr > th[data-v-ee815aa6] {\r\n    padding: 10px 8px;\r\n    width: 80px;\r\n    background-color: #ccc;\n}\n.table thead > tr > th[data-v-ee815aa6]:nth-child(2) {\r\n    max-width: 180px;\n}\n.table-responsive > .table > tbody > tr > td[data-v-ee815aa6],\r\n.table-responsive > .table > tfoot > tr > td[data-v-ee815aa6] {\r\n    padding: 15px 8px;\r\n    white-space: normal;\n}\n@media screen and (min-width: 768px) {\n.invoice_address[data-v-ee815aa6] {\r\n        margin: 20px 0;\n}\n}\n@media print {\n.btn-section[data-v-ee815aa6] {\r\n        display: none !important;\n}\n.table-responsive[data-v-ee815aa6] {\r\n        display: inline-table;\r\n        width: 100%;\n}\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 1609:
+/***/ 1614:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -208,7 +208,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1610:
+/***/ 1615:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -274,7 +274,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-header" }, [
       _c("h4", [
         _c("img", {
-          attrs: { src: __webpack_require__(1611), alt: "Company logo" }
+          attrs: { src: __webpack_require__(1616), alt: "Company logo" }
         })
       ]),
       _vm._v(" "),
@@ -299,7 +299,7 @@ var staticRenderFns = [
         _c("h4", [
           _c("img", {
             attrs: {
-              src: __webpack_require__(1612),
+              src: __webpack_require__(1617),
               alt: "invoice QR Code"
             }
           })
@@ -516,33 +516,33 @@ if (false) {
 
 /***/ }),
 
-/***/ 1611:
+/***/ 1616:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/vue-w_logo1.png?752dadf8a43f4c910a01b6078fb79395";
+module.exports = "/GitHub/newpos/public/images/vue-w_logo1.png?752dadf8a43f4c910a01b6078fb79395";
 
 /***/ }),
 
-/***/ 1612:
+/***/ 1617:
 /***/ (function(module, exports) {
 
-module.exports = "/cheerspos/public/images/invoice_code.jpg?4116c893cd8e8a7b55704ef01adaf879";
+module.exports = "/GitHub/newpos/public/images/invoice_code.jpg?4116c893cd8e8a7b55704ef01adaf879";
 
 /***/ }),
 
-/***/ 757:
+/***/ 758:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(1607)
+  __webpack_require__(1612)
 }
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(1609)
+var __vue_script__ = __webpack_require__(1614)
 /* template */
-var __vue_template__ = __webpack_require__(1610)
+var __vue_template__ = __webpack_require__(1615)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */

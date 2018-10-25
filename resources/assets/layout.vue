@@ -91,9 +91,13 @@
             }
         },
         mounted() {
-            if (window.innerWidth <= 992) {
+            /*if (window.innerWidth <= 992) {
                 this.$store.commit('left_menu', 'close')
-            }
+            }*/
+
+        
+                this.$store.commit('left_menu', 'close')
+        
         },
 
     }

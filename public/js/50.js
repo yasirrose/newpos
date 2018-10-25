@@ -1,22 +1,22 @@
 webpackJsonp([50],{
 
-/***/ 1416:
+/***/ 1622:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1417);
+var content = __webpack_require__(1623);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(93)("1a5ea58d", content, false, {});
+var update = __webpack_require__(93)("7ccb509c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-40c2e912\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form_elements.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-40c2e912\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form_elements.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-18ffbac6\",\"scoped\":true,\"hasInlineConfig\":true}!./pricing.css", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-18ffbac6\",\"scoped\":true,\"hasInlineConfig\":true}!./pricing.css");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -27,7 +27,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1417:
+/***/ 1623:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(49)(false);
@@ -35,14 +35,14 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "\n#color[data-v-40c2e912] {\n    height: 35px;\n}\n[data-v-40c2e912] .form-control:disabled{\n        cursor: not-allowed;\n}\n.disabled[data-v-40c2e912]{\n        cursor:not-allowed;\n}\n.form-control[data-v-40c2e912]:active, .input-group .form-control[data-v-40c2e912]:hover{\n    z-index: 1;\n}\n", ""]);
+exports.push([module.i, "\n.plan-desc[data-v-18ffbac6] {\r\n    color : #777;\n}\n.basic[data-v-18ffbac6], .standard[data-v-18ffbac6], .premium[data-v-18ffbac6] {\r\n    border         : 1px solid #E5E5E5;\r\n    border-radius  : 3px;\r\n    margin-top     : 20px;\r\n    margin-bottom  : 10px;\r\n    padding-bottom : 25px;\n}\n.standard[data-v-18ffbac6] {\r\n    -webkit-box-shadow : 0 6px 30px #CCC;\r\n            box-shadow : 0 6px 30px #CCC;\n}\n.modal-1[data-v-18ffbac6]{\r\n    background-color: #fff;\n}\n.modal-2[data-v-18ffbac6]{\r\n    background-color: #fff;\n}\n.modal-1 .pack-heading[data-v-18ffbac6] {\r\n    background-color : #E5E5E5;\r\n    margin-bottom    : 10px;\r\n    padding          : 9px 0;\r\n    height           : 76px;\n}\n.modal-1 .pack-title[data-v-18ffbac6] {\r\n    font-size : 22px;\n}\n.modal-1 .pack-price[data-v-18ffbac6] {\r\n    position      : absolute;\r\n    width         : 55px;\r\n    height        : 55px;\r\n    left          : 0;\r\n    right         : 0;\r\n    margin-top    : -3px;\r\n    margin-left   : auto;\r\n    margin-right  : auto;\r\n    border-radius : 50px;\r\n    font-size     : 18px;\r\n    padding-top   : 15px;\n}\n.modal-1 .pack-details[data-v-18ffbac6] {\r\n    padding : 45px 15px 10px;\n}\n.modal-1 .pack-details li[data-v-18ffbac6] {\r\n    margin-bottom : 15px;\r\n    line-height   : 40px;\r\n    color         : #777;\r\n    font-size     : 13px;\n}\n.modal-1 .btn-getit[data-v-18ffbac6] {\r\n    border-radius         : 20px;\r\n    padding               : 5px 17px;\n}\n.modal-1 .trending-tag[data-v-18ffbac6] {\r\n    height   : 68px;\r\n    overflow : hidden;\r\n    position : absolute;\r\n    right    : 12px;\r\n    top      : 17px;\r\n    width    : 85px;\n}\n.tag-design[data-v-18ffbac6] {\r\n    font              : bold 12px Open Sans;\r\n    padding           : 3px 0;\r\n    position          : relative;\r\n    text-align        : center;\r\n    top               : 15px;\r\n    -webkit-transform         : rotate(40deg);\r\n            transform         : rotate(40deg);\r\n    width             : 110px;\r\n    -webkit-box-shadow        : 9px 0 10px #777;\r\n            box-shadow        : 9px 0 10px #777;\n}\r\n/*tarrif modal 2*/\n.modal-2[data-v-18ffbac6] {\r\n    margin-top    : 25px;\r\n    margin-bottom : 20px;\r\n    padding       : 20px;\n}\n.shared.modal-2[data-v-18ffbac6] {\r\n    border : 1px solid #6699CC;\n}\n.shared .text-dark[data-v-18ffbac6]:hover{\r\n    color: #fff !important;\n}\n.vps.modal-2[data-v-18ffbac6] {\r\n    border : 1px solid #FF6666;\n}\n.dedicated.modal-2[data-v-18ffbac6] {\r\n    border : 1px solid #66CCFF;\n}\n.modal-2 .pack-price[data-v-18ffbac6] {\r\n    position      : absolute;\r\n    width         : 65px;\r\n    height        : 65px;\r\n    top           : 7px;\r\n    right         : 0;\r\n    border-radius : 50px;\r\n    font-size     : 18px;\r\n    padding-top   : 11px;\r\n    border        : 9px solid #FFF;\n}\n.bg-danger[data-v-18ffbac6], .bg-info[data-v-18ffbac6] {\r\n    color : #FFF;\n}\n.modal-2 .pack-title[data-v-18ffbac6] {\r\n    margin-top : 0;\r\n    font-size  : 22px;\n}\n.modal-2 .pack-desc[data-v-18ffbac6] {\r\n    font-size : 14px;\r\n    color     : #666;\n}\n.modal-2 .pack-body[data-v-18ffbac6] {\r\n    margin-right : -20px;\r\n    position     : relative;\r\n    overflow     : hidden;\n}\n.modal-2 .pack-details[data-v-18ffbac6] {\r\n    margin-bottom : 20px;\n}\n.modal-2 .pack-details li[data-v-18ffbac6] {\r\n    line-height : 40px;\r\n    color       : #777;\r\n    font-size   : 13px;\n}\n.modal-2 .pack-details li i[data-v-18ffbac6] {\r\n    margin-right : 5px;\n}\n.modal-2 .tarrif_icon[data-v-18ffbac6] {\r\n    position  : absolute;\r\n    right     : -44px;\r\n    font-size : 130px;\r\n    bottom    : -22px;\r\n    color     : #EEE;\n}\n@media screen and (max-width : 767px) {\n.trending-tag[data-v-18ffbac6] {\r\n        right : 15px;\r\n        top   : 0;\n}\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 1418:
+/***/ 1624:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -192,991 +192,409 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "formelements",
+    name: "Pricing",
     mounted: function mounted() {},
     destroyed: function destroyed() {}
 });
 
 /***/ }),
 
-/***/ 1419:
+/***/ 1625:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-lg-12" },
-        [
-          _c(
-            "b-card",
-            {
-              staticClass: "mb-2 bg-default-card",
-              attrs: { header: "Form Elements", "header-tag": "h4" }
-            },
-            [
-              _c("div", [
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-12 col-sm-12 text-center" }, [
+          _c("h3", { staticClass: "plan-desc" }, [
+            _c("strong", [_vm._v("Meet our Web Hosting Tariff - 1 ")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-10 offset-lg-1 col-sm-12" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-4 text-center" }, [
+              _c("div", { staticClass: "basic modal-1" }, [
+                _c("div", { staticClass: "pack-heading" }, [
+                  _c("h4", { staticClass: "pack-title text-primary" }, [
+                    _c("strong", [_vm._v("Basic")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "pack-price bg-primary" }, [
+                    _c("strong", { staticClass: "text-white" }, [_vm._v("12$")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("ul", { staticClass: "pack-details list-unstyled" }, [
+                  _c("li", [_vm._v("6 GB Storage")]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("350 GB Bandwidth")]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("No Domain")]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("2 User")]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("3 Databases")]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("24x7 Email Support")])
+                ]),
+                _vm._v(" "),
                 _c(
-                  "form",
-                  { staticClass: "form-horizontal", attrs: { method: "" } },
-                  [
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-6" }, [
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "control-label col-md-4",
-                              attrs: { for: "text" }
-                            },
-                            [
-                              _vm._v(
-                                "Text:\n                                    "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-9" }, [
-                            _c("input", {
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "text",
-                                id: "text",
-                                placeholder: "Some value"
-                              }
-                            })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "control-label col-md-4",
-                              attrs: { for: "input_Email" }
-                            },
-                            [_vm._v("Email:")]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-9" }, [
-                            _c("input", {
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "email",
-                                id: "input_Email",
-                                placeholder: "Email"
-                              }
-                            })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "control-label col-md-4",
-                              attrs: { for: "input_Password" }
-                            },
-                            [_vm._v("Password:")]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-9" }, [
-                            _c("input", {
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "password",
-                                id: "input_Password",
-                                placeholder: "Password"
-                              }
-                            })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "control-label col-md-4",
-                              attrs: { for: "disabled" }
-                            },
-                            [
-                              _vm._v(
-                                "Disabled:\n                                    "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-9" }, [
-                            _c("input", {
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "text",
-                                id: "disabled",
-                                placeholder: "Disabled input",
-                                disabled: ""
-                              }
-                            })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            { staticClass: "control-label col-md-4" },
-                            [
-                              _vm._v(
-                                "Readonly:\n                                    "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-9" }, [
-                            _c("input", {
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "text",
-                                id: "text2",
-                                placeholder: "Read only",
-                                readonly: ""
-                              }
-                            })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "col-md-3 control-label",
-                              attrs: { for: "example-select" }
-                            },
-                            [_vm._v("Select:")]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-9" }, [
-                            _c(
-                              "select",
-                              {
-                                staticClass: "form-control",
-                                attrs: {
-                                  id: "example-select",
-                                  name: "example-select",
-                                  size: "1"
-                                }
-                              },
-                              [
-                                _c("option", { attrs: { value: "0" } }, [
-                                  _vm._v(
-                                    "\n                                                Please select\n                                            "
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("option", { attrs: { value: "1" } }, [
-                                  _vm._v("Bootstrap")
-                                ]),
-                                _vm._v(" "),
-                                _c("option", { attrs: { value: "2" } }, [
-                                  _vm._v("CSS")
-                                ]),
-                                _vm._v(" "),
-                                _c("option", { attrs: { value: "3" } }, [
-                                  _vm._v("JavaScript")
-                                ]),
-                                _vm._v(" "),
-                                _c("option", { attrs: { value: "4" } }, [
-                                  _vm._v("HTML")
-                                ])
-                              ]
-                            )
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "control-label col-md-4",
-                              attrs: { for: "text_area" }
-                            },
-                            [_vm._v("Text area:")]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-9" }, [
-                            _c("textarea", {
-                              staticClass: "form-control resize_vertical",
-                              attrs: {
-                                rows: "4",
-                                id: "text_area",
-                                placeholder: "Postal Address"
-                              }
-                            })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "control-label col-md-5",
-                              attrs: { for: "maxlength" }
-                            },
-                            [
-                              _vm._v(
-                                "Maxlength:\n                                    "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-9" }, [
-                            _c("input", {
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "text",
-                                maxlength: "5",
-                                id: "maxlength",
-                                placeholder: "Maxlength is five"
-                              }
-                            })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "control-label col-md-4",
-                              attrs: { for: "color" }
-                            },
-                            [
-                              _vm._v(
-                                "Color:\n                                    "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-9" }, [
-                            _c("input", {
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "color",
-                                name: "color",
-                                id: "color",
-                                value: "#428bca"
-                              }
-                            })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "control-label col-md-4",
-                              attrs: { for: "range" }
-                            },
-                            [
-                              _vm._v(
-                                "Range:\n                                    "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-9" }, [
-                            _c("input", {
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "range",
-                                name: "range",
-                                id: "range",
-                                value: "50"
-                              }
-                            })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "control-label col-md-4",
-                              attrs: { for: "url" }
-                            },
-                            [
-                              _vm._v(
-                                "Url:\n                                    "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-9" }, [
-                            _c("input", {
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "url",
-                                name: "url",
-                                value: "http://www.example.com/",
-                                id: "url"
-                              }
-                            })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "control-label col-md-4",
-                              attrs: { for: "search" }
-                            },
-                            [
-                              _vm._v(
-                                "Search:\n                                    "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-9" }, [
-                            _c("input", {
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "search",
-                                id: "search",
-                                placeholder: "Search value"
-                              }
-                            })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "control-label col-md-4",
-                              attrs: { for: "number" }
-                            },
-                            [
-                              _vm._v(
-                                "Number:\n                                    "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-9" }, [
-                            _c("input", {
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "number",
-                                id: "number",
-                                placeholder: "Enter value"
-                              }
-                            })
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-6" }, [
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "control-label col-md-4",
-                              attrs: { for: "date" }
-                            },
-                            [
-                              _vm._v(
-                                "Date:\n                                    "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "col-md-8 col-md-offset-2" },
-                            [
-                              _c("input", {
-                                staticClass: "form-control",
-                                attrs: {
-                                  type: "date",
-                                  id: "date",
-                                  value: "yyyy-mm-dd",
-                                  "aria-selected": "true"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "control-label col-md-4",
-                              attrs: { for: "time" }
-                            },
-                            [
-                              _vm._v(
-                                "Time:\n                                    "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "col-md-8 col-md-offset-2" },
-                            [
-                              _c("input", {
-                                staticClass: "form-control",
-                                attrs: {
-                                  type: "time",
-                                  id: "time",
-                                  value: "14:38:00"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "control-label col-md-4",
-                              attrs: { for: "datetime" }
-                            },
-                            [
-                              _vm._v(
-                                "Datetime:\n                                    "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "col-md-8 col-md-offset-2" },
-                            [
-                              _c("input", {
-                                staticClass: "form-control",
-                                attrs: {
-                                  type: "datetime-local",
-                                  id: "datetime",
-                                  value: "yyyy-mm-dd T14:38:00"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "control-label col-md-4",
-                              attrs: { for: "week" }
-                            },
-                            [
-                              _vm._v(
-                                "Week:\n                                    "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "col-md-8 col-md-offset-2" },
-                            [
-                              _c("input", {
-                                staticClass: "form-control",
-                                attrs: {
-                                  type: "week",
-                                  id: "week",
-                                  value: "2017-W28"
-                                }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "col-md-4 control-label",
-                              attrs: { for: "example-multiple-select2" }
-                            },
-                            [_vm._v("Multiple:")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "col-md-8 col-md-offset-2" },
-                            [
-                              _c(
-                                "select",
-                                {
-                                  staticClass: "form-control",
-                                  attrs: {
-                                    id: "example-multiple-select2",
-                                    name: "example-multiple-select",
-                                    size: "5",
-                                    multiple: ""
-                                  }
-                                },
-                                [
-                                  _c("option", { attrs: { value: "1" } }, [
-                                    _vm._v("Option #1")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("option", { attrs: { value: "2" } }, [
-                                    _vm._v("Option #2")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("option", { attrs: { value: "3" } }, [
-                                    _vm._v("Option #3")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("option", { attrs: { value: "4" } }, [
-                                    _vm._v("Option #4")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("option", { attrs: { value: "5" } }, [
-                                    _vm._v("Option #5")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("option", { attrs: { value: "6" } }, [
-                                    _vm._v("Option #6")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("option", { attrs: { value: "7" } }, [
-                                    _vm._v("Option #7")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("option", { attrs: { value: "8" } }, [
-                                    _vm._v("Option #8")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("option", { attrs: { value: "9" } }, [
-                                    _vm._v("Option #9")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("option", { attrs: { value: "10" } }, [
-                                    _vm._v("Option #10")
-                                  ])
-                                ]
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c("div", { staticClass: "col-md-4" }, [
-                            _c("label", { staticClass: "control-label" }, [
-                              _vm._v("Dropdowns")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "col-md-8" },
-                            [
-                              _c(
-                                "b-input-group",
-                                [
-                                  _c("b-form-input"),
-                                  _vm._v(" "),
-                                  _c(
-                                    "template",
-                                    { slot: "prepend" },
-                                    [
-                                      _c(
-                                        "b-dropdown",
-                                        {
-                                          attrs: {
-                                            text: "Action",
-                                            variant: "secondary"
-                                          }
-                                        },
-                                        [
-                                          _c("b-dropdown-item", [
-                                            _vm._v("Action")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("b-dropdown-item", [
-                                            _vm._v("Action B")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("b-dropdown-divider"),
-                                          _vm._v(" "),
-                                          _c("b-dropdown-item", [
-                                            _vm._v("Something else here...")
-                                          ])
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  )
-                                ],
-                                2
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "b-input-group",
-                                { staticClass: "mt-3" },
-                                [
-                                  _c("b-form-input"),
-                                  _vm._v(" "),
-                                  _c(
-                                    "template",
-                                    { slot: "append" },
-                                    [
-                                      _c(
-                                        "b-dropdown",
-                                        {
-                                          attrs: {
-                                            text: "Action",
-                                            variant: "secondary"
-                                          }
-                                        },
-                                        [
-                                          _c("b-dropdown-item", [
-                                            _vm._v("Action")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("b-dropdown-item", [
-                                            _vm._v("Action B")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("b-dropdown-divider"),
-                                          _vm._v(" "),
-                                          _c("b-dropdown-item", [
-                                            _vm._v("Something else here...")
-                                          ])
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  )
-                                ],
-                                2
-                              )
-                            ],
-                            1
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            { staticClass: "control-label col-md-4" },
-                            [_vm._v("Radios:")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "col-md-8 col-md-offset-2" },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "radio" },
-                                [
-                                  _c(
-                                    "b-form-radio",
-                                    { attrs: { checked: "false" } },
-                                    [
-                                      _vm._v(
-                                        "\n                                                Normal\n                                            "
-                                      )
-                                    ]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "radio" },
-                                [
-                                  _c("b-form-radio", [
-                                    _vm._v(
-                                      "\n                                                Checked\n                                            "
-                                    )
-                                  ])
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "radio" },
-                                [
-                                  _c(
-                                    "b-form-radio",
-                                    {
-                                      attrs: {
-                                        disabled: true,
-                                        checked: "false"
-                                      }
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                                                Disabled\n                                            "
-                                      )
-                                    ]
-                                  )
-                                ],
-                                1
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "form-group p-10" }, [
-                          _c(
-                            "label",
-                            { staticClass: "control-label col-md-4" },
-                            [_vm._v("Checkbox:")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: " col-md-8 col-md-offset-2" },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "checkbox" },
-                                [
-                                  _c(
-                                    "b-form-checkbox",
-                                    { attrs: { checked: "false" } },
-                                    [
-                                      _vm._v(
-                                        "\n                                                Normal\n                                            "
-                                      )
-                                    ]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "checkbox" },
-                                [
-                                  _c(
-                                    "b-form-checkbox",
-                                    { attrs: { checked: "true" } },
-                                    [
-                                      _vm._v(
-                                        "\n                                                Checked\n                                            "
-                                      )
-                                    ]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "checkbox" },
-                                [
-                                  _c(
-                                    "b-form-checkbox",
-                                    { attrs: { disabled: true } },
-                                    [
-                                      _vm._v(
-                                        "\n                                                Disabled\n                                            "
-                                      )
-                                    ]
-                                  )
-                                ],
-                                1
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "form-group p-10 form-actions" },
-                          [
-                            _c(
-                              "div",
-                              { staticClass: "col-md-offset-4 col-md-8" },
-                              [
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass: "btn btn-primary",
-                                    attrs: { type: "button" }
-                                  },
-                                  [
-                                    _vm._v(
-                                      "Submit\n                                        "
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass:
-                                      "btn btn-effect-ripple btn-secondary  reset_btn1",
-                                    attrs: { type: "reset" }
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\n                                            Reset\n                                        "
-                                    )
-                                  ]
-                                )
-                              ]
-                            )
-                          ]
-                        )
-                      ])
-                    ])
-                  ]
+                  "button",
+                  { staticClass: "btn btn-primary center-block btn-getit" },
+                  [_vm._v("Get it now")]
                 )
               ])
-            ]
-          )
-        ],
-        1
-      )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-4 text-center" }, [
+              _c("div", { staticClass: "standard modal-1" }, [
+                _c("div", { staticClass: "trending-tag" }, [
+                  _c(
+                    "div",
+                    { staticClass: "tag-design bg-primary text-white" },
+                    [_vm._v("Best Deal")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "pack-heading" }, [
+                  _c("h4", { staticClass: "pack-title text-primary" }, [
+                    _c("strong", [_vm._v("Standard")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "pack-price bg-primary" }, [
+                    _c("strong", { staticClass: "text-white" }, [_vm._v("17$")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("ul", { staticClass: "pack-details list-unstyled" }, [
+                  _c("li", [_vm._v("14 GB Storage")]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("500 GB Bandwidth")]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("2 Domains")]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("5 User")]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("7 Databases")]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("24x7 Email Support")])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "btn btn-primary center-block btn-getit" },
+                  [_vm._v("Get it now")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-4 text-center" }, [
+              _c("div", { staticClass: "premium modal-1" }, [
+                _c("div", { staticClass: "pack-heading" }, [
+                  _c("h4", { staticClass: "pack-title text-primary" }, [
+                    _c("strong", [_vm._v("Premium")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "pack-price bg-primary" }, [
+                    _c("strong", { staticClass: "text-white" }, [_vm._v("25$")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("ul", { staticClass: "pack-details list-unstyled" }, [
+                  _c("li", [_vm._v("6 GB Storage")]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("620 GB Bandwidth")]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("6 Domains")]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("12 User")]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("15 Databases")]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("24x7 Email Support")])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "btn btn-primary center-block btn-getit" },
+                  [_vm._v("Get it now")]
+                )
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-lg-12 col-sm-12 text-center mb-3 mt-5" },
+          [
+            _c("h3", { staticClass: "plan-desc" }, [
+              _c("strong", [_vm._v("Meet our Web Hosting Tariff - 2 ")])
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-12 col-sm-12" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-4" }, [
+              _c("div", { staticClass: "shared modal-2" }, [
+                _c("div", { staticClass: "pack-heading" }, [
+                  _c(
+                    "div",
+                    { staticClass: "pack-price bg-primary text-center" },
+                    [
+                      _c("strong", { staticClass: "text-white" }, [
+                        _vm._v("17$")
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("h4", { staticClass: "pack-title" }, [
+                    _c("strong", { staticClass: "text-muted" }, [
+                      _vm._v("Shared")
+                    ]),
+                    _vm._v(" "),
+                    _c("small", { staticClass: "text-primary" }, [
+                      _vm._v("Hosting")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "pack-desc" }, [
+                    _vm._v(
+                      "We provide every necessary tool to get a website running as quickly as possible."
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("hr")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "pack-body" }, [
+                  _c("ul", { staticClass: "pack-details list-unstyled" }, [
+                    _c("li", [
+                      _c("i", {
+                        staticClass: "fa fa-rss text-primary",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" 350GB Band Width")
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("i", {
+                        staticClass: "fa fa-arrow-circle-down text-primary",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" Free Domain\n                                ")
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("i", {
+                        staticClass: "fa fa-database text-primary",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" 50 Data Base")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "tarrif_icon" }, [
+                    _c("i", {
+                      staticClass: "fa fa-window-restore",
+                      attrs: { "aria-hidden": "true" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    { staticClass: "btn btn-primary btn-md text-dark" },
+                    [_vm._v("Know More")]
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-4" }, [
+              _c("div", { staticClass: "vps modal-2" }, [
+                _c("div", { staticClass: "pack-heading" }, [
+                  _c(
+                    "div",
+                    { staticClass: "pack-price bg-danger text-center" },
+                    [_c("strong", [_vm._v("17$")])]
+                  ),
+                  _vm._v(" "),
+                  _c("h4", { staticClass: "pack-title" }, [
+                    _c("strong", { staticClass: "text-muted" }, [
+                      _vm._v("VPS")
+                    ]),
+                    _vm._v(" "),
+                    _c("small", { staticClass: "text-danger" }, [
+                      _vm._v("Hosting")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "pack-desc" }, [
+                    _vm._v(
+                      "We provide every necessary tool to get a website running as quickly as possible."
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("hr")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "pack-body" }, [
+                  _c("ul", { staticClass: "pack-details list-unstyled" }, [
+                    _c("li", [
+                      _c("i", {
+                        staticClass: "fa fa-rss text-danger",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" 800GB Band Width")
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("i", {
+                        staticClass: "fa fa-arrow-circle-down text-danger",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" Free Domain\n                                ")
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("i", {
+                        staticClass: "fa fa-database text-danger",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" 200 Data Base")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "tarrif_icon" }, [
+                    _c("i", {
+                      staticClass: "fa fa-clipboard",
+                      attrs: { "aria-hidden": "true" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("button", { staticClass: "btn btn-danger btn-md" }, [
+                    _vm._v("Know More")
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-4" }, [
+              _c("div", { staticClass: "dedicated modal-2" }, [
+                _c("div", { staticClass: "pack-heading" }, [
+                  _c("div", { staticClass: "pack-price bg-info text-center" }, [
+                    _c("strong", [_vm._v("25$")])
+                  ]),
+                  _vm._v(" "),
+                  _c("h4", { staticClass: "pack-title" }, [
+                    _c("strong", { staticClass: "text-muted" }, [
+                      _vm._v("Dedicated")
+                    ]),
+                    _vm._v(" "),
+                    _c("small", { staticClass: "text-info" }, [
+                      _vm._v("Hosting")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "pack-desc" }, [
+                    _vm._v(
+                      "We provide every necessary tool to get a website running as quickly as possible."
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("hr")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "pack-body" }, [
+                  _c("ul", { staticClass: "pack-details list-unstyled" }, [
+                    _c("li", [
+                      _c("i", {
+                        staticClass: "fa fa-rss text-info",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" 1350GB Band Width")
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("i", {
+                        staticClass: "fa fa-arrow-circle-down text-info",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" Free Domain")
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("i", {
+                        staticClass: "fa fa-database text-info",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" 350 Data Base")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "tarrif_icon" }, [
+                    _c("i", {
+                      staticClass: "fa fa-database",
+                      attrs: { "aria-hidden": "true" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("button", { staticClass: "btn btn-info btn-md" }, [
+                    _vm._v("Know More")
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
     ])
-  ])
-}
-var staticRenderFns = []
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-40c2e912", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-18ffbac6", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 721:
+/***/ 760:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(1416)
+  __webpack_require__(1622)
 }
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(1418)
+var __vue_script__ = __webpack_require__(1624)
 /* template */
-var __vue_template__ = __webpack_require__(1419)
+var __vue_template__ = __webpack_require__(1625)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-40c2e912"
+var __vue_scopeId__ = "data-v-18ffbac6"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -1187,7 +605,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/components/pages/form_elements.vue"
+Component.options.__file = "resources/assets/components/pages/pricing.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -1196,9 +614,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-40c2e912", Component.options)
+    hotAPI.createRecord("data-v-18ffbac6", Component.options)
   } else {
-    hotAPI.reload("data-v-40c2e912", Component.options)
+    hotAPI.reload("data-v-18ffbac6", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
