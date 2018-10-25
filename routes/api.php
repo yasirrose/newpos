@@ -10,11 +10,19 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::get('/login', 'API\UserController@login')->name('login');
 Route::post('/login', 'API\UserController@login');
 Route::post('/register', 'API\UserController@register');
 Route::get('/getPlugins', 'API\Cheersadmin\PluginController@getPlugins');
 Route::post('/addPlugins', 'API\Cheersadmin\PluginController@addPlugins');
-Route::group(['middleware' => 'auth:api'], function(){	
-Route::post('/details', 'API\UserController@details');
 
+Route::group(['middleware' => 'auth:api'], function(){
+//Route::get('/details', 'API\UserController@details');	
+	//Route::post('/getPlugins', 'API\Cheersadmin\PluginController@getPlugins');
+	Route::post('/get_plugins', function(){
+		dd(1);
+	});
 });
+
+
+Route::post('details', 'API\UserController@details');

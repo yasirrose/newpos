@@ -15,6 +15,7 @@ public $successStatus = 200;
      * 
      * @return \Illuminate\Http\Response 
      */ 
+    
     public function login(Request $request){ 
         if($request->remember == true)
         {
@@ -22,6 +23,7 @@ public $successStatus = 200;
         }else{
             $remember = false;
         }
+
         if(Auth::attempt(['user_email' => request('email'), 'password' => request('password')],$remember)){ 
             $user = Auth::user(); 
             if($user != "" || $user != null)
@@ -31,21 +33,25 @@ public $successStatus = 200;
             {
                 $userID = 0;
             }
-            $success['token'] =  $user->createToken('Laravel Password Grant Client')-> accessToken; 
+            //$success['token'] =  $user->createToken('Laravel Password Grant Client')-> accessToken; 
+            $tokenResult = $user->createToken('Personal Access Token');
+            dd($tokenResult);
+            $success['token'] = $tokenResult->accessToken;
             Session()->put('token', $success['token']);
             Session()->put('userId', $userID);
-            
             $updateToken['user_token'] =  $success['token'];
             User::updateData($userID,$updateToken);
+
             if($remember == true)
             {
                 $updateQuery['user_remember_token'] = 'Yes';
                 User::updateData($userID,$updateQuery);
             }
-            return response()->json(['success' => $success], $this-> successStatus); 
+
+            return response()->json(['success' => $success,'token' =>$success['token'],'message' => 'success'], $this-> successStatus); 
         } 
         else{ 
-            return response()->json(['error'=>'Unauthorised'], 401); 
+            return response()->json(['error'=>'Unauthorised','message' => 'Email or Password fail']); 
         } 
     }
 /** 
@@ -78,7 +84,7 @@ return response()->json(['success'=>$success], $this-> successStatus);
      */ 
     public function details() 
     { 
-        $user = Auth::user(); 
-        return response()->json(['success' => $user], $this-> successStatus); 
+        dd(1);
+        //return response()->json(['success' => $user], $this-> successStatus); 
     } 
 }

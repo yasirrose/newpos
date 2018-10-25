@@ -31,7 +31,6 @@ if (google_analytics_key && google_analytics_key.length) {
 }
 
 router.beforeEach((to, from, next) => {
- 
   if(to.matched.some(record => record.meta.forVisitors)){
       if(Vue.auth.isAuthenticated()){
         next({ 

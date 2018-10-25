@@ -16,6 +16,7 @@
                          </div>
                      </div>
                  </div>
+                <b-alert show variant="danger" v-if="seen">{{alertMessage}}</b-alert>
                 <vue-form :state="formstate" @submit.prevent="onSubmit">
                     <div class="row">
                         <div class="col-sm-12 mt-3 ">
@@ -83,13 +84,14 @@ export default {
     data() {
         return {
             formstate: {},
+            seen:false,
+            alertMessage:"",
             model: {
                 email: '',
                 password: '',
                 client_secret: AuthenticationStore.client_secret,
                 client_id : 2, 
-                grant_type: 'password'
-
+                grant_type: 'password',
             }
         }
     },
@@ -101,14 +103,19 @@ export default {
             } else {
                axios.post('./api/login', vm.model)
                 .then( response =>{
-                    console.log(response);
-                    var token = response.data.access_token;
-                    localStorage.setItem('token', token);
-                    var expiration = response.data.expires_in + Date.now() ;   
-                    localStorage.setItem('expiration', expiration);
-                   vm.$router.push("/");
-                   
-
+                    if(response.data.token)
+                    {
+                        var token = response.data.token;
+                        localStorage.setItem('token', token);
+                        var currentDate = new Date();
+                        var expiration =currentDate.setTime(currentDate.getTime() + 120*60*1000);
+                        localStorage.setItem('expiration', expiration);
+                        vm.$router.push("/");
+                    }else{
+                        this.alertMessage= response.data.message;
+                        this.seen=true;
+                    }
+                    
                 })
             }
         }
