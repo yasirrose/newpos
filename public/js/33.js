@@ -47,15 +47,15 @@ exports.push([module.i, "\n.dropzone_wrapper[data-v-4a4d30e0] {\r\n    width: 10
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_dropzone__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_dropzone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue2_dropzone__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue2_dropzone_dist_vue2Dropzone_css__ = __webpack_require__(850);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue2_dropzone_dist_vue2Dropzone_css__ = __webpack_require__(848);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue2_dropzone_dist_vue2Dropzone_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue2_dropzone_dist_vue2Dropzone_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_form__ = __webpack_require__(785);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_form__ = __webpack_require__(784);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_form___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_form__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_src_validations_validations_js__ = __webpack_require__(786);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_src_validations_validations_js__ = __webpack_require__(785);
 //
 //
 //
@@ -1563,7 +1563,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 756:
+/***/ 755:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -1615,7 +1615,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 785:
+/***/ 784:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -2944,7 +2944,7 @@ return VueForm;
 
 /***/ }),
 
-/***/ 786:
+/***/ 785:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2964,13 +2964,13 @@ var options = {
 
 /***/ }),
 
-/***/ 850:
+/***/ 848:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(851);
+var content = __webpack_require__(849);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -2996,7 +2996,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 851:
+/***/ 849:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(49)(false);

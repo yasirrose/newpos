@@ -4,12 +4,12 @@ webpackJsonp([61],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_es6_promise_auto__ = __webpack_require__(705);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_es6_promise_auto__ = __webpack_require__(704);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_es6_promise_auto___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_es6_promise_auto__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(707);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mutations__ = __webpack_require__(708);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(706);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mutations__ = __webpack_require__(707);
 
 
 
@@ -24,13 +24,13 @@ function addDays(noOfDays) {
 //=======vuex store start===========
 var store = new __WEBPACK_IMPORTED_MODULE_2_vuex__["a" /* default */].Store({
     state: {
-        left_open: true,
+        left_open: false,
         preloader: true,
-        site_name: "Vuejs-Admin",
+        site_name: "Cheers POS",
         page_title: null,
         user: {
-            name: "Ayesha",
-            picture: __webpack_require__(709),
+            name: "Nasir",
+            picture: __webpack_require__(708),
             job: "Project Manager"
         },
         cal_events: [{
@@ -196,14 +196,14 @@ module.exports = function escape(url) {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthenticationStore", function() { return AuthenticationStore; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App__ = __webpack_require__(296);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__App__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Auth_js__ = __webpack_require__(422);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__router__ = __webpack_require__(423);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Auth_js__ = __webpack_require__(421);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__router__ = __webpack_require__(422);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_store_js__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_analytics__ = __webpack_require__(710);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_analytics__ = __webpack_require__(709);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_analytics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_vue_analytics__);
 window.axios = __webpack_require__(132);
 
@@ -222,57 +222,56 @@ var google_analytics_key = __WEBPACK_IMPORTED_MODULE_4__store_store_js__["a" /* 
 
 if (google_analytics_key && google_analytics_key.length) {
 
-    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vue_analytics___default.a, {
-        id: google_analytics_key,
-        router: __WEBPACK_IMPORTED_MODULE_3__router__["a" /* default */],
-        checkDuplicatedScript: true,
-        autoTracking: {
-            pageviewTemplate: function pageviewTemplate(route) {
-                return {
-                    page: 'default/' + route.path
-                };
-            }
-        }
-    });
+  __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vue_analytics___default.a, {
+    id: google_analytics_key,
+    router: __WEBPACK_IMPORTED_MODULE_3__router__["a" /* default */],
+    checkDuplicatedScript: true,
+    autoTracking: {
+      pageviewTemplate: function pageviewTemplate(route) {
+        return {
+          page: 'default/' + route.path
+        };
+      }
+    }
+  });
 }
 
 __WEBPACK_IMPORTED_MODULE_3__router__["a" /* default */].beforeEach(function (to, from, next) {
-
-    if (to.matched.some(function (record) {
-        return record.meta.forVisitors;
-    })) {
-        if (__WEBPACK_IMPORTED_MODULE_0_vue___default.a.auth.isAuthenticated()) {
-            next({
-                path: '/'
-            });
-        } else next();
-    } else if (to.matched.some(function (record) {
-        return record.meta.forAuth;
-    })) {
-        if (!__WEBPACK_IMPORTED_MODULE_0_vue___default.a.auth.isAuthenticated()) {
-            next({
-                path: '/login'
-            });
-        } else next();
+  if (to.matched.some(function (record) {
+    return record.meta.forVisitors;
+  })) {
+    if (__WEBPACK_IMPORTED_MODULE_0_vue___default.a.auth.isAuthenticated()) {
+      next({
+        path: '/'
+      });
     } else next();
+  } else if (to.matched.some(function (record) {
+    return record.meta.forAuth;
+  })) {
+    if (!__WEBPACK_IMPORTED_MODULE_0_vue___default.a.auth.isAuthenticated()) {
+      next({
+        path: '/login'
+      });
+    } else next();
+  } else next();
 });
 
 var AuthenticationStore = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-    data: {
-        client_secret: '4kRbNGR95XVayf31TiZFPRdHPGEfrgOjX2Xi1Vd8'
+  data: {
+    client_secret: '4kRbNGR95XVayf31TiZFPRdHPGEfrgOjX2Xi1Vd8'
 
-    }
+  }
 });
 // Remove the productionTip in dev tool console
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.config.productionTip = false;
 
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-    el: '#app',
-    router: __WEBPACK_IMPORTED_MODULE_3__router__["a" /* default */],
-    store: __WEBPACK_IMPORTED_MODULE_4__store_store_js__["a" /* default */],
-    render: function render(h) {
-        return h(__WEBPACK_IMPORTED_MODULE_1__App___default.a);
-    }
+  el: '#app',
+  router: __WEBPACK_IMPORTED_MODULE_3__router__["a" /* default */],
+  store: __WEBPACK_IMPORTED_MODULE_4__store_store_js__["a" /* default */],
+  render: function render(h) {
+    return h(__WEBPACK_IMPORTED_MODULE_1__App___default.a);
+  }
 });
 
 /***/ }),
@@ -299,7 +298,7 @@ var normalizeComponent = __webpack_require__(243)
 /* script */
 var __vue_script__ = __webpack_require__(310)
 /* template */
-var __vue_template__ = __webpack_require__(421)
+var __vue_template__ = __webpack_require__(420)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -547,7 +546,7 @@ exports.push([module.i, "/* workaround for https://github.com/bootstrap-vue/boot
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_bootstrap_vue__ = __webpack_require__(138);
 //
@@ -566,7 +565,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_boot
 
 /***/ }),
 
-/***/ 421:
+/***/ 420:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -587,7 +586,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 422:
+/***/ 421:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -630,14 +629,14 @@ if (false) {
 
 /***/ }),
 
-/***/ 423:
+/***/ 422:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(424);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__routes_js__ = __webpack_require__(425);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(423);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__routes_js__ = __webpack_require__(424);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_store__ = __webpack_require__(131);
 
 
@@ -682,7 +681,7 @@ router.afterEach(function (to, from) {
 
 /***/ }),
 
-/***/ 424:
+/***/ 423:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3313,23 +3312,23 @@ if (inBrowser && window.Vue) {
 
 /***/ }),
 
-/***/ 425:
+/***/ 424:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layout__ = __webpack_require__(426);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layout__ = __webpack_require__(425);
 
 
 var routes = [{
     path: '/',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(7).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(763)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(7).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(762)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     children: __WEBPACK_IMPORTED_MODULE_0__layout__["a" /* default */]
 }, {
     path: '/login',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(25).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(764)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(25).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(763)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "login",
@@ -3338,7 +3337,7 @@ var routes = [{
 }, {
     path: '/register',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(31).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(765)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(31).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(764)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "register",
@@ -3347,7 +3346,7 @@ var routes = [{
 }, {
     path: '/forgotpassword',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(32).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(766)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(32).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(765)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Forgot Password",
@@ -3356,7 +3355,7 @@ var routes = [{
 }, {
     path: '/reset_password',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(30).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(767)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(30).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(766)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Reset Password",
@@ -3365,7 +3364,7 @@ var routes = [{
 }, {
     path: '/lockscreen',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(26).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(768)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(26).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(767)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Lockscreen",
@@ -3374,7 +3373,7 @@ var routes = [{
 }, {
     path: '/500',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(52).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(769)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(52).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(768)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "500",
@@ -3383,7 +3382,7 @@ var routes = [{
 }, {
     path: '*',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(53).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(770)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(53).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(769)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "404",
@@ -3394,14 +3393,14 @@ var routes = [{
 
 /***/ }),
 
-/***/ 426:
+/***/ 425:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var layout = [{
     path: '/',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(8).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(712)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(8).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(711)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Dashboard",
@@ -3414,7 +3413,7 @@ var layout = [{
 {
     path: '/accounts',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(5).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(713)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(5).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(712)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Accounts",
@@ -3424,7 +3423,7 @@ var layout = [{
 }, {
     path: '/distributors',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(3).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(714)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(3).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(713)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Distributors",
@@ -3469,7 +3468,7 @@ var layout = [{
 }, {
     path: '/plugins',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(42).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(715)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(42).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(714)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Plugins",
@@ -3481,7 +3480,7 @@ var layout = [{
 {
     path: '/index2',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(6).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(716)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(6).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(715)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Dashboard2"
@@ -3489,7 +3488,7 @@ var layout = [{
 }, {
     path: '/product_details',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(9).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(717)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(9).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(716)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Product details"
@@ -3497,7 +3496,7 @@ var layout = [{
 }, {
     path: '/product_edit',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(21).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(718)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(21).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(717)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Product Edit"
@@ -3505,7 +3504,7 @@ var layout = [{
 }, {
     path: '/e_dashboard',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(10).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(719)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(10).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(718)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "E dashboard"
@@ -3513,7 +3512,7 @@ var layout = [{
 }, {
     path: '/cart_details',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(15).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(720)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(15).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(719)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Cart Details"
@@ -3521,7 +3520,7 @@ var layout = [{
 }, {
     path: '/product_gallery',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(11).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(721)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(11).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(720)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Product gallery"
@@ -3529,7 +3528,7 @@ var layout = [{
 }, {
     path: 'form_elements',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(51).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(722)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(51).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(721)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Form Elements"
@@ -3537,7 +3536,7 @@ var layout = [{
 }, {
     path: 'form_validations',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(41).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(723)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(41).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(722)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: " Form Validations"
@@ -3545,7 +3544,7 @@ var layout = [{
 }, {
     path: 'dropdowns',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(46).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(724)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(46).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(723)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: " Dropdowns"
@@ -3553,7 +3552,7 @@ var layout = [{
 }, {
     path: 'cards',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(55).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(725)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(55).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(724)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: " Cards"
@@ -3561,7 +3560,7 @@ var layout = [{
 }, {
     path: 'buttons',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(40).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(726)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(40).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(725)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Buttons"
@@ -3569,7 +3568,7 @@ var layout = [{
 }, {
     path: 'radios_checkboxes',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(28).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(727)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(28).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(726)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: " Radios & Checkboxes"
@@ -3577,7 +3576,7 @@ var layout = [{
 }, {
     path: 'vue-datepicker',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(35).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(728)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(35).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(727)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: " Datepickers"
@@ -3585,7 +3584,7 @@ var layout = [{
 }, {
     path: 'form_editors',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(14).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(729)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(14).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(728)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: " Form Editors"
@@ -3593,7 +3592,7 @@ var layout = [{
 }, {
     path: 'notifications',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(43).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(730)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(43).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(729)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: " Notifications"
@@ -3601,7 +3600,7 @@ var layout = [{
 }, {
     path: 'modals',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(45).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(731)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(45).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(730)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: " Modals"
@@ -3609,7 +3608,7 @@ var layout = [{
 }, {
     path: 'vscroll',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(22).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(732)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(22).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(731)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: " Vscroll"
@@ -3617,7 +3616,7 @@ var layout = [{
 }, {
     path: 'vue-slider',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(54).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(733)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(54).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(732)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: " Vue Slider"
@@ -3625,7 +3624,7 @@ var layout = [{
 }, {
     path: 'ui_elements',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(37).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(734)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(37).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(733)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: " UI Elements"
@@ -3633,7 +3632,7 @@ var layout = [{
 }, {
     path: 'typography',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(47).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(735)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(47).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(734)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Typography"
@@ -3641,7 +3640,7 @@ var layout = [{
 }, {
     path: 'api',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(17).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(736)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(17).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(735)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "API"
@@ -3649,7 +3648,7 @@ var layout = [{
 }, {
     path: 'timeline',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(20).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(737)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(20).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(736)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Timeline"
@@ -3657,7 +3656,7 @@ var layout = [{
 }, {
     path: 'chat',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(12).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(738)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(12).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(737)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Chat"
@@ -3665,7 +3664,7 @@ var layout = [{
 }, {
     path: 'calendar',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(24).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(739)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(24).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(738)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Calendar"
@@ -3673,7 +3672,7 @@ var layout = [{
 }, {
     path: 'simple_tables',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(56).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(740)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(56).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(739)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Simple Tables"
@@ -3681,7 +3680,7 @@ var layout = [{
 }, {
     path: 'advanced_tables',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(4).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(741)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(4).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(740)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Advanced Tables"
@@ -3689,7 +3688,7 @@ var layout = [{
 }, {
     path: 'widgets',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(18).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(742)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(18).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(741)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Widgets"
@@ -3697,7 +3696,7 @@ var layout = [{
 }, {
     path: 'chartist',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(29).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(743)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(29).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(742)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Chartist Charts"
@@ -3705,7 +3704,7 @@ var layout = [{
 }, {
     path: 'frappe-charts',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(19).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(744)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(19).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(743)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Frappe Charts"
@@ -3713,7 +3712,7 @@ var layout = [{
 }, {
     path: 'e_linecharts',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(58).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(745)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(58).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(744)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Echarts - Line"
@@ -3721,7 +3720,7 @@ var layout = [{
 }, {
     path: 'e_barcharts',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(59).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(746)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(59).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(745)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Echarts - Bar"
@@ -3729,7 +3728,7 @@ var layout = [{
 }, {
     path: 'e_piecharts',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(57).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(747)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(57).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(746)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Echarts - Pie"
@@ -3737,7 +3736,7 @@ var layout = [{
 }, {
     path: 'trend_bar',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(38).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(748)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(38).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(747)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Vue Trend/Bar charts"
@@ -3745,7 +3744,7 @@ var layout = [{
 }, {
     path: 'gmaps',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(749)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(748)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Maps"
@@ -3753,7 +3752,7 @@ var layout = [{
 }, {
     path: 'gallery',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(13).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(750)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(13).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(749)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Gallery"
@@ -3761,7 +3760,7 @@ var layout = [{
 }, {
     path: 'multi_file_upload',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(44).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(751)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(44).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(750)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Multi File Upload"
@@ -3769,7 +3768,7 @@ var layout = [{
 }, {
     path: 'vue_dropzone',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(36).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(752)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(36).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(751)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Vue Dropzone"
@@ -3777,7 +3776,7 @@ var layout = [{
 }, {
     path: 'user_profile',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(16).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(753)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(16).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(752)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "User Profile"
@@ -3785,7 +3784,7 @@ var layout = [{
 }, {
     path: 'add_user',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(34).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(754)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(34).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(753)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Add User"
@@ -3793,7 +3792,7 @@ var layout = [{
 }, {
     path: 'users_list',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(27).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(755)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(27).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(754)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Users List"
@@ -3801,7 +3800,7 @@ var layout = [{
 }, {
     path: 'edit_user',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(33).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(756)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(33).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(755)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Edit User"
@@ -3817,7 +3816,7 @@ var layout = [{
 }, {
     path: 'transitions',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(48).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(757)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(48).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(756)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Transitions"
@@ -3825,7 +3824,7 @@ var layout = [{
 }, {
     path: 'invoice',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(39).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(758)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(39).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(757)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Invoice"
@@ -3833,7 +3832,7 @@ var layout = [{
 }, {
     path: 'contact_us',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(759)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(758)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Contact Us"
@@ -3841,7 +3840,7 @@ var layout = [{
 }, {
     path: 'Pricing',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(50).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(760)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(50).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(759)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Pricing"
@@ -3849,7 +3848,7 @@ var layout = [{
 }, {
     path: 'contacts',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(23).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(761)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(23).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(760)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "contacts"
@@ -3857,7 +3856,7 @@ var layout = [{
 }, {
     path: 'tasks',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(49).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(762)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(49).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(761)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "tasks"
@@ -3868,19 +3867,19 @@ var layout = [{
 
 /***/ }),
 
-/***/ 705:
+/***/ 704:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 // This file can be required in Browserify and Node.js for automatic polyfill
 // To use it:  require('es6-promise/auto');
 
-module.exports = __webpack_require__(706).polyfill();
+module.exports = __webpack_require__(705).polyfill();
 
 
 /***/ }),
 
-/***/ 706:
+/***/ 705:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, global) {/*!
@@ -5071,7 +5070,7 @@ return Promise$1;
 
 /***/ }),
 
-/***/ 707:
+/***/ 706:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6017,7 +6016,7 @@ var index_esm = {
 
 /***/ }),
 
-/***/ 708:
+/***/ 707:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6077,14 +6076,14 @@ var mutations = {
 
 /***/ }),
 
-/***/ 709:
+/***/ 708:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/prf4.jpg?fb9fdb254b4b4b10a738dce89ae99078";
 
 /***/ }),
 
-/***/ 710:
+/***/ 709:
 /***/ (function(module, exports, __webpack_require__) {
 
 !function(e,n){if(true)module.exports=n();else if("function"==typeof define&&define.amd)define([],n);else{var r=n();for(var t in r)("object"==typeof exports?exports:e)[t]=r[t]}}(this,function(){return function(e){function n(t){if(r[t])return r[t].exports;var o=r[t]={i:t,l:!1,exports:{}};return e[t].call(o.exports,o,o.exports,n),o.l=!0,o.exports}var r={};return n.m=e,n.c=r,n.d=function(e,r,t){n.o(e,r)||Object.defineProperty(e,r,{configurable:!1,enumerable:!0,get:t})},n.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(r,"a",r),r},n.o=function(e,n){return Object.prototype.hasOwnProperty.call(e,n)},n.p="",n(n.s=0)}([function(e,n,r){"use strict";function t(e){u(F,e)}function o(){return F.id?[].concat(F.id):[]}function i(){}function a(e){return new Promise(function(n,r){var t=document.head||document.getElementsByTagName("head")[0],o=document.createElement("script");o.async=!0,o.src=e,o.charset="utf8",t.appendChild(o),o.onload=n,o.onerror=r})}function c(e,n){var r=n.split("/"),t=e.split("/");return""===r[0]&&"/"===e[e.length-1]&&r.shift(),t.join("/")+r.join("/")}function u(e,n){return Object.keys(n).forEach(function(r){if(e[r]&&"object"==typeof e[r])return void u(e[r],n[r]);e[r]=n[r]}),e}function f(){return Array.prototype.slice.call(document.getElementsByTagName("script")).filter(function(e){return-1!==e.src.indexOf("analytics")||-1!==e.src.indexOf("gtag")}).length>0}function s(){return!(_.checkDuplicatedScript&&f())}function l(e){return e.name||e.replace(/-/gi,"")}function d(){return new Promise(function(e,n){var r=setInterval(function(){"undefined"!=typeof window&&window.ga&&(e(),clearInterval(r))},10)})}function p(e,n){if(o().length>1){return l(n)+"."+e}return e}function v(e){var n=Object.keys(e).reduce(function(n,r,t,o){var i=t===o.length-1;return n+=r+"="+e[r]+(i?"":"&")},"");return""!==n?"?"+n:""}function y(e){return[e.name,e.path].filter(Boolean).find(function(e){return-1!==_.ignoreRoutes.indexOf(e)})}function h(e){return e.query&&e.params}function g(e){return e.currentRoute}function m(e){if(Array.isArray(e)){for(var n=0,r=Array(e.length);n<e.length;n++)r[n]=e[n];return r}return Array.from(e)}function w(e){for(var n=arguments.length,r=Array(n>1?n-1:0),t=1;t<n;t++)r[t-1]=arguments[t];"undefined"!=typeof window&&o().forEach(function(n){var t={m:p(e,n),a:r};if(!window.ga)return void _.untracked.push(t);if(_.batch.enabled)$.push(t),U||(U=setInterval(function(){$.length?$.splice(0,_.batch.amount).forEach(function(e){var n;(n=window).ga.apply(n,[e.m].concat(m(e.a)))}):(clearInterval(U),U=null)},_.batch.delay));else{var o;(o=window).ga.apply(o,[p(e,n)].concat(r))}})}function b(){for(var e=arguments.length,n=Array(e),r=0;r<e;r++)n[r]=arguments[r];if("object"==typeof n[0]&&n[0].constructor===Object)return void w("set",n[0]);w("set",n[0],n[1])}function k(){var e=o();_.debug.enabled&&(window.ga_debug={trace:_.debug.trace}),e.forEach(function(n){var r=l(n),t=_.customIdFields[n]||{},o=e.length>1?D({},_.fields,t,{name:r}):_.fields;window.ga("create",n.id||n,"auto",o)}),_.beforeFirstHit();var n=_.ecommerce;if(n.enabled){var r=n.enhanced?"ec":"ecommerce";n.options?w("require",r,n.options):w("require",r)}_.linkers.length>0&&(w("require","linker"),w("linker:autoLink",_.linkers)),_.debug.sendHitTask||b("sendHitTask",null)}function x(){for(var e=arguments.length,n=Array(e),r=0;r<e;r++)n[r]=arguments[r];var t=n[0];if(1===n.length&&"string"==typeof t)return w("send","screenview",{screenName:t});w.apply(void 0,["send","screenview"].concat(n))}function A(){for(var e=void 0,n=arguments.length,r=Array(n),t=0;t<n;t++)r[t]=arguments[t];if(r.length&&g(r[0])&&(e=r[0].currentRoute),r.length&&h(r[0])&&(e=r[0]),e)E(e);else{b("page","object"==typeof r[0]?r[0].page:r[0]),w.apply(void 0,["send","pageview"].concat(r))}}function E(e){if(!y(e)){var n=_.autoTracking,r=e.meta.analytics,t=void 0===r?{}:r,o=t.pageviewTemplate||n.pageviewTemplate;if(n.screenview&&!e.name)throw new Error("[vue-analytics] Route name is mandatory when using screenview.");if(n.screenview)return void x(e.name);if(o)A(o(e));else{var i=_.router,a=_.autoTracking,u=a.transformQueryString,f=a.prependBase,s=v(e.query),l=i&&i.options.base,d=f&&l,p=e.path+(u?s:"");p=d?c(l,p):p,A(p)}}}function O(){var e=_.router,n=_.autoTracking;n.page&&e&&(n.pageviewOnLoad&&E(e.currentRoute),_.router.afterEach(function(r,t){var o=n.skipSamePath,i=n.shouldRouterUpdate;o&&r.path===t.path||("function"!=typeof i||i(r,t))&&_.$vue.nextTick().then(function(){E(e.currentRoute)})}))}function j(e){if(Array.isArray(e)){for(var n=0,r=Array(e.length);n<e.length;n++)r[n]=e[n];return r}return Array.from(e)}function T(){for(var e=arguments.length,n=Array(e),r=0;r<e;r++)n[r]=arguments[r];w.apply(void 0,["send","event"].concat(n))}function q(){for(var e=arguments.length,n=Array(e),r=0;r<e;r++)n[r]=arguments[r];w.apply(void 0,["send","social"].concat(n))}function P(){for(var e=arguments.length,n=Array(e),r=0;r<e;r++)n[r]=arguments[r];w.apply(void 0,["send","timing"].concat(n))}function R(e,n,r){return n in e?Object.defineProperty(e,n,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[n]=r,e}function L(e){if(Array.isArray(e)){for(var n=0,r=Array(e.length);n<e.length;n++)r[n]=e[n];return r}return Array.from(e)}function I(e){var n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};t(ae({},n,{$vue:e})),e.directive("ga",te),e.prototype.$ga=e.$ga=re,V(e),z()}Object.defineProperty(n,"__esModule",{value:!0});var S=Object.assign||function(e){for(var n=1;n<arguments.length;n++){var r=arguments[n];for(var t in r)Object.prototype.hasOwnProperty.call(r,t)&&(e[t]=r[t])}return e},H={$vue:null,id:null,router:null,fields:{},customIdFields:{},ignoreRoutes:[],linkers:[],commands:{},disabled:!1,customResourceURL:null,set:[],require:[],ecommerce:{enabled:!1,options:null,enhanced:!1},autoTracking:{screenview:!1,shouldRouterUpdate:null,skipSamePath:!1,exception:!1,exceptionLogs:!0,page:!0,transformQueryString:!0,pageviewOnLoad:!0,pageviewTemplate:null,untracked:!0,prependBase:!0},debug:{enabled:!1,trace:!1,sendHitTask:!0},batch:{enabled:!1,delay:500,amount:2},checkDuplicatedScript:!1,disableScriptLoader:!1,beforeFirstHit:i,ready:i,untracked:[]},F=S({},H),_=F,B=function(e){if(e.then)return e;if("function"==typeof e){var n=e();return n.then?n:Promise.resolve(n)}return Promise.resolve(e)},U=void 0,$=[],D=Object.assign||function(e){for(var n=1;n<arguments.length;n++){var r=arguments[n];for(var t in r)Object.prototype.hasOwnProperty.call(r,t)&&(e[t]=r[t])}return e},M=function(){if(2==arguments.length)return void w("require",arguments.length<=0?void 0:arguments[0],arguments.length<=1?void 0:arguments[1]);w("require",arguments.length<=0?void 0:arguments[0])},N=function(){_.set.forEach(function(e){var n=e.field,r=e.value;if(void 0===n||void 0===r)throw new Error('[vue-analytics] Wrong configuration in the plugin options.\nThe "set" array requires each item to have a "field" and a "value" property.');b(n,r)})},C=function(){var e=["ec","ecommerce"];_.require.forEach(function(n){if(-1!==e.indexOf(n)||-1!==e.indexOf(n.name))throw new Error("[vue-analytics] The ecommerce features are built-in in the plugin. \nFollow the ecommerce instructions available in the documentation.");if("string"!=typeof n&&"object"!=typeof n)throw new Error('[vue-analytics] Wrong configuration in the plugin options. \nThe "require" array requires each item to be a string or to have a "name" and an "options" property.');var r=n.name||n;if(n.options)return void M(r,n.options);M(r)})},Q=function(){N(),C()},W=function(){_.untracked.forEach(function(e){w.apply(void 0,[e.m].concat(j(e.a)))})},G=function(){var e=!(arguments.length>0&&void 0!==arguments[0])||arguments[0];"undefined"!=typeof window&&o().forEach(function(n){window["ga-disable-"+n]=e})},z=function(){if("undefined"!=typeof document&&"undefined"!=typeof window){var e=_.disableScriptLoader,n=_.debug.enabled?"analytics_debug":"analytics",r=_.customResourceURL||"https://www.google-analytics.com/"+n+".js";if(!_.id)throw new Error('[vue-analytics] Missing the "id" parameter. Add at least one tracking domain ID');var o=[B(_.id),B(_.disabled)];return!s()||window.ga&&e||o.push(a(r).catch(function(){throw new Error("[vue-analytics] An error occured! Please check your connection, if you have any Google Analytics blocker installed in your browser or check your custom resource URL if you have added any.")})),Promise.all(o).then(function(e){t({id:e[0],disabled:e[1]}),G(_.disabled),k(),W(),Q(),O()}).catch(function(e){console.error(e.message)})}},J=this,K=function(e){w("send","exception",{exDescription:e,exFatal:arguments.length>1&&void 0!==arguments[1]&&arguments[1]})},V=function(e){if(_.autoTracking.exception){window.addEventListener("error",function(e){K(e.message)});var n=e.config.errorHandler;e.config.errorHandler=function(e,r,t){K(e.message),_.autoTracking.exceptionLogs&&(console.error("[vue-analytics] Error in "+t+": "+e.message),console.error(e)),"function"==typeof n&&n.call(J,e,r,t)}}},X=K,Y=Object.assign||function(e){for(var n=1;n<arguments.length;n++){var r=arguments[n];for(var t in r)Object.prototype.hasOwnProperty.call(r,t)&&(e[t]=r[t])}return e},Z=function(e){return(_.ecommerce.enhanced?"ec":"ecommerce")+":"+e},ee=["addItem","addTransaction","addProduct","addImpression","setAction","addPromo","send"],ne=ee.reduce(function(e,n){return Y({},e,R({},n,function(){for(var e=arguments.length,r=Array(e),t=0;t<e;t++)r[t]=arguments[t];w.apply(void 0,[Z(n)].concat(r))}))},{}),re={event:T,exception:X,page:A,query:w,require:M,set:b,social:q,time:P,screenview:x,ecommerce:ne,disable:function(){return G(!0)},enable:function(){return G(!1)},commands:_.commands},te={inserted:function(e,n,r){var t=Object.keys(n.modifiers);0===t.length&&t.push("click"),t.forEach(function(t){e.addEventListener(t,function(){var e="string"==typeof n.value?_.commands[n.value]:n.value;if(!e)throw new Error("[vue-analytics] The value passed to v-ga is not defined in the commands list.");e.apply(r.context)})})}},oe=function(){function e(e,n){var r=[],t=!0,o=!1,i=void 0;try{for(var a,c=e[Symbol.iterator]();!(t=(a=c.next()).done)&&(r.push(a.value),!n||r.length!==n);t=!0);}catch(e){o=!0,i=e}finally{try{!t&&c.return&&c.return()}finally{if(o)throw i}}return r}return function(n,r){if(Array.isArray(n))return n;if(Symbol.iterator in Object(n))return e(n,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),ie=function(e){e.subscribe(function(e){var n=e.payload;if(n&&n.meta&&n.meta.analytics){var r=n.meta.analytics;if(!Array.isArray(r))throw new Error('The "analytics" property needs to be an array');r.forEach(function(e){var n=void 0,r=e.shift(),t=e;if(r.includes(":")){var o=r.split(":"),i=oe(o,2);r=i[0],n=i[1]}if(!(r in re))throw new Error('[vue-analytics:vuex] The type "'+r+"\" doesn't exist.");if(n&&!(n in re[r]))throw new Error('[vue-analytics:vuex] The type "'+r+'" has not method "'+n+'".');if("ecommerce"===r&&!n)throw new Error('[vue-analytics:vuex] The type "'+r+'" needs to call a method. Check documentation.');if(n){var a;(a=re[r])[n].apply(a,L(t))}else re[r].apply(re,L(t))})}})};n.default=I,r.d(n,"analyticsMiddleware",function(){return ce}),r.d(n,"onAnalyticsReady",function(){return ue}),r.d(n,"event",function(){return fe}),r.d(n,"ecommerce",function(){return se}),r.d(n,"set",function(){return le}),r.d(n,"page",function(){return de}),r.d(n,"query",function(){return pe}),r.d(n,"screenview",function(){return ve}),r.d(n,"time",function(){return ye}),r.d(n,"require",function(){return he}),r.d(n,"exception",function(){return ge}),r.d(n,"social",function(){return me});var ae=Object.assign||function(e){for(var n=1;n<arguments.length;n++){var r=arguments[n];for(var t in r)Object.prototype.hasOwnProperty.call(r,t)&&(e[t]=r[t])}return e},ce=ie,ue=d,fe=re.event,se=re.ecommerce,le=re.set,de=re.page,pe=re.query,ve=re.screenview,ye=re.time,he=re.require,ge=re.exception,me=re.social}])});

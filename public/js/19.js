@@ -1,6 +1,6 @@
 webpackJsonp([19],{
 
-/***/ 1137:
+/***/ 1136:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -170,7 +170,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_frappe_charts_dist_frappe_charts_min_esm__ = __webpack_require__(1137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_frappe_charts_dist_frappe_charts_min_esm__ = __webpack_require__(1136);
 //
 //
 //
@@ -460,7 +460,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_frappe_charts_dist_frappe_charts_min_esm__ = __webpack_require__(1137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_frappe_charts_dist_frappe_charts_min_esm__ = __webpack_require__(1136);
 //
 //
 //
@@ -735,7 +735,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_frappe_charts_dist_frappe_charts_min_esm__ = __webpack_require__(1137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_frappe_charts_dist_frappe_charts_min_esm__ = __webpack_require__(1136);
 //
 //
 //
@@ -957,7 +957,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 744:
+/***/ 743:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false

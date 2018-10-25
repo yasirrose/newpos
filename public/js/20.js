@@ -1,6 +1,6 @@
 webpackJsonp([20],{
 
-/***/ 1083:
+/***/ 1082:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/timeline1.jpeg?c24ea823560e1624047db1dd2350f682";
@@ -278,7 +278,7 @@ var staticRenderFns = [
             _c("img", {
               staticClass: "author-image float-right img-fluid",
               attrs: {
-                src: __webpack_require__(772),
+                src: __webpack_require__(771),
                 alt: "timeline image1"
               }
             }),
@@ -318,7 +318,7 @@ var staticRenderFns = [
                 _c("img", {
                   staticClass: "circle-author-image p-10 img-fluid",
                   attrs: {
-                    src: __webpack_require__(815),
+                    src: __webpack_require__(813),
                     alt: "author image"
                   }
                 }),
@@ -333,7 +333,7 @@ var staticRenderFns = [
               _c("img", {
                 staticClass: "sharedpost-image img-fluid",
                 attrs: {
-                  src: __webpack_require__(879),
+                  src: __webpack_require__(878),
                   alt: "timeline image2"
                 }
               })
@@ -363,7 +363,7 @@ var staticRenderFns = [
               _c("img", {
                 staticClass: "posted-image p-10 img-fluid",
                 attrs: {
-                  src: __webpack_require__(1083),
+                  src: __webpack_require__(1082),
                   alt: "timeline image2"
                 }
               })
@@ -401,7 +401,7 @@ var staticRenderFns = [
                 _c("img", {
                   staticClass: "circle-author-image p-10 img-fluid",
                   attrs: {
-                    src: __webpack_require__(807),
+                    src: __webpack_require__(806),
                     alt: "author image"
                   }
                 }),
@@ -469,7 +469,7 @@ var staticRenderFns = [
               _c("img", {
                 staticClass: "sharedpost-image img-fluid",
                 attrs: {
-                  src: __webpack_require__(879),
+                  src: __webpack_require__(878),
                   alt: "timeline image2"
                 }
               })
@@ -580,7 +580,7 @@ var staticRenderFns = [
                 _c("img", {
                   staticClass: "posted-image img-fluid",
                   attrs: {
-                    src: __webpack_require__(1083),
+                    src: __webpack_require__(1082),
                     alt: "timeline image2"
                   }
                 })
@@ -610,7 +610,7 @@ module.exports = "/GitHub/newpos/public/images/health.png?a62090e1f7199d7547f04a
 
 /***/ }),
 
-/***/ 737:
+/***/ 736:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -662,28 +662,28 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 772:
+/***/ 771:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
 
 /***/ }),
 
-/***/ 807:
+/***/ 806:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar5.jpg?4f52473b866c8d274fce38e90ee4883d";
 
 /***/ }),
 
-/***/ 815:
+/***/ 813:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar6.jpg?7a7ee17a5a77782a7d07b499cde37807";
 
 /***/ }),
 
-/***/ 879:
+/***/ 878:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/timeline.jpeg?e0be5e2ba70609c6a4127e4753f5e9fa";

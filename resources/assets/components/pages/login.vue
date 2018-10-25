@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-sm-12 mt-3">
                         <h2 class="text-center">
-                            <img src="~img/logo_black.png" alt="Logo">
+                            <img src="~img/logo.png" alt="Logo">
                         </h2>
                     </div>
                 </div>
@@ -63,8 +63,6 @@
                                 <p>
                                     <router-link tag="a" to="/forgotpassword" class="">Forgot Your Password ?</router-link>
                                 </p>
-                                <router-link tag="a" to="/register" class="btn btn-primary btn-block ">New User? Sign Up Now
-                                </router-link>
                             </div>
                         </div>
                     </div>

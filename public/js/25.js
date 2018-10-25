@@ -1,5 +1,12 @@
 webpackJsonp([25],{
 
+/***/ 1273:
+/***/ (function(module, exports) {
+
+module.exports = "/GitHub/newpos/public/images/logo.png?290f72edefd125c9c36d962815c219d9";
+
+/***/ }),
+
 /***/ 1683:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36,7 +43,7 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "\n.login-content[data-v-c3a38a2e] {\r\n    margin-top: 7%;\r\n    margin-bottom: 7%;\r\n    -webkit-box-shadow: 0 0 20px #ccc;\r\n            box-shadow: 0 0 20px #ccc;\r\n    background-size: 100% 100%;\r\n    border-radius: 7px;\n}\n.img_backgrond[data-v-c3a38a2e]{\r\n        background-image: url(" + escape(__webpack_require__(829)) + ");\r\n        background-size:cover;\r\n        background-repeat:no-repeat;\r\n        width: 100%;\r\n        padding: 75px 15px;\n}\nlabel[data-v-c3a38a2e]{\r\n    font-size: 14px !important;\n}\n[data-v-c3a38a2e]::-webkit-input-placeholder {\r\n    font-size:14px;\n}\r\n", ""]);
+exports.push([module.i, "\n.login-content[data-v-c3a38a2e] {\r\n    margin-top: 7%;\r\n    margin-bottom: 7%;\r\n    -webkit-box-shadow: 0 0 20px #ccc;\r\n            box-shadow: 0 0 20px #ccc;\r\n    background-size: 100% 100%;\r\n    border-radius: 7px;\n}\n.img_backgrond[data-v-c3a38a2e]{\r\n        background-image: url(" + escape(__webpack_require__(827)) + ");\r\n        background-size:cover;\r\n        background-repeat:no-repeat;\r\n        width: 100%;\r\n        padding: 75px 15px;\n}\nlabel[data-v-c3a38a2e]{\r\n    font-size: 14px !important;\n}\n[data-v-c3a38a2e]::-webkit-input-placeholder {\r\n    font-size:14px;\n}\r\n", ""]);
 
 // exports
 
@@ -48,13 +55,12 @@ exports.push([module.i, "\n.login-content[data-v-c3a38a2e] {\r\n    margin-top: 
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form__ = __webpack_require__(785);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form__ = __webpack_require__(784);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_form__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_js__ = __webpack_require__(260);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_src_validations_validations_js__ = __webpack_require__(786);
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_src_validations_validations_js__ = __webpack_require__(785);
 //
 //
 //
@@ -139,30 +145,38 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
     data: function data() {
         return {
             formstate: {},
+            seen: false,
+            alertMessage: "",
             model: {
                 email: '',
                 password: '',
                 client_secret: __WEBPACK_IMPORTED_MODULE_2__main_js__["AuthenticationStore"].client_secret,
                 client_id: 2,
                 grant_type: 'password'
-
             }
         };
     },
 
     methods: {
         onSubmit: function onSubmit() {
+            var _this = this;
+
             var vm = this;
             if (vm.formstate.$invalid) {
                 return;
             } else {
                 axios.post('./api/login', vm.model).then(function (response) {
-                    console.log(response);
-                    var token = response.data.access_token;
-                    localStorage.setItem('token', token);
-                    var expiration = response.data.expires_in + Date.now();
-                    localStorage.setItem('expiration', expiration);
-                    vm.$router.push("/");
+                    if (response.data.token) {
+                        var token = response.data.token;
+                        localStorage.setItem('token', token);
+                        var currentDate = new Date();
+                        var expiration = currentDate.setTime(currentDate.getTime() + 120 * 60 * 1000);
+                        localStorage.setItem('expiration', expiration);
+                        vm.$router.push("/");
+                    } else {
+                        _this.alertMessage = response.data.message;
+                        _this.seen = true;
+                    }
                 });
             }
         }
@@ -193,6 +207,12 @@ var render = function() {
           _vm._m(0),
           _vm._v(" "),
           _vm._m(1),
+          _vm._v(" "),
+          _vm.seen
+            ? _c("b-alert", { attrs: { show: "", variant: "danger" } }, [
+                _vm._v(_vm._s(_vm.alertMessage))
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _c(
             "vue-form",
@@ -450,37 +470,19 @@ var render = function() {
                 _c("br"),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-sm-12 text-center" }, [
-                  _c(
-                    "div",
-                    { staticClass: "form-group" },
-                    [
-                      _c(
-                        "p",
-                        [
-                          _c(
-                            "router-link",
-                            { attrs: { tag: "a", to: "/forgotpassword" } },
-                            [_vm._v("Forgot Your Password ?")]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "btn btn-primary btn-block ",
-                          attrs: { tag: "a", to: "/register" }
-                        },
-                        [
-                          _vm._v(
-                            "New User? Sign Up Now\n                            "
-                          )
-                        ]
-                      )
-                    ],
-                    1
-                  )
+                  _c("div", { staticClass: "form-group" }, [
+                    _c(
+                      "p",
+                      [
+                        _c(
+                          "router-link",
+                          { attrs: { tag: "a", to: "/forgotpassword" } },
+                          [_vm._v("Forgot Your Password ?")]
+                        )
+                      ],
+                      1
+                    )
+                  ])
                 ])
               ])
             ]
@@ -499,9 +501,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-sm-12 mt-3" }, [
         _c("h2", { staticClass: "text-center" }, [
-          _c("img", {
-            attrs: { src: __webpack_require__(812), alt: "Logo" }
-          })
+          _c("img", { attrs: { src: __webpack_require__(1273), alt: "Logo" } })
         ])
       ])
     ])
@@ -540,7 +540,7 @@ module.exports = "/GitHub/newpos/public/images/login_user-01.png?7bcbdbdc40b9382
 
 /***/ }),
 
-/***/ 764:
+/***/ 763:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -592,7 +592,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 785:
+/***/ 784:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -1921,7 +1921,7 @@ return VueForm;
 
 /***/ }),
 
-/***/ 786:
+/***/ 785:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1941,14 +1941,7 @@ var options = {
 
 /***/ }),
 
-/***/ 812:
-/***/ (function(module, exports) {
-
-module.exports = "/GitHub/newpos/public/images/logo_black.png?fbee0a480ceaa0fa450dae20c38ebe20";
-
-/***/ }),
-
-/***/ 829:
+/***/ 827:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/Login-03-01.png?d74e560d86ea931916bcf7f875a009be";

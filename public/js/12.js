@@ -1,26 +1,26 @@
 webpackJsonp([12],{
 
-/***/ 1084:
+/***/ 1083:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/chat_background2.jpeg?7ef0d5f54a1e706071d96e179f086f6e";
 
 /***/ }),
 
-/***/ 1085:
+/***/ 1084:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/chat_background3.jpg?5e4f394c357c2550b46126586071ddd0";
 
 /***/ }),
 
-/***/ 1108:
+/***/ 1107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var chat = [{
     user: "Rickey",
-    image: __webpack_require__(775),
+    image: __webpack_require__(774),
     status: "Lorem ipsum dolor sit ametm  elit.",
     mbl_num: "9876543210",
     work: "Google",
@@ -63,7 +63,7 @@ var chat = [{
     }]
 }, {
     user: "Jenny",
-    image: __webpack_require__(778),
+    image: __webpack_require__(777),
     status: "Consec  ipsum  adipisicing.Lorem   elit.",
     mbl_num: "8907654231",
     work: "Apple",
@@ -102,7 +102,7 @@ var chat = [{
     }]
 }, {
     user: "David",
-    image: __webpack_require__(772),
+    image: __webpack_require__(771),
     status: "Lorem ipsum dolor ipsum dolor  elit",
     mbl_num: "7894561203",
     work: "Microsoft",
@@ -137,7 +137,7 @@ var chat = [{
     }]
 }, {
     user: "Roysingh",
-    image: __webpack_require__(807),
+    image: __webpack_require__(806),
     status: "Dolor ipsum amet elitLorem ipsum ",
     mbl_num: "9587643210",
     work: "Yahoo",
@@ -160,7 +160,7 @@ var chat = [{
     }]
 }, {
     user: "Joe",
-    image: __webpack_require__(815),
+    image: __webpack_require__(813),
     status: "Dolor ipsum amet elitLorem ipsum ",
     mbl_num: "8974613215",
     work: "Amazon",
@@ -183,7 +183,7 @@ var chat = [{
     }]
 }, {
     user: "Shasla",
-    image: __webpack_require__(792),
+    image: __webpack_require__(791),
     status: "Dolor ipsum dolor dolor elitLorem ",
     mbl_num: "7598642130",
     work: "IBM",
@@ -210,42 +210,42 @@ var chat = [{
 
 /***/ }),
 
-/***/ 1115:
+/***/ 1114:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/20.jpg?9d2e66d09f7971f3a965e944bd390d58";
 
 /***/ }),
 
-/***/ 1132:
+/***/ 1131:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/14.jpg?c4b420cf6b3dd25f99b82b307b8ab973";
 
 /***/ }),
 
-/***/ 1133:
+/***/ 1132:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/15.jpg?7a1f50aa5b80cb03f921bc71f5143b60";
 
 /***/ }),
 
-/***/ 1134:
+/***/ 1133:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/16.jpg?2b143ffe9c0cf5c28b6db3c3ff2d7dc0";
 
 /***/ }),
 
-/***/ 1135:
+/***/ 1134:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/17.jpg?ecea01436ffda158002f09296d16177f";
 
 /***/ }),
 
-/***/ 1136:
+/***/ 1135:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/18.jpg?0f36f952d47a3cbb691431424e2511cc";
@@ -299,11 +299,11 @@ exports.push([module.i, "\n.chat[data-v-1aabd0f0] {\n  min-height: calc(100vh - 
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_components_widgets_chat_component_chat_large_vue__ = __webpack_require__(1515);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_components_widgets_chat_component_chat_large_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_components_widgets_chat_component_chat_large_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_assets_js_chat_data__ = __webpack_require__(1108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_assets_js_chat_data__ = __webpack_require__(1107);
 //
 //
 //
@@ -427,7 +427,7 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "\n.desc-img[data-v-add05e6c] {\n  height: 40px;\n  width: 40px;\n}\n.chat_block[data-v-add05e6c] {\n  border-bottom: 1px solid #f4f2f2;\n}\n.chatalign[data-v-add05e6c] {\n  background-color: #fff !important;\n  height: 100%;\n}\n.chatalign ul[data-v-add05e6c] {\n    padding: 0;\n}\n.chatalign[data-v-add05e6c] .ss-container {\n    padding-right: 10px;\n}\n.converstion_back[data-v-add05e6c] {\n  height: 100%;\n  overflow: hidden;\n  background: #fff !important;\n  border: 1px solid #d8d6d6;\n}\n.converstion_back ul[data-v-add05e6c] {\n    padding: 0;\n}\n.converstion_back > .chat_header[data-v-add05e6c] {\n    background-color: #eaf5ff;\n    padding: 4px;\n    font-size: 20px;\n    font-weight: 500;\n}\n.converstion_back > .chat_header label[data-v-add05e6c] {\n      width: 25px;\n      height: 25px;\n}\n.converstion_back > .chat_header .bg1[data-v-add05e6c] {\n      background-image: url(" + escape(__webpack_require__(880)) + ");\n}\n.converstion_back > .chat_header .bg2[data-v-add05e6c] {\n      background-image: url(" + escape(__webpack_require__(1084)) + ");\n}\n.converstion_back > .chat_header .bg3[data-v-add05e6c] {\n      background-image: url(" + escape(__webpack_require__(1085)) + ");\n}\n.converstion_back[data-v-add05e6c] .ss-wrapper {\n    height: 90%;\n}\n.received div p[data-v-add05e6c],\n.sent div p[data-v-add05e6c] {\n  border-radius: 7px;\n  display: inline-block;\n  padding: 7px 12px;\n  position: relative;\n  border: 1px solid #d4d2d2;\n}\n.received div p[data-v-add05e6c]::after {\n  content: ' ';\n  position: absolute;\n  width: 0;\n  height: 0;\n  left: -12px;\n  right: auto;\n  top: 0px;\n  bottom: auto;\n  border: 12px solid;\n  border-color: #dbf2fa transparent transparent transparent;\n}\n.received div p[data-v-add05e6c]::before {\n  content: ' ';\n  position: absolute;\n  width: 0;\n  height: 0;\n  left: -12px;\n  right: auto;\n  top: -1px;\n  bottom: auto;\n  border: 12px solid;\n  border-color: #d4d2d2 transparent transparent transparent;\n}\n.sent div p[data-v-add05e6c]::before {\n  content: ' ';\n  position: absolute;\n  width: 0;\n  height: 0;\n  right: -13px;\n  top: -1px;\n  bottom: auto;\n  border: 12px solid;\n  border-color: #d4d2d2 transparent transparent transparent;\n}\n.sent div p[data-v-add05e6c]::after {\n  content: ' ';\n  position: absolute;\n  width: 0;\n  height: 0;\n  right: -12px;\n  top: 0;\n  bottom: auto;\n  border: 12px solid;\n  border-color: #fff transparent transparent transparent;\n}\n.self[data-v-add05e6c] {\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-align: end;\n      -ms-flex-align: end;\n          align-items: flex-end;\n}\n.self .msg[data-v-add05e6c] {\n  -webkit-box-ordinal-group: 2;\n      -ms-flex-order: 1;\n          order: 1;\n  border-bottom-right-radius: 0px;\n  -webkit-box-shadow: 1px 2px 0px #D4D4D4;\n          box-shadow: 1px 2px 0px #D4D4D4;\n}\n.sent > div[data-v-add05e6c] {\n  text-align: right;\n  padding: 0 17px 0 17px;\n}\n.sent > div .msg_time[data-v-add05e6c] {\n    font-size: 9px;\n}\n.sent > div p[data-v-add05e6c] {\n    background-color: #fff;\n}\n.received > div[data-v-add05e6c] {\n  text-align: left;\n  padding: 0 17px 0 17px;\n}\n.received > div .msg_time[data-v-add05e6c] {\n    font-size: 9px;\n}\n.received > div p[data-v-add05e6c] {\n    background-color: #dbf2fa;\n}\n.chat_content[data-v-add05e6c] {\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.send-btn[data-v-add05e6c] {\n  border-radius: 0;\n}\n.status-online[data-v-add05e6c] {\n  width: 12px;\n  height: 12px;\n  border-radius: 6px;\n  background-color: #63c17f;\n  position: relative;\n  top: 40px;\n  left: -8px;\n  border: 2px solid #fff;\n}\n.person_name[data-v-add05e6c]:before {\n  content: ' \\25CF';\n  font-size: 21px;\n  position: relative;\n  top: -11px;\n  left: -27px;\n  color: #63c17f;\n}\n.profile[data-v-add05e6c] {\n  padding-bottom: 15px;\n  border: none;\n  height: 100%;\n  overflow-y: auto;\n  background-color: #FFFFFF;\n}\n.wrapper .converstion_back .ss-container[data-v-add05e6c] {\n  background-image: url(" + escape(__webpack_require__(880)) + ");\n}\n.bgcolor[data-v-add05e6c] {\n  border: 2px solid #fff;\n  height: 10px;\n  width: 10px;\n}\n.colors[data-v-add05e6c] {\n  line-height: 1rem;\n  margin-top: 2px;\n}\n.colors span[data-v-add05e6c] {\n    font-size: 10px;\n}\n", ""]);
+exports.push([module.i, "\n.desc-img[data-v-add05e6c] {\n  height: 40px;\n  width: 40px;\n}\n.chat_block[data-v-add05e6c] {\n  border-bottom: 1px solid #f4f2f2;\n}\n.chatalign[data-v-add05e6c] {\n  background-color: #fff !important;\n  height: 100%;\n}\n.chatalign ul[data-v-add05e6c] {\n    padding: 0;\n}\n.chatalign[data-v-add05e6c] .ss-container {\n    padding-right: 10px;\n}\n.converstion_back[data-v-add05e6c] {\n  height: 100%;\n  overflow: hidden;\n  background: #fff !important;\n  border: 1px solid #d8d6d6;\n}\n.converstion_back ul[data-v-add05e6c] {\n    padding: 0;\n}\n.converstion_back > .chat_header[data-v-add05e6c] {\n    background-color: #eaf5ff;\n    padding: 4px;\n    font-size: 20px;\n    font-weight: 500;\n}\n.converstion_back > .chat_header label[data-v-add05e6c] {\n      width: 25px;\n      height: 25px;\n}\n.converstion_back > .chat_header .bg1[data-v-add05e6c] {\n      background-image: url(" + escape(__webpack_require__(879)) + ");\n}\n.converstion_back > .chat_header .bg2[data-v-add05e6c] {\n      background-image: url(" + escape(__webpack_require__(1083)) + ");\n}\n.converstion_back > .chat_header .bg3[data-v-add05e6c] {\n      background-image: url(" + escape(__webpack_require__(1084)) + ");\n}\n.converstion_back[data-v-add05e6c] .ss-wrapper {\n    height: 90%;\n}\n.received div p[data-v-add05e6c],\n.sent div p[data-v-add05e6c] {\n  border-radius: 7px;\n  display: inline-block;\n  padding: 7px 12px;\n  position: relative;\n  border: 1px solid #d4d2d2;\n}\n.received div p[data-v-add05e6c]::after {\n  content: ' ';\n  position: absolute;\n  width: 0;\n  height: 0;\n  left: -12px;\n  right: auto;\n  top: 0px;\n  bottom: auto;\n  border: 12px solid;\n  border-color: #dbf2fa transparent transparent transparent;\n}\n.received div p[data-v-add05e6c]::before {\n  content: ' ';\n  position: absolute;\n  width: 0;\n  height: 0;\n  left: -12px;\n  right: auto;\n  top: -1px;\n  bottom: auto;\n  border: 12px solid;\n  border-color: #d4d2d2 transparent transparent transparent;\n}\n.sent div p[data-v-add05e6c]::before {\n  content: ' ';\n  position: absolute;\n  width: 0;\n  height: 0;\n  right: -13px;\n  top: -1px;\n  bottom: auto;\n  border: 12px solid;\n  border-color: #d4d2d2 transparent transparent transparent;\n}\n.sent div p[data-v-add05e6c]::after {\n  content: ' ';\n  position: absolute;\n  width: 0;\n  height: 0;\n  right: -12px;\n  top: 0;\n  bottom: auto;\n  border: 12px solid;\n  border-color: #fff transparent transparent transparent;\n}\n.self[data-v-add05e6c] {\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-align: end;\n      -ms-flex-align: end;\n          align-items: flex-end;\n}\n.self .msg[data-v-add05e6c] {\n  -webkit-box-ordinal-group: 2;\n      -ms-flex-order: 1;\n          order: 1;\n  border-bottom-right-radius: 0px;\n  -webkit-box-shadow: 1px 2px 0px #D4D4D4;\n          box-shadow: 1px 2px 0px #D4D4D4;\n}\n.sent > div[data-v-add05e6c] {\n  text-align: right;\n  padding: 0 17px 0 17px;\n}\n.sent > div .msg_time[data-v-add05e6c] {\n    font-size: 9px;\n}\n.sent > div p[data-v-add05e6c] {\n    background-color: #fff;\n}\n.received > div[data-v-add05e6c] {\n  text-align: left;\n  padding: 0 17px 0 17px;\n}\n.received > div .msg_time[data-v-add05e6c] {\n    font-size: 9px;\n}\n.received > div p[data-v-add05e6c] {\n    background-color: #dbf2fa;\n}\n.chat_content[data-v-add05e6c] {\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.send-btn[data-v-add05e6c] {\n  border-radius: 0;\n}\n.status-online[data-v-add05e6c] {\n  width: 12px;\n  height: 12px;\n  border-radius: 6px;\n  background-color: #63c17f;\n  position: relative;\n  top: 40px;\n  left: -8px;\n  border: 2px solid #fff;\n}\n.person_name[data-v-add05e6c]:before {\n  content: ' \\25CF';\n  font-size: 21px;\n  position: relative;\n  top: -11px;\n  left: -27px;\n  color: #63c17f;\n}\n.profile[data-v-add05e6c] {\n  padding-bottom: 15px;\n  border: none;\n  height: 100%;\n  overflow-y: auto;\n  background-color: #FFFFFF;\n}\n.wrapper .converstion_back .ss-container[data-v-add05e6c] {\n  background-image: url(" + escape(__webpack_require__(879)) + ");\n}\n.bgcolor[data-v-add05e6c] {\n  border: 2px solid #fff;\n  height: 10px;\n  width: 10px;\n}\n.colors[data-v-add05e6c] {\n  line-height: 1rem;\n  margin-top: 2px;\n}\n.colors span[data-v-add05e6c] {\n    font-size: 10px;\n}\n", ""]);
 
 // exports
 
@@ -439,7 +439,7 @@ exports.push([module.i, "\n.desc-img[data-v-add05e6c] {\n  height: 40px;\n  widt
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__plugins_scroll_vScroll_vue__ = __webpack_require__(803);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__plugins_scroll_vScroll_vue__ = __webpack_require__(802);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__plugins_scroll_vScroll_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__plugins_scroll_vScroll_vue__);
 //
 //
@@ -552,7 +552,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             images: ['~img/pages/chat_background.png', '~img/pages/chat_background.png', '~img/pages/chat_background.png'],
-            bgColor: __webpack_require__(880),
+            bgColor: __webpack_require__(879),
             className: '',
             newmessage: '',
             selected_user_index: 0
@@ -697,21 +697,48 @@ var render = function() {
                   staticClass: "d-none",
                   attrs: { type: "radio" },
                   domProps: {
-                    value: __webpack_require__(880),
+                    value: __webpack_require__(879),
                     checked: _vm._q(
                       _vm.bgColor,
-                      __webpack_require__(880)
+                      __webpack_require__(879)
                     )
                   },
                   on: {
                     change: function($event) {
-                      _vm.bgColor = __webpack_require__(880)
+                      _vm.bgColor = __webpack_require__(879)
                     }
                   }
                 })
               ]),
               _vm._v(" "),
               _c("label", { staticClass: "bg2" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.bgColor,
+                      expression: "bgColor"
+                    }
+                  ],
+                  staticClass: "d-none",
+                  attrs: { type: "radio" },
+                  domProps: {
+                    value: __webpack_require__(1083),
+                    checked: _vm._q(
+                      _vm.bgColor,
+                      __webpack_require__(1083)
+                    )
+                  },
+                  on: {
+                    change: function($event) {
+                      _vm.bgColor = __webpack_require__(1083)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("label", { staticClass: "bg3" }, [
                 _c("input", {
                   directives: [
                     {
@@ -733,33 +760,6 @@ var render = function() {
                   on: {
                     change: function($event) {
                       _vm.bgColor = __webpack_require__(1084)
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("label", { staticClass: "bg3" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.bgColor,
-                      expression: "bgColor"
-                    }
-                  ],
-                  staticClass: "d-none",
-                  attrs: { type: "radio" },
-                  domProps: {
-                    value: __webpack_require__(1085),
-                    checked: _vm._q(
-                      _vm.bgColor,
-                      __webpack_require__(1085)
-                    )
-                  },
-                  on: {
-                    change: function($event) {
-                      _vm.bgColor = __webpack_require__(1085)
                     }
                   }
                 })
@@ -919,6 +919,13 @@ var staticRenderFns = [
         _c("div", { staticClass: "col-4 mt-2" }, [
           _c("img", {
             staticClass: "img-fluid",
+            attrs: { src: __webpack_require__(1131), alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-4 mt-2" }, [
+          _c("img", {
+            staticClass: "img-fluid",
             attrs: { src: __webpack_require__(1132), alt: "" }
           })
         ]),
@@ -947,14 +954,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "col-4 mt-2" }, [
           _c("img", {
             staticClass: "img-fluid",
-            attrs: { src: __webpack_require__(1136), alt: "" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-4 mt-2" }, [
-          _c("img", {
-            staticClass: "img-fluid",
-            attrs: { src: __webpack_require__(1115), alt: "" }
+            attrs: { src: __webpack_require__(1114), alt: "" }
           })
         ])
       ])
@@ -993,7 +993,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 738:
+/***/ 737:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -1045,47 +1045,47 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 772:
+/***/ 771:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
 
 /***/ }),
 
-/***/ 775:
+/***/ 774:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
 
 /***/ }),
 
-/***/ 778:
+/***/ 777:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar4.jpg?2bb4ec334d9b5a47d6369df5a4b7cd11";
 
 /***/ }),
 
-/***/ 792:
+/***/ 791:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar.jpg?cd23a4a129679a15e2583c823c594af2";
 
 /***/ }),
 
-/***/ 803:
+/***/ 802:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(816)
+  __webpack_require__(814)
 }
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(818)
+var __vue_script__ = __webpack_require__(816)
 /* template */
-var __vue_template__ = __webpack_require__(819)
+var __vue_template__ = __webpack_require__(817)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1125,27 +1125,27 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 807:
+/***/ 806:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar5.jpg?4f52473b866c8d274fce38e90ee4883d";
 
 /***/ }),
 
-/***/ 815:
+/***/ 813:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar6.jpg?7a7ee17a5a77782a7d07b499cde37807";
 
 /***/ }),
 
-/***/ 816:
+/***/ 814:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(817);
+var content = __webpack_require__(815);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -1166,7 +1166,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 817:
+/***/ 815:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(49)(false);
@@ -1181,7 +1181,7 @@ exports.push([module.i, "\n.ss-wrapper {\r\n    overflow: hidden;\r\n    width: 
 
 /***/ }),
 
-/***/ 818:
+/***/ 816:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1271,7 +1271,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 819:
+/***/ 817:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1323,7 +1323,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 880:
+/***/ 879:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/chat_background.png?43832ad56f84e37348a04973c4977af2";

@@ -1,27 +1,27 @@
 webpackJsonp([10],{
 
-/***/ 1082:
+/***/ 1081:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/900x600_2.png?2e2aeb6d331b77c001ef8faaa588fde2";
 
 /***/ }),
 
-/***/ 1116:
+/***/ 1115:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/900x600.png?2e2aeb6d331b77c001ef8faaa588fde2";
 
 /***/ }),
 
-/***/ 1117:
+/***/ 1116:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/Icons-10(1).png?8e6bf1f9a6a51f7d7757ea034b5a8a56";
 
 /***/ }),
 
-/***/ 1118:
+/***/ 1117:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/e6.png?2e2aeb6d331b77c001ef8faaa588fde2";
@@ -82,7 +82,7 @@ exports.push([module.i, "\nh5[data-v-070844c4] {\r\n    color: gray;\n}\n.progre
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_echarts_v3_src_full_js__ = __webpack_require__(246);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_chart_line__ = __webpack_require__(249);
@@ -774,7 +774,7 @@ exports.push([module.i, "\n.back_color[data-v-030cf776] {\r\n    background-colo
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 //
 //
@@ -1029,7 +1029,7 @@ exports.push([module.i, "\n.icon_star[data-v-3912eec6] {\r\n    color: #f5a022;\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 //
 //
@@ -1120,7 +1120,7 @@ var render = function() {
             _c("img", {
               staticClass: "rounded-circle img_height",
               attrs: {
-                src: __webpack_require__(781),
+                src: __webpack_require__(780),
                 alt: "user image"
               }
             })
@@ -1294,7 +1294,7 @@ exports.push([module.i, "\n.icon_star[data-v-f1770164] {\r\n    color: #f5a022;\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 //
 //
@@ -1528,7 +1528,7 @@ exports.push([module.i, "\n.price_red[data-v-e78c5bb2] {\r\n    color: #cd5c5c;\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 //
 //
@@ -1625,7 +1625,7 @@ var render = function() {
           _c("img", {
             staticClass: "img-fluid",
             attrs: {
-              src: __webpack_require__(1116),
+              src: __webpack_require__(1115),
               alt: "LED Tv image"
             }
           })
@@ -1749,7 +1749,7 @@ var render = function() {
               _c("span", { staticClass: "arrow_up" }, [
                 _c("img", {
                   attrs: {
-                    src: __webpack_require__(1117),
+                    src: __webpack_require__(1116),
                     alt: "dollar image"
                   }
                 })
@@ -1780,7 +1780,7 @@ var render = function() {
               _c("span", { staticClass: "arrow_up" }, [
                 _c("img", {
                   attrs: {
-                    src: __webpack_require__(1117),
+                    src: __webpack_require__(1116),
                     alt: "image up"
                   }
                 })
@@ -1842,7 +1842,7 @@ var render = function() {
               _c("span", { staticClass: "arrow_up" }, [
                 _c("img", {
                   attrs: {
-                    src: __webpack_require__(1117),
+                    src: __webpack_require__(1116),
                     alt: "image up"
                   }
                 })
@@ -2311,7 +2311,7 @@ var staticRenderFns = [
                   _c("img", {
                     staticClass: "tb_img rounded-circle",
                     attrs: {
-                      src: __webpack_require__(1118),
+                      src: __webpack_require__(1117),
                       alt: "Mobile image"
                     }
                   })
@@ -2367,7 +2367,7 @@ var staticRenderFns = [
                   _c("img", {
                     staticClass: "tb_img rounded-circle",
                     attrs: {
-                      src: __webpack_require__(1082),
+                      src: __webpack_require__(1081),
                       alt: "image missing"
                     }
                   })
@@ -2460,7 +2460,7 @@ module.exports = "/GitHub/newpos/public/images/e5.png?2e2aeb6d331b77c001ef8faaa5
 
 /***/ }),
 
-/***/ 719:
+/***/ 718:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -2512,7 +2512,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 781:
+/***/ 780:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar1.jpg?2b0314ed7a43445517ca523400549d2d";

@@ -1,18 +1,18 @@
 webpackJsonp([18],{
 
-/***/ 1092:
+/***/ 1091:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(1093)
+  __webpack_require__(1092)
 }
 var normalizeComponent = __webpack_require__(243)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(1095)
+var __vue_template__ = __webpack_require__(1094)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,13 +52,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1093:
+/***/ 1092:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1094);
+var content = __webpack_require__(1093);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -79,7 +79,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1094:
+/***/ 1093:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(49)(false);
@@ -94,7 +94,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 1095:
+/***/ 1094:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -115,7 +115,7 @@ var staticRenderFns = [
             _c("img", {
               staticClass: "user-pic mt-3 mb-2",
               attrs: {
-                src: __webpack_require__(792),
+                src: __webpack_require__(791),
                 alt: "profile image"
               }
             }),
@@ -233,7 +233,7 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "/*tabs styles*/\n.tab-pane .card[data-v-f3b125a2] {\r\n    margin: 0;\r\n    border: none;\n}\n.name_center[data-v-f3b125a2]{\r\n    margin-left: 12px;\r\n    margin-top: 5px;\n}\n.name_font[data-v-f3b125a2]{\r\n    font-size: 16px;\r\n    color: #7B7B7B;\n}\n.number_font[data-v-f3b125a2]{\r\n    font-size: 15px;\n}\n.text_color[data-v-f3b125a2]{\r\n    color: #ccc;\n}\r\n/*panel style*/\n.panel[data-v-f3b125a2] {\r\n    border: 1px solid #e5e5e5;\r\n    border-radius: 0;\r\n    -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, .1);\r\n            box-shadow: 0 1px 30px rgba(0, 0, 0, .1);\n}\r\n\r\n\r\n/*user-profile*/\n.user-profile[data-v-f3b125a2] {\r\n    color: #777;\n}\n.user-profile .profile-img[data-v-f3b125a2] {\r\n    width: 110px;\r\n    margin-right: 25px;\n}\n.user-profile .profile-details[data-v-f3b125a2] {\r\n    padding: 10px 0;\n}\n.user-profile .table.account-details > tbody > tr > td[data-v-f3b125a2] {\r\n    padding: 17px 16px;\n}\n.account-details tbody tr[data-v-f3b125a2]:hover {\r\n    background-color: #EEE;\n}\r\n\r\n\r\n/*twitter profile*/\n.tweet-profile .card-header[data-v-f3b125a2] {\r\n    padding-bottom: 45px;\r\n    background-color: #4cb6e5;\r\n    color: #FFF;\n}\n.tweet-profile .profile-img img[data-v-f3b125a2] {\r\n    width: 100px;\r\n    height: 100px;\r\n    border-radius: 50%;\r\n    border: 5px solid #fff;\r\n    margin-top: -50px;\n}\n.tweet-profile .tweet-details[data-v-f3b125a2] {\r\n    font-size: 14px;\r\n    color: #555;\r\n    margin-bottom: 15px;\n}\n.tweet-profile .tweet-details .count[data-v-f3b125a2] {\r\n    margin: 0;\r\n    font-size: 22px;\n}\n.tweet-profile .tweet-details .row div[data-v-f3b125a2]:not(:last-child) {\r\n    border-right: 1px solid #ccc;\n}\n.tweet-profile .events[data-v-f3b125a2] {\r\n    border: 1px solid #bbb;\r\n    padding-top: 2px;\r\n    padding-bottom: 2px;\r\n    margin-top: 15px;\r\n    margin-right: -20px;\r\n    font-size: 18px;\r\n    color: #555;\n}\n.tweet-profile .btn-tweet[data-v-f3b125a2] {\r\n    padding: 5px;\r\n    margin-top: 14px;\n}\r\n\r\n\r\n/*user page*/\n.m-0[data-v-f3b125a2] {\r\n    margin: 0;\n}\n.user-page .cover-image[data-v-f3b125a2] {\r\n    height: 220px;\r\n    width: 100%;\n}\n.user-page .user-pic[data-v-f3b125a2] {\r\n    width: 90px;\r\n    padding: 10px;\n}\n.user-page .post-details[data-v-f3b125a2] {\r\n    display: block;\r\n    padding-top: 25px;\r\n    font-size: 14px;\r\n    color: #777;\n}\n.user-page .views[data-v-f3b125a2] {\r\n    background-color: #e5e5e5;\r\n    padding-top: 12px;\r\n    padding-bottom: 12px;\r\n    color: #555;\n}\n.user-page .views[data-v-f3b125a2]:not(:last-child) {\r\n    border-right: 1px solid #FFF;\n}\r\n\r\n\r\n/*top tabbed panel*/\n.tabbbed-bg[data-v-f3b125a2] {\r\n    padding: 0;\r\n    background-color: #418AC9;\r\n    border-bottom: 0;\n}\n.tabbbed-bg a[data-v-f3b125a2] {\r\n    color: #FFF;\n}\n.tabbbed-bg + .panel-body[data-v-f3b125a2] {\r\n    min-height: 313px;\n}\n.desc-img img[data-v-f3b125a2] {\r\n    width: 50px;\r\n    height: 50px;\r\n    border-radius: 22px;\r\n    margin-right: 13px;\n}\n.nav-tabs.nav-justified > li > a[data-v-f3b125a2] {\r\n    border-bottom: 0;\n}\n.panel-heading .nav > li.active > a[data-v-f3b125a2],\r\n.panel-heading .nav > li > a[data-v-f3b125a2]:hover {\r\n    color: #777;\r\n    background: #fff;\r\n    border-bottom: 1px solid #fff;\n}\n.tab-pane .d-head[data-v-f3b125a2] {\r\n    font-size: 14px;\r\n    color: #337ab7;\r\n    font-weight: bold;\n}\n.tab-pane .c-head[data-v-f3b125a2] {\r\n    font-size: 14px;\n}\n.tab-content .media[data-v-f3b125a2] {\r\n    padding-top: 5px;\r\n    padding-bottom: 5px;\n}\r\n\r\n\r\n/*weekly data line chart*/\n.stats-chart[data-v-f3b125a2] {\r\n    height: 244px;\r\n    background-color: #3399ff;\r\n    font-size: 22px;\n}\r\n\r\n\r\n/*echart*/\n.echarts[data-v-f3b125a2] {\r\n    width: 100%;\r\n    height: 100%;\n}\n.weekly-stats .shots-likes[data-v-f3b125a2] {\r\n    font-weight: bold;\r\n    font-size: 24px;\r\n    padding-top: 15px;\n}\n.weekly-stats .weekly-shots[data-v-f3b125a2]:after {\r\n    content: '';\r\n    width: 1px;\r\n    height: 75px;\r\n    position: absolute;\r\n    right: 0;\r\n    top: 10px;\r\n    border-right: 2px solid #ddd;\n}\n.email-tabs[data-v-f3b125a2] {\r\n    background-color: #efefef;\r\n    border-bottom: 0;\n}\ntextarea[data-v-f3b125a2] {\r\n    resize: vertical;\n}\nul.mail-list[data-v-f3b125a2] {\r\n    padding: 0;\n}\n.table.mail-list[data-v-f3b125a2] {\r\n    margin: 0;\r\n    table-layout: fixed;\r\n    width: 100%;\n}\n.mail-list tbody tr[data-v-f3b125a2] {\r\n    height: 45px\n}\n.mail-list tbody tr[data-v-f3b125a2]:hover {\r\n    background-color: #EEE;\n}\n.mail-list td[data-v-f3b125a2]:nth-child(1),\r\n.mail-list td[data-v-f3b125a2]:nth-child(2) {\r\n    width: 10%;\n}\n.mail-list td[data-v-f3b125a2]:nth-child(4) {\r\n    width: 40%;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\n}\n.mail-list .custom-checkbox[data-v-f3b125a2]{\r\n    margin-bottom: 0;\r\n    margin-top: 7px;\n}\r\n\r\n\r\n/*contact widget*/\n.contact-cover[data-v-f3b125a2] {\r\n    height: 175px;\r\n    width: 100%;\r\n    background-image: url(" + escape(__webpack_require__(847)) + ");\r\n    background-size: cover;\r\n    color: #FFF;\n}\n.contact-widget i[data-v-f3b125a2] {\r\n    cursor: pointer;\n}\n.contact-cover .profile-img[data-v-f3b125a2] {\r\n    width: 60%;\r\n    height: 100%;\r\n    padding-top: 37px;\r\n    padding-left: 6%;\n}\n.contact-cover .profile-img .follow[data-v-f3b125a2] {\r\n    position: absolute;\r\n    top: 110px;\r\n    left: 35%;\r\n    font-size: 16px;\n}\n.contact-cover .profile-img img[data-v-f3b125a2] {\r\n    width: 90px;\r\n    border-radius: 50px;\r\n    border: 3px solid white;\n}\n.contact-cover .group-icon[data-v-f3b125a2] {\r\n    width: 20%;\r\n    height: 100%;\r\n    background-color: rgba(255, 255, 255, 0.19);\r\n    font-size: 24px;\r\n    line-height: 180px;\n}\n.contact-cover .search-icon[data-v-f3b125a2] {\r\n    width: 20%;\r\n    height: 100%;\r\n    background-color: rgba(255, 255, 255, 0.31);\r\n    font-size: 24px;\r\n    line-height: 180px;\n}\n.contact-widget .contact-details[data-v-f3b125a2] {\r\n    font-size: 18px;\n}\n.contact-widget .contact-details h4[data-v-f3b125a2] {\r\n    font-size: 16px;\r\n    color: #777;\n}\r\n\r\n\r\n/*weather widget*/\n.weather-widget .card-header[data-v-f3b125a2] {\r\n    background-color: #3AAB88;\r\n    color: #FFF;\n}\n.weather-widget .location i[data-v-f3b125a2] {\r\n    font-size: 60px;\n}\n.weather-widget .location span[data-v-f3b125a2] {\r\n    font-size: 16px;\n}\n.weather-widget .temperature[data-v-f3b125a2] {\r\n    font-size: 54px;\n}\n.weather-widget .details[data-v-f3b125a2] {\r\n    color: #666;\r\n    font-size: 14px;\n}\n.weather-widget .details[data-v-f3b125a2]:not(:last-child) {\r\n    border-right: 1px solid #CCC;\n}\r\n\r\n\r\n/*profile 2*/\n.profile-2[data-v-f3b125a2] {\r\n    background-color: #7D5BAA;\r\n    border-color: #ccc;\n}\n.profile-2 .head[data-v-f3b125a2] {\r\n    padding-top: 14px;\r\n    padding-bottom: 5px;\r\n    font-size: 18px;\r\n    background-color: #FFF;\n}\n.profile-2 .data[data-v-f3b125a2] {\r\n    font-size: 15px;\r\n    padding-top: 7px;\r\n    padding-bottom: 6px;\r\n    color: #FFF;\n}\n.border-right[data-v-f3b125a2]:after {\r\n    content: '';\r\n    width: 1px;\r\n    height: 64px;\r\n    position: absolute;\r\n    right: 0;\r\n    top: 0;\r\n    border-right: 1px solid #FFF;\n}\n.profile-2 .border-bottom[data-v-f3b125a2]:after {\r\n    content: '';\r\n    width: 100%;\r\n    height: 1px;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    border-bottom: 1px solid #FFF;\n}\n.card-body .form-control[data-v-f3b125a2]{\r\n    -webkit-transition: initial;\r\n    transition: initial;\n}", ""]);
+exports.push([module.i, "/*tabs styles*/\n.tab-pane .card[data-v-f3b125a2] {\r\n    margin: 0;\r\n    border: none;\n}\n.name_center[data-v-f3b125a2]{\r\n    margin-left: 12px;\r\n    margin-top: 5px;\n}\n.name_font[data-v-f3b125a2]{\r\n    font-size: 16px;\r\n    color: #7B7B7B;\n}\n.number_font[data-v-f3b125a2]{\r\n    font-size: 15px;\n}\n.text_color[data-v-f3b125a2]{\r\n    color: #ccc;\n}\r\n/*panel style*/\n.panel[data-v-f3b125a2] {\r\n    border: 1px solid #e5e5e5;\r\n    border-radius: 0;\r\n    -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, .1);\r\n            box-shadow: 0 1px 30px rgba(0, 0, 0, .1);\n}\r\n\r\n\r\n/*user-profile*/\n.user-profile[data-v-f3b125a2] {\r\n    color: #777;\n}\n.user-profile .profile-img[data-v-f3b125a2] {\r\n    width: 110px;\r\n    margin-right: 25px;\n}\n.user-profile .profile-details[data-v-f3b125a2] {\r\n    padding: 10px 0;\n}\n.user-profile .table.account-details > tbody > tr > td[data-v-f3b125a2] {\r\n    padding: 17px 16px;\n}\n.account-details tbody tr[data-v-f3b125a2]:hover {\r\n    background-color: #EEE;\n}\r\n\r\n\r\n/*twitter profile*/\n.tweet-profile .card-header[data-v-f3b125a2] {\r\n    padding-bottom: 45px;\r\n    background-color: #4cb6e5;\r\n    color: #FFF;\n}\n.tweet-profile .profile-img img[data-v-f3b125a2] {\r\n    width: 100px;\r\n    height: 100px;\r\n    border-radius: 50%;\r\n    border: 5px solid #fff;\r\n    margin-top: -50px;\n}\n.tweet-profile .tweet-details[data-v-f3b125a2] {\r\n    font-size: 14px;\r\n    color: #555;\r\n    margin-bottom: 15px;\n}\n.tweet-profile .tweet-details .count[data-v-f3b125a2] {\r\n    margin: 0;\r\n    font-size: 22px;\n}\n.tweet-profile .tweet-details .row div[data-v-f3b125a2]:not(:last-child) {\r\n    border-right: 1px solid #ccc;\n}\n.tweet-profile .events[data-v-f3b125a2] {\r\n    border: 1px solid #bbb;\r\n    padding-top: 2px;\r\n    padding-bottom: 2px;\r\n    margin-top: 15px;\r\n    margin-right: -20px;\r\n    font-size: 18px;\r\n    color: #555;\n}\n.tweet-profile .btn-tweet[data-v-f3b125a2] {\r\n    padding: 5px;\r\n    margin-top: 14px;\n}\r\n\r\n\r\n/*user page*/\n.m-0[data-v-f3b125a2] {\r\n    margin: 0;\n}\n.user-page .cover-image[data-v-f3b125a2] {\r\n    height: 220px;\r\n    width: 100%;\n}\n.user-page .user-pic[data-v-f3b125a2] {\r\n    width: 90px;\r\n    padding: 10px;\n}\n.user-page .post-details[data-v-f3b125a2] {\r\n    display: block;\r\n    padding-top: 25px;\r\n    font-size: 14px;\r\n    color: #777;\n}\n.user-page .views[data-v-f3b125a2] {\r\n    background-color: #e5e5e5;\r\n    padding-top: 12px;\r\n    padding-bottom: 12px;\r\n    color: #555;\n}\n.user-page .views[data-v-f3b125a2]:not(:last-child) {\r\n    border-right: 1px solid #FFF;\n}\r\n\r\n\r\n/*top tabbed panel*/\n.tabbbed-bg[data-v-f3b125a2] {\r\n    padding: 0;\r\n    background-color: #418AC9;\r\n    border-bottom: 0;\n}\n.tabbbed-bg a[data-v-f3b125a2] {\r\n    color: #FFF;\n}\n.tabbbed-bg + .panel-body[data-v-f3b125a2] {\r\n    min-height: 313px;\n}\n.desc-img img[data-v-f3b125a2] {\r\n    width: 50px;\r\n    height: 50px;\r\n    border-radius: 22px;\r\n    margin-right: 13px;\n}\n.nav-tabs.nav-justified > li > a[data-v-f3b125a2] {\r\n    border-bottom: 0;\n}\n.panel-heading .nav > li.active > a[data-v-f3b125a2],\r\n.panel-heading .nav > li > a[data-v-f3b125a2]:hover {\r\n    color: #777;\r\n    background: #fff;\r\n    border-bottom: 1px solid #fff;\n}\n.tab-pane .d-head[data-v-f3b125a2] {\r\n    font-size: 14px;\r\n    color: #337ab7;\r\n    font-weight: bold;\n}\n.tab-pane .c-head[data-v-f3b125a2] {\r\n    font-size: 14px;\n}\n.tab-content .media[data-v-f3b125a2] {\r\n    padding-top: 5px;\r\n    padding-bottom: 5px;\n}\r\n\r\n\r\n/*weekly data line chart*/\n.stats-chart[data-v-f3b125a2] {\r\n    height: 244px;\r\n    background-color: #3399ff;\r\n    font-size: 22px;\n}\r\n\r\n\r\n/*echart*/\n.echarts[data-v-f3b125a2] {\r\n    width: 100%;\r\n    height: 100%;\n}\n.weekly-stats .shots-likes[data-v-f3b125a2] {\r\n    font-weight: bold;\r\n    font-size: 24px;\r\n    padding-top: 15px;\n}\n.weekly-stats .weekly-shots[data-v-f3b125a2]:after {\r\n    content: '';\r\n    width: 1px;\r\n    height: 75px;\r\n    position: absolute;\r\n    right: 0;\r\n    top: 10px;\r\n    border-right: 2px solid #ddd;\n}\n.email-tabs[data-v-f3b125a2] {\r\n    background-color: #efefef;\r\n    border-bottom: 0;\n}\ntextarea[data-v-f3b125a2] {\r\n    resize: vertical;\n}\nul.mail-list[data-v-f3b125a2] {\r\n    padding: 0;\n}\n.table.mail-list[data-v-f3b125a2] {\r\n    margin: 0;\r\n    table-layout: fixed;\r\n    width: 100%;\n}\n.mail-list tbody tr[data-v-f3b125a2] {\r\n    height: 45px\n}\n.mail-list tbody tr[data-v-f3b125a2]:hover {\r\n    background-color: #EEE;\n}\n.mail-list td[data-v-f3b125a2]:nth-child(1),\r\n.mail-list td[data-v-f3b125a2]:nth-child(2) {\r\n    width: 10%;\n}\n.mail-list td[data-v-f3b125a2]:nth-child(4) {\r\n    width: 40%;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\n}\n.mail-list .custom-checkbox[data-v-f3b125a2]{\r\n    margin-bottom: 0;\r\n    margin-top: 7px;\n}\r\n\r\n\r\n/*contact widget*/\n.contact-cover[data-v-f3b125a2] {\r\n    height: 175px;\r\n    width: 100%;\r\n    background-image: url(" + escape(__webpack_require__(845)) + ");\r\n    background-size: cover;\r\n    color: #FFF;\n}\n.contact-widget i[data-v-f3b125a2] {\r\n    cursor: pointer;\n}\n.contact-cover .profile-img[data-v-f3b125a2] {\r\n    width: 60%;\r\n    height: 100%;\r\n    padding-top: 37px;\r\n    padding-left: 6%;\n}\n.contact-cover .profile-img .follow[data-v-f3b125a2] {\r\n    position: absolute;\r\n    top: 110px;\r\n    left: 35%;\r\n    font-size: 16px;\n}\n.contact-cover .profile-img img[data-v-f3b125a2] {\r\n    width: 90px;\r\n    border-radius: 50px;\r\n    border: 3px solid white;\n}\n.contact-cover .group-icon[data-v-f3b125a2] {\r\n    width: 20%;\r\n    height: 100%;\r\n    background-color: rgba(255, 255, 255, 0.19);\r\n    font-size: 24px;\r\n    line-height: 180px;\n}\n.contact-cover .search-icon[data-v-f3b125a2] {\r\n    width: 20%;\r\n    height: 100%;\r\n    background-color: rgba(255, 255, 255, 0.31);\r\n    font-size: 24px;\r\n    line-height: 180px;\n}\n.contact-widget .contact-details[data-v-f3b125a2] {\r\n    font-size: 18px;\n}\n.contact-widget .contact-details h4[data-v-f3b125a2] {\r\n    font-size: 16px;\r\n    color: #777;\n}\r\n\r\n\r\n/*weather widget*/\n.weather-widget .card-header[data-v-f3b125a2] {\r\n    background-color: #3AAB88;\r\n    color: #FFF;\n}\n.weather-widget .location i[data-v-f3b125a2] {\r\n    font-size: 60px;\n}\n.weather-widget .location span[data-v-f3b125a2] {\r\n    font-size: 16px;\n}\n.weather-widget .temperature[data-v-f3b125a2] {\r\n    font-size: 54px;\n}\n.weather-widget .details[data-v-f3b125a2] {\r\n    color: #666;\r\n    font-size: 14px;\n}\n.weather-widget .details[data-v-f3b125a2]:not(:last-child) {\r\n    border-right: 1px solid #CCC;\n}\r\n\r\n\r\n/*profile 2*/\n.profile-2[data-v-f3b125a2] {\r\n    background-color: #7D5BAA;\r\n    border-color: #ccc;\n}\n.profile-2 .head[data-v-f3b125a2] {\r\n    padding-top: 14px;\r\n    padding-bottom: 5px;\r\n    font-size: 18px;\r\n    background-color: #FFF;\n}\n.profile-2 .data[data-v-f3b125a2] {\r\n    font-size: 15px;\r\n    padding-top: 7px;\r\n    padding-bottom: 6px;\r\n    color: #FFF;\n}\n.border-right[data-v-f3b125a2]:after {\r\n    content: '';\r\n    width: 1px;\r\n    height: 64px;\r\n    position: absolute;\r\n    right: 0;\r\n    top: 0;\r\n    border-right: 1px solid #FFF;\n}\n.profile-2 .border-bottom[data-v-f3b125a2]:after {\r\n    content: '';\r\n    width: 100%;\r\n    height: 1px;\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    border-bottom: 1px solid #FFF;\n}\n.card-body .form-control[data-v-f3b125a2]{\r\n    -webkit-transition: initial;\r\n    transition: initial;\n}", ""]);
 
 // exports
 
@@ -245,14 +245,14 @@ exports.push([module.i, "/*tabs styles*/\n.tab-pane .card[data-v-f3b125a2] {\r\n
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_echarts_v3_src_full_js__ = __webpack_require__(246);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_chart_line__ = __webpack_require__(249);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_chart_line___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_echarts_lib_chart_line__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_tooltip__ = __webpack_require__(248);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_tooltip___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_echarts_lib_component_tooltip__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_components_widgets_portfolio_portfolio_vue__ = __webpack_require__(1092);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_components_widgets_portfolio_portfolio_vue__ = __webpack_require__(1091);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_components_widgets_portfolio_portfolio_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_components_widgets_portfolio_portfolio_vue__);
 //
 //
@@ -1045,7 +1045,7 @@ var render = function() {
                             _c("a", { staticClass: "float-left desc-img" }, [
                               _c("img", {
                                 attrs: {
-                                  src: __webpack_require__(781)
+                                  src: __webpack_require__(780)
                                 }
                               })
                             ]),
@@ -1075,7 +1075,7 @@ var render = function() {
                             _c("a", { staticClass: "float-left  desc-img" }, [
                               _c("img", {
                                 attrs: {
-                                  src: __webpack_require__(775)
+                                  src: __webpack_require__(774)
                                 }
                               })
                             ]),
@@ -1105,7 +1105,7 @@ var render = function() {
                             _c("a", { staticClass: "float-left  desc-img" }, [
                               _c("img", {
                                 attrs: {
-                                  src: __webpack_require__(772)
+                                  src: __webpack_require__(771)
                                 }
                               })
                             ]),
@@ -1815,7 +1815,7 @@ var staticRenderFns = [
             _c("img", {
               staticClass: "img-fluid ml-3 mt-3 mb-3",
               attrs: {
-                src: __webpack_require__(778),
+                src: __webpack_require__(777),
                 alt: "profile image"
               }
             })
@@ -1876,7 +1876,7 @@ var staticRenderFns = [
           _c("img", {
             staticClass: "cover-image img-fluid",
             attrs: {
-              src: __webpack_require__(879),
+              src: __webpack_require__(878),
               alt: "cover-image"
             }
           })
@@ -1887,7 +1887,7 @@ var staticRenderFns = [
             _c("img", {
               staticClass: "user-pic",
               attrs: {
-                src: __webpack_require__(778),
+                src: __webpack_require__(777),
                 alt: "profile image"
               }
             })
@@ -1968,7 +1968,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "contact-cover" }, [
             _c("div", { staticClass: "profile-img float-left" }, [
               _c("img", {
-                attrs: { src: __webpack_require__(775), alt: "" }
+                attrs: { src: __webpack_require__(774), alt: "" }
               }),
               _vm._v(" "),
               _c("span", { staticClass: "follow" }, [
@@ -2162,7 +2162,7 @@ var staticRenderFns = [
             _c("img", {
               staticClass: "img-fluid",
               attrs: {
-                src: __webpack_require__(778),
+                src: __webpack_require__(777),
                 alt: "profile image"
               }
             })
@@ -2269,7 +2269,7 @@ module.exports = "/GitHub/newpos/public/images/item3.jpg?2af48f89052facfbca22df1
 
 /***/ }),
 
-/***/ 742:
+/***/ 741:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -2321,49 +2321,49 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 772:
+/***/ 771:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
 
 /***/ }),
 
-/***/ 775:
+/***/ 774:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
 
 /***/ }),
 
-/***/ 778:
+/***/ 777:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar4.jpg?2bb4ec334d9b5a47d6369df5a4b7cd11";
 
 /***/ }),
 
-/***/ 781:
+/***/ 780:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar1.jpg?2b0314ed7a43445517ca523400549d2d";
 
 /***/ }),
 
-/***/ 792:
+/***/ 791:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar.jpg?cd23a4a129679a15e2583c823c594af2";
 
 /***/ }),
 
-/***/ 847:
+/***/ 845:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/profile-coverbg.jpeg?f9d529b73b0abf32afba166473c78231";
 
 /***/ }),
 
-/***/ 879:
+/***/ 878:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/timeline.jpeg?e0be5e2ba70609c6a4127e4753f5e9fa";

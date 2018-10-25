@@ -1,5 +1,12 @@
 webpackJsonp([7],{
 
+/***/ 1273:
+/***/ (function(module, exports) {
+
+module.exports = "/GitHub/newpos/public/images/logo.png?290f72edefd125c9c36d962815c219d9";
+
+/***/ }),
+
 /***/ 1634:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2038,9 +2045,7 @@ var render = function() {
       "nav",
       [
         _c("router-link", { staticClass: "logo", attrs: { to: "/" } }, [
-          _c("img", {
-            attrs: { src: __webpack_require__(812), alt: "logo" }
-          })
+          _c("img", { attrs: { src: __webpack_require__(1273), alt: "logo" } })
         ]),
         _vm._v(" "),
         _vm._m(0),
@@ -2755,7 +2760,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 763:
+/***/ 762:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -2804,13 +2809,6 @@ if (false) {(function () {
 
 module.exports = Component.exports
 
-
-/***/ }),
-
-/***/ 812:
-/***/ (function(module, exports) {
-
-module.exports = "/GitHub/newpos/public/images/logo_black.png?fbee0a480ceaa0fa450dae20c38ebe20";
 
 /***/ })
 

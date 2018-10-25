@@ -1,6 +1,6 @@
 webpackJsonp([55],{
 
-/***/ 1097:
+/***/ 1096:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/headsset.jpg?9bf7b22dac0a665a4504bd95cd3b1e44";
@@ -12,7 +12,7 @@ module.exports = "/GitHub/newpos/public/images/headsset.jpg?9bf7b22dac0a665a4504
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 //
 //
@@ -525,7 +525,7 @@ var render = function() {
               [
                 _c("img", {
                   staticClass: "img-fluid ",
-                  attrs: { src: __webpack_require__(1097) }
+                  attrs: { src: __webpack_require__(1096) }
                 }),
                 _vm._v(" "),
                 _c(
@@ -602,7 +602,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 725:
+/***/ 724:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false

@@ -173,42 +173,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             newrole: '',
             contacts: [{
                 name: 'Jon',
-                img: __webpack_require__(781),
+                img: __webpack_require__(780),
                 email: 'jon@gmail.com',
                 contact_num: '0123456789',
                 role: 'Web developer',
                 location: 'Hyderabad'
             }, {
                 name: 'Doe',
-                img: __webpack_require__(775),
+                img: __webpack_require__(774),
                 email: 'doe@gmail.com',
                 contact_num: '0123456789',
                 role: 'Web developer',
                 location: 'Hyderabad'
             }, {
                 name: 'Addison',
-                img: __webpack_require__(772),
+                img: __webpack_require__(771),
                 email: 'addison@gmail.com',
                 contact_num: '0123456789',
                 role: 'Web developer',
                 location: 'Hyderabad'
             }, {
                 name: 'Jon',
-                img: __webpack_require__(778),
+                img: __webpack_require__(777),
                 email: 'jon@gmail.com',
                 contact_num: '0123456789',
                 role: 'Web developer',
                 location: 'Hyderabad'
             }, {
                 name: 'Doe',
-                img: __webpack_require__(781),
+                img: __webpack_require__(780),
                 email: 'jon@gmail.com',
                 contact_num: '0123456789',
                 role: 'Web developer',
                 location: 'Hyderabad'
             }, {
                 name: 'Jon',
-                img: __webpack_require__(792),
+                img: __webpack_require__(791),
                 email: 'jon@gmail.com',
                 contact_num: '0123456789',
                 role: 'Web developer',
@@ -805,7 +805,7 @@ var staticRenderFns = [
         _c("img", {
           staticClass: "contact-profile d-inline-block rounded-circle",
           attrs: {
-            src: __webpack_require__(781),
+            src: __webpack_require__(780),
             alt: "user profile"
           }
         }),
@@ -910,7 +910,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 761:
+/***/ 760:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -962,35 +962,35 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 772:
+/***/ 771:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
 
 /***/ }),
 
-/***/ 775:
+/***/ 774:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
 
 /***/ }),
 
-/***/ 778:
+/***/ 777:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar4.jpg?2bb4ec334d9b5a47d6369df5a4b7cd11";
 
 /***/ }),
 
-/***/ 781:
+/***/ 780:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar1.jpg?2b0314ed7a43445517ca523400549d2d";
 
 /***/ }),
 
-/***/ 792:
+/***/ 791:
 /***/ (function(module, exports) {
 
 module.exports = "/GitHub/newpos/public/images/avatar.jpg?cd23a4a129679a15e2583c823c594af2";
