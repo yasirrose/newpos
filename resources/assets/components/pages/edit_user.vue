@@ -276,7 +276,7 @@ export default {
         }
     },
     mounted: function() {
-        this.$store.commit('left_menu', 'close')
+       
     },
     destroyed: function() {
 

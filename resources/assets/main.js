@@ -54,6 +54,8 @@ router.beforeEach((to, from, next) => {
 export const AuthenticationStore = new Vue({
   data: {
     client_secret: '4kRbNGR95XVayf31TiZFPRdHPGEfrgOjX2Xi1Vd8',
+    client_id : 2, 
+    grant_type: 'password'
 
 
   }

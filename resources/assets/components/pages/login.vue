@@ -97,7 +97,7 @@ export default {
                         var currentDate = new Date();
                         var expiration =currentDate.setTime(currentDate.getTime() + 120*60*1000);
                         localStorage.setItem('expiration', expiration);
-                        vm.$router.push("/");
+                        vm.$router.push("/admin/");
                     }else{
                         this.alertMessage= response.data.message;
                         this.seen=true;

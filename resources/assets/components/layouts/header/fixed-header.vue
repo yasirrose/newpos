@@ -6,7 +6,7 @@
             </router-link>
             <!-- Sidebar toggle button-->
             <div class="float-left">
-                <a href="javascript:void(0)" class="sidebar-toggle" >
+                <a href="javascript:void(0)" class="sidebar-toggle" @click="toggle_menu" >
                     <i class="fa fa-bars"></i>
                 </a>
             </div>
@@ -14,7 +14,7 @@
             <div class="navbar float-left">
                 <div>
                     <div class="dropdown hidden-xs-down btn-group">
-                        <router-link to="/accounts" exact class="user_name_max drpodowtext">
+                        <router-link to="/admin/accounts" exact class="user_name_max drpodowtext">
                             <i class="fa fa-user-o"></i> Accounts
                         </router-link>
                     </div>
@@ -26,7 +26,7 @@
                             </router-link>
                         </span>
                         <b-dropdown-item exact class="dropdown_content">
-                            <router-link to="/distributors" exact class="drpodowtext">
+                            <router-link to="/admin/distributors" exact class="drpodowtext">
                                 <i class="fa fa-user-o"></i> View
                             </router-link>
                         </b-dropdown-item>
@@ -95,12 +95,17 @@
                         </b-dropdown-item>
                     </b-dropdown>
                     <div class="dropdown btn-group">
-                        <router-link to="/reports" exact class="user_name_max drpodowtext">
+                        <router-link to="/admin/reports" exact class="user_name_max drpodowtext">
                             <i class="fa fa-user-o"></i> Reports
                         </router-link>
                     </div>
+                     <div class="dropdown btn-group">
+                        <router-link to="/admin/ads" exact class="user_name_max drpodowtext">
+                            <i class="fa fa-user-o"></i> Ads
+                        </router-link>
+                    </div>
                     <div class="dropdown btn-group">
-                        <router-link to="/plugins" exact class="user_name_max drpodowtext">
+                        <router-link to="/admin/plugins" exact class="user_name_max drpodowtext">
                             <i class="fa fa-user-o"></i> Add Plugins
                         </router-link>
                     </div>
@@ -143,18 +148,8 @@
                             <p class="user_name_max">{{this.$store.state.user.name}}</p>
                         </span>
                         <b-dropdown-item exact class="dropdown_content">
-                            <router-link to="/user_profile" exact class="drpodowtext">
+                            <router-link to="/admin/user_profile" exact class="drpodowtext">
                                 <i class="fa fa-user-o"></i> Profile
-                            </router-link>
-                        </b-dropdown-item>
-                        <b-dropdown-item exact class="dropdown_content">
-                            <router-link to="/edit_user" exact class="drpodowtext">
-                                <i class="fa fa-cog"></i> Settings
-                            </router-link>
-                        </b-dropdown-item>
-                        <b-dropdown-item exact class="dropdown_content">
-                            <router-link to="/lockscreen" exact class="drpodowtext">
-                                <i class="fa fa-lock"></i> Lock
                             </router-link>
                         </b-dropdown-item>
                         <b-dropdown-item exact class="dropdown_content">

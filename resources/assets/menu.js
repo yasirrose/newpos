@@ -79,6 +79,11 @@ const menu_items = [{
         link: '/reports',
         icon: ' fa fa-home'
     },
+    {
+        name: 'Ads',
+        link: '/ads',
+        icon: ' fa fa-home'
+    },
 
      {
         name: 'Settings',

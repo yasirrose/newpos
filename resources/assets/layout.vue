@@ -3,7 +3,7 @@
         <preloader v-show="this.$store.state.preloader"></preloader>
         <vueadmin_header></vueadmin_header>
         <div class="wrapper row-offcanvas">
-            <left_side v-show="this.$store.state.left_open"></left_side>
+            <!-- <left_side v-show="this.$store.state.left_open"></left_side> -->
             <right_side>
                 <router-view></router-view>
             </right_side>
@@ -91,12 +91,12 @@
             }
         },
         mounted() {
-            /*if (window.innerWidth <= 992) {
+            if (window.innerWidth <= 992) {
                 this.$store.commit('left_menu', 'close')
-            }*/
+            }
 
         
-                this.$store.commit('left_menu', 'close')
+                
         
         },
 

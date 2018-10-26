@@ -314,7 +314,7 @@ export default {
         vScroll
     },
     mounted: function() {
-        this.$store.commit('left_menu', 'close')
+        
     },
     destroyed: function() {}
 }

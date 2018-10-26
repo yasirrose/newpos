@@ -1,8 +1,8 @@
 <template>
-    <aside class="right-aside">
+    <aside class="">
         <!-- Content Header (Page header) -->
         <section class="content-header ">
-            <h1>{{this.$store.state.page_title?this.$store.state.page_title:this.$route.meta.title}}</h1>
+            <!-- <h1>{{this.$store.state.page_title?this.$store.state.page_title:this.$route.meta.title}}</h1> -->
         </section>
         <!-- Main content -->
         <section class="content">
@@ -19,7 +19,7 @@ export default {
     },
     mounted()
         {
-            this.$store.commit('left_menu', 'close')
+           
         },
 
 }

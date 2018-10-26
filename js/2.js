@@ -1,8541 +1,16 @@
 webpackJsonp([2],{
 
-/***/ 1054:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseAssignValue = __webpack_require__(851),
-    baseForOwn = __webpack_require__(1059),
-    baseIteratee = __webpack_require__(1064);
-
-/**
- * Creates an object with the same keys as `object` and values generated
- * by running each own enumerable string keyed property of `object` thru
- * `iteratee`. The iteratee is invoked with three arguments:
- * (value, key, object).
- *
- * @static
- * @memberOf _
- * @since 2.4.0
- * @category Object
- * @param {Object} object The object to iterate over.
- * @param {Function} [iteratee=_.identity] The function invoked per iteration.
- * @returns {Object} Returns the new mapped object.
- * @see _.mapKeys
- * @example
- *
- * var users = {
- *   'fred':    { 'user': 'fred',    'age': 40 },
- *   'pebbles': { 'user': 'pebbles', 'age': 1 }
- * };
- *
- * _.mapValues(users, function(o) { return o.age; });
- * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
- *
- * // The `_.property` iteratee shorthand.
- * _.mapValues(users, 'age');
- * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
- */
-function mapValues(object, iteratee) {
-  var result = {};
-  iteratee = baseIteratee(iteratee, 3);
-
-  baseForOwn(object, function(value, key, object) {
-    baseAssignValue(result, key, iteratee(value, key, object));
-  });
-  return result;
-}
-
-module.exports = mapValues;
-
-
-/***/ }),
-
-/***/ 1055:
-/***/ (function(module, exports, __webpack_require__) {
-
-var getNative = __webpack_require__(786);
-
-var defineProperty = (function() {
-  try {
-    var func = getNative(Object, 'defineProperty');
-    func({}, '', {});
-    return func;
-  } catch (e) {}
-}());
-
-module.exports = defineProperty;
-
-
-/***/ }),
-
-/***/ 1056:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseGetTag = __webpack_require__(792),
-    isObject = __webpack_require__(787);
-
-/** `Object#toString` result references. */
-var asyncTag = '[object AsyncFunction]',
-    funcTag = '[object Function]',
-    genTag = '[object GeneratorFunction]',
-    proxyTag = '[object Proxy]';
-
-/**
- * Checks if `value` is classified as a `Function` object.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a function, else `false`.
- * @example
- *
- * _.isFunction(_);
- * // => true
- *
- * _.isFunction(/abc/);
- * // => false
- */
-function isFunction(value) {
-  if (!isObject(value)) {
-    return false;
-  }
-  // The use of `Object#toString` avoids issues with the `typeof` operator
-  // in Safari 9 which returns 'object' for typed arrays and other constructors.
-  var tag = baseGetTag(value);
-  return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
-}
-
-module.exports = isFunction;
-
-
-/***/ }),
-
-/***/ 1057:
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
-var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
-
-module.exports = freeGlobal;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(28)))
-
-/***/ }),
-
-/***/ 1058:
-/***/ (function(module, exports) {
-
-/** Used for built-in method references. */
-var funcProto = Function.prototype;
-
-/** Used to resolve the decompiled source of functions. */
-var funcToString = funcProto.toString;
-
-/**
- * Converts `func` to its source code.
- *
- * @private
- * @param {Function} func The function to convert.
- * @returns {string} Returns the source code.
- */
-function toSource(func) {
-  if (func != null) {
-    try {
-      return funcToString.call(func);
-    } catch (e) {}
-    try {
-      return (func + '');
-    } catch (e) {}
-  }
-  return '';
-}
-
-module.exports = toSource;
-
-
-/***/ }),
-
-/***/ 1059:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseFor = __webpack_require__(1060),
-    keys = __webpack_require__(809);
-
-/**
- * The base implementation of `_.forOwn` without support for iteratee shorthands.
- *
- * @private
- * @param {Object} object The object to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
- * @returns {Object} Returns `object`.
- */
-function baseForOwn(object, iteratee) {
-  return object && baseFor(object, iteratee, keys);
-}
-
-module.exports = baseForOwn;
-
-
-/***/ }),
-
-/***/ 1060:
-/***/ (function(module, exports, __webpack_require__) {
-
-var createBaseFor = __webpack_require__(1144);
-
-/**
- * The base implementation of `baseForOwn` which iterates over `object`
- * properties returned by `keysFunc` and invokes `iteratee` for each property.
- * Iteratee functions may exit iteration early by explicitly returning `false`.
- *
- * @private
- * @param {Object} object The object to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
- * @param {Function} keysFunc The function to get the keys of `object`.
- * @returns {Object} Returns `object`.
- */
-var baseFor = createBaseFor();
-
-module.exports = baseFor;
-
-
-/***/ }),
-
-/***/ 1061:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseTimes = __webpack_require__(1145),
-    isArguments = __webpack_require__(852),
-    isArray = __webpack_require__(772),
-    isBuffer = __webpack_require__(853),
-    isIndex = __webpack_require__(854),
-    isTypedArray = __webpack_require__(1062);
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * Creates an array of the enumerable property names of the array-like `value`.
- *
- * @private
- * @param {*} value The value to query.
- * @param {boolean} inherited Specify returning inherited property names.
- * @returns {Array} Returns the array of property names.
- */
-function arrayLikeKeys(value, inherited) {
-  var isArr = isArray(value),
-      isArg = !isArr && isArguments(value),
-      isBuff = !isArr && !isArg && isBuffer(value),
-      isType = !isArr && !isArg && !isBuff && isTypedArray(value),
-      skipIndexes = isArr || isArg || isBuff || isType,
-      result = skipIndexes ? baseTimes(value.length, String) : [],
-      length = result.length;
-
-  for (var key in value) {
-    if ((inherited || hasOwnProperty.call(value, key)) &&
-        !(skipIndexes && (
-           // Safari 9 has enumerable `arguments.length` in strict mode.
-           key == 'length' ||
-           // Node.js 0.10 has enumerable non-index properties on buffers.
-           (isBuff && (key == 'offset' || key == 'parent')) ||
-           // PhantomJS 2 has enumerable non-index properties on typed arrays.
-           (isType && (key == 'buffer' || key == 'byteLength' || key == 'byteOffset')) ||
-           // Skip index properties.
-           isIndex(key, length)
-        ))) {
-      result.push(key);
-    }
-  }
-  return result;
-}
-
-module.exports = arrayLikeKeys;
-
-
-/***/ }),
-
-/***/ 1062:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseIsTypedArray = __webpack_require__(1148),
-    baseUnary = __webpack_require__(856),
-    nodeUtil = __webpack_require__(857);
-
-/* Node.js helper references. */
-var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
-
-/**
- * Checks if `value` is classified as a typed array.
- *
- * @static
- * @memberOf _
- * @since 3.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
- * @example
- *
- * _.isTypedArray(new Uint8Array);
- * // => true
- *
- * _.isTypedArray([]);
- * // => false
- */
-var isTypedArray = nodeIsTypedArray ? baseUnary(nodeIsTypedArray) : baseIsTypedArray;
-
-module.exports = isTypedArray;
-
-
-/***/ }),
-
-/***/ 1063:
-/***/ (function(module, exports) {
-
-/**
- * Creates a unary function that invokes `func` with its argument transformed.
- *
- * @private
- * @param {Function} func The function to wrap.
- * @param {Function} transform The argument transform.
- * @returns {Function} Returns the new function.
- */
-function overArg(func, transform) {
-  return function(arg) {
-    return func(transform(arg));
-  };
-}
-
-module.exports = overArg;
-
-
-/***/ }),
-
-/***/ 1064:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseMatches = __webpack_require__(1151),
-    baseMatchesProperty = __webpack_require__(1191),
-    identity = __webpack_require__(869),
-    isArray = __webpack_require__(772),
-    property = __webpack_require__(1201);
-
-/**
- * The base implementation of `_.iteratee`.
- *
- * @private
- * @param {*} [value=_.identity] The value to convert to an iteratee.
- * @returns {Function} Returns the iteratee.
- */
-function baseIteratee(value) {
-  // Don't store the `typeof` result in a variable to avoid a JIT bug in Safari 9.
-  // See https://bugs.webkit.org/show_bug.cgi?id=156034 for more details.
-  if (typeof value == 'function') {
-    return value;
-  }
-  if (value == null) {
-    return identity;
-  }
-  if (typeof value == 'object') {
-    return isArray(value)
-      ? baseMatchesProperty(value[0], value[1])
-      : baseMatches(value);
-  }
-  return property(value);
-}
-
-module.exports = baseIteratee;
-
-
-/***/ }),
-
-/***/ 1065:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseIsEqualDeep = __webpack_require__(1175),
-    isObjectLike = __webpack_require__(782);
-
-/**
- * The base implementation of `_.isEqual` which supports partial comparisons
- * and tracks traversed objects.
- *
- * @private
- * @param {*} value The value to compare.
- * @param {*} other The other value to compare.
- * @param {boolean} bitmask The bitmask flags.
- *  1 - Unordered comparison
- *  2 - Partial comparison
- * @param {Function} [customizer] The function to customize comparisons.
- * @param {Object} [stack] Tracks traversed `value` and `other` objects.
- * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
- */
-function baseIsEqual(value, other, bitmask, customizer, stack) {
-  if (value === other) {
-    return true;
-  }
-  if (value == null || other == null || (!isObjectLike(value) && !isObjectLike(other))) {
-    return value !== value && other !== other;
-  }
-  return baseIsEqualDeep(value, other, bitmask, customizer, baseIsEqual, stack);
-}
-
-module.exports = baseIsEqual;
-
-
-/***/ }),
-
-/***/ 1066:
-/***/ (function(module, exports, __webpack_require__) {
-
-var SetCache = __webpack_require__(1176),
-    arraySome = __webpack_require__(1179),
-    cacheHas = __webpack_require__(1180);
-
-/** Used to compose bitmasks for value comparisons. */
-var COMPARE_PARTIAL_FLAG = 1,
-    COMPARE_UNORDERED_FLAG = 2;
-
-/**
- * A specialized version of `baseIsEqualDeep` for arrays with support for
- * partial deep comparisons.
- *
- * @private
- * @param {Array} array The array to compare.
- * @param {Array} other The other array to compare.
- * @param {number} bitmask The bitmask flags. See `baseIsEqual` for more details.
- * @param {Function} customizer The function to customize comparisons.
- * @param {Function} equalFunc The function to determine equivalents of values.
- * @param {Object} stack Tracks traversed `array` and `other` objects.
- * @returns {boolean} Returns `true` if the arrays are equivalent, else `false`.
- */
-function equalArrays(array, other, bitmask, customizer, equalFunc, stack) {
-  var isPartial = bitmask & COMPARE_PARTIAL_FLAG,
-      arrLength = array.length,
-      othLength = other.length;
-
-  if (arrLength != othLength && !(isPartial && othLength > arrLength)) {
-    return false;
-  }
-  // Assume cyclic values are equal.
-  var stacked = stack.get(array);
-  if (stacked && stack.get(other)) {
-    return stacked == other;
-  }
-  var index = -1,
-      result = true,
-      seen = (bitmask & COMPARE_UNORDERED_FLAG) ? new SetCache : undefined;
-
-  stack.set(array, other);
-  stack.set(other, array);
-
-  // Ignore non-index properties.
-  while (++index < arrLength) {
-    var arrValue = array[index],
-        othValue = other[index];
-
-    if (customizer) {
-      var compared = isPartial
-        ? customizer(othValue, arrValue, index, other, array, stack)
-        : customizer(arrValue, othValue, index, array, other, stack);
-    }
-    if (compared !== undefined) {
-      if (compared) {
-        continue;
-      }
-      result = false;
-      break;
-    }
-    // Recursively compare arrays (susceptible to call stack limits).
-    if (seen) {
-      if (!arraySome(other, function(othValue, othIndex) {
-            if (!cacheHas(seen, othIndex) &&
-                (arrValue === othValue || equalFunc(arrValue, othValue, bitmask, customizer, stack))) {
-              return seen.push(othIndex);
-            }
-          })) {
-        result = false;
-        break;
-      }
-    } else if (!(
-          arrValue === othValue ||
-            equalFunc(arrValue, othValue, bitmask, customizer, stack)
-        )) {
-      result = false;
-      break;
-    }
-  }
-  stack['delete'](array);
-  stack['delete'](other);
-  return result;
-}
-
-module.exports = equalArrays;
-
-
-/***/ }),
-
-/***/ 1067:
-/***/ (function(module, exports, __webpack_require__) {
-
-var root = __webpack_require__(775);
-
-/** Built-in value references. */
-var Uint8Array = root.Uint8Array;
-
-module.exports = Uint8Array;
-
-
-/***/ }),
-
-/***/ 1068:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseGetAllKeys = __webpack_require__(1069),
-    getSymbols = __webpack_require__(865),
-    keys = __webpack_require__(809);
-
-/**
- * Creates an array of own enumerable property names and symbols of `object`.
- *
- * @private
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property names and symbols.
- */
-function getAllKeys(object) {
-  return baseGetAllKeys(object, keys, getSymbols);
-}
-
-module.exports = getAllKeys;
-
-
-/***/ }),
-
-/***/ 1069:
-/***/ (function(module, exports, __webpack_require__) {
-
-var arrayPush = __webpack_require__(864),
-    isArray = __webpack_require__(772);
-
-/**
- * The base implementation of `getAllKeys` and `getAllKeysIn` which uses
- * `keysFunc` and `symbolsFunc` to get the enumerable property names and
- * symbols of `object`.
- *
- * @private
- * @param {Object} object The object to query.
- * @param {Function} keysFunc The function to get the keys of `object`.
- * @param {Function} symbolsFunc The function to get the symbols of `object`.
- * @returns {Array} Returns the array of property names and symbols.
- */
-function baseGetAllKeys(object, keysFunc, symbolsFunc) {
-  var result = keysFunc(object);
-  return isArray(object) ? result : arrayPush(result, symbolsFunc(object));
-}
-
-module.exports = baseGetAllKeys;
-
-
-/***/ }),
-
-/***/ 1070:
-/***/ (function(module, exports) {
-
-/**
- * This method returns a new empty array.
- *
- * @static
- * @memberOf _
- * @since 4.13.0
- * @category Util
- * @returns {Array} Returns the new empty array.
- * @example
- *
- * var arrays = _.times(2, _.stubArray);
- *
- * console.log(arrays);
- * // => [[], []]
- *
- * console.log(arrays[0] === arrays[1]);
- * // => false
- */
-function stubArray() {
-  return [];
-}
-
-module.exports = stubArray;
-
-
-/***/ }),
-
-/***/ 1071:
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(787);
-
-/**
- * Checks if `value` is suitable for strict equality comparisons, i.e. `===`.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` if suitable for strict
- *  equality comparisons, else `false`.
- */
-function isStrictComparable(value) {
-  return value === value && !isObject(value);
-}
-
-module.exports = isStrictComparable;
-
-
-/***/ }),
-
-/***/ 1072:
-/***/ (function(module, exports) {
-
-/**
- * A specialized version of `matchesProperty` for source values suitable
- * for strict equality comparisons, i.e. `===`.
- *
- * @private
- * @param {string} key The key of the property to get.
- * @param {*} srcValue The value to match.
- * @returns {Function} Returns the new spec function.
- */
-function matchesStrictComparable(key, srcValue) {
-  return function(object) {
-    if (object == null) {
-      return false;
-    }
-    return object[key] === srcValue &&
-      (srcValue !== undefined || (key in Object(object)));
-  };
-}
-
-module.exports = matchesStrictComparable;
-
-
-/***/ }),
-
-/***/ 1073:
-/***/ (function(module, exports) {
-
-/**
- * A specialized version of `_.forEach` for arrays without support for
- * iteratee shorthands.
- *
- * @private
- * @param {Array} [array] The array to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
- * @returns {Array} Returns `array`.
- */
-function arrayEach(array, iteratee) {
-  var index = -1,
-      length = array == null ? 0 : array.length;
-
-  while (++index < length) {
-    if (iteratee(array[index], index, array) === false) {
-      break;
-    }
-  }
-  return array;
-}
-
-module.exports = arrayEach;
-
-
-/***/ }),
-
-/***/ 1074:
-/***/ (function(module, exports, __webpack_require__) {
-
-var identity = __webpack_require__(869);
-
-/**
- * Casts `value` to `identity` if it's not a function.
- *
- * @private
- * @param {*} value The value to inspect.
- * @returns {Function} Returns cast function.
- */
-function castFunction(value) {
-  return typeof value == 'function' ? value : identity;
-}
-
-module.exports = castFunction;
-
-
-/***/ }),
-
-/***/ 1075:
-/***/ (function(module, exports, __webpack_require__) {
-
-var Stack = __webpack_require__(860),
-    arrayEach = __webpack_require__(1073),
-    assignValue = __webpack_require__(871),
-    baseAssign = __webpack_require__(1211),
-    baseAssignIn = __webpack_require__(1212),
-    cloneBuffer = __webpack_require__(1213),
-    copyArray = __webpack_require__(1214),
-    copySymbols = __webpack_require__(1215),
-    copySymbolsIn = __webpack_require__(1216),
-    getAllKeys = __webpack_require__(1068),
-    getAllKeysIn = __webpack_require__(873),
-    getTag = __webpack_require__(825),
-    initCloneArray = __webpack_require__(1217),
-    initCloneByTag = __webpack_require__(1218),
-    initCloneObject = __webpack_require__(1223),
-    isArray = __webpack_require__(772),
-    isBuffer = __webpack_require__(853),
-    isMap = __webpack_require__(1225),
-    isObject = __webpack_require__(787),
-    isSet = __webpack_require__(1227),
-    keys = __webpack_require__(809);
-
-/** Used to compose bitmasks for cloning. */
-var CLONE_DEEP_FLAG = 1,
-    CLONE_FLAT_FLAG = 2,
-    CLONE_SYMBOLS_FLAG = 4;
-
-/** `Object#toString` result references. */
-var argsTag = '[object Arguments]',
-    arrayTag = '[object Array]',
-    boolTag = '[object Boolean]',
-    dateTag = '[object Date]',
-    errorTag = '[object Error]',
-    funcTag = '[object Function]',
-    genTag = '[object GeneratorFunction]',
-    mapTag = '[object Map]',
-    numberTag = '[object Number]',
-    objectTag = '[object Object]',
-    regexpTag = '[object RegExp]',
-    setTag = '[object Set]',
-    stringTag = '[object String]',
-    symbolTag = '[object Symbol]',
-    weakMapTag = '[object WeakMap]';
-
-var arrayBufferTag = '[object ArrayBuffer]',
-    dataViewTag = '[object DataView]',
-    float32Tag = '[object Float32Array]',
-    float64Tag = '[object Float64Array]',
-    int8Tag = '[object Int8Array]',
-    int16Tag = '[object Int16Array]',
-    int32Tag = '[object Int32Array]',
-    uint8Tag = '[object Uint8Array]',
-    uint8ClampedTag = '[object Uint8ClampedArray]',
-    uint16Tag = '[object Uint16Array]',
-    uint32Tag = '[object Uint32Array]';
-
-/** Used to identify `toStringTag` values supported by `_.clone`. */
-var cloneableTags = {};
-cloneableTags[argsTag] = cloneableTags[arrayTag] =
-cloneableTags[arrayBufferTag] = cloneableTags[dataViewTag] =
-cloneableTags[boolTag] = cloneableTags[dateTag] =
-cloneableTags[float32Tag] = cloneableTags[float64Tag] =
-cloneableTags[int8Tag] = cloneableTags[int16Tag] =
-cloneableTags[int32Tag] = cloneableTags[mapTag] =
-cloneableTags[numberTag] = cloneableTags[objectTag] =
-cloneableTags[regexpTag] = cloneableTags[setTag] =
-cloneableTags[stringTag] = cloneableTags[symbolTag] =
-cloneableTags[uint8Tag] = cloneableTags[uint8ClampedTag] =
-cloneableTags[uint16Tag] = cloneableTags[uint32Tag] = true;
-cloneableTags[errorTag] = cloneableTags[funcTag] =
-cloneableTags[weakMapTag] = false;
-
-/**
- * The base implementation of `_.clone` and `_.cloneDeep` which tracks
- * traversed objects.
- *
- * @private
- * @param {*} value The value to clone.
- * @param {boolean} bitmask The bitmask flags.
- *  1 - Deep clone
- *  2 - Flatten inherited properties
- *  4 - Clone symbols
- * @param {Function} [customizer] The function to customize cloning.
- * @param {string} [key] The key of `value`.
- * @param {Object} [object] The parent object of `value`.
- * @param {Object} [stack] Tracks traversed objects and their clone counterparts.
- * @returns {*} Returns the cloned value.
- */
-function baseClone(value, bitmask, customizer, key, object, stack) {
-  var result,
-      isDeep = bitmask & CLONE_DEEP_FLAG,
-      isFlat = bitmask & CLONE_FLAT_FLAG,
-      isFull = bitmask & CLONE_SYMBOLS_FLAG;
-
-  if (customizer) {
-    result = object ? customizer(value, key, object, stack) : customizer(value);
-  }
-  if (result !== undefined) {
-    return result;
-  }
-  if (!isObject(value)) {
-    return value;
-  }
-  var isArr = isArray(value);
-  if (isArr) {
-    result = initCloneArray(value);
-    if (!isDeep) {
-      return copyArray(value, result);
-    }
-  } else {
-    var tag = getTag(value),
-        isFunc = tag == funcTag || tag == genTag;
-
-    if (isBuffer(value)) {
-      return cloneBuffer(value, isDeep);
-    }
-    if (tag == objectTag || tag == argsTag || (isFunc && !object)) {
-      result = (isFlat || isFunc) ? {} : initCloneObject(value);
-      if (!isDeep) {
-        return isFlat
-          ? copySymbolsIn(value, baseAssignIn(result, value))
-          : copySymbols(value, baseAssign(result, value));
-      }
-    } else {
-      if (!cloneableTags[tag]) {
-        return object ? value : {};
-      }
-      result = initCloneByTag(value, tag, isDeep);
-    }
-  }
-  // Check for circular references and return its corresponding clone.
-  stack || (stack = new Stack);
-  var stacked = stack.get(value);
-  if (stacked) {
-    return stacked;
-  }
-  stack.set(value, result);
-
-  if (isSet(value)) {
-    value.forEach(function(subValue) {
-      result.add(baseClone(subValue, bitmask, customizer, subValue, value, stack));
-    });
-
-    return result;
-  }
-
-  if (isMap(value)) {
-    value.forEach(function(subValue, key) {
-      result.set(key, baseClone(subValue, bitmask, customizer, key, value, stack));
-    });
-
-    return result;
-  }
-
-  var keysFunc = isFull
-    ? (isFlat ? getAllKeysIn : getAllKeys)
-    : (isFlat ? keysIn : keys);
-
-  var props = isArr ? undefined : keysFunc(value);
-  arrayEach(props || value, function(subValue, key) {
-    if (props) {
-      key = subValue;
-      subValue = value[key];
-    }
-    // Recursively populate clone (susceptible to call stack limits).
-    assignValue(result, key, baseClone(subValue, bitmask, customizer, key, value, stack));
-  });
-  return result;
-}
-
-module.exports = baseClone;
-
-
-/***/ }),
-
-/***/ 1076:
-/***/ (function(module, exports, __webpack_require__) {
-
-var arrayPush = __webpack_require__(864),
-    getPrototype = __webpack_require__(872),
-    getSymbols = __webpack_require__(865),
-    stubArray = __webpack_require__(1070);
-
-/* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeGetSymbols = Object.getOwnPropertySymbols;
-
-/**
- * Creates an array of the own and inherited enumerable symbols of `object`.
- *
- * @private
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of symbols.
- */
-var getSymbolsIn = !nativeGetSymbols ? stubArray : function(object) {
-  var result = [];
-  while (object) {
-    arrayPush(result, getSymbols(object));
-    object = getPrototype(object);
-  }
-  return result;
-};
-
-module.exports = getSymbolsIn;
-
-
-/***/ }),
-
-/***/ 1077:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = TwoWayBindingWrapper;
-/**
- * When you have two-way bindings, but the actual bound value will not equal
- * the value you initially passed in, then to avoid an infinite loop you
- * need to increment a counter every time you pass in a value, decrement the
- * same counter every time the bound value changed, but only bubble up
- * the event when the counter is zero.
- *
-Example:
-
-Let's say DrawingRecognitionCanvas is a deep-learning backed canvas
-that, when given the name of an object (e.g. 'dog'), draws a dog.
-But whenever the drawing on it changes, it also sends back its interpretation
-of the image by way of the @newObjectRecognized event.
-
-<input
-  type="text"
-  placeholder="an object, e.g. Dog, Cat, Frog"
-  v-model="identifiedObject" />
-<DrawingRecognitionCanvas
-  :object="identifiedObject"
-  @newObjectRecognized="identifiedObject = $event"
-  />
-
-new TwoWayBindingWrapper((increment, decrement, shouldUpdate) => {
-  this.$watch('identifiedObject', () => {
-    // new object passed in
-    increment()
-  })
-  this.$deepLearningBackend.on('drawingChanged', () => {
-    recognizeObject(this.$deepLearningBackend)
-      .then((object) => {
-        decrement()
-        if (shouldUpdate()) {
-          this.$emit('newObjectRecognized', object.name)
-        }
-      })
-  })
-})
- */
-function TwoWayBindingWrapper(fn) {
-  var counter = 0;
-
-  fn(function () {
-    counter += 1;
-  }, function () {
-    counter = Math.max(0, counter - 1);
-  }, function () {
-    return counter === 0;
-  });
-}
-
-/***/ }),
-
-/***/ 1078:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-// This piece of code was orignally written by amirnissim and can be seen here
-// http://stackoverflow.com/a/11703018/2694653
-// This has been ported to Vanilla.js by GuillaumeLeclerc
-exports.default = function (input) {
-  var _addEventListener = input.addEventListener ? input.addEventListener : input.attachEvent;
-
-  function addEventListenerWrapper(type, listener) {
-    // Simulate a 'down arrow' keypress on hitting 'return' when no pac suggestion is selected,
-    // and then trigger the original listener.
-    if (type === 'keydown') {
-      var origListener = listener;
-      listener = function listener(event) {
-        var suggestionSelected = document.getElementsByClassName('pac-item-selected').length > 0;
-        if (event.which === 13 && !suggestionSelected) {
-          var simulatedEvent = document.createEvent('Event');
-          simulatedEvent.keyCode = 40;
-          simulatedEvent.which = 40;
-          origListener.apply(input, [simulatedEvent]);
-        }
-        origListener.apply(input, [event]);
-      };
-    }
-    _addEventListener.apply(input, [type, listener]);
-  }
-
-  input.addEventListener = addEventListenerWrapper;
-  input.attachEvent = addEventListenerWrapper;
-};
-
-/***/ }),
-
-/***/ 1136:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.MountableMixin = exports.Autocomplete = exports.MapElementMixin = exports.PlaceInput = exports.Map = exports.InfoWindow = exports.Rectangle = exports.Circle = exports.Polygon = exports.Polyline = exports.Cluster = exports.Marker = exports.loaded = exports.load = undefined;
-exports.install = install;
-
-var _manager = __webpack_require__(808);
-
-var _marker = __webpack_require__(1137);
-
-var _marker2 = _interopRequireDefault(_marker);
-
-var _cluster = __webpack_require__(1210);
-
-var _cluster2 = _interopRequireDefault(_cluster);
-
-var _polyline = __webpack_require__(1230);
-
-var _polyline2 = _interopRequireDefault(_polyline);
-
-var _polygon = __webpack_require__(1247);
-
-var _polygon2 = _interopRequireDefault(_polygon);
-
-var _circle = __webpack_require__(1248);
-
-var _circle2 = _interopRequireDefault(_circle);
-
-var _rectangle = __webpack_require__(1249);
-
-var _rectangle2 = _interopRequireDefault(_rectangle);
-
-var _infoWindow = __webpack_require__(1250);
-
-var _infoWindow2 = _interopRequireDefault(_infoWindow);
-
-var _map = __webpack_require__(1253);
-
-var _map2 = _interopRequireDefault(_map);
-
-var _streetViewPanorama = __webpack_require__(1258);
-
-var _streetViewPanorama2 = _interopRequireDefault(_streetViewPanorama);
-
-var _placeInput = __webpack_require__(1263);
-
-var _placeInput2 = _interopRequireDefault(_placeInput);
-
-var _autocomplete = __webpack_require__(1266);
-
-var _autocomplete2 = _interopRequireDefault(_autocomplete);
-
-var _mapElementMixin = __webpack_require__(783);
-
-var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
-
-var _mountableMixin = __webpack_require__(875);
-
-var _mountableMixin2 = _interopRequireDefault(_mountableMixin);
-
-var _deferredReady = __webpack_require__(827);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// export everything
-
-
-// Vue component imports
-exports.load = _manager.load;
-exports.loaded = _manager.loaded;
-exports.Marker = _marker2.default;
-exports.Cluster = _cluster2.default;
-exports.Polyline = _polyline2.default;
-exports.Polygon = _polygon2.default;
-exports.Circle = _circle2.default;
-exports.Rectangle = _rectangle2.default;
-exports.InfoWindow = _infoWindow2.default;
-exports.Map = _map2.default;
-exports.PlaceInput = _placeInput2.default;
-exports.MapElementMixin = _mapElementMixin2.default;
-exports.Autocomplete = _autocomplete2.default;
-exports.MountableMixin = _mountableMixin2.default;
-function install(Vue, options) {
-  options = Object.assign({}, {
-    installComponents: true
-  }, options);
-
-  Vue.use(_deferredReady.DeferredReady);
-
-  var defaultResizeBus = new Vue();
-  Vue.$gmapDefaultResizeBus = defaultResizeBus;
-  Vue.mixin({
-    created: function created() {
-      this.$gmapDefaultResizeBus = defaultResizeBus;
-    }
-  });
-
-  if (options.load) {
-    (0, _manager.load)(options.load);
-  }
-
-  if (options.installComponents) {
-    Vue.component('GmapMap', _map2.default);
-    Vue.component('GmapMarker', _marker2.default);
-    Vue.component('GmapCluster', _cluster2.default);
-    Vue.component('GmapInfoWindow', _infoWindow2.default);
-    Vue.component('GmapPolyline', _polyline2.default);
-    Vue.component('GmapPolygon', _polygon2.default);
-    Vue.component('GmapCircle', _circle2.default);
-    Vue.component('GmapRectangle', _rectangle2.default);
-    Vue.component('GmapAutocomplete', _autocomplete2.default);
-    Vue.component('GmapPlaceInput', _placeInput2.default);
-    Vue.component('GmapStreetViewPanorama', _streetViewPanorama2.default);
-  }
-}
-
-/***/ }),
-
-/***/ 1137:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _mapValues = __webpack_require__(1054);
-
-var _mapValues2 = _interopRequireDefault(_mapValues);
-
-var _eventsBinder = __webpack_require__(778);
-
-var _eventsBinder2 = _interopRequireDefault(_eventsBinder);
-
-var _propsBinder = __webpack_require__(773);
-
-var _propsBinder2 = _interopRequireDefault(_propsBinder);
-
-var _getPropsValuesMixin = __webpack_require__(776);
-
-var _getPropsValuesMixin2 = _interopRequireDefault(_getPropsValuesMixin);
-
-var _mapElementMixin = __webpack_require__(783);
-
-var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var props = {
-  animation: {
-    twoWay: true,
-    type: Number
-  },
-  attribution: {
-    type: Object
-  },
-  clickable: {
-    type: Boolean,
-    twoWay: true,
-    default: true
-  },
-  cursor: {
-    type: String,
-    twoWay: true
-  },
-  draggable: {
-    type: Boolean,
-    twoWay: true,
-    default: false
-  },
-  icon: {
-    twoWay: true
-  },
-  label: {},
-  opacity: {
-    type: Number,
-    default: 1
-  },
-  options: {
-    type: Object
-  },
-  place: {
-    type: Object
-  },
-  position: {
-    type: Object,
-    twoWay: true
-  },
-  shape: {
-    type: Object,
-    twoWay: true
-  },
-  title: {
-    type: String,
-    twoWay: true
-  },
-  zIndex: {
-    type: Number,
-    twoWay: true
-  },
-  visible: {
-    twoWay: true,
-    default: true
-  }
-};
-
-var events = ['click', 'rightclick', 'dblclick', 'drag', 'dragstart', 'dragend', 'mouseup', 'mousedown', 'mouseover', 'mouseout'];
-
-/**
- * @class Marker
- *
- * Marker class with extra support for
- *
- * - Embedded info windows
- * - Clustered markers
- *
- * Support for clustered markers is for backward-compatability
- * reasons. Otherwise we should use a cluster-marker mixin or
- * subclass.
- */
-exports.default = {
-  mixins: [_mapElementMixin2.default, _getPropsValuesMixin2.default],
-  props: props,
-
-  render: function render(h) {
-    if (!this.$slots.default || this.$slots.default.length === 0) {
-      return '';
-    } else if (this.$slots.default.length === 1) {
-      // So that infowindows can have a marker parent
-      return this.$slots.default[0];
-    } else {
-      return h('div', this.$slots.default);
-    }
-  },
-  destroyed: function destroyed() {
-    if (!this.$markerObject) {
-      return;
-    }
-
-    if (this.$clusterObject) {
-      this.$clusterObject.removeMarker(this.$markerObject);
-    } else {
-      this.$markerObject.setMap(null);
-    }
-  },
-  deferredReady: function deferredReady() {
-    var _this = this;
-
-    var options = (0, _mapValues2.default)(props, function (value, prop) {
-      return _this[prop];
-    });
-    options.map = this.$map;
-    delete options.options;
-    Object.assign(options, this.options);
-
-    // search ancestors for cluster object
-    var search = this.$findAncestor(function (ans) {
-      return ans.$clusterObject;
-    });
-
-    this.$clusterObject = search ? search.$clusterObject : null;
-    this.createMarker(options);
-  },
-
-
-  methods: {
-    createMarker: function createMarker(options) {
-      this.$markerObject = new google.maps.Marker(options);
-      (0, _propsBinder2.default)(this, this.$markerObject, props);
-      (0, _eventsBinder2.default)(this, this.$markerObject, events);
-
-      if (this.$clusterObject) {
-        this.$clusterObject.addMarker(this.$markerObject);
-      }
-    }
-  }
-};
-
-/***/ }),
-
-/***/ 1138:
-/***/ (function(module, exports, __webpack_require__) {
-
-var isFunction = __webpack_require__(1056),
-    isMasked = __webpack_require__(1141),
-    isObject = __webpack_require__(787),
-    toSource = __webpack_require__(1058);
-
-/**
- * Used to match `RegExp`
- * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
- */
-var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
-
-/** Used to detect host constructors (Safari). */
-var reIsHostCtor = /^\[object .+?Constructor\]$/;
-
-/** Used for built-in method references. */
-var funcProto = Function.prototype,
-    objectProto = Object.prototype;
-
-/** Used to resolve the decompiled source of functions. */
-var funcToString = funcProto.toString;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/** Used to detect if a method is native. */
-var reIsNative = RegExp('^' +
-  funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&')
-  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
-);
-
-/**
- * The base implementation of `_.isNative` without bad shim checks.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a native function,
- *  else `false`.
- */
-function baseIsNative(value) {
-  if (!isObject(value) || isMasked(value)) {
-    return false;
-  }
-  var pattern = isFunction(value) ? reIsNative : reIsHostCtor;
-  return pattern.test(toSource(value));
-}
-
-module.exports = baseIsNative;
-
-
-/***/ }),
-
-/***/ 1139:
-/***/ (function(module, exports, __webpack_require__) {
-
-var Symbol = __webpack_require__(793);
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
- * of values.
- */
-var nativeObjectToString = objectProto.toString;
-
-/** Built-in value references. */
-var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
-
-/**
- * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
- *
- * @private
- * @param {*} value The value to query.
- * @returns {string} Returns the raw `toStringTag`.
- */
-function getRawTag(value) {
-  var isOwn = hasOwnProperty.call(value, symToStringTag),
-      tag = value[symToStringTag];
-
-  try {
-    value[symToStringTag] = undefined;
-    var unmasked = true;
-  } catch (e) {}
-
-  var result = nativeObjectToString.call(value);
-  if (unmasked) {
-    if (isOwn) {
-      value[symToStringTag] = tag;
-    } else {
-      delete value[symToStringTag];
-    }
-  }
-  return result;
-}
-
-module.exports = getRawTag;
-
-
-/***/ }),
-
-/***/ 1140:
-/***/ (function(module, exports) {
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/**
- * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
- * of values.
- */
-var nativeObjectToString = objectProto.toString;
-
-/**
- * Converts `value` to a string using `Object.prototype.toString`.
- *
- * @private
- * @param {*} value The value to convert.
- * @returns {string} Returns the converted string.
- */
-function objectToString(value) {
-  return nativeObjectToString.call(value);
-}
-
-module.exports = objectToString;
-
-
-/***/ }),
-
-/***/ 1141:
-/***/ (function(module, exports, __webpack_require__) {
-
-var coreJsData = __webpack_require__(1142);
-
-/** Used to detect methods masquerading as native. */
-var maskSrcKey = (function() {
-  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
-  return uid ? ('Symbol(src)_1.' + uid) : '';
-}());
-
-/**
- * Checks if `func` has its source masked.
- *
- * @private
- * @param {Function} func The function to check.
- * @returns {boolean} Returns `true` if `func` is masked, else `false`.
- */
-function isMasked(func) {
-  return !!maskSrcKey && (maskSrcKey in func);
-}
-
-module.exports = isMasked;
-
-
-/***/ }),
-
-/***/ 1142:
-/***/ (function(module, exports, __webpack_require__) {
-
-var root = __webpack_require__(775);
-
-/** Used to detect overreaching core-js shims. */
-var coreJsData = root['__core-js_shared__'];
-
-module.exports = coreJsData;
-
-
-/***/ }),
-
-/***/ 1143:
-/***/ (function(module, exports) {
-
-/**
- * Gets the value at `key` of `object`.
- *
- * @private
- * @param {Object} [object] The object to query.
- * @param {string} key The key of the property to get.
- * @returns {*} Returns the property value.
- */
-function getValue(object, key) {
-  return object == null ? undefined : object[key];
-}
-
-module.exports = getValue;
-
-
-/***/ }),
-
-/***/ 1144:
-/***/ (function(module, exports) {
-
-/**
- * Creates a base function for methods like `_.forIn` and `_.forOwn`.
- *
- * @private
- * @param {boolean} [fromRight] Specify iterating from right to left.
- * @returns {Function} Returns the new base function.
- */
-function createBaseFor(fromRight) {
-  return function(object, iteratee, keysFunc) {
-    var index = -1,
-        iterable = Object(object),
-        props = keysFunc(object),
-        length = props.length;
-
-    while (length--) {
-      var key = props[fromRight ? length : ++index];
-      if (iteratee(iterable[key], key, iterable) === false) {
-        break;
-      }
-    }
-    return object;
-  };
-}
-
-module.exports = createBaseFor;
-
-
-/***/ }),
-
-/***/ 1145:
-/***/ (function(module, exports) {
-
-/**
- * The base implementation of `_.times` without support for iteratee shorthands
- * or max array length checks.
- *
- * @private
- * @param {number} n The number of times to invoke `iteratee`.
- * @param {Function} iteratee The function invoked per iteration.
- * @returns {Array} Returns the array of results.
- */
-function baseTimes(n, iteratee) {
-  var index = -1,
-      result = Array(n);
-
-  while (++index < n) {
-    result[index] = iteratee(index);
-  }
-  return result;
-}
-
-module.exports = baseTimes;
-
-
-/***/ }),
-
-/***/ 1146:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseGetTag = __webpack_require__(792),
-    isObjectLike = __webpack_require__(782);
-
-/** `Object#toString` result references. */
-var argsTag = '[object Arguments]';
-
-/**
- * The base implementation of `_.isArguments`.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an `arguments` object,
- */
-function baseIsArguments(value) {
-  return isObjectLike(value) && baseGetTag(value) == argsTag;
-}
-
-module.exports = baseIsArguments;
-
-
-/***/ }),
-
-/***/ 1147:
-/***/ (function(module, exports) {
-
-/**
- * This method returns `false`.
- *
- * @static
- * @memberOf _
- * @since 4.13.0
- * @category Util
- * @returns {boolean} Returns `false`.
- * @example
- *
- * _.times(2, _.stubFalse);
- * // => [false, false]
- */
-function stubFalse() {
-  return false;
-}
-
-module.exports = stubFalse;
-
-
-/***/ }),
-
-/***/ 1148:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseGetTag = __webpack_require__(792),
-    isLength = __webpack_require__(855),
-    isObjectLike = __webpack_require__(782);
-
-/** `Object#toString` result references. */
-var argsTag = '[object Arguments]',
-    arrayTag = '[object Array]',
-    boolTag = '[object Boolean]',
-    dateTag = '[object Date]',
-    errorTag = '[object Error]',
-    funcTag = '[object Function]',
-    mapTag = '[object Map]',
-    numberTag = '[object Number]',
-    objectTag = '[object Object]',
-    regexpTag = '[object RegExp]',
-    setTag = '[object Set]',
-    stringTag = '[object String]',
-    weakMapTag = '[object WeakMap]';
-
-var arrayBufferTag = '[object ArrayBuffer]',
-    dataViewTag = '[object DataView]',
-    float32Tag = '[object Float32Array]',
-    float64Tag = '[object Float64Array]',
-    int8Tag = '[object Int8Array]',
-    int16Tag = '[object Int16Array]',
-    int32Tag = '[object Int32Array]',
-    uint8Tag = '[object Uint8Array]',
-    uint8ClampedTag = '[object Uint8ClampedArray]',
-    uint16Tag = '[object Uint16Array]',
-    uint32Tag = '[object Uint32Array]';
-
-/** Used to identify `toStringTag` values of typed arrays. */
-var typedArrayTags = {};
-typedArrayTags[float32Tag] = typedArrayTags[float64Tag] =
-typedArrayTags[int8Tag] = typedArrayTags[int16Tag] =
-typedArrayTags[int32Tag] = typedArrayTags[uint8Tag] =
-typedArrayTags[uint8ClampedTag] = typedArrayTags[uint16Tag] =
-typedArrayTags[uint32Tag] = true;
-typedArrayTags[argsTag] = typedArrayTags[arrayTag] =
-typedArrayTags[arrayBufferTag] = typedArrayTags[boolTag] =
-typedArrayTags[dataViewTag] = typedArrayTags[dateTag] =
-typedArrayTags[errorTag] = typedArrayTags[funcTag] =
-typedArrayTags[mapTag] = typedArrayTags[numberTag] =
-typedArrayTags[objectTag] = typedArrayTags[regexpTag] =
-typedArrayTags[setTag] = typedArrayTags[stringTag] =
-typedArrayTags[weakMapTag] = false;
-
-/**
- * The base implementation of `_.isTypedArray` without Node.js optimizations.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
- */
-function baseIsTypedArray(value) {
-  return isObjectLike(value) &&
-    isLength(value.length) && !!typedArrayTags[baseGetTag(value)];
-}
-
-module.exports = baseIsTypedArray;
-
-
-/***/ }),
-
-/***/ 1149:
-/***/ (function(module, exports, __webpack_require__) {
-
-var isPrototype = __webpack_require__(858),
-    nativeKeys = __webpack_require__(1150);
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.
- *
- * @private
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property names.
- */
-function baseKeys(object) {
-  if (!isPrototype(object)) {
-    return nativeKeys(object);
-  }
-  var result = [];
-  for (var key in Object(object)) {
-    if (hasOwnProperty.call(object, key) && key != 'constructor') {
-      result.push(key);
-    }
-  }
-  return result;
-}
-
-module.exports = baseKeys;
-
-
-/***/ }),
-
-/***/ 1150:
-/***/ (function(module, exports, __webpack_require__) {
-
-var overArg = __webpack_require__(1063);
-
-/* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeKeys = overArg(Object.keys, Object);
-
-module.exports = nativeKeys;
-
-
-/***/ }),
-
-/***/ 1151:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseIsMatch = __webpack_require__(1152),
-    getMatchData = __webpack_require__(1190),
-    matchesStrictComparable = __webpack_require__(1072);
-
-/**
- * The base implementation of `_.matches` which doesn't clone `source`.
- *
- * @private
- * @param {Object} source The object of property values to match.
- * @returns {Function} Returns the new spec function.
- */
-function baseMatches(source) {
-  var matchData = getMatchData(source);
-  if (matchData.length == 1 && matchData[0][2]) {
-    return matchesStrictComparable(matchData[0][0], matchData[0][1]);
-  }
-  return function(object) {
-    return object === source || baseIsMatch(object, source, matchData);
-  };
-}
-
-module.exports = baseMatches;
-
-
-/***/ }),
-
-/***/ 1152:
-/***/ (function(module, exports, __webpack_require__) {
-
-var Stack = __webpack_require__(860),
-    baseIsEqual = __webpack_require__(1065);
-
-/** Used to compose bitmasks for value comparisons. */
-var COMPARE_PARTIAL_FLAG = 1,
-    COMPARE_UNORDERED_FLAG = 2;
-
-/**
- * The base implementation of `_.isMatch` without support for iteratee shorthands.
- *
- * @private
- * @param {Object} object The object to inspect.
- * @param {Object} source The object of property values to match.
- * @param {Array} matchData The property names, values, and compare flags to match.
- * @param {Function} [customizer] The function to customize comparisons.
- * @returns {boolean} Returns `true` if `object` is a match, else `false`.
- */
-function baseIsMatch(object, source, matchData, customizer) {
-  var index = matchData.length,
-      length = index,
-      noCustomizer = !customizer;
-
-  if (object == null) {
-    return !length;
-  }
-  object = Object(object);
-  while (index--) {
-    var data = matchData[index];
-    if ((noCustomizer && data[2])
-          ? data[1] !== object[data[0]]
-          : !(data[0] in object)
-        ) {
-      return false;
-    }
-  }
-  while (++index < length) {
-    data = matchData[index];
-    var key = data[0],
-        objValue = object[key],
-        srcValue = data[1];
-
-    if (noCustomizer && data[2]) {
-      if (objValue === undefined && !(key in object)) {
-        return false;
-      }
-    } else {
-      var stack = new Stack;
-      if (customizer) {
-        var result = customizer(objValue, srcValue, key, object, source, stack);
-      }
-      if (!(result === undefined
-            ? baseIsEqual(srcValue, objValue, COMPARE_PARTIAL_FLAG | COMPARE_UNORDERED_FLAG, customizer, stack)
-            : result
-          )) {
-        return false;
-      }
-    }
-  }
-  return true;
-}
-
-module.exports = baseIsMatch;
-
-
-/***/ }),
-
-/***/ 1153:
-/***/ (function(module, exports) {
-
-/**
- * Removes all key-value entries from the list cache.
- *
- * @private
- * @name clear
- * @memberOf ListCache
- */
-function listCacheClear() {
-  this.__data__ = [];
-  this.size = 0;
-}
-
-module.exports = listCacheClear;
-
-
-/***/ }),
-
-/***/ 1154:
-/***/ (function(module, exports, __webpack_require__) {
-
-var assocIndexOf = __webpack_require__(822);
-
-/** Used for built-in method references. */
-var arrayProto = Array.prototype;
-
-/** Built-in value references. */
-var splice = arrayProto.splice;
-
-/**
- * Removes `key` and its value from the list cache.
- *
- * @private
- * @name delete
- * @memberOf ListCache
- * @param {string} key The key of the value to remove.
- * @returns {boolean} Returns `true` if the entry was removed, else `false`.
- */
-function listCacheDelete(key) {
-  var data = this.__data__,
-      index = assocIndexOf(data, key);
-
-  if (index < 0) {
-    return false;
-  }
-  var lastIndex = data.length - 1;
-  if (index == lastIndex) {
-    data.pop();
-  } else {
-    splice.call(data, index, 1);
-  }
-  --this.size;
-  return true;
-}
-
-module.exports = listCacheDelete;
-
-
-/***/ }),
-
-/***/ 1155:
-/***/ (function(module, exports, __webpack_require__) {
-
-var assocIndexOf = __webpack_require__(822);
-
-/**
- * Gets the list cache value for `key`.
- *
- * @private
- * @name get
- * @memberOf ListCache
- * @param {string} key The key of the value to get.
- * @returns {*} Returns the entry value.
- */
-function listCacheGet(key) {
-  var data = this.__data__,
-      index = assocIndexOf(data, key);
-
-  return index < 0 ? undefined : data[index][1];
-}
-
-module.exports = listCacheGet;
-
-
-/***/ }),
-
-/***/ 1156:
-/***/ (function(module, exports, __webpack_require__) {
-
-var assocIndexOf = __webpack_require__(822);
-
-/**
- * Checks if a list cache value for `key` exists.
- *
- * @private
- * @name has
- * @memberOf ListCache
- * @param {string} key The key of the entry to check.
- * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
- */
-function listCacheHas(key) {
-  return assocIndexOf(this.__data__, key) > -1;
-}
-
-module.exports = listCacheHas;
-
-
-/***/ }),
-
-/***/ 1157:
-/***/ (function(module, exports, __webpack_require__) {
-
-var assocIndexOf = __webpack_require__(822);
-
-/**
- * Sets the list cache `key` to `value`.
- *
- * @private
- * @name set
- * @memberOf ListCache
- * @param {string} key The key of the value to set.
- * @param {*} value The value to set.
- * @returns {Object} Returns the list cache instance.
- */
-function listCacheSet(key, value) {
-  var data = this.__data__,
-      index = assocIndexOf(data, key);
-
-  if (index < 0) {
-    ++this.size;
-    data.push([key, value]);
-  } else {
-    data[index][1] = value;
-  }
-  return this;
-}
-
-module.exports = listCacheSet;
-
-
-/***/ }),
-
-/***/ 1158:
-/***/ (function(module, exports, __webpack_require__) {
-
-var ListCache = __webpack_require__(821);
-
-/**
- * Removes all key-value entries from the stack.
- *
- * @private
- * @name clear
- * @memberOf Stack
- */
-function stackClear() {
-  this.__data__ = new ListCache;
-  this.size = 0;
-}
-
-module.exports = stackClear;
-
-
-/***/ }),
-
-/***/ 1159:
-/***/ (function(module, exports) {
-
-/**
- * Removes `key` and its value from the stack.
- *
- * @private
- * @name delete
- * @memberOf Stack
- * @param {string} key The key of the value to remove.
- * @returns {boolean} Returns `true` if the entry was removed, else `false`.
- */
-function stackDelete(key) {
-  var data = this.__data__,
-      result = data['delete'](key);
-
-  this.size = data.size;
-  return result;
-}
-
-module.exports = stackDelete;
-
-
-/***/ }),
-
-/***/ 1160:
-/***/ (function(module, exports) {
-
-/**
- * Gets the stack value for `key`.
- *
- * @private
- * @name get
- * @memberOf Stack
- * @param {string} key The key of the value to get.
- * @returns {*} Returns the entry value.
- */
-function stackGet(key) {
-  return this.__data__.get(key);
-}
-
-module.exports = stackGet;
-
-
-/***/ }),
-
-/***/ 1161:
-/***/ (function(module, exports) {
-
-/**
- * Checks if a stack value for `key` exists.
- *
- * @private
- * @name has
- * @memberOf Stack
- * @param {string} key The key of the entry to check.
- * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
- */
-function stackHas(key) {
-  return this.__data__.has(key);
-}
-
-module.exports = stackHas;
-
-
-/***/ }),
-
-/***/ 1162:
-/***/ (function(module, exports, __webpack_require__) {
-
-var ListCache = __webpack_require__(821),
-    Map = __webpack_require__(862),
-    MapCache = __webpack_require__(863);
-
-/** Used as the size to enable large array optimizations. */
-var LARGE_ARRAY_SIZE = 200;
-
-/**
- * Sets the stack `key` to `value`.
- *
- * @private
- * @name set
- * @memberOf Stack
- * @param {string} key The key of the value to set.
- * @param {*} value The value to set.
- * @returns {Object} Returns the stack cache instance.
- */
-function stackSet(key, value) {
-  var data = this.__data__;
-  if (data instanceof ListCache) {
-    var pairs = data.__data__;
-    if (!Map || (pairs.length < LARGE_ARRAY_SIZE - 1)) {
-      pairs.push([key, value]);
-      this.size = ++data.size;
-      return this;
-    }
-    data = this.__data__ = new MapCache(pairs);
-  }
-  data.set(key, value);
-  this.size = data.size;
-  return this;
-}
-
-module.exports = stackSet;
-
-
-/***/ }),
-
-/***/ 1163:
-/***/ (function(module, exports, __webpack_require__) {
-
-var Hash = __webpack_require__(1164),
-    ListCache = __webpack_require__(821),
-    Map = __webpack_require__(862);
-
-/**
- * Removes all key-value entries from the map.
- *
- * @private
- * @name clear
- * @memberOf MapCache
- */
-function mapCacheClear() {
-  this.size = 0;
-  this.__data__ = {
-    'hash': new Hash,
-    'map': new (Map || ListCache),
-    'string': new Hash
-  };
-}
-
-module.exports = mapCacheClear;
-
-
-/***/ }),
-
-/***/ 1164:
-/***/ (function(module, exports, __webpack_require__) {
-
-var hashClear = __webpack_require__(1165),
-    hashDelete = __webpack_require__(1166),
-    hashGet = __webpack_require__(1167),
-    hashHas = __webpack_require__(1168),
-    hashSet = __webpack_require__(1169);
-
-/**
- * Creates a hash object.
- *
- * @private
- * @constructor
- * @param {Array} [entries] The key-value pairs to cache.
- */
-function Hash(entries) {
-  var index = -1,
-      length = entries == null ? 0 : entries.length;
-
-  this.clear();
-  while (++index < length) {
-    var entry = entries[index];
-    this.set(entry[0], entry[1]);
-  }
-}
-
-// Add methods to `Hash`.
-Hash.prototype.clear = hashClear;
-Hash.prototype['delete'] = hashDelete;
-Hash.prototype.get = hashGet;
-Hash.prototype.has = hashHas;
-Hash.prototype.set = hashSet;
-
-module.exports = Hash;
-
-
-/***/ }),
-
-/***/ 1165:
-/***/ (function(module, exports, __webpack_require__) {
-
-var nativeCreate = __webpack_require__(823);
-
-/**
- * Removes all key-value entries from the hash.
- *
- * @private
- * @name clear
- * @memberOf Hash
- */
-function hashClear() {
-  this.__data__ = nativeCreate ? nativeCreate(null) : {};
-  this.size = 0;
-}
-
-module.exports = hashClear;
-
-
-/***/ }),
-
-/***/ 1166:
-/***/ (function(module, exports) {
-
-/**
- * Removes `key` and its value from the hash.
- *
- * @private
- * @name delete
- * @memberOf Hash
- * @param {Object} hash The hash to modify.
- * @param {string} key The key of the value to remove.
- * @returns {boolean} Returns `true` if the entry was removed, else `false`.
- */
-function hashDelete(key) {
-  var result = this.has(key) && delete this.__data__[key];
-  this.size -= result ? 1 : 0;
-  return result;
-}
-
-module.exports = hashDelete;
-
-
-/***/ }),
-
-/***/ 1167:
-/***/ (function(module, exports, __webpack_require__) {
-
-var nativeCreate = __webpack_require__(823);
-
-/** Used to stand-in for `undefined` hash values. */
-var HASH_UNDEFINED = '__lodash_hash_undefined__';
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * Gets the hash value for `key`.
- *
- * @private
- * @name get
- * @memberOf Hash
- * @param {string} key The key of the value to get.
- * @returns {*} Returns the entry value.
- */
-function hashGet(key) {
-  var data = this.__data__;
-  if (nativeCreate) {
-    var result = data[key];
-    return result === HASH_UNDEFINED ? undefined : result;
-  }
-  return hasOwnProperty.call(data, key) ? data[key] : undefined;
-}
-
-module.exports = hashGet;
-
-
-/***/ }),
-
-/***/ 1168:
-/***/ (function(module, exports, __webpack_require__) {
-
-var nativeCreate = __webpack_require__(823);
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * Checks if a hash value for `key` exists.
- *
- * @private
- * @name has
- * @memberOf Hash
- * @param {string} key The key of the entry to check.
- * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
- */
-function hashHas(key) {
-  var data = this.__data__;
-  return nativeCreate ? (data[key] !== undefined) : hasOwnProperty.call(data, key);
-}
-
-module.exports = hashHas;
-
-
-/***/ }),
-
-/***/ 1169:
-/***/ (function(module, exports, __webpack_require__) {
-
-var nativeCreate = __webpack_require__(823);
-
-/** Used to stand-in for `undefined` hash values. */
-var HASH_UNDEFINED = '__lodash_hash_undefined__';
-
-/**
- * Sets the hash `key` to `value`.
- *
- * @private
- * @name set
- * @memberOf Hash
- * @param {string} key The key of the value to set.
- * @param {*} value The value to set.
- * @returns {Object} Returns the hash instance.
- */
-function hashSet(key, value) {
-  var data = this.__data__;
-  this.size += this.has(key) ? 0 : 1;
-  data[key] = (nativeCreate && value === undefined) ? HASH_UNDEFINED : value;
-  return this;
-}
-
-module.exports = hashSet;
-
-
-/***/ }),
-
-/***/ 1170:
-/***/ (function(module, exports, __webpack_require__) {
-
-var getMapData = __webpack_require__(824);
-
-/**
- * Removes `key` and its value from the map.
- *
- * @private
- * @name delete
- * @memberOf MapCache
- * @param {string} key The key of the value to remove.
- * @returns {boolean} Returns `true` if the entry was removed, else `false`.
- */
-function mapCacheDelete(key) {
-  var result = getMapData(this, key)['delete'](key);
-  this.size -= result ? 1 : 0;
-  return result;
-}
-
-module.exports = mapCacheDelete;
-
-
-/***/ }),
-
-/***/ 1171:
-/***/ (function(module, exports) {
-
-/**
- * Checks if `value` is suitable for use as unique object key.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is suitable, else `false`.
- */
-function isKeyable(value) {
-  var type = typeof value;
-  return (type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean')
-    ? (value !== '__proto__')
-    : (value === null);
-}
-
-module.exports = isKeyable;
-
-
-/***/ }),
-
-/***/ 1172:
-/***/ (function(module, exports, __webpack_require__) {
-
-var getMapData = __webpack_require__(824);
-
-/**
- * Gets the map value for `key`.
- *
- * @private
- * @name get
- * @memberOf MapCache
- * @param {string} key The key of the value to get.
- * @returns {*} Returns the entry value.
- */
-function mapCacheGet(key) {
-  return getMapData(this, key).get(key);
-}
-
-module.exports = mapCacheGet;
-
-
-/***/ }),
-
-/***/ 1173:
-/***/ (function(module, exports, __webpack_require__) {
-
-var getMapData = __webpack_require__(824);
-
-/**
- * Checks if a map value for `key` exists.
- *
- * @private
- * @name has
- * @memberOf MapCache
- * @param {string} key The key of the entry to check.
- * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
- */
-function mapCacheHas(key) {
-  return getMapData(this, key).has(key);
-}
-
-module.exports = mapCacheHas;
-
-
-/***/ }),
-
-/***/ 1174:
-/***/ (function(module, exports, __webpack_require__) {
-
-var getMapData = __webpack_require__(824);
-
-/**
- * Sets the map `key` to `value`.
- *
- * @private
- * @name set
- * @memberOf MapCache
- * @param {string} key The key of the value to set.
- * @param {*} value The value to set.
- * @returns {Object} Returns the map cache instance.
- */
-function mapCacheSet(key, value) {
-  var data = getMapData(this, key),
-      size = data.size;
-
-  data.set(key, value);
-  this.size += data.size == size ? 0 : 1;
-  return this;
-}
-
-module.exports = mapCacheSet;
-
-
-/***/ }),
-
-/***/ 1175:
-/***/ (function(module, exports, __webpack_require__) {
-
-var Stack = __webpack_require__(860),
-    equalArrays = __webpack_require__(1066),
-    equalByTag = __webpack_require__(1181),
-    equalObjects = __webpack_require__(1184),
-    getTag = __webpack_require__(825),
-    isArray = __webpack_require__(772),
-    isBuffer = __webpack_require__(853),
-    isTypedArray = __webpack_require__(1062);
-
-/** Used to compose bitmasks for value comparisons. */
-var COMPARE_PARTIAL_FLAG = 1;
-
-/** `Object#toString` result references. */
-var argsTag = '[object Arguments]',
-    arrayTag = '[object Array]',
-    objectTag = '[object Object]';
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * A specialized version of `baseIsEqual` for arrays and objects which performs
- * deep comparisons and tracks traversed objects enabling objects with circular
- * references to be compared.
- *
- * @private
- * @param {Object} object The object to compare.
- * @param {Object} other The other object to compare.
- * @param {number} bitmask The bitmask flags. See `baseIsEqual` for more details.
- * @param {Function} customizer The function to customize comparisons.
- * @param {Function} equalFunc The function to determine equivalents of values.
- * @param {Object} [stack] Tracks traversed `object` and `other` objects.
- * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
- */
-function baseIsEqualDeep(object, other, bitmask, customizer, equalFunc, stack) {
-  var objIsArr = isArray(object),
-      othIsArr = isArray(other),
-      objTag = objIsArr ? arrayTag : getTag(object),
-      othTag = othIsArr ? arrayTag : getTag(other);
-
-  objTag = objTag == argsTag ? objectTag : objTag;
-  othTag = othTag == argsTag ? objectTag : othTag;
-
-  var objIsObj = objTag == objectTag,
-      othIsObj = othTag == objectTag,
-      isSameTag = objTag == othTag;
-
-  if (isSameTag && isBuffer(object)) {
-    if (!isBuffer(other)) {
-      return false;
-    }
-    objIsArr = true;
-    objIsObj = false;
-  }
-  if (isSameTag && !objIsObj) {
-    stack || (stack = new Stack);
-    return (objIsArr || isTypedArray(object))
-      ? equalArrays(object, other, bitmask, customizer, equalFunc, stack)
-      : equalByTag(object, other, objTag, bitmask, customizer, equalFunc, stack);
-  }
-  if (!(bitmask & COMPARE_PARTIAL_FLAG)) {
-    var objIsWrapped = objIsObj && hasOwnProperty.call(object, '__wrapped__'),
-        othIsWrapped = othIsObj && hasOwnProperty.call(other, '__wrapped__');
-
-    if (objIsWrapped || othIsWrapped) {
-      var objUnwrapped = objIsWrapped ? object.value() : object,
-          othUnwrapped = othIsWrapped ? other.value() : other;
-
-      stack || (stack = new Stack);
-      return equalFunc(objUnwrapped, othUnwrapped, bitmask, customizer, stack);
-    }
-  }
-  if (!isSameTag) {
-    return false;
-  }
-  stack || (stack = new Stack);
-  return equalObjects(object, other, bitmask, customizer, equalFunc, stack);
-}
-
-module.exports = baseIsEqualDeep;
-
-
-/***/ }),
-
-/***/ 1176:
-/***/ (function(module, exports, __webpack_require__) {
-
-var MapCache = __webpack_require__(863),
-    setCacheAdd = __webpack_require__(1177),
-    setCacheHas = __webpack_require__(1178);
-
-/**
- *
- * Creates an array cache object to store unique values.
- *
- * @private
- * @constructor
- * @param {Array} [values] The values to cache.
- */
-function SetCache(values) {
-  var index = -1,
-      length = values == null ? 0 : values.length;
-
-  this.__data__ = new MapCache;
-  while (++index < length) {
-    this.add(values[index]);
-  }
-}
-
-// Add methods to `SetCache`.
-SetCache.prototype.add = SetCache.prototype.push = setCacheAdd;
-SetCache.prototype.has = setCacheHas;
-
-module.exports = SetCache;
-
-
-/***/ }),
-
-/***/ 1177:
-/***/ (function(module, exports) {
-
-/** Used to stand-in for `undefined` hash values. */
-var HASH_UNDEFINED = '__lodash_hash_undefined__';
-
-/**
- * Adds `value` to the array cache.
- *
- * @private
- * @name add
- * @memberOf SetCache
- * @alias push
- * @param {*} value The value to cache.
- * @returns {Object} Returns the cache instance.
- */
-function setCacheAdd(value) {
-  this.__data__.set(value, HASH_UNDEFINED);
-  return this;
-}
-
-module.exports = setCacheAdd;
-
-
-/***/ }),
-
-/***/ 1178:
-/***/ (function(module, exports) {
-
-/**
- * Checks if `value` is in the array cache.
- *
- * @private
- * @name has
- * @memberOf SetCache
- * @param {*} value The value to search for.
- * @returns {number} Returns `true` if `value` is found, else `false`.
- */
-function setCacheHas(value) {
-  return this.__data__.has(value);
-}
-
-module.exports = setCacheHas;
-
-
-/***/ }),
-
-/***/ 1179:
-/***/ (function(module, exports) {
-
-/**
- * A specialized version of `_.some` for arrays without support for iteratee
- * shorthands.
- *
- * @private
- * @param {Array} [array] The array to iterate over.
- * @param {Function} predicate The function invoked per iteration.
- * @returns {boolean} Returns `true` if any element passes the predicate check,
- *  else `false`.
- */
-function arraySome(array, predicate) {
-  var index = -1,
-      length = array == null ? 0 : array.length;
-
-  while (++index < length) {
-    if (predicate(array[index], index, array)) {
-      return true;
-    }
-  }
-  return false;
-}
-
-module.exports = arraySome;
-
-
-/***/ }),
-
-/***/ 1180:
-/***/ (function(module, exports) {
-
-/**
- * Checks if a `cache` value for `key` exists.
- *
- * @private
- * @param {Object} cache The cache to query.
- * @param {string} key The key of the entry to check.
- * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
- */
-function cacheHas(cache, key) {
-  return cache.has(key);
-}
-
-module.exports = cacheHas;
-
-
-/***/ }),
-
-/***/ 1181:
-/***/ (function(module, exports, __webpack_require__) {
-
-var Symbol = __webpack_require__(793),
-    Uint8Array = __webpack_require__(1067),
-    eq = __webpack_require__(861),
-    equalArrays = __webpack_require__(1066),
-    mapToArray = __webpack_require__(1182),
-    setToArray = __webpack_require__(1183);
-
-/** Used to compose bitmasks for value comparisons. */
-var COMPARE_PARTIAL_FLAG = 1,
-    COMPARE_UNORDERED_FLAG = 2;
-
-/** `Object#toString` result references. */
-var boolTag = '[object Boolean]',
-    dateTag = '[object Date]',
-    errorTag = '[object Error]',
-    mapTag = '[object Map]',
-    numberTag = '[object Number]',
-    regexpTag = '[object RegExp]',
-    setTag = '[object Set]',
-    stringTag = '[object String]',
-    symbolTag = '[object Symbol]';
-
-var arrayBufferTag = '[object ArrayBuffer]',
-    dataViewTag = '[object DataView]';
-
-/** Used to convert symbols to primitives and strings. */
-var symbolProto = Symbol ? Symbol.prototype : undefined,
-    symbolValueOf = symbolProto ? symbolProto.valueOf : undefined;
-
-/**
- * A specialized version of `baseIsEqualDeep` for comparing objects of
- * the same `toStringTag`.
- *
- * **Note:** This function only supports comparing values with tags of
- * `Boolean`, `Date`, `Error`, `Number`, `RegExp`, or `String`.
- *
- * @private
- * @param {Object} object The object to compare.
- * @param {Object} other The other object to compare.
- * @param {string} tag The `toStringTag` of the objects to compare.
- * @param {number} bitmask The bitmask flags. See `baseIsEqual` for more details.
- * @param {Function} customizer The function to customize comparisons.
- * @param {Function} equalFunc The function to determine equivalents of values.
- * @param {Object} stack Tracks traversed `object` and `other` objects.
- * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
- */
-function equalByTag(object, other, tag, bitmask, customizer, equalFunc, stack) {
-  switch (tag) {
-    case dataViewTag:
-      if ((object.byteLength != other.byteLength) ||
-          (object.byteOffset != other.byteOffset)) {
-        return false;
-      }
-      object = object.buffer;
-      other = other.buffer;
-
-    case arrayBufferTag:
-      if ((object.byteLength != other.byteLength) ||
-          !equalFunc(new Uint8Array(object), new Uint8Array(other))) {
-        return false;
-      }
-      return true;
-
-    case boolTag:
-    case dateTag:
-    case numberTag:
-      // Coerce booleans to `1` or `0` and dates to milliseconds.
-      // Invalid dates are coerced to `NaN`.
-      return eq(+object, +other);
-
-    case errorTag:
-      return object.name == other.name && object.message == other.message;
-
-    case regexpTag:
-    case stringTag:
-      // Coerce regexes to strings and treat strings, primitives and objects,
-      // as equal. See http://www.ecma-international.org/ecma-262/7.0/#sec-regexp.prototype.tostring
-      // for more details.
-      return object == (other + '');
-
-    case mapTag:
-      var convert = mapToArray;
-
-    case setTag:
-      var isPartial = bitmask & COMPARE_PARTIAL_FLAG;
-      convert || (convert = setToArray);
-
-      if (object.size != other.size && !isPartial) {
-        return false;
-      }
-      // Assume cyclic values are equal.
-      var stacked = stack.get(object);
-      if (stacked) {
-        return stacked == other;
-      }
-      bitmask |= COMPARE_UNORDERED_FLAG;
-
-      // Recursively compare objects (susceptible to call stack limits).
-      stack.set(object, other);
-      var result = equalArrays(convert(object), convert(other), bitmask, customizer, equalFunc, stack);
-      stack['delete'](object);
-      return result;
-
-    case symbolTag:
-      if (symbolValueOf) {
-        return symbolValueOf.call(object) == symbolValueOf.call(other);
-      }
-  }
-  return false;
-}
-
-module.exports = equalByTag;
-
-
-/***/ }),
-
-/***/ 1182:
-/***/ (function(module, exports) {
-
-/**
- * Converts `map` to its key-value pairs.
- *
- * @private
- * @param {Object} map The map to convert.
- * @returns {Array} Returns the key-value pairs.
- */
-function mapToArray(map) {
-  var index = -1,
-      result = Array(map.size);
-
-  map.forEach(function(value, key) {
-    result[++index] = [key, value];
-  });
-  return result;
-}
-
-module.exports = mapToArray;
-
-
-/***/ }),
-
-/***/ 1183:
-/***/ (function(module, exports) {
-
-/**
- * Converts `set` to an array of its values.
- *
- * @private
- * @param {Object} set The set to convert.
- * @returns {Array} Returns the values.
- */
-function setToArray(set) {
-  var index = -1,
-      result = Array(set.size);
-
-  set.forEach(function(value) {
-    result[++index] = value;
-  });
-  return result;
-}
-
-module.exports = setToArray;
-
-
-/***/ }),
-
-/***/ 1184:
-/***/ (function(module, exports, __webpack_require__) {
-
-var getAllKeys = __webpack_require__(1068);
-
-/** Used to compose bitmasks for value comparisons. */
-var COMPARE_PARTIAL_FLAG = 1;
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * A specialized version of `baseIsEqualDeep` for objects with support for
- * partial deep comparisons.
- *
- * @private
- * @param {Object} object The object to compare.
- * @param {Object} other The other object to compare.
- * @param {number} bitmask The bitmask flags. See `baseIsEqual` for more details.
- * @param {Function} customizer The function to customize comparisons.
- * @param {Function} equalFunc The function to determine equivalents of values.
- * @param {Object} stack Tracks traversed `object` and `other` objects.
- * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
- */
-function equalObjects(object, other, bitmask, customizer, equalFunc, stack) {
-  var isPartial = bitmask & COMPARE_PARTIAL_FLAG,
-      objProps = getAllKeys(object),
-      objLength = objProps.length,
-      othProps = getAllKeys(other),
-      othLength = othProps.length;
-
-  if (objLength != othLength && !isPartial) {
-    return false;
-  }
-  var index = objLength;
-  while (index--) {
-    var key = objProps[index];
-    if (!(isPartial ? key in other : hasOwnProperty.call(other, key))) {
-      return false;
-    }
-  }
-  // Assume cyclic values are equal.
-  var stacked = stack.get(object);
-  if (stacked && stack.get(other)) {
-    return stacked == other;
-  }
-  var result = true;
-  stack.set(object, other);
-  stack.set(other, object);
-
-  var skipCtor = isPartial;
-  while (++index < objLength) {
-    key = objProps[index];
-    var objValue = object[key],
-        othValue = other[key];
-
-    if (customizer) {
-      var compared = isPartial
-        ? customizer(othValue, objValue, key, other, object, stack)
-        : customizer(objValue, othValue, key, object, other, stack);
-    }
-    // Recursively compare objects (susceptible to call stack limits).
-    if (!(compared === undefined
-          ? (objValue === othValue || equalFunc(objValue, othValue, bitmask, customizer, stack))
-          : compared
-        )) {
-      result = false;
-      break;
-    }
-    skipCtor || (skipCtor = key == 'constructor');
-  }
-  if (result && !skipCtor) {
-    var objCtor = object.constructor,
-        othCtor = other.constructor;
-
-    // Non `Object` object instances with different constructors are not equal.
-    if (objCtor != othCtor &&
-        ('constructor' in object && 'constructor' in other) &&
-        !(typeof objCtor == 'function' && objCtor instanceof objCtor &&
-          typeof othCtor == 'function' && othCtor instanceof othCtor)) {
-      result = false;
-    }
-  }
-  stack['delete'](object);
-  stack['delete'](other);
-  return result;
-}
-
-module.exports = equalObjects;
-
-
-/***/ }),
-
-/***/ 1185:
-/***/ (function(module, exports) {
-
-/**
- * A specialized version of `_.filter` for arrays without support for
- * iteratee shorthands.
- *
- * @private
- * @param {Array} [array] The array to iterate over.
- * @param {Function} predicate The function invoked per iteration.
- * @returns {Array} Returns the new filtered array.
- */
-function arrayFilter(array, predicate) {
-  var index = -1,
-      length = array == null ? 0 : array.length,
-      resIndex = 0,
-      result = [];
-
-  while (++index < length) {
-    var value = array[index];
-    if (predicate(value, index, array)) {
-      result[resIndex++] = value;
-    }
-  }
-  return result;
-}
-
-module.exports = arrayFilter;
-
-
-/***/ }),
-
-/***/ 1186:
-/***/ (function(module, exports, __webpack_require__) {
-
-var getNative = __webpack_require__(786),
-    root = __webpack_require__(775);
-
-/* Built-in method references that are verified to be native. */
-var DataView = getNative(root, 'DataView');
-
-module.exports = DataView;
-
-
-/***/ }),
-
-/***/ 1187:
-/***/ (function(module, exports, __webpack_require__) {
-
-var getNative = __webpack_require__(786),
-    root = __webpack_require__(775);
-
-/* Built-in method references that are verified to be native. */
-var Promise = getNative(root, 'Promise');
-
-module.exports = Promise;
-
-
-/***/ }),
-
-/***/ 1188:
-/***/ (function(module, exports, __webpack_require__) {
-
-var getNative = __webpack_require__(786),
-    root = __webpack_require__(775);
-
-/* Built-in method references that are verified to be native. */
-var Set = getNative(root, 'Set');
-
-module.exports = Set;
-
-
-/***/ }),
-
-/***/ 1189:
-/***/ (function(module, exports, __webpack_require__) {
-
-var getNative = __webpack_require__(786),
-    root = __webpack_require__(775);
-
-/* Built-in method references that are verified to be native. */
-var WeakMap = getNative(root, 'WeakMap');
-
-module.exports = WeakMap;
-
-
-/***/ }),
-
-/***/ 1190:
-/***/ (function(module, exports, __webpack_require__) {
-
-var isStrictComparable = __webpack_require__(1071),
-    keys = __webpack_require__(809);
-
-/**
- * Gets the property names, values, and compare flags of `object`.
- *
- * @private
- * @param {Object} object The object to query.
- * @returns {Array} Returns the match data of `object`.
- */
-function getMatchData(object) {
-  var result = keys(object),
-      length = result.length;
-
-  while (length--) {
-    var key = result[length],
-        value = object[key];
-
-    result[length] = [key, value, isStrictComparable(value)];
-  }
-  return result;
-}
-
-module.exports = getMatchData;
-
-
-/***/ }),
-
-/***/ 1191:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseIsEqual = __webpack_require__(1065),
-    get = __webpack_require__(1192),
-    hasIn = __webpack_require__(1198),
-    isKey = __webpack_require__(866),
-    isStrictComparable = __webpack_require__(1071),
-    matchesStrictComparable = __webpack_require__(1072),
-    toKey = __webpack_require__(795);
-
-/** Used to compose bitmasks for value comparisons. */
-var COMPARE_PARTIAL_FLAG = 1,
-    COMPARE_UNORDERED_FLAG = 2;
-
-/**
- * The base implementation of `_.matchesProperty` which doesn't clone `srcValue`.
- *
- * @private
- * @param {string} path The path of the property to get.
- * @param {*} srcValue The value to match.
- * @returns {Function} Returns the new spec function.
- */
-function baseMatchesProperty(path, srcValue) {
-  if (isKey(path) && isStrictComparable(srcValue)) {
-    return matchesStrictComparable(toKey(path), srcValue);
-  }
-  return function(object) {
-    var objValue = get(object, path);
-    return (objValue === undefined && objValue === srcValue)
-      ? hasIn(object, path)
-      : baseIsEqual(srcValue, objValue, COMPARE_PARTIAL_FLAG | COMPARE_UNORDERED_FLAG);
-  };
-}
-
-module.exports = baseMatchesProperty;
-
-
-/***/ }),
-
-/***/ 1192:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseGet = __webpack_require__(826);
-
-/**
- * Gets the value at `path` of `object`. If the resolved value is
- * `undefined`, the `defaultValue` is returned in its place.
- *
- * @static
- * @memberOf _
- * @since 3.7.0
- * @category Object
- * @param {Object} object The object to query.
- * @param {Array|string} path The path of the property to get.
- * @param {*} [defaultValue] The value returned for `undefined` resolved values.
- * @returns {*} Returns the resolved value.
- * @example
- *
- * var object = { 'a': [{ 'b': { 'c': 3 } }] };
- *
- * _.get(object, 'a[0].b.c');
- * // => 3
- *
- * _.get(object, ['a', '0', 'b', 'c']);
- * // => 3
- *
- * _.get(object, 'a.b.c', 'default');
- * // => 'default'
- */
-function get(object, path, defaultValue) {
-  var result = object == null ? undefined : baseGet(object, path);
-  return result === undefined ? defaultValue : result;
-}
-
-module.exports = get;
-
-
-/***/ }),
-
-/***/ 1193:
-/***/ (function(module, exports, __webpack_require__) {
-
-var memoizeCapped = __webpack_require__(1194);
-
-/** Used to match property names within property paths. */
-var rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
-
-/** Used to match backslashes in property paths. */
-var reEscapeChar = /\\(\\)?/g;
-
-/**
- * Converts `string` to a property path array.
- *
- * @private
- * @param {string} string The string to convert.
- * @returns {Array} Returns the property path array.
- */
-var stringToPath = memoizeCapped(function(string) {
-  var result = [];
-  if (string.charCodeAt(0) === 46 /* . */) {
-    result.push('');
-  }
-  string.replace(rePropName, function(match, number, quote, subString) {
-    result.push(quote ? subString.replace(reEscapeChar, '$1') : (number || match));
-  });
-  return result;
-});
-
-module.exports = stringToPath;
-
-
-/***/ }),
-
-/***/ 1194:
-/***/ (function(module, exports, __webpack_require__) {
-
-var memoize = __webpack_require__(1195);
-
-/** Used as the maximum memoize cache size. */
-var MAX_MEMOIZE_SIZE = 500;
-
-/**
- * A specialized version of `_.memoize` which clears the memoized function's
- * cache when it exceeds `MAX_MEMOIZE_SIZE`.
- *
- * @private
- * @param {Function} func The function to have its output memoized.
- * @returns {Function} Returns the new memoized function.
- */
-function memoizeCapped(func) {
-  var result = memoize(func, function(key) {
-    if (cache.size === MAX_MEMOIZE_SIZE) {
-      cache.clear();
-    }
-    return key;
-  });
-
-  var cache = result.cache;
-  return result;
-}
-
-module.exports = memoizeCapped;
-
-
-/***/ }),
-
-/***/ 1195:
-/***/ (function(module, exports, __webpack_require__) {
-
-var MapCache = __webpack_require__(863);
-
-/** Error message constants. */
-var FUNC_ERROR_TEXT = 'Expected a function';
-
-/**
- * Creates a function that memoizes the result of `func`. If `resolver` is
- * provided, it determines the cache key for storing the result based on the
- * arguments provided to the memoized function. By default, the first argument
- * provided to the memoized function is used as the map cache key. The `func`
- * is invoked with the `this` binding of the memoized function.
- *
- * **Note:** The cache is exposed as the `cache` property on the memoized
- * function. Its creation may be customized by replacing the `_.memoize.Cache`
- * constructor with one whose instances implement the
- * [`Map`](http://ecma-international.org/ecma-262/7.0/#sec-properties-of-the-map-prototype-object)
- * method interface of `clear`, `delete`, `get`, `has`, and `set`.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Function
- * @param {Function} func The function to have its output memoized.
- * @param {Function} [resolver] The function to resolve the cache key.
- * @returns {Function} Returns the new memoized function.
- * @example
- *
- * var object = { 'a': 1, 'b': 2 };
- * var other = { 'c': 3, 'd': 4 };
- *
- * var values = _.memoize(_.values);
- * values(object);
- * // => [1, 2]
- *
- * values(other);
- * // => [3, 4]
- *
- * object.a = 2;
- * values(object);
- * // => [1, 2]
- *
- * // Modify the result cache.
- * values.cache.set(object, ['a', 'b']);
- * values(object);
- * // => ['a', 'b']
- *
- * // Replace `_.memoize.Cache`.
- * _.memoize.Cache = WeakMap;
- */
-function memoize(func, resolver) {
-  if (typeof func != 'function' || (resolver != null && typeof resolver != 'function')) {
-    throw new TypeError(FUNC_ERROR_TEXT);
-  }
-  var memoized = function() {
-    var args = arguments,
-        key = resolver ? resolver.apply(this, args) : args[0],
-        cache = memoized.cache;
-
-    if (cache.has(key)) {
-      return cache.get(key);
-    }
-    var result = func.apply(this, args);
-    memoized.cache = cache.set(key, result) || cache;
-    return result;
-  };
-  memoized.cache = new (memoize.Cache || MapCache);
-  return memoized;
-}
-
-// Expose `MapCache`.
-memoize.Cache = MapCache;
-
-module.exports = memoize;
-
-
-/***/ }),
-
-/***/ 1196:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseToString = __webpack_require__(1197);
-
-/**
- * Converts `value` to a string. An empty string is returned for `null`
- * and `undefined` values. The sign of `-0` is preserved.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to convert.
- * @returns {string} Returns the converted string.
- * @example
- *
- * _.toString(null);
- * // => ''
- *
- * _.toString(-0);
- * // => '-0'
- *
- * _.toString([1, 2, 3]);
- * // => '1,2,3'
- */
-function toString(value) {
-  return value == null ? '' : baseToString(value);
-}
-
-module.exports = toString;
-
-
-/***/ }),
-
-/***/ 1197:
-/***/ (function(module, exports, __webpack_require__) {
-
-var Symbol = __webpack_require__(793),
-    arrayMap = __webpack_require__(868),
-    isArray = __webpack_require__(772),
-    isSymbol = __webpack_require__(867);
-
-/** Used as references for various `Number` constants. */
-var INFINITY = 1 / 0;
-
-/** Used to convert symbols to primitives and strings. */
-var symbolProto = Symbol ? Symbol.prototype : undefined,
-    symbolToString = symbolProto ? symbolProto.toString : undefined;
-
-/**
- * The base implementation of `_.toString` which doesn't convert nullish
- * values to empty strings.
- *
- * @private
- * @param {*} value The value to process.
- * @returns {string} Returns the string.
- */
-function baseToString(value) {
-  // Exit early for strings to avoid a performance hit in some environments.
-  if (typeof value == 'string') {
-    return value;
-  }
-  if (isArray(value)) {
-    // Recursively convert values (susceptible to call stack limits).
-    return arrayMap(value, baseToString) + '';
-  }
-  if (isSymbol(value)) {
-    return symbolToString ? symbolToString.call(value) : '';
-  }
-  var result = (value + '');
-  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
-}
-
-module.exports = baseToString;
-
-
-/***/ }),
-
-/***/ 1198:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseHasIn = __webpack_require__(1199),
-    hasPath = __webpack_require__(1200);
-
-/**
- * Checks if `path` is a direct or inherited property of `object`.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Object
- * @param {Object} object The object to query.
- * @param {Array|string} path The path to check.
- * @returns {boolean} Returns `true` if `path` exists, else `false`.
- * @example
- *
- * var object = _.create({ 'a': _.create({ 'b': 2 }) });
- *
- * _.hasIn(object, 'a');
- * // => true
- *
- * _.hasIn(object, 'a.b');
- * // => true
- *
- * _.hasIn(object, ['a', 'b']);
- * // => true
- *
- * _.hasIn(object, 'b');
- * // => false
- */
-function hasIn(object, path) {
-  return object != null && hasPath(object, path, baseHasIn);
-}
-
-module.exports = hasIn;
-
-
-/***/ }),
-
-/***/ 1199:
-/***/ (function(module, exports) {
-
-/**
- * The base implementation of `_.hasIn` without support for deep paths.
- *
- * @private
- * @param {Object} [object] The object to query.
- * @param {Array|string} key The key to check.
- * @returns {boolean} Returns `true` if `key` exists, else `false`.
- */
-function baseHasIn(object, key) {
-  return object != null && key in Object(object);
-}
-
-module.exports = baseHasIn;
-
-
-/***/ }),
-
-/***/ 1200:
-/***/ (function(module, exports, __webpack_require__) {
-
-var castPath = __webpack_require__(794),
-    isArguments = __webpack_require__(852),
-    isArray = __webpack_require__(772),
-    isIndex = __webpack_require__(854),
-    isLength = __webpack_require__(855),
-    toKey = __webpack_require__(795);
-
-/**
- * Checks if `path` exists on `object`.
- *
- * @private
- * @param {Object} object The object to query.
- * @param {Array|string} path The path to check.
- * @param {Function} hasFunc The function to check properties.
- * @returns {boolean} Returns `true` if `path` exists, else `false`.
- */
-function hasPath(object, path, hasFunc) {
-  path = castPath(path, object);
-
-  var index = -1,
-      length = path.length,
-      result = false;
-
-  while (++index < length) {
-    var key = toKey(path[index]);
-    if (!(result = object != null && hasFunc(object, key))) {
-      break;
-    }
-    object = object[key];
-  }
-  if (result || ++index != length) {
-    return result;
-  }
-  length = object == null ? 0 : object.length;
-  return !!length && isLength(length) && isIndex(key, length) &&
-    (isArray(object) || isArguments(object));
-}
-
-module.exports = hasPath;
-
-
-/***/ }),
-
-/***/ 1201:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseProperty = __webpack_require__(1202),
-    basePropertyDeep = __webpack_require__(1203),
-    isKey = __webpack_require__(866),
-    toKey = __webpack_require__(795);
-
-/**
- * Creates a function that returns the value at `path` of a given object.
- *
- * @static
- * @memberOf _
- * @since 2.4.0
- * @category Util
- * @param {Array|string} path The path of the property to get.
- * @returns {Function} Returns the new accessor function.
- * @example
- *
- * var objects = [
- *   { 'a': { 'b': 2 } },
- *   { 'a': { 'b': 1 } }
- * ];
- *
- * _.map(objects, _.property('a.b'));
- * // => [2, 1]
- *
- * _.map(_.sortBy(objects, _.property(['a', 'b'])), 'a.b');
- * // => [1, 2]
- */
-function property(path) {
-  return isKey(path) ? baseProperty(toKey(path)) : basePropertyDeep(path);
-}
-
-module.exports = property;
-
-
-/***/ }),
-
-/***/ 1202:
-/***/ (function(module, exports) {
-
-/**
- * The base implementation of `_.property` without support for deep paths.
- *
- * @private
- * @param {string} key The key of the property to get.
- * @returns {Function} Returns the new accessor function.
- */
-function baseProperty(key) {
-  return function(object) {
-    return object == null ? undefined : object[key];
-  };
-}
-
-module.exports = baseProperty;
-
-
-/***/ }),
-
-/***/ 1203:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseGet = __webpack_require__(826);
-
-/**
- * A specialized version of `baseProperty` which supports deep paths.
- *
- * @private
- * @param {Array|string} path The path of the property to get.
- * @returns {Function} Returns the new accessor function.
- */
-function basePropertyDeep(path) {
-  return function(object) {
-    return baseGet(object, path);
-  };
-}
-
-module.exports = basePropertyDeep;
-
-
-/***/ }),
-
-/***/ 1204:
-/***/ (function(module, exports, __webpack_require__) {
-
-var arrayEach = __webpack_require__(1073),
-    baseEach = __webpack_require__(1205),
-    castFunction = __webpack_require__(1074),
-    isArray = __webpack_require__(772);
-
-/**
- * Iterates over elements of `collection` and invokes `iteratee` for each element.
- * The iteratee is invoked with three arguments: (value, index|key, collection).
- * Iteratee functions may exit iteration early by explicitly returning `false`.
- *
- * **Note:** As with other "Collections" methods, objects with a "length"
- * property are iterated like arrays. To avoid this behavior use `_.forIn`
- * or `_.forOwn` for object iteration.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @alias each
- * @category Collection
- * @param {Array|Object} collection The collection to iterate over.
- * @param {Function} [iteratee=_.identity] The function invoked per iteration.
- * @returns {Array|Object} Returns `collection`.
- * @see _.forEachRight
- * @example
- *
- * _.forEach([1, 2], function(value) {
- *   console.log(value);
- * });
- * // => Logs `1` then `2`.
- *
- * _.forEach({ 'a': 1, 'b': 2 }, function(value, key) {
- *   console.log(key);
- * });
- * // => Logs 'a' then 'b' (iteration order is not guaranteed).
- */
-function forEach(collection, iteratee) {
-  var func = isArray(collection) ? arrayEach : baseEach;
-  return func(collection, castFunction(iteratee));
-}
-
-module.exports = forEach;
-
-
-/***/ }),
-
-/***/ 1205:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseForOwn = __webpack_require__(1059),
-    createBaseEach = __webpack_require__(1206);
-
-/**
- * The base implementation of `_.forEach` without support for iteratee shorthands.
- *
- * @private
- * @param {Array|Object} collection The collection to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
- * @returns {Array|Object} Returns `collection`.
- */
-var baseEach = createBaseEach(baseForOwn);
-
-module.exports = baseEach;
-
-
-/***/ }),
-
-/***/ 1206:
-/***/ (function(module, exports, __webpack_require__) {
-
-var isArrayLike = __webpack_require__(859);
-
-/**
- * Creates a `baseEach` or `baseEachRight` function.
- *
- * @private
- * @param {Function} eachFunc The function to iterate over a collection.
- * @param {boolean} [fromRight] Specify iterating from right to left.
- * @returns {Function} Returns the new base function.
- */
-function createBaseEach(eachFunc, fromRight) {
-  return function(collection, iteratee) {
-    if (collection == null) {
-      return collection;
-    }
-    if (!isArrayLike(collection)) {
-      return eachFunc(collection, iteratee);
-    }
-    var length = collection.length,
-        index = fromRight ? length : -1,
-        iterable = Object(collection);
-
-    while ((fromRight ? index-- : ++index < length)) {
-      if (iteratee(iterable[index], index, iterable) === false) {
-        break;
-      }
-    }
-    return collection;
-  };
-}
-
-module.exports = createBaseEach;
-
-
-/***/ }),
-
-/***/ 1207:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseFor = __webpack_require__(1060),
-    castFunction = __webpack_require__(1074),
-    keysIn = __webpack_require__(870);
-
-/**
- * Iterates over own and inherited enumerable string keyed properties of an
- * object and invokes `iteratee` for each property. The iteratee is invoked
- * with three arguments: (value, key, object). Iteratee functions may exit
- * iteration early by explicitly returning `false`.
- *
- * @static
- * @memberOf _
- * @since 0.3.0
- * @category Object
- * @param {Object} object The object to iterate over.
- * @param {Function} [iteratee=_.identity] The function invoked per iteration.
- * @returns {Object} Returns `object`.
- * @see _.forInRight
- * @example
- *
- * function Foo() {
- *   this.a = 1;
- *   this.b = 2;
- * }
- *
- * Foo.prototype.c = 3;
- *
- * _.forIn(new Foo, function(value, key) {
- *   console.log(key);
- * });
- * // => Logs 'a', 'b', then 'c' (iteration order is not guaranteed).
- */
-function forIn(object, iteratee) {
-  return object == null
-    ? object
-    : baseFor(object, castFunction(iteratee), keysIn);
-}
-
-module.exports = forIn;
-
-
-/***/ }),
-
-/***/ 1208:
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(787),
-    isPrototype = __webpack_require__(858),
-    nativeKeysIn = __webpack_require__(1209);
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * The base implementation of `_.keysIn` which doesn't treat sparse arrays as dense.
- *
- * @private
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property names.
- */
-function baseKeysIn(object) {
-  if (!isObject(object)) {
-    return nativeKeysIn(object);
-  }
-  var isProto = isPrototype(object),
-      result = [];
-
-  for (var key in object) {
-    if (!(key == 'constructor' && (isProto || !hasOwnProperty.call(object, key)))) {
-      result.push(key);
-    }
-  }
-  return result;
-}
-
-module.exports = baseKeysIn;
-
-
-/***/ }),
-
-/***/ 1209:
-/***/ (function(module, exports) {
-
-/**
- * This function is like
- * [`Object.keys`](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
- * except that it includes inherited enumerable properties.
- *
- * @private
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property names.
- */
-function nativeKeysIn(object) {
-  var result = [];
-  if (object != null) {
-    for (var key in Object(object)) {
-      result.push(key);
-    }
-  }
-  return result;
-}
-
-module.exports = nativeKeysIn;
-
-
-/***/ }),
-
-/***/ 1210:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _clone = __webpack_require__(779);
-
-var _clone2 = _interopRequireDefault(_clone);
-
-var _eventsBinder = __webpack_require__(778);
-
-var _eventsBinder2 = _interopRequireDefault(_eventsBinder);
-
-var _propsBinder = __webpack_require__(773);
-
-var _propsBinder2 = _interopRequireDefault(_propsBinder);
-
-var _mapElementMixin = __webpack_require__(783);
-
-var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
-
-var _getPropsValuesMixin = __webpack_require__(776);
-
-var _getPropsValuesMixin2 = _interopRequireDefault(_getPropsValuesMixin);
-
-var _markerClustererPlus = __webpack_require__(1229);
-
-var _markerClustererPlus2 = _interopRequireDefault(_markerClustererPlus);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/* vim: set softtabstop=2 shiftwidth=2 expandtab : */
-
-/**
-  * @class Cluster
-  * @prop $clusterObject -- Exposes the marker clusterer to
-        descendent Marker classes. Override this if you area
-        extending the class
-**/
-
-var props = {
-  maxZoom: {
-    type: Number,
-    twoWay: false
-  },
-  calculator: {
-    type: Function,
-    twoWay: false
-  },
-  gridSize: {
-    type: Number,
-    twoWay: false
-  },
-  minimumClusterSize: {
-    type: Number,
-    twoWay: false
-  },
-  styles: {
-    type: Array,
-    twoWay: false
-  },
-  zoomOnClick: {
-    type: Boolean,
-    twoWay: false
-  }
-};
-
-var events = ['click', 'rightclick', 'dblclick', 'drag', 'dragstart', 'dragend', 'mouseup', 'mousedown', 'mouseover', 'mouseout'];
-
-exports.default = {
-  mixins: [_mapElementMixin2.default, _getPropsValuesMixin2.default],
-  props: props,
-
-  render: function render(h) {
-    // <div><slot></slot></div>
-    return h('div', this.$slots.default);
-  },
-  deferredReady: function deferredReady() {
-    var _this = this;
-
-    var options = (0, _clone2.default)(this.getPropsValues());
-
-    if (typeof _markerClustererPlus2.default === 'undefined') {
-      /* eslint-disable no-console */
-      console.error('MarkerClusterer is not installed! require() it or include it from https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer.js');
-      throw new Error('MarkerClusterer is not installed! require() it or include it from https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer.js');
-    }
-
-    this.$clusterObject = new _markerClustererPlus2.default(this.$map, [], options);
-
-    (0, _propsBinder2.default)(this, this.$clusterObject, props, {
-      afterModelChanged: function afterModelChanged(a, v) {
-        // eslint-disable-line no-unused-vars
-        var oldMarkers = _this.$clusterObject.getMarkers();
-        _this.$clusterObject.clearMarkers();
-        _this.$clusterObject.addMarkers(oldMarkers);
-      }
-    });
-    (0, _eventsBinder2.default)(this, this.$clusterObject, events);
-  },
-  beforeDestroy: function beforeDestroy() {
-    var _this2 = this;
-
-    /* Performance optimization when destroying a large number of markers */
-    this.$children.forEach(function (marker) {
-      if (marker.$clusterObject === _this2.$clusterObject) {
-        marker.$clusterObject = null;
-      }
-    });
-    if (this.$clusterObject) {
-      this.$clusterObject.clearMarkers();
-    }
-  }
-};
-
-/***/ }),
-
-/***/ 1211:
-/***/ (function(module, exports, __webpack_require__) {
-
-var copyObject = __webpack_require__(810),
-    keys = __webpack_require__(809);
-
-/**
- * The base implementation of `_.assign` without support for multiple sources
- * or `customizer` functions.
- *
- * @private
- * @param {Object} object The destination object.
- * @param {Object} source The source object.
- * @returns {Object} Returns `object`.
- */
-function baseAssign(object, source) {
-  return object && copyObject(source, keys(source), object);
-}
-
-module.exports = baseAssign;
-
-
-/***/ }),
-
-/***/ 1212:
-/***/ (function(module, exports, __webpack_require__) {
-
-var copyObject = __webpack_require__(810),
-    keysIn = __webpack_require__(870);
-
-/**
- * The base implementation of `_.assignIn` without support for multiple sources
- * or `customizer` functions.
- *
- * @private
- * @param {Object} object The destination object.
- * @param {Object} source The source object.
- * @returns {Object} Returns `object`.
- */
-function baseAssignIn(object, source) {
-  return object && copyObject(source, keysIn(source), object);
-}
-
-module.exports = baseAssignIn;
-
-
-/***/ }),
-
-/***/ 1213:
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(775);
-
-/** Detect free variable `exports`. */
-var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
-
-/** Detect free variable `module`. */
-var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
-
-/** Detect the popular CommonJS extension `module.exports`. */
-var moduleExports = freeModule && freeModule.exports === freeExports;
-
-/** Built-in value references. */
-var Buffer = moduleExports ? root.Buffer : undefined,
-    allocUnsafe = Buffer ? Buffer.allocUnsafe : undefined;
-
-/**
- * Creates a clone of  `buffer`.
- *
- * @private
- * @param {Buffer} buffer The buffer to clone.
- * @param {boolean} [isDeep] Specify a deep clone.
- * @returns {Buffer} Returns the cloned buffer.
- */
-function cloneBuffer(buffer, isDeep) {
-  if (isDeep) {
-    return buffer.slice();
-  }
-  var length = buffer.length,
-      result = allocUnsafe ? allocUnsafe(length) : new buffer.constructor(length);
-
-  buffer.copy(result);
-  return result;
-}
-
-module.exports = cloneBuffer;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(245)(module)))
-
-/***/ }),
-
-/***/ 1214:
-/***/ (function(module, exports) {
-
-/**
- * Copies the values of `source` to `array`.
- *
- * @private
- * @param {Array} source The array to copy values from.
- * @param {Array} [array=[]] The array to copy values to.
- * @returns {Array} Returns `array`.
- */
-function copyArray(source, array) {
-  var index = -1,
-      length = source.length;
-
-  array || (array = Array(length));
-  while (++index < length) {
-    array[index] = source[index];
-  }
-  return array;
-}
-
-module.exports = copyArray;
-
-
-/***/ }),
-
-/***/ 1215:
-/***/ (function(module, exports, __webpack_require__) {
-
-var copyObject = __webpack_require__(810),
-    getSymbols = __webpack_require__(865);
-
-/**
- * Copies own symbols of `source` to `object`.
- *
- * @private
- * @param {Object} source The object to copy symbols from.
- * @param {Object} [object={}] The object to copy symbols to.
- * @returns {Object} Returns `object`.
- */
-function copySymbols(source, object) {
-  return copyObject(source, getSymbols(source), object);
-}
-
-module.exports = copySymbols;
-
-
-/***/ }),
-
-/***/ 1216:
-/***/ (function(module, exports, __webpack_require__) {
-
-var copyObject = __webpack_require__(810),
-    getSymbolsIn = __webpack_require__(1076);
-
-/**
- * Copies own and inherited symbols of `source` to `object`.
- *
- * @private
- * @param {Object} source The object to copy symbols from.
- * @param {Object} [object={}] The object to copy symbols to.
- * @returns {Object} Returns `object`.
- */
-function copySymbolsIn(source, object) {
-  return copyObject(source, getSymbolsIn(source), object);
-}
-
-module.exports = copySymbolsIn;
-
-
-/***/ }),
-
-/***/ 1217:
-/***/ (function(module, exports) {
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * Initializes an array clone.
- *
- * @private
- * @param {Array} array The array to clone.
- * @returns {Array} Returns the initialized clone.
- */
-function initCloneArray(array) {
-  var length = array.length,
-      result = new array.constructor(length);
-
-  // Add properties assigned by `RegExp#exec`.
-  if (length && typeof array[0] == 'string' && hasOwnProperty.call(array, 'index')) {
-    result.index = array.index;
-    result.input = array.input;
-  }
-  return result;
-}
-
-module.exports = initCloneArray;
-
-
-/***/ }),
-
-/***/ 1218:
-/***/ (function(module, exports, __webpack_require__) {
-
-var cloneArrayBuffer = __webpack_require__(874),
-    cloneDataView = __webpack_require__(1219),
-    cloneRegExp = __webpack_require__(1220),
-    cloneSymbol = __webpack_require__(1221),
-    cloneTypedArray = __webpack_require__(1222);
-
-/** `Object#toString` result references. */
-var boolTag = '[object Boolean]',
-    dateTag = '[object Date]',
-    mapTag = '[object Map]',
-    numberTag = '[object Number]',
-    regexpTag = '[object RegExp]',
-    setTag = '[object Set]',
-    stringTag = '[object String]',
-    symbolTag = '[object Symbol]';
-
-var arrayBufferTag = '[object ArrayBuffer]',
-    dataViewTag = '[object DataView]',
-    float32Tag = '[object Float32Array]',
-    float64Tag = '[object Float64Array]',
-    int8Tag = '[object Int8Array]',
-    int16Tag = '[object Int16Array]',
-    int32Tag = '[object Int32Array]',
-    uint8Tag = '[object Uint8Array]',
-    uint8ClampedTag = '[object Uint8ClampedArray]',
-    uint16Tag = '[object Uint16Array]',
-    uint32Tag = '[object Uint32Array]';
-
-/**
- * Initializes an object clone based on its `toStringTag`.
- *
- * **Note:** This function only supports cloning values with tags of
- * `Boolean`, `Date`, `Error`, `Map`, `Number`, `RegExp`, `Set`, or `String`.
- *
- * @private
- * @param {Object} object The object to clone.
- * @param {string} tag The `toStringTag` of the object to clone.
- * @param {boolean} [isDeep] Specify a deep clone.
- * @returns {Object} Returns the initialized clone.
- */
-function initCloneByTag(object, tag, isDeep) {
-  var Ctor = object.constructor;
-  switch (tag) {
-    case arrayBufferTag:
-      return cloneArrayBuffer(object);
-
-    case boolTag:
-    case dateTag:
-      return new Ctor(+object);
-
-    case dataViewTag:
-      return cloneDataView(object, isDeep);
-
-    case float32Tag: case float64Tag:
-    case int8Tag: case int16Tag: case int32Tag:
-    case uint8Tag: case uint8ClampedTag: case uint16Tag: case uint32Tag:
-      return cloneTypedArray(object, isDeep);
-
-    case mapTag:
-      return new Ctor;
-
-    case numberTag:
-    case stringTag:
-      return new Ctor(object);
-
-    case regexpTag:
-      return cloneRegExp(object);
-
-    case setTag:
-      return new Ctor;
-
-    case symbolTag:
-      return cloneSymbol(object);
-  }
-}
-
-module.exports = initCloneByTag;
-
-
-/***/ }),
-
-/***/ 1219:
-/***/ (function(module, exports, __webpack_require__) {
-
-var cloneArrayBuffer = __webpack_require__(874);
-
-/**
- * Creates a clone of `dataView`.
- *
- * @private
- * @param {Object} dataView The data view to clone.
- * @param {boolean} [isDeep] Specify a deep clone.
- * @returns {Object} Returns the cloned data view.
- */
-function cloneDataView(dataView, isDeep) {
-  var buffer = isDeep ? cloneArrayBuffer(dataView.buffer) : dataView.buffer;
-  return new dataView.constructor(buffer, dataView.byteOffset, dataView.byteLength);
-}
-
-module.exports = cloneDataView;
-
-
-/***/ }),
-
-/***/ 1220:
-/***/ (function(module, exports) {
-
-/** Used to match `RegExp` flags from their coerced string values. */
-var reFlags = /\w*$/;
-
-/**
- * Creates a clone of `regexp`.
- *
- * @private
- * @param {Object} regexp The regexp to clone.
- * @returns {Object} Returns the cloned regexp.
- */
-function cloneRegExp(regexp) {
-  var result = new regexp.constructor(regexp.source, reFlags.exec(regexp));
-  result.lastIndex = regexp.lastIndex;
-  return result;
-}
-
-module.exports = cloneRegExp;
-
-
-/***/ }),
-
-/***/ 1221:
-/***/ (function(module, exports, __webpack_require__) {
-
-var Symbol = __webpack_require__(793);
-
-/** Used to convert symbols to primitives and strings. */
-var symbolProto = Symbol ? Symbol.prototype : undefined,
-    symbolValueOf = symbolProto ? symbolProto.valueOf : undefined;
-
-/**
- * Creates a clone of the `symbol` object.
- *
- * @private
- * @param {Object} symbol The symbol object to clone.
- * @returns {Object} Returns the cloned symbol object.
- */
-function cloneSymbol(symbol) {
-  return symbolValueOf ? Object(symbolValueOf.call(symbol)) : {};
-}
-
-module.exports = cloneSymbol;
-
-
-/***/ }),
-
-/***/ 1222:
-/***/ (function(module, exports, __webpack_require__) {
-
-var cloneArrayBuffer = __webpack_require__(874);
-
-/**
- * Creates a clone of `typedArray`.
- *
- * @private
- * @param {Object} typedArray The typed array to clone.
- * @param {boolean} [isDeep] Specify a deep clone.
- * @returns {Object} Returns the cloned typed array.
- */
-function cloneTypedArray(typedArray, isDeep) {
-  var buffer = isDeep ? cloneArrayBuffer(typedArray.buffer) : typedArray.buffer;
-  return new typedArray.constructor(buffer, typedArray.byteOffset, typedArray.length);
-}
-
-module.exports = cloneTypedArray;
-
-
-/***/ }),
-
-/***/ 1223:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseCreate = __webpack_require__(1224),
-    getPrototype = __webpack_require__(872),
-    isPrototype = __webpack_require__(858);
-
-/**
- * Initializes an object clone.
- *
- * @private
- * @param {Object} object The object to clone.
- * @returns {Object} Returns the initialized clone.
- */
-function initCloneObject(object) {
-  return (typeof object.constructor == 'function' && !isPrototype(object))
-    ? baseCreate(getPrototype(object))
-    : {};
-}
-
-module.exports = initCloneObject;
-
-
-/***/ }),
-
-/***/ 1224:
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(787);
-
-/** Built-in value references. */
-var objectCreate = Object.create;
-
-/**
- * The base implementation of `_.create` without support for assigning
- * properties to the created object.
- *
- * @private
- * @param {Object} proto The object to inherit from.
- * @returns {Object} Returns the new object.
- */
-var baseCreate = (function() {
-  function object() {}
-  return function(proto) {
-    if (!isObject(proto)) {
-      return {};
-    }
-    if (objectCreate) {
-      return objectCreate(proto);
-    }
-    object.prototype = proto;
-    var result = new object;
-    object.prototype = undefined;
-    return result;
-  };
-}());
-
-module.exports = baseCreate;
-
-
-/***/ }),
-
-/***/ 1225:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseIsMap = __webpack_require__(1226),
-    baseUnary = __webpack_require__(856),
-    nodeUtil = __webpack_require__(857);
-
-/* Node.js helper references. */
-var nodeIsMap = nodeUtil && nodeUtil.isMap;
-
-/**
- * Checks if `value` is classified as a `Map` object.
- *
- * @static
- * @memberOf _
- * @since 4.3.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a map, else `false`.
- * @example
- *
- * _.isMap(new Map);
- * // => true
- *
- * _.isMap(new WeakMap);
- * // => false
- */
-var isMap = nodeIsMap ? baseUnary(nodeIsMap) : baseIsMap;
-
-module.exports = isMap;
-
-
-/***/ }),
-
-/***/ 1226:
-/***/ (function(module, exports, __webpack_require__) {
-
-var getTag = __webpack_require__(825),
-    isObjectLike = __webpack_require__(782);
-
-/** `Object#toString` result references. */
-var mapTag = '[object Map]';
-
-/**
- * The base implementation of `_.isMap` without Node.js optimizations.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a map, else `false`.
- */
-function baseIsMap(value) {
-  return isObjectLike(value) && getTag(value) == mapTag;
-}
-
-module.exports = baseIsMap;
-
-
-/***/ }),
-
-/***/ 1227:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseIsSet = __webpack_require__(1228),
-    baseUnary = __webpack_require__(856),
-    nodeUtil = __webpack_require__(857);
-
-/* Node.js helper references. */
-var nodeIsSet = nodeUtil && nodeUtil.isSet;
-
-/**
- * Checks if `value` is classified as a `Set` object.
- *
- * @static
- * @memberOf _
- * @since 4.3.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a set, else `false`.
- * @example
- *
- * _.isSet(new Set);
- * // => true
- *
- * _.isSet(new WeakSet);
- * // => false
- */
-var isSet = nodeIsSet ? baseUnary(nodeIsSet) : baseIsSet;
-
-module.exports = isSet;
-
-
-/***/ }),
-
-/***/ 1228:
-/***/ (function(module, exports, __webpack_require__) {
-
-var getTag = __webpack_require__(825),
-    isObjectLike = __webpack_require__(782);
-
-/** `Object#toString` result references. */
-var setTag = '[object Set]';
-
-/**
- * The base implementation of `_.isSet` without Node.js optimizations.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a set, else `false`.
- */
-function baseIsSet(value) {
-  return isObjectLike(value) && getTag(value) == setTag;
-}
-
-module.exports = baseIsSet;
-
-
-/***/ }),
-
-/***/ 1229:
-/***/ (function(module, exports) {
-
-/**
- * @name MarkerClustererPlus for Google Maps V3
- * @version 2.1.2 [May 28, 2014]
- * @author Gary Little
- * @fileoverview
- * The library creates and manages per-zoom-level clusters for large amounts of markers.
- * <p>
- * This is an enhanced V3 implementation of the
- * <a href="http://gmaps-utility-library-dev.googlecode.com/svn/tags/markerclusterer/"
- * >V2 MarkerClusterer</a> by Xiaoxi Wu. It is based on the
- * <a href="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/"
- * >V3 MarkerClusterer</a> port by Luke Mahe. MarkerClustererPlus was created by Gary Little.
- * <p>
- * v2.0 release: MarkerClustererPlus v2.0 is backward compatible with MarkerClusterer v1.0. It
- *  adds support for the <code>ignoreHidden</code>, <code>title</code>, <code>batchSizeIE</code>,
- *  and <code>calculator</code> properties as well as support for four more events. It also allows
- *  greater control over the styling of the text that appears on the cluster marker. The
- *  documentation has been significantly improved and the overall code has been simplified and
- *  polished. Very large numbers of markers can now be managed without causing Javascript timeout
- *  errors on Internet Explorer. Note that the name of the <code>clusterclick</code> event has been
- *  deprecated. The new name is <code>click</code>, so please change your application code now.
- */
-
-/**
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-
-/**
- * @name ClusterIconStyle
- * @class This class represents the object for values in the <code>styles</code> array passed
- *  to the {@link MarkerClusterer} constructor. The element in this array that is used to
- *  style the cluster icon is determined by calling the <code>calculator</code> function.
- *
- * @property {string} url The URL of the cluster icon image file. Required.
- * @property {number} height The display height (in pixels) of the cluster icon. Required.
- * @property {number} width The display width (in pixels) of the cluster icon. Required.
- * @property {Array} [anchorText] The position (in pixels) from the center of the cluster icon to
- *  where the text label is to be centered and drawn. The format is <code>[yoffset, xoffset]</code>
- *  where <code>yoffset</code> increases as you go down from center and <code>xoffset</code>
- *  increases to the right of center. The default is <code>[0, 0]</code>.
- * @property {Array} [anchorIcon] The anchor position (in pixels) of the cluster icon. This is the
- *  spot on the cluster icon that is to be aligned with the cluster position. The format is
- *  <code>[yoffset, xoffset]</code> where <code>yoffset</code> increases as you go down and
- *  <code>xoffset</code> increases to the right of the top-left corner of the icon. The default
- *  anchor position is the center of the cluster icon.
- * @property {string} [textColor="black"] The color of the label text shown on the
- *  cluster icon.
- * @property {number} [textSize=11] The size (in pixels) of the label text shown on the
- *  cluster icon.
- * @property {string} [textDecoration="none"] The value of the CSS <code>text-decoration</code>
- *  property for the label text shown on the cluster icon.
- * @property {string} [fontWeight="bold"] The value of the CSS <code>font-weight</code>
- *  property for the label text shown on the cluster icon.
- * @property {string} [fontStyle="normal"] The value of the CSS <code>font-style</code>
- *  property for the label text shown on the cluster icon.
- * @property {string} [fontFamily="Arial,sans-serif"] The value of the CSS <code>font-family</code>
- *  property for the label text shown on the cluster icon.
- * @property {string} [backgroundPosition="0 0"] The position of the cluster icon image
- *  within the image defined by <code>url</code>. The format is <code>"xpos ypos"</code>
- *  (the same format as for the CSS <code>background-position</code> property). You must set
- *  this property appropriately when the image defined by <code>url</code> represents a sprite
- *  containing multiple images. Note that the position <i>must</i> be specified in px units.
- */
-/**
- * @name ClusterIconInfo
- * @class This class is an object containing general information about a cluster icon. This is
- *  the object that a <code>calculator</code> function returns.
- *
- * @property {string} text The text of the label to be shown on the cluster icon.
- * @property {number} index The index plus 1 of the element in the <code>styles</code>
- *  array to be used to style the cluster icon.
- * @property {string} title The tooltip to display when the mouse moves over the cluster icon.
- *  If this value is <code>undefined</code> or <code>""</code>, <code>title</code> is set to the
- *  value of the <code>title</code> property passed to the MarkerClusterer.
- */
-/**
- * A cluster icon.
- *
- * @constructor
- * @extends google.maps.OverlayView
- * @param {Cluster} cluster The cluster with which the icon is to be associated.
- * @param {Array} [styles] An array of {@link ClusterIconStyle} defining the cluster icons
- *  to use for various cluster sizes.
- * @private
- */
-function ClusterIcon(cluster, styles) {
-  cluster.getMarkerClusterer().extend(ClusterIcon, google.maps.OverlayView);
-
-  this.cluster_ = cluster;
-  this.className_ = cluster.getMarkerClusterer().getClusterClass();
-  this.styles_ = styles;
-  this.center_ = null;
-  this.div_ = null;
-  this.sums_ = null;
-  this.visible_ = false;
-
-  this.setMap(cluster.getMap()); // Note: this causes onAdd to be called
-}
-
-
-/**
- * Adds the icon to the DOM.
- */
-ClusterIcon.prototype.onAdd = function () {
-  var cClusterIcon = this;
-  var cMouseDownInCluster;
-  var cDraggingMapByCluster;
-
-  this.div_ = document.createElement("div");
-  this.div_.className = this.className_;
-  if (this.visible_) {
-    this.show();
-  }
-
-  this.getPanes().overlayMouseTarget.appendChild(this.div_);
-
-  // Fix for Issue 157
-  this.boundsChangedListener_ = google.maps.event.addListener(this.getMap(), "bounds_changed", function () {
-    cDraggingMapByCluster = cMouseDownInCluster;
-  });
-
-  google.maps.event.addDomListener(this.div_, "mousedown", function () {
-    cMouseDownInCluster = true;
-    cDraggingMapByCluster = false;
-  });
-
-  google.maps.event.addDomListener(this.div_, "click", function (e) {
-    cMouseDownInCluster = false;
-    if (!cDraggingMapByCluster) {
-      var theBounds;
-      var mz;
-      var mc = cClusterIcon.cluster_.getMarkerClusterer();
-      /**
-       * This event is fired when a cluster marker is clicked.
-       * @name MarkerClusterer#click
-       * @param {Cluster} c The cluster that was clicked.
-       * @event
-       */
-      google.maps.event.trigger(mc, "click", cClusterIcon.cluster_);
-      google.maps.event.trigger(mc, "clusterclick", cClusterIcon.cluster_); // deprecated name
-
-      // The default click handler follows. Disable it by setting
-      // the zoomOnClick property to false.
-      if (mc.getZoomOnClick()) {
-        // Zoom into the cluster.
-        mz = mc.getMaxZoom();
-        theBounds = cClusterIcon.cluster_.getBounds();
-        mc.getMap().fitBounds(theBounds);
-        // There is a fix for Issue 170 here:
-        setTimeout(function () {
-          mc.getMap().fitBounds(theBounds);
-          // Don't zoom beyond the max zoom level
-          if (mz !== null && (mc.getMap().getZoom() > mz)) {
-            mc.getMap().setZoom(mz + 1);
-          }
-        }, 100);
-      }
-
-      // Prevent event propagation to the map:
-      e.cancelBubble = true;
-      if (e.stopPropagation) {
-        e.stopPropagation();
-      }
-    }
-  });
-
-  google.maps.event.addDomListener(this.div_, "mouseover", function () {
-    var mc = cClusterIcon.cluster_.getMarkerClusterer();
-    /**
-     * This event is fired when the mouse moves over a cluster marker.
-     * @name MarkerClusterer#mouseover
-     * @param {Cluster} c The cluster that the mouse moved over.
-     * @event
-     */
-    google.maps.event.trigger(mc, "mouseover", cClusterIcon.cluster_);
-  });
-
-  google.maps.event.addDomListener(this.div_, "mouseout", function () {
-    var mc = cClusterIcon.cluster_.getMarkerClusterer();
-    /**
-     * This event is fired when the mouse moves out of a cluster marker.
-     * @name MarkerClusterer#mouseout
-     * @param {Cluster} c The cluster that the mouse moved out of.
-     * @event
-     */
-    google.maps.event.trigger(mc, "mouseout", cClusterIcon.cluster_);
-  });
-};
-
-
-/**
- * Removes the icon from the DOM.
- */
-ClusterIcon.prototype.onRemove = function () {
-  if (this.div_ && this.div_.parentNode) {
-    this.hide();
-    google.maps.event.removeListener(this.boundsChangedListener_);
-    google.maps.event.clearInstanceListeners(this.div_);
-    this.div_.parentNode.removeChild(this.div_);
-    this.div_ = null;
-  }
-};
-
-
-/**
- * Draws the icon.
- */
-ClusterIcon.prototype.draw = function () {
-  if (this.visible_) {
-    var pos = this.getPosFromLatLng_(this.center_);
-    this.div_.style.top = pos.y + "px";
-    this.div_.style.left = pos.x + "px";
-  }
-};
-
-
-/**
- * Hides the icon.
- */
-ClusterIcon.prototype.hide = function () {
-  if (this.div_) {
-    this.div_.style.display = "none";
-  }
-  this.visible_ = false;
-};
-
-
-/**
- * Positions and shows the icon.
- */
-ClusterIcon.prototype.show = function () {
-  if (this.div_) {
-    var img = "";
-    // NOTE: values must be specified in px units
-    var bp = this.backgroundPosition_.split(" ");
-    var spriteH = parseInt(bp[0].replace(/^\s+|\s+$/g, ""), 10);
-    var spriteV = parseInt(bp[1].replace(/^\s+|\s+$/g, ""), 10);
-    var pos = this.getPosFromLatLng_(this.center_);
-    this.div_.style.cssText = this.createCss(pos);
-    img = "<img src='" + this.url_ + "' style='position: absolute; top: " + spriteV + "px; left: " + spriteH + "px; ";
-    if (!this.cluster_.getMarkerClusterer().enableRetinaIcons_) {
-      img += "clip: rect(" + (-1 * spriteV) + "px, " + ((-1 * spriteH) + this.width_) + "px, " +
-          ((-1 * spriteV) + this.height_) + "px, " + (-1 * spriteH) + "px);";
-    }
-    img += "'>";
-    this.div_.innerHTML = img + "<div style='" +
-        "position: absolute;" +
-        "top: " + this.anchorText_[0] + "px;" +
-        "left: " + this.anchorText_[1] + "px;" +
-        "color: " + this.textColor_ + ";" +
-        "font-size: " + this.textSize_ + "px;" +
-        "font-family: " + this.fontFamily_ + ";" +
-        "font-weight: " + this.fontWeight_ + ";" +
-        "font-style: " + this.fontStyle_ + ";" +
-        "text-decoration: " + this.textDecoration_ + ";" +
-        "text-align: center;" +
-        "width: " + this.width_ + "px;" +
-        "line-height:" + this.height_ + "px;" +
-        "'>" + this.sums_.text + "</div>";
-    if (typeof this.sums_.title === "undefined" || this.sums_.title === "") {
-      this.div_.title = this.cluster_.getMarkerClusterer().getTitle();
-    } else {
-      this.div_.title = this.sums_.title;
-    }
-    this.div_.style.display = "";
-  }
-  this.visible_ = true;
-};
-
-
-/**
- * Sets the icon styles to the appropriate element in the styles array.
- *
- * @param {ClusterIconInfo} sums The icon label text and styles index.
- */
-ClusterIcon.prototype.useStyle = function (sums) {
-  this.sums_ = sums;
-  var index = Math.max(0, sums.index - 1);
-  index = Math.min(this.styles_.length - 1, index);
-  var style = this.styles_[index];
-  this.url_ = style.url;
-  this.height_ = style.height;
-  this.width_ = style.width;
-  this.anchorText_ = style.anchorText || [0, 0];
-  this.anchorIcon_ = style.anchorIcon || [parseInt(this.height_ / 2, 10), parseInt(this.width_ / 2, 10)];
-  this.textColor_ = style.textColor || "black";
-  this.textSize_ = style.textSize || 11;
-  this.textDecoration_ = style.textDecoration || "none";
-  this.fontWeight_ = style.fontWeight || "bold";
-  this.fontStyle_ = style.fontStyle || "normal";
-  this.fontFamily_ = style.fontFamily || "Arial,sans-serif";
-  this.backgroundPosition_ = style.backgroundPosition || "0 0";
-};
-
-
-/**
- * Sets the position at which to center the icon.
- *
- * @param {google.maps.LatLng} center The latlng to set as the center.
- */
-ClusterIcon.prototype.setCenter = function (center) {
-  this.center_ = center;
-};
-
-
-/**
- * Creates the cssText style parameter based on the position of the icon.
- *
- * @param {google.maps.Point} pos The position of the icon.
- * @return {string} The CSS style text.
- */
-ClusterIcon.prototype.createCss = function (pos) {
-  var style = [];
-  style.push("cursor: pointer;");
-  style.push("position: absolute; top: " + pos.y + "px; left: " + pos.x + "px;");
-  style.push("width: " + this.width_ + "px; height: " + this.height_ + "px;");
-  return style.join("");
-};
-
-
-/**
- * Returns the position at which to place the DIV depending on the latlng.
- *
- * @param {google.maps.LatLng} latlng The position in latlng.
- * @return {google.maps.Point} The position in pixels.
- */
-ClusterIcon.prototype.getPosFromLatLng_ = function (latlng) {
-  var pos = this.getProjection().fromLatLngToDivPixel(latlng);
-  pos.x -= this.anchorIcon_[1];
-  pos.y -= this.anchorIcon_[0];
-  pos.x = parseInt(pos.x, 10);
-  pos.y = parseInt(pos.y, 10);
-  return pos;
-};
-
-
-/**
- * Creates a single cluster that manages a group of proximate markers.
- *  Used internally, do not call this constructor directly.
- * @constructor
- * @param {MarkerClusterer} mc The <code>MarkerClusterer</code> object with which this
- *  cluster is associated.
- */
-function Cluster(mc) {
-  this.markerClusterer_ = mc;
-  this.map_ = mc.getMap();
-  this.gridSize_ = mc.getGridSize();
-  this.minClusterSize_ = mc.getMinimumClusterSize();
-  this.averageCenter_ = mc.getAverageCenter();
-  this.markers_ = [];
-  this.center_ = null;
-  this.bounds_ = null;
-  this.clusterIcon_ = new ClusterIcon(this, mc.getStyles());
-}
-
-
-/**
- * Returns the number of markers managed by the cluster. You can call this from
- * a <code>click</code>, <code>mouseover</code>, or <code>mouseout</code> event handler
- * for the <code>MarkerClusterer</code> object.
- *
- * @return {number} The number of markers in the cluster.
- */
-Cluster.prototype.getSize = function () {
-  return this.markers_.length;
-};
-
-
-/**
- * Returns the array of markers managed by the cluster. You can call this from
- * a <code>click</code>, <code>mouseover</code>, or <code>mouseout</code> event handler
- * for the <code>MarkerClusterer</code> object.
- *
- * @return {Array} The array of markers in the cluster.
- */
-Cluster.prototype.getMarkers = function () {
-  return this.markers_;
-};
-
-
-/**
- * Returns the center of the cluster. You can call this from
- * a <code>click</code>, <code>mouseover</code>, or <code>mouseout</code> event handler
- * for the <code>MarkerClusterer</code> object.
- *
- * @return {google.maps.LatLng} The center of the cluster.
- */
-Cluster.prototype.getCenter = function () {
-  return this.center_;
-};
-
-
-/**
- * Returns the map with which the cluster is associated.
- *
- * @return {google.maps.Map} The map.
- * @ignore
- */
-Cluster.prototype.getMap = function () {
-  return this.map_;
-};
-
-
-/**
- * Returns the <code>MarkerClusterer</code> object with which the cluster is associated.
- *
- * @return {MarkerClusterer} The associated marker clusterer.
- * @ignore
- */
-Cluster.prototype.getMarkerClusterer = function () {
-  return this.markerClusterer_;
-};
-
-
-/**
- * Returns the bounds of the cluster.
- *
- * @return {google.maps.LatLngBounds} the cluster bounds.
- * @ignore
- */
-Cluster.prototype.getBounds = function () {
-  var i;
-  var bounds = new google.maps.LatLngBounds(this.center_, this.center_);
-  var markers = this.getMarkers();
-  for (i = 0; i < markers.length; i++) {
-    bounds.extend(markers[i].getPosition());
-  }
-  return bounds;
-};
-
-
-/**
- * Removes the cluster from the map.
- *
- * @ignore
- */
-Cluster.prototype.remove = function () {
-  this.clusterIcon_.setMap(null);
-  this.markers_ = [];
-  delete this.markers_;
-};
-
-
-/**
- * Adds a marker to the cluster.
- *
- * @param {google.maps.Marker} marker The marker to be added.
- * @return {boolean} True if the marker was added.
- * @ignore
- */
-Cluster.prototype.addMarker = function (marker) {
-  var i;
-  var mCount;
-  var mz;
-
-  if (this.isMarkerAlreadyAdded_(marker)) {
-    return false;
-  }
-
-  if (!this.center_) {
-    this.center_ = marker.getPosition();
-    this.calculateBounds_();
-  } else {
-    if (this.averageCenter_) {
-      var l = this.markers_.length + 1;
-      var lat = (this.center_.lat() * (l - 1) + marker.getPosition().lat()) / l;
-      var lng = (this.center_.lng() * (l - 1) + marker.getPosition().lng()) / l;
-      this.center_ = new google.maps.LatLng(lat, lng);
-      this.calculateBounds_();
-    }
-  }
-
-  marker.isAdded = true;
-  this.markers_.push(marker);
-
-  mCount = this.markers_.length;
-  mz = this.markerClusterer_.getMaxZoom();
-  if (mz !== null && this.map_.getZoom() > mz) {
-    // Zoomed in past max zoom, so show the marker.
-    if (marker.getMap() !== this.map_) {
-      marker.setMap(this.map_);
-    }
-  } else if (mCount < this.minClusterSize_) {
-    // Min cluster size not reached so show the marker.
-    if (marker.getMap() !== this.map_) {
-      marker.setMap(this.map_);
-    }
-  } else if (mCount === this.minClusterSize_) {
-    // Hide the markers that were showing.
-    for (i = 0; i < mCount; i++) {
-      this.markers_[i].setMap(null);
-    }
-  } else {
-    marker.setMap(null);
-  }
-
-  this.updateIcon_();
-  return true;
-};
-
-
-/**
- * Determines if a marker lies within the cluster's bounds.
- *
- * @param {google.maps.Marker} marker The marker to check.
- * @return {boolean} True if the marker lies in the bounds.
- * @ignore
- */
-Cluster.prototype.isMarkerInClusterBounds = function (marker) {
-  return this.bounds_.contains(marker.getPosition());
-};
-
-
-/**
- * Calculates the extended bounds of the cluster with the grid.
- */
-Cluster.prototype.calculateBounds_ = function () {
-  var bounds = new google.maps.LatLngBounds(this.center_, this.center_);
-  this.bounds_ = this.markerClusterer_.getExtendedBounds(bounds);
-};
-
-
-/**
- * Updates the cluster icon.
- */
-Cluster.prototype.updateIcon_ = function () {
-  var mCount = this.markers_.length;
-  var mz = this.markerClusterer_.getMaxZoom();
-
-  if (mz !== null && this.map_.getZoom() > mz) {
-    this.clusterIcon_.hide();
-    return;
-  }
-
-  if (mCount < this.minClusterSize_) {
-    // Min cluster size not yet reached.
-    this.clusterIcon_.hide();
-    return;
-  }
-
-  var numStyles = this.markerClusterer_.getStyles().length;
-  var sums = this.markerClusterer_.getCalculator()(this.markers_, numStyles);
-  this.clusterIcon_.setCenter(this.center_);
-  this.clusterIcon_.useStyle(sums);
-  this.clusterIcon_.show();
-};
-
-
-/**
- * Determines if a marker has already been added to the cluster.
- *
- * @param {google.maps.Marker} marker The marker to check.
- * @return {boolean} True if the marker has already been added.
- */
-Cluster.prototype.isMarkerAlreadyAdded_ = function (marker) {
-  var i;
-  if (this.markers_.indexOf) {
-    return this.markers_.indexOf(marker) !== -1;
-  } else {
-    for (i = 0; i < this.markers_.length; i++) {
-      if (marker === this.markers_[i]) {
-        return true;
-      }
-    }
-  }
-  return false;
-};
-
-
-/**
- * @name MarkerClustererOptions
- * @class This class represents the optional parameter passed to
- *  the {@link MarkerClusterer} constructor.
- * @property {number} [gridSize=60] The grid size of a cluster in pixels. The grid is a square.
- * @property {number} [maxZoom=null] The maximum zoom level at which clustering is enabled or
- *  <code>null</code> if clustering is to be enabled at all zoom levels.
- * @property {boolean} [zoomOnClick=true] Whether to zoom the map when a cluster marker is
- *  clicked. You may want to set this to <code>false</code> if you have installed a handler
- *  for the <code>click</code> event and it deals with zooming on its own.
- * @property {boolean} [averageCenter=false] Whether the position of a cluster marker should be
- *  the average position of all markers in the cluster. If set to <code>false</code>, the
- *  cluster marker is positioned at the location of the first marker added to the cluster.
- * @property {number} [minimumClusterSize=2] The minimum number of markers needed in a cluster
- *  before the markers are hidden and a cluster marker appears.
- * @property {boolean} [ignoreHidden=false] Whether to ignore hidden markers in clusters. You
- *  may want to set this to <code>true</code> to ensure that hidden markers are not included
- *  in the marker count that appears on a cluster marker (this count is the value of the
- *  <code>text</code> property of the result returned by the default <code>calculator</code>).
- *  If set to <code>true</code> and you change the visibility of a marker being clustered, be
- *  sure to also call <code>MarkerClusterer.repaint()</code>.
- * @property {string} [title=""] The tooltip to display when the mouse moves over a cluster
- *  marker. (Alternatively, you can use a custom <code>calculator</code> function to specify a
- *  different tooltip for each cluster marker.)
- * @property {function} [calculator=MarkerClusterer.CALCULATOR] The function used to determine
- *  the text to be displayed on a cluster marker and the index indicating which style to use
- *  for the cluster marker. The input parameters for the function are (1) the array of markers
- *  represented by a cluster marker and (2) the number of cluster icon styles. It returns a
- *  {@link ClusterIconInfo} object. The default <code>calculator</code> returns a
- *  <code>text</code> property which is the number of markers in the cluster and an
- *  <code>index</code> property which is one higher than the lowest integer such that
- *  <code>10^i</code> exceeds the number of markers in the cluster, or the size of the styles
- *  array, whichever is less. The <code>styles</code> array element used has an index of
- *  <code>index</code> minus 1. For example, the default <code>calculator</code> returns a
- *  <code>text</code> value of <code>"125"</code> and an <code>index</code> of <code>3</code>
- *  for a cluster icon representing 125 markers so the element used in the <code>styles</code>
- *  array is <code>2</code>. A <code>calculator</code> may also return a <code>title</code>
- *  property that contains the text of the tooltip to be used for the cluster marker. If
- *   <code>title</code> is not defined, the tooltip is set to the value of the <code>title</code>
- *   property for the MarkerClusterer.
- * @property {string} [clusterClass="cluster"] The name of the CSS class defining general styles
- *  for the cluster markers. Use this class to define CSS styles that are not set up by the code
- *  that processes the <code>styles</code> array.
- * @property {Array} [styles] An array of {@link ClusterIconStyle} elements defining the styles
- *  of the cluster markers to be used. The element to be used to style a given cluster marker
- *  is determined by the function defined by the <code>calculator</code> property.
- *  The default is an array of {@link ClusterIconStyle} elements whose properties are derived
- *  from the values for <code>imagePath</code>, <code>imageExtension</code>, and
- *  <code>imageSizes</code>.
- * @property {boolean} [enableRetinaIcons=false] Whether to allow the use of cluster icons that
- * have sizes that are some multiple (typically double) of their actual display size. Icons such
- * as these look better when viewed on high-resolution monitors such as Apple's Retina displays.
- * Note: if this property is <code>true</code>, sprites cannot be used as cluster icons.
- * @property {number} [batchSize=MarkerClusterer.BATCH_SIZE] Set this property to the
- *  number of markers to be processed in a single batch when using a browser other than
- *  Internet Explorer (for Internet Explorer, use the batchSizeIE property instead).
- * @property {number} [batchSizeIE=MarkerClusterer.BATCH_SIZE_IE] When Internet Explorer is
- *  being used, markers are processed in several batches with a small delay inserted between
- *  each batch in an attempt to avoid Javascript timeout errors. Set this property to the
- *  number of markers to be processed in a single batch; select as high a number as you can
- *  without causing a timeout error in the browser. This number might need to be as low as 100
- *  if 15,000 markers are being managed, for example.
- * @property {string} [imagePath=MarkerClusterer.IMAGE_PATH]
- *  The full URL of the root name of the group of image files to use for cluster icons.
- *  The complete file name is of the form <code>imagePath</code>n.<code>imageExtension</code>
- *  where n is the image file number (1, 2, etc.).
- * @property {string} [imageExtension=MarkerClusterer.IMAGE_EXTENSION]
- *  The extension name for the cluster icon image files (e.g., <code>"png"</code> or
- *  <code>"jpg"</code>).
- * @property {Array} [imageSizes=MarkerClusterer.IMAGE_SIZES]
- *  An array of numbers containing the widths of the group of
- *  <code>imagePath</code>n.<code>imageExtension</code> image files.
- *  (The images are assumed to be square.)
- */
-/**
- * Creates a MarkerClusterer object with the options specified in {@link MarkerClustererOptions}.
- * @constructor
- * @extends google.maps.OverlayView
- * @param {google.maps.Map} map The Google map to attach to.
- * @param {Array.<google.maps.Marker>} [opt_markers] The markers to be added to the cluster.
- * @param {MarkerClustererOptions} [opt_options] The optional parameters.
- */
-function MarkerClusterer(map, opt_markers, opt_options) {
-  // MarkerClusterer implements google.maps.OverlayView interface. We use the
-  // extend function to extend MarkerClusterer with google.maps.OverlayView
-  // because it might not always be available when the code is defined so we
-  // look for it at the last possible moment. If it doesn't exist now then
-  // there is no point going ahead :)
-  this.extend(MarkerClusterer, google.maps.OverlayView);
-
-  opt_markers = opt_markers || [];
-  opt_options = opt_options || {};
-
-  this.markers_ = [];
-  this.clusters_ = [];
-  this.listeners_ = [];
-  this.activeMap_ = null;
-  this.ready_ = false;
-
-  this.gridSize_ = opt_options.gridSize || 60;
-  this.minClusterSize_ = opt_options.minimumClusterSize || 2;
-  this.maxZoom_ = opt_options.maxZoom || null;
-  this.styles_ = opt_options.styles || [];
-  this.title_ = opt_options.title || "";
-  this.zoomOnClick_ = true;
-  if (opt_options.zoomOnClick !== undefined) {
-    this.zoomOnClick_ = opt_options.zoomOnClick;
-  }
-  this.averageCenter_ = false;
-  if (opt_options.averageCenter !== undefined) {
-    this.averageCenter_ = opt_options.averageCenter;
-  }
-  this.ignoreHidden_ = false;
-  if (opt_options.ignoreHidden !== undefined) {
-    this.ignoreHidden_ = opt_options.ignoreHidden;
-  }
-  this.enableRetinaIcons_ = false;
-  if (opt_options.enableRetinaIcons !== undefined) {
-    this.enableRetinaIcons_ = opt_options.enableRetinaIcons;
-  }
-  this.imagePath_ = opt_options.imagePath || MarkerClusterer.IMAGE_PATH;
-  this.imageExtension_ = opt_options.imageExtension || MarkerClusterer.IMAGE_EXTENSION;
-  this.imageSizes_ = opt_options.imageSizes || MarkerClusterer.IMAGE_SIZES;
-  this.calculator_ = opt_options.calculator || MarkerClusterer.CALCULATOR;
-  this.batchSize_ = opt_options.batchSize || MarkerClusterer.BATCH_SIZE;
-  this.batchSizeIE_ = opt_options.batchSizeIE || MarkerClusterer.BATCH_SIZE_IE;
-  this.clusterClass_ = opt_options.clusterClass || "cluster";
-
-  if (navigator.userAgent.toLowerCase().indexOf("msie") !== -1) {
-    // Try to avoid IE timeout when processing a huge number of markers:
-    this.batchSize_ = this.batchSizeIE_;
-  }
-
-  this.setupStyles_();
-
-  this.addMarkers(opt_markers, true);
-  this.setMap(map); // Note: this causes onAdd to be called
-}
-
-
-/**
- * Implementation of the onAdd interface method.
- * @ignore
- */
-MarkerClusterer.prototype.onAdd = function () {
-  var cMarkerClusterer = this;
-
-  this.activeMap_ = this.getMap();
-  this.ready_ = true;
-
-  this.repaint();
-
-  // Add the map event listeners
-  this.listeners_ = [
-    google.maps.event.addListener(this.getMap(), "zoom_changed", function () {
-      cMarkerClusterer.resetViewport_(false);
-      // Workaround for this Google bug: when map is at level 0 and "-" of
-      // zoom slider is clicked, a "zoom_changed" event is fired even though
-      // the map doesn't zoom out any further. In this situation, no "idle"
-      // event is triggered so the cluster markers that have been removed
-      // do not get redrawn. Same goes for a zoom in at maxZoom.
-      if (this.getZoom() === (this.get("minZoom") || 0) || this.getZoom() === this.get("maxZoom")) {
-        google.maps.event.trigger(this, "idle");
-      }
-    }),
-    google.maps.event.addListener(this.getMap(), "idle", function () {
-      cMarkerClusterer.redraw_();
-    })
-  ];
-};
-
-
-/**
- * Implementation of the onRemove interface method.
- * Removes map event listeners and all cluster icons from the DOM.
- * All managed markers are also put back on the map.
- * @ignore
- */
-MarkerClusterer.prototype.onRemove = function () {
-  var i;
-
-  // Put all the managed markers back on the map:
-  for (i = 0; i < this.markers_.length; i++) {
-    if (this.markers_[i].getMap() !== this.activeMap_) {
-      this.markers_[i].setMap(this.activeMap_);
-    }
-  }
-
-  // Remove all clusters:
-  for (i = 0; i < this.clusters_.length; i++) {
-    this.clusters_[i].remove();
-  }
-  this.clusters_ = [];
-
-  // Remove map event listeners:
-  for (i = 0; i < this.listeners_.length; i++) {
-    google.maps.event.removeListener(this.listeners_[i]);
-  }
-  this.listeners_ = [];
-
-  this.activeMap_ = null;
-  this.ready_ = false;
-};
-
-
-/**
- * Implementation of the draw interface method.
- * @ignore
- */
-MarkerClusterer.prototype.draw = function () {};
-
-
-/**
- * Sets up the styles object.
- */
-MarkerClusterer.prototype.setupStyles_ = function () {
-  var i, size;
-  if (this.styles_.length > 0) {
-    return;
-  }
-
-  for (i = 0; i < this.imageSizes_.length; i++) {
-    size = this.imageSizes_[i];
-    this.styles_.push({
-      url: this.imagePath_ + (i + 1) + "." + this.imageExtension_,
-      height: size,
-      width: size
-    });
-  }
-};
-
-
-/**
- *  Fits the map to the bounds of the markers managed by the clusterer.
- */
-MarkerClusterer.prototype.fitMapToMarkers = function () {
-  var i;
-  var markers = this.getMarkers();
-  var bounds = new google.maps.LatLngBounds();
-  for (i = 0; i < markers.length; i++) {
-    bounds.extend(markers[i].getPosition());
-  }
-
-  this.getMap().fitBounds(bounds);
-};
-
-
-/**
- * Returns the value of the <code>gridSize</code> property.
- *
- * @return {number} The grid size.
- */
-MarkerClusterer.prototype.getGridSize = function () {
-  return this.gridSize_;
-};
-
-
-/**
- * Sets the value of the <code>gridSize</code> property.
- *
- * @param {number} gridSize The grid size.
- */
-MarkerClusterer.prototype.setGridSize = function (gridSize) {
-  this.gridSize_ = gridSize;
-};
-
-
-/**
- * Returns the value of the <code>minimumClusterSize</code> property.
- *
- * @return {number} The minimum cluster size.
- */
-MarkerClusterer.prototype.getMinimumClusterSize = function () {
-  return this.minClusterSize_;
-};
-
-/**
- * Sets the value of the <code>minimumClusterSize</code> property.
- *
- * @param {number} minimumClusterSize The minimum cluster size.
- */
-MarkerClusterer.prototype.setMinimumClusterSize = function (minimumClusterSize) {
-  this.minClusterSize_ = minimumClusterSize;
-};
-
-
-/**
- *  Returns the value of the <code>maxZoom</code> property.
- *
- *  @return {number} The maximum zoom level.
- */
-MarkerClusterer.prototype.getMaxZoom = function () {
-  return this.maxZoom_;
-};
-
-
-/**
- *  Sets the value of the <code>maxZoom</code> property.
- *
- *  @param {number} maxZoom The maximum zoom level.
- */
-MarkerClusterer.prototype.setMaxZoom = function (maxZoom) {
-  this.maxZoom_ = maxZoom;
-};
-
-
-/**
- *  Returns the value of the <code>styles</code> property.
- *
- *  @return {Array} The array of styles defining the cluster markers to be used.
- */
-MarkerClusterer.prototype.getStyles = function () {
-  return this.styles_;
-};
-
-
-/**
- *  Sets the value of the <code>styles</code> property.
- *
- *  @param {Array.<ClusterIconStyle>} styles The array of styles to use.
- */
-MarkerClusterer.prototype.setStyles = function (styles) {
-  this.styles_ = styles;
-};
-
-
-/**
- * Returns the value of the <code>title</code> property.
- *
- * @return {string} The content of the title text.
- */
-MarkerClusterer.prototype.getTitle = function () {
-  return this.title_;
-};
-
-
-/**
- *  Sets the value of the <code>title</code> property.
- *
- *  @param {string} title The value of the title property.
- */
-MarkerClusterer.prototype.setTitle = function (title) {
-  this.title_ = title;
-};
-
-
-/**
- * Returns the value of the <code>zoomOnClick</code> property.
- *
- * @return {boolean} True if zoomOnClick property is set.
- */
-MarkerClusterer.prototype.getZoomOnClick = function () {
-  return this.zoomOnClick_;
-};
-
-
-/**
- *  Sets the value of the <code>zoomOnClick</code> property.
- *
- *  @param {boolean} zoomOnClick The value of the zoomOnClick property.
- */
-MarkerClusterer.prototype.setZoomOnClick = function (zoomOnClick) {
-  this.zoomOnClick_ = zoomOnClick;
-};
-
-
-/**
- * Returns the value of the <code>averageCenter</code> property.
- *
- * @return {boolean} True if averageCenter property is set.
- */
-MarkerClusterer.prototype.getAverageCenter = function () {
-  return this.averageCenter_;
-};
-
-
-/**
- *  Sets the value of the <code>averageCenter</code> property.
- *
- *  @param {boolean} averageCenter The value of the averageCenter property.
- */
-MarkerClusterer.prototype.setAverageCenter = function (averageCenter) {
-  this.averageCenter_ = averageCenter;
-};
-
-
-/**
- * Returns the value of the <code>ignoreHidden</code> property.
- *
- * @return {boolean} True if ignoreHidden property is set.
- */
-MarkerClusterer.prototype.getIgnoreHidden = function () {
-  return this.ignoreHidden_;
-};
-
-
-/**
- *  Sets the value of the <code>ignoreHidden</code> property.
- *
- *  @param {boolean} ignoreHidden The value of the ignoreHidden property.
- */
-MarkerClusterer.prototype.setIgnoreHidden = function (ignoreHidden) {
-  this.ignoreHidden_ = ignoreHidden;
-};
-
-
-/**
- * Returns the value of the <code>enableRetinaIcons</code> property.
- *
- * @return {boolean} True if enableRetinaIcons property is set.
- */
-MarkerClusterer.prototype.getEnableRetinaIcons = function () {
-  return this.enableRetinaIcons_;
-};
-
-
-/**
- *  Sets the value of the <code>enableRetinaIcons</code> property.
- *
- *  @param {boolean} enableRetinaIcons The value of the enableRetinaIcons property.
- */
-MarkerClusterer.prototype.setEnableRetinaIcons = function (enableRetinaIcons) {
-  this.enableRetinaIcons_ = enableRetinaIcons;
-};
-
-
-/**
- * Returns the value of the <code>imageExtension</code> property.
- *
- * @return {string} The value of the imageExtension property.
- */
-MarkerClusterer.prototype.getImageExtension = function () {
-  return this.imageExtension_;
-};
-
-
-/**
- *  Sets the value of the <code>imageExtension</code> property.
- *
- *  @param {string} imageExtension The value of the imageExtension property.
- */
-MarkerClusterer.prototype.setImageExtension = function (imageExtension) {
-  this.imageExtension_ = imageExtension;
-};
-
-
-/**
- * Returns the value of the <code>imagePath</code> property.
- *
- * @return {string} The value of the imagePath property.
- */
-MarkerClusterer.prototype.getImagePath = function () {
-  return this.imagePath_;
-};
-
-
-/**
- *  Sets the value of the <code>imagePath</code> property.
- *
- *  @param {string} imagePath The value of the imagePath property.
- */
-MarkerClusterer.prototype.setImagePath = function (imagePath) {
-  this.imagePath_ = imagePath;
-};
-
-
-/**
- * Returns the value of the <code>imageSizes</code> property.
- *
- * @return {Array} The value of the imageSizes property.
- */
-MarkerClusterer.prototype.getImageSizes = function () {
-  return this.imageSizes_;
-};
-
-
-/**
- *  Sets the value of the <code>imageSizes</code> property.
- *
- *  @param {Array} imageSizes The value of the imageSizes property.
- */
-MarkerClusterer.prototype.setImageSizes = function (imageSizes) {
-  this.imageSizes_ = imageSizes;
-};
-
-
-/**
- * Returns the value of the <code>calculator</code> property.
- *
- * @return {function} the value of the calculator property.
- */
-MarkerClusterer.prototype.getCalculator = function () {
-  return this.calculator_;
-};
-
-
-/**
- * Sets the value of the <code>calculator</code> property.
- *
- * @param {function(Array.<google.maps.Marker>, number)} calculator The value
- *  of the calculator property.
- */
-MarkerClusterer.prototype.setCalculator = function (calculator) {
-  this.calculator_ = calculator;
-};
-
-
-/**
- * Returns the value of the <code>batchSizeIE</code> property.
- *
- * @return {number} the value of the batchSizeIE property.
- */
-MarkerClusterer.prototype.getBatchSizeIE = function () {
-  return this.batchSizeIE_;
-};
-
-
-/**
- * Sets the value of the <code>batchSizeIE</code> property.
- *
- *  @param {number} batchSizeIE The value of the batchSizeIE property.
- */
-MarkerClusterer.prototype.setBatchSizeIE = function (batchSizeIE) {
-  this.batchSizeIE_ = batchSizeIE;
-};
-
-
-/**
- * Returns the value of the <code>clusterClass</code> property.
- *
- * @return {string} the value of the clusterClass property.
- */
-MarkerClusterer.prototype.getClusterClass = function () {
-  return this.clusterClass_;
-};
-
-
-/**
- * Sets the value of the <code>clusterClass</code> property.
- *
- *  @param {string} clusterClass The value of the clusterClass property.
- */
-MarkerClusterer.prototype.setClusterClass = function (clusterClass) {
-  this.clusterClass_ = clusterClass;
-};
-
-
-/**
- *  Returns the array of markers managed by the clusterer.
- *
- *  @return {Array} The array of markers managed by the clusterer.
- */
-MarkerClusterer.prototype.getMarkers = function () {
-  return this.markers_;
-};
-
-
-/**
- *  Returns the number of markers managed by the clusterer.
- *
- *  @return {number} The number of markers.
- */
-MarkerClusterer.prototype.getTotalMarkers = function () {
-  return this.markers_.length;
-};
-
-
-/**
- * Returns the current array of clusters formed by the clusterer.
- *
- * @return {Array} The array of clusters formed by the clusterer.
- */
-MarkerClusterer.prototype.getClusters = function () {
-  return this.clusters_;
-};
-
-
-/**
- * Returns the number of clusters formed by the clusterer.
- *
- * @return {number} The number of clusters formed by the clusterer.
- */
-MarkerClusterer.prototype.getTotalClusters = function () {
-  return this.clusters_.length;
-};
-
-
-/**
- * Adds a marker to the clusterer. The clusters are redrawn unless
- *  <code>opt_nodraw</code> is set to <code>true</code>.
- *
- * @param {google.maps.Marker} marker The marker to add.
- * @param {boolean} [opt_nodraw] Set to <code>true</code> to prevent redrawing.
- */
-MarkerClusterer.prototype.addMarker = function (marker, opt_nodraw) {
-  this.pushMarkerTo_(marker);
-  if (!opt_nodraw) {
-    this.redraw_();
-  }
-};
-
-
-/**
- * Adds an array of markers to the clusterer. The clusters are redrawn unless
- *  <code>opt_nodraw</code> is set to <code>true</code>.
- *
- * @param {Array.<google.maps.Marker>} markers The markers to add.
- * @param {boolean} [opt_nodraw] Set to <code>true</code> to prevent redrawing.
- */
-MarkerClusterer.prototype.addMarkers = function (markers, opt_nodraw) {
-  var key;
-  for (key in markers) {
-    if (markers.hasOwnProperty(key)) {
-      this.pushMarkerTo_(markers[key]);
-    }
-  }  
-  if (!opt_nodraw) {
-    this.redraw_();
-  }
-};
-
-
-/**
- * Pushes a marker to the clusterer.
- *
- * @param {google.maps.Marker} marker The marker to add.
- */
-MarkerClusterer.prototype.pushMarkerTo_ = function (marker) {
-  // If the marker is draggable add a listener so we can update the clusters on the dragend:
-  if (marker.getDraggable()) {
-    var cMarkerClusterer = this;
-    google.maps.event.addListener(marker, "dragend", function () {
-      if (cMarkerClusterer.ready_) {
-        this.isAdded = false;
-        cMarkerClusterer.repaint();
-      }
-    });
-  }
-  marker.isAdded = false;
-  this.markers_.push(marker);
-};
-
-
-/**
- * Removes a marker from the cluster.  The clusters are redrawn unless
- *  <code>opt_nodraw</code> is set to <code>true</code>. Returns <code>true</code> if the
- *  marker was removed from the clusterer.
- *
- * @param {google.maps.Marker} marker The marker to remove.
- * @param {boolean} [opt_nodraw] Set to <code>true</code> to prevent redrawing.
- * @return {boolean} True if the marker was removed from the clusterer.
- */
-MarkerClusterer.prototype.removeMarker = function (marker, opt_nodraw) {
-  var removed = this.removeMarker_(marker);
-
-  if (!opt_nodraw && removed) {
-    this.repaint();
-  }
-
-  return removed;
-};
-
-
-/**
- * Removes an array of markers from the cluster. The clusters are redrawn unless
- *  <code>opt_nodraw</code> is set to <code>true</code>. Returns <code>true</code> if markers
- *  were removed from the clusterer.
- *
- * @param {Array.<google.maps.Marker>} markers The markers to remove.
- * @param {boolean} [opt_nodraw] Set to <code>true</code> to prevent redrawing.
- * @return {boolean} True if markers were removed from the clusterer.
- */
-MarkerClusterer.prototype.removeMarkers = function (markers, opt_nodraw) {
-  var i, r;
-  var removed = false;
-
-  for (i = 0; i < markers.length; i++) {
-    r = this.removeMarker_(markers[i]);
-    removed = removed || r;
-  }
-
-  if (!opt_nodraw && removed) {
-    this.repaint();
-  }
-
-  return removed;
-};
-
-
-/**
- * Removes a marker and returns true if removed, false if not.
- *
- * @param {google.maps.Marker} marker The marker to remove
- * @return {boolean} Whether the marker was removed or not
- */
-MarkerClusterer.prototype.removeMarker_ = function (marker) {
-  var i;
-  var index = -1;
-  if (this.markers_.indexOf) {
-    index = this.markers_.indexOf(marker);
-  } else {
-    for (i = 0; i < this.markers_.length; i++) {
-      if (marker === this.markers_[i]) {
-        index = i;
-        break;
-      }
-    }
-  }
-
-  if (index === -1) {
-    // Marker is not in our list of markers, so do nothing:
-    return false;
-  }
-
-  marker.setMap(null);
-  this.markers_.splice(index, 1); // Remove the marker from the list of managed markers
-  return true;
-};
-
-
-/**
- * Removes all clusters and markers from the map and also removes all markers
- *  managed by the clusterer.
- */
-MarkerClusterer.prototype.clearMarkers = function () {
-  this.resetViewport_(true);
-  this.markers_ = [];
-};
-
-
-/**
- * Recalculates and redraws all the marker clusters from scratch.
- *  Call this after changing any properties.
- */
-MarkerClusterer.prototype.repaint = function () {
-  var oldClusters = this.clusters_.slice();
-  this.clusters_ = [];
-  this.resetViewport_(false);
-  this.redraw_();
-
-  // Remove the old clusters.
-  // Do it in a timeout to prevent blinking effect.
-  setTimeout(function () {
-    var i;
-    for (i = 0; i < oldClusters.length; i++) {
-      oldClusters[i].remove();
-    }
-  }, 0);
-};
-
-
-/**
- * Returns the current bounds extended by the grid size.
- *
- * @param {google.maps.LatLngBounds} bounds The bounds to extend.
- * @return {google.maps.LatLngBounds} The extended bounds.
- * @ignore
- */
-MarkerClusterer.prototype.getExtendedBounds = function (bounds) {
-  var projection = this.getProjection();
-
-  // Turn the bounds into latlng.
-  var tr = new google.maps.LatLng(bounds.getNorthEast().lat(),
-      bounds.getNorthEast().lng());
-  var bl = new google.maps.LatLng(bounds.getSouthWest().lat(),
-      bounds.getSouthWest().lng());
-
-  // Convert the points to pixels and the extend out by the grid size.
-  var trPix = projection.fromLatLngToDivPixel(tr);
-  trPix.x += this.gridSize_;
-  trPix.y -= this.gridSize_;
-
-  var blPix = projection.fromLatLngToDivPixel(bl);
-  blPix.x -= this.gridSize_;
-  blPix.y += this.gridSize_;
-
-  // Convert the pixel points back to LatLng
-  var ne = projection.fromDivPixelToLatLng(trPix);
-  var sw = projection.fromDivPixelToLatLng(blPix);
-
-  // Extend the bounds to contain the new bounds.
-  bounds.extend(ne);
-  bounds.extend(sw);
-
-  return bounds;
-};
-
-
-/**
- * Redraws all the clusters.
- */
-MarkerClusterer.prototype.redraw_ = function () {
-  this.createClusters_(0);
-};
-
-
-/**
- * Removes all clusters from the map. The markers are also removed from the map
- *  if <code>opt_hide</code> is set to <code>true</code>.
- *
- * @param {boolean} [opt_hide] Set to <code>true</code> to also remove the markers
- *  from the map.
- */
-MarkerClusterer.prototype.resetViewport_ = function (opt_hide) {
-  var i, marker;
-  // Remove all the clusters
-  for (i = 0; i < this.clusters_.length; i++) {
-    this.clusters_[i].remove();
-  }
-  this.clusters_ = [];
-
-  // Reset the markers to not be added and to be removed from the map.
-  for (i = 0; i < this.markers_.length; i++) {
-    marker = this.markers_[i];
-    marker.isAdded = false;
-    if (opt_hide) {
-      marker.setMap(null);
-    }
-  }
-};
-
-
-/**
- * Calculates the distance between two latlng locations in km.
- *
- * @param {google.maps.LatLng} p1 The first lat lng point.
- * @param {google.maps.LatLng} p2 The second lat lng point.
- * @return {number} The distance between the two points in km.
- * @see http://www.movable-type.co.uk/scripts/latlong.html
-*/
-MarkerClusterer.prototype.distanceBetweenPoints_ = function (p1, p2) {
-  var R = 6371; // Radius of the Earth in km
-  var dLat = (p2.lat() - p1.lat()) * Math.PI / 180;
-  var dLon = (p2.lng() - p1.lng()) * Math.PI / 180;
-  var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos(p1.lat() * Math.PI / 180) * Math.cos(p2.lat() * Math.PI / 180) *
-    Math.sin(dLon / 2) * Math.sin(dLon / 2);
-  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  var d = R * c;
-  return d;
-};
-
-
-/**
- * Determines if a marker is contained in a bounds.
- *
- * @param {google.maps.Marker} marker The marker to check.
- * @param {google.maps.LatLngBounds} bounds The bounds to check against.
- * @return {boolean} True if the marker is in the bounds.
- */
-MarkerClusterer.prototype.isMarkerInBounds_ = function (marker, bounds) {
-  return bounds.contains(marker.getPosition());
-};
-
-
-/**
- * Adds a marker to a cluster, or creates a new cluster.
- *
- * @param {google.maps.Marker} marker The marker to add.
- */
-MarkerClusterer.prototype.addToClosestCluster_ = function (marker) {
-  var i, d, cluster, center;
-  var distance = 40000; // Some large number
-  var clusterToAddTo = null;
-  for (i = 0; i < this.clusters_.length; i++) {
-    cluster = this.clusters_[i];
-    center = cluster.getCenter();
-    if (center) {
-      d = this.distanceBetweenPoints_(center, marker.getPosition());
-      if (d < distance) {
-        distance = d;
-        clusterToAddTo = cluster;
-      }
-    }
-  }
-
-  if (clusterToAddTo && clusterToAddTo.isMarkerInClusterBounds(marker)) {
-    clusterToAddTo.addMarker(marker);
-  } else {
-    cluster = new Cluster(this);
-    cluster.addMarker(marker);
-    this.clusters_.push(cluster);
-  }
-};
-
-
-/**
- * Creates the clusters. This is done in batches to avoid timeout errors
- *  in some browsers when there is a huge number of markers.
- *
- * @param {number} iFirst The index of the first marker in the batch of
- *  markers to be added to clusters.
- */
-MarkerClusterer.prototype.createClusters_ = function (iFirst) {
-  var i, marker;
-  var mapBounds;
-  var cMarkerClusterer = this;
-  if (!this.ready_) {
-    return;
-  }
-
-  // Cancel previous batch processing if we're working on the first batch:
-  if (iFirst === 0) {
-    /**
-     * This event is fired when the <code>MarkerClusterer</code> begins
-     *  clustering markers.
-     * @name MarkerClusterer#clusteringbegin
-     * @param {MarkerClusterer} mc The MarkerClusterer whose markers are being clustered.
-     * @event
-     */
-    google.maps.event.trigger(this, "clusteringbegin", this);
-
-    if (typeof this.timerRefStatic !== "undefined") {
-      clearTimeout(this.timerRefStatic);
-      delete this.timerRefStatic;
-    }
-  }
-
-  // Get our current map view bounds.
-  // Create a new bounds object so we don't affect the map.
-  //
-  // See Comments 9 & 11 on Issue 3651 relating to this workaround for a Google Maps bug:
-  if (this.getMap().getZoom() > 3) {
-    mapBounds = new google.maps.LatLngBounds(this.getMap().getBounds().getSouthWest(),
-      this.getMap().getBounds().getNorthEast());
-  } else {
-    mapBounds = new google.maps.LatLngBounds(new google.maps.LatLng(85.02070771743472, -178.48388434375), new google.maps.LatLng(-85.08136444384544, 178.00048865625));
-  }
-  var bounds = this.getExtendedBounds(mapBounds);
-
-  var iLast = Math.min(iFirst + this.batchSize_, this.markers_.length);
-
-  for (i = iFirst; i < iLast; i++) {
-    marker = this.markers_[i];
-    if (!marker.isAdded && this.isMarkerInBounds_(marker, bounds)) {
-      if (!this.ignoreHidden_ || (this.ignoreHidden_ && marker.getVisible())) {
-        this.addToClosestCluster_(marker);
-      }
-    }
-  }
-
-  if (iLast < this.markers_.length) {
-    this.timerRefStatic = setTimeout(function () {
-      cMarkerClusterer.createClusters_(iLast);
-    }, 0);
-  } else {
-    delete this.timerRefStatic;
-
-    /**
-     * This event is fired when the <code>MarkerClusterer</code> stops
-     *  clustering markers.
-     * @name MarkerClusterer#clusteringend
-     * @param {MarkerClusterer} mc The MarkerClusterer whose markers are being clustered.
-     * @event
-     */
-    google.maps.event.trigger(this, "clusteringend", this);
-  }
-};
-
-
-/**
- * Extends an object's prototype by another's.
- *
- * @param {Object} obj1 The object to be extended.
- * @param {Object} obj2 The object to extend with.
- * @return {Object} The new extended object.
- * @ignore
- */
-MarkerClusterer.prototype.extend = function (obj1, obj2) {
-  return (function (object) {
-    var property;
-    for (property in object.prototype) {
-      this.prototype[property] = object.prototype[property];
-    }
-    return this;
-  }).apply(obj1, [obj2]);
-};
-
-
-/**
- * The default function for determining the label text and style
- * for a cluster icon.
- *
- * @param {Array.<google.maps.Marker>} markers The array of markers represented by the cluster.
- * @param {number} numStyles The number of marker styles available.
- * @return {ClusterIconInfo} The information resource for the cluster.
- * @constant
- * @ignore
- */
-MarkerClusterer.CALCULATOR = function (markers, numStyles) {
-  var index = 0;
-  var title = "";
-  var count = markers.length.toString();
-
-  var dv = count;
-  while (dv !== 0) {
-    dv = parseInt(dv / 10, 10);
-    index++;
-  }
-
-  index = Math.min(index, numStyles);
-  return {
-    text: count,
-    index: index,
-    title: title
-  };
-};
-
-
-/**
- * The number of markers to process in one batch.
- *
- * @type {number}
- * @constant
- */
-MarkerClusterer.BATCH_SIZE = 2000;
-
-
-/**
- * The number of markers to process in one batch (IE only).
- *
- * @type {number}
- * @constant
- */
-MarkerClusterer.BATCH_SIZE_IE = 500;
-
-
-/**
- * The default root name for the marker cluster images.
- *
- * @type {string}
- * @constant
- */
-MarkerClusterer.IMAGE_PATH = "https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m";
-
-
-/**
- * The default extension name for the marker cluster images.
- *
- * @type {string}
- * @constant
- */
-MarkerClusterer.IMAGE_EXTENSION = "png";
-
-
-/**
- * The default array of sizes for the marker cluster images.
- *
- * @type {Array.<number>}
- * @constant
- */
-MarkerClusterer.IMAGE_SIZES = [53, 56, 66, 78, 90];
-
-module.exports = MarkerClusterer
-
-
-/***/ }),
-
-/***/ 1230:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
-var _omit = __webpack_require__(788);
-
-var _omit2 = _interopRequireDefault(_omit);
-
-var _clone = __webpack_require__(779);
-
-var _clone2 = _interopRequireDefault(_clone);
-
-var _eventsBinder = __webpack_require__(778);
-
-var _eventsBinder2 = _interopRequireDefault(_eventsBinder);
-
-var _propsBinder = __webpack_require__(773);
-
-var _propsBinder2 = _interopRequireDefault(_propsBinder);
-
-var _mapElementMixin = __webpack_require__(783);
-
-var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
-
-var _getPropsValuesMixin = __webpack_require__(776);
-
-var _getPropsValuesMixin2 = _interopRequireDefault(_getPropsValuesMixin);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var props = {
-  draggable: {
-    type: Boolean
-  },
-  editable: {
-    type: Boolean
-  },
-  options: {
-    twoWay: false,
-    type: Object
-  },
-  path: {
-    type: Array,
-    twoWay: true
-  },
-  deepWatch: {
-    type: Boolean,
-    default: false
-  }
-};
-
-var events = ['click', 'dblclick', 'drag', 'dragend', 'dragstart', 'mousedown', 'mousemove', 'mouseout', 'mouseover', 'mouseup', 'rightclick'];
-
-exports.default = {
-  mixins: [_mapElementMixin2.default, _getPropsValuesMixin2.default],
-  props: props,
-
-  render: function render() {
-    return '';
-  },
-  destroyed: function destroyed() {
-    if (this.$polylineObject) {
-      this.$polylineObject.setMap(null);
-    }
-  },
-  deferredReady: function deferredReady() {
-    var _this = this;
-
-    var options = (0, _clone2.default)(this.getPropsValues());
-    delete options.options;
-    Object.assign(options, this.options);
-    this.$polylineObject = new google.maps.Polyline(options);
-    this.$polylineObject.setMap(this.$map);
-
-    (0, _propsBinder2.default)(this, this.$polylineObject, (0, _omit2.default)(props, ['deepWatch', 'path']));
-    (0, _eventsBinder2.default)(this, this.$polylineObject, events);
-
-    var clearEvents = function clearEvents() {};
-
-    this.$watch('path', function (path) {
-      if (path) {
-        clearEvents();
-
-        _this.$polylineObject.setPath(path);
-
-        var mvcPath = _this.$polylineObject.getPath();
-        var eventListeners = [];
-
-        var updatePaths = function updatePaths() {
-          _this.$emit('path_changed', _this.$polylineObject.getPath());
-        };
-
-        eventListeners.push([mvcPath, mvcPath.addListener('insert_at', updatePaths)]);
-        eventListeners.push([mvcPath, mvcPath.addListener('remove_at', updatePaths)]);
-        eventListeners.push([mvcPath, mvcPath.addListener('set_at', updatePaths)]);
-
-        clearEvents = function clearEvents() {
-          eventListeners.map(function (_ref) {
-            var _ref2 = _slicedToArray(_ref, 2),
-                obj = _ref2[0],
-                listenerHandle = _ref2[1];
-
-            return (// eslint-disable-line no-unused-vars
-              google.maps.event.removeListener(listenerHandle)
-            );
-          });
-        };
-      }
-    }, {
-      deep: this.deepWatch
-    });
-
-    // Display the map
-    this.$polylineObject.setMap(this.$map);
-  }
-};
-
-/***/ }),
-
-/***/ 1231:
-/***/ (function(module, exports, __webpack_require__) {
-
-var castPath = __webpack_require__(794),
-    last = __webpack_require__(1232),
-    parent = __webpack_require__(1233),
-    toKey = __webpack_require__(795);
-
-/**
- * The base implementation of `_.unset`.
- *
- * @private
- * @param {Object} object The object to modify.
- * @param {Array|string} path The property path to unset.
- * @returns {boolean} Returns `true` if the property is deleted, else `false`.
- */
-function baseUnset(object, path) {
-  path = castPath(path, object);
-  object = parent(object, path);
-  return object == null || delete object[toKey(last(path))];
-}
-
-module.exports = baseUnset;
-
-
-/***/ }),
-
-/***/ 1232:
-/***/ (function(module, exports) {
-
-/**
- * Gets the last element of `array`.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Array
- * @param {Array} array The array to query.
- * @returns {*} Returns the last element of `array`.
- * @example
- *
- * _.last([1, 2, 3]);
- * // => 3
- */
-function last(array) {
-  var length = array == null ? 0 : array.length;
-  return length ? array[length - 1] : undefined;
-}
-
-module.exports = last;
-
-
-/***/ }),
-
-/***/ 1233:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseGet = __webpack_require__(826),
-    baseSlice = __webpack_require__(1234);
-
-/**
- * Gets the parent value at `path` of `object`.
- *
- * @private
- * @param {Object} object The object to query.
- * @param {Array} path The path to get the parent value of.
- * @returns {*} Returns the parent value.
- */
-function parent(object, path) {
-  return path.length < 2 ? object : baseGet(object, baseSlice(path, 0, -1));
-}
-
-module.exports = parent;
-
-
-/***/ }),
-
-/***/ 1234:
-/***/ (function(module, exports) {
-
-/**
- * The base implementation of `_.slice` without an iteratee call guard.
- *
- * @private
- * @param {Array} array The array to slice.
- * @param {number} [start=0] The start position.
- * @param {number} [end=array.length] The end position.
- * @returns {Array} Returns the slice of `array`.
- */
-function baseSlice(array, start, end) {
-  var index = -1,
-      length = array.length;
-
-  if (start < 0) {
-    start = -start > length ? 0 : (length + start);
-  }
-  end = end > length ? length : end;
-  if (end < 0) {
-    end += length;
-  }
-  length = start > end ? 0 : ((end - start) >>> 0);
-  start >>>= 0;
-
-  var result = Array(length);
-  while (++index < length) {
-    result[index] = array[index + start];
-  }
-  return result;
-}
-
-module.exports = baseSlice;
-
-
-/***/ }),
-
-/***/ 1235:
-/***/ (function(module, exports, __webpack_require__) {
-
-var isPlainObject = __webpack_require__(1236);
-
-/**
- * Used by `_.omit` to customize its `_.cloneDeep` use to only clone plain
- * objects.
- *
- * @private
- * @param {*} value The value to inspect.
- * @param {string} key The key of the property to inspect.
- * @returns {*} Returns the uncloned value or `undefined` to defer cloning to `_.cloneDeep`.
- */
-function customOmitClone(value) {
-  return isPlainObject(value) ? undefined : value;
-}
-
-module.exports = customOmitClone;
-
-
-/***/ }),
-
-/***/ 1236:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseGetTag = __webpack_require__(792),
-    getPrototype = __webpack_require__(872),
-    isObjectLike = __webpack_require__(782);
-
-/** `Object#toString` result references. */
-var objectTag = '[object Object]';
-
-/** Used for built-in method references. */
-var funcProto = Function.prototype,
-    objectProto = Object.prototype;
-
-/** Used to resolve the decompiled source of functions. */
-var funcToString = funcProto.toString;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/** Used to infer the `Object` constructor. */
-var objectCtorString = funcToString.call(Object);
-
-/**
- * Checks if `value` is a plain object, that is, an object created by the
- * `Object` constructor or one with a `[[Prototype]]` of `null`.
- *
- * @static
- * @memberOf _
- * @since 0.8.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.
- * @example
- *
- * function Foo() {
- *   this.a = 1;
- * }
- *
- * _.isPlainObject(new Foo);
- * // => false
- *
- * _.isPlainObject([1, 2, 3]);
- * // => false
- *
- * _.isPlainObject({ 'x': 0, 'y': 0 });
- * // => true
- *
- * _.isPlainObject(Object.create(null));
- * // => true
- */
-function isPlainObject(value) {
-  if (!isObjectLike(value) || baseGetTag(value) != objectTag) {
-    return false;
-  }
-  var proto = getPrototype(value);
-  if (proto === null) {
-    return true;
-  }
-  var Ctor = hasOwnProperty.call(proto, 'constructor') && proto.constructor;
-  return typeof Ctor == 'function' && Ctor instanceof Ctor &&
-    funcToString.call(Ctor) == objectCtorString;
-}
-
-module.exports = isPlainObject;
-
-
-/***/ }),
-
-/***/ 1237:
-/***/ (function(module, exports, __webpack_require__) {
-
-var flatten = __webpack_require__(1238),
-    overRest = __webpack_require__(1241),
-    setToString = __webpack_require__(1243);
-
-/**
- * A specialized version of `baseRest` which flattens the rest array.
- *
- * @private
- * @param {Function} func The function to apply a rest parameter to.
- * @returns {Function} Returns the new function.
- */
-function flatRest(func) {
-  return setToString(overRest(func, undefined, flatten), func + '');
-}
-
-module.exports = flatRest;
-
-
-/***/ }),
-
-/***/ 1238:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseFlatten = __webpack_require__(1239);
-
-/**
- * Flattens `array` a single level deep.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Array
- * @param {Array} array The array to flatten.
- * @returns {Array} Returns the new flattened array.
- * @example
- *
- * _.flatten([1, [2, [3, [4]], 5]]);
- * // => [1, 2, [3, [4]], 5]
- */
-function flatten(array) {
-  var length = array == null ? 0 : array.length;
-  return length ? baseFlatten(array, 1) : [];
-}
-
-module.exports = flatten;
-
-
-/***/ }),
-
-/***/ 1239:
-/***/ (function(module, exports, __webpack_require__) {
-
-var arrayPush = __webpack_require__(864),
-    isFlattenable = __webpack_require__(1240);
-
-/**
- * The base implementation of `_.flatten` with support for restricting flattening.
- *
- * @private
- * @param {Array} array The array to flatten.
- * @param {number} depth The maximum recursion depth.
- * @param {boolean} [predicate=isFlattenable] The function invoked per iteration.
- * @param {boolean} [isStrict] Restrict to values that pass `predicate` checks.
- * @param {Array} [result=[]] The initial result value.
- * @returns {Array} Returns the new flattened array.
- */
-function baseFlatten(array, depth, predicate, isStrict, result) {
-  var index = -1,
-      length = array.length;
-
-  predicate || (predicate = isFlattenable);
-  result || (result = []);
-
-  while (++index < length) {
-    var value = array[index];
-    if (depth > 0 && predicate(value)) {
-      if (depth > 1) {
-        // Recursively flatten arrays (susceptible to call stack limits).
-        baseFlatten(value, depth - 1, predicate, isStrict, result);
-      } else {
-        arrayPush(result, value);
-      }
-    } else if (!isStrict) {
-      result[result.length] = value;
-    }
-  }
-  return result;
-}
-
-module.exports = baseFlatten;
-
-
-/***/ }),
-
-/***/ 1240:
-/***/ (function(module, exports, __webpack_require__) {
-
-var Symbol = __webpack_require__(793),
-    isArguments = __webpack_require__(852),
-    isArray = __webpack_require__(772);
-
-/** Built-in value references. */
-var spreadableSymbol = Symbol ? Symbol.isConcatSpreadable : undefined;
-
-/**
- * Checks if `value` is a flattenable `arguments` object or array.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is flattenable, else `false`.
- */
-function isFlattenable(value) {
-  return isArray(value) || isArguments(value) ||
-    !!(spreadableSymbol && value && value[spreadableSymbol]);
-}
-
-module.exports = isFlattenable;
-
-
-/***/ }),
-
-/***/ 1241:
-/***/ (function(module, exports, __webpack_require__) {
-
-var apply = __webpack_require__(1242);
-
-/* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeMax = Math.max;
-
-/**
- * A specialized version of `baseRest` which transforms the rest array.
- *
- * @private
- * @param {Function} func The function to apply a rest parameter to.
- * @param {number} [start=func.length-1] The start position of the rest parameter.
- * @param {Function} transform The rest array transform.
- * @returns {Function} Returns the new function.
- */
-function overRest(func, start, transform) {
-  start = nativeMax(start === undefined ? (func.length - 1) : start, 0);
-  return function() {
-    var args = arguments,
-        index = -1,
-        length = nativeMax(args.length - start, 0),
-        array = Array(length);
-
-    while (++index < length) {
-      array[index] = args[start + index];
-    }
-    index = -1;
-    var otherArgs = Array(start + 1);
-    while (++index < start) {
-      otherArgs[index] = args[index];
-    }
-    otherArgs[start] = transform(array);
-    return apply(func, this, otherArgs);
-  };
-}
-
-module.exports = overRest;
-
-
-/***/ }),
-
-/***/ 1242:
-/***/ (function(module, exports) {
-
-/**
- * A faster alternative to `Function#apply`, this function invokes `func`
- * with the `this` binding of `thisArg` and the arguments of `args`.
- *
- * @private
- * @param {Function} func The function to invoke.
- * @param {*} thisArg The `this` binding of `func`.
- * @param {Array} args The arguments to invoke `func` with.
- * @returns {*} Returns the result of `func`.
- */
-function apply(func, thisArg, args) {
-  switch (args.length) {
-    case 0: return func.call(thisArg);
-    case 1: return func.call(thisArg, args[0]);
-    case 2: return func.call(thisArg, args[0], args[1]);
-    case 3: return func.call(thisArg, args[0], args[1], args[2]);
-  }
-  return func.apply(thisArg, args);
-}
-
-module.exports = apply;
-
-
-/***/ }),
-
-/***/ 1243:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseSetToString = __webpack_require__(1244),
-    shortOut = __webpack_require__(1246);
-
-/**
- * Sets the `toString` method of `func` to return `string`.
- *
- * @private
- * @param {Function} func The function to modify.
- * @param {Function} string The `toString` result.
- * @returns {Function} Returns `func`.
- */
-var setToString = shortOut(baseSetToString);
-
-module.exports = setToString;
-
-
-/***/ }),
-
-/***/ 1244:
-/***/ (function(module, exports, __webpack_require__) {
-
-var constant = __webpack_require__(1245),
-    defineProperty = __webpack_require__(1055),
-    identity = __webpack_require__(869);
-
-/**
- * The base implementation of `setToString` without support for hot loop shorting.
- *
- * @private
- * @param {Function} func The function to modify.
- * @param {Function} string The `toString` result.
- * @returns {Function} Returns `func`.
- */
-var baseSetToString = !defineProperty ? identity : function(func, string) {
-  return defineProperty(func, 'toString', {
-    'configurable': true,
-    'enumerable': false,
-    'value': constant(string),
-    'writable': true
-  });
-};
-
-module.exports = baseSetToString;
-
-
-/***/ }),
-
-/***/ 1245:
-/***/ (function(module, exports) {
-
-/**
- * Creates a function that returns `value`.
- *
- * @static
- * @memberOf _
- * @since 2.4.0
- * @category Util
- * @param {*} value The value to return from the new function.
- * @returns {Function} Returns the new constant function.
- * @example
- *
- * var objects = _.times(2, _.constant({ 'a': 1 }));
- *
- * console.log(objects);
- * // => [{ 'a': 1 }, { 'a': 1 }]
- *
- * console.log(objects[0] === objects[1]);
- * // => true
- */
-function constant(value) {
-  return function() {
-    return value;
-  };
-}
-
-module.exports = constant;
-
-
-/***/ }),
-
-/***/ 1246:
-/***/ (function(module, exports) {
-
-/** Used to detect hot functions by number of calls within a span of milliseconds. */
-var HOT_COUNT = 800,
-    HOT_SPAN = 16;
-
-/* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeNow = Date.now;
-
-/**
- * Creates a function that'll short out and invoke `identity` instead
- * of `func` when it's called `HOT_COUNT` or more times in `HOT_SPAN`
- * milliseconds.
- *
- * @private
- * @param {Function} func The function to restrict.
- * @returns {Function} Returns the new shortable function.
- */
-function shortOut(func) {
-  var count = 0,
-      lastCalled = 0;
-
-  return function() {
-    var stamp = nativeNow(),
-        remaining = HOT_SPAN - (stamp - lastCalled);
-
-    lastCalled = stamp;
-    if (remaining > 0) {
-      if (++count >= HOT_COUNT) {
-        return arguments[0];
-      }
-    } else {
-      count = 0;
-    }
-    return func.apply(undefined, arguments);
-  };
-}
-
-module.exports = shortOut;
-
-
-/***/ }),
-
-/***/ 1247:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
-var _omit = __webpack_require__(788);
-
-var _omit2 = _interopRequireDefault(_omit);
-
-var _clone = __webpack_require__(779);
-
-var _clone2 = _interopRequireDefault(_clone);
-
-var _eventsBinder = __webpack_require__(778);
-
-var _eventsBinder2 = _interopRequireDefault(_eventsBinder);
-
-var _propsBinder = __webpack_require__(773);
-
-var _propsBinder2 = _interopRequireDefault(_propsBinder);
-
-var _mapElementMixin = __webpack_require__(783);
-
-var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
-
-var _getPropsValuesMixin = __webpack_require__(776);
-
-var _getPropsValuesMixin2 = _interopRequireDefault(_getPropsValuesMixin);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var props = {
-  draggable: {
-    type: Boolean
-  },
-  editable: {
-    type: Boolean
-  },
-  options: {
-    type: Object
-  },
-  path: {
-    type: Array,
-    twoWay: true
-  },
-  paths: {
-    type: Array,
-    twoWay: true
-  },
-  deepWatch: {
-    type: Boolean,
-    default: false
-  }
-};
-
-var events = ['click', 'dblclick', 'drag', 'dragend', 'dragstart', 'mousedown', 'mousemove', 'mouseout', 'mouseover', 'mouseup', 'rightclick'];
-
-exports.default = {
-  mixins: [_mapElementMixin2.default, _getPropsValuesMixin2.default],
-  props: props,
-
-  render: function render() {
-    return '';
-  },
-  destroyed: function destroyed() {
-    if (this.$polygonObject) {
-      this.$polygonObject.setMap(null);
-    }
-  },
-  deferredReady: function deferredReady() {
-    var _this = this;
-
-    var options = (0, _clone2.default)(this.getPropsValues());
-    delete options.options;
-    Object.assign(options, this.options);
-    if (!options.path) {
-      delete options.path;
-    }
-    if (!options.paths) {
-      delete options.paths;
-    }
-    this.$polygonObject = new google.maps.Polygon(options);
-
-    (0, _propsBinder2.default)(this, this.$polygonObject, (0, _omit2.default)(props, ['path', 'paths', 'deepWatch']));
-    (0, _eventsBinder2.default)(this, this.$polygonObject, events);
-
-    var clearEvents = function clearEvents() {};
-
-    // Watch paths, on our own, because we do not want to set either when it is
-    // empty
-    this.$watch('paths', function (paths) {
-      if (paths) {
-        clearEvents();
-
-        _this.$polygonObject.setPaths(paths);
-
-        var updatePaths = function updatePaths() {
-          _this.$emit('paths_changed', _this.$polygonObject.getPaths());
-        };
-        var eventListeners = [];
-
-        var mvcArray = _this.$polygonObject.getPaths();
-        for (var i = 0; i < mvcArray.getLength(); i++) {
-          var mvcPath = mvcArray.getAt(i);
-          eventListeners.push([mvcPath, mvcPath.addListener('insert_at', updatePaths)]);
-          eventListeners.push([mvcPath, mvcPath.addListener('remove_at', updatePaths)]);
-          eventListeners.push([mvcPath, mvcPath.addListener('set_at', updatePaths)]);
-        }
-        eventListeners.push([mvcArray, mvcArray.addListener('insert_at', updatePaths)]);
-        eventListeners.push([mvcArray, mvcArray.addListener('remove_at', updatePaths)]);
-        eventListeners.push([mvcArray, mvcArray.addListener('set_at', updatePaths)]);
-
-        clearEvents = function clearEvents() {
-          eventListeners.map(function (_ref) {
-            var _ref2 = _slicedToArray(_ref, 2),
-                obj = _ref2[0],
-                listenerHandle = _ref2[1];
-
-            return (// eslint-disable-line no-unused-vars
-              google.maps.event.removeListener(listenerHandle)
-            );
-          });
-        };
-      }
-    }, {
-      deep: this.deepWatch,
-      immediate: true
-    });
-
-    this.$watch('path', function (path) {
-      if (path) {
-        clearEvents();
-
-        _this.$polygonObject.setPaths(path);
-
-        var mvcPath = _this.$polygonObject.getPath();
-        var eventListeners = [];
-
-        var updatePaths = function updatePaths() {
-          _this.$emit('path_changed', _this.$polygonObject.getPath());
-        };
-
-        eventListeners.push([mvcPath, mvcPath.addListener('insert_at', updatePaths)]);
-        eventListeners.push([mvcPath, mvcPath.addListener('remove_at', updatePaths)]);
-        eventListeners.push([mvcPath, mvcPath.addListener('set_at', updatePaths)]);
-
-        clearEvents = function clearEvents() {
-          eventListeners.map(function (_ref3) {
-            var _ref4 = _slicedToArray(_ref3, 2),
-                obj = _ref4[0],
-                listenerHandle = _ref4[1];
-
-            return (// eslint-disable-line no-unused-vars
-              google.maps.event.removeListener(listenerHandle)
-            );
-          });
-        };
-      }
-    }, {
-      deep: this.deepWatch,
-      immediate: true
-    });
-
-    // Display the map
-    this.$polygonObject.setMap(this.$map);
-  }
-};
-
-/***/ }),
-
-/***/ 1248:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _clone = __webpack_require__(779);
-
-var _clone2 = _interopRequireDefault(_clone);
-
-var _eventsBinder = __webpack_require__(778);
-
-var _eventsBinder2 = _interopRequireDefault(_eventsBinder);
-
-var _propsBinder = __webpack_require__(773);
-
-var _propsBinder2 = _interopRequireDefault(_propsBinder);
-
-var _mapElementMixin = __webpack_require__(783);
-
-var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
-
-var _getPropsValuesMixin = __webpack_require__(776);
-
-var _getPropsValuesMixin2 = _interopRequireDefault(_getPropsValuesMixin);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var props = {
-  center: {
-    type: Object,
-    twoWay: true,
-    required: true
-  },
-  radius: {
-    type: Number,
-    default: 1000,
-    twoWay: true
-  },
-  draggable: {
-    type: Boolean,
-    default: false
-  },
-  editable: {
-    type: Boolean,
-    default: false
-  },
-  options: {
-    type: Object,
-    twoWay: false
-  }
-};
-
-var events = ['click', 'dblclick', 'drag', 'dragend', 'dragstart', 'mousedown', 'mousemove', 'mouseout', 'mouseover', 'mouseup', 'rightclick'];
-
-exports.default = {
-  mixins: [_mapElementMixin2.default, _getPropsValuesMixin2.default],
-  props: props,
-  version: 2,
-
-  render: function render() {
-    return '';
-  },
-  deferredReady: function deferredReady() {
-    var options = (0, _clone2.default)(this.getPropsValues());
-    options.map = this.$map;
-    delete options.bounds;
-    this.createCircle(options);
-  },
-
-
-  methods: {
-    createCircle: function createCircle(options) {
-      var _this = this;
-
-      this.$circleObject = new google.maps.Circle(options);
-      // we cant bind bounds because there is no `setBounds` method
-      // on the Circle object
-      var boundProps = (0, _clone2.default)(props);
-      delete boundProps.bounds;
-      (0, _propsBinder2.default)(this, this.$circleObject, boundProps);
-      (0, _eventsBinder2.default)(this, this.$circleObject, events);
-
-      var updateBounds = function updateBounds() {
-        _this.$emit('bounds_changed', _this.$circleObject.getBounds());
-      };
-
-      this.$on('radius_changed', updateBounds);
-      this.$on('center_changed', updateBounds);
-    }
-  },
-
-  destroyed: function destroyed() {
-    if (this.$circleObject) {
-      this.$circleObject.setMap(null);
-    }
-  }
-};
-
-/***/ }),
-
-/***/ 1249:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _clone = __webpack_require__(779);
-
-var _clone2 = _interopRequireDefault(_clone);
-
-var _eventsBinder = __webpack_require__(778);
-
-var _eventsBinder2 = _interopRequireDefault(_eventsBinder);
-
-var _propsBinder = __webpack_require__(773);
-
-var _propsBinder2 = _interopRequireDefault(_propsBinder);
-
-var _mapElementMixin = __webpack_require__(783);
-
-var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
-
-var _getPropsValuesMixin = __webpack_require__(776);
-
-var _getPropsValuesMixin2 = _interopRequireDefault(_getPropsValuesMixin);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var props = {
-  bounds: {
-    type: Object,
-    twoWay: true
-  },
-  draggable: {
-    type: Boolean,
-    default: false
-  },
-  editable: {
-    type: Boolean,
-    default: false
-  },
-  options: {
-    type: Object,
-    twoWay: false
-  }
-};
-
-var events = ['click', 'dblclick', 'drag', 'dragend', 'dragstart', 'mousedown', 'mousemove', 'mouseout', 'mouseover', 'mouseup', 'rightclick'];
-
-exports.default = {
-  mixins: [_mapElementMixin2.default, _getPropsValuesMixin2.default],
-  props: props,
-
-  render: function render() {
-    return '';
-  },
-  deferredReady: function deferredReady() {
-    var options = (0, _clone2.default)(this.getPropsValues());
-    options.map = this.$map;
-    this.createRectangle(options);
-  },
-
-
-  methods: {
-    createRectangle: function createRectangle(options) {
-      this.$rectangleObject = new google.maps.Rectangle(options);
-      (0, _propsBinder2.default)(this, this.$rectangleObject, props);
-      (0, _eventsBinder2.default)(this, this.$rectangleObject, events);
-    }
-  },
-
-  destroyed: function destroyed() {
-    if (this.$rectangleObject) {
-      this.$rectangleObject.setMap(null);
-    }
-  }
-};
-
-/***/ }),
-
-/***/ 1250:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(243)
-/* script */
-var __vue_script__ = __webpack_require__(1251)
-/* template */
-var __vue_template__ = __webpack_require__(1252)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "node_modules/vue2-google-maps/dist/components/infoWindow.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-17fc7ddc", Component.options)
-  } else {
-    hotAPI.reload("data-v-17fc7ddc", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 1251:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _omit = __webpack_require__(788);
-
-var _omit2 = _interopRequireDefault(_omit);
-
-var _clone = __webpack_require__(779);
-
-var _clone2 = _interopRequireDefault(_clone);
-
-var _propsBinder = __webpack_require__(773);
-
-var _propsBinder2 = _interopRequireDefault(_propsBinder);
-
-var _eventsBinder = __webpack_require__(778);
-
-var _eventsBinder2 = _interopRequireDefault(_eventsBinder);
-
-var _mapElementMixin = __webpack_require__(783);
-
-var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-var props = {
-  options: {
-    type: Object,
-    required: false,
-    default: function _default() {
-      return {};
-    }
-  },
-  opened: {
-    type: Boolean,
-    default: true
-  },
-  position: {
-    type: Object,
-    twoWay: true
-  },
-  zIndex: {
-    type: Number,
-    twoWay: true
-  }
-};
-
-var events = ['domready', 'closeclick', 'content_changed'];
-
-exports.default = {
-  mixins: [_mapElementMixin2.default],
-  replace: false,
-  props: props,
-
-  mounted: function mounted() {
-    var el = this.$refs.flyaway;
-    el.parentNode.removeChild(el);
-  },
-  deferredReady: function deferredReady() {
-    this.$markerObject = null;
-    this.$markerComponent = this.$findAncestor(function (ans) {
-      return ans.$markerObject;
-    });
-
-    if (this.$markerComponent) {
-      this.$markerObject = this.$markerComponent.$markerObject;
-    }
-    this.createInfoWindow();
-  },
-  destroyed: function destroyed() {
-    if (this.disconnect) {
-      this.disconnect();
-    }
-    if (this.$infoWindow) {
-      this.$infoWindow.setMap(null);
-    }
-  },
-
-  methods: {
-    openInfoWindow: function openInfoWindow() {
-      if (this.opened) {
-        if (this.$markerObject !== null) {
-          this.$infoWindow.open(this.$map, this.$markerObject);
-        } else {
-          this.$infoWindow.open(this.$map);
-        }
-      } else {
-        this.$infoWindow.close();
-      }
-    },
-    createInfoWindow: function createInfoWindow() {
-      var _this = this;
-
-      // setting options
-      var options = (0, _clone2.default)(this.options);
-      options.content = this.$refs.flyaway;
-
-      // only set the position if the info window is not bound to a marker
-      if (this.$markerComponent === null) {
-        options.position = this.position;
-      }
-
-      this.$infoWindow = new google.maps.InfoWindow(options);
-
-      // Binding
-      (0, _propsBinder2.default)(this, this.$infoWindow, (0, _omit2.default)(props, ['opened']));
-      (0, _eventsBinder2.default)(this, this.$infoWindow, events);
-
-      this.openInfoWindow();
-      this.$watch('opened', function () {
-        _this.openInfoWindow();
-      });
-    }
-  }
-};
-
-/***/ }),
-
-/***/ 1252:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [_c("div", { ref: "flyaway" }, [_vm._t("default")], 2)])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-17fc7ddc", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 1253:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(1254)
-}
-var normalizeComponent = __webpack_require__(243)
-/* script */
-var __vue_script__ = __webpack_require__(1256)
-/* template */
-var __vue_template__ = __webpack_require__(1257)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "node_modules/vue2-google-maps/dist/components/map.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-85ca06a4", Component.options)
-  } else {
-    hotAPI.reload("data-v-85ca06a4", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 1254:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(1255);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(93)("325be528", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-85ca06a4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../vue-loader/lib/selector.js?type=styles&index=0!./map.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-85ca06a4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../vue-loader/lib/selector.js?type=styles&index=0!./map.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 1255:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(49)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.vue-map-container {\n  position: relative;\n}\n.vue-map-container .vue-map {\n  left: 0; right: 0; top: 0; bottom: 0;\n  position: absolute;\n}\n.vue-map-hidden {\n  display: none;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 1256:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _omit = __webpack_require__(788);
-
-var _omit2 = _interopRequireDefault(_omit);
-
-var _clone = __webpack_require__(779);
-
-var _clone2 = _interopRequireDefault(_clone);
-
-var _manager = __webpack_require__(808);
-
-var _deferredReady = __webpack_require__(827);
-
-var _eventsBinder = __webpack_require__(778);
-
-var _eventsBinder2 = _interopRequireDefault(_eventsBinder);
-
-var _propsBinder = __webpack_require__(773);
-
-var _propsBinder2 = _interopRequireDefault(_propsBinder);
-
-var _getPropsValuesMixin = __webpack_require__(776);
-
-var _getPropsValuesMixin2 = _interopRequireDefault(_getPropsValuesMixin);
-
-var _mountableMixin = __webpack_require__(875);
-
-var _mountableMixin2 = _interopRequireDefault(_mountableMixin);
-
-var _TwoWayBindingWrapper = __webpack_require__(1077);
-
-var _TwoWayBindingWrapper2 = _interopRequireDefault(_TwoWayBindingWrapper);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-var props = {
-  center: {
-    required: true,
-    twoWay: true,
-    type: Object
-  },
-  zoom: {
-    required: false,
-    twoWay: true,
-    type: Number
-  },
-  heading: {
-    type: Number,
-    twoWay: true
-  },
-  mapTypeId: {
-    twoWay: true,
-    type: String
-  },
-  bounds: {
-    twoWay: true,
-    type: Object
-  },
-  tilt: {
-    twoWay: true,
-    type: Number
-  },
-  options: {
-    type: Object,
-    default: function _default() {
-      return {};
-    }
-  }
-};
-
-var events = ['click', 'dblclick', 'drag', 'dragend', 'dragstart', 'idle', 'mousemove', 'mouseout', 'mouseover', 'resize', 'rightclick', 'tilesloaded'];
-
-// Plain Google Maps methods exposed here for convenience
-var linkedMethods = ['panBy', 'panTo', 'panToBounds', 'fitBounds'].reduce(function (all, methodName) {
-  all[methodName] = function () {
-    if (this.$mapObject) {
-      this.$mapObject[methodName].apply(this.$mapObject, arguments);
-    }
-  };
-  return all;
-}, {});
-
-// Other convenience methods exposed by Vue Google Maps
-var customMethods = {
-  resize: function resize() {
-    if (this.$mapObject) {
-      google.maps.event.trigger(this.$mapObject, 'resize');
-    }
-  },
-  resizePreserveCenter: function resizePreserveCenter() {
-    if (!this.$mapObject) {
-      return;
-    }
-
-    var oldCenter = this.$mapObject.getCenter();
-    google.maps.event.trigger(this.$mapObject, 'resize');
-    this.$mapObject.setCenter(oldCenter);
-  },
-
-  /// Override mountableMixin::_resizeCallback
-  /// because resizePreserveCenter is usually the
-  /// expected behaviour
-  _resizeCallback: function _resizeCallback() {
-    this.resizePreserveCenter();
-  }
-};
-
-// Methods is a combination of customMethods and linkedMethods
-var methods = Object.assign({}, customMethods, linkedMethods);
-
-exports.default = {
-  mixins: [_getPropsValuesMixin2.default, _deferredReady.DeferredReadyMixin, _mountableMixin2.default],
-  props: props,
-  replace: false, // necessary for css styles
-
-  created: function created() {
-    var _this = this;
-
-    this.$mapCreated = new Promise(function (resolve, reject) {
-      _this.$mapCreatedDeferred = { resolve: resolve, reject: reject };
-    });
-  },
-
-  computed: {
-    finalLat: function finalLat() {
-      return this.center && typeof this.center.lat === 'function' ? this.center.lat() : this.center.lat;
-    },
-    finalLng: function finalLng() {
-      return this.center && typeof this.center.lng === 'function' ? this.center.lng() : this.center.lng;
-    },
-    finalLatLng: function finalLatLng() {
-      return { lat: this.finalLat, lng: this.finalLng };
-    }
-  },
-
-  watch: {
-    zoom: function zoom(_zoom) {
-      if (this.$mapObject) {
-        this.$mapObject.setZoom(_zoom);
-      }
-    }
-  },
-
-  deferredReady: function deferredReady() {
-    var _this2 = this;
-
-    return _manager.loaded.then(function () {
-      // getting the DOM element where to create the map
-      var element = _this2.$refs['vue-map'];
-
-      // creating the map
-      var copiedData = (0, _clone2.default)(_this2.getPropsValues());
-      delete copiedData.options;
-      var options = (0, _clone2.default)(_this2.options);
-      Object.assign(options, copiedData);
-      _this2.$mapObject = new google.maps.Map(element, options);
-
-      // binding properties (two and one way)
-      (0, _propsBinder2.default)(_this2, _this2.$mapObject, (0, _omit2.default)(props, ['center', 'zoom', 'bounds']));
-
-      // manually trigger center and zoom
-      (0, _TwoWayBindingWrapper2.default)(function (increment, decrement, shouldUpdate) {
-        _this2.$mapObject.addListener('center_changed', function () {
-          if (shouldUpdate()) {
-            _this2.$emit('center_changed', _this2.$mapObject.getCenter());
-          }
-          decrement();
-        });
-
-        var updateCenter = function updateCenter() {
-          increment();
-          _this2.$mapObject.setCenter(_this2.finalLatLng);
-        };
-        _this2.$watch('finalLatLng', updateCenter);
-      });
-      _this2.$mapObject.addListener('zoom_changed', function () {
-        _this2.$emit('zoom_changed', _this2.$mapObject.getZoom());
-      });
-      _this2.$mapObject.addListener('bounds_changed', function () {
-        _this2.$emit('bounds_changed', _this2.$mapObject.getBounds());
-      });
-
-      // binding events
-      (0, _eventsBinder2.default)(_this2, _this2.$mapObject, events);
-
-      _this2.$mapCreatedDeferred.resolve(_this2.$mapObject);
-
-      return _this2.$mapCreated;
-    }).catch(function (error) {
-      throw error;
-    });
-  },
-
-  methods: methods
-};
-
-/***/ }),
-
-/***/ 1257:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "vue-map-container" },
-    [
-      _c("div", { ref: "vue-map", staticClass: "vue-map" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "vue-map-hidden" }, [_vm._t("default")], 2),
-      _vm._v(" "),
-      _vm._t("visible")
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-85ca06a4", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 1258:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(1259)
-}
-var normalizeComponent = __webpack_require__(243)
-/* script */
-var __vue_script__ = __webpack_require__(1261)
-/* template */
-var __vue_template__ = __webpack_require__(1262)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-ed35740a", Component.options)
-  } else {
-    hotAPI.reload("data-v-ed35740a", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 1259:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(1260);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(93)("09541a99", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ed35740a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../vue-loader/lib/selector.js?type=styles&index=0!./streetViewPanorama.vue", function() {
-     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ed35740a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../vue-loader/lib/selector.js?type=styles&index=0!./streetViewPanorama.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 1260:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(49)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.vue-street-view-pano-container {\n  position: relative;\n}\n.vue-street-view-pano-container .vue-street-view-pano {\n  left: 0; right: 0; top: 0; bottom: 0;\n  position: absolute;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 1261:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _omit = __webpack_require__(788);
-
-var _omit2 = _interopRequireDefault(_omit);
-
-var _manager = __webpack_require__(808);
-
-var _deferredReady = __webpack_require__(827);
-
-var _eventsBinder = __webpack_require__(778);
-
-var _eventsBinder2 = _interopRequireDefault(_eventsBinder);
-
-var _propsBinder = __webpack_require__(773);
-
-var _propsBinder2 = _interopRequireDefault(_propsBinder);
-
-var _getPropsValuesMixin = __webpack_require__(776);
-
-var _getPropsValuesMixin2 = _interopRequireDefault(_getPropsValuesMixin);
-
-var _mountableMixin = __webpack_require__(875);
-
-var _mountableMixin2 = _interopRequireDefault(_mountableMixin);
-
-var _TwoWayBindingWrapper = __webpack_require__(1077);
-
-var _TwoWayBindingWrapper2 = _interopRequireDefault(_TwoWayBindingWrapper);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-var props = {
-  zoom: {
-    twoWay: true,
-    type: Number
-  },
-  pov: {
-    twoWay: true,
-    type: Object,
-    trackProperties: ['pitch', 'heading']
-  },
-  position: {
-    twoWay: true,
-    type: Object
-  },
-  pano: {
-    twoWay: true,
-    type: String
-  },
-  motionTracking: {
-    twoWay: false,
-    type: Boolean
-  },
-  visible: {
-    twoWay: true,
-    type: Boolean,
-    default: true
-  },
-  options: {
-    twoWay: false,
-    type: Object,
-    default: function _default() {
-      return {};
-    }
-  }
-};
-
-var events = ['closeclick', 'status_changed'];
-
-// Other convenience methods exposed by Vue Google Maps
-var customMethods = {
-  resize: function resize() {
-    if (this.$panoObject) {
-      google.maps.event.trigger(this.$panoObject, 'resize');
-    }
-  }
-};
-
-// Methods is a combination of customMethods and linkedMethods
-var methods = Object.assign({}, customMethods);
-
-exports.default = {
-  mixins: [_getPropsValuesMixin2.default, _deferredReady.DeferredReadyMixin, _mountableMixin2.default],
-  props: props,
-  replace: false, // necessary for css styles
-  methods: methods,
-
-  created: function created() {
-    var _this = this;
-
-    this.$panoCreated = new Promise(function (resolve, reject) {
-      _this.$panoCreatedDeferred = { resolve: resolve, reject: reject };
-    });
-
-    var updateCenter = function updateCenter() {
-      if (!_this.panoObject) return;
-
-      _this.$panoObject.setPosition({
-        lat: _this.finalLat,
-        lng: _this.finalLng
-      });
-    };
-    this.$watch('finalLat', updateCenter);
-    this.$watch('finalLng', updateCenter);
-  },
-
-  computed: {
-    finalLat: function finalLat() {
-      return this.position && typeof this.position.lat === 'function' ? this.position.lat() : this.position.lat;
-    },
-    finalLng: function finalLng() {
-      return this.position && typeof this.position.lng === 'function' ? this.position.lng() : this.position.lng;
-    },
-    finalLatLng: function finalLatLng() {
-      return {
-        lat: this.finalLat,
-        lng: this.finalLng
-      };
-    }
-  },
-
-  watch: {
-    zoom: function zoom(_zoom) {
-      if (this.$panoObject) {
-        this.$panoObject.setZoom(_zoom);
-      }
-    }
-  },
-
-  deferredReady: function deferredReady() {
-    var _this2 = this;
-
-    return _manager.loaded.then(function () {
-      // getting the DOM element where to create the map
-      var element = _this2.$refs['vue-street-view-pano'];
-
-      // creating the map
-      var options = Object.assign({}, _this2.options, (0, _omit2.default)(_this2.getPropsValues(), ['options']));
-
-      _this2.$panoObject = new google.maps.StreetViewPanorama(element, options);
-
-      // binding properties (two and one way)
-      (0, _propsBinder2.default)(_this2, _this2.$panoObject, (0, _omit2.default)(props, ['position']));
-
-      // manually trigger position
-      (0, _TwoWayBindingWrapper2.default)(function (increment, decrement, shouldUpdate) {
-        // Panos take a while to load
-        increment();
-
-        _this2.$panoObject.addListener('position_changed', function () {
-          if (shouldUpdate()) {
-            _this2.$emit('position_changed', _this2.$panoObject.getPosition());
-          }
-          decrement();
-        });
-
-        _this2.$watch('finalLatLng', function () {
-          increment();
-          _this2.$panoObject.setPosition(_this2.finalLatLng);
-        });
-      });
-
-      // binding events
-      (0, _eventsBinder2.default)(_this2, _this2.$panoObject, events);
-
-      _this2.$panoCreatedDeferred.resolve(_this2.$panoObject);
-
-      return _this2.$panoCreated;
-    }).catch(function (error) {
-      throw error;
-    });
-  }
-};
-
-/***/ }),
-
-/***/ 1262:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "vue-street-view-pano-container" },
-    [
-      _c("div", {
-        ref: "vue-street-view-pano",
-        staticClass: "vue-street-view-pano"
-      }),
-      _vm._v(" "),
-      _vm._t("default")
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-ed35740a", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 1263:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(243)
-/* script */
-var __vue_script__ = __webpack_require__(1264)
-/* template */
-var __vue_template__ = __webpack_require__(1265)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "node_modules/vue2-google-maps/dist/components/placeInput.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-c1ab87be", Component.options)
-  } else {
-    hotAPI.reload("data-v-c1ab87be", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 1264:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _omit = __webpack_require__(788);
-
-var _omit2 = _interopRequireDefault(_omit);
-
-var _clone = __webpack_require__(779);
-
-var _clone2 = _interopRequireDefault(_clone);
-
-var _propsBinder = __webpack_require__(773);
-
-var _propsBinder2 = _interopRequireDefault(_propsBinder);
-
-var _simulateArrowDown = __webpack_require__(1078);
-
-var _simulateArrowDown2 = _interopRequireDefault(_simulateArrowDown);
-
-var _getPropsValuesMixin = __webpack_require__(776);
-
-var _getPropsValuesMixin2 = _interopRequireDefault(_getPropsValuesMixin);
-
-var _manager = __webpack_require__(808);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-var props = {
-  bounds: {
-    type: Object
-  },
-  defaultPlace: {
-    type: String,
-    default: ''
-  },
-  componentRestrictions: {
-    type: Object,
-    default: null
-  },
-  types: {
-    type: Array,
-    default: function _default() {
-      return [];
-    }
-  },
-  placeholder: {
-    required: false,
-    type: String
-  },
-  className: {
-    required: false,
-    type: String
-  },
-  label: {
-    required: false,
-    type: String,
-    default: null
-  },
-  selectFirstOnEnter: {
-    require: false,
-    type: Boolean,
-    default: false
-  }
-};
-
-exports.default = {
-  mixins: [_getPropsValuesMixin2.default],
-
-  mounted: function mounted() {
-    var _this = this;
-
-    var input = this.$refs.input;
-
-    // Allow default place to be set
-    input.value = this.defaultPlace;
-    this.$watch('defaultPlace', function () {
-      input.value = _this.defaultPlace;
-    });
-
-    _manager.loaded.then(function () {
-      var options = (0, _clone2.default)(_this.getPropsValues());
-      if (_this.selectFirstOnEnter) {
-        (0, _simulateArrowDown2.default)(_this.$refs.input);
-      }
-
-      if (typeof google.maps.places.Autocomplete !== 'function') {
-        throw new Error('google.maps.places.Autocomplete is undefined. Did you add \'places\' to libraries when loading Google Maps?');
-      }
-
-      _this.autoCompleter = new google.maps.places.Autocomplete(_this.$refs.input, options);
-      (0, _propsBinder2.default)(_this, _this.autoCompleter, (0, _omit2.default)(props, ['placeholder', 'place', 'selectFirstOnEnter', 'defaultPlace', 'className', 'label']));
-
-      _this.autoCompleter.addListener('place_changed', function () {
-        _this.$emit('place_changed', _this.autoCompleter.getPlace());
-      });
-    });
-  },
-  created: function created() {
-    console.warn('The PlaceInput class is deprecated! Please consider using the Autocomplete input instead'); // eslint-disable-line no-console
-  },
-
-  props: props
-};
-
-/***/ }),
-
-/***/ 1265:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("label", [
-    _c("span", { domProps: { textContent: _vm._s(_vm.label) } }),
-    _vm._v(" "),
-    _c("input", {
-      ref: "input",
-      class: _vm.className,
-      attrs: { type: "text", placeholder: _vm.placeholder }
-    })
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-c1ab87be", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 1266:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(243)
-/* script */
-var __vue_script__ = __webpack_require__(1267)
-/* template */
-var __vue_template__ = __webpack_require__(1271)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "node_modules/vue2-google-maps/dist/components/autocomplete.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2c922d06", Component.options)
-  } else {
-    hotAPI.reload("data-v-2c922d06", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 1267:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _clone = __webpack_require__(779);
-
-var _clone2 = _interopRequireDefault(_clone);
-
-var _pickBy = __webpack_require__(1268);
-
-var _pickBy2 = _interopRequireDefault(_pickBy);
-
-var _omit = __webpack_require__(788);
-
-var _omit2 = _interopRequireDefault(_omit);
-
-var _propsBinder = __webpack_require__(773);
-
-var _propsBinder2 = _interopRequireDefault(_propsBinder);
-
-var _simulateArrowDown = __webpack_require__(1078);
-
-var _simulateArrowDown2 = _interopRequireDefault(_simulateArrowDown);
-
-var _getPropsValuesMixin = __webpack_require__(776);
-
-var _getPropsValuesMixin2 = _interopRequireDefault(_getPropsValuesMixin);
-
-var _manager = __webpack_require__(808);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-var props = {
-  bounds: {
-    type: Object
-  },
-  componentRestrictions: {
-    type: Object
-  },
-  types: {
-    type: Array,
-    default: function _default() {
-      return [];
-    }
-  },
-  placeholder: {
-    required: false,
-    type: String
-  },
-  selectFirstOnEnter: {
-    require: false,
-    type: Boolean,
-    default: false
-  },
-  value: {
-    type: String,
-    default: ''
-  },
-  options: {
-    type: Object
-  }
-};
-
-exports.default = {
-  mixins: [_getPropsValuesMixin2.default],
-
-  mounted: function mounted() {
-    var _this = this;
-
-    _manager.loaded.then(function () {
-      var options = (0, _clone2.default)(_this.getPropsValues());
-      if (_this.selectFirstOnEnter) {
-        (0, _simulateArrowDown2.default)(_this.$refs.input);
-      }
-
-      if (typeof google.maps.places.Autocomplete !== 'function') {
-        throw new Error('google.maps.places.Autocomplete is undefined. Did you add \'places\' to libraries when loading Google Maps?');
-      }
-
-      /* eslint-disable no-unused-vars */
-      var finalOptions = (0, _pickBy2.default)(Object.assign({}, (0, _omit2.default)(options, ['options', 'selectFirstOnEnter', 'value', 'place', 'placeholder']), options.options), function (v, k) {
-        return v !== undefined;
-      });
-
-      // Component restrictions is rather particular. Undefined not allowed
-      _this.$watch('componentRestrictions', function (v) {
-        if (v !== undefined) {
-          _this.$autocomplete.setComponentRestrictions(v);
-        }
-      });
-
-      _this.$autocomplete = new google.maps.places.Autocomplete(_this.$refs.input, finalOptions);
-      (0, _propsBinder2.default)(_this, _this.$autocomplete, (0, _omit2.default)(props, ['placeholder', 'place', 'selectFirstOnEnter', 'value', 'componentRestrictions']));
-
-      _this.$autocomplete.addListener('place_changed', function () {
-        _this.$emit('place_changed', _this.$autocomplete.getPlace());
-      });
-    });
-  },
-
-  props: props
-};
-
-/***/ }),
-
-/***/ 1268:
-/***/ (function(module, exports, __webpack_require__) {
-
-var arrayMap = __webpack_require__(868),
-    baseIteratee = __webpack_require__(1064),
-    basePickBy = __webpack_require__(1269),
-    getAllKeysIn = __webpack_require__(873);
-
-/**
- * Creates an object composed of the `object` properties `predicate` returns
- * truthy for. The predicate is invoked with two arguments: (value, key).
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Object
- * @param {Object} object The source object.
- * @param {Function} [predicate=_.identity] The function invoked per property.
- * @returns {Object} Returns the new object.
- * @example
- *
- * var object = { 'a': 1, 'b': '2', 'c': 3 };
- *
- * _.pickBy(object, _.isNumber);
- * // => { 'a': 1, 'c': 3 }
- */
-function pickBy(object, predicate) {
-  if (object == null) {
-    return {};
-  }
-  var props = arrayMap(getAllKeysIn(object), function(prop) {
-    return [prop];
-  });
-  predicate = baseIteratee(predicate);
-  return basePickBy(object, props, function(value, path) {
-    return predicate(value, path[0]);
-  });
-}
-
-module.exports = pickBy;
-
-
-/***/ }),
-
-/***/ 1269:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseGet = __webpack_require__(826),
-    baseSet = __webpack_require__(1270),
-    castPath = __webpack_require__(794);
-
-/**
- * The base implementation of  `_.pickBy` without support for iteratee shorthands.
- *
- * @private
- * @param {Object} object The source object.
- * @param {string[]} paths The property paths to pick.
- * @param {Function} predicate The function invoked per property.
- * @returns {Object} Returns the new object.
- */
-function basePickBy(object, paths, predicate) {
-  var index = -1,
-      length = paths.length,
-      result = {};
-
-  while (++index < length) {
-    var path = paths[index],
-        value = baseGet(object, path);
-
-    if (predicate(value, path)) {
-      baseSet(result, castPath(path, object), value);
-    }
-  }
-  return result;
-}
-
-module.exports = basePickBy;
-
-
-/***/ }),
-
-/***/ 1270:
-/***/ (function(module, exports, __webpack_require__) {
-
-var assignValue = __webpack_require__(871),
-    castPath = __webpack_require__(794),
-    isIndex = __webpack_require__(854),
-    isObject = __webpack_require__(787),
-    toKey = __webpack_require__(795);
-
-/**
- * The base implementation of `_.set`.
- *
- * @private
- * @param {Object} object The object to modify.
- * @param {Array|string} path The path of the property to set.
- * @param {*} value The value to set.
- * @param {Function} [customizer] The function to customize path creation.
- * @returns {Object} Returns `object`.
- */
-function baseSet(object, path, value, customizer) {
-  if (!isObject(object)) {
-    return object;
-  }
-  path = castPath(path, object);
-
-  var index = -1,
-      length = path.length,
-      lastIndex = length - 1,
-      nested = object;
-
-  while (nested != null && ++index < length) {
-    var key = toKey(path[index]),
-        newValue = value;
-
-    if (index != lastIndex) {
-      var objValue = nested[key];
-      newValue = customizer ? customizer(objValue, key, nested) : undefined;
-      if (newValue === undefined) {
-        newValue = isObject(objValue)
-          ? objValue
-          : (isIndex(path[index + 1]) ? [] : {});
-      }
-    }
-    assignValue(nested, key, newValue);
-    nested = nested[key];
-  }
-  return object;
-}
-
-module.exports = baseSet;
-
-
-/***/ }),
-
-/***/ 1271:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("input", {
-    ref: "input",
-    attrs: { type: "text", placeholder: _vm.placeholder },
-    domProps: { value: _vm.value }
-  })
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-2c922d06", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 1613:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(1614);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(93)("2ffbd702", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-50bfe2cd\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./contact_us.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-50bfe2cd\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./contact_us.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 1614:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(49)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.gmap[data-v-50bfe2cd] {\n    width: 100%;\n    height: 300px;\n    margin: 5px auto;\n}\n.contact-details h4[data-v-50bfe2cd],\n.message-fields h4[data-v-50bfe2cd] {\n    margin-bottom: 20px;\n}\n.contact-details i[data-v-50bfe2cd] {\n    font-size: 24px;\n    width: 30px;\n    color: #666;\n}\n.contact-details i.fa fa-envelope-o[data-v-50bfe2cd] {\n    font-size: 22px;\n}\n.contact-details address[data-v-50bfe2cd],\n.contact-details p[data-v-50bfe2cd] {\n    overflow: hidden;\n    margin-bottom: 20px;\n    font-size: 14px;\n}\n.social-details a[data-v-50bfe2cd] {\n    padding: 10px;\n    display: inline-block;\n    margin: 10px 0;\n    font-size: 1.7em;\n}\ntextarea[data-v-50bfe2cd] {\n    min-height: 100px;\n    resize: vertical;\n}\n@media screen and (min-width: 768px) {\n.contact-details[data-v-50bfe2cd],\n    .social-details[data-v-50bfe2cd] {\n        padding-top: 20px;\n}\n.message-fields[data-v-50bfe2cd] {\n        padding: 20px 0;\n}\n}\n@media screen and (max-width: 767px) {\n.p-t-30[data-v-50bfe2cd] {\n        padding-top: 30px;\n}\n.contact-details[data-v-50bfe2cd],\n    .message-fields[data-v-50bfe2cd] {\n        padding-left: 4%;\n        padding-right: 4%;\n}\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 1615:
+/***/ 1028:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_google_maps__ = __webpack_require__(1136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_google_maps___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue2_google_maps__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_src_store_store_js__ = __webpack_require__(131);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_tables_2__ = __webpack_require__(771);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_tables_2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_tables_2__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_components_plugins_DataTable_DataTable_vue__ = __webpack_require__(759);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_components_plugins_DataTable_DataTable_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_components_plugins_DataTable_DataTable_vue__);
 //
 //
 //
@@ -8547,277 +22,177 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-var unsub;
 
 
 
-
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue2_google_maps__, {
-    load: {
-        key: __WEBPACK_IMPORTED_MODULE_2_src_store_store_js__["a" /* default */].state.gmap_key
-        // key: 'your gmaps api key'
-        // v: 'OPTIONAL VERSION NUMBER',
-        // libraries: 'places', // If you need to use place input
-    }
-});
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_tables_2__["ClientTable"], {}, false);
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "gmaps",
+    name: "advanced_tables",
+    components: {
+        datatable: __WEBPACK_IMPORTED_MODULE_2_components_plugins_DataTable_DataTable_vue___default.a
+    },
     data: function data() {
         return {
-            center: {
-                lat: 37.279988,
-                lng: -121.883233
-            },
-            markers: [{
-                position: {
-                    lat: 37.279988,
-                    lng: -121.883233
-                }
+            rowdata: [{
+                "fname": "Toya",
+                "lname": "Wallace",
+                "age": 19,
+                "state": "MD",
+                "button": "<i class='fa fa-pencil text-info mr-3'></i><i class='fa fa-trash text-danger'></i>"
             }, {
-                position: {
-                    lat: 37.236988,
-                    lng: -121.863233
+                "fname": "Deborah",
+                "lname": "Morrison",
+                "age": 14,
+                "state": "VT",
+                "button": "<i class='fa fa-pencil text-info mr-3'></i><i class='fa fa-trash text-danger'></i>"
+            }, {
+                "fname": "Nerissa",
+                "lname": "Wade",
+                "age": 7,
+                "state": "DE",
+                "button": "<i class='fa fa-pencil text-info mr-3'></i><i class='fa fa-trash text-danger'></i>"
+            }, {
+                "fname": "Glenn",
+                "lname": "Bommi",
+                "age": 8,
+                "state": "MO",
+                "button": "<i class='fa fa-pencil text-info mr-3'></i><i class='fa fa-trash text-danger'></i>"
+            }, {
+                "fname": "Kate",
+                "lname": "Azcunaga",
+                "age": 25,
+                "state": "ME",
+                "button": "<i class='fa fa-pencil text-info mr-3'></i><i class='fa fa-trash text-danger'></i>"
+            }, {
+                "fname": "Jesse",
+                "lname": "Ingham",
+                "age": 50,
+                "state": "OK",
+                "button": "<i class='fa fa-pencil text-info mr-3'></i><i class='fa fa-trash text-danger'></i>"
+            }, {
+                "fname": "Gateri",
+                "lname": "Sergent",
+                "age": 50,
+                "state": "MA",
+                "button": "<i class='fa fa-pencil text-info mr-3'></i><i class='fa fa-trash text-danger'></i>"
+            }, {
+                "fname": "Marian",
+                "lname": "Malmfeldt",
+                "age": 50,
+                "state": "DC",
+                "button": "<i class='fa fa-pencil text-info mr-3'></i><i class='fa fa-trash text-danger'></i>"
+            }],
+
+            columndata: [// Array of objects
+            {
+                label: 'Store Name', // Column name
+                field: 'fname', // Field name from row
+                numeric: false, // Affects sorting
+                width: "200px", //width of the column
+                html: false // Escapes output if false.
+            }, {
+                label: 'First Name',
+                field: 'lname',
+                numeric: false,
+                html: false
+            }, {
+                label: 'Age',
+                field: 'age',
+                numeric: true,
+                html: false
+            }, {
+                label: 'State',
+                field: 'state',
+                numeric: false,
+                html: false
+            }, {
+                label: 'Action',
+                field: 'button',
+                numeric: false,
+                html: true
+            }],
+            columns: ['id', 'name', 'age'],
+            tableData: [{
+                id: 1,
+                name: "John",
+                age: "20"
+            }, {
+                id: 2,
+                name: "Jane",
+                age: "24"
+            }, {
+                id: 3,
+                name: "Susan",
+                age: "16"
+            }, {
+                id: 4,
+                name: "Chris",
+                age: "55"
+            }, {
+                id: 5,
+                name: "Dan",
+                age: "40"
+            }],
+            tableData2: [],
+            options: {
+                sortIcon: {
+                    base: 'fa',
+                    up: 'fa fa-angle-up',
+                    down: 'fa fa-angle-down'
+                },
+                // see the options API
+                skin: "table-hover table-striped table-bordered",
+                perPage: 7,
+                // footerHeadings: true,
+                highlightMatches: true,
+                pagination: {
+                    chunk: 3,
+                    //set dropdown to true to get dropdown instead of pagenation
+                    dropdown: false
                 }
-            }]
+            }
         };
     },
     mounted: function mounted() {
         var _this = this;
 
-        unsub = this.$store.subscribe(function (mutation, state) {
-            if (mutation.type == "left_menu") {
-                _this.$refs.gmap.resize();
-            }
-        });
-    },
-    beforeRouteLeave: function beforeRouteLeave(to, from, next) {
-        unsub();
-        next();
+        axios.get("http://www.filltext.com/?rows=50&id={index}&name={firstName}~{lastName}&age={numberRange|20,60}").then(function (response) {
+            _this.tableData2 = response.data;
+        }).catch(function (error) {});
+        this.$store.commit('left_menu', 'close');
     }
 });
 
 /***/ }),
 
-/***/ 1616:
+/***/ 1029:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-lg-12" },
-        [
-          _c(
-            "b-card",
-            {
-              staticClass: "bg-success-card",
-              attrs: { header: "Our Locations", "header-tag": "h4" }
-            },
-            [
-              _c(
-                "gmap-map",
-                {
-                  ref: "gmap",
-                  staticClass: "gmap",
-                  attrs: { center: _vm.center, zoom: 12 }
-                },
-                _vm._l(_vm.markers, function(m, index) {
-                  return _c("gmap-marker", {
-                    key: index,
-                    attrs: {
-                      position: m.position,
-                      clickable: true,
-                      draggable: true
-                    },
-                    on: {
-                      click: function($event) {
-                        _vm.center = m.position
-                      }
-                    }
-                  })
-                })
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-5 contact-details" },
-        [
-          _c(
-            "b-card",
-            {
-              staticClass: "bg-primary-card",
-              attrs: { header: "Contact us", "header-tag": "h4" }
-            },
-            [
-              _c("div", [
-                _c("i", {
-                  staticClass: "fa fa-map-marker float-left text-info",
-                  attrs: { "aria-hidden": "true" }
-                }),
-                _vm._v(" "),
-                _c("address", [
-                  _vm._v(
-                    "39 Berkshire Lane San Jose,\n                        "
-                  ),
-                  _c("br"),
-                  _vm._v(" California 95116")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", [
-                _c("i", {
-                  staticClass: "fa fa-mobile  float-left text-info",
-                  attrs: { "aria-hidden": "true" }
-                }),
-                _vm._v(" "),
-                _c("p", [_vm._v("+1-775-351-5054")])
-              ]),
-              _vm._v(" "),
-              _c("div", [
-                _c("i", {
-                  staticClass: "fa fa-envelope-o float-left text-info",
-                  attrs: { "aria-hidden": "true" }
-                }),
-                _vm._v(" "),
-                _c("p", [
-                  _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                    _vm._v("email.id@example.com")
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "social-details pt-2" }, [
-                _c("h5", [_vm._v("Connect with Us")]),
-                _vm._v(" "),
-                _c("div", [
-                  _vm._v(
-                    "\n                        Follow us for daily updates, Trending Designs and Featured UI.\n                    "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "text-left" }, [
-                  _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                    _c("i", {
-                      staticClass: "fa fa-google-plus text-danger",
-                      attrs: { "aria-hidden": "true" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                    _c("i", {
-                      staticClass: "fa fa-facebook text-primary",
-                      attrs: { "aria-hidden": "true" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                    _c("i", {
-                      staticClass: "fa fa-linkedin text-primary",
-                      attrs: { "aria-hidden": "true" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                    _c("i", {
-                      staticClass: "fa fa-twitter text-info",
-                      attrs: { "aria-hidden": "true" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                    _c("i", {
-                      staticClass: "fa fa-globe text-danger",
-                      attrs: { "aria-hidden": "true" }
-                    })
-                  ])
-                ])
-              ])
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-7" }, [
+  return _c("div", { staticClass: "row" }, [
+    _c(
+      "div",
+      { staticClass: "col-lg-12 mb-3" },
+      [
         _c(
-          "div",
-          { staticClass: "message-fields p-t-30" },
+          "b-card",
+          {
+            staticClass: "bg-success-card",
+            attrs: { header: "Accounts", "header-tag": "h4" }
+          },
           [
-            _c(
-              "b-card",
-              {
-                staticClass: "bg-success-card",
-                attrs: { header: "Have a Question?", "header-tag": "h4" }
-              },
-              [
-                _c("p", [
-                  _vm._v(
-                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam aut autem culpa dolorem, eligendi\n                        ex facere."
-                  )
-                ]),
-                _vm._v(" "),
-                _c("form", [
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("input", {
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "text",
-                        name: "email",
-                        placeholder: "Your Name",
-                        required: ""
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("input", {
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "email",
-                        name: "email",
-                        placeholder: "Your E-mail",
-                        required: ""
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("textarea", {
-                      staticClass: "form-control",
-                      attrs: {
-                        name: "message",
-                        placeholder: "Your Message here",
-                        required: ""
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-primary",
-                      attrs: { type: "submit" }
-                    },
-                    [_vm._v("Send")]
-                  )
-                ])
-              ]
-            )
+            _c("datatable", {
+              attrs: { title: "", rows: _vm.rowdata, columns: _vm.columndata }
+            })
           ],
           1
         )
-      ])
-    ])
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -8826,31 +201,27 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-50bfe2cd", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-ea3f47c2", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 758:
+/***/ 721:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(1613)
-}
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(1615)
+var __vue_script__ = __webpack_require__(1028)
 /* template */
-var __vue_template__ = __webpack_require__(1616)
+var __vue_template__ = __webpack_require__(1029)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = injectStyle
+var __vue_styles__ = null
 /* scopeId */
-var __vue_scopeId__ = "data-v-50bfe2cd"
+var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -8861,7 +232,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/components/pages/contact_us.vue"
+Component.options.__file = "resources/assets/components/store/distributors.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -8870,9 +241,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-50bfe2cd", Component.options)
+    hotAPI.createRecord("data-v-ea3f47c2", Component.options)
   } else {
-    hotAPI.reload("data-v-50bfe2cd", Component.options)
+    hotAPI.reload("data-v-ea3f47c2", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -8884,40 +255,189 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 772:
-/***/ (function(module, exports) {
+/***/ 730:
+/***/ (function(module, exports, __webpack_require__) {
 
-/**
- * Checks if `value` is classified as an `Array` object.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an array, else `false`.
- * @example
- *
- * _.isArray([1, 2, 3]);
- * // => true
- *
- * _.isArray(document.body.children);
- * // => false
- *
- * _.isArray('abc');
- * // => false
- *
- * _.isArray(_.noop);
- * // => false
+/* WEBPACK VAR INJECTION */(function(module) {/*!
+ * @name JavaScript/NodeJS Merge v1.2.0
+ * @author yeikos
+ * @repository https://github.com/yeikos/js.merge
+
+ * Copyright 2014 yeikos - MIT license
+ * https://raw.github.com/yeikos/js.merge/master/LICENSE
  */
-var isArray = Array.isArray;
 
-module.exports = isArray;
+;(function(isNode) {
 
+	/**
+	 * Merge one or more objects 
+	 * @param bool? clone
+	 * @param mixed,... arguments
+	 * @return object
+	 */
+
+	var Public = function(clone) {
+
+		return merge(clone === true, false, arguments);
+
+	}, publicName = 'merge';
+
+	/**
+	 * Merge two or more objects recursively 
+	 * @param bool? clone
+	 * @param mixed,... arguments
+	 * @return object
+	 */
+
+	Public.recursive = function(clone) {
+
+		return merge(clone === true, true, arguments);
+
+	};
+
+	/**
+	 * Clone the input removing any reference
+	 * @param mixed input
+	 * @return mixed
+	 */
+
+	Public.clone = function(input) {
+
+		var output = input,
+			type = typeOf(input),
+			index, size;
+
+		if (type === 'array') {
+
+			output = [];
+			size = input.length;
+
+			for (index=0;index<size;++index)
+
+				output[index] = Public.clone(input[index]);
+
+		} else if (type === 'object') {
+
+			output = {};
+
+			for (index in input)
+
+				output[index] = Public.clone(input[index]);
+
+		}
+
+		return output;
+
+	};
+
+	/**
+	 * Merge two objects recursively
+	 * @param mixed input
+	 * @param mixed extend
+	 * @return mixed
+	 */
+
+	function merge_recursive(base, extend) {
+
+		if (typeOf(base) !== 'object')
+
+			return extend;
+
+		for (var key in extend) {
+
+			if (typeOf(base[key]) === 'object' && typeOf(extend[key]) === 'object') {
+
+				base[key] = merge_recursive(base[key], extend[key]);
+
+			} else {
+
+				base[key] = extend[key];
+
+			}
+
+		}
+
+		return base;
+
+	}
+
+	/**
+	 * Merge two or more objects
+	 * @param bool clone
+	 * @param bool recursive
+	 * @param array argv
+	 * @return object
+	 */
+
+	function merge(clone, recursive, argv) {
+
+		var result = argv[0],
+			size = argv.length;
+
+		if (clone || typeOf(result) !== 'object')
+
+			result = {};
+
+		for (var index=0;index<size;++index) {
+
+			var item = argv[index],
+
+				type = typeOf(item);
+
+			if (type !== 'object') continue;
+
+			for (var key in item) {
+
+				var sitem = clone ? Public.clone(item[key]) : item[key];
+
+				if (recursive) {
+
+					result[key] = merge_recursive(result[key], sitem);
+
+				} else {
+
+					result[key] = sitem;
+
+				}
+
+			}
+
+		}
+
+		return result;
+
+	}
+
+	/**
+	 * Get type of variable
+	 * @param mixed input
+	 * @return string
+	 *
+	 * @see http://jsperf.com/typeofvar
+	 */
+
+	function typeOf(input) {
+
+		return ({}).toString.call(input).slice(8, -1).toLowerCase();
+
+	}
+
+	if (isNode) {
+
+		module.exports = Public;
+
+	} else {
+
+		window[publicName] = Public;
+
+	}
+
+})(typeof module === 'object' && module && typeof module.exports === 'object' && module.exports);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(246)(module)))
 
 /***/ }),
 
-/***/ 773:
+/***/ 731:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8927,563 +447,556 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _forIn = __webpack_require__(1207);
+var _vue = __webpack_require__(57);
 
-var _forIn2 = _interopRequireDefault(_forIn);
+var _vue2 = _interopRequireDefault(_vue);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-} /* vim: set softtabstop=2 shiftwidth=2 expandtab : */
+var bus = new _vue2.default();
 
-exports.default = function (vueElement, googleMapsElement, props, options) {
-  options = options || {};
-  var _options = options,
-      afterModelChanged = _options.afterModelChanged;
+exports.default = bus;
 
-  (0, _forIn2.default)(props, function (_ref, attribute) {
-    var twoWay = _ref.twoWay,
-        type = _ref.type,
-        trackProperties = _ref.trackProperties;
+/***/ }),
 
-    var setMethodName = 'set' + capitalizeFirstLetter(attribute);
-    var getMethodName = 'get' + capitalizeFirstLetter(attribute);
-    var eventName = attribute.toLowerCase() + '_changed';
-    var initialValue = vueElement[attribute];
+/***/ 732:
+/***/ (function(module, exports) {
 
-    if (typeof googleMapsElement[setMethodName] === 'undefined') {
-      throw new Error(setMethodName + ' is not a method of (the Maps object corresponding to) ' + vueElement.$options._componentTag);
+/*!
+ * is-extglob <https://github.com/jonschlinkert/is-extglob>
+ *
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+module.exports = function isExtglob(str) {
+  return typeof str === 'string'
+    && /[@?!+*]\(/.test(str);
+};
+
+
+/***/ }),
+
+/***/ 733:
+/***/ (function(module, exports, __webpack_require__) {
+
+/*!
+ * is-glob <https://github.com/jonschlinkert/is-glob>
+ *
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+var isExtglob = __webpack_require__(732);
+
+module.exports = function isGlob(str) {
+  return typeof str === 'string'
+    && (/[*!?{}(|)[\]]/.test(str)
+     || isExtglob(str));
+};
+
+/***/ }),
+
+/***/ 734:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+var win32 = process && process.platform === 'win32';
+var path = __webpack_require__(735);
+var fileRe = __webpack_require__(814);
+var utils = module.exports;
+
+/**
+ * Module dependencies
+ */
+
+utils.diff = __webpack_require__(815);
+utils.unique = __webpack_require__(749);
+utils.braces = __webpack_require__(817);
+utils.brackets = __webpack_require__(829);
+utils.extglob = __webpack_require__(831);
+utils.isExtglob = __webpack_require__(732);
+utils.isGlob = __webpack_require__(733);
+utils.typeOf = __webpack_require__(832);
+utils.normalize = __webpack_require__(833);
+utils.omit = __webpack_require__(835);
+utils.parseGlob = __webpack_require__(838);
+utils.cache = __webpack_require__(842);
+
+/**
+ * Get the filename of a filepath
+ *
+ * @param {String} `string`
+ * @return {String}
+ */
+
+utils.filename = function filename(fp) {
+  var seg = fp.match(fileRe());
+  return seg && seg[0];
+};
+
+/**
+ * Returns a function that returns true if the given
+ * pattern is the same as a given `filepath`
+ *
+ * @param {String} `pattern`
+ * @return {Function}
+ */
+
+utils.isPath = function isPath(pattern, opts) {
+  opts = opts || {};
+  return function(fp) {
+    var unixified = utils.unixify(fp, opts);
+    if(opts.nocase){
+      return pattern.toLowerCase() === unixified.toLowerCase();
+    }
+    return pattern === unixified;
+  };
+};
+
+/**
+ * Returns a function that returns true if the given
+ * pattern contains a `filepath`
+ *
+ * @param {String} `pattern`
+ * @return {Function}
+ */
+
+utils.hasPath = function hasPath(pattern, opts) {
+  return function(fp) {
+    return utils.unixify(pattern, opts).indexOf(fp) !== -1;
+  };
+};
+
+/**
+ * Returns a function that returns true if the given
+ * pattern matches or contains a `filepath`
+ *
+ * @param {String} `pattern`
+ * @return {Function}
+ */
+
+utils.matchPath = function matchPath(pattern, opts) {
+  var fn = (opts && opts.contains)
+    ? utils.hasPath(pattern, opts)
+    : utils.isPath(pattern, opts);
+  return fn;
+};
+
+/**
+ * Returns a function that returns true if the given
+ * regex matches the `filename` of a file path.
+ *
+ * @param {RegExp} `re`
+ * @return {Boolean}
+ */
+
+utils.hasFilename = function hasFilename(re) {
+  return function(fp) {
+    var name = utils.filename(fp);
+    return name && re.test(name);
+  };
+};
+
+/**
+ * Coerce `val` to an array
+ *
+ * @param  {*} val
+ * @return {Array}
+ */
+
+utils.arrayify = function arrayify(val) {
+  return !Array.isArray(val)
+    ? [val]
+    : val;
+};
+
+/**
+ * Normalize all slashes in a file path or glob pattern to
+ * forward slashes.
+ */
+
+utils.unixify = function unixify(fp, opts) {
+  if (opts && opts.unixify === false) return fp;
+  if (opts && opts.unixify === true || win32 || path.sep === '\\') {
+    return utils.normalize(fp, false);
+  }
+  if (opts && opts.unescape === true) {
+    return fp ? fp.toString().replace(/\\(\w)/g, '$1') : '';
+  }
+  return fp;
+};
+
+/**
+ * Escape/unescape utils
+ */
+
+utils.escapePath = function escapePath(fp) {
+  return fp.replace(/[\\.]/g, '\\$&');
+};
+
+utils.unescapeGlob = function unescapeGlob(fp) {
+  return fp.replace(/[\\"']/g, '');
+};
+
+utils.escapeRe = function escapeRe(str) {
+  return str.replace(/[-[\\$*+?.#^\s{}(|)\]]/g, '\\$&');
+};
+
+/**
+ * Expose `utils`
+ */
+
+module.exports = utils;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(94)))
+
+/***/ }),
+
+/***/ 735:
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+// resolves . and .. elements in a path array with directory names there
+// must be no slashes, empty elements, or device names (c:\) in the array
+// (so also no leading and trailing slashes - it does not distinguish
+// relative and absolute paths)
+function normalizeArray(parts, allowAboveRoot) {
+  // if the path tries to go above the root, `up` ends up > 0
+  var up = 0;
+  for (var i = parts.length - 1; i >= 0; i--) {
+    var last = parts[i];
+    if (last === '.') {
+      parts.splice(i, 1);
+    } else if (last === '..') {
+      parts.splice(i, 1);
+      up++;
+    } else if (up) {
+      parts.splice(i, 1);
+      up--;
+    }
+  }
+
+  // if the path is allowed to go above the root, restore leading ..s
+  if (allowAboveRoot) {
+    for (; up--; up) {
+      parts.unshift('..');
+    }
+  }
+
+  return parts;
+}
+
+// Split a filename into [root, dir, basename, ext], unix version
+// 'root' is just a slash, or nothing.
+var splitPathRe =
+    /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
+var splitPath = function(filename) {
+  return splitPathRe.exec(filename).slice(1);
+};
+
+// path.resolve([from ...], to)
+// posix version
+exports.resolve = function() {
+  var resolvedPath = '',
+      resolvedAbsolute = false;
+
+  for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
+    var path = (i >= 0) ? arguments[i] : process.cwd();
+
+    // Skip empty and invalid entries
+    if (typeof path !== 'string') {
+      throw new TypeError('Arguments to path.resolve must be strings');
+    } else if (!path) {
+      continue;
     }
 
-    // We need to avoid an endless
-    // propChanged -> event emitted -> propChanged -> event emitted loop
-    // although this may really be the user's responsibility
-    var timesSet = 0;
-    if (type !== Object || !trackProperties) {
-      // Track the object deeply
-      vueElement.$watch(attribute, function () {
-        var attributeValue = vueElement[attribute];
+    resolvedPath = path + '/' + resolvedPath;
+    resolvedAbsolute = path.charAt(0) === '/';
+  }
 
-        timesSet++;
-        googleMapsElement[setMethodName](attributeValue);
-        if (afterModelChanged) {
-          afterModelChanged(attribute, attributeValue);
-        }
-      }, {
-        immediate: typeof initialValue !== 'undefined',
-        deep: type === Object
-      });
+  // At this point the path should be resolved to a full absolute path, but
+  // handle relative paths to be safe (might happen when process.cwd() fails)
+
+  // Normalize the path
+  resolvedPath = normalizeArray(filter(resolvedPath.split('/'), function(p) {
+    return !!p;
+  }), !resolvedAbsolute).join('/');
+
+  return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
+};
+
+// path.normalize(path)
+// posix version
+exports.normalize = function(path) {
+  var isAbsolute = exports.isAbsolute(path),
+      trailingSlash = substr(path, -1) === '/';
+
+  // Normalize the path
+  path = normalizeArray(filter(path.split('/'), function(p) {
+    return !!p;
+  }), !isAbsolute).join('/');
+
+  if (!path && !isAbsolute) {
+    path = '.';
+  }
+  if (path && trailingSlash) {
+    path += '/';
+  }
+
+  return (isAbsolute ? '/' : '') + path;
+};
+
+// posix version
+exports.isAbsolute = function(path) {
+  return path.charAt(0) === '/';
+};
+
+// posix version
+exports.join = function() {
+  var paths = Array.prototype.slice.call(arguments, 0);
+  return exports.normalize(filter(paths, function(p, index) {
+    if (typeof p !== 'string') {
+      throw new TypeError('Arguments to path.join must be strings');
+    }
+    return p;
+  }).join('/'));
+};
+
+
+// path.relative(from, to)
+// posix version
+exports.relative = function(from, to) {
+  from = exports.resolve(from).substr(1);
+  to = exports.resolve(to).substr(1);
+
+  function trim(arr) {
+    var start = 0;
+    for (; start < arr.length; start++) {
+      if (arr[start] !== '') break;
+    }
+
+    var end = arr.length - 1;
+    for (; end >= 0; end--) {
+      if (arr[end] !== '') break;
+    }
+
+    if (start > end) return [];
+    return arr.slice(start, end - start + 1);
+  }
+
+  var fromParts = trim(from.split('/'));
+  var toParts = trim(to.split('/'));
+
+  var length = Math.min(fromParts.length, toParts.length);
+  var samePartsLength = length;
+  for (var i = 0; i < length; i++) {
+    if (fromParts[i] !== toParts[i]) {
+      samePartsLength = i;
+      break;
+    }
+  }
+
+  var outputParts = [];
+  for (var i = samePartsLength; i < fromParts.length; i++) {
+    outputParts.push('..');
+  }
+
+  outputParts = outputParts.concat(toParts.slice(samePartsLength));
+
+  return outputParts.join('/');
+};
+
+exports.sep = '/';
+exports.delimiter = ':';
+
+exports.dirname = function(path) {
+  var result = splitPath(path),
+      root = result[0],
+      dir = result[1];
+
+  if (!root && !dir) {
+    // No dirname whatsoever
+    return '.';
+  }
+
+  if (dir) {
+    // It has a dirname, strip trailing slash
+    dir = dir.substr(0, dir.length - 1);
+  }
+
+  return root + dir;
+};
+
+
+exports.basename = function(path, ext) {
+  var f = splitPath(path)[2];
+  // TODO: make this comparison case-insensitive on windows?
+  if (ext && f.substr(-1 * ext.length) === ext) {
+    f = f.substr(0, f.length - ext.length);
+  }
+  return f;
+};
+
+
+exports.extname = function(path) {
+  return splitPath(path)[3];
+};
+
+function filter (xs, f) {
+    if (xs.filter) return xs.filter(f);
+    var res = [];
+    for (var i = 0; i < xs.length; i++) {
+        if (f(xs[i], i, xs)) res.push(xs[i]);
+    }
+    return res;
+}
+
+// String.prototype.substr - negative index don't work in IE8
+var substr = 'ab'.substr(-1) === 'b'
+    ? function (str, start, len) { return str.substr(start, len) }
+    : function (str, start, len) {
+        if (start < 0) start = str.length + start;
+        return str.substr(start, len);
+    }
+;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(94)))
+
+/***/ }),
+
+/***/ 736:
+/***/ (function(module, exports) {
+
+/**
+ * Returns a function, that, as long as it continues to be invoked, will not
+ * be triggered. The function will be called after it stops being called for
+ * N milliseconds. If `immediate` is passed, trigger the function on the
+ * leading edge, instead of the trailing. The function also has a property 'clear' 
+ * that is a function which will clear the timer to prevent previously scheduled executions. 
+ *
+ * @source underscore.js
+ * @see http://unscriptable.com/2009/03/20/debouncing-javascript-methods/
+ * @param {Function} function to wrap
+ * @param {Number} timeout in ms (`100`)
+ * @param {Boolean} whether to execute at the beginning (`false`)
+ * @api public
+ */
+function debounce(func, wait, immediate){
+  var timeout, args, context, timestamp, result;
+  if (null == wait) wait = 100;
+
+  function later() {
+    var last = Date.now() - timestamp;
+
+    if (last < wait && last >= 0) {
+      timeout = setTimeout(later, wait - last);
     } else {
-      // I can watch multiple properties, but the danger is that each of
-      // them triggers the event handler multiple times
-      // This ensures that the event handler will only be fired once
-      var tick = 0;
-      var expectedTick = 0;
-
-      var raiseExpectation = function raiseExpectation() {
-        expectedTick += 1;
-      };
-
-      var updateTick = function updateTick() {
-        tick = Math.max(expectedTick, tick + 1);
-      };
-
-      var respondToChange = function respondToChange() {
-        if (tick < expectedTick) {
-          googleMapsElement[setMethodName](vueElement[attribute]);
-
-          if (afterModelChanged) {
-            afterModelChanged(attribute, vueElement[attribute]);
-          }
-
-          updateTick();
-        }
-      };
-
-      trackProperties.forEach(function (propName) {
-        // When any props change -- assume they change on the same tick
-        vueElement.$watch(attribute + '.' + propName, function () {
-          raiseExpectation();
-          vueElement.$nextTick(respondToChange);
-        }, {
-          immediate: typeof initialValue !== 'undefined'
-        });
-      });
-    }
-
-    if (twoWay) {
-      googleMapsElement.addListener(eventName, function (ev) {
-        // eslint-disable-line no-unused-vars
-        /* Check for type === Object because we're quite happy
-          when primitive types change -- the change detection is cheap
-        */
-        if (type === Object && timesSet > 0) {
-          timesSet--;
-        } else {
-          vueElement.$emit(eventName, googleMapsElement[getMethodName]());
-        }
-      });
-    }
-  });
-};
-
-/***/ }),
-
-/***/ 775:
-/***/ (function(module, exports, __webpack_require__) {
-
-var freeGlobal = __webpack_require__(1057);
-
-/** Detect free variable `self`. */
-var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
-
-/** Used as a reference to the global object. */
-var root = freeGlobal || freeSelf || Function('return this')();
-
-module.exports = root;
-
-
-/***/ }),
-
-/***/ 776:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _mapValues = __webpack_require__(1054);
-
-var _mapValues2 = _interopRequireDefault(_mapValues);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  methods: {
-    getPropsValues: function getPropsValues() {
-      var _this = this;
-
-      return (0, _mapValues2.default)(this.$options.props, function (v, k) {
-        return _this[k];
-      });
-    }
-  }
-};
-
-/***/ }),
-
-/***/ 778:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _forEach = __webpack_require__(1204);
-
-var _forEach2 = _interopRequireDefault(_forEach);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = function (vueElement, googleMapObject, events) {
-  (0, _forEach2.default)(events, function (eventName) {
-    var exposedName = eventName;
-    googleMapObject.addListener(eventName, function (ev) {
-      vueElement.$emit(exposedName, ev);
-    });
-  });
-}; /* vim: set softtabstop=2 shiftwidth=2 expandtab : */
-
-/***/ }),
-
-/***/ 779:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseClone = __webpack_require__(1075);
-
-/** Used to compose bitmasks for cloning. */
-var CLONE_SYMBOLS_FLAG = 4;
-
-/**
- * Creates a shallow clone of `value`.
- *
- * **Note:** This method is loosely based on the
- * [structured clone algorithm](https://mdn.io/Structured_clone_algorithm)
- * and supports cloning arrays, array buffers, booleans, date objects, maps,
- * numbers, `Object` objects, regexes, sets, strings, symbols, and typed
- * arrays. The own enumerable properties of `arguments` objects are cloned
- * as plain objects. An empty object is returned for uncloneable values such
- * as error objects, functions, DOM nodes, and WeakMaps.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to clone.
- * @returns {*} Returns the cloned value.
- * @see _.cloneDeep
- * @example
- *
- * var objects = [{ 'a': 1 }, { 'b': 2 }];
- *
- * var shallow = _.clone(objects);
- * console.log(shallow[0] === objects[0]);
- * // => true
- */
-function clone(value) {
-  return baseClone(value, CLONE_SYMBOLS_FLAG);
-}
-
-module.exports = clone;
-
-
-/***/ }),
-
-/***/ 782:
-/***/ (function(module, exports) {
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return value != null && typeof value == 'object';
-}
-
-module.exports = isObjectLike;
-
-
-/***/ }),
-
-/***/ 783:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _deferredReady = __webpack_require__(827);
-
-/**
- * @class MapElementMixin @mixins DeferredReadyMixin
- *
- * Extends components to include the following fields:
- *
- * @property $map        The Google map (valid only after the promise returns)
- *
- *
- * */
-exports.default = {
-
-  mixins: [_deferredReady.DeferredReadyMixin],
-
-  created: function created() {
-    var _this = this;
-
-    /* Search for the Map component in the parent */
-    var search = this.$findAncestor(function (ans) {
-      return ans.$mapCreated;
-    });
-
-    if (!search) {
-      throw new Error(this.constructor.name + ' component must be used within a <Map>');
-    }
-
-    this.$mapPromise = search.$mapCreated.then(function (map) {
-      _this.$map = map;
-    });
-    // FIXME: This is a hack to ensure correct loading
-    // when the map has already be instantiated.
-    if (search.$mapObject) {
-      this.$map = search.$mapObject;
-    }
-    this.$MapElementMixin = search;
-    this.$map = null;
-  },
-  beforeDeferredReady: function beforeDeferredReady() {
-    return this.$mapPromise;
-  },
-
-
-  methods: {
-    $findAncestor: function $findAncestor(condition) {
-      var search = this.$parent;
-
-      while (search) {
-        if (condition(search)) {
-          return search;
-        }
-        search = search.$parent;
+      timeout = null;
+      if (!immediate) {
+        result = func.apply(context, args);
+        context = args = null;
       }
-      return null;
     }
-  }
+  };
 
-}; /* vim: set softtabstop=2 shiftwidth=2 expandtab : */
+  var debounced = function(){
+    context = this;
+    args = arguments;
+    timestamp = Date.now();
+    var callNow = immediate && !timeout;
+    if (!timeout) timeout = setTimeout(later, wait);
+    if (callNow) {
+      result = func.apply(context, args);
+      context = args = null;
+    }
 
-/***/ }),
-
-/***/ 786:
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseIsNative = __webpack_require__(1138),
-    getValue = __webpack_require__(1143);
-
-/**
- * Gets the native function at `key` of `object`.
- *
- * @private
- * @param {Object} object The object to query.
- * @param {string} key The key of the method to get.
- * @returns {*} Returns the function if it's native, else `undefined`.
- */
-function getNative(object, key) {
-  var value = getValue(object, key);
-  return baseIsNative(value) ? value : undefined;
-}
-
-module.exports = getNative;
-
-
-/***/ }),
-
-/***/ 787:
-/***/ (function(module, exports) {
-
-/**
- * Checks if `value` is the
- * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
- * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an object, else `false`.
- * @example
- *
- * _.isObject({});
- * // => true
- *
- * _.isObject([1, 2, 3]);
- * // => true
- *
- * _.isObject(_.noop);
- * // => true
- *
- * _.isObject(null);
- * // => false
- */
-function isObject(value) {
-  var type = typeof value;
-  return value != null && (type == 'object' || type == 'function');
-}
-
-module.exports = isObject;
-
-
-/***/ }),
-
-/***/ 788:
-/***/ (function(module, exports, __webpack_require__) {
-
-var arrayMap = __webpack_require__(868),
-    baseClone = __webpack_require__(1075),
-    baseUnset = __webpack_require__(1231),
-    castPath = __webpack_require__(794),
-    copyObject = __webpack_require__(810),
-    customOmitClone = __webpack_require__(1235),
-    flatRest = __webpack_require__(1237),
-    getAllKeysIn = __webpack_require__(873);
-
-/** Used to compose bitmasks for cloning. */
-var CLONE_DEEP_FLAG = 1,
-    CLONE_FLAT_FLAG = 2,
-    CLONE_SYMBOLS_FLAG = 4;
-
-/**
- * The opposite of `_.pick`; this method creates an object composed of the
- * own and inherited enumerable property paths of `object` that are not omitted.
- *
- * **Note:** This method is considerably slower than `_.pick`.
- *
- * @static
- * @since 0.1.0
- * @memberOf _
- * @category Object
- * @param {Object} object The source object.
- * @param {...(string|string[])} [paths] The property paths to omit.
- * @returns {Object} Returns the new object.
- * @example
- *
- * var object = { 'a': 1, 'b': '2', 'c': 3 };
- *
- * _.omit(object, ['a', 'c']);
- * // => { 'b': '2' }
- */
-var omit = flatRest(function(object, paths) {
-  var result = {};
-  if (object == null) {
     return result;
-  }
-  var isDeep = false;
-  paths = arrayMap(paths, function(path) {
-    path = castPath(path, object);
-    isDeep || (isDeep = path.length > 1);
-    return path;
-  });
-  copyObject(object, getAllKeysIn(object), result);
-  if (isDeep) {
-    result = baseClone(result, CLONE_DEEP_FLAG | CLONE_FLAT_FLAG | CLONE_SYMBOLS_FLAG, customOmitClone);
-  }
-  var length = paths.length;
-  while (length--) {
-    baseUnset(result, paths[length]);
-  }
-  return result;
-});
+  };
 
-module.exports = omit;
+  debounced.clear = function() {
+    if (timeout) {
+      clearTimeout(timeout);
+      timeout = null;
+    }
+  };
+  
+  debounced.flush = function() {
+    if (timeout) {
+      result = func.apply(context, args);
+      context = args = null;
+      
+      clearTimeout(timeout);
+      timeout = null;
+    }
+  };
+
+  return debounced;
+};
+
+// Adds compatibility for ES modules
+debounce.debounce = debounce;
+
+module.exports = debounce;
 
 
 /***/ }),
 
-/***/ 792:
+/***/ 740:
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(793),
-    getRawTag = __webpack_require__(1139),
-    objectToString = __webpack_require__(1140);
+var Pagination = __webpack_require__(773);
+var PaginationEvent = __webpack_require__(741);
 
-/** `Object#toString` result references. */
-var nullTag = '[object Null]',
-    undefinedTag = '[object Undefined]';
-
-/** Built-in value references. */
-var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
-
-/**
- * The base implementation of `getTag` without fallbacks for buggy environments.
- *
- * @private
- * @param {*} value The value to query.
- * @returns {string} Returns the `toStringTag`.
- */
-function baseGetTag(value) {
-  if (value == null) {
-    return value === undefined ? undefinedTag : nullTag;
-  }
-  return (symToStringTag && symToStringTag in Object(value))
-    ? getRawTag(value)
-    : objectToString(value);
+module.exports = {
+  Pagination:Pagination,
+  PaginationEvent:PaginationEvent
 }
 
-module.exports = baseGetTag;
-
 
 /***/ }),
 
-/***/ 793:
+/***/ 741:
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(775);
-
-/** Built-in value references. */
-var Symbol = root.Symbol;
-
-module.exports = Symbol;
+"use strict";
 
 
-/***/ }),
+var _vue = __webpack_require__(57);
 
-/***/ 794:
-/***/ (function(module, exports, __webpack_require__) {
+var _vue2 = _interopRequireDefault(_vue);
 
-var isArray = __webpack_require__(772),
-    isKey = __webpack_require__(866),
-    stringToPath = __webpack_require__(1193),
-    toString = __webpack_require__(1196);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Casts `value` to a path array if it's not one.
- *
- * @private
- * @param {*} value The value to inspect.
- * @param {Object} [object] The object to query keys on.
- * @returns {Array} Returns the cast property path array.
- */
-function castPath(value, object) {
-  if (isArray(value)) {
-    return value;
-  }
-  return isKey(value, object) ? [value] : stringToPath(toString(value));
-}
+var bus = new _vue2.default();
 
-module.exports = castPath;
-
+module.exports = bus;
 
 /***/ }),
 
-/***/ 795:
-/***/ (function(module, exports, __webpack_require__) {
-
-var isSymbol = __webpack_require__(867);
-
-/** Used as references for various `Number` constants. */
-var INFINITY = 1 / 0;
-
-/**
- * Converts `value` to a string key if it's not a string or symbol.
- *
- * @private
- * @param {*} value The value to inspect.
- * @returns {string|symbol} Returns the key.
- */
-function toKey(value) {
-  if (typeof value == 'string' || isSymbol(value)) {
-    return value;
-  }
-  var result = (value + '');
-  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
-}
-
-module.exports = toKey;
-
-
-/***/ }),
-
-/***/ 808:
+/***/ 742:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9495,399 +1008,122 @@ Object.defineProperty(exports, "__esModule", {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-/* vim: set softtabstop=2 shiftwidth=2 expandtab : */
+exports.default = function (source) {
 
-var setUp = false;
+  var extra = source == 'server' ? serverExtra() : clientExtra();
 
-var loaded = exports.loaded = new Promise(function (resolve, reject) {
-  // eslint-disable-line no-unused-vars
-  if (typeof window === 'undefined') {
-    // Do nothing if run from server-side
-    return;
-  }
-  window['vueGoogleMapsInit'] = resolve;
-});
-
-/**
- * @param apiKey    API Key, or object with the URL parameters. For example
- *                  to use Google Maps Premium API, pass
- *                    `{ client: <YOUR-CLIENT-ID> }`.
- *                  You may pass the libraries and/or version (as `v`) parameter into
- *                  this parameter and skip the next two parameters
- * @param version   Google for Maps version
- * @param libraries Libraries to load (@see
- *                  https://developers.google.com/maps/documentation/javascript/libraries)
- * @param loadCn    Boolean. If set to true, the map will be loaded form goole maps China
- *                  (@see https://developers.google.com/maps/documentation/javascript/basics#GoogleMapsChina)
- *
- * Example:
- * ```
- *      import {load} from 'vue-google-maps'
- *
- *      load(<YOUR-API-KEY>)
- *
- *      load({
- *              key: <YOUR-API-KEY>,
- *      })
- *
- *      load({
- *              client: <YOUR-CLIENT-ID>,
- *              channel: <YOUR CHANNEL>
- *      })
- * ```
- */
-var load = exports.load = function load(apiKey, version, libraries, loadCn) {
-  if (typeof document === 'undefined') {
-    // Do nothing if run from server-side
-    return;
-  }
-  if (!setUp) {
-    var googleMapScript = document.createElement('SCRIPT');
-
-    // Allow apiKey to be an object.
-    // This is to support more esoteric means of loading Google Maps,
-    // such as Google for business
-    // https://developers.google.com/maps/documentation/javascript/get-api-key#premium-auth
-    var options = {};
-    if (typeof apiKey === 'string') {
-      options.key = apiKey;
-    } else if ((typeof apiKey === 'undefined' ? 'undefined' : _typeof(apiKey)) === 'object') {
-      for (var k in apiKey) {
-        // transfer values in apiKey to options
-        options[k] = apiKey[k];
+  return _merge2.default.recursive(true, {
+    props: {
+      name: {
+        type: String,
+        required: true
       }
-    } else {
-      throw new Error('apiKey should either be a string or an object');
+    },
+    computed: {
+      state: function state() {
+        return this.$store.state[this.name];
+      },
+      Page: function Page() {
+        return this.state.page;
+      },
+      count: function count() {
+        return this.state.count;
+      },
+      Columns: function Columns() {
+        return this.state.columns;
+      },
+      tableData: function tableData() {
+        return this.state.data;
+      },
+      page: function page() {
+        return this.state.page;
+      },
+      limit: function limit() {
+        return this.state.limit;
+      },
+      customQueries: function customQueries() {
+        return this.state.customQueries;
+      },
+      query: function query() {
+        return this.state.query;
+      },
+      orderBy: function orderBy() {
+        return {
+          column: this.state.sortBy,
+          ascending: this.state.ascending
+        };
+      }
+    },
+    methods: {
+      commit: function commit(action, payload) {
+        return this.$store.commit(this.name + '/' + action, payload);
+      },
+      orderByColumn: function orderByColumn(column, ev) {
+
+        if (!this.sortable(column)) return;
+
+        if (ev.shiftKey && this.orderBy.column && this.hasMultiSort) {
+          this.setUserMultiSort(column);
+        } else {
+          var ascending = this.orderBy.column === column ? !this.orderBy.ascending : this._initialOrderAscending(column);
+          var orderBy = { column: column, ascending: ascending };
+          this.updateState('orderBy', orderBy);
+          this.commit('SORT', orderBy);
+          this.dispatch('sorted', orderBy);
+        }
+      },
+      setLimit: function setLimit(e) {
+        var limit = (typeof e === 'undefined' ? 'undefined' : _typeof(e)) === 'object' ? parseInt(e.target.value) : e;
+        this.updateState('perPage', limit);
+        this.commit('SET_LIMIT', limit);
+        this.dispatch('limit', limit);
+      },
+      setOrder: function setOrder(column, ascending) {
+        this.updateState('orderBy', { column: column, ascending: ascending });
+        this.commit('SORT', { column: column, ascending: ascending });
+      },
+      setPage: function setPage(page) {
+
+        if (!page) {
+          page = this.$refs.page.value;
+        }
+
+        if (!this.opts.pagination.dropdown) this.$refs.pagination.Page = page;
+
+        this.commit('PAGINATE', page);
+      }
+
     }
-
-    // libraries
-    var librariesPath = '';
-    if (libraries && libraries.length > 0) {
-      librariesPath = libraries.join(',');
-      options['libraries'] = librariesPath;
-    } else if (Array.prototype.isPrototypeOf(options.libraries)) {
-      options.libraries = options.libraries.join(',');
-    }
-    options['callback'] = 'vueGoogleMapsInit';
-
-    var baseUrl = 'https://maps.googleapis.com/';
-
-    if (typeof loadCn === 'boolean' && loadCn === true) {
-      baseUrl = 'http://maps.google.cn/';
-    }
-
-    var url = baseUrl + 'maps/api/js?' + Object.keys(options).map(function (key) {
-      return encodeURIComponent(key) + '=' + encodeURIComponent(options[key]);
-    }).join('&');
-
-    if (version) {
-      url = url + '&v=' + version;
-    }
-
-    googleMapScript.setAttribute('src', url);
-    googleMapScript.setAttribute('async', '');
-    googleMapScript.setAttribute('defer', '');
-    document.head.appendChild(googleMapScript);
-  } else {
-    throw new Error('You already started the loading of google maps');
-  }
+  }, extra);
 };
 
-/***/ }),
+var _merge = __webpack_require__(730);
 
-/***/ 809:
-/***/ (function(module, exports, __webpack_require__) {
+var _merge2 = _interopRequireDefault(_merge);
 
-var arrayLikeKeys = __webpack_require__(1061),
-    baseKeys = __webpack_require__(1149),
-    isArrayLike = __webpack_require__(859);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Creates an array of the own enumerable property names of `object`.
- *
- * **Note:** Non-object values are coerced to objects. See the
- * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
- * for more details.
- *
- * @static
- * @since 0.1.0
- * @memberOf _
- * @category Object
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property names.
- * @example
- *
- * function Foo() {
- *   this.a = 1;
- *   this.b = 2;
- * }
- *
- * Foo.prototype.c = 3;
- *
- * _.keys(new Foo);
- * // => ['a', 'b'] (iteration order is not guaranteed)
- *
- * _.keys('hi');
- * // => ['0', '1']
- */
-function keys(object) {
-  return isArrayLike(object) ? arrayLikeKeys(object) : baseKeys(object);
-}
+function serverExtra() {
+  return {
+    methods: {
+      setData: function setData(data) {
+        this.commit('SET_DATA', data);
 
-module.exports = keys;
-
-
-/***/ }),
-
-/***/ 810:
-/***/ (function(module, exports, __webpack_require__) {
-
-var assignValue = __webpack_require__(871),
-    baseAssignValue = __webpack_require__(851);
-
-/**
- * Copies properties of `source` to `object`.
- *
- * @private
- * @param {Object} source The object to copy properties from.
- * @param {Array} props The property identifiers to copy.
- * @param {Object} [object={}] The object to copy properties to.
- * @param {Function} [customizer] The function to customize copied values.
- * @returns {Object} Returns `object`.
- */
-function copyObject(source, props, object, customizer) {
-  var isNew = !object;
-  object || (object = {});
-
-  var index = -1,
-      length = props.length;
-
-  while (++index < length) {
-    var key = props[index];
-
-    var newValue = customizer
-      ? customizer(object[key], source[key], key, object, source)
-      : undefined;
-
-    if (newValue === undefined) {
-      newValue = source[key];
-    }
-    if (isNew) {
-      baseAssignValue(object, key, newValue);
-    } else {
-      assignValue(object, key, newValue);
-    }
-  }
-  return object;
-}
-
-module.exports = copyObject;
-
-
-/***/ }),
-
-/***/ 821:
-/***/ (function(module, exports, __webpack_require__) {
-
-var listCacheClear = __webpack_require__(1153),
-    listCacheDelete = __webpack_require__(1154),
-    listCacheGet = __webpack_require__(1155),
-    listCacheHas = __webpack_require__(1156),
-    listCacheSet = __webpack_require__(1157);
-
-/**
- * Creates an list cache object.
- *
- * @private
- * @constructor
- * @param {Array} [entries] The key-value pairs to cache.
- */
-function ListCache(entries) {
-  var index = -1,
-      length = entries == null ? 0 : entries.length;
-
-  this.clear();
-  while (++index < length) {
-    var entry = entries[index];
-    this.set(entry[0], entry[1]);
-  }
-}
-
-// Add methods to `ListCache`.
-ListCache.prototype.clear = listCacheClear;
-ListCache.prototype['delete'] = listCacheDelete;
-ListCache.prototype.get = listCacheGet;
-ListCache.prototype.has = listCacheHas;
-ListCache.prototype.set = listCacheSet;
-
-module.exports = ListCache;
-
-
-/***/ }),
-
-/***/ 822:
-/***/ (function(module, exports, __webpack_require__) {
-
-var eq = __webpack_require__(861);
-
-/**
- * Gets the index at which the `key` is found in `array` of key-value pairs.
- *
- * @private
- * @param {Array} array The array to inspect.
- * @param {*} key The key to search for.
- * @returns {number} Returns the index of the matched value, else `-1`.
- */
-function assocIndexOf(array, key) {
-  var length = array.length;
-  while (length--) {
-    if (eq(array[length][0], key)) {
-      return length;
-    }
-  }
-  return -1;
-}
-
-module.exports = assocIndexOf;
-
-
-/***/ }),
-
-/***/ 823:
-/***/ (function(module, exports, __webpack_require__) {
-
-var getNative = __webpack_require__(786);
-
-/* Built-in method references that are verified to be native. */
-var nativeCreate = getNative(Object, 'create');
-
-module.exports = nativeCreate;
-
-
-/***/ }),
-
-/***/ 824:
-/***/ (function(module, exports, __webpack_require__) {
-
-var isKeyable = __webpack_require__(1171);
-
-/**
- * Gets the data for `map`.
- *
- * @private
- * @param {Object} map The map to query.
- * @param {string} key The reference key.
- * @returns {*} Returns the map data.
- */
-function getMapData(map, key) {
-  var data = map.__data__;
-  return isKeyable(key)
-    ? data[typeof key == 'string' ? 'string' : 'hash']
-    : data.map;
-}
-
-module.exports = getMapData;
-
-
-/***/ }),
-
-/***/ 825:
-/***/ (function(module, exports, __webpack_require__) {
-
-var DataView = __webpack_require__(1186),
-    Map = __webpack_require__(862),
-    Promise = __webpack_require__(1187),
-    Set = __webpack_require__(1188),
-    WeakMap = __webpack_require__(1189),
-    baseGetTag = __webpack_require__(792),
-    toSource = __webpack_require__(1058);
-
-/** `Object#toString` result references. */
-var mapTag = '[object Map]',
-    objectTag = '[object Object]',
-    promiseTag = '[object Promise]',
-    setTag = '[object Set]',
-    weakMapTag = '[object WeakMap]';
-
-var dataViewTag = '[object DataView]';
-
-/** Used to detect maps, sets, and weakmaps. */
-var dataViewCtorString = toSource(DataView),
-    mapCtorString = toSource(Map),
-    promiseCtorString = toSource(Promise),
-    setCtorString = toSource(Set),
-    weakMapCtorString = toSource(WeakMap);
-
-/**
- * Gets the `toStringTag` of `value`.
- *
- * @private
- * @param {*} value The value to query.
- * @returns {string} Returns the `toStringTag`.
- */
-var getTag = baseGetTag;
-
-// Fallback for data views, maps, sets, and weak maps in IE 11 and promises in Node.js < 6.
-if ((DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag) ||
-    (Map && getTag(new Map) != mapTag) ||
-    (Promise && getTag(Promise.resolve()) != promiseTag) ||
-    (Set && getTag(new Set) != setTag) ||
-    (WeakMap && getTag(new WeakMap) != weakMapTag)) {
-  getTag = function(value) {
-    var result = baseGetTag(value),
-        Ctor = result == objectTag ? value.constructor : undefined,
-        ctorString = Ctor ? toSource(Ctor) : '';
-
-    if (ctorString) {
-      switch (ctorString) {
-        case dataViewCtorString: return dataViewTag;
-        case mapCtorString: return mapTag;
-        case promiseCtorString: return promiseTag;
-        case setCtorString: return setTag;
-        case weakMapCtorString: return weakMapTag;
+        setTimeout(function () {
+          this.dispatch('loaded', data);
+        }.bind(this), 0);
       }
     }
-    return result;
   };
 }
 
-module.exports = getTag;
-
-
-/***/ }),
-
-/***/ 826:
-/***/ (function(module, exports, __webpack_require__) {
-
-var castPath = __webpack_require__(794),
-    toKey = __webpack_require__(795);
-
-/**
- * The base implementation of `_.get` without support for default values.
- *
- * @private
- * @param {Object} object The object to query.
- * @param {Array|string} path The path of the property to get.
- * @returns {*} Returns the resolved value.
- */
-function baseGet(object, path) {
-  path = castPath(path, object);
-
-  var index = 0,
-      length = path.length;
-
-  while (object != null && index < length) {
-    object = object[toKey(path[index++])];
-  }
-  return (index && index == length) ? object : undefined;
+function clientExtra() {
+  return {};
 }
 
-module.exports = baseGet;
-
-
 /***/ }),
 
-/***/ 827:
+/***/ 743:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9896,883 +1132,10614 @@ module.exports = baseGet;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-/**
- * 1. Create a DeferredReady plugin.
- *
- * a. Updates options.configMergeStrategies to handle our new hook correctly (using Promise.all!)
- *
- * 2. VueGoogleMaps uses a DeferredReady mixin.
- *
- *     a. Each component checks for ancestors that are also DeferredReady (via dispatch/emit)
- *     b. If no, then run DeferredReady after ready.
- *     c. If yes, then run DeferredReady after parent's deferredReady.
- *
- *
- * Say we have the following inheritance:
- *
- * --> == 'child of'
- *
- * A --> B --> C
- *
- * ready is called in the following order:
- *
- * A.ready, B.ready, C.ready
- *
- * C.ready -- no further ancestors supporting mixin, so in ready() we run+
- *
-   **/
 
-var DeferredReady = exports.DeferredReady = {
-  install: function install(Vue, options) {
-    // eslint-disable-line no-unused-vars
-    // Use the same merge strategy as regular hooks
-    Vue.config.optionMergeStrategies.deferredReady = Vue.config.optionMergeStrategies.created;
-    Vue.config.optionMergeStrategies.beforeDeferredReady = Vue.config.optionMergeStrategies.beforeDeferredReady;
+exports.default = function () {
+  return {
+    computed: {
+      Columns: function Columns() {
+        return this.columns;
+      }
+    }
+  };
+};
+
+/***/ }),
+
+/***/ 744:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  return { methods: methods, computed: computed, directives: directives, beforeDestroy: beforeDestroy };
+};
+
+var methods = __webpack_require__(779);
+var computed = __webpack_require__(883);
+var directives = __webpack_require__(895);
+var beforeDestroy = __webpack_require__(898);
+
+/***/ }),
+
+/***/ 745:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (e, dateEvent) {
+
+  // we need to handle the store this.query to make sure we're not mutating outside of it
+  var query = this.vuex ? JSON.parse(JSON.stringify(this.query)) : this.query;
+
+  // in case we pass an object manually (mostly used for init-date-filters should refactor
+  if (Object.prototype.toString.call(e).slice(8, -1) == 'Object') {
+    query = this.vuex ? JSON.parse(JSON.stringify(e)) : e;
+
+    if (!this.vuex) this.query = query;
+
+    var name = dateEvent.target.name;
+    var value = dateEvent.target.value;
+
+    if (name) {
+      this.dispatch('filter', { name: name, value: value });
+      this.dispatch('filter::' + name, value);
+    } else {
+      this.dispatch('filter', value);
+    }
+
+    this.updateState('query', query);
+  } else if (e) {
+    var _name = this.getName(e.target.name);
+    var _value = e.target.value;
+
+    if (_name) {
+      query[_name] = _value;
+    } else {
+      query = _value;
+    }
+
+    if (!this.vuex) this.query = query;
+
+    if (_name) {
+      this.dispatch('filter', { name: _name, value: _value });
+      this.dispatch('filter::' + _name, _value);
+    } else {
+      this.dispatch('filter', _value);
+    }
+
+    this.updateState('query', query);
+  }
+
+  return search(this, query);
+};
+
+function search(that, query) {
+
+  if (that.vuex) {
+    that.commit('SET_FILTER', query);
+  } else {
+    that.initPagination();
+
+    if (that.opts.pagination.dropdown) {
+      that.getData();
+    }
+  }
+}
+
+function noDebounce(e, name, opts) {
+  return !e || name && (opts.dateColumns.indexOf(name) > -1 || Object.keys(opts.listColumns).indexOf(name) > -1);
+}
+
+/***/ }),
+
+/***/ 746:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (val) {
+  return val && typeof val.isValid == 'function' && val.isValid();
+};
+
+/***/ }),
+
+/***/ 747:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global) {/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+ * @license  MIT
+ */
+/* eslint-disable no-proto */
+
+
+
+var base64 = __webpack_require__(807)
+var ieee754 = __webpack_require__(808)
+var isArray = __webpack_require__(748)
+
+exports.Buffer = Buffer
+exports.SlowBuffer = SlowBuffer
+exports.INSPECT_MAX_BYTES = 50
+
+/**
+ * If `Buffer.TYPED_ARRAY_SUPPORT`:
+ *   === true    Use Uint8Array implementation (fastest)
+ *   === false   Use Object implementation (most compatible, even IE6)
+ *
+ * Browsers that support typed arrays are IE 10+, Firefox 4+, Chrome 7+, Safari 5.1+,
+ * Opera 11.6+, iOS 4.2+.
+ *
+ * Due to various browser bugs, sometimes the Object implementation will be used even
+ * when the browser supports typed arrays.
+ *
+ * Note:
+ *
+ *   - Firefox 4-29 lacks support for adding new properties to `Uint8Array` instances,
+ *     See: https://bugzilla.mozilla.org/show_bug.cgi?id=695438.
+ *
+ *   - Chrome 9-10 is missing the `TypedArray.prototype.subarray` function.
+ *
+ *   - IE10 has a broken `TypedArray.prototype.subarray` function which returns arrays of
+ *     incorrect length in some situations.
+
+ * We detect these buggy browsers and set `Buffer.TYPED_ARRAY_SUPPORT` to `false` so they
+ * get the Object implementation, which is slower but behaves correctly.
+ */
+Buffer.TYPED_ARRAY_SUPPORT = global.TYPED_ARRAY_SUPPORT !== undefined
+  ? global.TYPED_ARRAY_SUPPORT
+  : typedArraySupport()
+
+/*
+ * Export kMaxLength after typed array support is determined.
+ */
+exports.kMaxLength = kMaxLength()
+
+function typedArraySupport () {
+  try {
+    var arr = new Uint8Array(1)
+    arr.__proto__ = {__proto__: Uint8Array.prototype, foo: function () { return 42 }}
+    return arr.foo() === 42 && // typed array instances can be augmented
+        typeof arr.subarray === 'function' && // chrome 9-10 lack `subarray`
+        arr.subarray(1, 1).byteLength === 0 // ie10 has broken `subarray`
+  } catch (e) {
+    return false
+  }
+}
+
+function kMaxLength () {
+  return Buffer.TYPED_ARRAY_SUPPORT
+    ? 0x7fffffff
+    : 0x3fffffff
+}
+
+function createBuffer (that, length) {
+  if (kMaxLength() < length) {
+    throw new RangeError('Invalid typed array length')
+  }
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    // Return an augmented `Uint8Array` instance, for best performance
+    that = new Uint8Array(length)
+    that.__proto__ = Buffer.prototype
+  } else {
+    // Fallback: Return an object instance of the Buffer class
+    if (that === null) {
+      that = new Buffer(length)
+    }
+    that.length = length
+  }
+
+  return that
+}
+
+/**
+ * The Buffer constructor returns instances of `Uint8Array` that have their
+ * prototype changed to `Buffer.prototype`. Furthermore, `Buffer` is a subclass of
+ * `Uint8Array`, so the returned instances will have all the node `Buffer` methods
+ * and the `Uint8Array` methods. Square bracket notation works as expected -- it
+ * returns a single octet.
+ *
+ * The `Uint8Array` prototype remains unmodified.
+ */
+
+function Buffer (arg, encodingOrOffset, length) {
+  if (!Buffer.TYPED_ARRAY_SUPPORT && !(this instanceof Buffer)) {
+    return new Buffer(arg, encodingOrOffset, length)
+  }
+
+  // Common case.
+  if (typeof arg === 'number') {
+    if (typeof encodingOrOffset === 'string') {
+      throw new Error(
+        'If encoding is specified then the first argument must be a string'
+      )
+    }
+    return allocUnsafe(this, arg)
+  }
+  return from(this, arg, encodingOrOffset, length)
+}
+
+Buffer.poolSize = 8192 // not used by this implementation
+
+// TODO: Legacy, not needed anymore. Remove in next major version.
+Buffer._augment = function (arr) {
+  arr.__proto__ = Buffer.prototype
+  return arr
+}
+
+function from (that, value, encodingOrOffset, length) {
+  if (typeof value === 'number') {
+    throw new TypeError('"value" argument must not be a number')
+  }
+
+  if (typeof ArrayBuffer !== 'undefined' && value instanceof ArrayBuffer) {
+    return fromArrayBuffer(that, value, encodingOrOffset, length)
+  }
+
+  if (typeof value === 'string') {
+    return fromString(that, value, encodingOrOffset)
+  }
+
+  return fromObject(that, value)
+}
+
+/**
+ * Functionally equivalent to Buffer(arg, encoding) but throws a TypeError
+ * if value is a number.
+ * Buffer.from(str[, encoding])
+ * Buffer.from(array)
+ * Buffer.from(buffer)
+ * Buffer.from(arrayBuffer[, byteOffset[, length]])
+ **/
+Buffer.from = function (value, encodingOrOffset, length) {
+  return from(null, value, encodingOrOffset, length)
+}
+
+if (Buffer.TYPED_ARRAY_SUPPORT) {
+  Buffer.prototype.__proto__ = Uint8Array.prototype
+  Buffer.__proto__ = Uint8Array
+  if (typeof Symbol !== 'undefined' && Symbol.species &&
+      Buffer[Symbol.species] === Buffer) {
+    // Fix subarray() in ES2016. See: https://github.com/feross/buffer/pull/97
+    Object.defineProperty(Buffer, Symbol.species, {
+      value: null,
+      configurable: true
+    })
+  }
+}
+
+function assertSize (size) {
+  if (typeof size !== 'number') {
+    throw new TypeError('"size" argument must be a number')
+  } else if (size < 0) {
+    throw new RangeError('"size" argument must not be negative')
+  }
+}
+
+function alloc (that, size, fill, encoding) {
+  assertSize(size)
+  if (size <= 0) {
+    return createBuffer(that, size)
+  }
+  if (fill !== undefined) {
+    // Only pay attention to encoding if it's a string. This
+    // prevents accidentally sending in a number that would
+    // be interpretted as a start offset.
+    return typeof encoding === 'string'
+      ? createBuffer(that, size).fill(fill, encoding)
+      : createBuffer(that, size).fill(fill)
+  }
+  return createBuffer(that, size)
+}
+
+/**
+ * Creates a new filled Buffer instance.
+ * alloc(size[, fill[, encoding]])
+ **/
+Buffer.alloc = function (size, fill, encoding) {
+  return alloc(null, size, fill, encoding)
+}
+
+function allocUnsafe (that, size) {
+  assertSize(size)
+  that = createBuffer(that, size < 0 ? 0 : checked(size) | 0)
+  if (!Buffer.TYPED_ARRAY_SUPPORT) {
+    for (var i = 0; i < size; ++i) {
+      that[i] = 0
+    }
+  }
+  return that
+}
+
+/**
+ * Equivalent to Buffer(num), by default creates a non-zero-filled Buffer instance.
+ * */
+Buffer.allocUnsafe = function (size) {
+  return allocUnsafe(null, size)
+}
+/**
+ * Equivalent to SlowBuffer(num), by default creates a non-zero-filled Buffer instance.
+ */
+Buffer.allocUnsafeSlow = function (size) {
+  return allocUnsafe(null, size)
+}
+
+function fromString (that, string, encoding) {
+  if (typeof encoding !== 'string' || encoding === '') {
+    encoding = 'utf8'
+  }
+
+  if (!Buffer.isEncoding(encoding)) {
+    throw new TypeError('"encoding" must be a valid string encoding')
+  }
+
+  var length = byteLength(string, encoding) | 0
+  that = createBuffer(that, length)
+
+  var actual = that.write(string, encoding)
+
+  if (actual !== length) {
+    // Writing a hex string, for example, that contains invalid characters will
+    // cause everything after the first invalid character to be ignored. (e.g.
+    // 'abxxcd' will be treated as 'ab')
+    that = that.slice(0, actual)
+  }
+
+  return that
+}
+
+function fromArrayLike (that, array) {
+  var length = array.length < 0 ? 0 : checked(array.length) | 0
+  that = createBuffer(that, length)
+  for (var i = 0; i < length; i += 1) {
+    that[i] = array[i] & 255
+  }
+  return that
+}
+
+function fromArrayBuffer (that, array, byteOffset, length) {
+  array.byteLength // this throws if `array` is not a valid ArrayBuffer
+
+  if (byteOffset < 0 || array.byteLength < byteOffset) {
+    throw new RangeError('\'offset\' is out of bounds')
+  }
+
+  if (array.byteLength < byteOffset + (length || 0)) {
+    throw new RangeError('\'length\' is out of bounds')
+  }
+
+  if (byteOffset === undefined && length === undefined) {
+    array = new Uint8Array(array)
+  } else if (length === undefined) {
+    array = new Uint8Array(array, byteOffset)
+  } else {
+    array = new Uint8Array(array, byteOffset, length)
+  }
+
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    // Return an augmented `Uint8Array` instance, for best performance
+    that = array
+    that.__proto__ = Buffer.prototype
+  } else {
+    // Fallback: Return an object instance of the Buffer class
+    that = fromArrayLike(that, array)
+  }
+  return that
+}
+
+function fromObject (that, obj) {
+  if (Buffer.isBuffer(obj)) {
+    var len = checked(obj.length) | 0
+    that = createBuffer(that, len)
+
+    if (that.length === 0) {
+      return that
+    }
+
+    obj.copy(that, 0, 0, len)
+    return that
+  }
+
+  if (obj) {
+    if ((typeof ArrayBuffer !== 'undefined' &&
+        obj.buffer instanceof ArrayBuffer) || 'length' in obj) {
+      if (typeof obj.length !== 'number' || isnan(obj.length)) {
+        return createBuffer(that, 0)
+      }
+      return fromArrayLike(that, obj)
+    }
+
+    if (obj.type === 'Buffer' && isArray(obj.data)) {
+      return fromArrayLike(that, obj.data)
+    }
+  }
+
+  throw new TypeError('First argument must be a string, Buffer, ArrayBuffer, Array, or array-like object.')
+}
+
+function checked (length) {
+  // Note: cannot use `length < kMaxLength()` here because that fails when
+  // length is NaN (which is otherwise coerced to zero.)
+  if (length >= kMaxLength()) {
+    throw new RangeError('Attempt to allocate Buffer larger than maximum ' +
+                         'size: 0x' + kMaxLength().toString(16) + ' bytes')
+  }
+  return length | 0
+}
+
+function SlowBuffer (length) {
+  if (+length != length) { // eslint-disable-line eqeqeq
+    length = 0
+  }
+  return Buffer.alloc(+length)
+}
+
+Buffer.isBuffer = function isBuffer (b) {
+  return !!(b != null && b._isBuffer)
+}
+
+Buffer.compare = function compare (a, b) {
+  if (!Buffer.isBuffer(a) || !Buffer.isBuffer(b)) {
+    throw new TypeError('Arguments must be Buffers')
+  }
+
+  if (a === b) return 0
+
+  var x = a.length
+  var y = b.length
+
+  for (var i = 0, len = Math.min(x, y); i < len; ++i) {
+    if (a[i] !== b[i]) {
+      x = a[i]
+      y = b[i]
+      break
+    }
+  }
+
+  if (x < y) return -1
+  if (y < x) return 1
+  return 0
+}
+
+Buffer.isEncoding = function isEncoding (encoding) {
+  switch (String(encoding).toLowerCase()) {
+    case 'hex':
+    case 'utf8':
+    case 'utf-8':
+    case 'ascii':
+    case 'latin1':
+    case 'binary':
+    case 'base64':
+    case 'ucs2':
+    case 'ucs-2':
+    case 'utf16le':
+    case 'utf-16le':
+      return true
+    default:
+      return false
+  }
+}
+
+Buffer.concat = function concat (list, length) {
+  if (!isArray(list)) {
+    throw new TypeError('"list" argument must be an Array of Buffers')
+  }
+
+  if (list.length === 0) {
+    return Buffer.alloc(0)
+  }
+
+  var i
+  if (length === undefined) {
+    length = 0
+    for (i = 0; i < list.length; ++i) {
+      length += list[i].length
+    }
+  }
+
+  var buffer = Buffer.allocUnsafe(length)
+  var pos = 0
+  for (i = 0; i < list.length; ++i) {
+    var buf = list[i]
+    if (!Buffer.isBuffer(buf)) {
+      throw new TypeError('"list" argument must be an Array of Buffers')
+    }
+    buf.copy(buffer, pos)
+    pos += buf.length
+  }
+  return buffer
+}
+
+function byteLength (string, encoding) {
+  if (Buffer.isBuffer(string)) {
+    return string.length
+  }
+  if (typeof ArrayBuffer !== 'undefined' && typeof ArrayBuffer.isView === 'function' &&
+      (ArrayBuffer.isView(string) || string instanceof ArrayBuffer)) {
+    return string.byteLength
+  }
+  if (typeof string !== 'string') {
+    string = '' + string
+  }
+
+  var len = string.length
+  if (len === 0) return 0
+
+  // Use a for loop to avoid recursion
+  var loweredCase = false
+  for (;;) {
+    switch (encoding) {
+      case 'ascii':
+      case 'latin1':
+      case 'binary':
+        return len
+      case 'utf8':
+      case 'utf-8':
+      case undefined:
+        return utf8ToBytes(string).length
+      case 'ucs2':
+      case 'ucs-2':
+      case 'utf16le':
+      case 'utf-16le':
+        return len * 2
+      case 'hex':
+        return len >>> 1
+      case 'base64':
+        return base64ToBytes(string).length
+      default:
+        if (loweredCase) return utf8ToBytes(string).length // assume utf8
+        encoding = ('' + encoding).toLowerCase()
+        loweredCase = true
+    }
+  }
+}
+Buffer.byteLength = byteLength
+
+function slowToString (encoding, start, end) {
+  var loweredCase = false
+
+  // No need to verify that "this.length <= MAX_UINT32" since it's a read-only
+  // property of a typed array.
+
+  // This behaves neither like String nor Uint8Array in that we set start/end
+  // to their upper/lower bounds if the value passed is out of range.
+  // undefined is handled specially as per ECMA-262 6th Edition,
+  // Section 13.3.3.7 Runtime Semantics: KeyedBindingInitialization.
+  if (start === undefined || start < 0) {
+    start = 0
+  }
+  // Return early if start > this.length. Done here to prevent potential uint32
+  // coercion fail below.
+  if (start > this.length) {
+    return ''
+  }
+
+  if (end === undefined || end > this.length) {
+    end = this.length
+  }
+
+  if (end <= 0) {
+    return ''
+  }
+
+  // Force coersion to uint32. This will also coerce falsey/NaN values to 0.
+  end >>>= 0
+  start >>>= 0
+
+  if (end <= start) {
+    return ''
+  }
+
+  if (!encoding) encoding = 'utf8'
+
+  while (true) {
+    switch (encoding) {
+      case 'hex':
+        return hexSlice(this, start, end)
+
+      case 'utf8':
+      case 'utf-8':
+        return utf8Slice(this, start, end)
+
+      case 'ascii':
+        return asciiSlice(this, start, end)
+
+      case 'latin1':
+      case 'binary':
+        return latin1Slice(this, start, end)
+
+      case 'base64':
+        return base64Slice(this, start, end)
+
+      case 'ucs2':
+      case 'ucs-2':
+      case 'utf16le':
+      case 'utf-16le':
+        return utf16leSlice(this, start, end)
+
+      default:
+        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding)
+        encoding = (encoding + '').toLowerCase()
+        loweredCase = true
+    }
+  }
+}
+
+// The property is used by `Buffer.isBuffer` and `is-buffer` (in Safari 5-7) to detect
+// Buffer instances.
+Buffer.prototype._isBuffer = true
+
+function swap (b, n, m) {
+  var i = b[n]
+  b[n] = b[m]
+  b[m] = i
+}
+
+Buffer.prototype.swap16 = function swap16 () {
+  var len = this.length
+  if (len % 2 !== 0) {
+    throw new RangeError('Buffer size must be a multiple of 16-bits')
+  }
+  for (var i = 0; i < len; i += 2) {
+    swap(this, i, i + 1)
+  }
+  return this
+}
+
+Buffer.prototype.swap32 = function swap32 () {
+  var len = this.length
+  if (len % 4 !== 0) {
+    throw new RangeError('Buffer size must be a multiple of 32-bits')
+  }
+  for (var i = 0; i < len; i += 4) {
+    swap(this, i, i + 3)
+    swap(this, i + 1, i + 2)
+  }
+  return this
+}
+
+Buffer.prototype.swap64 = function swap64 () {
+  var len = this.length
+  if (len % 8 !== 0) {
+    throw new RangeError('Buffer size must be a multiple of 64-bits')
+  }
+  for (var i = 0; i < len; i += 8) {
+    swap(this, i, i + 7)
+    swap(this, i + 1, i + 6)
+    swap(this, i + 2, i + 5)
+    swap(this, i + 3, i + 4)
+  }
+  return this
+}
+
+Buffer.prototype.toString = function toString () {
+  var length = this.length | 0
+  if (length === 0) return ''
+  if (arguments.length === 0) return utf8Slice(this, 0, length)
+  return slowToString.apply(this, arguments)
+}
+
+Buffer.prototype.equals = function equals (b) {
+  if (!Buffer.isBuffer(b)) throw new TypeError('Argument must be a Buffer')
+  if (this === b) return true
+  return Buffer.compare(this, b) === 0
+}
+
+Buffer.prototype.inspect = function inspect () {
+  var str = ''
+  var max = exports.INSPECT_MAX_BYTES
+  if (this.length > 0) {
+    str = this.toString('hex', 0, max).match(/.{2}/g).join(' ')
+    if (this.length > max) str += ' ... '
+  }
+  return '<Buffer ' + str + '>'
+}
+
+Buffer.prototype.compare = function compare (target, start, end, thisStart, thisEnd) {
+  if (!Buffer.isBuffer(target)) {
+    throw new TypeError('Argument must be a Buffer')
+  }
+
+  if (start === undefined) {
+    start = 0
+  }
+  if (end === undefined) {
+    end = target ? target.length : 0
+  }
+  if (thisStart === undefined) {
+    thisStart = 0
+  }
+  if (thisEnd === undefined) {
+    thisEnd = this.length
+  }
+
+  if (start < 0 || end > target.length || thisStart < 0 || thisEnd > this.length) {
+    throw new RangeError('out of range index')
+  }
+
+  if (thisStart >= thisEnd && start >= end) {
+    return 0
+  }
+  if (thisStart >= thisEnd) {
+    return -1
+  }
+  if (start >= end) {
+    return 1
+  }
+
+  start >>>= 0
+  end >>>= 0
+  thisStart >>>= 0
+  thisEnd >>>= 0
+
+  if (this === target) return 0
+
+  var x = thisEnd - thisStart
+  var y = end - start
+  var len = Math.min(x, y)
+
+  var thisCopy = this.slice(thisStart, thisEnd)
+  var targetCopy = target.slice(start, end)
+
+  for (var i = 0; i < len; ++i) {
+    if (thisCopy[i] !== targetCopy[i]) {
+      x = thisCopy[i]
+      y = targetCopy[i]
+      break
+    }
+  }
+
+  if (x < y) return -1
+  if (y < x) return 1
+  return 0
+}
+
+// Finds either the first index of `val` in `buffer` at offset >= `byteOffset`,
+// OR the last index of `val` in `buffer` at offset <= `byteOffset`.
+//
+// Arguments:
+// - buffer - a Buffer to search
+// - val - a string, Buffer, or number
+// - byteOffset - an index into `buffer`; will be clamped to an int32
+// - encoding - an optional encoding, relevant is val is a string
+// - dir - true for indexOf, false for lastIndexOf
+function bidirectionalIndexOf (buffer, val, byteOffset, encoding, dir) {
+  // Empty buffer means no match
+  if (buffer.length === 0) return -1
+
+  // Normalize byteOffset
+  if (typeof byteOffset === 'string') {
+    encoding = byteOffset
+    byteOffset = 0
+  } else if (byteOffset > 0x7fffffff) {
+    byteOffset = 0x7fffffff
+  } else if (byteOffset < -0x80000000) {
+    byteOffset = -0x80000000
+  }
+  byteOffset = +byteOffset  // Coerce to Number.
+  if (isNaN(byteOffset)) {
+    // byteOffset: it it's undefined, null, NaN, "foo", etc, search whole buffer
+    byteOffset = dir ? 0 : (buffer.length - 1)
+  }
+
+  // Normalize byteOffset: negative offsets start from the end of the buffer
+  if (byteOffset < 0) byteOffset = buffer.length + byteOffset
+  if (byteOffset >= buffer.length) {
+    if (dir) return -1
+    else byteOffset = buffer.length - 1
+  } else if (byteOffset < 0) {
+    if (dir) byteOffset = 0
+    else return -1
+  }
+
+  // Normalize val
+  if (typeof val === 'string') {
+    val = Buffer.from(val, encoding)
+  }
+
+  // Finally, search either indexOf (if dir is true) or lastIndexOf
+  if (Buffer.isBuffer(val)) {
+    // Special case: looking for empty string/buffer always fails
+    if (val.length === 0) {
+      return -1
+    }
+    return arrayIndexOf(buffer, val, byteOffset, encoding, dir)
+  } else if (typeof val === 'number') {
+    val = val & 0xFF // Search for a byte value [0-255]
+    if (Buffer.TYPED_ARRAY_SUPPORT &&
+        typeof Uint8Array.prototype.indexOf === 'function') {
+      if (dir) {
+        return Uint8Array.prototype.indexOf.call(buffer, val, byteOffset)
+      } else {
+        return Uint8Array.prototype.lastIndexOf.call(buffer, val, byteOffset)
+      }
+    }
+    return arrayIndexOf(buffer, [ val ], byteOffset, encoding, dir)
+  }
+
+  throw new TypeError('val must be string, number or Buffer')
+}
+
+function arrayIndexOf (arr, val, byteOffset, encoding, dir) {
+  var indexSize = 1
+  var arrLength = arr.length
+  var valLength = val.length
+
+  if (encoding !== undefined) {
+    encoding = String(encoding).toLowerCase()
+    if (encoding === 'ucs2' || encoding === 'ucs-2' ||
+        encoding === 'utf16le' || encoding === 'utf-16le') {
+      if (arr.length < 2 || val.length < 2) {
+        return -1
+      }
+      indexSize = 2
+      arrLength /= 2
+      valLength /= 2
+      byteOffset /= 2
+    }
+  }
+
+  function read (buf, i) {
+    if (indexSize === 1) {
+      return buf[i]
+    } else {
+      return buf.readUInt16BE(i * indexSize)
+    }
+  }
+
+  var i
+  if (dir) {
+    var foundIndex = -1
+    for (i = byteOffset; i < arrLength; i++) {
+      if (read(arr, i) === read(val, foundIndex === -1 ? 0 : i - foundIndex)) {
+        if (foundIndex === -1) foundIndex = i
+        if (i - foundIndex + 1 === valLength) return foundIndex * indexSize
+      } else {
+        if (foundIndex !== -1) i -= i - foundIndex
+        foundIndex = -1
+      }
+    }
+  } else {
+    if (byteOffset + valLength > arrLength) byteOffset = arrLength - valLength
+    for (i = byteOffset; i >= 0; i--) {
+      var found = true
+      for (var j = 0; j < valLength; j++) {
+        if (read(arr, i + j) !== read(val, j)) {
+          found = false
+          break
+        }
+      }
+      if (found) return i
+    }
+  }
+
+  return -1
+}
+
+Buffer.prototype.includes = function includes (val, byteOffset, encoding) {
+  return this.indexOf(val, byteOffset, encoding) !== -1
+}
+
+Buffer.prototype.indexOf = function indexOf (val, byteOffset, encoding) {
+  return bidirectionalIndexOf(this, val, byteOffset, encoding, true)
+}
+
+Buffer.prototype.lastIndexOf = function lastIndexOf (val, byteOffset, encoding) {
+  return bidirectionalIndexOf(this, val, byteOffset, encoding, false)
+}
+
+function hexWrite (buf, string, offset, length) {
+  offset = Number(offset) || 0
+  var remaining = buf.length - offset
+  if (!length) {
+    length = remaining
+  } else {
+    length = Number(length)
+    if (length > remaining) {
+      length = remaining
+    }
+  }
+
+  // must be an even number of digits
+  var strLen = string.length
+  if (strLen % 2 !== 0) throw new TypeError('Invalid hex string')
+
+  if (length > strLen / 2) {
+    length = strLen / 2
+  }
+  for (var i = 0; i < length; ++i) {
+    var parsed = parseInt(string.substr(i * 2, 2), 16)
+    if (isNaN(parsed)) return i
+    buf[offset + i] = parsed
+  }
+  return i
+}
+
+function utf8Write (buf, string, offset, length) {
+  return blitBuffer(utf8ToBytes(string, buf.length - offset), buf, offset, length)
+}
+
+function asciiWrite (buf, string, offset, length) {
+  return blitBuffer(asciiToBytes(string), buf, offset, length)
+}
+
+function latin1Write (buf, string, offset, length) {
+  return asciiWrite(buf, string, offset, length)
+}
+
+function base64Write (buf, string, offset, length) {
+  return blitBuffer(base64ToBytes(string), buf, offset, length)
+}
+
+function ucs2Write (buf, string, offset, length) {
+  return blitBuffer(utf16leToBytes(string, buf.length - offset), buf, offset, length)
+}
+
+Buffer.prototype.write = function write (string, offset, length, encoding) {
+  // Buffer#write(string)
+  if (offset === undefined) {
+    encoding = 'utf8'
+    length = this.length
+    offset = 0
+  // Buffer#write(string, encoding)
+  } else if (length === undefined && typeof offset === 'string') {
+    encoding = offset
+    length = this.length
+    offset = 0
+  // Buffer#write(string, offset[, length][, encoding])
+  } else if (isFinite(offset)) {
+    offset = offset | 0
+    if (isFinite(length)) {
+      length = length | 0
+      if (encoding === undefined) encoding = 'utf8'
+    } else {
+      encoding = length
+      length = undefined
+    }
+  // legacy write(string, encoding, offset, length) - remove in v0.13
+  } else {
+    throw new Error(
+      'Buffer.write(string, encoding, offset[, length]) is no longer supported'
+    )
+  }
+
+  var remaining = this.length - offset
+  if (length === undefined || length > remaining) length = remaining
+
+  if ((string.length > 0 && (length < 0 || offset < 0)) || offset > this.length) {
+    throw new RangeError('Attempt to write outside buffer bounds')
+  }
+
+  if (!encoding) encoding = 'utf8'
+
+  var loweredCase = false
+  for (;;) {
+    switch (encoding) {
+      case 'hex':
+        return hexWrite(this, string, offset, length)
+
+      case 'utf8':
+      case 'utf-8':
+        return utf8Write(this, string, offset, length)
+
+      case 'ascii':
+        return asciiWrite(this, string, offset, length)
+
+      case 'latin1':
+      case 'binary':
+        return latin1Write(this, string, offset, length)
+
+      case 'base64':
+        // Warning: maxLength not taken into account in base64Write
+        return base64Write(this, string, offset, length)
+
+      case 'ucs2':
+      case 'ucs-2':
+      case 'utf16le':
+      case 'utf-16le':
+        return ucs2Write(this, string, offset, length)
+
+      default:
+        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding)
+        encoding = ('' + encoding).toLowerCase()
+        loweredCase = true
+    }
+  }
+}
+
+Buffer.prototype.toJSON = function toJSON () {
+  return {
+    type: 'Buffer',
+    data: Array.prototype.slice.call(this._arr || this, 0)
+  }
+}
+
+function base64Slice (buf, start, end) {
+  if (start === 0 && end === buf.length) {
+    return base64.fromByteArray(buf)
+  } else {
+    return base64.fromByteArray(buf.slice(start, end))
+  }
+}
+
+function utf8Slice (buf, start, end) {
+  end = Math.min(buf.length, end)
+  var res = []
+
+  var i = start
+  while (i < end) {
+    var firstByte = buf[i]
+    var codePoint = null
+    var bytesPerSequence = (firstByte > 0xEF) ? 4
+      : (firstByte > 0xDF) ? 3
+      : (firstByte > 0xBF) ? 2
+      : 1
+
+    if (i + bytesPerSequence <= end) {
+      var secondByte, thirdByte, fourthByte, tempCodePoint
+
+      switch (bytesPerSequence) {
+        case 1:
+          if (firstByte < 0x80) {
+            codePoint = firstByte
+          }
+          break
+        case 2:
+          secondByte = buf[i + 1]
+          if ((secondByte & 0xC0) === 0x80) {
+            tempCodePoint = (firstByte & 0x1F) << 0x6 | (secondByte & 0x3F)
+            if (tempCodePoint > 0x7F) {
+              codePoint = tempCodePoint
+            }
+          }
+          break
+        case 3:
+          secondByte = buf[i + 1]
+          thirdByte = buf[i + 2]
+          if ((secondByte & 0xC0) === 0x80 && (thirdByte & 0xC0) === 0x80) {
+            tempCodePoint = (firstByte & 0xF) << 0xC | (secondByte & 0x3F) << 0x6 | (thirdByte & 0x3F)
+            if (tempCodePoint > 0x7FF && (tempCodePoint < 0xD800 || tempCodePoint > 0xDFFF)) {
+              codePoint = tempCodePoint
+            }
+          }
+          break
+        case 4:
+          secondByte = buf[i + 1]
+          thirdByte = buf[i + 2]
+          fourthByte = buf[i + 3]
+          if ((secondByte & 0xC0) === 0x80 && (thirdByte & 0xC0) === 0x80 && (fourthByte & 0xC0) === 0x80) {
+            tempCodePoint = (firstByte & 0xF) << 0x12 | (secondByte & 0x3F) << 0xC | (thirdByte & 0x3F) << 0x6 | (fourthByte & 0x3F)
+            if (tempCodePoint > 0xFFFF && tempCodePoint < 0x110000) {
+              codePoint = tempCodePoint
+            }
+          }
+      }
+    }
+
+    if (codePoint === null) {
+      // we did not generate a valid codePoint so insert a
+      // replacement char (U+FFFD) and advance only 1 byte
+      codePoint = 0xFFFD
+      bytesPerSequence = 1
+    } else if (codePoint > 0xFFFF) {
+      // encode to utf16 (surrogate pair dance)
+      codePoint -= 0x10000
+      res.push(codePoint >>> 10 & 0x3FF | 0xD800)
+      codePoint = 0xDC00 | codePoint & 0x3FF
+    }
+
+    res.push(codePoint)
+    i += bytesPerSequence
+  }
+
+  return decodeCodePointsArray(res)
+}
+
+// Based on http://stackoverflow.com/a/22747272/680742, the browser with
+// the lowest limit is Chrome, with 0x10000 args.
+// We go 1 magnitude less, for safety
+var MAX_ARGUMENTS_LENGTH = 0x1000
+
+function decodeCodePointsArray (codePoints) {
+  var len = codePoints.length
+  if (len <= MAX_ARGUMENTS_LENGTH) {
+    return String.fromCharCode.apply(String, codePoints) // avoid extra slice()
+  }
+
+  // Decode in chunks to avoid "call stack size exceeded".
+  var res = ''
+  var i = 0
+  while (i < len) {
+    res += String.fromCharCode.apply(
+      String,
+      codePoints.slice(i, i += MAX_ARGUMENTS_LENGTH)
+    )
+  }
+  return res
+}
+
+function asciiSlice (buf, start, end) {
+  var ret = ''
+  end = Math.min(buf.length, end)
+
+  for (var i = start; i < end; ++i) {
+    ret += String.fromCharCode(buf[i] & 0x7F)
+  }
+  return ret
+}
+
+function latin1Slice (buf, start, end) {
+  var ret = ''
+  end = Math.min(buf.length, end)
+
+  for (var i = start; i < end; ++i) {
+    ret += String.fromCharCode(buf[i])
+  }
+  return ret
+}
+
+function hexSlice (buf, start, end) {
+  var len = buf.length
+
+  if (!start || start < 0) start = 0
+  if (!end || end < 0 || end > len) end = len
+
+  var out = ''
+  for (var i = start; i < end; ++i) {
+    out += toHex(buf[i])
+  }
+  return out
+}
+
+function utf16leSlice (buf, start, end) {
+  var bytes = buf.slice(start, end)
+  var res = ''
+  for (var i = 0; i < bytes.length; i += 2) {
+    res += String.fromCharCode(bytes[i] + bytes[i + 1] * 256)
+  }
+  return res
+}
+
+Buffer.prototype.slice = function slice (start, end) {
+  var len = this.length
+  start = ~~start
+  end = end === undefined ? len : ~~end
+
+  if (start < 0) {
+    start += len
+    if (start < 0) start = 0
+  } else if (start > len) {
+    start = len
+  }
+
+  if (end < 0) {
+    end += len
+    if (end < 0) end = 0
+  } else if (end > len) {
+    end = len
+  }
+
+  if (end < start) end = start
+
+  var newBuf
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    newBuf = this.subarray(start, end)
+    newBuf.__proto__ = Buffer.prototype
+  } else {
+    var sliceLen = end - start
+    newBuf = new Buffer(sliceLen, undefined)
+    for (var i = 0; i < sliceLen; ++i) {
+      newBuf[i] = this[i + start]
+    }
+  }
+
+  return newBuf
+}
+
+/*
+ * Need to make sure that buffer isn't trying to write out of bounds.
+ */
+function checkOffset (offset, ext, length) {
+  if ((offset % 1) !== 0 || offset < 0) throw new RangeError('offset is not uint')
+  if (offset + ext > length) throw new RangeError('Trying to access beyond buffer length')
+}
+
+Buffer.prototype.readUIntLE = function readUIntLE (offset, byteLength, noAssert) {
+  offset = offset | 0
+  byteLength = byteLength | 0
+  if (!noAssert) checkOffset(offset, byteLength, this.length)
+
+  var val = this[offset]
+  var mul = 1
+  var i = 0
+  while (++i < byteLength && (mul *= 0x100)) {
+    val += this[offset + i] * mul
+  }
+
+  return val
+}
+
+Buffer.prototype.readUIntBE = function readUIntBE (offset, byteLength, noAssert) {
+  offset = offset | 0
+  byteLength = byteLength | 0
+  if (!noAssert) {
+    checkOffset(offset, byteLength, this.length)
+  }
+
+  var val = this[offset + --byteLength]
+  var mul = 1
+  while (byteLength > 0 && (mul *= 0x100)) {
+    val += this[offset + --byteLength] * mul
+  }
+
+  return val
+}
+
+Buffer.prototype.readUInt8 = function readUInt8 (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 1, this.length)
+  return this[offset]
+}
+
+Buffer.prototype.readUInt16LE = function readUInt16LE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 2, this.length)
+  return this[offset] | (this[offset + 1] << 8)
+}
+
+Buffer.prototype.readUInt16BE = function readUInt16BE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 2, this.length)
+  return (this[offset] << 8) | this[offset + 1]
+}
+
+Buffer.prototype.readUInt32LE = function readUInt32LE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 4, this.length)
+
+  return ((this[offset]) |
+      (this[offset + 1] << 8) |
+      (this[offset + 2] << 16)) +
+      (this[offset + 3] * 0x1000000)
+}
+
+Buffer.prototype.readUInt32BE = function readUInt32BE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 4, this.length)
+
+  return (this[offset] * 0x1000000) +
+    ((this[offset + 1] << 16) |
+    (this[offset + 2] << 8) |
+    this[offset + 3])
+}
+
+Buffer.prototype.readIntLE = function readIntLE (offset, byteLength, noAssert) {
+  offset = offset | 0
+  byteLength = byteLength | 0
+  if (!noAssert) checkOffset(offset, byteLength, this.length)
+
+  var val = this[offset]
+  var mul = 1
+  var i = 0
+  while (++i < byteLength && (mul *= 0x100)) {
+    val += this[offset + i] * mul
+  }
+  mul *= 0x80
+
+  if (val >= mul) val -= Math.pow(2, 8 * byteLength)
+
+  return val
+}
+
+Buffer.prototype.readIntBE = function readIntBE (offset, byteLength, noAssert) {
+  offset = offset | 0
+  byteLength = byteLength | 0
+  if (!noAssert) checkOffset(offset, byteLength, this.length)
+
+  var i = byteLength
+  var mul = 1
+  var val = this[offset + --i]
+  while (i > 0 && (mul *= 0x100)) {
+    val += this[offset + --i] * mul
+  }
+  mul *= 0x80
+
+  if (val >= mul) val -= Math.pow(2, 8 * byteLength)
+
+  return val
+}
+
+Buffer.prototype.readInt8 = function readInt8 (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 1, this.length)
+  if (!(this[offset] & 0x80)) return (this[offset])
+  return ((0xff - this[offset] + 1) * -1)
+}
+
+Buffer.prototype.readInt16LE = function readInt16LE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 2, this.length)
+  var val = this[offset] | (this[offset + 1] << 8)
+  return (val & 0x8000) ? val | 0xFFFF0000 : val
+}
+
+Buffer.prototype.readInt16BE = function readInt16BE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 2, this.length)
+  var val = this[offset + 1] | (this[offset] << 8)
+  return (val & 0x8000) ? val | 0xFFFF0000 : val
+}
+
+Buffer.prototype.readInt32LE = function readInt32LE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 4, this.length)
+
+  return (this[offset]) |
+    (this[offset + 1] << 8) |
+    (this[offset + 2] << 16) |
+    (this[offset + 3] << 24)
+}
+
+Buffer.prototype.readInt32BE = function readInt32BE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 4, this.length)
+
+  return (this[offset] << 24) |
+    (this[offset + 1] << 16) |
+    (this[offset + 2] << 8) |
+    (this[offset + 3])
+}
+
+Buffer.prototype.readFloatLE = function readFloatLE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 4, this.length)
+  return ieee754.read(this, offset, true, 23, 4)
+}
+
+Buffer.prototype.readFloatBE = function readFloatBE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 4, this.length)
+  return ieee754.read(this, offset, false, 23, 4)
+}
+
+Buffer.prototype.readDoubleLE = function readDoubleLE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 8, this.length)
+  return ieee754.read(this, offset, true, 52, 8)
+}
+
+Buffer.prototype.readDoubleBE = function readDoubleBE (offset, noAssert) {
+  if (!noAssert) checkOffset(offset, 8, this.length)
+  return ieee754.read(this, offset, false, 52, 8)
+}
+
+function checkInt (buf, value, offset, ext, max, min) {
+  if (!Buffer.isBuffer(buf)) throw new TypeError('"buffer" argument must be a Buffer instance')
+  if (value > max || value < min) throw new RangeError('"value" argument is out of bounds')
+  if (offset + ext > buf.length) throw new RangeError('Index out of range')
+}
+
+Buffer.prototype.writeUIntLE = function writeUIntLE (value, offset, byteLength, noAssert) {
+  value = +value
+  offset = offset | 0
+  byteLength = byteLength | 0
+  if (!noAssert) {
+    var maxBytes = Math.pow(2, 8 * byteLength) - 1
+    checkInt(this, value, offset, byteLength, maxBytes, 0)
+  }
+
+  var mul = 1
+  var i = 0
+  this[offset] = value & 0xFF
+  while (++i < byteLength && (mul *= 0x100)) {
+    this[offset + i] = (value / mul) & 0xFF
+  }
+
+  return offset + byteLength
+}
+
+Buffer.prototype.writeUIntBE = function writeUIntBE (value, offset, byteLength, noAssert) {
+  value = +value
+  offset = offset | 0
+  byteLength = byteLength | 0
+  if (!noAssert) {
+    var maxBytes = Math.pow(2, 8 * byteLength) - 1
+    checkInt(this, value, offset, byteLength, maxBytes, 0)
+  }
+
+  var i = byteLength - 1
+  var mul = 1
+  this[offset + i] = value & 0xFF
+  while (--i >= 0 && (mul *= 0x100)) {
+    this[offset + i] = (value / mul) & 0xFF
+  }
+
+  return offset + byteLength
+}
+
+Buffer.prototype.writeUInt8 = function writeUInt8 (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 1, 0xff, 0)
+  if (!Buffer.TYPED_ARRAY_SUPPORT) value = Math.floor(value)
+  this[offset] = (value & 0xff)
+  return offset + 1
+}
+
+function objectWriteUInt16 (buf, value, offset, littleEndian) {
+  if (value < 0) value = 0xffff + value + 1
+  for (var i = 0, j = Math.min(buf.length - offset, 2); i < j; ++i) {
+    buf[offset + i] = (value & (0xff << (8 * (littleEndian ? i : 1 - i)))) >>>
+      (littleEndian ? i : 1 - i) * 8
+  }
+}
+
+Buffer.prototype.writeUInt16LE = function writeUInt16LE (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 2, 0xffff, 0)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = (value & 0xff)
+    this[offset + 1] = (value >>> 8)
+  } else {
+    objectWriteUInt16(this, value, offset, true)
+  }
+  return offset + 2
+}
+
+Buffer.prototype.writeUInt16BE = function writeUInt16BE (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 2, 0xffff, 0)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = (value >>> 8)
+    this[offset + 1] = (value & 0xff)
+  } else {
+    objectWriteUInt16(this, value, offset, false)
+  }
+  return offset + 2
+}
+
+function objectWriteUInt32 (buf, value, offset, littleEndian) {
+  if (value < 0) value = 0xffffffff + value + 1
+  for (var i = 0, j = Math.min(buf.length - offset, 4); i < j; ++i) {
+    buf[offset + i] = (value >>> (littleEndian ? i : 3 - i) * 8) & 0xff
+  }
+}
+
+Buffer.prototype.writeUInt32LE = function writeUInt32LE (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 4, 0xffffffff, 0)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset + 3] = (value >>> 24)
+    this[offset + 2] = (value >>> 16)
+    this[offset + 1] = (value >>> 8)
+    this[offset] = (value & 0xff)
+  } else {
+    objectWriteUInt32(this, value, offset, true)
+  }
+  return offset + 4
+}
+
+Buffer.prototype.writeUInt32BE = function writeUInt32BE (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 4, 0xffffffff, 0)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = (value >>> 24)
+    this[offset + 1] = (value >>> 16)
+    this[offset + 2] = (value >>> 8)
+    this[offset + 3] = (value & 0xff)
+  } else {
+    objectWriteUInt32(this, value, offset, false)
+  }
+  return offset + 4
+}
+
+Buffer.prototype.writeIntLE = function writeIntLE (value, offset, byteLength, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) {
+    var limit = Math.pow(2, 8 * byteLength - 1)
+
+    checkInt(this, value, offset, byteLength, limit - 1, -limit)
+  }
+
+  var i = 0
+  var mul = 1
+  var sub = 0
+  this[offset] = value & 0xFF
+  while (++i < byteLength && (mul *= 0x100)) {
+    if (value < 0 && sub === 0 && this[offset + i - 1] !== 0) {
+      sub = 1
+    }
+    this[offset + i] = ((value / mul) >> 0) - sub & 0xFF
+  }
+
+  return offset + byteLength
+}
+
+Buffer.prototype.writeIntBE = function writeIntBE (value, offset, byteLength, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) {
+    var limit = Math.pow(2, 8 * byteLength - 1)
+
+    checkInt(this, value, offset, byteLength, limit - 1, -limit)
+  }
+
+  var i = byteLength - 1
+  var mul = 1
+  var sub = 0
+  this[offset + i] = value & 0xFF
+  while (--i >= 0 && (mul *= 0x100)) {
+    if (value < 0 && sub === 0 && this[offset + i + 1] !== 0) {
+      sub = 1
+    }
+    this[offset + i] = ((value / mul) >> 0) - sub & 0xFF
+  }
+
+  return offset + byteLength
+}
+
+Buffer.prototype.writeInt8 = function writeInt8 (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 1, 0x7f, -0x80)
+  if (!Buffer.TYPED_ARRAY_SUPPORT) value = Math.floor(value)
+  if (value < 0) value = 0xff + value + 1
+  this[offset] = (value & 0xff)
+  return offset + 1
+}
+
+Buffer.prototype.writeInt16LE = function writeInt16LE (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 2, 0x7fff, -0x8000)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = (value & 0xff)
+    this[offset + 1] = (value >>> 8)
+  } else {
+    objectWriteUInt16(this, value, offset, true)
+  }
+  return offset + 2
+}
+
+Buffer.prototype.writeInt16BE = function writeInt16BE (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 2, 0x7fff, -0x8000)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = (value >>> 8)
+    this[offset + 1] = (value & 0xff)
+  } else {
+    objectWriteUInt16(this, value, offset, false)
+  }
+  return offset + 2
+}
+
+Buffer.prototype.writeInt32LE = function writeInt32LE (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = (value & 0xff)
+    this[offset + 1] = (value >>> 8)
+    this[offset + 2] = (value >>> 16)
+    this[offset + 3] = (value >>> 24)
+  } else {
+    objectWriteUInt32(this, value, offset, true)
+  }
+  return offset + 4
+}
+
+Buffer.prototype.writeInt32BE = function writeInt32BE (value, offset, noAssert) {
+  value = +value
+  offset = offset | 0
+  if (!noAssert) checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000)
+  if (value < 0) value = 0xffffffff + value + 1
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = (value >>> 24)
+    this[offset + 1] = (value >>> 16)
+    this[offset + 2] = (value >>> 8)
+    this[offset + 3] = (value & 0xff)
+  } else {
+    objectWriteUInt32(this, value, offset, false)
+  }
+  return offset + 4
+}
+
+function checkIEEE754 (buf, value, offset, ext, max, min) {
+  if (offset + ext > buf.length) throw new RangeError('Index out of range')
+  if (offset < 0) throw new RangeError('Index out of range')
+}
+
+function writeFloat (buf, value, offset, littleEndian, noAssert) {
+  if (!noAssert) {
+    checkIEEE754(buf, value, offset, 4, 3.4028234663852886e+38, -3.4028234663852886e+38)
+  }
+  ieee754.write(buf, value, offset, littleEndian, 23, 4)
+  return offset + 4
+}
+
+Buffer.prototype.writeFloatLE = function writeFloatLE (value, offset, noAssert) {
+  return writeFloat(this, value, offset, true, noAssert)
+}
+
+Buffer.prototype.writeFloatBE = function writeFloatBE (value, offset, noAssert) {
+  return writeFloat(this, value, offset, false, noAssert)
+}
+
+function writeDouble (buf, value, offset, littleEndian, noAssert) {
+  if (!noAssert) {
+    checkIEEE754(buf, value, offset, 8, 1.7976931348623157E+308, -1.7976931348623157E+308)
+  }
+  ieee754.write(buf, value, offset, littleEndian, 52, 8)
+  return offset + 8
+}
+
+Buffer.prototype.writeDoubleLE = function writeDoubleLE (value, offset, noAssert) {
+  return writeDouble(this, value, offset, true, noAssert)
+}
+
+Buffer.prototype.writeDoubleBE = function writeDoubleBE (value, offset, noAssert) {
+  return writeDouble(this, value, offset, false, noAssert)
+}
+
+// copy(targetBuffer, targetStart=0, sourceStart=0, sourceEnd=buffer.length)
+Buffer.prototype.copy = function copy (target, targetStart, start, end) {
+  if (!start) start = 0
+  if (!end && end !== 0) end = this.length
+  if (targetStart >= target.length) targetStart = target.length
+  if (!targetStart) targetStart = 0
+  if (end > 0 && end < start) end = start
+
+  // Copy 0 bytes; we're done
+  if (end === start) return 0
+  if (target.length === 0 || this.length === 0) return 0
+
+  // Fatal error conditions
+  if (targetStart < 0) {
+    throw new RangeError('targetStart out of bounds')
+  }
+  if (start < 0 || start >= this.length) throw new RangeError('sourceStart out of bounds')
+  if (end < 0) throw new RangeError('sourceEnd out of bounds')
+
+  // Are we oob?
+  if (end > this.length) end = this.length
+  if (target.length - targetStart < end - start) {
+    end = target.length - targetStart + start
+  }
+
+  var len = end - start
+  var i
+
+  if (this === target && start < targetStart && targetStart < end) {
+    // descending copy from end
+    for (i = len - 1; i >= 0; --i) {
+      target[i + targetStart] = this[i + start]
+    }
+  } else if (len < 1000 || !Buffer.TYPED_ARRAY_SUPPORT) {
+    // ascending copy from start
+    for (i = 0; i < len; ++i) {
+      target[i + targetStart] = this[i + start]
+    }
+  } else {
+    Uint8Array.prototype.set.call(
+      target,
+      this.subarray(start, start + len),
+      targetStart
+    )
+  }
+
+  return len
+}
+
+// Usage:
+//    buffer.fill(number[, offset[, end]])
+//    buffer.fill(buffer[, offset[, end]])
+//    buffer.fill(string[, offset[, end]][, encoding])
+Buffer.prototype.fill = function fill (val, start, end, encoding) {
+  // Handle string cases:
+  if (typeof val === 'string') {
+    if (typeof start === 'string') {
+      encoding = start
+      start = 0
+      end = this.length
+    } else if (typeof end === 'string') {
+      encoding = end
+      end = this.length
+    }
+    if (val.length === 1) {
+      var code = val.charCodeAt(0)
+      if (code < 256) {
+        val = code
+      }
+    }
+    if (encoding !== undefined && typeof encoding !== 'string') {
+      throw new TypeError('encoding must be a string')
+    }
+    if (typeof encoding === 'string' && !Buffer.isEncoding(encoding)) {
+      throw new TypeError('Unknown encoding: ' + encoding)
+    }
+  } else if (typeof val === 'number') {
+    val = val & 255
+  }
+
+  // Invalid ranges are not set to a default, so can range check early.
+  if (start < 0 || this.length < start || this.length < end) {
+    throw new RangeError('Out of range index')
+  }
+
+  if (end <= start) {
+    return this
+  }
+
+  start = start >>> 0
+  end = end === undefined ? this.length : end >>> 0
+
+  if (!val) val = 0
+
+  var i
+  if (typeof val === 'number') {
+    for (i = start; i < end; ++i) {
+      this[i] = val
+    }
+  } else {
+    var bytes = Buffer.isBuffer(val)
+      ? val
+      : utf8ToBytes(new Buffer(val, encoding).toString())
+    var len = bytes.length
+    for (i = 0; i < end - start; ++i) {
+      this[i + start] = bytes[i % len]
+    }
+  }
+
+  return this
+}
+
+// HELPER FUNCTIONS
+// ================
+
+var INVALID_BASE64_RE = /[^+\/0-9A-Za-z-_]/g
+
+function base64clean (str) {
+  // Node strips out invalid characters like \n and \t from the string, base64-js does not
+  str = stringtrim(str).replace(INVALID_BASE64_RE, '')
+  // Node converts strings with length < 2 to ''
+  if (str.length < 2) return ''
+  // Node allows for non-padded base64 strings (missing trailing ===), base64-js does not
+  while (str.length % 4 !== 0) {
+    str = str + '='
+  }
+  return str
+}
+
+function stringtrim (str) {
+  if (str.trim) return str.trim()
+  return str.replace(/^\s+|\s+$/g, '')
+}
+
+function toHex (n) {
+  if (n < 16) return '0' + n.toString(16)
+  return n.toString(16)
+}
+
+function utf8ToBytes (string, units) {
+  units = units || Infinity
+  var codePoint
+  var length = string.length
+  var leadSurrogate = null
+  var bytes = []
+
+  for (var i = 0; i < length; ++i) {
+    codePoint = string.charCodeAt(i)
+
+    // is surrogate component
+    if (codePoint > 0xD7FF && codePoint < 0xE000) {
+      // last char was a lead
+      if (!leadSurrogate) {
+        // no lead yet
+        if (codePoint > 0xDBFF) {
+          // unexpected trail
+          if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+          continue
+        } else if (i + 1 === length) {
+          // unpaired lead
+          if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+          continue
+        }
+
+        // valid lead
+        leadSurrogate = codePoint
+
+        continue
+      }
+
+      // 2 leads in a row
+      if (codePoint < 0xDC00) {
+        if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+        leadSurrogate = codePoint
+        continue
+      }
+
+      // valid surrogate pair
+      codePoint = (leadSurrogate - 0xD800 << 10 | codePoint - 0xDC00) + 0x10000
+    } else if (leadSurrogate) {
+      // valid bmp char, but last char was a lead
+      if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+    }
+
+    leadSurrogate = null
+
+    // encode utf8
+    if (codePoint < 0x80) {
+      if ((units -= 1) < 0) break
+      bytes.push(codePoint)
+    } else if (codePoint < 0x800) {
+      if ((units -= 2) < 0) break
+      bytes.push(
+        codePoint >> 0x6 | 0xC0,
+        codePoint & 0x3F | 0x80
+      )
+    } else if (codePoint < 0x10000) {
+      if ((units -= 3) < 0) break
+      bytes.push(
+        codePoint >> 0xC | 0xE0,
+        codePoint >> 0x6 & 0x3F | 0x80,
+        codePoint & 0x3F | 0x80
+      )
+    } else if (codePoint < 0x110000) {
+      if ((units -= 4) < 0) break
+      bytes.push(
+        codePoint >> 0x12 | 0xF0,
+        codePoint >> 0xC & 0x3F | 0x80,
+        codePoint >> 0x6 & 0x3F | 0x80,
+        codePoint & 0x3F | 0x80
+      )
+    } else {
+      throw new Error('Invalid code point')
+    }
+  }
+
+  return bytes
+}
+
+function asciiToBytes (str) {
+  var byteArray = []
+  for (var i = 0; i < str.length; ++i) {
+    // Node's code seems to be doing this and not & 0x7F..
+    byteArray.push(str.charCodeAt(i) & 0xFF)
+  }
+  return byteArray
+}
+
+function utf16leToBytes (str, units) {
+  var c, hi, lo
+  var byteArray = []
+  for (var i = 0; i < str.length; ++i) {
+    if ((units -= 2) < 0) break
+
+    c = str.charCodeAt(i)
+    hi = c >> 8
+    lo = c % 256
+    byteArray.push(lo)
+    byteArray.push(hi)
+  }
+
+  return byteArray
+}
+
+function base64ToBytes (str) {
+  return base64.toByteArray(base64clean(str))
+}
+
+function blitBuffer (src, dst, offset, length) {
+  for (var i = 0; i < length; ++i) {
+    if ((i + offset >= dst.length) || (i >= src.length)) break
+    dst[i + offset] = src[i]
+  }
+  return i
+}
+
+function isnan (val) {
+  return val !== val // eslint-disable-line no-self-compare
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(28)))
+
+/***/ }),
+
+/***/ 748:
+/***/ (function(module, exports) {
+
+var toString = {}.toString;
+
+module.exports = Array.isArray || function (arr) {
+  return toString.call(arr) == '[object Array]';
+};
+
+
+/***/ }),
+
+/***/ 749:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * array-unique <https://github.com/jonschlinkert/array-unique>
+ *
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+
+
+module.exports = function unique(arr) {
+  if (!Array.isArray(arr)) {
+    throw new TypeError('array-unique expects an array.');
+  }
+
+  var len = arr.length;
+  var i = -1;
+
+  while (i++ < len) {
+    var j = i + 1;
+
+    for (; j < arr.length; ++j) {
+      if (arr[i] === arr[j]) {
+        arr.splice(j--, 1);
+      }
+    }
+  }
+  return arr;
+};
+
+
+/***/ }),
+
+/***/ 750:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * repeat-element <https://github.com/jonschlinkert/repeat-element>
+ *
+ * Copyright (c) 2015-present, Jon Schlinkert.
+ * Licensed under the MIT license.
+ */
+
+
+
+module.exports = function repeat(ele, num) {
+  var arr = new Array(num);
+
+  for (var i = 0; i < num; i++) {
+    arr[i] = ele;
+  }
+
+  return arr;
+};
+
+
+/***/ }),
+
+/***/ 751:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * for-own <https://github.com/jonschlinkert/for-own>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+
+
+var forIn = __webpack_require__(837);
+var hasOwn = Object.prototype.hasOwnProperty;
+
+module.exports = function forOwn(obj, fn, thisArg) {
+  forIn(obj, function(val, key) {
+    if (hasOwn.call(obj, key)) {
+      return fn.call(thisArg, obj[key], key, obj);
+    }
+  });
+};
+
+
+/***/ }),
+
+/***/ 752:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function (useVuex, source) {
+  var page = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+
+
+  var data = {
+    vuex: true,
+    activeState: false,
+    userColumnsDisplay: [],
+    userControlsColumns: false,
+    displayColumnsDropdown: false,
+    collapsedGroups: []
+  };
+
+  if (useVuex) return data;
+
+  data = (0, _merge2.default)(data, {
+    vuex: false,
+    count: 0,
+    customQueries: {},
+    query: null,
+    page: page,
+    limit: 10,
+    windowWidth: typeof window !== 'undefined' ? window.innerWidth : null,
+    orderBy: {
+      column: false,
+      ascending: true
+    }
+  });
+
+  if (source == 'server') data.data = [];
+
+  return data;
+};
+
+var _merge = __webpack_require__(730);
+
+var _merge2 = _interopRequireDefault(_merge);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+
+/***/ 753:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+  return {
+    id: makeId(),
+    allFilteredData: [],
+    openChildRows: [],
+    windowWidth: typeof window !== 'undefined' ? window.innerWidth : null,
+    userMultiSorting: {}
+  };
+};
+
+function makeId() {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < 5; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }return text;
+}
+
+/***/ }),
+
+/***/ 754:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var is_empty = __webpack_require__(899);
+
+var registerVuexModule = __webpack_require__(900);
+
+module.exports = function (self) {
+
+  if (self.vuex) {
+    registerVuexModule(self);
+  } else {
+    self.limit = self.opts.perPage;
+  }
+
+  if (is_empty(self.opts.columnsDisplay) || typeof window === 'undefined') return;
+
+  self.columnsDisplay = getColumnsDisplay(self.opts.columnsDisplay);
+
+  window.addEventListener('resize', function () {
+    self.windowWidth = window.innerWidth;
+  }.bind(self));
+};
+
+function getColumnsDisplay(columnsDisplay) {
+  var res = {};
+  var range;
+  var device;
+  var operator;
+
+  for (var column in columnsDisplay) {
+    operator = getOperator(columnsDisplay[column]);
+    try {
+      device = getDevice(columnsDisplay[column]);
+      range = getRange(device, operator);
+      res[column] = range.concat([operator]);
+    } catch (err) {
+      console.warn('Unknown device ' + device);
+    }
+  }
+
+  return res;
+}
+
+function getRange(device, operator) {
+
+  var devices = {
+    desktop: [1024, null],
+    tablet: [480, 1024],
+    mobile: [0, 480],
+    tabletL: [768, 1024],
+    tabletP: [480, 768],
+    mobileL: [320, 480],
+    mobileP: [0, 320]
+  };
+
+  switch (operator) {
+    case 'min':
+      return [devices[device][0], null];
+    case 'max':
+      return [0, devices[device][1]];
+    default:
+      return devices[device];
+  }
+}
+
+function getOperator(val) {
+
+  var pieces = val.split('_');
+
+  if (['not', 'min', 'max'].indexOf(pieces[0]) > -1) return pieces[0];
+
+  return false;
+}
+
+function getDevice(val) {
+  var pieces = val.split('_');
+  return pieces.length > 1 ? pieces[1] : pieces[0];
+}
+
+/***/ }),
+
+/***/ 755:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+module.exports = function (template, theme) {
+
+    var themes = {
+        bootstrap3: __webpack_require__(903)(),
+        bootstrap4: __webpack_require__(904)(),
+        bulma: __webpack_require__(905)()
+    };
+
+    var templates = {
+        default: __webpack_require__(906),
+        footerPagination: __webpack_require__(907)
+    };
+
+    return function (h) {
+
+        var modules = {
+            rows: __webpack_require__(908).call(this, h),
+            normalFilter: __webpack_require__(909).call(this, h),
+            dropdownPagination: __webpack_require__(910).call(this, h),
+            dropdownPaginationCount: __webpack_require__(911).call(this, h),
+            columnFilters: __webpack_require__(912).call(this, h),
+            pagination: __webpack_require__(916).call(this, h),
+            headings: __webpack_require__(917).call(this, h),
+            perPage: __webpack_require__(919).call(this, h),
+            columnsDropdown: __webpack_require__(920).call(this, h)
+        };
+
+        if (typeof template === 'string' && (!templates[template] || typeof templates[template] !== 'function')) {
+            throw 'vue-tables-2: Template "' + template + '" does not exist';
+        }
+
+        if (typeof theme === 'string' && (!themes[theme] || _typeof(themes[theme]) !== 'object')) {
+            throw 'vue-tables-2: Theme "' + theme + '" does not exist';
+        }
+
+        var tpl = typeof template === 'string' ? templates[template] : template;
+        var thm = typeof theme === 'string' ? themes[theme] : theme();
+        var slots = __webpack_require__(923).call(this);
+
+        return tpl.call(this, h, modules, thm, slots);
+    };
+};
+
+/***/ }),
+
+/***/ 756:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (h) {
+  var _this = this;
+
+  var perpageValues = [];
+
+  this.opts.perPageValues.every(function (value) {
+    var isLastEntry = value >= _this.count;
+    var selected = _this.limit == value || isLastEntry && _this.limit > value;
+    perpageValues.push(h(
+      "option",
+      {
+        domProps: {
+          "value": value,
+          "selected": selected
+        }
+      },
+      [value]
+    ));
+    return !isLastEntry;
+  });
+
+  return perpageValues;
+};
+
+/***/ }),
+
+/***/ 757:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+  return Math.ceil(this.count / this.limit);
+};
+
+/***/ }),
+
+/***/ 758:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var object_filled_keys_count = __webpack_require__(927);
+var is_valid_moment_object = __webpack_require__(746);
+var filterByCustomFilters = __webpack_require__(928);
+
+module.exports = function (data, e) {
+
+  if (e) {
+
+    var _query = this.query;
+
+    this.setPage(1, true);
+
+    var name = this.getName(e.target.name);
+    var value = _typeof(e.target.value) === 'object' ? e.target.value : '' + e.target.value;
+
+    if (name) {
+      _query[name] = value;
+    } else {
+      _query = value;
+    }
+
+    this.vuex ? this.commit('SET_FILTER', _query) : this.query = _query;
+
+    this.updateState('query', _query);
+
+    if (name) {
+      this.dispatch('filter', { name: name, value: value });
+      this.dispatch('filter::' + name, value);
+    } else {
+      this.dispatch('filter', value);
+    }
+  }
+
+  var query = this.query;
+
+  var totalQueries = !query ? 0 : 1;
+
+  if (!this.opts) return data;
+
+  if (this.opts.filterByColumn) {
+    totalQueries = object_filled_keys_count(query);
+  }
+
+  var value;
+  var found;
+  var currentQuery;
+  var dateFormat;
+  var filterByDate;
+  var isListFilter;
+
+  var data = filterByCustomFilters(data, this.opts.customFilters, this.customQueries);
+
+  if (!totalQueries) return data;
+
+  return data.filter(function (row, index) {
+
+    found = 0;
+
+    this.filterableColumns.forEach(function (column) {
+
+      filterByDate = this.opts.dateColumns.indexOf(column) > -1 && this.opts.filterByColumn;
+      isListFilter = this.isListFilter(column) && this.opts.filterByColumn;
+      dateFormat = this.dateFormat(column);
+
+      value = this._getValue(row, column);
+
+      if (is_valid_moment_object(value) && !filterByDate) {
+        value = value.format(dateFormat);
+      }
+
+      currentQuery = this.opts.filterByColumn ? query[column] : query;
+
+      currentQuery = setCurrentQuery(currentQuery);
+
+      if (currentQuery && foundMatch(currentQuery, value, isListFilter)) found++;
+    }.bind(this));
+
+    return found >= totalQueries;
+  }.bind(this));
+};
+
+function setCurrentQuery(query) {
+
+  if (!query) return '';
+
+  if (typeof query == 'string') return query.toLowerCase();
+
+  // Date Range
+
+  return query;
+}
+
+function foundMatch(query, value, isListFilter) {
+
+  if (['string', 'number', 'boolean'].indexOf(typeof value === 'undefined' ? 'undefined' : _typeof(value)) > -1) {
+    value = String(value).toLowerCase();
+  }
+
+  // List Filter
+  if (isListFilter) {
+    return value == query;
+  }
+
+  //Text Filter
+  if (typeof value === 'string') {
+    return value.indexOf(query) > -1;
+  }
+
+  // Date range
+
+  if (is_valid_moment_object(value)) {
+    var start = moment(query.start, 'YYYY-MM-DD HH:mm:ss');
+    var end = moment(query.end, 'YYYY-MM-DD HH:mm:ss');
+
+    return value >= start && value <= end;
+  }
+
+  if ((typeof value === 'undefined' ? 'undefined' : _typeof(value)) === 'object') {
+
+    for (var key in value) {
+      if (foundMatch(query, value[key])) return true;
+    }
+
+    return false;
+  }
+
+  return value >= start && value <= end;
+}
+
+/***/ }),
+
+/***/ 759:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(760)
+}
+var normalizeComponent = __webpack_require__(243)
+/* script */
+var __vue_script__ = __webpack_require__(762)
+/* template */
+var __vue_template__ = __webpack_require__(764)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-44d91495"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/components/plugins/DataTable/DataTable.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-44d91495", Component.options)
+  } else {
+    hotAPI.reload("data-v-44d91495", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 760:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(761);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(71)("3c2f0734", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-44d91495\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./DataTable.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-44d91495\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./DataTable.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 761:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(42)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.pagination[data-v-44d91495] {\n    margin-top: 12px;\n}\n.sortable[data-v-44d91495] {\n    cursor: pointer;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 762:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fuse_js__ = __webpack_require__(763);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fuse_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_fuse_js__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        title: {
+            default: ""
+        },
+        columns: {
+            required: true
+        },
+        rows: {
+            required: true
+        },
+        perPage: {
+            default: 10
+        },
+        sortable: {
+            default: true
+        },
+        paginate: {
+            default: true
+        },
+        exportable: {
+            default: true
+        },
+        pagelen: {
+            type: Array,
+            default: function _default() {
+                return [5, 10, 20, 50];
+            }
+        }
+    },
+
+    data: function data() {
+        return {
+            currentPage: 1,
+            currentPerPage: this.perPage,
+            sortColumn: -1,
+            sortType: 'asc',
+            searchInput: ''
+        };
+    },
+    mounted: function mounted() {
+        this.sort(0);
+    },
+
+    methods: {
+        nextPage: function nextPage() {
+            if (this.processedRows.length > this.currentPerPage * this.currentPage && this.currentPerPage != -1) ++this.currentPage;
+        },
+        previousPage: function previousPage() {
+            if (this.currentPage > 1) --this.currentPage;
+        },
+        sort: function sort(index) {
+            if (!this.sortable) {
+                return;
+            }
+            if (this.sortColumn === index) {
+                this.sortType = this.sortType === 'asc' ? 'desc' : 'asc';
+            } else {
+                this.sortType = 'asc';
+                this.sortColumn = index;
+            }
+        },
+        click: function click(row, index) {
+            this.$emit("rowClick", row, index);
+        },
+        exportExcel: function exportExcel() {
+            var mimeType = 'data:application/vnd.ms-excel';
+            var html = this.renderTable().replace(/ /g, '%20');
+
+            var d = new Date();
+
+            var dummy = document.createElement('a');
+            dummy.href = mimeType + ', ' + html;
+            dummy.download = this.title.toLowerCase().replace(/ /g, '-') + '-' + d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + '-' + d.getHours() + '-' + d.getMinutes() + '-' + d.getSeconds() + '.xls';
+            dummy.click();
+        },
+        renderTable: function renderTable() {
+            var table = '<table><thead>';
+
+            table += '<tr>';
+            for (var i = 0; i < this.columns.length; i++) {
+                var column = this.columns[i];
+                table += '<th>';
+                table += column.label;
+                table += '</th>';
+            }
+            table += '</tr>';
+
+            table += '</thead><tbody>';
+
+            for (var i = 0; i < this.rows.length; i++) {
+                var row = this.rows[i];
+                table += '<tr>';
+                for (var j = 0; j < this.columns.length; j++) {
+                    var _column = this.columns[j];
+                    table += '<td>';
+                    table += this.collect(row, _column.field);
+                    table += '</td>';
+                }
+                table += '</tr>';
+            }
+
+            table += '</tbody></table>';
+
+            return table;
+        },
+        dig: function dig(obj, selector) {
+            var result = obj;
+            var splitter = selector.split('.');
+            for (var i = 0; i < splitter.length; i++) {
+                if (typeof result === 'undefined') return undefined;else result = result[splitter[i]];
+            }return result;
+        },
+        collect: function collect(obj, field) {
+            if (typeof field === 'function') return field(obj);else if (typeof field === 'string') return this.dig(obj, field);else return undefined;
+        }
+    },
+
+    computed: {
+        processedRows: function processedRows() {
+            var _this = this;
+
+            var computedRows = this.rows;
+
+            if (this.sortable !== false) {
+                computedRows = computedRows.sort(function (x, y) {
+                    if (!_this.columns[_this.sortColumn]) {
+                        return 0;
+                    }
+
+                    var cook = function cook(x) {
+                        x = _this.collect(x, _this.columns[_this.sortColumn].field);
+                        if (typeof x === 'string') {
+                            x = x.toLowerCase();
+                            if (_this.columns[_this.sortColumn].numeric) x = x.indexOf('.') >= 0 ? parseFloat(x) : parseInt(x);
+                        }
+                        return x;
+                    };
+
+                    x = cook(x);
+                    y = cook(y);
+
+                    return (x < y ? -1 : x > y ? 1 : 0) * (_this.sortType === 'desc' ? -1 : 1);
+                });
+            }
+
+            if (this.searchInput) {
+                computedRows = new __WEBPACK_IMPORTED_MODULE_0_fuse_js___default.a(computedRows, {
+                    keys: this.columns.map(function (c) {
+                        return c.field;
+                    })
+                }).search(this.searchInput);
+            }
+            return computedRows;
+        },
+        paginated: function paginated() {
+            var paginatedRows = this.processedRows;
+            if (this.paginate && this.currentPerPage != -1) {
+                paginatedRows = paginatedRows.slice((this.currentPage - 1) * this.currentPerPage, this.currentPage * this.currentPerPage);
+            }
+            return paginatedRows;
+        }
+    },
+    watch: {
+        currentPerPage: function currentPerPage() {
+            this.currentPage = 1;
+            this.paginated;
+        },
+        searchInput: function searchInput() {
+            this.currentPage = 1;
+            this.paginated;
+        }
+    }
+});
+
+/***/ }),
+
+/***/ 763:
+/***/ (function(module, exports, __webpack_require__) {
+
+/*!
+ * Fuse.js v3.3.0 - Lightweight fuzzy-search (http://fusejs.io)
+ * 
+ * Copyright (c) 2012-2017 Kirollos Risk (http://kiro.me)
+ * All Rights Reserved. Apache Software License 2.0
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ */
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define("Fuse", [], factory);
+	else if(typeof exports === 'object')
+		exports["Fuse"] = factory();
+	else
+		root["Fuse"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (obj) {
+  return !Array.isArray ? Object.prototype.toString.call(obj) === '[object Array]' : Array.isArray(obj);
+};
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var bitapRegexSearch = __webpack_require__(5);
+var bitapSearch = __webpack_require__(7);
+var patternAlphabet = __webpack_require__(4);
+
+var Bitap = function () {
+  function Bitap(pattern, _ref) {
+    var _ref$location = _ref.location,
+        location = _ref$location === undefined ? 0 : _ref$location,
+        _ref$distance = _ref.distance,
+        distance = _ref$distance === undefined ? 100 : _ref$distance,
+        _ref$threshold = _ref.threshold,
+        threshold = _ref$threshold === undefined ? 0.6 : _ref$threshold,
+        _ref$maxPatternLength = _ref.maxPatternLength,
+        maxPatternLength = _ref$maxPatternLength === undefined ? 32 : _ref$maxPatternLength,
+        _ref$isCaseSensitive = _ref.isCaseSensitive,
+        isCaseSensitive = _ref$isCaseSensitive === undefined ? false : _ref$isCaseSensitive,
+        _ref$tokenSeparator = _ref.tokenSeparator,
+        tokenSeparator = _ref$tokenSeparator === undefined ? / +/g : _ref$tokenSeparator,
+        _ref$findAllMatches = _ref.findAllMatches,
+        findAllMatches = _ref$findAllMatches === undefined ? false : _ref$findAllMatches,
+        _ref$minMatchCharLeng = _ref.minMatchCharLength,
+        minMatchCharLength = _ref$minMatchCharLeng === undefined ? 1 : _ref$minMatchCharLeng;
+
+    _classCallCheck(this, Bitap);
+
+    this.options = {
+      location: location,
+      distance: distance,
+      threshold: threshold,
+      maxPatternLength: maxPatternLength,
+      isCaseSensitive: isCaseSensitive,
+      tokenSeparator: tokenSeparator,
+      findAllMatches: findAllMatches,
+      minMatchCharLength: minMatchCharLength
+    };
+
+    this.pattern = this.options.isCaseSensitive ? pattern : pattern.toLowerCase();
+
+    if (this.pattern.length <= maxPatternLength) {
+      this.patternAlphabet = patternAlphabet(this.pattern);
+    }
+  }
+
+  _createClass(Bitap, [{
+    key: 'search',
+    value: function search(text) {
+      if (!this.options.isCaseSensitive) {
+        text = text.toLowerCase();
+      }
+
+      // Exact match
+      if (this.pattern === text) {
+        return {
+          isMatch: true,
+          score: 0,
+          matchedIndices: [[0, text.length - 1]]
+        };
+      }
+
+      // When pattern length is greater than the machine word length, just do a a regex comparison
+      var _options = this.options,
+          maxPatternLength = _options.maxPatternLength,
+          tokenSeparator = _options.tokenSeparator;
+
+      if (this.pattern.length > maxPatternLength) {
+        return bitapRegexSearch(text, this.pattern, tokenSeparator);
+      }
+
+      // Otherwise, use Bitap algorithm
+      var _options2 = this.options,
+          location = _options2.location,
+          distance = _options2.distance,
+          threshold = _options2.threshold,
+          findAllMatches = _options2.findAllMatches,
+          minMatchCharLength = _options2.minMatchCharLength;
+
+      return bitapSearch(text, this.pattern, this.patternAlphabet, {
+        location: location,
+        distance: distance,
+        threshold: threshold,
+        findAllMatches: findAllMatches,
+        minMatchCharLength: minMatchCharLength
+      });
+    }
+  }]);
+
+  return Bitap;
+}();
+
+// let x = new Bitap("od mn war", {})
+// let result = x.search("Old Man's War")
+// console.log(result)
+
+module.exports = Bitap;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var isArray = __webpack_require__(0);
+
+var deepValue = function deepValue(obj, path, list) {
+  if (!path) {
+    // If there's no path left, we've gotten to the object we care about.
+    list.push(obj);
+  } else {
+    var dotIndex = path.indexOf('.');
+    var firstSegment = path;
+    var remaining = null;
+
+    if (dotIndex !== -1) {
+      firstSegment = path.slice(0, dotIndex);
+      remaining = path.slice(dotIndex + 1);
+    }
+
+    var value = obj[firstSegment];
+
+    if (value !== null && value !== undefined) {
+      if (!remaining && (typeof value === 'string' || typeof value === 'number')) {
+        list.push(value.toString());
+      } else if (isArray(value)) {
+        // Search each item in the array.
+        for (var i = 0, len = value.length; i < len; i += 1) {
+          deepValue(value[i], remaining, list);
+        }
+      } else if (remaining) {
+        // An object. Recurse further.
+        deepValue(value, remaining, list);
+      }
+    }
+  }
+
+  return list;
+};
+
+module.exports = function (obj, path) {
+  return deepValue(obj, path, []);
+};
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+  var matchmask = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var minMatchCharLength = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+
+  var matchedIndices = [];
+  var start = -1;
+  var end = -1;
+  var i = 0;
+
+  for (var len = matchmask.length; i < len; i += 1) {
+    var match = matchmask[i];
+    if (match && start === -1) {
+      start = i;
+    } else if (!match && start !== -1) {
+      end = i - 1;
+      if (end - start + 1 >= minMatchCharLength) {
+        matchedIndices.push([start, end]);
+      }
+      start = -1;
+    }
+  }
+
+  // (i-1 - start) + 1 => i - start
+  if (matchmask[i - 1] && i - start >= minMatchCharLength) {
+    matchedIndices.push([start, i - 1]);
+  }
+
+  return matchedIndices;
+};
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (pattern) {
+  var mask = {};
+  var len = pattern.length;
+
+  for (var i = 0; i < len; i += 1) {
+    mask[pattern.charAt(i)] = 0;
+  }
+
+  for (var _i = 0; _i < len; _i += 1) {
+    mask[pattern.charAt(_i)] |= 1 << len - _i - 1;
+  }
+
+  return mask;
+};
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var SPECIAL_CHARS_REGEX = /[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g;
+
+module.exports = function (text, pattern) {
+  var tokenSeparator = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : / +/g;
+
+  var regex = new RegExp(pattern.replace(SPECIAL_CHARS_REGEX, '\\$&').replace(tokenSeparator, '|'));
+  var matches = text.match(regex);
+  var isMatch = !!matches;
+  var matchedIndices = [];
+
+  if (isMatch) {
+    for (var i = 0, matchesLen = matches.length; i < matchesLen; i += 1) {
+      var match = matches[i];
+      matchedIndices.push([text.indexOf(match), match.length - 1]);
+    }
+  }
+
+  return {
+    // TODO: revisit this score
+    score: isMatch ? 0.5 : 1,
+    isMatch: isMatch,
+    matchedIndices: matchedIndices
+  };
+};
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (pattern, _ref) {
+  var _ref$errors = _ref.errors,
+      errors = _ref$errors === undefined ? 0 : _ref$errors,
+      _ref$currentLocation = _ref.currentLocation,
+      currentLocation = _ref$currentLocation === undefined ? 0 : _ref$currentLocation,
+      _ref$expectedLocation = _ref.expectedLocation,
+      expectedLocation = _ref$expectedLocation === undefined ? 0 : _ref$expectedLocation,
+      _ref$distance = _ref.distance,
+      distance = _ref$distance === undefined ? 100 : _ref$distance;
+
+  var accuracy = errors / pattern.length;
+  var proximity = Math.abs(expectedLocation - currentLocation);
+
+  if (!distance) {
+    // Dodge divide by zero error.
+    return proximity ? 1.0 : accuracy;
+  }
+
+  return accuracy + proximity / distance;
+};
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var bitapScore = __webpack_require__(6);
+var matchedIndices = __webpack_require__(3);
+
+module.exports = function (text, pattern, patternAlphabet, _ref) {
+  var _ref$location = _ref.location,
+      location = _ref$location === undefined ? 0 : _ref$location,
+      _ref$distance = _ref.distance,
+      distance = _ref$distance === undefined ? 100 : _ref$distance,
+      _ref$threshold = _ref.threshold,
+      threshold = _ref$threshold === undefined ? 0.6 : _ref$threshold,
+      _ref$findAllMatches = _ref.findAllMatches,
+      findAllMatches = _ref$findAllMatches === undefined ? false : _ref$findAllMatches,
+      _ref$minMatchCharLeng = _ref.minMatchCharLength,
+      minMatchCharLength = _ref$minMatchCharLeng === undefined ? 1 : _ref$minMatchCharLeng;
+
+  var expectedLocation = location;
+  // Set starting location at beginning text and initialize the alphabet.
+  var textLen = text.length;
+  // Highest score beyond which we give up.
+  var currentThreshold = threshold;
+  // Is there a nearby exact match? (speedup)
+  var bestLocation = text.indexOf(pattern, expectedLocation);
+
+  var patternLen = pattern.length;
+
+  // a mask of the matches
+  var matchMask = [];
+  for (var i = 0; i < textLen; i += 1) {
+    matchMask[i] = 0;
+  }
+
+  if (bestLocation !== -1) {
+    var score = bitapScore(pattern, {
+      errors: 0,
+      currentLocation: bestLocation,
+      expectedLocation: expectedLocation,
+      distance: distance
+    });
+    currentThreshold = Math.min(score, currentThreshold);
+
+    // What about in the other direction? (speed up)
+    bestLocation = text.lastIndexOf(pattern, expectedLocation + patternLen);
+
+    if (bestLocation !== -1) {
+      var _score = bitapScore(pattern, {
+        errors: 0,
+        currentLocation: bestLocation,
+        expectedLocation: expectedLocation,
+        distance: distance
+      });
+      currentThreshold = Math.min(_score, currentThreshold);
+    }
+  }
+
+  // Reset the best location
+  bestLocation = -1;
+
+  var lastBitArr = [];
+  var finalScore = 1;
+  var binMax = patternLen + textLen;
+
+  var mask = 1 << patternLen - 1;
+
+  for (var _i = 0; _i < patternLen; _i += 1) {
+    // Scan for the best match; each iteration allows for one more error.
+    // Run a binary search to determine how far from the match location we can stray
+    // at this error level.
+    var binMin = 0;
+    var binMid = binMax;
+
+    while (binMin < binMid) {
+      var _score3 = bitapScore(pattern, {
+        errors: _i,
+        currentLocation: expectedLocation + binMid,
+        expectedLocation: expectedLocation,
+        distance: distance
+      });
+
+      if (_score3 <= currentThreshold) {
+        binMin = binMid;
+      } else {
+        binMax = binMid;
+      }
+
+      binMid = Math.floor((binMax - binMin) / 2 + binMin);
+    }
+
+    // Use the result from this iteration as the maximum for the next.
+    binMax = binMid;
+
+    var start = Math.max(1, expectedLocation - binMid + 1);
+    var finish = findAllMatches ? textLen : Math.min(expectedLocation + binMid, textLen) + patternLen;
+
+    // Initialize the bit array
+    var bitArr = Array(finish + 2);
+
+    bitArr[finish + 1] = (1 << _i) - 1;
+
+    for (var j = finish; j >= start; j -= 1) {
+      var currentLocation = j - 1;
+      var charMatch = patternAlphabet[text.charAt(currentLocation)];
+
+      if (charMatch) {
+        matchMask[currentLocation] = 1;
+      }
+
+      // First pass: exact match
+      bitArr[j] = (bitArr[j + 1] << 1 | 1) & charMatch;
+
+      // Subsequent passes: fuzzy match
+      if (_i !== 0) {
+        bitArr[j] |= (lastBitArr[j + 1] | lastBitArr[j]) << 1 | 1 | lastBitArr[j + 1];
+      }
+
+      if (bitArr[j] & mask) {
+        finalScore = bitapScore(pattern, {
+          errors: _i,
+          currentLocation: currentLocation,
+          expectedLocation: expectedLocation,
+          distance: distance
+        });
+
+        // This match will almost certainly be better than any existing match.
+        // But check anyway.
+        if (finalScore <= currentThreshold) {
+          // Indeed it is
+          currentThreshold = finalScore;
+          bestLocation = currentLocation;
+
+          // Already passed `loc`, downhill from here on in.
+          if (bestLocation <= expectedLocation) {
+            break;
+          }
+
+          // When passing `bestLocation`, don't exceed our current distance from `expectedLocation`.
+          start = Math.max(1, 2 * expectedLocation - bestLocation);
+        }
+      }
+    }
+
+    // No hope for a (better) match at greater error levels.
+    var _score2 = bitapScore(pattern, {
+      errors: _i + 1,
+      currentLocation: expectedLocation,
+      expectedLocation: expectedLocation,
+      distance: distance
+    });
+
+    // console.log('score', score, finalScore)
+
+    if (_score2 > currentThreshold) {
+      break;
+    }
+
+    lastBitArr = bitArr;
+  }
+
+  // console.log('FINAL SCORE', finalScore)
+
+  // Count exact matches (those with a score of 0) to be "almost" exact
+  return {
+    isMatch: bestLocation >= 0,
+    score: finalScore === 0 ? 0.001 : finalScore,
+    matchedIndices: matchedIndices(matchMask, minMatchCharLength)
+  };
+};
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Bitap = __webpack_require__(1);
+var deepValue = __webpack_require__(2);
+var isArray = __webpack_require__(0);
+
+var Fuse = function () {
+  function Fuse(list, _ref) {
+    var _ref$location = _ref.location,
+        location = _ref$location === undefined ? 0 : _ref$location,
+        _ref$distance = _ref.distance,
+        distance = _ref$distance === undefined ? 100 : _ref$distance,
+        _ref$threshold = _ref.threshold,
+        threshold = _ref$threshold === undefined ? 0.6 : _ref$threshold,
+        _ref$maxPatternLength = _ref.maxPatternLength,
+        maxPatternLength = _ref$maxPatternLength === undefined ? 32 : _ref$maxPatternLength,
+        _ref$caseSensitive = _ref.caseSensitive,
+        caseSensitive = _ref$caseSensitive === undefined ? false : _ref$caseSensitive,
+        _ref$tokenSeparator = _ref.tokenSeparator,
+        tokenSeparator = _ref$tokenSeparator === undefined ? / +/g : _ref$tokenSeparator,
+        _ref$findAllMatches = _ref.findAllMatches,
+        findAllMatches = _ref$findAllMatches === undefined ? false : _ref$findAllMatches,
+        _ref$minMatchCharLeng = _ref.minMatchCharLength,
+        minMatchCharLength = _ref$minMatchCharLeng === undefined ? 1 : _ref$minMatchCharLeng,
+        _ref$id = _ref.id,
+        id = _ref$id === undefined ? null : _ref$id,
+        _ref$keys = _ref.keys,
+        keys = _ref$keys === undefined ? [] : _ref$keys,
+        _ref$shouldSort = _ref.shouldSort,
+        shouldSort = _ref$shouldSort === undefined ? true : _ref$shouldSort,
+        _ref$getFn = _ref.getFn,
+        getFn = _ref$getFn === undefined ? deepValue : _ref$getFn,
+        _ref$sortFn = _ref.sortFn,
+        sortFn = _ref$sortFn === undefined ? function (a, b) {
+      return a.score - b.score;
+    } : _ref$sortFn,
+        _ref$tokenize = _ref.tokenize,
+        tokenize = _ref$tokenize === undefined ? false : _ref$tokenize,
+        _ref$matchAllTokens = _ref.matchAllTokens,
+        matchAllTokens = _ref$matchAllTokens === undefined ? false : _ref$matchAllTokens,
+        _ref$includeMatches = _ref.includeMatches,
+        includeMatches = _ref$includeMatches === undefined ? false : _ref$includeMatches,
+        _ref$includeScore = _ref.includeScore,
+        includeScore = _ref$includeScore === undefined ? false : _ref$includeScore,
+        _ref$verbose = _ref.verbose,
+        verbose = _ref$verbose === undefined ? false : _ref$verbose;
+
+    _classCallCheck(this, Fuse);
+
+    this.options = {
+      location: location,
+      distance: distance,
+      threshold: threshold,
+      maxPatternLength: maxPatternLength,
+      isCaseSensitive: caseSensitive,
+      tokenSeparator: tokenSeparator,
+      findAllMatches: findAllMatches,
+      minMatchCharLength: minMatchCharLength,
+      id: id,
+      keys: keys,
+      includeMatches: includeMatches,
+      includeScore: includeScore,
+      shouldSort: shouldSort,
+      getFn: getFn,
+      sortFn: sortFn,
+      verbose: verbose,
+      tokenize: tokenize,
+      matchAllTokens: matchAllTokens
+    };
+
+    this.setCollection(list);
+  }
+
+  _createClass(Fuse, [{
+    key: 'setCollection',
+    value: function setCollection(list) {
+      this.list = list;
+      return list;
+    }
+  }, {
+    key: 'search',
+    value: function search(pattern) {
+      this._log('---------\nSearch pattern: "' + pattern + '"');
+
+      var _prepareSearchers2 = this._prepareSearchers(pattern),
+          tokenSearchers = _prepareSearchers2.tokenSearchers,
+          fullSearcher = _prepareSearchers2.fullSearcher;
+
+      var _search2 = this._search(tokenSearchers, fullSearcher),
+          weights = _search2.weights,
+          results = _search2.results;
+
+      this._computeScore(weights, results);
+
+      if (this.options.shouldSort) {
+        this._sort(results);
+      }
+
+      return this._format(results);
+    }
+  }, {
+    key: '_prepareSearchers',
+    value: function _prepareSearchers() {
+      var pattern = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+      var tokenSearchers = [];
+
+      if (this.options.tokenize) {
+        // Tokenize on the separator
+        var tokens = pattern.split(this.options.tokenSeparator);
+        for (var i = 0, len = tokens.length; i < len; i += 1) {
+          tokenSearchers.push(new Bitap(tokens[i], this.options));
+        }
+      }
+
+      var fullSearcher = new Bitap(pattern, this.options);
+
+      return { tokenSearchers: tokenSearchers, fullSearcher: fullSearcher };
+    }
+  }, {
+    key: '_search',
+    value: function _search() {
+      var tokenSearchers = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+      var fullSearcher = arguments[1];
+
+      var list = this.list;
+      var resultMap = {};
+      var results = [];
+
+      // Check the first item in the list, if it's a string, then we assume
+      // that every item in the list is also a string, and thus it's a flattened array.
+      if (typeof list[0] === 'string') {
+        // Iterate over every item
+        for (var i = 0, len = list.length; i < len; i += 1) {
+          this._analyze({
+            key: '',
+            value: list[i],
+            record: i,
+            index: i
+          }, {
+            resultMap: resultMap,
+            results: results,
+            tokenSearchers: tokenSearchers,
+            fullSearcher: fullSearcher
+          });
+        }
+
+        return { weights: null, results: results };
+      }
+
+      // Otherwise, the first item is an Object (hopefully), and thus the searching
+      // is done on the values of the keys of each item.
+      var weights = {};
+      for (var _i = 0, _len = list.length; _i < _len; _i += 1) {
+        var item = list[_i];
+        // Iterate over every key
+        for (var j = 0, keysLen = this.options.keys.length; j < keysLen; j += 1) {
+          var key = this.options.keys[j];
+          if (typeof key !== 'string') {
+            weights[key.name] = {
+              weight: 1 - key.weight || 1
+            };
+            if (key.weight <= 0 || key.weight > 1) {
+              throw new Error('Key weight has to be > 0 and <= 1');
+            }
+            key = key.name;
+          } else {
+            weights[key] = {
+              weight: 1
+            };
+          }
+
+          this._analyze({
+            key: key,
+            value: this.options.getFn(item, key),
+            record: item,
+            index: _i
+          }, {
+            resultMap: resultMap,
+            results: results,
+            tokenSearchers: tokenSearchers,
+            fullSearcher: fullSearcher
+          });
+        }
+      }
+
+      return { weights: weights, results: results };
+    }
+  }, {
+    key: '_analyze',
+    value: function _analyze(_ref2, _ref3) {
+      var key = _ref2.key,
+          _ref2$arrayIndex = _ref2.arrayIndex,
+          arrayIndex = _ref2$arrayIndex === undefined ? -1 : _ref2$arrayIndex,
+          value = _ref2.value,
+          record = _ref2.record,
+          index = _ref2.index;
+      var _ref3$tokenSearchers = _ref3.tokenSearchers,
+          tokenSearchers = _ref3$tokenSearchers === undefined ? [] : _ref3$tokenSearchers,
+          _ref3$fullSearcher = _ref3.fullSearcher,
+          fullSearcher = _ref3$fullSearcher === undefined ? [] : _ref3$fullSearcher,
+          _ref3$resultMap = _ref3.resultMap,
+          resultMap = _ref3$resultMap === undefined ? {} : _ref3$resultMap,
+          _ref3$results = _ref3.results,
+          results = _ref3$results === undefined ? [] : _ref3$results;
+
+      // Check if the texvaluet can be searched
+      if (value === undefined || value === null) {
+        return;
+      }
+
+      var exists = false;
+      var averageScore = -1;
+      var numTextMatches = 0;
+
+      if (typeof value === 'string') {
+        this._log('\nKey: ' + (key === '' ? '-' : key));
+
+        var mainSearchResult = fullSearcher.search(value);
+        this._log('Full text: "' + value + '", score: ' + mainSearchResult.score);
+
+        if (this.options.tokenize) {
+          var words = value.split(this.options.tokenSeparator);
+          var scores = [];
+
+          for (var i = 0; i < tokenSearchers.length; i += 1) {
+            var tokenSearcher = tokenSearchers[i];
+
+            this._log('\nPattern: "' + tokenSearcher.pattern + '"');
+
+            // let tokenScores = []
+            var hasMatchInText = false;
+
+            for (var j = 0; j < words.length; j += 1) {
+              var word = words[j];
+              var tokenSearchResult = tokenSearcher.search(word);
+              var obj = {};
+              if (tokenSearchResult.isMatch) {
+                obj[word] = tokenSearchResult.score;
+                exists = true;
+                hasMatchInText = true;
+                scores.push(tokenSearchResult.score);
+              } else {
+                obj[word] = 1;
+                if (!this.options.matchAllTokens) {
+                  scores.push(1);
+                }
+              }
+              this._log('Token: "' + word + '", score: ' + obj[word]);
+              // tokenScores.push(obj)
+            }
+
+            if (hasMatchInText) {
+              numTextMatches += 1;
+            }
+          }
+
+          averageScore = scores[0];
+          var scoresLen = scores.length;
+          for (var _i2 = 1; _i2 < scoresLen; _i2 += 1) {
+            averageScore += scores[_i2];
+          }
+          averageScore = averageScore / scoresLen;
+
+          this._log('Token score average:', averageScore);
+        }
+
+        var finalScore = mainSearchResult.score;
+        if (averageScore > -1) {
+          finalScore = (finalScore + averageScore) / 2;
+        }
+
+        this._log('Score average:', finalScore);
+
+        var checkTextMatches = this.options.tokenize && this.options.matchAllTokens ? numTextMatches >= tokenSearchers.length : true;
+
+        this._log('\nCheck Matches: ' + checkTextMatches);
+
+        // If a match is found, add the item to <rawResults>, including its score
+        if ((exists || mainSearchResult.isMatch) && checkTextMatches) {
+          // Check if the item already exists in our results
+          var existingResult = resultMap[index];
+          if (existingResult) {
+            // Use the lowest score
+            // existingResult.score, bitapResult.score
+            existingResult.output.push({
+              key: key,
+              arrayIndex: arrayIndex,
+              value: value,
+              score: finalScore,
+              matchedIndices: mainSearchResult.matchedIndices
+            });
+          } else {
+            // Add it to the raw result list
+            resultMap[index] = {
+              item: record,
+              output: [{
+                key: key,
+                arrayIndex: arrayIndex,
+                value: value,
+                score: finalScore,
+                matchedIndices: mainSearchResult.matchedIndices
+              }]
+            };
+
+            results.push(resultMap[index]);
+          }
+        }
+      } else if (isArray(value)) {
+        for (var _i3 = 0, len = value.length; _i3 < len; _i3 += 1) {
+          this._analyze({
+            key: key,
+            arrayIndex: _i3,
+            value: value[_i3],
+            record: record,
+            index: index
+          }, {
+            resultMap: resultMap,
+            results: results,
+            tokenSearchers: tokenSearchers,
+            fullSearcher: fullSearcher
+          });
+        }
+      }
+    }
+  }, {
+    key: '_computeScore',
+    value: function _computeScore(weights, results) {
+      this._log('\n\nComputing score:\n');
+
+      for (var i = 0, len = results.length; i < len; i += 1) {
+        var output = results[i].output;
+        var scoreLen = output.length;
+
+        var currScore = 1;
+        var bestScore = 1;
+
+        for (var j = 0; j < scoreLen; j += 1) {
+          var weight = weights ? weights[output[j].key].weight : 1;
+          var score = weight === 1 ? output[j].score : output[j].score || 0.001;
+          var nScore = score * weight;
+
+          if (weight !== 1) {
+            bestScore = Math.min(bestScore, nScore);
+          } else {
+            output[j].nScore = nScore;
+            currScore *= nScore;
+          }
+        }
+
+        results[i].score = bestScore === 1 ? currScore : bestScore;
+
+        this._log(results[i]);
+      }
+    }
+  }, {
+    key: '_sort',
+    value: function _sort(results) {
+      this._log('\n\nSorting....');
+      results.sort(this.options.sortFn);
+    }
+  }, {
+    key: '_format',
+    value: function _format(results) {
+      var finalOutput = [];
+
+      if (this.options.verbose) {
+        this._log('\n\nOutput:\n\n', JSON.stringify(results));
+      }
+
+      var transformers = [];
+
+      if (this.options.includeMatches) {
+        transformers.push(function (result, data) {
+          var output = result.output;
+          data.matches = [];
+
+          for (var i = 0, len = output.length; i < len; i += 1) {
+            var item = output[i];
+
+            if (item.matchedIndices.length === 0) {
+              continue;
+            }
+
+            var obj = {
+              indices: item.matchedIndices,
+              value: item.value
+            };
+            if (item.key) {
+              obj.key = item.key;
+            }
+            if (item.hasOwnProperty('arrayIndex') && item.arrayIndex > -1) {
+              obj.arrayIndex = item.arrayIndex;
+            }
+            data.matches.push(obj);
+          }
+        });
+      }
+
+      if (this.options.includeScore) {
+        transformers.push(function (result, data) {
+          data.score = result.score;
+        });
+      }
+
+      for (var i = 0, len = results.length; i < len; i += 1) {
+        var result = results[i];
+
+        if (this.options.id) {
+          result.item = this.options.getFn(result.item, this.options.id)[0];
+        }
+
+        if (!transformers.length) {
+          finalOutput.push(result.item);
+          continue;
+        }
+
+        var data = {
+          item: result.item
+        };
+
+        for (var j = 0, _len2 = transformers.length; j < _len2; j += 1) {
+          transformers[j](result, data);
+        }
+
+        finalOutput.push(data);
+      }
+
+      return finalOutput;
+    }
+  }, {
+    key: '_log',
+    value: function _log() {
+      if (this.options.verbose) {
+        var _console;
+
+        (_console = console).log.apply(_console, arguments);
+      }
+    }
+  }]);
+
+  return Fuse;
+}();
+
+module.exports = Fuse;
+
+/***/ })
+/******/ ]);
+});
+//# sourceMappingURL=fuse.js.map
+
+/***/ }),
+
+/***/ 764:
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "card p-3" }, [
+    _c("div", { staticClass: "table-header" }, [
+      _c("h4", { staticClass: "table-title text-center mt-3" }, [
+        _vm._v(_vm._s(_vm.title))
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "text-left" }, [
+      _c("div", { attrs: { id: "search-input-container" } }, [
+        _c("label", [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.searchInput,
+                expression: "searchInput"
+              }
+            ],
+            staticClass: "form-control mb-2",
+            attrs: {
+              type: "search",
+              id: "search-input",
+              placeholder: "Search data"
+            },
+            domProps: { value: _vm.searchInput },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.searchInput = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "actions float-right pr-4 mb-3" }, [
+          this.exportable
+            ? _c(
+                "a",
+                {
+                  staticClass: "btn btn-info text-white",
+                  attrs: {
+                    href: "javascript:undefined",
+                    title: "export excel"
+                  },
+                  on: { click: _vm.exportExcel }
+                },
+                [_c("i", { staticClass: "fa fa-download" })]
+              )
+            : _vm._e()
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "table-responsive" }, [
+      _c("table", { ref: "table", staticClass: "table" }, [
+        _c("thead", [
+          _c(
+            "tr",
+            [
+              _vm._l(_vm.columns, function(column, index) {
+                return _c(
+                  "th",
+                  {
+                    key: index,
+                    class:
+                      (_vm.sortable ? "sortable" : "") +
+                      (_vm.sortColumn === index
+                        ? _vm.sortType === "desc"
+                          ? " sorting-desc"
+                          : " sorting-asc"
+                        : ""),
+                    style: { width: column.width ? column.width : "auto" },
+                    on: {
+                      click: function($event) {
+                        _vm.sort(index)
+                      }
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(column.label) +
+                        "\n                        "
+                    ),
+                    _c("i", {
+                      staticClass: "fa float-right",
+                      class:
+                        _vm.sortColumn === index
+                          ? _vm.sortType === "desc"
+                            ? " fa fa-angle-down"
+                            : " fa fa-angle-up"
+                          : ""
+                    })
+                  ]
+                )
+              }),
+              _vm._v(" "),
+              _vm._t("thead-tr")
+            ],
+            2
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.paginated, function(row, index) {
+            return _c(
+              "tr",
+              {
+                key: index,
+                on: {
+                  click: function($event) {
+                    _vm.click(row, index)
+                  }
+                }
+              },
+              [
+                _vm._l(_vm.columns, function(column, index) {
+                  return [
+                    !column.html
+                      ? _c(
+                          "td",
+                          {
+                            key: index,
+                            class: column.numeric ? "numeric" : ""
+                          },
+                          [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(_vm.collect(row, column.field)) +
+                                "\n                        "
+                            )
+                          ]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    column.html
+                      ? _c("td", {
+                          key: index,
+                          class: column.numeric ? "numeric" : "",
+                          domProps: {
+                            innerHTML: _vm._s(_vm.collect(row, column.field))
+                          }
+                        })
+                      : _vm._e()
+                  ]
+                }),
+                _vm._v(" "),
+                _vm._t("tbody-tr", null, { row: row })
+              ],
+              2
+            )
+          })
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _vm.paginate
+      ? _c("div", { staticClass: "table-footer" }, [
+          _c("div", { staticClass: "datatable-length float-left pl-3" }, [
+            _c("span", [_vm._v("Rows per page:")]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.currentPerPage,
+                    expression: "currentPerPage"
+                  }
+                ],
+                staticClass: "custom-select",
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.currentPerPage = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              [
+                _vm._l(_vm.pagelen, function(len) {
+                  return _c("option", { key: len, domProps: { value: len } }, [
+                    _vm._v(_vm._s(len))
+                  ])
+                }),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "-1" } }, [_vm._v("All")])
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "datatable-info  pb-2 mt-3" }, [
+              _c("span", [_vm._v("Showing ")]),
+              _vm._v(
+                " " +
+                  _vm._s(
+                    (_vm.currentPage - 1) * _vm.currentPerPage
+                      ? (_vm.currentPage - 1) * _vm.currentPerPage
+                      : 1
+                  ) +
+                  " -" +
+                  _vm._s(
+                    _vm.currentPerPage == -1
+                      ? _vm.processedRows.length
+                      : Math.min(
+                          _vm.processedRows.length,
+                          _vm.currentPerPage * _vm.currentPage
+                        )
+                  ) +
+                  " of " +
+                  _vm._s(_vm.processedRows.length) +
+                  "\n                "
+              ),
+              _c("span", [_vm._v("records")])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "float-right" }, [
+            _c("ul", { staticClass: "pagination" }, [
+              _c("li", [
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn link",
+                    attrs: { href: "javascript:undefined", tabindex: "0" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.previousPage($event)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fa fa-angle-left" })]
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn link",
+                    attrs: { href: "javascript:undefined", tabindex: "0" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.nextPage($event)
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fa fa-angle-right" })]
+                )
+              ])
+            ])
+          ])
+        ])
+      : _vm._e()
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-44d91495", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ 771:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _bus = __webpack_require__(731);
+
+var _bus2 = _interopRequireDefault(_bus);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ClientTable = __webpack_require__(772);
+var ServerTable = __webpack_require__(934);
+
+
+module.exports = {
+  ClientTable: ClientTable,
+  ServerTable: ServerTable,
+  Event: _bus2.default
+};
+
+/***/ }),
+
+/***/ 772:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _vuePagination = __webpack_require__(740);
+
+var _vuex = __webpack_require__(742);
+
+var _vuex2 = _interopRequireDefault(_vuex);
+
+var _normal = __webpack_require__(743);
+
+var _normal2 = _interopRequireDefault(_normal);
+
+var _merge = __webpack_require__(730);
+
+var _merge2 = _interopRequireDefault(_merge);
+
+var _table = __webpack_require__(744);
+
+var _table2 = _interopRequireDefault(_table);
+
+var _data2 = __webpack_require__(752);
+
+var _data3 = _interopRequireDefault(_data2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _data = __webpack_require__(753);
+var _created = __webpack_require__(754);
+
+var templateCompiler = __webpack_require__(755);
+
+exports.install = function (Vue, globalOptions, useVuex) {
+  var theme = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'bootstrap3';
+  var template = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 'default';
+
+
+  var client = _merge2.default.recursive(true, (0, _table2.default)(), {
+    name: 'client-table',
+    components: {
+      Pagination: _vuePagination.Pagination
+    },
+    render: templateCompiler.call(this, template, theme),
+    props: {
+      columns: {
+        type: Array,
+        required: true
+      },
+      data: {
+        type: Array,
+        required: true
+      },
+      name: {
+        type: String,
+        required: false
+      },
+      options: {
+        type: Object,
+        required: false,
+        default: function _default() {
+          return {};
+        }
+      }
+    },
+
+    created: function created() {
+
+      _created(this);
+
+      if (this.opts.toMomentFormat) this.transformDateStringsToMoment();
+
+      if (!this.vuex) {
+
+        this.initOrderBy();
+
+        this.query = this.initQuery();
+
+        this.customQueries = this.initCustomFilters();
+      }
+    },
+
+    mounted: function mounted() {
+
+      this._setColumnsDropdownCloseListener();
+
+      if (!this.vuex) {
+        this.registerClientFilters();
+
+        if (this.options.initialPage) this.setPage(this.options.initialPage);
+      }
+
+      if (this.opts.groupBy && !this.opts.orderBy) {
+        this.orderBy.column = this.opts.groupBy;
+      }
+
+      this.loadState();
+
+      if (this.hasDateFilters()) {
+        this.initDateFilters();
+      }
+    },
+
+    data: function data() {
+      return _merge2.default.recursive(_data(), {
+        source: 'client',
+        globalOptions: globalOptions,
+        currentlySorting: {},
+        time: Date.now()
+      }, (0, _data3.default)(useVuex, 'client', this.options.initialPage));
+    },
+    computed: {
+      q: __webpack_require__(924),
+      customQ: __webpack_require__(925),
+      totalPages: __webpack_require__(757),
+      filteredData: __webpack_require__(926),
+      hasMultiSort: function hasMultiSort() {
+        return this.opts.clientMultiSorting;
+      }
+    },
+    methods: {
+      transformDateStringsToMoment: __webpack_require__(930),
+      registerClientFilters: __webpack_require__(931),
+      search: __webpack_require__(758),
+      defaultSort: __webpack_require__(932),
+      getGroupSlot: __webpack_require__(933),
+      toggleGroup: function toggleGroup(group, e) {
+
+        e.stopPropagation();
+
+        var i = this.collapsedGroups.indexOf(group);
+        if (i >= 0) {
+          this.collapsedGroups.splice(i, 1);
+        } else {
+          this.collapsedGroups.push(group);
+        }
+      },
+      groupToggleIcon: function groupToggleIcon(group) {
+        var cls = this.opts.sortIcon.base + ' ';
+        cls += this.collapsedGroups.indexOf(group) > -1 ? this.opts.sortIcon.down : this.opts.sortIcon.up;
+
+        return cls;
+      },
+      loadState: function loadState() {
+
+        if (!this.opts.saveState) return;
+
+        if (!this.storage.getItem(this.stateKey)) {
+          this.initState();
+          this.activeState = true;
+          return;
+        }
+
+        var state = JSON.parse(this.storage.getItem(this.stateKey));
+
+        if (this.opts.filterable) this.setFilter(state.query);
+
+        this.setOrder(state.orderBy.column, state.orderBy.ascending);
+
+        if (this.vuex) {
+          this.commit('SET_LIMIT', state.perPage);
+        } else {
+          this.limit = state.perPage;
+        }
+
+        this.setPage(state.page);
+
+        this.activeState = true;
+
+        if (state.userControlsColumns) {
+          this.userColumnsDisplay = state.userColumnsDisplay;
+          this.userControlsColumns = state.userControlsColumns;
+        }
+
+        // TODO: Custom Queries
+      }
+    }
+
+  });
+
+  var state = useVuex ? (0, _vuex2.default)() : (0, _normal2.default)();
+
+  client = _merge2.default.recursive(client, state);
+
+  Vue.component('v-client-table', client);
+
+  return client;
+};
+
+/***/ }),
+
+/***/ 773:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _config = __webpack_require__(774);
+
+var _config2 = _interopRequireDefault(_config);
+
+var _merge = __webpack_require__(730);
+
+var _merge2 = _interopRequireDefault(_merge);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var template = __webpack_require__(775);
+var bus = __webpack_require__(741);
+
+
+module.exports = {
+  render: template.call(undefined),
+  props: {
+    for: {
+      type: String,
+      required: false
+    },
+    records: {
+      type: Number,
+      required: true
+    },
+    perPage: {
+      type: Number,
+      default: 25
+    },
+    vuex: {
+      type: Boolean
+    },
+    options: {
+      type: Object
+    }
+  },
+  created: function created() {
+
+    if (!this.vuex) return;
+
+    if (!this.for) {
+      throw new Error('vue-pagination-2: The "for" prop is required when using vuex');
+    }
+
+    var name = this.for;
+
+    if (this.$store.state[name]) return;
+
+    this.$store.registerModule(this.for, {
+      state: {
+        page: 1
+      },
+      mutations: _defineProperty({}, name + '/PAGINATE', function undefined(state, page) {
+        state.page = page;
+      })
+    });
+  },
+  data: function data() {
+    return {
+      Page: 1,
+      firstPage: 1
+    };
+  },
+  computed: {
+    opts: function opts() {
+      return (0, _merge2.default)((0, _config2.default)(), this.options);
+    },
+    Theme: function Theme() {
+
+      if (_typeof(this.opts.theme) === 'object') {
+        return this.opts.theme;
+      }
+
+      var themes = {
+        bootstrap3: __webpack_require__(776),
+        bootstrap4: __webpack_require__(777),
+        bulma: __webpack_require__(778)
+      };
+
+      if (_typeof(themes[this.opts.theme]) === undefined) {
+        throw 'vue-pagination-2: the theme ' + this.opts.theme + ' does not exist';
+      }
+
+      return themes[this.opts.theme];
+    },
+    page: function page() {
+      return this.vuex ? this.$store.state[this.for].page : this.Page;
+    },
+
+    pages: function pages() {
+      if (!this.records) return [];
+
+      return range(this.paginationStart, this.pagesInCurrentChunk);
+    },
+    totalPages: function totalPages() {
+      return this.records ? Math.ceil(this.records / this.perPage) : 1;
+    },
+    totalChunks: function totalChunks() {
+      return Math.ceil(this.totalPages / this.opts.chunk);
+    },
+    currentChunk: function currentChunk() {
+      return Math.ceil(this.page / this.opts.chunk);
+    },
+    paginationStart: function paginationStart() {
+
+      if (this.opts.chunksNavigation === 'scroll') {
+        return this.firstPage;
+      }
+
+      return (this.currentChunk - 1) * this.opts.chunk + 1;
+    },
+    pagesInCurrentChunk: function pagesInCurrentChunk() {
+      return this.paginationStart + this.opts.chunk <= this.totalPages ? this.opts.chunk : this.totalPages - this.paginationStart + 1;
+    },
+    count: function count() {
+
+      if (/{page}/.test(this.opts.texts.count)) {
+
+        if (this.totalPages <= 1) return '';
+
+        return this.opts.texts.count.replace('{page}', this.page).replace('{pages}', this.totalPages);
+      }
+
+      var parts = this.opts.texts.count.split('|');
+      var from = (this.page - 1) * this.perPage + 1;
+      var to = this.page == this.totalPages ? this.records : from + this.perPage - 1;
+      var i = Math.min(this.records == 1 ? 2 : this.totalPages == 1 ? 1 : 0, parts.length - 1);
+
+      return parts[i].replace('{count}', this.formatNumber(this.records)).replace('{from}', this.formatNumber(from)).replace('{to}', this.formatNumber(to));
+    }
+  },
+  methods: {
+    setPage: function setPage(page) {
+      if (this.allowedPage(page)) {
+        this.paginate(page);
+      }
+    },
+    paginate: function paginate(page) {
+      if (this.vuex) {
+        this.$store.commit(this.for + '/PAGINATE', page);
+      } else {
+        this.Page = page;
+      }
+
+      this.$emit('paginate', page);
+
+      if (this.for) {
+        bus.$emit('vue-pagination::' + this.for, page);
+      }
+    },
+
+    next: function next() {
+      var page = this.page + 1;
+      if (this.opts.chunksNavigation === 'scroll' && this.allowedPage(page) && !this.inDisplay(page)) {
+        this.firstPage++;
+      }
+      return this.setPage(page);
+    },
+    prev: function prev() {
+      var page = this.page - 1;
+
+      if (this.opts.chunksNavigation === 'scroll' && this.allowedPage(page) && !this.inDisplay(page)) {
+        this.firstPage--;
+      }
+
+      return this.setPage(page);
+    },
+    inDisplay: function inDisplay(page) {
+
+      var start = this.firstPage;
+      var end = start + this.opts.chunk - 1;
+
+      return page >= start && page <= end;
+    },
+
+    nextChunk: function nextChunk() {
+      return this.setChunk(1);
+    },
+    prevChunk: function prevChunk() {
+      return this.setChunk(-1);
+    },
+    setChunk: function setChunk(direction) {
+      this.setPage((this.currentChunk - 1 + direction) * this.opts.chunk + 1);
+    },
+    allowedPage: function allowedPage(page) {
+      return page >= 1 && page <= this.totalPages;
+    },
+    allowedChunk: function allowedChunk(direction) {
+      return direction == 1 && this.currentChunk < this.totalChunks || direction == -1 && this.currentChunk > 1;
+    },
+    allowedPageClass: function allowedPageClass(direction) {
+      return this.allowedPage(direction) ? '' : this.Theme.disabled;
+    },
+    allowedChunkClass: function allowedChunkClass(direction) {
+      return this.allowedChunk(direction) ? '' : this.Theme.disabled;
+    },
+    activeClass: function activeClass(page) {
+      return this.page == page ? this.Theme.active : '';
+    },
+    formatNumber: function formatNumber(num) {
+
+      if (!this.opts.format) return num;
+
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+  },
+  beforeDestroy: function beforeDestroy() {
+    bus.$off();
+    bus.$destroy();
   }
 };
 
-function runHooks(vm) {
-  var hooks = vm.$options.deferredReady || [];
-
-  // Run the beforeDeferredReady methods first
-  var beforePromise = vm.beforeDeferredReady ? typeof vm.beforeDeferredReady.then === 'function' ? vm.beforeDeferredReady : Promise.all(vm.beforeDeferredReady) : Promise.resolve(null);
-
-  beforePromise.then(function () {
-    if (vm._isDestroyed) return;
-    if (typeof hooks === 'function') {
-      hooks = [hooks];
-    }
-    return Promise.all(hooks.map(function (x) {
-      try {
-        return x.apply(vm);
-      } catch (err) {
-        console.error(err.stack); // eslint-disable-line no-console
-      }
-    }));
-    // execute all handlers, expecting them to return promises
-    // wait for the promises to complete, before allowing child to execute
-  }).then(function () {
-    vm.$deferredReadyPromiseResolve();
+function range(start, count) {
+  return Array.apply(0, Array(count)).map(function (element, index) {
+    return index + start;
   });
 }
 
-var DeferredReadyMixin = exports.DeferredReadyMixin = {
-  /* Resolved after the deferredReady has been called
-    and the (optional) promise it returns has been
-    resolved */
-  $deferredReadyPromise: false,
-  $deferredReadyPromiseResolve: false,
-  $deferredReadyAncestor: false,
+/***/ }),
 
-  created: function created() {
-    var _this = this;
+/***/ 774:
+/***/ (function(module, exports, __webpack_require__) {
 
-    this.$deferredReadyPromise = new Promise(function (resolve, reject) {
-      // eslint-disable-line no-unused-vars
-      _this.$deferredReadyPromiseResolve = resolve;
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+exports.default = function () {
+    return {
+        format: true,
+        chunk: 10,
+        chunksNavigation: 'fixed',
+        edgeNavigation: false,
+        theme: 'bootstrap3',
+        texts: {
+            count: 'Showing {from} to {to} of {count} records|{count} records|One record',
+            first: 'First',
+            last: 'Last'
+        }
+    };
+};
+
+/***/ }),
+
+/***/ 775:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+
+  return function (h) {
+
+    var theme = this.Theme;
+    var prevChunk = '';
+    var nextChunk = '';
+    var firstPage = '';
+    var lastPage = '';
+    var items = this.pages.map(function (page) {
+
+      return h(
+        'li',
+        { 'class': 'VuePagination__pagination-item ' + theme.item + ' ' + this.activeClass(page),
+          on: {
+            'click': this.setPage.bind(this, page)
+          }
+        },
+        [h(
+          'a',
+          { 'class': theme.link + ' ' + this.activeClass(page),
+            attrs: { href: 'javascript:void(0)',
+              role: 'button' }
+          },
+          [page]
+        )]
+      );
+    }.bind(this));
+
+    if (this.opts.edgeNavigation && this.totalChunks > 1) {
+      firstPage = h(
+        'li',
+        { 'class': 'VuePagination__pagination-item ' + theme.item + ' ' + (this.page === 1 ? theme.disabled : '') + ' VuePagination__pagination-item-prev-chunk',
+          on: {
+            'click': this.setPage.bind(this, 1)
+          }
+        },
+        [h(
+          'a',
+          { 'class': theme.link,
+            attrs: { href: 'javascript:void(0);',
+              disabled: this.page === 1 }
+          },
+          [this.opts.texts.first]
+        )]
+      );
+
+      lastPage = h(
+        'li',
+        { 'class': 'VuePagination__pagination-item ' + theme.item + ' ' + (this.page === this.totalPages ? theme.disabled : '') + ' VuePagination__pagination-item-prev-chunk',
+          on: {
+            'click': this.setPage.bind(this, this.totalPages)
+          }
+        },
+        [h(
+          'a',
+          { 'class': theme.link,
+            attrs: { href: 'javascript:void(0);',
+              disabled: this.page === this.totalPages }
+          },
+          [this.opts.texts.last]
+        )]
+      );
+    }
+
+    if (this.opts.chunksNavigation === 'fixed') {
+
+      prevChunk = h(
+        'li',
+        { 'class': 'VuePagination__pagination-item ' + theme.item + ' ' + theme.prev + ' VuePagination__pagination-item-prev-chunk ' + this.allowedChunkClass(-1),
+          on: {
+            'click': this.setChunk.bind(this, -1)
+          }
+        },
+        [h(
+          'a',
+          { 'class': theme.link,
+            attrs: { href: 'javascript:void(0);',
+              disabled: !!this.allowedChunkClass(-1) }
+          },
+          ['<<']
+        )]
+      );
+
+      nextChunk = h(
+        'li',
+        { 'class': 'VuePagination__pagination-item ' + theme.item + ' ' + theme.next + ' VuePagination__pagination-item-next-chunk ' + this.allowedChunkClass(1),
+          on: {
+            'click': this.setChunk.bind(this, 1)
+          }
+        },
+        [h(
+          'a',
+          { 'class': theme.link,
+            attrs: { href: 'javascript:void(0);',
+              disabled: !!this.allowedChunkClass(1) }
+          },
+          ['>>']
+        )]
+      );
+    }
+
+    return h(
+      'div',
+      { 'class': 'VuePagination ' + theme.wrapper },
+      [h(
+        'nav',
+        { 'class': '' + theme.nav },
+        [h(
+          'ul',
+          {
+            directives: [{
+              name: 'show',
+              value: this.totalPages > 1
+            }],
+
+            'class': theme.list + ' VuePagination__pagination' },
+          [firstPage, prevChunk, h(
+            'li',
+            { 'class': 'VuePagination__pagination-item ' + theme.item + ' ' + theme.prev + ' VuePagination__pagination-item-prev-page ' + this.allowedPageClass(this.page - 1),
+              on: {
+                'click': this.prev.bind(this)
+              }
+            },
+            [h(
+              'a',
+              { 'class': theme.link,
+                attrs: { href: 'javascript:void(0);',
+                  disabled: !!this.allowedPageClass(this.page - 1)
+                }
+              },
+              ['<']
+            )]
+          ), items, h(
+            'li',
+            { 'class': 'VuePagination__pagination-item ' + theme.item + ' ' + theme.next + ' VuePagination__pagination-item-next-page ' + this.allowedPageClass(this.page + 1),
+              on: {
+                'click': this.next.bind(this)
+              }
+            },
+            [h(
+              'a',
+              { 'class': theme.link,
+                attrs: { href: 'javascript:void(0);',
+                  disabled: !!this.allowedPageClass(this.page + 1)
+                }
+              },
+              ['>']
+            )]
+          ), nextChunk, lastPage]
+        ), h(
+          'p',
+          {
+            directives: [{
+              name: 'show',
+              value: parseInt(this.records)
+            }],
+
+            'class': 'VuePagination__count ' + theme.count },
+          [this.count]
+        )]
+      )]
+    );
+  };
+};
+
+/***/ }),
+
+/***/ 776:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+    nav: '',
+    count: '',
+    wrapper: '',
+    list: 'pagination',
+    item: 'page-item',
+    link: 'page-link',
+    next: '',
+    prev: '',
+    active: 'active',
+    disabled: 'disabled'
+};
+
+/***/ }),
+
+/***/ 777:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+    nav: '',
+    count: '',
+    wrapper: '',
+    list: 'pagination',
+    item: 'page-item',
+    link: 'page-link',
+    next: '',
+    prev: '',
+    active: 'active',
+    disabled: 'disabled'
+};
+
+/***/ }),
+
+/***/ 778:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+    nav: '',
+    count: '',
+    wrapper: 'pagination',
+    list: 'pagination-list',
+    item: '',
+    link: 'pagination-link',
+    next: '',
+    prev: '',
+    active: 'is-current',
+    disabled: '' // uses the disabled HTML attirbute
+};
+
+/***/ }),
+
+/***/ 779:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+      initQuery: __webpack_require__(780),
+      initCustomFilters: __webpack_require__(781),
+      initOptions: __webpack_require__(782),
+      sortableClass: __webpack_require__(783),
+      sortableChevronClass: __webpack_require__(784),
+      display: __webpack_require__(785),
+      orderByColumn: __webpack_require__(786),
+      getHeading: __webpack_require__(787),
+      getHeadingTooltip: __webpack_require__(789),
+      sortable: __webpack_require__(790),
+      serverSearch: __webpack_require__(745),
+      initOrderBy: __webpack_require__(791),
+      initDateFilters: __webpack_require__(792),
+      setFilter: __webpack_require__(793),
+      setPage: __webpack_require__(794),
+      setOrder: __webpack_require__(795),
+      initPagination: __webpack_require__(796),
+      filterable: __webpack_require__(797),
+      isTextFilter: __webpack_require__(798),
+      isDateFilter: __webpack_require__(799),
+      isListFilter: __webpack_require__(800),
+      highlightMatch: __webpack_require__(801),
+      formatDate: __webpack_require__(802),
+      hasDateFilters: __webpack_require__(803),
+      applyFilters: __webpack_require__(851),
+      optionText: __webpack_require__(852),
+      render: __webpack_require__(853),
+      rowWasClicked: __webpack_require__(854),
+      setLimit: __webpack_require__(855),
+      getOpenChildRows: __webpack_require__(856),
+      dispatch: __webpack_require__(857),
+      toggleChildRow: __webpack_require__(858),
+      childRowTogglerClass: __webpack_require__(859),
+      sendRequest: __webpack_require__(860),
+      getResponseData: __webpack_require__(861),
+      getSortFn: __webpack_require__(862),
+      initState: __webpack_require__(863),
+      updateState: __webpack_require__(864),
+      columnClass: __webpack_require__(865),
+      getName: __webpack_require__(866),
+      toggleColumn: __webpack_require__(867),
+      setUserMultiSort: __webpack_require__(868),
+      _setFiltersDOM: __webpack_require__(869),
+      _currentlySorted: __webpack_require__(870),
+      _getChildRowTemplate: __webpack_require__(871),
+      _toggleColumnsDropdown: __webpack_require__(872),
+      _onlyColumn: __webpack_require__(873),
+      _onPagination: __webpack_require__(874),
+      _toggleGroupDirection: __webpack_require__(875),
+      _getInitialDateRange: __webpack_require__(876),
+      _setDatepickerText: __webpack_require__(877),
+      _initialOrderAscending: __webpack_require__(878),
+      dateFormat: __webpack_require__(879),
+      _setColumnsDropdownCloseListener: __webpack_require__(880),
+      _getValue: __webpack_require__(881),
+      _getColumnName: __webpack_require__(882)
+};
+
+/***/ }),
+
+/***/ 780:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+module.exports = function () {
+
+  var init = this.opts.initFilters;
+
+  if (!this.opts.filterByColumn) return init.hasOwnProperty('GENERIC') ? init.GENERIC : '';
+
+  var query = {};
+
+  var filterable = this.opts.filterable && _typeof(this.opts.filterable) == 'object' ? this.opts.filterable : this.columns;
+
+  filterable.forEach(function (column) {
+    query[column] = getInitialValue(init, column);
+  }.bind(this));
+
+  return query;
+};
+
+function getInitialValue(init, column) {
+
+  if (!init.hasOwnProperty(column)) return '';
+
+  if (typeof init[column].start == 'undefined') return init[column];
+
+  return {
+    start: init[column].start.format('YYYY-MM-DD HH:mm:ss'),
+    end: init[column].end.format('YYYY-MM-DD HH:mm:ss')
+  };
+}
+
+/***/ }),
+
+/***/ 781:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+
+  var customQueries = {};
+
+  var init = this.opts.initFilters;
+  var key = void 0;
+
+  this.opts.customFilters.forEach(function (filter) {
+
+    key = this.source == 'client' ? filter.name : filter;
+
+    customQueries[key] = init.hasOwnProperty(key) ? init[key] : '';
+  }.bind(this));
+
+  return customQueries;
+};
+
+/***/ }),
+
+/***/ 782:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var merge = __webpack_require__(730);
+
+module.exports = function (defaults, globalOptions, localOptions) {
+
+     if (globalOptions) defaults = merge.recursive(defaults, globalOptions);
+
+     localOptions = merge.recursive(defaults, localOptions);
+
+     return localOptions;
+};
+
+/***/ }),
+
+/***/ 783:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (column) {
+
+  var c = this.sortable(column) ? 'VueTables__sortable ' : '';
+
+  c += this.columnClass(column);
+
+  return c;
+};
+
+/***/ }),
+
+/***/ 784:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (column) {
+
+  var cls = this.opts.sortIcon.base + ' ';
+
+  if (!this.sortable(column)) return;
+
+  if (this.opts.sortIcon.is && !this._currentlySorted(column)) {
+    cls += this.opts.sortIcon.is + ' ';
+  }
+
+  if (this.hasMultiSort && this.orderBy.column && this.userMultiSorting[this.orderBy.column]) {
+    var col = this.userMultiSorting[this.orderBy.column].filter(function (c) {
+      return c.column === column;
+    })[0];
+    if (col) cls += col.ascending ? this.opts.sortIcon.up : this.opts.sortIcon.down;
+  }
+
+  if (column == this.orderBy.column) {
+    cls += this.orderBy.ascending == 1 ? this.opts.sortIcon.up : this.opts.sortIcon.down;
+  }
+
+  return cls;
+};
+
+/***/ }),
+
+/***/ 785:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (text, replacements) {
+
+   if (!this.opts.texts) return '';
+
+   var text = this.opts.texts[text];
+
+   if (replacements) for (var key in replacements) {
+      // console.log(key)
+      text = text.replace('{' + key + '}', replacements[key]);
+   }
+
+   return text;
+};
+
+/***/ }),
+
+/***/ 786:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (colName, ev) {
+
+  if (!this.sortable(colName)) return;
+
+  if (ev.shiftKey && this.orderBy.column && this.hasMultiSort) {
+    this.setUserMultiSort(colName);
+  } else {
+    this.userMultiSorting = {};
+    this.orderBy.ascending = colName == this.orderBy.column ? !this.orderBy.ascending : this._initialOrderAscending(colName);
+    this.orderBy.column = colName;
+
+    this.updateState('orderBy', this.orderBy);
+    this.dispatch('sorted', JSON.parse(JSON.stringify(this.orderBy)));
+  }
+
+  if (this.source == 'server') {
+    this.getData();
+  }
+};
+
+/***/ }),
+
+/***/ 787:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _ucfirst = __webpack_require__(788);
+
+var _ucfirst2 = _interopRequireDefault(_ucfirst);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (value, h) {
+
+	if (typeof value !== 'string') return '';
+
+	if (typeof this.$slots['h__' + value] !== 'undefined') {
+		return this.$slots['h__' + value];
+	}
+
+	var derivedHeading = (0, _ucfirst2.default)(value.split("_").join(" "));
+
+	if (!this.opts.headings.hasOwnProperty(value)) return derivedHeading;
+
+	if (typeof this.opts.headings[value] === 'function') {
+		if (h) return this.opts.headings[value].call(this.$parent, h);
+
+		return derivedHeading;
+	}
+
+	return this.opts.headings[value];
+};
+
+/***/ }),
+
+/***/ 788:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+exports.default = function (str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
+/***/ }),
+
+/***/ 789:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (value, h) {
+
+	if (typeof value !== 'string') return '';
+
+	var derivedHeadingTooltip = '';
+
+	if (!this.opts.headingsTooltips.hasOwnProperty(value)) return derivedHeadingTooltip;
+
+	if (typeof this.opts.headingsTooltips[value] === 'function') {
+		if (h) return this.opts.headingsTooltips[value].call(this.$parent, h);
+
+		return derivedHeadingTooltip;
+	}
+
+	return this.opts.headingsTooltips[value];
+};
+
+/***/ }),
+
+/***/ 790:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (column) {
+
+    var sortAll = typeof this.opts.sortable == 'boolean' && this.opts.sortable;
+
+    if (sortAll) return true;
+
+    return this.opts.sortable.indexOf(column) > -1;
+};
+
+/***/ }),
+
+/***/ 791:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+
+  if (!this.opts.orderBy) return;
+
+  this.orderBy.column = this.opts.orderBy.column;
+  this.orderBy.ascending = this.opts.orderBy.hasOwnProperty('ascending') ? this.opts.orderBy.ascending : true;
+};
+
+/***/ }),
+
+/***/ 792:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var merge = __webpack_require__(730);
+
+module.exports = function () {
+
+  if (typeof $ === 'undefined' || typeof $(this.$el).daterangepicker === 'undefined') {
+    console.error('Date filters require jquery and daterangepicker');
+    return;
+  }
+
+  var el;
+  var that = this;
+  var query = this.vuex ? JSON.parse(JSON.stringify(this.query)) : this.query;
+  var columnOptions;
+  var dpOptions;
+
+  var search = function search(query, e) {
+    return that.source == 'client' ? that.search(that.data, e) : that.serverSearch(query, e);
+  };
+
+  var datepickerOptions = merge.recursive(this.opts.datepickerOptions, {
+    autoUpdateInput: false,
+    singleDatePicker: false
+  });
+
+  that.opts.dateColumns.forEach(function (column) {
+
+    var range = that._getInitialDateRange(column);
+
+    if (range) {
+
+      that._setDatepickerText(column, range.start, range.end);
+
+      range = {
+        startDate: range.start,
+        endDate: range.end
+      };
+    } else {
+      range = {};
+    }
+
+    el = $(that.$el).find("#VueTables__" + column + "-filter");
+
+    columnOptions = typeof that.opts.datepickerPerColumnOptions[column] !== 'undefined' ? that.opts.datepickerPerColumnOptions[column] : {};
+
+    columnOptions = merge.recursive(columnOptions, {
+      locale: {
+        format: that.dateFormat(column)
+      }
     });
 
-    var search = this.$parent;
-    while (search) {
-      if (search.$deferredReadyPromise) {
-        this.$deferredReadyAncestor = search;
-        break;
-      }
-      search = search.$parent;
+    dpOptions = merge(true, datepickerOptions);
+
+    if (columnOptions.ranges === false) {
+      dpOptions.ranges = {};
     }
-  },
-  mounted: function mounted() {
-    var _this2 = this;
 
-    // Execute the hooks only if this is the first
-    // ancestor that is a DeferredReady
-    // this.$deferredReadyMountedPromiseResolve();
+    el.daterangepicker(merge.recursive(dpOptions, columnOptions, range));
 
-    if (!this.$deferredReadyAncestor) {
-      runHooks(this);
+    el.on('apply.daterangepicker', function (ev, picker) {
+
+      query[column] = {
+        start: picker.startDate.format('YYYY-MM-DD HH:mm:ss'),
+        end: picker.endDate.format('YYYY-MM-DD HH:mm:ss')
+      };
+
+      if (!that.vuex) that.query = query;
+
+      that._setDatepickerText(column, picker.startDate, picker.endDate);
+
+      that.updateState('query', query);
+
+      search(query, { target: { name: that._getColumnName(column), value: query[column] } });
+    });
+
+    el.on('cancel.daterangepicker', function (ev, picker) {
+
+      query[column] = '';
+
+      if (!that.vuex) that.query = query;
+
+      picker.setStartDate(moment());
+      picker.setEndDate(moment());
+
+      that.updateState('query', query);
+
+      $(this).html("<span class='VueTables__filter-placeholder'>" + that.display('filterBy', { column: that.getHeading(column) }) + "</span>");
+
+      search(query, { target: { name: that._getColumnName(column), value: query[column] } });
+    });
+  });
+};
+
+/***/ }),
+
+/***/ 793:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var merge = __webpack_require__(730);
+
+module.exports = function (filter) {
+
+  if (!this.opts.filterable) {
+    console.warn("vue-tables-2: Unable to set filter. Filtering is disabled (filterable: false)");
+    return;
+  };
+
+  if (this.opts.filterByColumn && typeof filter === 'string') {
+    console.warn("vue-tables-2: Unable to set filter. Filter value must be an object (`filterByColumn` is set to `true`)");
+    return;
+  };
+
+  if (!this.opts.filterByColumn && typeof filter !== 'string') {
+    console.warn("vue-tables-2: Unable to set filter. Filter value must be a string (`filterByColumn` is set to `false`)");
+    return;
+  };
+
+  var mergedFilter = this.opts.filterByColumn ? merge(this.query, filter) : filter;
+
+  if (this.vuex) {
+    this.commit('SET_FILTER', mergedFilter);
+  } else {
+    this.query = mergedFilter;
+    this.setPage(1, true);
+  }
+
+  this.updateState('query', mergedFilter);
+
+  this._setFiltersDOM(filter);
+
+  if (this.source == 'server') {
+    this.getData();
+  }
+};
+
+/***/ }),
+
+/***/ 794:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (page, preventRequest) {
+
+  page = page ? page : this.$refs.page.value;
+
+  if (!this.opts.pagination.dropdown) this.$refs.pagination.Page = page;
+
+  this.page = page;
+
+  this.updateState('page', page);
+
+  if (this.source == 'server' && !preventRequest) this.getData();
+};
+
+/***/ }),
+
+/***/ 795:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (column, ascending) {
+
+  this.orderBy.column = column;
+  this.orderBy.ascending = ascending;
+
+  this.updateState('orderBy', { column: column, ascending: ascending });
+
+  if (this.source == 'server') {
+    this.getData();
+  }
+};
+
+/***/ }),
+
+/***/ 796:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+
+  this.page = 1;
+
+  if (!this.opts.pagination.dropdown) {
+    this.$refs.pagination.setPage(1);
+  }
+};
+
+/***/ }),
+
+/***/ 797:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (column) {
+
+  if (!this.opts.filterable) return false;
+
+  return typeof this.opts.filterable == 'boolean' && this.opts.filterable || this.opts.filterable.indexOf(column) > -1;
+};
+
+/***/ }),
+
+/***/ 798:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (column) {
+
+  return this.query.hasOwnProperty(column) && this.opts.dateColumns.indexOf(column) == -1 && !this.opts.listColumns.hasOwnProperty(column);
+};
+
+/***/ }),
+
+/***/ 799:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (column) {
+  return this.query.hasOwnProperty(column) && this.opts.dateColumns.indexOf(column) > -1;
+};
+
+/***/ }),
+
+/***/ 800:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (column) {
+  return this.query.hasOwnProperty(column) && this.opts.listColumns.hasOwnProperty(column);
+};
+
+/***/ }),
+
+/***/ 801:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (value, column, h) {
+
+  var query = this.opts.filterByColumn ? this.query[column] : this.query;
+
+  if (!query) return value;
+
+  query = new RegExp("(" + escapeRegex(query) + ")", "i");
+
+  return h("span", { class: 'VueTables__highlight' }, matches(value, query, h));
+};
+
+function matches(value, query, h) {
+  var pieces = String(value).split(query);
+
+  return pieces.map(function (piece) {
+    if (query.test(piece)) {
+      return h("b", {}, piece);
+    }
+
+    return piece;
+  });
+}
+
+function escapeRegex(s) {
+  return typeof s === 'string' ? s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') : s;
+};
+
+/***/ }),
+
+/***/ 802:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var validMoment = __webpack_require__(746);
+
+module.exports = function (value, dateFormat) {
+
+  if (!validMoment(value)) return value;
+
+  return value.format(dateFormat);
+};
+
+/***/ }),
+
+/***/ 803:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var intersection = __webpack_require__(804);
+
+module.exports = function () {
+
+  var opts = this.opts;
+
+  return opts.dateColumns.length && opts.filterByColumn && (typeof opts.filterable == 'boolean' && opts.filterable || _typeof(opts.filterable) == 'object' && intersection(opts.filterable, opts.dateColumns).length);
+};
+
+/***/ }),
+
+/***/ 804:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * array-intersection <https://github.com/jonschlinkert/array-intersection>
+ *
+ * Copyright (c) 2014 Jon Schlinkert, contributors.
+ * Licensed under the MIT License
+ */
+
+
+
+var filter = __webpack_require__(805);
+var every = __webpack_require__(847);
+var unique = __webpack_require__(749);
+var slice = __webpack_require__(849);
+var indexOf = __webpack_require__(850);
+
+module.exports = function intersection(arr) {
+  if (arr == null) {
+    return [];
+  }
+
+  if (arguments.length === 1) {
+    return unique(arr);
+  }
+
+  var arrays = slice(arguments, 1);
+
+  return filter(unique(arr), function (ele) {
+    return every(arrays, function (cur) {
+      return indexOf(cur, ele) !== -1;
+    });
+  });
+};
+
+
+/***/ }),
+
+/***/ 805:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * filter-array <https://github.com/jonschlinkert/filter-array>
+ *
+ * Copyright (c) 2014-2015 Jon Schlinkert, contributors.
+ * Licensed under the MIT License
+ */
+
+
+
+var typeOf = __webpack_require__(806);
+var filter = __webpack_require__(809);
+var mm = __webpack_require__(812);
+
+/**
+ * Filter array against given glob
+ * patterns, regex or given function.
+ *
+ * ```js
+ * var filter = require('filter-array');
+ *
+ * filter(['a', 'b', 'c', 'b', 'c', 'e'], function(ele) {
+ *   return ele === 'a' || ele === 'b';
+ * });
+ *
+ * //=> ['a', 'b', 'b']
+ * ```
+ *
+ * @name   filterArray
+ * @param  {Array} `arr` array to filter
+ * @param  {Array|String|Function|RegExp} `filters`
+ * @param  {Object} `opts` options to pass to [micromatch]
+ * @return {Array}
+ * @api public
+ */
+
+module.exports = function filterArray(arr, filters, opts) {
+  if (arr.length === 0) {
+    return [];
+  }
+
+  if (typeOf(filters) === 'function' || typeOf(filters) === 'regexp') {
+    var isMatch = mm.matcher(filters, opts);
+
+    return filter(arr, function _filter(val) {
+      return isMatch(val);
+    });
+  }
+
+  if (typeOf(filters) === 'string' || typeOf(filters) === 'array') {
+    return filter(arr, mm.filter(filters, opts));
+  }
+
+  return [];
+};
+
+
+/***/ }),
+
+/***/ 806:
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(Buffer) {var toString = Object.prototype.toString;
+
+/**
+ * Get the native `typeof` a value.
+ *
+ * @param  {*} `val`
+ * @return {*} Native javascript type
+ */
+
+module.exports = function kindOf(val) {
+  if (val === undefined) {
+    return 'undefined';
+  }
+  if (val === null) {
+    return 'null';
+  }
+  if (val === true || val === false || val instanceof Boolean) {
+    return 'boolean';
+  }
+  if (typeof val !== 'object') {
+    return typeof val;
+  }
+  if (Array.isArray(val)) {
+    return 'array';
+  }
+
+  var type = toString.call(val);
+
+  if (val instanceof RegExp || type === '[object RegExp]') {
+    return 'regexp';
+  }
+  if (val instanceof Date || type === '[object Date]') {
+    return 'date';
+  }
+  if (type === '[object Function]') {
+    return 'function';
+  }
+  if (type === '[object Arguments]') {
+    return 'arguments';
+  }
+  if (typeof Buffer !== 'undefined' && Buffer.isBuffer(val)) {
+    return 'buffer';
+  }
+  return type.slice(8, -1).toLowerCase();
+};
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(747).Buffer))
+
+/***/ }),
+
+/***/ 807:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.byteLength = byteLength
+exports.toByteArray = toByteArray
+exports.fromByteArray = fromByteArray
+
+var lookup = []
+var revLookup = []
+var Arr = typeof Uint8Array !== 'undefined' ? Uint8Array : Array
+
+var code = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+for (var i = 0, len = code.length; i < len; ++i) {
+  lookup[i] = code[i]
+  revLookup[code.charCodeAt(i)] = i
+}
+
+// Support decoding URL-safe base64 strings, as Node.js does.
+// See: https://en.wikipedia.org/wiki/Base64#URL_applications
+revLookup['-'.charCodeAt(0)] = 62
+revLookup['_'.charCodeAt(0)] = 63
+
+function getLens (b64) {
+  var len = b64.length
+
+  if (len % 4 > 0) {
+    throw new Error('Invalid string. Length must be a multiple of 4')
+  }
+
+  // Trim off extra bytes after placeholder bytes are found
+  // See: https://github.com/beatgammit/base64-js/issues/42
+  var validLen = b64.indexOf('=')
+  if (validLen === -1) validLen = len
+
+  var placeHoldersLen = validLen === len
+    ? 0
+    : 4 - (validLen % 4)
+
+  return [validLen, placeHoldersLen]
+}
+
+// base64 is 4/3 + up to two characters of the original data
+function byteLength (b64) {
+  var lens = getLens(b64)
+  var validLen = lens[0]
+  var placeHoldersLen = lens[1]
+  return ((validLen + placeHoldersLen) * 3 / 4) - placeHoldersLen
+}
+
+function _byteLength (b64, validLen, placeHoldersLen) {
+  return ((validLen + placeHoldersLen) * 3 / 4) - placeHoldersLen
+}
+
+function toByteArray (b64) {
+  var tmp
+  var lens = getLens(b64)
+  var validLen = lens[0]
+  var placeHoldersLen = lens[1]
+
+  var arr = new Arr(_byteLength(b64, validLen, placeHoldersLen))
+
+  var curByte = 0
+
+  // if there are placeholders, only get up to the last complete 4 chars
+  var len = placeHoldersLen > 0
+    ? validLen - 4
+    : validLen
+
+  for (var i = 0; i < len; i += 4) {
+    tmp =
+      (revLookup[b64.charCodeAt(i)] << 18) |
+      (revLookup[b64.charCodeAt(i + 1)] << 12) |
+      (revLookup[b64.charCodeAt(i + 2)] << 6) |
+      revLookup[b64.charCodeAt(i + 3)]
+    arr[curByte++] = (tmp >> 16) & 0xFF
+    arr[curByte++] = (tmp >> 8) & 0xFF
+    arr[curByte++] = tmp & 0xFF
+  }
+
+  if (placeHoldersLen === 2) {
+    tmp =
+      (revLookup[b64.charCodeAt(i)] << 2) |
+      (revLookup[b64.charCodeAt(i + 1)] >> 4)
+    arr[curByte++] = tmp & 0xFF
+  }
+
+  if (placeHoldersLen === 1) {
+    tmp =
+      (revLookup[b64.charCodeAt(i)] << 10) |
+      (revLookup[b64.charCodeAt(i + 1)] << 4) |
+      (revLookup[b64.charCodeAt(i + 2)] >> 2)
+    arr[curByte++] = (tmp >> 8) & 0xFF
+    arr[curByte++] = tmp & 0xFF
+  }
+
+  return arr
+}
+
+function tripletToBase64 (num) {
+  return lookup[num >> 18 & 0x3F] +
+    lookup[num >> 12 & 0x3F] +
+    lookup[num >> 6 & 0x3F] +
+    lookup[num & 0x3F]
+}
+
+function encodeChunk (uint8, start, end) {
+  var tmp
+  var output = []
+  for (var i = start; i < end; i += 3) {
+    tmp =
+      ((uint8[i] << 16) & 0xFF0000) +
+      ((uint8[i + 1] << 8) & 0xFF00) +
+      (uint8[i + 2] & 0xFF)
+    output.push(tripletToBase64(tmp))
+  }
+  return output.join('')
+}
+
+function fromByteArray (uint8) {
+  var tmp
+  var len = uint8.length
+  var extraBytes = len % 3 // if we have 1 byte left, pad 2 bytes
+  var parts = []
+  var maxChunkLength = 16383 // must be multiple of 3
+
+  // go through the array every three bytes, we'll deal with trailing stuff later
+  for (var i = 0, len2 = len - extraBytes; i < len2; i += maxChunkLength) {
+    parts.push(encodeChunk(
+      uint8, i, (i + maxChunkLength) > len2 ? len2 : (i + maxChunkLength)
+    ))
+  }
+
+  // pad the end with zeros, but make sure to not forget the extra bytes
+  if (extraBytes === 1) {
+    tmp = uint8[len - 1]
+    parts.push(
+      lookup[tmp >> 2] +
+      lookup[(tmp << 4) & 0x3F] +
+      '=='
+    )
+  } else if (extraBytes === 2) {
+    tmp = (uint8[len - 2] << 8) + uint8[len - 1]
+    parts.push(
+      lookup[tmp >> 10] +
+      lookup[(tmp >> 4) & 0x3F] +
+      lookup[(tmp << 2) & 0x3F] +
+      '='
+    )
+  }
+
+  return parts.join('')
+}
+
+
+/***/ }),
+
+/***/ 808:
+/***/ (function(module, exports) {
+
+exports.read = function (buffer, offset, isLE, mLen, nBytes) {
+  var e, m
+  var eLen = (nBytes * 8) - mLen - 1
+  var eMax = (1 << eLen) - 1
+  var eBias = eMax >> 1
+  var nBits = -7
+  var i = isLE ? (nBytes - 1) : 0
+  var d = isLE ? -1 : 1
+  var s = buffer[offset + i]
+
+  i += d
+
+  e = s & ((1 << (-nBits)) - 1)
+  s >>= (-nBits)
+  nBits += eLen
+  for (; nBits > 0; e = (e * 256) + buffer[offset + i], i += d, nBits -= 8) {}
+
+  m = e & ((1 << (-nBits)) - 1)
+  e >>= (-nBits)
+  nBits += mLen
+  for (; nBits > 0; m = (m * 256) + buffer[offset + i], i += d, nBits -= 8) {}
+
+  if (e === 0) {
+    e = 1 - eBias
+  } else if (e === eMax) {
+    return m ? NaN : ((s ? -1 : 1) * Infinity)
+  } else {
+    m = m + Math.pow(2, mLen)
+    e = e - eBias
+  }
+  return (s ? -1 : 1) * m * Math.pow(2, e - mLen)
+}
+
+exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
+  var e, m, c
+  var eLen = (nBytes * 8) - mLen - 1
+  var eMax = (1 << eLen) - 1
+  var eBias = eMax >> 1
+  var rt = (mLen === 23 ? Math.pow(2, -24) - Math.pow(2, -77) : 0)
+  var i = isLE ? 0 : (nBytes - 1)
+  var d = isLE ? 1 : -1
+  var s = value < 0 || (value === 0 && 1 / value < 0) ? 1 : 0
+
+  value = Math.abs(value)
+
+  if (isNaN(value) || value === Infinity) {
+    m = isNaN(value) ? 1 : 0
+    e = eMax
+  } else {
+    e = Math.floor(Math.log(value) / Math.LN2)
+    if (value * (c = Math.pow(2, -e)) < 1) {
+      e--
+      c *= 2
+    }
+    if (e + eBias >= 1) {
+      value += rt / c
     } else {
-      this.$deferredReadyAncestor.$deferredReadyPromise.then(function () {
-        runHooks(_this2);
-      });
+      value += rt * Math.pow(2, 1 - eBias)
+    }
+    if (value * c >= 2) {
+      e++
+      c /= 2
+    }
+
+    if (e + eBias >= eMax) {
+      m = 0
+      e = eMax
+    } else if (e + eBias >= 1) {
+      m = ((value * c) - 1) * Math.pow(2, mLen)
+      e = e + eBias
+    } else {
+      m = value * Math.pow(2, eBias - 1) * Math.pow(2, mLen)
+      e = 0
+    }
+  }
+
+  for (; mLen >= 8; buffer[offset + i] = m & 0xff, i += d, m /= 256, mLen -= 8) {}
+
+  e = (e << mLen) | m
+  eLen += mLen
+  for (; eLen > 0; buffer[offset + i] = e & 0xff, i += d, e /= 256, eLen -= 8) {}
+
+  buffer[offset + i - d] |= s * 128
+}
+
+
+/***/ }),
+
+/***/ 809:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * arr-filter <https://github.com/jonschlinkert/arr-filter>
+ *
+ * Copyright (c) 2014-2015, 2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+
+
+var makeIterator = __webpack_require__(810);
+
+module.exports = function filter(arr, fn, thisArg) {
+  if (arr == null) {
+    return [];
+  }
+
+  if (typeof fn !== 'function') {
+    throw new TypeError('expected callback to be a function');
+  }
+
+  var iterator = makeIterator(fn, thisArg);
+  var len = arr.length;
+  var res = arr.slice();
+  var i = -1;
+
+  while (len--) {
+    if (!iterator(arr[len], i++)) {
+      res.splice(len, 1);
+    }
+  }
+  return res;
+};
+
+
+
+/***/ }),
+
+/***/ 810:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * make-iterator <https://github.com/jonschlinkert/make-iterator>
+ *
+ * Copyright (c) 2014-2018, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+
+
+var typeOf = __webpack_require__(811);
+
+module.exports = function makeIterator(target, thisArg) {
+  switch (typeOf(target)) {
+    case 'undefined':
+    case 'null':
+      return noop;
+    case 'function':
+      // function is the first to improve perf (most common case)
+      // also avoid using `Function#call` if not needed, which boosts
+      // perf a lot in some cases
+      return (typeof thisArg !== 'undefined') ? function(val, i, arr) {
+        return target.call(thisArg, val, i, arr);
+      } : target;
+    case 'object':
+      return function(val) {
+        return deepMatches(val, target);
+      };
+    case 'regexp':
+      return function(str) {
+        return target.test(str);
+      };
+    case 'string':
+    case 'number':
+    default: {
+      return prop(target);
     }
   }
 };
+
+function containsMatch(array, value) {
+  var len = array.length;
+  var i = -1;
+
+  while (++i < len) {
+    if (deepMatches(array[i], value)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function matchArray(arr, value) {
+  var len = value.length;
+  var i = -1;
+
+  while (++i < len) {
+    if (!containsMatch(arr, value[i])) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function matchObject(obj, value) {
+  for (var key in value) {
+    if (value.hasOwnProperty(key)) {
+      if (deepMatches(obj[key], value[key]) === false) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+/**
+ * Recursively compare objects
+ */
+
+function deepMatches(val, value) {
+  if (typeOf(val) === 'object') {
+    if (Array.isArray(val) && Array.isArray(value)) {
+      return matchArray(val, value);
+    } else {
+      return matchObject(val, value);
+    }
+  } else {
+    return val === value;
+  }
+}
+
+function prop(name) {
+  return function(obj) {
+    return obj[name];
+  };
+}
+
+function noop(val) {
+  return val;
+}
+
+
+/***/ }),
+
+/***/ 811:
+/***/ (function(module, exports) {
+
+var toString = Object.prototype.toString;
+
+module.exports = function kindOf(val) {
+  if (val === void 0) return 'undefined';
+  if (val === null) return 'null';
+
+  var type = typeof val;
+  if (type === 'boolean') return 'boolean';
+  if (type === 'string') return 'string';
+  if (type === 'number') return 'number';
+  if (type === 'symbol') return 'symbol';
+  if (type === 'function') {
+    return isGeneratorFn(val) ? 'generatorfunction' : 'function';
+  }
+
+  if (isArray(val)) return 'array';
+  if (isBuffer(val)) return 'buffer';
+  if (isArguments(val)) return 'arguments';
+  if (isDate(val)) return 'date';
+  if (isError(val)) return 'error';
+  if (isRegexp(val)) return 'regexp';
+
+  switch (ctorName(val)) {
+    case 'Symbol': return 'symbol';
+    case 'Promise': return 'promise';
+
+    // Set, Map, WeakSet, WeakMap
+    case 'WeakMap': return 'weakmap';
+    case 'WeakSet': return 'weakset';
+    case 'Map': return 'map';
+    case 'Set': return 'set';
+
+    // 8-bit typed arrays
+    case 'Int8Array': return 'int8array';
+    case 'Uint8Array': return 'uint8array';
+    case 'Uint8ClampedArray': return 'uint8clampedarray';
+
+    // 16-bit typed arrays
+    case 'Int16Array': return 'int16array';
+    case 'Uint16Array': return 'uint16array';
+
+    // 32-bit typed arrays
+    case 'Int32Array': return 'int32array';
+    case 'Uint32Array': return 'uint32array';
+    case 'Float32Array': return 'float32array';
+    case 'Float64Array': return 'float64array';
+  }
+
+  if (isGeneratorObj(val)) {
+    return 'generator';
+  }
+
+  // Non-plain objects
+  type = toString.call(val);
+  switch (type) {
+    case '[object Object]': return 'object';
+    // iterators
+    case '[object Map Iterator]': return 'mapiterator';
+    case '[object Set Iterator]': return 'setiterator';
+    case '[object String Iterator]': return 'stringiterator';
+    case '[object Array Iterator]': return 'arrayiterator';
+  }
+
+  // other
+  return type.slice(8, -1).toLowerCase().replace(/\s/g, '');
+};
+
+function ctorName(val) {
+  return val.constructor ? val.constructor.name : null;
+}
+
+function isArray(val) {
+  if (Array.isArray) return Array.isArray(val);
+  return val instanceof Array;
+}
+
+function isError(val) {
+  return val instanceof Error || (typeof val.message === 'string' && val.constructor && typeof val.constructor.stackTraceLimit === 'number');
+}
+
+function isDate(val) {
+  if (val instanceof Date) return true;
+  return typeof val.toDateString === 'function'
+    && typeof val.getDate === 'function'
+    && typeof val.setDate === 'function';
+}
+
+function isRegexp(val) {
+  if (val instanceof RegExp) return true;
+  return typeof val.flags === 'string'
+    && typeof val.ignoreCase === 'boolean'
+    && typeof val.multiline === 'boolean'
+    && typeof val.global === 'boolean';
+}
+
+function isGeneratorFn(name, val) {
+  return ctorName(name) === 'GeneratorFunction';
+}
+
+function isGeneratorObj(val) {
+  return typeof val.throw === 'function'
+    && typeof val.return === 'function'
+    && typeof val.next === 'function';
+}
+
+function isArguments(val) {
+  try {
+    if (typeof val.length === 'number' && typeof val.callee === 'function') {
+      return true;
+    }
+  } catch (err) {
+    if (err.message.indexOf('callee') !== -1) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * If you need to support Safari 5-7 (8-10 yr-old browser),
+ * take a look at https://github.com/feross/is-buffer
+ */
+
+function isBuffer(val) {
+  if (val.constructor && typeof val.constructor.isBuffer === 'function') {
+    return val.constructor.isBuffer(val);
+  }
+  return false;
+}
+
+
+/***/ }),
+
+/***/ 812:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * micromatch <https://github.com/jonschlinkert/micromatch>
+ *
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+
+
+var expand = __webpack_require__(813);
+var utils = __webpack_require__(734);
+
+/**
+ * The main function. Pass an array of filepaths,
+ * and a string or array of glob patterns
+ *
+ * @param  {Array|String} `files`
+ * @param  {Array|String} `patterns`
+ * @param  {Object} `opts`
+ * @return {Array} Array of matches
+ */
+
+function micromatch(files, patterns, opts) {
+  if (!files || !patterns) return [];
+  opts = opts || {};
+
+  if (typeof opts.cache === 'undefined') {
+    opts.cache = true;
+  }
+
+  if (!Array.isArray(patterns)) {
+    return match(files, patterns, opts);
+  }
+
+  var len = patterns.length, i = 0;
+  var omit = [], keep = [];
+
+  while (len--) {
+    var glob = patterns[i++];
+    if (typeof glob === 'string' && glob.charCodeAt(0) === 33 /* ! */) {
+      omit.push.apply(omit, match(files, glob.slice(1), opts));
+    } else {
+      keep.push.apply(keep, match(files, glob, opts));
+    }
+  }
+  return utils.diff(keep, omit);
+}
+
+/**
+ * Return an array of files that match the given glob pattern.
+ *
+ * This function is called by the main `micromatch` function If you only
+ * need to pass a single pattern you might get very minor speed improvements
+ * using this function.
+ *
+ * @param  {Array} `files`
+ * @param  {String} `pattern`
+ * @param  {Object} `options`
+ * @return {Array}
+ */
+
+function match(files, pattern, opts) {
+  if (utils.typeOf(files) !== 'string' && !Array.isArray(files)) {
+    throw new Error(msg('match', 'files', 'a string or array'));
+  }
+
+  files = utils.arrayify(files);
+  opts = opts || {};
+
+  var negate = opts.negate || false;
+  var orig = pattern;
+
+  if (typeof pattern === 'string') {
+    negate = pattern.charAt(0) === '!';
+    if (negate) {
+      pattern = pattern.slice(1);
+    }
+
+    // we need to remove the character regardless,
+    // so the above logic is still needed
+    if (opts.nonegate === true) {
+      negate = false;
+    }
+  }
+
+  var _isMatch = matcher(pattern, opts);
+  var len = files.length, i = 0;
+  var res = [];
+
+  while (i < len) {
+    var file = files[i++];
+    var fp = utils.unixify(file, opts);
+
+    if (!_isMatch(fp)) { continue; }
+    res.push(fp);
+  }
+
+  if (res.length === 0) {
+    if (opts.failglob === true) {
+      throw new Error('micromatch.match() found no matches for: "' + orig + '".');
+    }
+
+    if (opts.nonull || opts.nullglob) {
+      res.push(utils.unescapeGlob(orig));
+    }
+  }
+
+  // if `negate` was defined, diff negated files
+  if (negate) { res = utils.diff(files, res); }
+
+  // if `ignore` was defined, diff ignored filed
+  if (opts.ignore && opts.ignore.length) {
+    pattern = opts.ignore;
+    opts = utils.omit(opts, ['ignore']);
+    res = utils.diff(res, micromatch(res, pattern, opts));
+  }
+
+  if (opts.nodupes) {
+    return utils.unique(res);
+  }
+  return res;
+}
+
+/**
+ * Returns a function that takes a glob pattern or array of glob patterns
+ * to be used with `Array#filter()`. (Internally this function generates
+ * the matching function using the [matcher] method).
+ *
+ * ```js
+ * var fn = mm.filter('[a-c]');
+ * ['a', 'b', 'c', 'd', 'e'].filter(fn);
+ * //=> ['a', 'b', 'c']
+ * ```
+ * @param  {String|Array} `patterns` Can be a glob or array of globs.
+ * @param  {Options} `opts` Options to pass to the [matcher] method.
+ * @return {Function} Filter function to be passed to `Array#filter()`.
+ */
+
+function filter(patterns, opts) {
+  if (!Array.isArray(patterns) && typeof patterns !== 'string') {
+    throw new TypeError(msg('filter', 'patterns', 'a string or array'));
+  }
+
+  patterns = utils.arrayify(patterns);
+  var len = patterns.length, i = 0;
+  var patternMatchers = Array(len);
+  while (i < len) {
+    patternMatchers[i] = matcher(patterns[i++], opts);
+  }
+
+  return function(fp) {
+    if (fp == null) return [];
+    var len = patternMatchers.length, i = 0;
+    var res = true;
+
+    fp = utils.unixify(fp, opts);
+    while (i < len) {
+      var fn = patternMatchers[i++];
+      if (!fn(fp)) {
+        res = false;
+        break;
+      }
+    }
+    return res;
+  };
+}
+
+/**
+ * Returns true if the filepath contains the given
+ * pattern. Can also return a function for matching.
+ *
+ * ```js
+ * isMatch('foo.md', '*.md', {});
+ * //=> true
+ *
+ * isMatch('*.md', {})('foo.md')
+ * //=> true
+ * ```
+ * @param  {String} `fp`
+ * @param  {String} `pattern`
+ * @param  {Object} `opts`
+ * @return {Boolean}
+ */
+
+function isMatch(fp, pattern, opts) {
+  if (typeof fp !== 'string') {
+    throw new TypeError(msg('isMatch', 'filepath', 'a string'));
+  }
+
+  fp = utils.unixify(fp, opts);
+  if (utils.typeOf(pattern) === 'object') {
+    return matcher(fp, pattern);
+  }
+  return matcher(pattern, opts)(fp);
+}
+
+/**
+ * Returns true if the filepath matches the
+ * given pattern.
+ */
+
+function contains(fp, pattern, opts) {
+  if (typeof fp !== 'string') {
+    throw new TypeError(msg('contains', 'pattern', 'a string'));
+  }
+
+  opts = opts || {};
+  opts.contains = (pattern !== '');
+  fp = utils.unixify(fp, opts);
+
+  if (opts.contains && !utils.isGlob(pattern)) {
+    return fp.indexOf(pattern) !== -1;
+  }
+  return matcher(pattern, opts)(fp);
+}
+
+/**
+ * Returns true if a file path matches any of the
+ * given patterns.
+ *
+ * @param  {String} `fp` The filepath to test.
+ * @param  {String|Array} `patterns` Glob patterns to use.
+ * @param  {Object} `opts` Options to pass to the `matcher()` function.
+ * @return {String}
+ */
+
+function any(fp, patterns, opts) {
+  if (!Array.isArray(patterns) && typeof patterns !== 'string') {
+    throw new TypeError(msg('any', 'patterns', 'a string or array'));
+  }
+
+  patterns = utils.arrayify(patterns);
+  var len = patterns.length;
+
+  fp = utils.unixify(fp, opts);
+  while (len--) {
+    var isMatch = matcher(patterns[len], opts);
+    if (isMatch(fp)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * Filter the keys of an object with the given `glob` pattern
+ * and `options`
+ *
+ * @param  {Object} `object`
+ * @param  {Pattern} `object`
+ * @return {Array}
+ */
+
+function matchKeys(obj, glob, options) {
+  if (utils.typeOf(obj) !== 'object') {
+    throw new TypeError(msg('matchKeys', 'first argument', 'an object'));
+  }
+
+  var fn = matcher(glob, options);
+  var res = {};
+
+  for (var key in obj) {
+    if (obj.hasOwnProperty(key) && fn(key)) {
+      res[key] = obj[key];
+    }
+  }
+  return res;
+}
+
+/**
+ * Return a function for matching based on the
+ * given `pattern` and `options`.
+ *
+ * @param  {String} `pattern`
+ * @param  {Object} `options`
+ * @return {Function}
+ */
+
+function matcher(pattern, opts) {
+  // pattern is a function
+  if (typeof pattern === 'function') {
+    return pattern;
+  }
+  // pattern is a regex
+  if (pattern instanceof RegExp) {
+    return function(fp) {
+      return pattern.test(fp);
+    };
+  }
+
+  if (typeof pattern !== 'string') {
+    throw new TypeError(msg('matcher', 'pattern', 'a string, regex, or function'));
+  }
+
+  // strings, all the way down...
+  pattern = utils.unixify(pattern, opts);
+
+  // pattern is a non-glob string
+  if (!utils.isGlob(pattern)) {
+    return utils.matchPath(pattern, opts);
+  }
+  // pattern is a glob string
+  var re = makeRe(pattern, opts);
+
+  // `matchBase` is defined
+  if (opts && opts.matchBase) {
+    return utils.hasFilename(re, opts);
+  }
+  // `matchBase` is not defined
+  return function(fp) {
+    fp = utils.unixify(fp, opts);
+    return re.test(fp);
+  };
+}
+
+/**
+ * Create and cache a regular expression for matching
+ * file paths.
+ *
+ * If the leading character in the `glob` is `!`, a negation
+ * regex is returned.
+ *
+ * @param  {String} `glob`
+ * @param  {Object} `options`
+ * @return {RegExp}
+ */
+
+function toRegex(glob, options) {
+  // clone options to prevent  mutating the original object
+  var opts = Object.create(options || {});
+  var flags = opts.flags || '';
+  if (opts.nocase && flags.indexOf('i') === -1) {
+    flags += 'i';
+  }
+
+  var parsed = expand(glob, opts);
+
+  // pass in tokens to avoid parsing more than once
+  opts.negated = opts.negated || parsed.negated;
+  opts.negate = opts.negated;
+  glob = wrapGlob(parsed.pattern, opts);
+  var re;
+
+  try {
+    re = new RegExp(glob, flags);
+    return re;
+  } catch (err) {
+    err.reason = 'micromatch invalid regex: (' + re + ')';
+    if (opts.strict) throw new SyntaxError(err);
+  }
+
+  // we're only here if a bad pattern was used and the user
+  // passed `options.silent`, so match nothing
+  return /$^/;
+}
+
+/**
+ * Create the regex to do the matching. If the leading
+ * character in the `glob` is `!` a negation regex is returned.
+ *
+ * @param {String} `glob`
+ * @param {Boolean} `negate`
+ */
+
+function wrapGlob(glob, opts) {
+  var prefix = (opts && !opts.contains) ? '^' : '';
+  var after = (opts && !opts.contains) ? '$' : '';
+  glob = ('(?:' + glob + ')' + after);
+  if (opts && opts.negate) {
+    return prefix + ('(?!^' + glob + ').*$');
+  }
+  return prefix + glob;
+}
+
+/**
+ * Create and cache a regular expression for matching file paths.
+ * If the leading character in the `glob` is `!`, a negation
+ * regex is returned.
+ *
+ * @param  {String} `glob`
+ * @param  {Object} `options`
+ * @return {RegExp}
+ */
+
+function makeRe(glob, opts) {
+  if (utils.typeOf(glob) !== 'string') {
+    throw new Error(msg('makeRe', 'glob', 'a string'));
+  }
+  return utils.cache(toRegex, glob, opts);
+}
+
+/**
+ * Make error messages consistent. Follows this format:
+ *
+ * ```js
+ * msg(methodName, argNumber, nativeType);
+ * // example:
+ * msg('matchKeys', 'first', 'an object');
+ * ```
+ *
+ * @param  {String} `method`
+ * @param  {String} `num`
+ * @param  {String} `type`
+ * @return {String}
+ */
+
+function msg(method, what, type) {
+  return 'micromatch.' + method + '(): ' + what + ' should be ' + type + '.';
+}
+
+/**
+ * Public methods
+ */
+
+/* eslint no-multi-spaces: 0 */
+micromatch.any       = any;
+micromatch.braces    = micromatch.braceExpand = utils.braces;
+micromatch.contains  = contains;
+micromatch.expand    = expand;
+micromatch.filter    = filter;
+micromatch.isMatch   = isMatch;
+micromatch.makeRe    = makeRe;
+micromatch.match     = match;
+micromatch.matcher   = matcher;
+micromatch.matchKeys = matchKeys;
+
+/**
+ * Expose `micromatch`
+ */
+
+module.exports = micromatch;
+
+
+/***/ }),
+
+/***/ 813:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * micromatch <https://github.com/jonschlinkert/micromatch>
+ *
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+
+
+var utils = __webpack_require__(734);
+var Glob = __webpack_require__(845);
+
+/**
+ * Expose `expand`
+ */
+
+module.exports = expand;
+
+/**
+ * Expand a glob pattern to resolve braces and
+ * similar patterns before converting to regex.
+ *
+ * @param  {String|Array} `pattern`
+ * @param  {Array} `files`
+ * @param  {Options} `opts`
+ * @return {Array}
+ */
+
+function expand(pattern, options) {
+  if (typeof pattern !== 'string') {
+    throw new TypeError('micromatch.expand(): argument should be a string.');
+  }
+
+  var glob = new Glob(pattern, options || {});
+  var opts = glob.options;
+
+  if (!utils.isGlob(pattern)) {
+    glob.pattern = glob.pattern.replace(/([\/.])/g, '\\$1');
+    return glob;
+  }
+
+  glob.pattern = glob.pattern.replace(/(\+)(?!\()/g, '\\$1');
+  glob.pattern = glob.pattern.split('$').join('\\$');
+
+  if (typeof opts.braces !== 'boolean' && typeof opts.nobraces !== 'boolean') {
+    opts.braces = true;
+  }
+
+  if (glob.pattern === '.*') {
+    return {
+      pattern: '\\.' + star,
+      tokens: tok,
+      options: opts
+    };
+  }
+
+  if (glob.pattern === '*') {
+    return {
+      pattern: oneStar(opts.dot),
+      tokens: tok,
+      options: opts
+    };
+  }
+
+  // parse the glob pattern into tokens
+  glob.parse();
+  var tok = glob.tokens;
+  tok.is.negated = opts.negated;
+
+  // dotfile handling
+  if ((opts.dotfiles === true || tok.is.dotfile) && opts.dot !== false) {
+    opts.dotfiles = true;
+    opts.dot = true;
+  }
+
+  if ((opts.dotdirs === true || tok.is.dotdir) && opts.dot !== false) {
+    opts.dotdirs = true;
+    opts.dot = true;
+  }
+
+  // check for braces with a dotfile pattern
+  if (/[{,]\./.test(glob.pattern)) {
+    opts.makeRe = false;
+    opts.dot = true;
+  }
+
+  if (opts.nonegate !== true) {
+    opts.negated = glob.negated;
+  }
+
+  // if the leading character is a dot or a slash, escape it
+  if (glob.pattern.charAt(0) === '.' && glob.pattern.charAt(1) !== '/') {
+    glob.pattern = '\\' + glob.pattern;
+  }
+
+  /**
+   * Extended globs
+   */
+
+  // expand braces, e.g `{1..5}`
+  glob.track('before braces');
+  if (tok.is.braces) {
+    glob.braces();
+  }
+  glob.track('after braces');
+
+  // expand extglobs, e.g `foo/!(a|b)`
+  glob.track('before extglob');
+  if (tok.is.extglob) {
+    glob.extglob();
+  }
+  glob.track('after extglob');
+
+  // expand brackets, e.g `[[:alpha:]]`
+  glob.track('before brackets');
+  if (tok.is.brackets) {
+    glob.brackets();
+  }
+  glob.track('after brackets');
+
+  // special patterns
+  glob._replace('[!', '[^');
+  glob._replace('(?', '(%~');
+  glob._replace(/\[\]/, '\\[\\]');
+  glob._replace('/[', '/' + (opts.dot ? dotfiles : nodot) + '[', true);
+  glob._replace('/?', '/' + (opts.dot ? dotfiles : nodot) + '[^/]', true);
+  glob._replace('/.', '/(?=.)\\.', true);
+
+  // windows drives
+  glob._replace(/^(\w):([\\\/]+?)/gi, '(?=.)$1:$2', true);
+
+  // negate slashes in exclusion ranges
+  if (glob.pattern.indexOf('[^') !== -1) {
+    glob.pattern = negateSlash(glob.pattern);
+  }
+
+  if (opts.globstar !== false && glob.pattern === '**') {
+    glob.pattern = globstar(opts.dot);
+
+  } else {
+    glob.pattern = balance(glob.pattern, '[', ']');
+    glob.escape(glob.pattern);
+
+    // if the pattern has `**`
+    if (tok.is.globstar) {
+      glob.pattern = collapse(glob.pattern, '/**');
+      glob.pattern = collapse(glob.pattern, '**/');
+      glob._replace('/**/', '(?:/' + globstar(opts.dot) + '/|/)', true);
+      glob._replace(/\*{2,}/g, '**');
+
+      // 'foo/*'
+      glob._replace(/(\w+)\*(?!\/)/g, '$1[^/]*?', true);
+      glob._replace(/\*\*\/\*(\w)/g, globstar(opts.dot) + '\\/' + (opts.dot ? dotfiles : nodot) + '[^/]*?$1', true);
+
+      if (opts.dot !== true) {
+        glob._replace(/\*\*\/(.)/g, '(?:**\\/|)$1');
+      }
+
+      // 'foo/**' or '{**,*}', but not 'foo**'
+      if (tok.path.dirname !== '' || /,\*\*|\*\*,/.test(glob.orig)) {
+        glob._replace('**', globstar(opts.dot), true);
+      }
+    }
+
+    // ends with /*
+    glob._replace(/\/\*$/, '\\/' + oneStar(opts.dot), true);
+    // ends with *, no slashes
+    glob._replace(/(?!\/)\*$/, star, true);
+    // has 'n*.' (partial wildcard w/ file extension)
+    glob._replace(/([^\/]+)\*/, '$1' + oneStar(true), true);
+    // has '*'
+    glob._replace('*', oneStar(opts.dot), true);
+    glob._replace('?.', '?\\.', true);
+    glob._replace('?:', '?:', true);
+
+    glob._replace(/\?+/g, function(match) {
+      var len = match.length;
+      if (len === 1) {
+        return qmark;
+      }
+      return qmark + '{' + len + '}';
+    });
+
+    // escape '.abc' => '\\.abc'
+    glob._replace(/\.([*\w]+)/g, '\\.$1');
+    // fix '[^\\\\/]'
+    glob._replace(/\[\^[\\\/]+\]/g, qmark);
+    // '///' => '\/'
+    glob._replace(/\/+/g, '\\/');
+    // '\\\\\\' => '\\'
+    glob._replace(/\\{2,}/g, '\\');
+  }
+
+  // unescape previously escaped patterns
+  glob.unescape(glob.pattern);
+  glob._replace('__UNESC_STAR__', '*');
+
+  // escape dots that follow qmarks
+  glob._replace('?.', '?\\.');
+
+  // remove unnecessary slashes in character classes
+  glob._replace('[^\\/]', qmark);
+
+  if (glob.pattern.length > 1) {
+    if (/^[\[?*]/.test(glob.pattern)) {
+      // only prepend the string if we don't want to match dotfiles
+      glob.pattern = (opts.dot ? dotfiles : nodot) + glob.pattern;
+    }
+  }
+
+  return glob;
+}
+
+/**
+ * Collapse repeated character sequences.
+ *
+ * ```js
+ * collapse('a/../../../b', '../');
+ * //=> 'a/../b'
+ * ```
+ *
+ * @param  {String} `str`
+ * @param  {String} `ch` Character sequence to collapse
+ * @return {String}
+ */
+
+function collapse(str, ch) {
+  var res = str.split(ch);
+  var isFirst = res[0] === '';
+  var isLast = res[res.length - 1] === '';
+  res = res.filter(Boolean);
+  if (isFirst) res.unshift('');
+  if (isLast) res.push('');
+  return res.join(ch);
+}
+
+/**
+ * Negate slashes in exclusion ranges, per glob spec:
+ *
+ * ```js
+ * negateSlash('[^foo]');
+ * //=> '[^\\/foo]'
+ * ```
+ *
+ * @param  {String} `str` glob pattern
+ * @return {String}
+ */
+
+function negateSlash(str) {
+  return str.replace(/\[\^([^\]]*?)\]/g, function(match, inner) {
+    if (inner.indexOf('/') === -1) {
+      inner = '\\/' + inner;
+    }
+    return '[^' + inner + ']';
+  });
+}
+
+/**
+ * Escape imbalanced braces/bracket. This is a very
+ * basic, naive implementation that only does enough
+ * to serve the purpose.
+ */
+
+function balance(str, a, b) {
+  var aarr = str.split(a);
+  var alen = aarr.join('').length;
+  var blen = str.split(b).join('').length;
+
+  if (alen !== blen) {
+    str = aarr.join('\\' + a);
+    return str.split(b).join('\\' + b);
+  }
+  return str;
+}
+
+/**
+ * Special patterns to be converted to regex.
+ * Heuristics are used to simplify patterns
+ * and speed up processing.
+ */
+
+/* eslint no-multi-spaces: 0 */
+var qmark       = '[^/]';
+var star        = qmark + '*?';
+var nodot       = '(?!\\.)(?=.)';
+var dotfileGlob = '(?:\\/|^)\\.{1,2}($|\\/)';
+var dotfiles    = '(?!' + dotfileGlob + ')(?=.)';
+var twoStarDot  = '(?:(?!' + dotfileGlob + ').)*?';
+
+/**
+ * Create a regex for `*`.
+ *
+ * If `dot` is true, or the pattern does not begin with
+ * a leading star, then return the simpler regex.
+ */
+
+function oneStar(dotfile) {
+  return dotfile ? '(?!' + dotfileGlob + ')(?=.)' + star : (nodot + star);
+}
+
+function globstar(dotfile) {
+  if (dotfile) { return twoStarDot; }
+  return '(?:(?!(?:\\/|^)\\.).)*?';
+}
+
+
+/***/ }),
+
+/***/ 814:
+/***/ (function(module, exports) {
+
+/*!
+ * filename-regex <https://github.com/regexps/filename-regex>
+ *
+ * Copyright (c) 2014-2015, Jon Schlinkert
+ * Licensed under the MIT license.
+ */
+
+module.exports = function filenameRegex() {
+  return /([^\\\/]+)$/;
+};
+
+
+/***/ }),
+
+/***/ 815:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * arr-diff <https://github.com/jonschlinkert/arr-diff>
+ *
+ * Copyright (c) 2014 Jon Schlinkert, contributors.
+ * Licensed under the MIT License
+ */
+
+
+
+var flatten = __webpack_require__(816);
+var slice = [].slice;
+
+/**
+ * Return the difference between the first array and
+ * additional arrays.
+ *
+ * ```js
+ * var diff = require('{%= name %}');
+ *
+ * var a = ['a', 'b', 'c', 'd'];
+ * var b = ['b', 'c'];
+ *
+ * console.log(diff(a, b))
+ * //=> ['a', 'd']
+ * ```
+ *
+ * @param  {Array} `a`
+ * @param  {Array} `b`
+ * @return {Array}
+ * @api public
+ */
+
+function diff(arr, arrays) {
+  var argsLen = arguments.length;
+  var len = arr.length, i = -1;
+  var res = [], arrays;
+
+  if (argsLen === 1) {
+    return arr;
+  }
+
+  if (argsLen > 2) {
+    arrays = flatten(slice.call(arguments, 1));
+  }
+
+  while (++i < len) {
+    if (!~arrays.indexOf(arr[i])) {
+      res.push(arr[i]);
+    }
+  }
+  return res;
+}
+
+/**
+ * Expose `diff`
+ */
+
+module.exports = diff;
+
+
+/***/ }),
+
+/***/ 816:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * arr-flatten <https://github.com/jonschlinkert/arr-flatten>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+
+
+module.exports = function (arr) {
+  return flat(arr, []);
+};
+
+function flat(arr, res) {
+  var i = 0, cur;
+  var len = arr.length;
+  for (; i < len; i++) {
+    cur = arr[i];
+    Array.isArray(cur) ? flat(cur, res) : res.push(cur);
+  }
+  return res;
+}
+
+
+/***/ }),
+
+/***/ 817:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * braces <https://github.com/jonschlinkert/braces>
+ *
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT license.
+ */
+
+
+
+/**
+ * Module dependencies
+ */
+
+var expand = __webpack_require__(818);
+var repeat = __webpack_require__(750);
+var tokens = __webpack_require__(828);
+
+/**
+ * Expose `braces`
+ */
+
+module.exports = function(str, options) {
+  if (typeof str !== 'string') {
+    throw new Error('braces expects a string');
+  }
+  return braces(str, options);
+};
+
+/**
+ * Expand `{foo,bar}` or `{1..5}` braces in the
+ * given `string`.
+ *
+ * @param  {String} `str`
+ * @param  {Array} `arr`
+ * @param  {Object} `options`
+ * @return {Array}
+ */
+
+function braces(str, arr, options) {
+  if (str === '') {
+    return [];
+  }
+
+  if (!Array.isArray(arr)) {
+    options = arr;
+    arr = [];
+  }
+
+  var opts = options || {};
+  arr = arr || [];
+
+  if (typeof opts.nodupes === 'undefined') {
+    opts.nodupes = true;
+  }
+
+  var fn = opts.fn;
+  var es6;
+
+  if (typeof opts === 'function') {
+    fn = opts;
+    opts = {};
+  }
+
+  if (!(patternRe instanceof RegExp)) {
+    patternRe = patternRegex();
+  }
+
+  var matches = str.match(patternRe) || [];
+  var m = matches[0];
+
+  switch(m) {
+    case '\\,':
+      return escapeCommas(str, arr, opts);
+    case '\\.':
+      return escapeDots(str, arr, opts);
+    case '\/.':
+      return escapePaths(str, arr, opts);
+    case ' ':
+      return splitWhitespace(str);
+    case '{,}':
+      return exponential(str, opts, braces);
+    case '{}':
+      return emptyBraces(str, arr, opts);
+    case '\\{':
+    case '\\}':
+      return escapeBraces(str, arr, opts);
+    case '${':
+      if (!/\{[^{]+\{/.test(str)) {
+        return arr.concat(str);
+      } else {
+        es6 = true;
+        str = tokens.before(str, es6Regex());
+      }
+  }
+
+  if (!(braceRe instanceof RegExp)) {
+    braceRe = braceRegex();
+  }
+
+  var match = braceRe.exec(str);
+  if (match == null) {
+    return [str];
+  }
+
+  var outter = match[1];
+  var inner = match[2];
+  if (inner === '') { return [str]; }
+
+  var segs, segsLength;
+
+  if (inner.indexOf('..') !== -1) {
+    segs = expand(inner, opts, fn) || inner.split(',');
+    segsLength = segs.length;
+
+  } else if (inner[0] === '"' || inner[0] === '\'') {
+    return arr.concat(str.split(/['"]/).join(''));
+
+  } else {
+    segs = inner.split(',');
+    if (opts.makeRe) {
+      return braces(str.replace(outter, wrap(segs, '|')), opts);
+    }
+
+    segsLength = segs.length;
+    if (segsLength === 1 && opts.bash) {
+      segs[0] = wrap(segs[0], '\\');
+    }
+  }
+
+  var len = segs.length;
+  var i = 0, val;
+
+  while (len--) {
+    var path = segs[i++];
+
+    if (/(\.[^.\/])/.test(path)) {
+      if (segsLength > 1) {
+        return segs;
+      } else {
+        return [str];
+      }
+    }
+
+    val = splice(str, outter, path);
+
+    if (/\{[^{}]+?\}/.test(val)) {
+      arr = braces(val, arr, opts);
+    } else if (val !== '') {
+      if (opts.nodupes && arr.indexOf(val) !== -1) { continue; }
+      arr.push(es6 ? tokens.after(val) : val);
+    }
+  }
+
+  if (opts.strict) { return filter(arr, filterEmpty); }
+  return arr;
+}
+
+/**
+ * Expand exponential ranges
+ *
+ *   `a{,}{,}` => ['a', 'a', 'a', 'a']
+ */
+
+function exponential(str, options, fn) {
+  if (typeof options === 'function') {
+    fn = options;
+    options = null;
+  }
+
+  var opts = options || {};
+  var esc = '__ESC_EXP__';
+  var exp = 0;
+  var res;
+
+  var parts = str.split('{,}');
+  if (opts.nodupes) {
+    return fn(parts.join(''), opts);
+  }
+
+  exp = parts.length - 1;
+  res = fn(parts.join(esc), opts);
+  var len = res.length;
+  var arr = [];
+  var i = 0;
+
+  while (len--) {
+    var ele = res[i++];
+    var idx = ele.indexOf(esc);
+
+    if (idx === -1) {
+      arr.push(ele);
+
+    } else {
+      ele = ele.split('__ESC_EXP__').join('');
+      if (!!ele && opts.nodupes !== false) {
+        arr.push(ele);
+
+      } else {
+        var num = Math.pow(2, exp);
+        arr.push.apply(arr, repeat(ele, num));
+      }
+    }
+  }
+  return arr;
+}
+
+/**
+ * Wrap a value with parens, brackets or braces,
+ * based on the given character/separator.
+ *
+ * @param  {String|Array} `val`
+ * @param  {String} `ch`
+ * @return {String}
+ */
+
+function wrap(val, ch) {
+  if (ch === '|') {
+    return '(' + val.join(ch) + ')';
+  }
+  if (ch === ',') {
+    return '{' + val.join(ch) + '}';
+  }
+  if (ch === '-') {
+    return '[' + val.join(ch) + ']';
+  }
+  if (ch === '\\') {
+    return '\\{' + val + '\\}';
+  }
+}
+
+/**
+ * Handle empty braces: `{}`
+ */
+
+function emptyBraces(str, arr, opts) {
+  return braces(str.split('{}').join('\\{\\}'), arr, opts);
+}
+
+/**
+ * Filter out empty-ish values
+ */
+
+function filterEmpty(ele) {
+  return !!ele && ele !== '\\';
+}
+
+/**
+ * Handle patterns with whitespace
+ */
+
+function splitWhitespace(str) {
+  var segs = str.split(' ');
+  var len = segs.length;
+  var res = [];
+  var i = 0;
+
+  while (len--) {
+    res.push.apply(res, braces(segs[i++]));
+  }
+  return res;
+}
+
+/**
+ * Handle escaped braces: `\\{foo,bar}`
+ */
+
+function escapeBraces(str, arr, opts) {
+  if (!/\{[^{]+\{/.test(str)) {
+    return arr.concat(str.split('\\').join(''));
+  } else {
+    str = str.split('\\{').join('__LT_BRACE__');
+    str = str.split('\\}').join('__RT_BRACE__');
+    return map(braces(str, arr, opts), function(ele) {
+      ele = ele.split('__LT_BRACE__').join('{');
+      return ele.split('__RT_BRACE__').join('}');
+    });
+  }
+}
+
+/**
+ * Handle escaped dots: `{1\\.2}`
+ */
+
+function escapeDots(str, arr, opts) {
+  if (!/[^\\]\..+\\\./.test(str)) {
+    return arr.concat(str.split('\\').join(''));
+  } else {
+    str = str.split('\\.').join('__ESC_DOT__');
+    return map(braces(str, arr, opts), function(ele) {
+      return ele.split('__ESC_DOT__').join('.');
+    });
+  }
+}
+
+/**
+ * Handle escaped dots: `{1\\.2}`
+ */
+
+function escapePaths(str, arr, opts) {
+  str = str.split('\/.').join('__ESC_PATH__');
+  return map(braces(str, arr, opts), function(ele) {
+    return ele.split('__ESC_PATH__').join('\/.');
+  });
+}
+
+/**
+ * Handle escaped commas: `{a\\,b}`
+ */
+
+function escapeCommas(str, arr, opts) {
+  if (!/\w,/.test(str)) {
+    return arr.concat(str.split('\\').join(''));
+  } else {
+    str = str.split('\\,').join('__ESC_COMMA__');
+    return map(braces(str, arr, opts), function(ele) {
+      return ele.split('__ESC_COMMA__').join(',');
+    });
+  }
+}
+
+/**
+ * Regex for common patterns
+ */
+
+function patternRegex() {
+  return /\${|( (?=[{,}])|(?=[{,}]) )|{}|{,}|\\,(?=.*[{}])|\/\.(?=.*[{}])|\\\.(?={)|\\{|\\}/;
+}
+
+/**
+ * Braces regex.
+ */
+
+function braceRegex() {
+  return /.*(\\?\{([^}]+)\})/;
+}
+
+/**
+ * es6 delimiter regex.
+ */
+
+function es6Regex() {
+  return /\$\{([^}]+)\}/;
+}
+
+var braceRe;
+var patternRe;
+
+/**
+ * Faster alternative to `String.replace()` when the
+ * index of the token to be replaces can't be supplied
+ */
+
+function splice(str, token, replacement) {
+  var i = str.indexOf(token);
+  return str.substr(0, i) + replacement
+    + str.substr(i + token.length);
+}
+
+/**
+ * Fast array map
+ */
+
+function map(arr, fn) {
+  if (arr == null) {
+    return [];
+  }
+
+  var len = arr.length;
+  var res = new Array(len);
+  var i = -1;
+
+  while (++i < len) {
+    res[i] = fn(arr[i], i, arr);
+  }
+
+  return res;
+}
+
+/**
+ * Fast array filter
+ */
+
+function filter(arr, cb) {
+  if (arr == null) return [];
+  if (typeof cb !== 'function') {
+    throw new TypeError('braces: filter expects a callback function.');
+  }
+
+  var len = arr.length;
+  var res = arr.slice();
+  var i = 0;
+
+  while (len--) {
+    if (!cb(arr[len], i++)) {
+      res.splice(len, 1);
+    }
+  }
+  return res;
+}
+
+
+/***/ }),
+
+/***/ 818:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * expand-range <https://github.com/jonschlinkert/expand-range>
+ *
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT license.
+ */
+
+
+
+var fill = __webpack_require__(819);
+
+module.exports = function expandRange(str, options, fn) {
+  if (typeof str !== 'string') {
+    throw new TypeError('expand-range expects a string.');
+  }
+
+  if (typeof options === 'function') {
+    fn = options;
+    options = {};
+  }
+
+  if (typeof options === 'boolean') {
+    options = {};
+    options.makeRe = true;
+  }
+
+  // create arguments to pass to fill-range
+  var opts = options || {};
+  var args = str.split('..');
+  var len = args.length;
+  if (len > 3) { return str; }
+
+  // if only one argument, it can't expand so return it
+  if (len === 1) { return args; }
+
+  // if `true`, tell fill-range to regexify the string
+  if (typeof fn === 'boolean' && fn === true) {
+    opts.makeRe = true;
+  }
+
+  args.push(opts);
+  return fill.apply(null, args.concat(fn));
+};
+
+
+/***/ }),
+
+/***/ 819:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * fill-range <https://github.com/jonschlinkert/fill-range>
+ *
+ * Copyright (c) 2014-2018, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+
+
+var isObject = __webpack_require__(820);
+var isNumber = __webpack_require__(821);
+var randomize = __webpack_require__(823);
+var repeatStr = __webpack_require__(827);
+var repeat = __webpack_require__(750);
+
+/**
+ * Expose `fillRange`
+ */
+
+module.exports = fillRange;
+
+/**
+ * Return a range of numbers or letters.
+ *
+ * @param  {String} `a` Start of the range
+ * @param  {String} `b` End of the range
+ * @param  {String} `step` Increment or decrement to use.
+ * @param  {Function} `fn` Custom function to modify each element in the range.
+ * @return {Array}
+ */
+
+function fillRange(a, b, step, options, fn) {
+  if (a == null || b == null) {
+    throw new Error('fill-range expects the first and second args to be strings.');
+  }
+
+  if (typeof step === 'function') {
+    fn = step; options = {}; step = null;
+  }
+
+  if (typeof options === 'function') {
+    fn = options; options = {};
+  }
+
+  if (isObject(step)) {
+    options = step; step = '';
+  }
+
+  var expand, regex = false, sep = '';
+  var opts = options || {};
+
+  if (typeof opts.silent === 'undefined') {
+    opts.silent = true;
+  }
+
+  step = step || opts.step;
+
+  // store a ref to unmodified arg
+  var origA = a, origB = b;
+
+  b = (b.toString() === '-0') ? 0 : b;
+
+  if (opts.optimize || opts.makeRe) {
+    step = step ? (step += '~') : step;
+    expand = true;
+    regex = true;
+    sep = '~';
+  }
+
+  // handle special step characters
+  if (typeof step === 'string') {
+    var match = stepRe().exec(step);
+
+    if (match) {
+      var i = match.index;
+      var m = match[0];
+
+      // repeat string
+      if (m === '+') {
+        return repeat(a, b);
+
+      // randomize a, `b` times
+      } else if (m === '?') {
+        return [randomize(a, b)];
+
+      // expand right, no regex reduction
+      } else if (m === '>') {
+        step = step.substr(0, i) + step.substr(i + 1);
+        expand = true;
+
+      // expand to an array, or if valid create a reduced
+      // string for a regex logic `or`
+      } else if (m === '|') {
+        step = step.substr(0, i) + step.substr(i + 1);
+        expand = true;
+        regex = true;
+        sep = m;
+
+      // expand to an array, or if valid create a reduced
+      // string for a regex range
+      } else if (m === '~') {
+        step = step.substr(0, i) + step.substr(i + 1);
+        expand = true;
+        regex = true;
+        sep = m;
+      }
+    } else if (!isNumber(step)) {
+      if (!opts.silent) {
+        throw new TypeError('fill-range: invalid step.');
+      }
+      return null;
+    }
+  }
+
+  if (/[.&*()[\]^%$#@!]/.test(a) || /[.&*()[\]^%$#@!]/.test(b)) {
+    if (!opts.silent) {
+      throw new RangeError('fill-range: invalid range arguments.');
+    }
+    return null;
+  }
+
+  // has neither a letter nor number, or has both letters and numbers
+  // this needs to be after the step logic
+  if (!noAlphaNum(a) || !noAlphaNum(b) || hasBoth(a) || hasBoth(b)) {
+    if (!opts.silent) {
+      throw new RangeError('fill-range: invalid range arguments.');
+    }
+    return null;
+  }
+
+  // validate arguments
+  var isNumA = isNumber(zeros(a));
+  var isNumB = isNumber(zeros(b));
+
+  if ((!isNumA && isNumB) || (isNumA && !isNumB)) {
+    if (!opts.silent) {
+      throw new TypeError('fill-range: first range argument is incompatible with second.');
+    }
+    return null;
+  }
+
+  // by this point both are the same, so we
+  // can use A to check going forward.
+  var isNum = isNumA;
+  var num = formatStep(step);
+
+  // is the range alphabetical? or numeric?
+  if (isNum) {
+    // if numeric, coerce to an integer
+    a = +a; b = +b;
+  } else {
+    // otherwise, get the charCode to expand alpha ranges
+    a = a.charCodeAt(0);
+    b = b.charCodeAt(0);
+  }
+
+  // is the pattern descending?
+  var isDescending = a > b;
+
+  // don't create a character class if the args are < 0
+  if (a < 0 || b < 0) {
+    expand = false;
+    regex = false;
+  }
+
+  // detect padding
+  var padding = isPadded(origA, origB);
+  var res, pad, arr = [];
+  var ii = 0;
+
+  // character classes, ranges and logical `or`
+  if (regex) {
+    if (shouldExpand(a, b, num, isNum, padding, opts)) {
+      // make sure the correct separator is used
+      if (sep === '|' || sep === '~') {
+        sep = detectSeparator(a, b, num, isNum, isDescending);
+      }
+      return wrap([origA, origB], sep, opts);
+    }
+  }
+
+  while (isDescending ? (a >= b) : (a <= b)) {
+    if (padding && isNum) {
+      pad = padding(a);
+    }
+
+    // custom function
+    if (typeof fn === 'function') {
+      res = fn(a, isNum, pad, ii++);
+
+    // letters
+    } else if (!isNum) {
+      if (regex && isInvalidChar(a)) {
+        res = null;
+      } else {
+        res = String.fromCharCode(a);
+      }
+
+    // numbers
+    } else {
+      res = formatPadding(a, pad);
+    }
+
+    // add result to the array, filtering any nulled values
+    if (res !== null) arr.push(res);
+
+    // increment or decrement
+    if (isDescending) {
+      a -= num;
+    } else {
+      a += num;
+    }
+  }
+
+  // now that the array is expanded, we need to handle regex
+  // character classes, ranges or logical `or` that wasn't
+  // already handled before the loop
+  if ((regex || expand) && !opts.noexpand) {
+    // make sure the correct separator is used
+    if (sep === '|' || sep === '~') {
+      sep = detectSeparator(a, b, num, isNum, isDescending);
+    }
+    if (arr.length === 1 || a < 0 || b < 0) { return arr; }
+    return wrap(arr, sep, opts);
+  }
+
+  return arr;
+}
+
+/**
+ * Wrap the string with the correct regex
+ * syntax.
+ */
+
+function wrap(arr, sep, opts) {
+  if (sep === '~') { sep = '-'; }
+  var str = arr.join(sep);
+  var pre = opts && opts.regexPrefix;
+
+  // regex logical `or`
+  if (sep === '|') {
+    str = pre ? pre + str : str;
+    str = '(' + str + ')';
+  }
+
+  // regex character class
+  if (sep === '-') {
+    str = (pre && pre === '^')
+      ? pre + str
+      : str;
+    str = '[' + str + ']';
+  }
+  return [str];
+}
+
+/**
+ * Check for invalid characters
+ */
+
+function isCharClass(a, b, step, isNum, isDescending) {
+  if (isDescending) { return false; }
+  if (isNum) { return a <= 9 && b <= 9; }
+  if (a < b) { return step === 1; }
+  return false;
+}
+
+/**
+ * Detect the correct separator to use
+ */
+
+function shouldExpand(a, b, num, isNum, padding, opts) {
+  if (isNum && (a > 9 || b > 9)) { return false; }
+  return !padding && num === 1 && a < b;
+}
+
+/**
+ * Detect the correct separator to use
+ */
+
+function detectSeparator(a, b, step, isNum, isDescending) {
+  var isChar = isCharClass(a, b, step, isNum, isDescending);
+  if (!isChar) {
+    return '|';
+  }
+  return '~';
+}
+
+/**
+ * Correctly format the step based on type
+ */
+
+function formatStep(step) {
+  return Math.abs(step >> 0) || 1;
+}
+
+/**
+ * Format padding, taking leading `-` into account
+ */
+
+function formatPadding(ch, pad) {
+  var res = pad ? pad + ch : ch;
+  if (pad && ch.toString().charAt(0) === '-') {
+    res = '-' + pad + ch.toString().substr(1);
+  }
+  return res.toString();
+}
+
+/**
+ * Check for invalid characters
+ */
+
+function isInvalidChar(str) {
+  var ch = toStr(str);
+  return ch === '\\'
+    || ch === '['
+    || ch === ']'
+    || ch === '^'
+    || ch === '('
+    || ch === ')'
+    || ch === '`';
+}
+
+/**
+ * Convert to a string from a charCode
+ */
+
+function toStr(ch) {
+  return String.fromCharCode(ch);
+}
+
+
+/**
+ * Step regex
+ */
+
+function stepRe() {
+  return /\?|>|\||\+|\~/g;
+}
+
+/**
+ * Return true if `val` has either a letter
+ * or a number
+ */
+
+function noAlphaNum(val) {
+  return /[a-z0-9]/i.test(val);
+}
+
+/**
+ * Return true if `val` has both a letter and
+ * a number (invalid)
+ */
+
+function hasBoth(val) {
+  return /[a-z][0-9]|[0-9][a-z]/i.test(val);
+}
+
+/**
+ * Normalize zeros for checks
+ */
+
+function zeros(val) {
+  if (/^-*0+$/.test(val.toString())) {
+    return '0';
+  }
+  return val;
+}
+
+/**
+ * Return true if `val` has leading zeros,
+ * or a similar valid pattern.
+ */
+
+function hasZeros(val) {
+  return /[^.]\.|^-*0+[0-9]/.test(val);
+}
+
+/**
+ * If the string is padded, returns a curried function with
+ * the a cached padding string, or `false` if no padding.
+ *
+ * @param  {*} `origA` String or number.
+ * @return {String|Boolean}
+ */
+
+function isPadded(origA, origB) {
+  if (hasZeros(origA) || hasZeros(origB)) {
+    var alen = length(origA);
+    var blen = length(origB);
+
+    var len = alen >= blen
+      ? alen
+      : blen;
+
+    return function (a) {
+      return repeatStr('0', len - length(a));
+    };
+  }
+  return false;
+}
+
+/**
+ * Get the string length of `val`
+ */
+
+function length(val) {
+  return val.toString().length;
+}
+
+
+/***/ }),
+
+/***/ 820:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * isobject <https://github.com/jonschlinkert/isobject>
+ *
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+
+
+var isArray = __webpack_require__(748);
+
+module.exports = function isObject(val) {
+  return val != null && typeof val === 'object' && isArray(val) === false;
+};
+
+
+/***/ }),
+
+/***/ 821:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * is-number <https://github.com/jonschlinkert/is-number>
+ *
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+
+
+var typeOf = __webpack_require__(822);
+
+module.exports = function isNumber(num) {
+  var type = typeOf(num);
+  if (type !== 'number' && type !== 'string') {
+    return false;
+  }
+  var n = +num;
+  return (n - n + 1) >= 0 && num !== '';
+};
+
+
+/***/ }),
+
+/***/ 822:
+/***/ (function(module, exports, __webpack_require__) {
+
+var isBuffer = __webpack_require__(245);
+var toString = Object.prototype.toString;
+
+/**
+ * Get the native `typeof` a value.
+ *
+ * @param  {*} `val`
+ * @return {*} Native javascript type
+ */
+
+module.exports = function kindOf(val) {
+  // primitivies
+  if (typeof val === 'undefined') {
+    return 'undefined';
+  }
+  if (val === null) {
+    return 'null';
+  }
+  if (val === true || val === false || val instanceof Boolean) {
+    return 'boolean';
+  }
+  if (typeof val === 'string' || val instanceof String) {
+    return 'string';
+  }
+  if (typeof val === 'number' || val instanceof Number) {
+    return 'number';
+  }
+
+  // functions
+  if (typeof val === 'function' || val instanceof Function) {
+    return 'function';
+  }
+
+  // array
+  if (typeof Array.isArray !== 'undefined' && Array.isArray(val)) {
+    return 'array';
+  }
+
+  // check for instances of RegExp and Date before calling `toString`
+  if (val instanceof RegExp) {
+    return 'regexp';
+  }
+  if (val instanceof Date) {
+    return 'date';
+  }
+
+  // other objects
+  var type = toString.call(val);
+
+  if (type === '[object RegExp]') {
+    return 'regexp';
+  }
+  if (type === '[object Date]') {
+    return 'date';
+  }
+  if (type === '[object Arguments]') {
+    return 'arguments';
+  }
+  if (type === '[object Error]') {
+    return 'error';
+  }
+
+  // buffer
+  if (isBuffer(val)) {
+    return 'buffer';
+  }
+
+  // es6: Map, WeakMap, Set, WeakSet
+  if (type === '[object Set]') {
+    return 'set';
+  }
+  if (type === '[object WeakSet]') {
+    return 'weakset';
+  }
+  if (type === '[object Map]') {
+    return 'map';
+  }
+  if (type === '[object WeakMap]') {
+    return 'weakmap';
+  }
+  if (type === '[object Symbol]') {
+    return 'symbol';
+  }
+
+  // typed arrays
+  if (type === '[object Int8Array]') {
+    return 'int8array';
+  }
+  if (type === '[object Uint8Array]') {
+    return 'uint8array';
+  }
+  if (type === '[object Uint8ClampedArray]') {
+    return 'uint8clampedarray';
+  }
+  if (type === '[object Int16Array]') {
+    return 'int16array';
+  }
+  if (type === '[object Uint16Array]') {
+    return 'uint16array';
+  }
+  if (type === '[object Int32Array]') {
+    return 'int32array';
+  }
+  if (type === '[object Uint32Array]') {
+    return 'uint32array';
+  }
+  if (type === '[object Float32Array]') {
+    return 'float32array';
+  }
+  if (type === '[object Float64Array]') {
+    return 'float64array';
+  }
+
+  // must be a plain object
+  return 'object';
+};
+
+
+/***/ }),
+
+/***/ 823:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * randomatic <https://github.com/jonschlinkert/randomatic>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+
+
+var isNumber = __webpack_require__(824);
+var typeOf = __webpack_require__(825);
+var mathRandom = __webpack_require__(826);
+
+/**
+ * Expose `randomatic`
+ */
+
+module.exports = randomatic;
+module.exports.isCrypto = !!mathRandom.cryptographic;
+
+/**
+ * Available mask characters
+ */
+
+var type = {
+  lower: 'abcdefghijklmnopqrstuvwxyz',
+  upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  number: '0123456789',
+  special: '~!@#$%^&()_+-={}[];\',.'
+};
+
+type.all = type.lower + type.upper + type.number + type.special;
+
+/**
+ * Generate random character sequences of a specified `length`,
+ * based on the given `pattern`.
+ *
+ * @param {String} `pattern` The pattern to use for generating the random string.
+ * @param {String} `length` The length of the string to generate.
+ * @param {String} `options`
+ * @return {String}
+ * @api public
+ */
+
+function randomatic(pattern, length, options) {
+  if (typeof pattern === 'undefined') {
+    throw new Error('randomatic expects a string or number.');
+  }
+
+  var custom = false;
+  if (arguments.length === 1) {
+    if (typeof pattern === 'string') {
+      length = pattern.length;
+
+    } else if (isNumber(pattern)) {
+      options = {};
+      length = pattern;
+      pattern = '*';
+    }
+  }
+
+  if (typeOf(length) === 'object' && length.hasOwnProperty('chars')) {
+    options = length;
+    pattern = options.chars;
+    length = pattern.length;
+    custom = true;
+  }
+
+  var opts = options || {};
+  var mask = '';
+  var res = '';
+
+  // Characters to be used
+  if (pattern.indexOf('?') !== -1) mask += opts.chars;
+  if (pattern.indexOf('a') !== -1) mask += type.lower;
+  if (pattern.indexOf('A') !== -1) mask += type.upper;
+  if (pattern.indexOf('0') !== -1) mask += type.number;
+  if (pattern.indexOf('!') !== -1) mask += type.special;
+  if (pattern.indexOf('*') !== -1) mask += type.all;
+  if (custom) mask += pattern;
+
+  // Characters to exclude
+  if (opts.exclude) {
+    var exclude = typeOf(opts.exclude) === 'string' ? opts.exclude : opts.exclude.join('');
+    mask = mask.replace(new RegExp('[' + exclude + ']+', 'g'), '');
+  }
+
+  while (length--) {
+    res += mask.charAt(parseInt(mathRandom() * mask.length, 10));
+  }
+  return res;
+};
+
+
+/***/ }),
+
+/***/ 824:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * is-number <https://github.com/jonschlinkert/is-number>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+
+
+module.exports = function isNumber(num) {
+  var type = typeof num;
+
+  if (type === 'string' || num instanceof String) {
+    // an empty string would be coerced to true with the below logic
+    if (!num.trim()) return false;
+  } else if (type !== 'number' && !(num instanceof Number)) {
+    return false;
+  }
+
+  return (num - num + 1) >= 0;
+};
+
+
+/***/ }),
+
+/***/ 825:
+/***/ (function(module, exports) {
+
+var toString = Object.prototype.toString;
+
+module.exports = function kindOf(val) {
+  if (val === void 0) return 'undefined';
+  if (val === null) return 'null';
+
+  var type = typeof val;
+  if (type === 'boolean') return 'boolean';
+  if (type === 'string') return 'string';
+  if (type === 'number') return 'number';
+  if (type === 'symbol') return 'symbol';
+  if (type === 'function') {
+    return isGeneratorFn(val) ? 'generatorfunction' : 'function';
+  }
+
+  if (isArray(val)) return 'array';
+  if (isBuffer(val)) return 'buffer';
+  if (isArguments(val)) return 'arguments';
+  if (isDate(val)) return 'date';
+  if (isError(val)) return 'error';
+  if (isRegexp(val)) return 'regexp';
+
+  switch (ctorName(val)) {
+    case 'Symbol': return 'symbol';
+    case 'Promise': return 'promise';
+
+    // Set, Map, WeakSet, WeakMap
+    case 'WeakMap': return 'weakmap';
+    case 'WeakSet': return 'weakset';
+    case 'Map': return 'map';
+    case 'Set': return 'set';
+
+    // 8-bit typed arrays
+    case 'Int8Array': return 'int8array';
+    case 'Uint8Array': return 'uint8array';
+    case 'Uint8ClampedArray': return 'uint8clampedarray';
+
+    // 16-bit typed arrays
+    case 'Int16Array': return 'int16array';
+    case 'Uint16Array': return 'uint16array';
+
+    // 32-bit typed arrays
+    case 'Int32Array': return 'int32array';
+    case 'Uint32Array': return 'uint32array';
+    case 'Float32Array': return 'float32array';
+    case 'Float64Array': return 'float64array';
+  }
+
+  if (isGeneratorObj(val)) {
+    return 'generator';
+  }
+
+  // Non-plain objects
+  type = toString.call(val);
+  switch (type) {
+    case '[object Object]': return 'object';
+    // iterators
+    case '[object Map Iterator]': return 'mapiterator';
+    case '[object Set Iterator]': return 'setiterator';
+    case '[object String Iterator]': return 'stringiterator';
+    case '[object Array Iterator]': return 'arrayiterator';
+  }
+
+  // other
+  return type.slice(8, -1).toLowerCase().replace(/\s/g, '');
+};
+
+function ctorName(val) {
+  return val.constructor ? val.constructor.name : null;
+}
+
+function isArray(val) {
+  if (Array.isArray) return Array.isArray(val);
+  return val instanceof Array;
+}
+
+function isError(val) {
+  return val instanceof Error || (typeof val.message === 'string' && val.constructor && typeof val.constructor.stackTraceLimit === 'number');
+}
+
+function isDate(val) {
+  if (val instanceof Date) return true;
+  return typeof val.toDateString === 'function'
+    && typeof val.getDate === 'function'
+    && typeof val.setDate === 'function';
+}
+
+function isRegexp(val) {
+  if (val instanceof RegExp) return true;
+  return typeof val.flags === 'string'
+    && typeof val.ignoreCase === 'boolean'
+    && typeof val.multiline === 'boolean'
+    && typeof val.global === 'boolean';
+}
+
+function isGeneratorFn(name, val) {
+  return ctorName(name) === 'GeneratorFunction';
+}
+
+function isGeneratorObj(val) {
+  return typeof val.throw === 'function'
+    && typeof val.return === 'function'
+    && typeof val.next === 'function';
+}
+
+function isArguments(val) {
+  try {
+    if (typeof val.length === 'number' && typeof val.callee === 'function') {
+      return true;
+    }
+  } catch (err) {
+    if (err.message.indexOf('callee') !== -1) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * If you need to support Safari 5-7 (8-10 yr-old browser),
+ * take a look at https://github.com/feross/is-buffer
+ */
+
+function isBuffer(val) {
+  if (val.constructor && typeof val.constructor.isBuffer === 'function') {
+    return val.constructor.isBuffer(val);
+  }
+  return false;
+}
+
+
+/***/ }),
+
+/***/ 826:
+/***/ (function(module, exports) {
+
+module.exports = (function (global) {
+  var uint32 = 'Uint32Array' in global
+  var crypto = global.crypto || global.msCrypto
+  var rando = crypto && typeof crypto.getRandomValues === 'function'
+  var good = uint32 && crypto && rando
+  if (!good) return Math.random
+
+  var arr = new Uint32Array(1)
+  var max = Math.pow(2, 32)
+  function random () {
+    crypto.getRandomValues(arr)
+    return arr[0] / max
+  }
+
+  random.cryptographic = true
+  return random
+})(typeof self !== 'undefined' ? self : window)
+
+
+/***/ }),
+
+/***/ 827:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * repeat-string <https://github.com/jonschlinkert/repeat-string>
+ *
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+
+
+/**
+ * Results cache
+ */
+
+var res = '';
+var cache;
+
+/**
+ * Expose `repeat`
+ */
+
+module.exports = repeat;
+
+/**
+ * Repeat the given `string` the specified `number`
+ * of times.
+ *
+ * **Example:**
+ *
+ * ```js
+ * var repeat = require('repeat-string');
+ * repeat('A', 5);
+ * //=> AAAAA
+ * ```
+ *
+ * @param {String} `string` The string to repeat
+ * @param {Number} `number` The number of times to repeat the string
+ * @return {String} Repeated string
+ * @api public
+ */
+
+function repeat(str, num) {
+  if (typeof str !== 'string') {
+    throw new TypeError('expected a string');
+  }
+
+  // cover common, quick use cases
+  if (num === 1) return str;
+  if (num === 2) return str + str;
+
+  var max = str.length * num;
+  if (cache !== str || typeof cache === 'undefined') {
+    cache = str;
+    res = '';
+  } else if (res.length >= max) {
+    return res.substr(0, max);
+  }
+
+  while (max > res.length && num > 1) {
+    if (num & 1) {
+      res += str;
+    }
+
+    num >>= 1;
+    str += str;
+  }
+
+  res += str;
+  res = res.substr(0, max);
+  return res;
+}
+
+
+/***/ }),
+
+/***/ 828:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * preserve <https://github.com/jonschlinkert/preserve>
+ *
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT license.
+ */
+
+
+
+/**
+ * Replace tokens in `str` with a temporary, heuristic placeholder.
+ *
+ * ```js
+ * tokens.before('{a\\,b}');
+ * //=> '{__ID1__}'
+ * ```
+ *
+ * @param  {String} `str`
+ * @return {String} String with placeholders.
+ * @api public
+ */
+
+exports.before = function before(str, re) {
+  return str.replace(re, function (match) {
+    var id = randomize();
+    cache[id] = match;
+    return '__ID' + id + '__';
+  });
+};
+
+/**
+ * Replace placeholders in `str` with original tokens.
+ *
+ * ```js
+ * tokens.after('{__ID1__}');
+ * //=> '{a\\,b}'
+ * ```
+ *
+ * @param  {String} `str` String with placeholders
+ * @return {String} `str` String with original tokens.
+ * @api public
+ */
+
+exports.after = function after(str) {
+  return str.replace(/__ID(.{5})__/g, function (_, id) {
+    return cache[id];
+  });
+};
+
+function randomize() {
+  return Math.random().toString().slice(2, 7);
+}
+
+var cache = {};
+
+/***/ }),
+
+/***/ 829:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * expand-brackets <https://github.com/jonschlinkert/expand-brackets>
+ *
+ * Copyright (c) 2015 Jon Schlinkert.
+ * Licensed under the MIT license.
+ */
+
+
+
+var isPosixBracket = __webpack_require__(830);
+
+/**
+ * POSIX character classes
+ */
+
+var POSIX = {
+  alnum: 'a-zA-Z0-9',
+  alpha: 'a-zA-Z',
+  blank: ' \\t',
+  cntrl: '\\x00-\\x1F\\x7F',
+  digit: '0-9',
+  graph: '\\x21-\\x7E',
+  lower: 'a-z',
+  print: '\\x20-\\x7E',
+  punct: '-!"#$%&\'()\\*+,./:;<=>?@[\\]^_`{|}~',
+  space: ' \\t\\r\\n\\v\\f',
+  upper: 'A-Z',
+  word:  'A-Za-z0-9_',
+  xdigit: 'A-Fa-f0-9',
+};
+
+/**
+ * Expose `brackets`
+ */
+
+module.exports = brackets;
+
+function brackets(str) {
+  if (!isPosixBracket(str)) {
+    return str;
+  }
+
+  var negated = false;
+  if (str.indexOf('[^') !== -1) {
+    negated = true;
+    str = str.split('[^').join('[');
+  }
+  if (str.indexOf('[!') !== -1) {
+    negated = true;
+    str = str.split('[!').join('[');
+  }
+
+  var a = str.split('[');
+  var b = str.split(']');
+  var imbalanced = a.length !== b.length;
+
+  var parts = str.split(/(?::\]\[:|\[?\[:|:\]\]?)/);
+  var len = parts.length, i = 0;
+  var end = '', beg = '';
+  var res = [];
+
+  // start at the end (innermost) first
+  while (len--) {
+    var inner = parts[i++];
+    if (inner === '^[!' || inner === '[!') {
+      inner = '';
+      negated = true;
+    }
+
+    var prefix = negated ? '^' : '';
+    var ch = POSIX[inner];
+
+    if (ch) {
+      res.push('[' + prefix + ch + ']');
+    } else if (inner) {
+      if (/^\[?\w-\w\]?$/.test(inner)) {
+        if (i === parts.length) {
+          res.push('[' + prefix + inner);
+        } else if (i === 1) {
+          res.push(prefix + inner + ']');
+        } else {
+          res.push(prefix + inner);
+        }
+      } else {
+        if (i === 1) {
+          beg += inner;
+        } else if (i === parts.length) {
+          end += inner;
+        } else {
+          res.push('[' + prefix + inner + ']');
+        }
+      }
+    }
+  }
+
+  var result = res.join('|');
+  var rlen = res.length || 1;
+  if (rlen > 1) {
+    result = '(?:' + result + ')';
+    rlen = 1;
+  }
+  if (beg) {
+    rlen++;
+    if (beg.charAt(0) === '[') {
+      if (imbalanced) {
+        beg = '\\[' + beg.slice(1);
+      } else {
+        beg += ']';
+      }
+    }
+    result = beg + result;
+  }
+  if (end) {
+    rlen++;
+    if (end.slice(-1) === ']') {
+      if (imbalanced) {
+        end = end.slice(0, end.length - 1) + '\\]';
+      } else {
+        end = '[' + end;
+      }
+    }
+    result += end;
+  }
+
+  if (rlen > 1) {
+    result = result.split('][').join(']|[');
+    if (result.indexOf('|') !== -1 && !/\(\?/.test(result)) {
+      result = '(?:' + result + ')';
+    }
+  }
+
+  result = result.replace(/\[+=|=\]+/g, '\\b');
+  return result;
+}
+
+brackets.makeRe = function(pattern) {
+  try {
+    return new RegExp(brackets(pattern));
+  } catch (err) {}
+};
+
+brackets.isMatch = function(str, pattern) {
+  try {
+    return brackets.makeRe(pattern).test(str);
+  } catch (err) {
+    return false;
+  }
+};
+
+brackets.match = function(arr, pattern) {
+  var len = arr.length, i = 0;
+  var res = arr.slice();
+
+  var re = brackets.makeRe(pattern);
+  while (i < len) {
+    var ele = arr[i++];
+    if (!re.test(ele)) {
+      continue;
+    }
+    res.splice(i, 1);
+  }
+  return res;
+};
+
+
+/***/ }),
+
+/***/ 830:
+/***/ (function(module, exports) {
+
+/*!
+ * is-posix-bracket <https://github.com/jonschlinkert/is-posix-bracket>
+ *
+ * Copyright (c) 2015-2016, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+module.exports = function isPosixBracket(str) {
+  return typeof str === 'string' && /\[([:.=+])(?:[^\[\]]|)+\1\]/.test(str);
+};
+
+
+/***/ }),
+
+/***/ 831:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * extglob <https://github.com/jonschlinkert/extglob>
+ *
+ * Copyright (c) 2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+
+
+/**
+ * Module dependencies
+ */
+
+var isExtglob = __webpack_require__(732);
+var re, cache = {};
+
+/**
+ * Expose `extglob`
+ */
+
+module.exports = extglob;
+
+/**
+ * Convert the given extglob `string` to a regex-compatible
+ * string.
+ *
+ * ```js
+ * var extglob = require('extglob');
+ * extglob('!(a?(b))');
+ * //=> '(?!a(?:b)?)[^/]*?'
+ * ```
+ *
+ * @param {String} `str` The string to convert.
+ * @param {Object} `options`
+ *   @option {Boolean} [options] `esc` If `false` special characters will not be escaped. Defaults to `true`.
+ *   @option {Boolean} [options] `regex` If `true` a regular expression is returned instead of a string.
+ * @return {String}
+ * @api public
+ */
+
+
+function extglob(str, opts) {
+  opts = opts || {};
+  var o = {}, i = 0;
+
+  // fix common character reversals
+  // '*!(.js)' => '*.!(js)'
+  str = str.replace(/!\(([^\w*()])/g, '$1!(');
+
+  // support file extension negation
+  str = str.replace(/([*\/])\.!\([*]\)/g, function (m, ch) {
+    if (ch === '/') {
+      return escape('\\/[^.]+');
+    }
+    return escape('[^.]+');
+  });
+
+  // create a unique key for caching by
+  // combining the string and options
+  var key = str
+    + String(!!opts.regex)
+    + String(!!opts.contains)
+    + String(!!opts.escape);
+
+  if (cache.hasOwnProperty(key)) {
+    return cache[key];
+  }
+
+  if (!(re instanceof RegExp)) {
+    re = regex();
+  }
+
+  opts.negate = false;
+  var m;
+
+  while (m = re.exec(str)) {
+    var prefix = m[1];
+    var inner = m[3];
+    if (prefix === '!') {
+      opts.negate = true;
+    }
+
+    var id = '__EXTGLOB_' + (i++) + '__';
+    // use the prefix of the _last_ (outtermost) pattern
+    o[id] = wrap(inner, prefix, opts.escape);
+    str = str.split(m[0]).join(id);
+  }
+
+  var keys = Object.keys(o);
+  var len = keys.length;
+
+  // we have to loop again to allow us to convert
+  // patterns in reverse order (starting with the
+  // innermost/last pattern first)
+  while (len--) {
+    var prop = keys[len];
+    str = str.split(prop).join(o[prop]);
+  }
+
+  var result = opts.regex
+    ? toRegex(str, opts.contains, opts.negate)
+    : str;
+
+  result = result.split('.').join('\\.');
+
+  // cache the result and return it
+  return (cache[key] = result);
+}
+
+/**
+ * Convert `string` to a regex string.
+ *
+ * @param  {String} `str`
+ * @param  {String} `prefix` Character that determines how to wrap the string.
+ * @param  {Boolean} `esc` If `false` special characters will not be escaped. Defaults to `true`.
+ * @return {String}
+ */
+
+function wrap(inner, prefix, esc) {
+  if (esc) inner = escape(inner);
+
+  switch (prefix) {
+    case '!':
+      return '(?!' + inner + ')[^/]' + (esc ? '%%%~' : '*?');
+    case '@':
+      return '(?:' + inner + ')';
+    case '+':
+      return '(?:' + inner + ')+';
+    case '*':
+      return '(?:' + inner + ')' + (esc ? '%%' : '*')
+    case '?':
+      return '(?:' + inner + '|)';
+    default:
+      return inner;
+  }
+}
+
+function escape(str) {
+  str = str.split('*').join('[^/]%%%~');
+  str = str.split('.').join('\\.');
+  return str;
+}
+
+/**
+ * extglob regex.
+ */
+
+function regex() {
+  return /(\\?[@?!+*$]\\?)(\(([^()]*?)\))/;
+}
+
+/**
+ * Negation regex
+ */
+
+function negate(str) {
+  return '(?!^' + str + ').*$';
+}
+
+/**
+ * Create the regex to do the matching. If
+ * the leading character in the `pattern` is `!`
+ * a negation regex is returned.
+ *
+ * @param {String} `pattern`
+ * @param {Boolean} `contains` Allow loose matching.
+ * @param {Boolean} `isNegated` True if the pattern is a negation pattern.
+ */
+
+function toRegex(pattern, contains, isNegated) {
+  var prefix = contains ? '^' : '';
+  var after = contains ? '$' : '';
+  pattern = ('(?:' + pattern + ')' + after);
+  if (isNegated) {
+    pattern = prefix + negate(pattern);
+  }
+  return new RegExp(prefix + pattern);
+}
+
+
+/***/ }),
+
+/***/ 832:
+/***/ (function(module, exports, __webpack_require__) {
+
+var isBuffer = __webpack_require__(245);
+var toString = Object.prototype.toString;
+
+/**
+ * Get the native `typeof` a value.
+ *
+ * @param  {*} `val`
+ * @return {*} Native javascript type
+ */
+
+module.exports = function kindOf(val) {
+  // primitivies
+  if (typeof val === 'undefined') {
+    return 'undefined';
+  }
+  if (val === null) {
+    return 'null';
+  }
+  if (val === true || val === false || val instanceof Boolean) {
+    return 'boolean';
+  }
+  if (typeof val === 'string' || val instanceof String) {
+    return 'string';
+  }
+  if (typeof val === 'number' || val instanceof Number) {
+    return 'number';
+  }
+
+  // functions
+  if (typeof val === 'function' || val instanceof Function) {
+    return 'function';
+  }
+
+  // array
+  if (typeof Array.isArray !== 'undefined' && Array.isArray(val)) {
+    return 'array';
+  }
+
+  // check for instances of RegExp and Date before calling `toString`
+  if (val instanceof RegExp) {
+    return 'regexp';
+  }
+  if (val instanceof Date) {
+    return 'date';
+  }
+
+  // other objects
+  var type = toString.call(val);
+
+  if (type === '[object RegExp]') {
+    return 'regexp';
+  }
+  if (type === '[object Date]') {
+    return 'date';
+  }
+  if (type === '[object Arguments]') {
+    return 'arguments';
+  }
+  if (type === '[object Error]') {
+    return 'error';
+  }
+
+  // buffer
+  if (isBuffer(val)) {
+    return 'buffer';
+  }
+
+  // es6: Map, WeakMap, Set, WeakSet
+  if (type === '[object Set]') {
+    return 'set';
+  }
+  if (type === '[object WeakSet]') {
+    return 'weakset';
+  }
+  if (type === '[object Map]') {
+    return 'map';
+  }
+  if (type === '[object WeakMap]') {
+    return 'weakmap';
+  }
+  if (type === '[object Symbol]') {
+    return 'symbol';
+  }
+
+  // typed arrays
+  if (type === '[object Int8Array]') {
+    return 'int8array';
+  }
+  if (type === '[object Uint8Array]') {
+    return 'uint8array';
+  }
+  if (type === '[object Uint8ClampedArray]') {
+    return 'uint8clampedarray';
+  }
+  if (type === '[object Int16Array]') {
+    return 'int16array';
+  }
+  if (type === '[object Uint16Array]') {
+    return 'uint16array';
+  }
+  if (type === '[object Int32Array]') {
+    return 'int32array';
+  }
+  if (type === '[object Uint32Array]') {
+    return 'uint32array';
+  }
+  if (type === '[object Float32Array]') {
+    return 'float32array';
+  }
+  if (type === '[object Float64Array]') {
+    return 'float64array';
+  }
+
+  // must be a plain object
+  return 'object';
+};
+
+
+/***/ }),
+
+/***/ 833:
+/***/ (function(module, exports, __webpack_require__) {
+
+/*!
+ * normalize-path <https://github.com/jonschlinkert/normalize-path>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+var removeTrailingSeparator = __webpack_require__(834);
+
+module.exports = function normalizePath(str, stripTrailing) {
+  if (typeof str !== 'string') {
+    throw new TypeError('expected a string');
+  }
+  str = str.replace(/[\\\/]+/g, '/');
+  if (stripTrailing !== false) {
+    str = removeTrailingSeparator(str);
+  }
+  return str;
+};
+
+
+/***/ }),
+
+/***/ 834:
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(process) {var isWin = process.platform === 'win32';
+
+module.exports = function (str) {
+	var i = str.length - 1;
+	if (i < 2) {
+		return str;
+	}
+	while (isSeparator(str, i)) {
+		i--;
+	}
+	return str.substr(0, i + 1);
+};
+
+function isSeparator(str, i) {
+	var char = str[i];
+	return i > 0 && (char === '/' || (isWin && char === '\\'));
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(94)))
+
+/***/ }),
+
+/***/ 835:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * object.omit <https://github.com/jonschlinkert/object.omit>
+ *
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+
+
+var isObject = __webpack_require__(836);
+var forOwn = __webpack_require__(751);
+
+module.exports = function omit(obj, keys) {
+  if (!isObject(obj)) return {};
+
+  keys = [].concat.apply([], [].slice.call(arguments, 1));
+  var last = keys[keys.length - 1];
+  var res = {}, fn;
+
+  if (typeof last === 'function') {
+    fn = keys.pop();
+  }
+
+  var isFunction = typeof fn === 'function';
+  if (!keys.length && !isFunction) {
+    return obj;
+  }
+
+  forOwn(obj, function(value, key) {
+    if (keys.indexOf(key) === -1) {
+
+      if (!isFunction) {
+        res[key] = value;
+      } else if (fn(value, key, obj)) {
+        res[key] = value;
+      }
+    }
+  });
+  return res;
+};
+
+
+/***/ }),
+
+/***/ 836:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * is-extendable <https://github.com/jonschlinkert/is-extendable>
+ *
+ * Copyright (c) 2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+
+
+module.exports = function isExtendable(val) {
+  return typeof val !== 'undefined' && val !== null
+    && (typeof val === 'object' || typeof val === 'function');
+};
+
+
+/***/ }),
+
+/***/ 837:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * for-in <https://github.com/jonschlinkert/for-in>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+
+
+module.exports = function forIn(obj, fn, thisArg) {
+  for (var key in obj) {
+    if (fn.call(thisArg, obj[key], key, obj) === false) {
+      break;
+    }
+  }
+};
+
+
+/***/ }),
+
+/***/ 838:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * parse-glob <https://github.com/jonschlinkert/parse-glob>
+ *
+ * Copyright (c) 2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+
+
+var isGlob = __webpack_require__(733);
+var findBase = __webpack_require__(839);
+var extglob = __webpack_require__(732);
+var dotfile = __webpack_require__(841);
+
+/**
+ * Expose `cache`
+ */
+
+var cache = module.exports.cache = {};
+
+/**
+ * Parse a glob pattern into tokens.
+ *
+ * When no paths or '**' are in the glob, we use a
+ * different strategy for parsing the filename, since
+ * file names can contain braces and other difficult
+ * patterns. such as:
+ *
+ *  - `*.{a,b}`
+ *  - `(**|*.js)`
+ */
+
+module.exports = function parseGlob(glob) {
+  if (cache.hasOwnProperty(glob)) {
+    return cache[glob];
+  }
+
+  var tok = {};
+  tok.orig = glob;
+  tok.is = {};
+
+  // unescape dots and slashes in braces/brackets
+  glob = escape(glob);
+
+  var parsed = findBase(glob);
+  tok.is.glob = parsed.isGlob;
+
+  tok.glob = parsed.glob;
+  tok.base = parsed.base;
+  var segs = /([^\/]*)$/.exec(glob);
+
+  tok.path = {};
+  tok.path.dirname = '';
+  tok.path.basename = segs[1] || '';
+  tok.path.dirname = glob.split(tok.path.basename).join('') || '';
+  var basename = (tok.path.basename || '').split('.') || '';
+  tok.path.filename = basename[0] || '';
+  tok.path.extname = basename.slice(1).join('.') || '';
+  tok.path.ext = '';
+
+  if (isGlob(tok.path.dirname) && !tok.path.basename) {
+    if (!/\/$/.test(tok.glob)) {
+      tok.path.basename = tok.glob;
+    }
+    tok.path.dirname = tok.base;
+  }
+
+  if (glob.indexOf('/') === -1 && !tok.is.globstar) {
+    tok.path.dirname = '';
+    tok.path.basename = tok.orig;
+  }
+
+  var dot = tok.path.basename.indexOf('.');
+  if (dot !== -1) {
+    tok.path.filename = tok.path.basename.slice(0, dot);
+    tok.path.extname = tok.path.basename.slice(dot);
+  }
+
+  if (tok.path.extname.charAt(0) === '.') {
+    var exts = tok.path.extname.split('.');
+    tok.path.ext = exts[exts.length - 1];
+  }
+
+  // unescape dots and slashes in braces/brackets
+  tok.glob = unescape(tok.glob);
+  tok.path.dirname = unescape(tok.path.dirname);
+  tok.path.basename = unescape(tok.path.basename);
+  tok.path.filename = unescape(tok.path.filename);
+  tok.path.extname = unescape(tok.path.extname);
+
+  // Booleans
+  var is = (glob && tok.is.glob);
+  tok.is.negated  = glob && glob.charAt(0) === '!';
+  tok.is.extglob  = glob && extglob(glob);
+  tok.is.braces   = has(is, glob, '{');
+  tok.is.brackets = has(is, glob, '[:');
+  tok.is.globstar = has(is, glob, '**');
+  tok.is.dotfile  = dotfile(tok.path.basename) || dotfile(tok.path.filename);
+  tok.is.dotdir   = dotdir(tok.path.dirname);
+  return (cache[glob] = tok);
+}
+
+/**
+ * Returns true if the glob matches dot-directories.
+ *
+ * @param  {Object} `tok` The tokens object
+ * @param  {Object} `path` The path object
+ * @return {Object}
+ */
+
+function dotdir(base) {
+  if (base.indexOf('/.') !== -1) {
+    return true;
+  }
+  if (base.charAt(0) === '.' && base.charAt(1) !== '/') {
+    return true;
+  }
+  return false;
+}
+
+/**
+ * Returns true if the pattern has the given `ch`aracter(s)
+ *
+ * @param  {Object} `glob` The glob pattern.
+ * @param  {Object} `ch` The character to test for
+ * @return {Object}
+ */
+
+function has(is, glob, ch) {
+  return is && glob.indexOf(ch) !== -1;
+}
+
+/**
+ * Escape/unescape utils
+ */
+
+function escape(str) {
+  var re = /\{([^{}]*?)}|\(([^()]*?)\)|\[([^\[\]]*?)\]/g;
+  return str.replace(re, function (outter, braces, parens, brackets) {
+    var inner = braces || parens || brackets;
+    if (!inner) { return outter; }
+    return outter.split(inner).join(esc(inner));
+  });
+}
+
+function esc(str) {
+  str = str.split('/').join('__SLASH__');
+  str = str.split('.').join('__DOT__');
+  return str;
+}
+
+function unescape(str) {
+  str = str.split('__SLASH__').join('/');
+  str = str.split('__DOT__').join('.');
+  return str;
+}
+
+
+/***/ }),
+
+/***/ 839:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * glob-base <https://github.com/jonschlinkert/glob-base>
+ *
+ * Copyright (c) 2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+
+
+var path = __webpack_require__(735);
+var parent = __webpack_require__(840);
+var isGlob = __webpack_require__(733);
+
+module.exports = function globBase(pattern) {
+  if (typeof pattern !== 'string') {
+    throw new TypeError('glob-base expects a string.');
+  }
+
+  var res = {};
+  res.base = parent(pattern);
+  res.isGlob = isGlob(pattern);
+
+  if (res.base !== '.') {
+    res.glob = pattern.substr(res.base.length);
+    if (res.glob.charAt(0) === '/') {
+      res.glob = res.glob.substr(1);
+    }
+  } else {
+    res.glob = pattern;
+  }
+
+  if (!res.isGlob) {
+    res.base = dirname(pattern);
+    res.glob = res.base !== '.'
+      ? pattern.substr(res.base.length)
+      : pattern;
+  }
+
+  if (res.glob.substr(0, 2) === './') {
+    res.glob = res.glob.substr(2);
+  }
+  if (res.glob.charAt(0) === '/') {
+    res.glob = res.glob.substr(1);
+  }
+  return res;
+};
+
+function dirname(glob) {
+  if (glob.slice(-1) === '/') return glob;
+  return path.dirname(glob);
+}
+
+
+/***/ }),
+
+/***/ 840:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var path = __webpack_require__(735);
+var isglob = __webpack_require__(733);
+
+module.exports = function globParent(str) {
+	str += 'a'; // preserves full path in case of trailing path separator
+	do {str = path.dirname(str)} while (isglob(str));
+	return str;
+};
+
+
+/***/ }),
+
+/***/ 841:
+/***/ (function(module, exports) {
+
+/*!
+ * is-dotfile <https://github.com/jonschlinkert/is-dotfile>
+ *
+ * Copyright (c) 2015-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+module.exports = function(str) {
+  if (str.charCodeAt(0) === 46 /* . */ && str.indexOf('/', 1) === -1) {
+    return true;
+  }
+  var slash = str.lastIndexOf('/');
+  return slash !== -1 ? str.charCodeAt(slash + 1) === 46  /* . */ : false;
+};
+
+
+/***/ }),
+
+/***/ 842:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * regex-cache <https://github.com/jonschlinkert/regex-cache>
+ *
+ * Copyright (c) 2015-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+
+
+var equal = __webpack_require__(843);
+var basic = {};
+var cache = {};
+
+/**
+ * Expose `regexCache`
+ */
+
+module.exports = regexCache;
+
+/**
+ * Memoize the results of a call to the new RegExp constructor.
+ *
+ * @param  {Function} fn [description]
+ * @param  {String} str [description]
+ * @param  {Options} options [description]
+ * @param  {Boolean} nocompare [description]
+ * @return {RegExp}
+ */
+
+function regexCache(fn, str, opts) {
+  var key = '_default_', regex, cached;
+
+  if (!str && !opts) {
+    if (typeof fn !== 'function') {
+      return fn;
+    }
+    return basic[key] || (basic[key] = fn(str));
+  }
+
+  var isString = typeof str === 'string';
+  if (isString) {
+    if (!opts) {
+      return basic[str] || (basic[str] = fn(str));
+    }
+    key = str;
+  } else {
+    opts = str;
+  }
+
+  cached = cache[key];
+  if (cached && equal(cached.opts, opts)) {
+    return cached.regex;
+  }
+
+  memo(key, opts, (regex = fn(str, opts)));
+  return regex;
+}
+
+function memo(key, opts, regex) {
+  cache[key] = {regex: regex, opts: opts};
+}
+
+/**
+ * Expose `cache`
+ */
+
+module.exports.cache = cache;
+module.exports.basic = basic;
+
+
+/***/ }),
+
+/***/ 843:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * is-equal-shallow <https://github.com/jonschlinkert/is-equal-shallow>
+ *
+ * Copyright (c) 2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+
+
+var isPrimitive = __webpack_require__(844);
+
+module.exports = function isEqual(a, b) {
+  if (!a && !b) { return true; }
+  if (!a && b || a && !b) { return false; }
+
+  var numKeysA = 0, numKeysB = 0, key;
+  for (key in b) {
+    numKeysB++;
+    if (!isPrimitive(b[key]) || !a.hasOwnProperty(key) || (a[key] !== b[key])) {
+      return false;
+    }
+  }
+  for (key in a) {
+    numKeysA++;
+  }
+  return numKeysA === numKeysB;
+};
+
+
+/***/ }),
+
+/***/ 844:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * is-primitive <https://github.com/jonschlinkert/is-primitive>
+ *
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+
+
+// see http://jsperf.com/testing-value-is-primitive/7
+module.exports = function isPrimitive(value) {
+  return value == null || (typeof value !== 'function' && typeof value !== 'object');
+};
+
+
+/***/ }),
+
+/***/ 845:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var chars = __webpack_require__(846);
+var utils = __webpack_require__(734);
+
+/**
+ * Expose `Glob`
+ */
+
+var Glob = module.exports = function Glob(pattern, options) {
+  if (!(this instanceof Glob)) {
+    return new Glob(pattern, options);
+  }
+  this.options = options || {};
+  this.pattern = pattern;
+  this.history = [];
+  this.tokens = {};
+  this.init(pattern);
+};
+
+/**
+ * Initialize defaults
+ */
+
+Glob.prototype.init = function(pattern) {
+  this.orig = pattern;
+  this.negated = this.isNegated();
+  this.options.track = this.options.track || false;
+  this.options.makeRe = true;
+};
+
+/**
+ * Push a change into `glob.history`. Useful
+ * for debugging.
+ */
+
+Glob.prototype.track = function(msg) {
+  if (this.options.track) {
+    this.history.push({msg: msg, pattern: this.pattern});
+  }
+};
+
+/**
+ * Return true if `glob.pattern` was negated
+ * with `!`, also remove the `!` from the pattern.
+ *
+ * @return {Boolean}
+ */
+
+Glob.prototype.isNegated = function() {
+  if (this.pattern.charCodeAt(0) === 33 /* '!' */) {
+    this.pattern = this.pattern.slice(1);
+    return true;
+  }
+  return false;
+};
+
+/**
+ * Expand braces in the given glob pattern.
+ *
+ * We only need to use the [braces] lib when
+ * patterns are nested.
+ */
+
+Glob.prototype.braces = function() {
+  if (this.options.nobraces !== true && this.options.nobrace !== true) {
+    // naive/fast check for imbalanced characters
+    var a = this.pattern.match(/[\{\(\[]/g);
+    var b = this.pattern.match(/[\}\)\]]/g);
+
+    // if imbalanced, don't optimize the pattern
+    if (a && b && (a.length !== b.length)) {
+      this.options.makeRe = false;
+    }
+
+    // expand brace patterns and join the resulting array
+    var expanded = utils.braces(this.pattern, this.options);
+    this.pattern = expanded.join('|');
+  }
+};
+
+/**
+ * Expand bracket expressions in `glob.pattern`
+ */
+
+Glob.prototype.brackets = function() {
+  if (this.options.nobrackets !== true) {
+    this.pattern = utils.brackets(this.pattern);
+  }
+};
+
+/**
+ * Expand bracket expressions in `glob.pattern`
+ */
+
+Glob.prototype.extglob = function() {
+  if (this.options.noextglob === true) return;
+
+  if (utils.isExtglob(this.pattern)) {
+    this.pattern = utils.extglob(this.pattern, {escape: true});
+  }
+};
+
+/**
+ * Parse the given pattern
+ */
+
+Glob.prototype.parse = function(pattern) {
+  this.tokens = utils.parseGlob(pattern || this.pattern, true);
+  return this.tokens;
+};
+
+/**
+ * Replace `a` with `b`. Also tracks the change before and
+ * after each replacement. This is disabled by default, but
+ * can be enabled by setting `options.track` to true.
+ *
+ * Also, when the pattern is a string, `.split()` is used,
+ * because it's much faster than replace.
+ *
+ * @param  {RegExp|String} `a`
+ * @param  {String} `b`
+ * @param  {Boolean} `escape` When `true`, escapes `*` and `?` in the replacement.
+ * @return {String}
+ */
+
+Glob.prototype._replace = function(a, b, escape) {
+  this.track('before (find): "' + a + '" (replace with): "' + b + '"');
+  if (escape) b = esc(b);
+  if (a && b && typeof a === 'string') {
+    this.pattern = this.pattern.split(a).join(b);
+  } else {
+    this.pattern = this.pattern.replace(a, b);
+  }
+  this.track('after');
+};
+
+/**
+ * Escape special characters in the given string.
+ *
+ * @param  {String} `str` Glob pattern
+ * @return {String}
+ */
+
+Glob.prototype.escape = function(str) {
+  this.track('before escape: ');
+  var re = /["\\](['"]?[^"'\\]['"]?)/g;
+
+  this.pattern = str.replace(re, function($0, $1) {
+    var o = chars.ESC;
+    var ch = o && o[$1];
+    if (ch) {
+      return ch;
+    }
+    if (/[a-z]/i.test($0)) {
+      return $0.split('\\').join('');
+    }
+    return $0;
+  });
+
+  this.track('after escape: ');
+};
+
+/**
+ * Unescape special characters in the given string.
+ *
+ * @param  {String} `str`
+ * @return {String}
+ */
+
+Glob.prototype.unescape = function(str) {
+  var re = /__([A-Z]+)_([A-Z]+)__/g;
+  this.pattern = str.replace(re, function($0, $1) {
+    return chars[$1][$0];
+  });
+  this.pattern = unesc(this.pattern);
+};
+
+/**
+ * Escape/unescape utils
+ */
+
+function esc(str) {
+  str = str.split('?').join('%~');
+  str = str.split('*').join('%%');
+  return str;
+}
+
+function unesc(str) {
+  str = str.split('%~').join('?');
+  str = str.split('%%').join('*');
+  return str;
+}
+
+
+/***/ }),
+
+/***/ 846:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var chars = {}, unesc, temp;
+
+function reverse(object, prepender) {
+  return Object.keys(object).reduce(function(reversed, key) {
+    var newKey = prepender ? prepender + key : key; // Optionally prepend a string to key.
+    reversed[object[key]] = newKey; // Swap key and value.
+    return reversed; // Return the result.
+  }, {});
+}
+
+/**
+ * Regex for common characters
+ */
+
+chars.escapeRegex = {
+  '?': /\?/g,
+  '@': /\@/g,
+  '!': /\!/g,
+  '+': /\+/g,
+  '*': /\*/g,
+  '(': /\(/g,
+  ')': /\)/g,
+  '[': /\[/g,
+  ']': /\]/g
+};
+
+/**
+ * Escape characters
+ */
+
+chars.ESC = {
+  '?': '__UNESC_QMRK__',
+  '@': '__UNESC_AMPE__',
+  '!': '__UNESC_EXCL__',
+  '+': '__UNESC_PLUS__',
+  '*': '__UNESC_STAR__',
+  ',': '__UNESC_COMMA__',
+  '(': '__UNESC_LTPAREN__',
+  ')': '__UNESC_RTPAREN__',
+  '[': '__UNESC_LTBRACK__',
+  ']': '__UNESC_RTBRACK__'
+};
+
+/**
+ * Unescape characters
+ */
+
+chars.UNESC = unesc || (unesc = reverse(chars.ESC, '\\'));
+
+chars.ESC_TEMP = {
+  '?': '__TEMP_QMRK__',
+  '@': '__TEMP_AMPE__',
+  '!': '__TEMP_EXCL__',
+  '*': '__TEMP_STAR__',
+  '+': '__TEMP_PLUS__',
+  ',': '__TEMP_COMMA__',
+  '(': '__TEMP_LTPAREN__',
+  ')': '__TEMP_RTPAREN__',
+  '[': '__TEMP_LTBRACK__',
+  ']': '__TEMP_RTBRACK__'
+};
+
+chars.TEMP = temp || (temp = reverse(chars.ESC_TEMP));
+
+module.exports = chars;
+
+
+/***/ }),
+
+/***/ 847:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * array-every <https://github.com/jonschlinkert/array-every>
+ *
+ * Copyright (c) 2014 Jon Schlinkert, contributors.
+ * Licensed under the MIT license.
+ */
+
+
+
+var iterator = __webpack_require__(848);
+
+module.exports = function every(arr, cb, thisArg) {
+  cb = iterator(cb, thisArg);
+  var res = true;
+
+  if (arr == null) return res;
+  var len = arr.length;
+  var i = 0;
+
+  while (len--) {
+    if (!cb(arr[i++], i, arr)) {
+      res = false;
+      break;
+    }
+  }
+
+  return res;
+};
+
+
+/***/ }),
+
+/***/ 848:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * make-iterator <https://github.com/jonschlinkert/make-iterator>
+ *
+ * Copyright (c) 2014 Jon Schlinkert, contributors.
+ * Copyright (c) 2012, 2013 moutjs team and contributors (http://moutjs.com)
+ * Licensed under the MIT License
+ */
+
+
+
+var forOwn = __webpack_require__(751);
+
+/**
+ * Convert an argument into a valid iterator.
+ * Used internally on most array/object/collection methods that receives a
+ * callback/iterator providing a shortcut syntax.
+ */
+
+module.exports = function makeIterator(src, thisArg) {
+  if (src == null) {
+    return noop;
+  }
+
+  switch (typeof src) {
+    // function is the first to improve perf (most common case)
+    // also avoid using `Function#call` if not needed, which boosts
+    // perf a lot in some cases
+    case 'function':
+      return (typeof thisArg !== 'undefined') ? function (val, i, arr) {
+        return src.call(thisArg, val, i, arr);
+      } : src;
+    case 'object':
+      return function (val) {
+        return deepMatches(val, src);
+      };
+    case 'string':
+    case 'number':
+      return prop(src);
+    }
+};
+
+function containsMatch(array, value) {
+  var len = array.length;
+  var i = -1;
+
+  while (++i < len) {
+    if (deepMatches(array[i], value)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function matchArray(o, value) {
+  var len = value.length;
+  var i = -1;
+
+  while (++i < len) {
+    if (!containsMatch(o, value[i])) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function matchObject(o, value) {
+  var res = true;
+  forOwn(value, function (val, key) {
+    if (!deepMatches(o[key], val)) {
+      // Return false to break out of forOwn early
+      return (res = false);
+    }
+  });
+  return res;
+}
+
+/**
+ * Recursively compare objects
+ */
+
+function deepMatches(o, value) {
+  if (o && typeof o === 'object') {
+    if (Array.isArray(o) && Array.isArray(value)) {
+      return matchArray(o, value);
+    } else {
+      return matchObject(o, value);
+    }
+  } else {
+    return o === value;
+  }
+}
+
+function prop(name) {
+  return function(obj) {
+    return obj[name];
+  };
+}
+
+function noop(val) {
+  return val;
+}
+
+/***/ }),
+
+/***/ 849:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * array-slice <https://github.com/jonschlinkert/array-slice>
+ *
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+
+
+module.exports = function slice(arr, start, end) {
+  var len = arr.length >>> 0;
+  var range = [];
+
+  start = idx(arr, start);
+  end = idx(arr, end, len);
+
+  while (start < end) {
+    range.push(arr[start++]);
+  }
+  return range;
+};
+
+
+function idx(arr, pos, end) {
+  var len = arr.length >>> 0;
+
+  if (pos == null) {
+    pos = end || 0;
+  } else if (pos < 0) {
+    pos = Math.max(len + pos, 0);
+  } else {
+    pos = Math.min(pos, len);
+  }
+
+  return pos;
+}
+
+/***/ }),
+
+/***/ 850:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/*!
+ * index-of <https://github.com/jonschlinkert/index-of>
+ *
+ * Copyright (c) 2014-2015 Jon Schlinkert.
+ * Licensed under the MIT license.
+ */
+
+
+
+module.exports = function indexOf(arr, ele, start) {
+  start = start || 0;
+  var idx = -1;
+
+  if (arr == null) return idx;
+  var len = arr.length;
+  var i = start < 0
+    ? (len + start)
+    : start;
+
+  while (len--) {
+    if (arr[i++] === ele) {
+      idx = i - 1;
+      break;
+    }
+  }
+
+  return idx;
+};
+
 
 /***/ }),
 
 /***/ 851:
 /***/ (function(module, exports, __webpack_require__) {
 
-var defineProperty = __webpack_require__(1055);
+"use strict";
 
-/**
- * The base implementation of `assignValue` and `assignMergeValue` without
- * value checks.
- *
- * @private
- * @param {Object} object The object to modify.
- * @param {string} key The key of the property to assign.
- * @param {*} value The value to assign.
- */
-function baseAssignValue(object, key, value) {
-  if (key == '__proto__' && defineProperty) {
-    defineProperty(object, key, {
-      'configurable': true,
-      'enumerable': true,
-      'value': value,
-      'writable': true
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+module.exports = function (data) {
+  var _this = this;
+
+  try {
+    return data.map(function (row) {
+      for (var column in row) {
+
+        if (_this.source === 'client') row[column] = _this.formatDate(row[column], _this.dateFormat(column));
+
+        if (_this.isListFilter(column) && !_this.opts.templates[column] && !_this.$scopedSlots[column]) {
+          row[column] = _this.optionText(row[column], column);
+        }
+      }
+
+      return row;
     });
-  } else {
-    object[key] = value;
+  } catch (e) {
+    console.error('vue-tables-2: non-iterable data property. Expected array, got ' + (typeof data === 'undefined' ? 'undefined' : _typeof(data)) + '. Make sure that your response conforms to the expected format, or use the \'responseAdapter\' option to match the currently returned format');
+    console.error('Data equals', data);
+    throw new Error();
   }
-}
-
-module.exports = baseAssignValue;
-
+};
 
 /***/ }),
 
 /***/ 852:
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsArguments = __webpack_require__(1146),
-    isObjectLike = __webpack_require__(782);
+"use strict";
 
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
 
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
+module.exports = function (value, column) {
 
-/** Built-in value references. */
-var propertyIsEnumerable = objectProto.propertyIsEnumerable;
+  var list = this.listColumnsObject[column];
 
-/**
- * Checks if `value` is likely an `arguments` object.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an `arguments` object,
- *  else `false`.
- * @example
- *
- * _.isArguments(function() { return arguments; }());
- * // => true
- *
- * _.isArguments([1, 2, 3]);
- * // => false
- */
-var isArguments = baseIsArguments(function() { return arguments; }()) ? baseIsArguments : function(value) {
-  return isObjectLike(value) && hasOwnProperty.call(value, 'callee') &&
-    !propertyIsEnumerable.call(value, 'callee');
+  if (typeof list[value] == 'undefined') return value;
+
+  return list[value];
 };
-
-module.exports = isArguments;
-
 
 /***/ }),
 
 /***/ 853:
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(775),
-    stubFalse = __webpack_require__(1147);
+"use strict";
 
-/** Detect free variable `exports`. */
-var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
 
-/** Detect free variable `module`. */
-var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+module.exports = function (row, column, index, h) {
 
-/** Detect the popular CommonJS extension `module.exports`. */
-var moduleExports = freeModule && freeModule.exports === freeExports;
+  var value = this._getValue(row, column);
 
-/** Built-in value references. */
-var Buffer = moduleExports ? root.Buffer : undefined;
+  if (this.templatesKeys.indexOf(column) == -1) {
 
-/* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined;
+    if (typeof value === 'undefined' || !this.opts.highlightMatches || this.filterableColumns.indexOf(column) === -1) {
+      return value;
+    }
 
-/**
- * Checks if `value` is a buffer.
- *
- * @static
- * @memberOf _
- * @since 4.3.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a buffer, else `false`.
- * @example
- *
- * _.isBuffer(new Buffer(2));
- * // => true
- *
- * _.isBuffer(new Uint8Array(2));
- * // => false
- */
-var isBuffer = nativeIsBuffer || stubFalse;
+    return this.highlightMatch(value, column, h);
+  }
 
-module.exports = isBuffer;
+  var template = this.opts.templates[column];
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(245)(module)))
+  template = typeof template == 'function' ? template.apply(this.$root, [h, row, index, column]) : h(template, {
+    attrs: {
+      data: row,
+      column: column,
+      index: index
+    }
+  });
+
+  return template;
+};
 
 /***/ }),
 
 /***/ 854:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-/** Used as references for various `Number` constants. */
-var MAX_SAFE_INTEGER = 9007199254740991;
+"use strict";
 
-/** Used to detect unsigned integer values. */
-var reIsUint = /^(?:0|[1-9]\d*)$/;
 
-/**
- * Checks if `value` is a valid array-like index.
- *
- * @private
- * @param {*} value The value to check.
- * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
- * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
- */
-function isIndex(value, length) {
-  var type = typeof value;
-  length = length == null ? MAX_SAFE_INTEGER : length;
+module.exports = function (row, event) {
 
-  return !!length &&
-    (type == 'number' ||
-      (type != 'symbol' && reIsUint.test(value))) &&
-        (value > -1 && value % 1 == 0 && value < length);
-}
+  var data;
+  var id = this.opts.uniqueKey;
 
-module.exports = isIndex;
+  if (this.source == 'client' && typeof row[id] !== 'undefined') {
+    data = this.tableData.filter(function (r) {
+      return row[id] === r[id];
+    })[0];
+  } else {
+    data = row;
+  }
 
+  this.dispatch('row-click', { row: data, event: event });
+};
 
 /***/ }),
 
 /***/ 855:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-/** Used as references for various `Number` constants. */
-var MAX_SAFE_INTEGER = 9007199254740991;
+"use strict";
 
-/**
- * Checks if `value` is a valid array-like length.
- *
- * **Note:** This method is loosely based on
- * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
- * @example
- *
- * _.isLength(3);
- * // => true
- *
- * _.isLength(Number.MIN_VALUE);
- * // => false
- *
- * _.isLength(Infinity);
- * // => false
- *
- * _.isLength('3');
- * // => false
- */
-function isLength(value) {
-  return typeof value == 'number' &&
-    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
-}
 
-module.exports = isLength;
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
+module.exports = function (e) {
+  this.limit = (typeof e === 'undefined' ? 'undefined' : _typeof(e)) === 'object' ? e.target.value : e;
+  this.updateState('perPage', this.limit);
+  this.dispatch('limit', parseInt(this.limit));
+  this.setPage(1);
+};
 
 /***/ }),
 
 /***/ 856:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-/**
- * The base implementation of `_.unary` without support for storing metadata.
- *
- * @private
- * @param {Function} func The function to cap arguments for.
- * @returns {Function} Returns the new capped function.
- */
-function baseUnary(func) {
-  return function(value) {
-    return func(value);
-  };
-}
+"use strict";
 
-module.exports = baseUnary;
 
+module.exports = function () {
+    var _this = this;
+
+    var rows = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+
+    if (!this.opts.childRow || typeof this.opts.childRow === 'function') {
+        throw new Error('vue-tables-2: Child row undefined or not a component');
+    }
+
+    var Rows = rows ? this.openChildRows.filter(function (row) {
+        return rows.includes(row);
+    }) : this.openChildRows;
+
+    if (!Rows.length) return [];
+
+    var components = this.$children.filter(function (child) {
+        return child.$options.name === 'ChildRow' && Rows.includes(child.data[_this.opts.uniqueKey]);
+    });
+
+    return components;
+};
 
 /***/ }),
 
 /***/ 857:
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(1057);
+"use strict";
 
-/** Detect free variable `exports`. */
-var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
 
-/** Detect free variable `module`. */
-var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+var _bus = __webpack_require__(731);
 
-/** Detect the popular CommonJS extension `module.exports`. */
-var moduleExports = freeModule && freeModule.exports === freeExports;
+var _bus2 = _interopRequireDefault(_bus);
 
-/** Detect free variable `process` from Node.js. */
-var freeProcess = moduleExports && freeGlobal.process;
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/** Used to access faster Node.js helpers. */
-var nodeUtil = (function() {
-  try {
-    // Use `util.types` for Node.js 10+.
-    var types = freeModule && freeModule.require && freeModule.require('util').types;
+module.exports = function (event, payload) {
 
-    if (types) {
-      return types;
-    }
+  if (this.vuex) {
+    if (event.split('::').length > 1) return;
+    this.commit(event.toUpperCase().replace('-', '_'), payload);
+  }
 
-    // Legacy `process.binding('util')` for Node.js < 10.
-    return freeProcess && freeProcess.binding && freeProcess.binding('util');
-  } catch (e) {}
-}());
+  this.$emit(event, payload);
 
-module.exports = nodeUtil;
+  _bus2.default.$emit('vue-tables.' + event, payload);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(245)(module)))
+  if (this.name) {
+    _bus2.default.$emit('vue-tables.' + this.name + '.' + event, payload);
+  }
+};
 
 /***/ }),
 
 /***/ 858:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
+"use strict";
 
-/**
- * Checks if `value` is likely a prototype object.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
- */
-function isPrototype(value) {
-  var Ctor = value && value.constructor,
-      proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto;
 
-  return value === proto;
-}
+module.exports = function (rowId, e) {
 
-module.exports = isPrototype;
+  if (e) e.stopPropagation();
 
+  if (this.openChildRows.includes(rowId)) {
+    var index = this.openChildRows.indexOf(rowId);
+    this.openChildRows.splice(index, 1);
+  } else {
+    this.openChildRows.push(rowId);
+  }
+};
 
 /***/ }),
 
 /***/ 859:
 /***/ (function(module, exports, __webpack_require__) {
 
-var isFunction = __webpack_require__(1056),
-    isLength = __webpack_require__(855);
+"use strict";
 
-/**
- * Checks if `value` is array-like. A value is considered array-like if it's
- * not a function and has a `value.length` that's an integer greater than or
- * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
- * @example
- *
- * _.isArrayLike([1, 2, 3]);
- * // => true
- *
- * _.isArrayLike(document.body.children);
- * // => true
- *
- * _.isArrayLike('abc');
- * // => true
- *
- * _.isArrayLike(_.noop);
- * // => false
- */
-function isArrayLike(value) {
-  return value != null && isLength(value.length) && !isFunction(value);
-}
 
-module.exports = isArrayLike;
-
+module.exports = function (rowId) {
+  return this.openChildRows.includes(rowId) ? 'VueTables__child-row-toggler--open' : 'VueTables__child-row-toggler--closed';
+};
 
 /***/ }),
 
 /***/ 860:
 /***/ (function(module, exports, __webpack_require__) {
 
-var ListCache = __webpack_require__(821),
-    stackClear = __webpack_require__(1158),
-    stackDelete = __webpack_require__(1159),
-    stackGet = __webpack_require__(1160),
-    stackHas = __webpack_require__(1161),
-    stackSet = __webpack_require__(1162);
+"use strict";
 
-/**
- * Creates a stack cache object to store key-value pairs.
- *
- * @private
- * @constructor
- * @param {Array} [entries] The key-value pairs to cache.
- */
-function Stack(entries) {
-  var data = this.__data__ = new ListCache(entries);
-  this.size = data.size;
-}
 
-// Add methods to `Stack`.
-Stack.prototype.clear = stackClear;
-Stack.prototype['delete'] = stackDelete;
-Stack.prototype.get = stackGet;
-Stack.prototype.has = stackHas;
-Stack.prototype.set = stackSet;
+module.exports = function (data) {
 
-module.exports = Stack;
+  if (typeof this.opts.requestFunction === 'function') {
+    return this.opts.requestFunction.call(this, data);
+  }
 
+  if (typeof axios !== 'undefined') return axios.get(this.url, { params: data }).catch(function (e) {
+    this.dispatch('error', e);
+  }.bind(this));
+
+  if (typeof this.$http !== 'undefined') return this.$http.get(this.url, { params: data }).then(function (data) {
+    return data.json();
+  }.bind(this), function (e) {
+    this.dispatch('error', e);
+  }.bind(this));
+
+  if (typeof $ != 'undefined') return $.getJSON(this.url, data).fail(function (e) {
+    this.dispatch('error', e);
+  }.bind(this));
+
+  throw "vue-tables: No supported ajax library was found. (jQuery, axios or vue-resource). To use a different library you can write your own request function (see the `requestFunction` option)";
+};
 
 /***/ }),
 
 /***/ 861:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-/**
- * Performs a
- * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
- * comparison between two values to determine if they are equivalent.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to compare.
- * @param {*} other The other value to compare.
- * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
- * @example
- *
- * var object = { 'a': 1 };
- * var other = { 'a': 1 };
- *
- * _.eq(object, object);
- * // => true
- *
- * _.eq(object, other);
- * // => false
- *
- * _.eq('a', 'a');
- * // => true
- *
- * _.eq('a', Object('a'));
- * // => false
- *
- * _.eq(NaN, NaN);
- * // => true
- */
-function eq(value, other) {
-  return value === other || (value !== value && other !== other);
-}
+"use strict";
 
-module.exports = eq;
 
+module.exports = function (response) {
+
+  if (typeof axios !== 'undefined') return response.data;
+
+  return response;
+};
 
 /***/ }),
 
 /***/ 862:
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(786),
-    root = __webpack_require__(775);
+"use strict";
 
-/* Built-in method references that are verified to be native. */
-var Map = getNative(root, 'Map');
 
-module.exports = Map;
+module.exports = function (column) {
 
+  var ascending = this.orderBy.ascending;
+
+  this.currentlySorting = { column: column, ascending: ascending };
+
+  if (typeof this.opts.customSorting[column] == 'undefined') return this.defaultSort(column, ascending);
+
+  return this.opts.customSorting[column](ascending);
+};
 
 /***/ }),
 
 /***/ 863:
 /***/ (function(module, exports, __webpack_require__) {
 
-var mapCacheClear = __webpack_require__(1163),
-    mapCacheDelete = __webpack_require__(1170),
-    mapCacheGet = __webpack_require__(1172),
-    mapCacheHas = __webpack_require__(1173),
-    mapCacheSet = __webpack_require__(1174);
+"use strict";
 
-/**
- * Creates a map cache object to store key-value pairs.
- *
- * @private
- * @constructor
- * @param {Array} [entries] The key-value pairs to cache.
- */
-function MapCache(entries) {
-  var index = -1,
-      length = entries == null ? 0 : entries.length;
 
-  this.clear();
-  while (++index < length) {
-    var entry = entries[index];
-    this.set(entry[0], entry[1]);
-  }
-}
+module.exports = function () {
+  var state = {
+    page: 1,
+    query: this.query,
+    orderBy: this.orderBy,
+    perPage: this.opts.perPage,
+    customQueries: this.customQueries
+  };
 
-// Add methods to `MapCache`.
-MapCache.prototype.clear = mapCacheClear;
-MapCache.prototype['delete'] = mapCacheDelete;
-MapCache.prototype.get = mapCacheGet;
-MapCache.prototype.has = mapCacheHas;
-MapCache.prototype.set = mapCacheSet;
+  this.storage.setItem(this.stateKey, JSON.stringify(state));
 
-module.exports = MapCache;
-
+  return state;
+};
 
 /***/ }),
 
 /***/ 864:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-/**
- * Appends the elements of `values` to `array`.
- *
- * @private
- * @param {Array} array The array to modify.
- * @param {Array} values The values to append.
- * @returns {Array} Returns `array`.
- */
-function arrayPush(array, values) {
-  var index = -1,
-      length = values.length,
-      offset = array.length;
+"use strict";
 
-  while (++index < length) {
-    array[offset + index] = values[index];
+
+module.exports = function (key, value) {
+
+  if (!this.opts.saveState || !this.activeState) return;
+
+  try {
+    var currentState = JSON.parse(this.storage.getItem(this.stateKey));
+  } catch (e) {
+    var currentState = this.initState();
   }
-  return array;
-}
 
-module.exports = arrayPush;
+  currentState[key] = value;
 
+  this.storage.setItem(this.stateKey, JSON.stringify(currentState));
+};
 
 /***/ }),
 
 /***/ 865:
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayFilter = __webpack_require__(1185),
-    stubArray = __webpack_require__(1070);
+"use strict";
 
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
 
-/** Built-in value references. */
-var propertyIsEnumerable = objectProto.propertyIsEnumerable;
+module.exports = function (column) {
+  var c = this.opts.columnsClasses;
 
-/* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeGetSymbols = Object.getOwnPropertySymbols;
-
-/**
- * Creates an array of the own enumerable symbols of `object`.
- *
- * @private
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of symbols.
- */
-var getSymbols = !nativeGetSymbols ? stubArray : function(object) {
-  if (object == null) {
-    return [];
-  }
-  object = Object(object);
-  return arrayFilter(nativeGetSymbols(object), function(symbol) {
-    return propertyIsEnumerable.call(object, symbol);
-  });
+  return c.hasOwnProperty(column) ? c[column] : '';
 };
-
-module.exports = getSymbols;
-
 
 /***/ }),
 
 /***/ 866:
 /***/ (function(module, exports, __webpack_require__) {
 
-var isArray = __webpack_require__(772),
-    isSymbol = __webpack_require__(867);
+"use strict";
 
-/** Used to match property names within property paths. */
-var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
-    reIsPlainProp = /^\w*$/;
 
-/**
- * Checks if `value` is a property name and not a property path.
- *
- * @private
- * @param {*} value The value to check.
- * @param {Object} [object] The object to query keys on.
- * @returns {boolean} Returns `true` if `value` is a property name, else `false`.
- */
-function isKey(value, object) {
-  if (isArray(value)) {
-    return false;
-  }
-  var type = typeof value;
-  if (type == 'number' || type == 'symbol' || type == 'boolean' ||
-      value == null || isSymbol(value)) {
-    return true;
-  }
-  return reIsPlainProp.test(value) || !reIsDeepProp.test(value) ||
-    (object != null && value in Object(object));
-}
+module.exports = function (name) {
+  if (!name) return name;
 
-module.exports = isKey;
+  name = name.split('__');
+  name.shift();
 
+  return name.join('__').split('@@@').join('.');
+};
 
 /***/ }),
 
 /***/ 867:
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(792),
-    isObjectLike = __webpack_require__(782);
+"use strict";
 
-/** `Object#toString` result references. */
-var symbolTag = '[object Symbol]';
 
-/**
- * Checks if `value` is classified as a `Symbol` primitive or object.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
- * @example
- *
- * _.isSymbol(Symbol.iterator);
- * // => true
- *
- * _.isSymbol('abc');
- * // => false
- */
-function isSymbol(value) {
-  return typeof value == 'symbol' ||
-    (isObjectLike(value) && baseGetTag(value) == symbolTag);
-}
+module.exports = function (column) {
+    var _this = this;
 
-module.exports = isSymbol;
+    if (!this.userControlsColumns) {
+        this.userColumnsDisplay = JSON.parse(JSON.stringify(this.allColumns));
+        this.userControlsColumns = true;
+    }
 
+    if (this.userColumnsDisplay.includes(column)) {
+
+        // can't have no columns
+        if (this.userColumnsDisplay.length === 1) return;
+
+        var index = this.userColumnsDisplay.indexOf(column);
+        this.userColumnsDisplay.splice(index, 1);
+    } else {
+        this.userColumnsDisplay.push(column);
+    }
+
+    this.updateState('userControlsColumns', true);
+    this.updateState('userColumnsDisplay', this.userColumnsDisplay);
+
+    this.$nextTick(function () {
+        _this._setFiltersDOM(_this.query);
+    });
+};
 
 /***/ }),
 
 /***/ 868:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-/**
- * A specialized version of `_.map` for arrays without support for iteratee
- * shorthands.
- *
- * @private
- * @param {Array} [array] The array to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
- * @returns {Array} Returns the new mapped array.
- */
-function arrayMap(array, iteratee) {
-  var index = -1,
-      length = array == null ? 0 : array.length,
-      result = Array(length);
+"use strict";
 
-  while (++index < length) {
-    result[index] = iteratee(array[index], index, array);
+
+module.exports = function (secondaryCol) {
+
+  var primaryCol = this.orderBy.column;
+  var primaryAsc = this.orderBy.ascending;
+
+  if (!this.userMultiSorting[primaryCol]) this.userMultiSorting[primaryCol] = [];
+
+  var multi = this.userMultiSorting[primaryCol];
+
+  if (primaryCol === secondaryCol) {
+    if (!multi.length || primaryAsc) {
+      // primary is the only sorted column or is ascending
+      this.orderBy.ascending = !this.orderBy.ascending;
+    } else {
+      // remove primary column and make secondary primary
+      this.orderBy = multi.shift();
+      this.userMultiSorting = {};
+      this.userMultiSorting[this.orderBy.column] = multi;
+    }
+  } else {
+    var secondary = multi.filter(function (col) {
+      return col.column == secondaryCol;
+    })[0];
+
+    if (secondary) {
+      if (!secondary.ascending) {
+        // remove sort
+        this.userMultiSorting[primaryCol] = multi.filter(function (col) {
+          return col.column != secondaryCol;
+        });
+        if (!this.userMultiSorting[primaryCol].length) this.userMultiSorting = {};
+      } else {
+        // change direction
+        secondary.ascending = !secondary.ascending;
+      }
+    } else {
+      // add sort
+      multi.push({
+        column: secondaryCol,
+        ascending: true
+      });
+    }
   }
-  return result;
-}
+  // force re-compilation of the filteredData computed property
+  this.time = Date.now();
 
-module.exports = arrayMap;
+  this.dispatch('sorted', getMultiSortData(this.orderBy, this.userMultiSorting));
+};
 
+function getMultiSortData(main, secondary) {
+  var cols = [JSON.parse(JSON.stringify(main))];
+  cols = cols.concat(secondary[main.column]);
+  return cols;
+};
 
 /***/ }),
 
 /***/ 869:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-/**
- * This method returns the first argument it receives.
- *
- * @static
- * @since 0.1.0
- * @memberOf _
- * @category Util
- * @param {*} value Any value.
- * @returns {*} Returns `value`.
- * @example
- *
- * var object = { 'a': 1 };
- *
- * console.log(_.identity(object) === object);
- * // => true
- */
-function identity(value) {
-  return value;
-}
+"use strict";
 
-module.exports = identity;
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+module.exports = function (query) {
+
+  var el;
+
+  if (this.opts.filterByColumn) {
+
+    for (var column in query) {
+
+      var columnName = this._getColumnName(column);
+
+      if (this.isDateFilter(column)) {
+        if (query[column] && _typeof(query[column]) === 'object') {
+          var start = typeof query[column].start === 'string' ? moment(query[column].start, 'YYYY-MM-DD') : query[column].start;
+          var end = typeof query[column].end === 'string' ? moment(query[column].end, 'YYYY-MM-DD') : query[column].end;
+
+          this._setDatepickerText(column, start, end);
+        } else {
+          $(this.$el).find('#VueTables__' + column + '-filter').html("<span class='VueTables__filter-placeholder'>" + this.display('filterBy', { column: this.getHeading(column) }) + "</span>");
+        }
+        continue;
+      }
+      el = this.$el.querySelector('[name=\'' + columnName + '\']');
+
+      if (el) {
+        el.value = query[column];
+      } else if (this.columns.indexOf(column) === -1) {
+        console.error('vue-tables-2: Error in setting filter value. Column \'' + column + '\' does not exist.');
+      }
+    }
+  } else {
+    this.$el.querySelector('.VueTables__search input').value = query;
+  }
+};
 
 /***/ }),
 
 /***/ 870:
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayLikeKeys = __webpack_require__(1061),
-    baseKeysIn = __webpack_require__(1208),
-    isArrayLike = __webpack_require__(859);
+"use strict";
 
-/**
- * Creates an array of the own and inherited enumerable property names of `object`.
- *
- * **Note:** Non-object values are coerced to objects.
- *
- * @static
- * @memberOf _
- * @since 3.0.0
- * @category Object
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property names.
- * @example
- *
- * function Foo() {
- *   this.a = 1;
- *   this.b = 2;
- * }
- *
- * Foo.prototype.c = 3;
- *
- * _.keysIn(new Foo);
- * // => ['a', 'b', 'c'] (iteration order is not guaranteed)
- */
-function keysIn(object) {
-  return isArrayLike(object) ? arrayLikeKeys(object, true) : baseKeysIn(object);
-}
 
-module.exports = keysIn;
+module.exports = function (column) {
+  var userMultiSort = Object.keys(this.userMultiSorting);
 
+  if (!userMultiSort.length || this.orderBy.column === column) return this.orderBy.column === column;
+
+  return !!this.userMultiSorting[userMultiSort[0]].filter(function (col) {
+    return col.column == column;
+  }).length;
+};
 
 /***/ }),
 
 /***/ 871:
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseAssignValue = __webpack_require__(851),
-    eq = __webpack_require__(861);
+"use strict";
 
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
 
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
+module.exports = function (h, row) {
+  // scoped slot
+  if (this.$scopedSlots.child_row) return this.$scopedSlots.child_row({ row: row });
 
-/**
- * Assigns `value` to `key` of `object` if the existing value is not equivalent
- * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
- * for equality comparisons.
- *
- * @private
- * @param {Object} object The object to modify.
- * @param {string} key The key of the property to assign.
- * @param {*} value The value to assign.
- */
-function assignValue(object, key, value) {
-  var objValue = object[key];
-  if (!(hasOwnProperty.call(object, key) && eq(objValue, value)) ||
-      (value === undefined && !(key in object))) {
-    baseAssignValue(object, key, value);
-  }
-}
+  var childRow = this.opts.childRow;
 
-module.exports = assignValue;
+  // function
+  if (typeof childRow === 'function') return childRow.apply(this, [h, row]);
 
+  // component
+  return h(childRow, {
+    attrs: {
+      data: row
+    }
+  });
+};
 
 /***/ }),
 
 /***/ 872:
 /***/ (function(module, exports, __webpack_require__) {
 
-var overArg = __webpack_require__(1063);
+"use strict";
 
-/** Built-in value references. */
-var getPrototype = overArg(Object.getPrototypeOf, Object);
 
-module.exports = getPrototype;
-
+module.exports = function () {
+    this.displayColumnsDropdown = !this.displayColumnsDropdown;
+};
 
 /***/ }),
 
 /***/ 873:
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetAllKeys = __webpack_require__(1069),
-    getSymbolsIn = __webpack_require__(1076),
-    keysIn = __webpack_require__(870);
+"use strict";
 
-/**
- * Creates an array of own and inherited enumerable property names and
- * symbols of `object`.
- *
- * @private
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property names and symbols.
- */
-function getAllKeysIn(object) {
-  return baseGetAllKeys(object, keysIn, getSymbolsIn);
-}
 
-module.exports = getAllKeysIn;
-
+module.exports = function (column) {
+    return this.userColumnsDisplay.length === 1 && this.userColumnsDisplay[0] === column;
+};
 
 /***/ }),
 
 /***/ 874:
 /***/ (function(module, exports, __webpack_require__) {
 
-var Uint8Array = __webpack_require__(1067);
+"use strict";
 
-/**
- * Creates a clone of `arrayBuffer`.
- *
- * @private
- * @param {ArrayBuffer} arrayBuffer The array buffer to clone.
- * @returns {ArrayBuffer} Returns the cloned array buffer.
- */
-function cloneArrayBuffer(arrayBuffer) {
-  var result = new arrayBuffer.constructor(arrayBuffer.byteLength);
-  new Uint8Array(result).set(new Uint8Array(arrayBuffer));
-  return result;
-}
 
-module.exports = cloneArrayBuffer;
+module.exports = function (page) {
 
+    if (this.vuex) return;
+
+    this.setPage(page);
+    this.dispatch('pagination', page);
+};
 
 /***/ }),
 
@@ -10782,68 +11749,2689 @@ module.exports = cloneArrayBuffer;
 "use strict";
 
 
+module.exports = function () {
+
+    if (this.orderBy.column != this.opts.groupBy) {
+        this.setOrder(this.opts.groupBy, true);
+    } else {
+        this.setOrder(this.opts.groupBy, !this.orderBy.ascending);
+    }
+};
+
+/***/ }),
+
+/***/ 876:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (column) {
+    if (typeof this.opts.initFilters[column] !== 'undefined') {
+        return this.opts.initFilters[column];
+    }
+
+    if (typeof this.query[column] !== 'undefined' && this.query[column].start) {
+        return {
+            start: moment(this.query[column].start, 'YYYY-MM-DD HH:mm:ss'),
+            end: moment(this.query[column].end, 'YYYY-MM-DD HH:mm:ss')
+        };
+    }
+
+    return false;
+};
+
+/***/ }),
+
+/***/ 877:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (column, start, end) {
+
+    var dateFormat = this.dateFormat(column);
+    var el = typeof column === 'string' ? $(this.$el).find("#VueTables__" + column + "-filter") : column;
+
+    el.text(start.format(dateFormat) + " - " + end.format(dateFormat));
+};
+
+/***/ }),
+
+/***/ 878:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (column) {
+    return !this.opts.descOrderColumns.includes(column);
+};
+
+/***/ }),
+
+/***/ 879:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (column) {
+
+    if (this.opts.dateFormatPerColumn.hasOwnProperty(column)) {
+        return this.opts.dateFormatPerColumn[column];
+    }
+
+    return this.opts.dateFormat;
+};
+
+/***/ }),
+
+/***/ 880:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+  var _this = this;
+
+  if (this.opts.columnsDropdown) {
+
+    var stopProp = function stopProp(e) {
+      return e.stopPropagation();
+    };
+    var handler = function handler() {
+      if (_this.displayColumnsDropdown) {
+        _this.displayColumnsDropdown = false;
+      }
+    };
+
+    this.$refs.columnsdropdown.addEventListener('click', stopProp);
+    document.addEventListener('click', handler);
+
+    this.$once('hook:beforeDestroy', function () {
+      document.removeEventListener('click', handler);
+      _this.$refs.columnsdropdown.removeEventListener('click', stopProp);
+    });
+  }
+};
+
+/***/ }),
+
+/***/ 881:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (row, column) {
+
+  if (column.indexOf('.') === -1) return row[column];
+
+  var p = column.split('.');
+
+  var value = row[p[0]];
+
+  if (!value) return '';
+
+  for (var i = 1; i < p.length; i++) {
+    value = value[p[i]];
+
+    // If the nested structure doesn't exist return an empty string
+    if (typeof value === 'undefined') return '';
+  }
+
+  return value;
+};
+
+/***/ }),
+
+/***/ 882:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (column) {
+    return 'vf__' + column.split('.').join('@@@');
+};
+
+/***/ }),
+
+/***/ 883:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+    listColumnsObject: __webpack_require__(884),
+    allColumns: __webpack_require__(885),
+    templatesKeys: __webpack_require__(886),
+    opts: __webpack_require__(887),
+    tableData: __webpack_require__(889),
+    storage: __webpack_require__(890),
+    filterableColumns: __webpack_require__(891),
+    hasChildRow: __webpack_require__(892),
+    colspan: __webpack_require__(893),
+    hasGenericFilter: __webpack_require__(894),
+    stateKey: function stateKey() {
+        var key = this.name ? this.name : this.id;
+        return 'vuetables_' + key;
+    },
+
+    Page: function Page() {
+        return this.page;
+    }
+};
+
+/***/ }),
+
+/***/ 884:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+  var columns = Object.keys(this.opts.listColumns);
+
+  var res = {};
+
+  columns.forEach(function (column) {
+    res[column] = {};
+
+    this.opts.listColumns[column].forEach(function (item) {
+      res[column][item.id] = item.text;
+    });
+  }.bind(this));
+
+  return res;
+};
+
+/***/ }),
+
+/***/ 885:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+  var _this = this;
+
+  var display = this.columnsDisplay;
+
+  // default - return all columns
+
+  if (!display && !this.userControlsColumns) {
+    return this.Columns;
+  }
+
+  // user toggled columns - return user selected columns
+
+  if (this.userControlsColumns) {
+    return this.columns.filter(function (column) {
+      return _this.userColumnsDisplay.includes(column);
+    });
+  }
+
+  if (this.opts.ssr) return this.Columns;
+
+  // developer defined columns display
+
+  return this.Columns.filter(function (column) {
+
+    if (!display[column]) return true;
+
+    var range = display[column];
+    var operator = range[2];
+
+    var inRange = (!range[0] || _this.windowWidth >= range[0]) && (!range[1] || _this.windowWidth < range[1]);
+
+    return operator == 'not' ? !inRange : inRange;
+  });
+};
+
+/***/ }),
+
+/***/ 886:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+      return Object.keys(this.opts.templates);
+};
+
+/***/ }),
+
+/***/ 887:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+  var defaults = __webpack_require__(888)();
+  return this.initOptions(defaults, this.globalOptions, this.options);
+};
+
+/***/ }),
+
+/***/ 888:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+  return {
+    dateColumns: [],
+    listColumns: {},
+    datepickerOptions: {
+      locale: {
+        cancelLabel: 'Clear'
+      }
+    },
+    datepickerPerColumnOptions: {},
+    initialPage: 1,
+    perPage: 10,
+    perPageValues: [10, 25, 50, 100],
+    groupBy: false,
+    collapseGroups: false,
+    destroyEventBus: false,
+    sendEmptyFilters: false,
+    params: {},
+    sortable: true,
+    filterable: true,
+    groupMeta: [],
+    initFilters: {},
+    customFilters: [],
+    templates: {},
+    debounce: 250,
+    dateFormat: "DD/MM/YYYY",
+    dateFormatPerColumn: {},
+    toMomentFormat: false,
+    skin: false,
+    columnsDisplay: {},
+    columnsDropdown: false,
+    texts: {
+      count: "Showing {from} to {to} of {count} records|{count} records|One record",
+      first: 'First',
+      last: 'Last',
+      filter: "Filter:",
+      filterPlaceholder: "Search query",
+      limit: "Records:",
+      page: "Page:",
+      noResults: "No matching records",
+      filterBy: "Filter by {column}",
+      loading: 'Loading...',
+      defaultOption: 'Select {column}',
+      columns: 'Columns'
+    },
+    sortIcon: {
+      is: 'glyphicon-sort',
+      base: 'glyphicon',
+      up: 'glyphicon-chevron-up',
+      down: 'glyphicon-chevron-down'
+    },
+    sortingAlgorithm: function sortingAlgorithm(data, column) {
+      return data.sort(this.getSortFn(column));
+    },
+
+    customSorting: {},
+    multiSorting: {},
+    clientMultiSorting: true,
+    serverMultiSorting: false,
+    filterByColumn: false,
+    highlightMatches: false,
+    orderBy: false,
+    descOrderColumns: [],
+    footerHeadings: false,
+    headings: {},
+    headingsTooltips: {},
+    pagination: {
+      dropdown: false,
+      chunk: 10,
+      edge: false,
+      align: 'center',
+      nav: 'fixed'
+    },
+    childRow: false,
+    childRowTogglerFirst: true,
+    uniqueKey: 'id',
+    requestFunction: false,
+    requestAdapter: function requestAdapter(data) {
+      return data;
+    },
+    responseAdapter: function responseAdapter(resp) {
+
+      var data = this.getResponseData(resp);
+
+      return {
+        data: data.data,
+        count: data.count
+      };
+    },
+    requestKeys: {
+      query: 'query',
+      limit: 'limit',
+      orderBy: 'orderBy',
+      ascending: 'ascending',
+      page: 'page',
+      byColumn: 'byColumn'
+    },
+    rowClassCallback: false,
+    preserveState: false,
+    saveState: false,
+    storage: 'local',
+    columnsClasses: {}
+  };
+};
+
+/***/ }),
+
+/***/ 889:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+  return this.data;
+};
+
+/***/ }),
+
+/***/ 890:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+
+  if (typeof localStorage === 'undefined') return {};
+
+  return this.opts.storage === 'local' ? localStorage : sessionStorage;
+};
+
+/***/ }),
+
+/***/ 891:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+       return this.opts.filterable && this.opts.filterable.length ? this.opts.filterable : this.Columns;
+};
+
+/***/ }),
+
+/***/ 892:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+  return this.opts.childRow || this.$scopedSlots.child_row;
+};
+
+/***/ }),
+
+/***/ 893:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+    return this.hasChildRow ? this.allColumns.length + 1 : this.allColumns.length;
+};
+
+/***/ }),
+
+/***/ 894:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+module.exports = function () {
+    return !this.opts.filterByColumn && (typeof this.opts.filterable === 'boolean' && this.opts.filterable || _typeof(this.opts.filterable) === 'object' && this.opts.filterable.length);
+};
+
+/***/ }),
+
+/***/ 895:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+    input: __webpack_require__(896),
+    select: __webpack_require__(897)
+};
+
+/***/ }),
+
+/***/ 896:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+    twoWay: true,
+    bind: function bind(el, binding, vnode) {
+
+        el.addEventListener('keydown', function (e) {
+            vnode.context[binding.value] = e.target.value;
+        });
+    },
+
+    update: function update(el, binding, vnode, oldVnode) {}
+
+};
+
+/***/ }),
+
+/***/ 897:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+  twoWay: true,
+  bind: function bind(el, binding, vnode) {
+    el.addEventListener('change', function (e) {
+      console.log("SELECT CHANGE");
+      vnode.context[binding.value.name] = e.target.value;
+      binding.value.cb.call(this, binding.value.params);
+    });
+  },
+
+  update: function update(el, binding, vnode, oldVnode) {
+    // el.value = vnode.context[binding.value];
+    // console.log(binding.value + " was updated");
+    //  vnode.context[binding.value] = el.value;
+
+  }
+
+};
+
+/***/ }),
+
+/***/ 898:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _bus = __webpack_require__(731);
+
+var _bus2 = _interopRequireDefault(_bus);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function () {
+    var _this = this;
+
+    var el;
+
+    if (this.opts.destroyEventBus) {
+        _bus2.default.$off();
+        _bus2.default.$destroy();
+    }
+
+    if (this.vuex && !this.opts.preserveState) {
+        this.$store.unregisterModule(this.name);
+    }
+
+    if (this.opts.filterByColumn) {
+        this.opts.dateColumns.forEach(function (column) {
+            el = $(_this.$el).find("#VueTables__" + column + "-filter").data('daterangepicker');
+            if (el) el.remove();
+        });
+    }
+};
+
+/***/ }),
+
+/***/ 899:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (obj) {
+    // null and undefined are "empty"
+    if (obj == null) return true;
+
+    // Assume if it has a length property with a non-zero value
+    // that that property is correct.
+    if (obj.length > 0) return false;
+    if (obj.length === 0) return true;
+
+    // Otherwise, does it have any properties of its own?
+    for (var key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) return false;
+    }
+
+    return true;
+};
+
+/***/ }),
+
+/***/ 900:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _state = __webpack_require__(901);
+
+var _state2 = _interopRequireDefault(_state);
+
+var _mutations = __webpack_require__(902);
+
+var _mutations2 = _interopRequireDefault(_mutations);
+
+var _merge = __webpack_require__(730);
+
+var _merge2 = _interopRequireDefault(_merge);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (self) {
+
+  var Module = {
+    state: (0, _state2.default)(self),
+    mutations: (0, _mutations2.default)(self)
+  };
+
+  if (self.$store && self.$store.state && self.$store.state[self.name]) {
+    Module.state = _merge2.default.recursive(Module.state, self.$store.state[self.name]);
+    self.$store.unregisterModule(self.name);
+  }
+
+  self.$store.registerModule(self.name, Module);
+};
+
+/***/ }),
+
+/***/ 901:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-/*
-Mixin for objects that are mounted by Google Maps
-Javascript API.
 
-These are objects that are sensitive to element resize
-operations so it exposes a property which accepts a bus
+exports.default = function (self) {
 
-*/
+  var state = {
+    page: self.opts.initialPage ? self.opts.initialPage : 1,
+    limit: self.opts.perPage,
+    count: self.source == 'server' ? 0 : self.data.length,
+    columns: self.columns,
+    data: self.source == 'client' ? self.data : [],
+    query: self.initQuery(),
+    customQueries: self.initCustomFilters(),
+    sortBy: self.opts.orderBy && self.opts.orderBy.column ? self.opts.orderBy.column : false,
+    ascending: self.opts.orderBy && self.opts.orderBy.hasOwnProperty('ascending') ? self.opts.orderBy.ascending : true
+  };
 
-exports.default = {
-  props: ['resizeBus'],
+  if (typeof self.$store.state[self.name] !== 'undefined') {
+    return (0, _merge2.default)(true, self.$store.state[self.name], state);
+  }
 
-  data: function data() {
-    return {
-      _actualResizeBus: null
-    };
-  },
-  created: function created() {
-    if (typeof this.resizeBus === 'undefined') {
-      this.$data._actualResizeBus = this.$gmapDefaultResizeBus;
-    } else {
-      this.$data._actualResizeBus = this.resizeBus;
+  return state;
+};
+
+var _merge = __webpack_require__(730);
+
+var _merge2 = _interopRequireDefault(_merge);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+
+/***/ 902:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function (self) {
+  var _ref, _merge$recursive;
+
+  var extra = self.source == 'server' ? (_ref = {}, _defineProperty(_ref, self.name + '/SET_DATA', function undefined(state, response) {
+
+    var data = self.opts.responseAdapter.call(self, response);
+
+    state.data = data.data;
+    state.count = parseInt(data.count);
+  }), _defineProperty(_ref, self.name + '/LOADING', function undefined(state, payload) {}), _defineProperty(_ref, self.name + '/LOADED', function undefined(state, payload) {}), _defineProperty(_ref, self.name + '/ERROR', function undefined(state, payload) {}), _ref) : _defineProperty({}, self.name + '/SET_COUNT', function undefined(state, count) {
+    state.count = count;
+  });
+
+  return _merge2.default.recursive(true, (_merge$recursive = {}, _defineProperty(_merge$recursive, self.name + '/PAGINATE', function undefined(state, page) {
+    state.page = page;
+    self.updateState('page', page);
+
+    if (self.source == 'server') self.getData();
+
+    self.commit('PAGINATION', page);
+  }), _defineProperty(_merge$recursive, self.name + '/SET_FILTER', function undefined(state, filter) {
+    state.page = 1;
+
+    self.updateState('page', 1);
+
+    state.query = filter;
+
+    if (self.source == 'server') {
+      self.getData();
     }
-  },
+  }), _defineProperty(_merge$recursive, self.name + '/PAGINATION', function undefined(state, page) {}), _defineProperty(_merge$recursive, self.name + '/SET_CUSTOM_FILTER', function undefined(state, _ref3) {
+    var filter = _ref3.filter,
+        value = _ref3.value;
 
 
-  methods: {
-    _resizeCallback: function _resizeCallback() {
-      this.resize();
+    state.customQueries[filter] = value;
+    state.page = 1;
+
+    self.updateState('page', 1);
+    self.updateState('customQueries', state.customQueries);
+
+    if (self.source == 'server') {
+      self.getData();
+    }
+  }), _defineProperty(_merge$recursive, self.name + '/SET_STATE', function undefined(state, _ref4) {
+    var page = _ref4.page,
+        query = _ref4.query,
+        customQueries = _ref4.customQueries,
+        limit = _ref4.limit,
+        orderBy = _ref4.orderBy;
+
+    state.customQueries = customQueries;
+    state.query = query;
+    state.page = page;
+    state.limit = limit;
+    state.ascending = orderBy.ascending;
+    state.sortBy = orderBy.column;
+  }), _defineProperty(_merge$recursive, self.name + '/SET_LIMIT', function undefined(state, limit) {
+    state.page = 1;
+    self.updateState('page', 1);
+
+    state.limit = limit;
+
+    if (self.source == 'server') self.getData();
+  }), _defineProperty(_merge$recursive, self.name + '/SORT', function undefined(state, _ref5) {
+    var column = _ref5.column,
+        ascending = _ref5.ascending;
+
+
+    state.ascending = ascending;
+    state.sortBy = column;
+
+    if (self.source == 'server') self.getData();
+  }), _defineProperty(_merge$recursive, self.name + '/SORTED', function undefined(state, data) {}), _defineProperty(_merge$recursive, self.name + '/ROW_CLICK', function undefined(state, row) {}), _defineProperty(_merge$recursive, self.name + '/FILTER', function undefined(state, row) {}), _defineProperty(_merge$recursive, self.name + '/LIMIT', function undefined(state, limit) {}), _merge$recursive), extra);
+};
+
+var _merge = __webpack_require__(730);
+
+var _merge2 = _interopRequireDefault(_merge);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+/***/ }),
+
+/***/ 903:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+    return {
+        framework: 'bootstrap3',
+        table: 'table table-striped table-bordered table-hover',
+        row: 'row',
+        column: 'col-md-12',
+        label: '',
+        input: 'form-control',
+        select: 'form-control',
+        field: 'form-group',
+        inline: 'form-inline',
+        right: 'pull-right',
+        left: 'pull-left',
+        center: 'text-center',
+        contentCenter: '',
+        small: '',
+        nomargin: '',
+        groupTr: 'info',
+        button: 'btn btn-secondary',
+        dropdown: {
+            container: 'dropdown',
+            trigger: 'dropdown-toggle',
+            menu: 'dropdown-menu',
+            content: '',
+            item: '',
+            caret: 'caret'
+        },
+        pagination: {
+            nav: '',
+            count: '',
+            wrapper: '',
+            list: 'pagination',
+            item: 'page-item',
+            link: 'page-link',
+            next: '',
+            prev: '',
+            active: 'active',
+            disabled: 'disabled'
+        }
+    };
+};
+
+/***/ }),
+
+/***/ 904:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+    return {
+        framework: 'bootstrap4',
+        table: 'table table-striped table-bordered table-hover',
+        row: 'row',
+        column: 'col-md-12',
+        label: '',
+        input: 'form-control',
+        select: 'form-control',
+        field: 'form-group',
+        inline: 'form-inline',
+        right: 'float-right',
+        left: 'float-left',
+        center: 'text-center',
+        contentCenter: 'justify-content-center',
+        nomargin: 'm-0',
+        groupTr: 'table-info',
+        small: '',
+        button: 'btn btn-secondary',
+        dropdown: {
+            container: 'dropdown',
+            trigger: 'dropdown-toggle',
+            menu: 'dropdown-menu',
+            content: '',
+            item: 'dropdown-item',
+            caret: 'caret'
+        },
+        pagination: {
+            nav: '',
+            count: '',
+            wrapper: '',
+            list: 'pagination',
+            item: 'page-item',
+            link: 'page-link',
+            next: '',
+            prev: '',
+            active: 'active',
+            disabled: 'disabled'
+        }
+    };
+};
+
+/***/ }),
+
+/***/ 905:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+    return {
+        framework: 'bulma',
+        table: 'table is-bordered is-striped is-hoverable is-fullwidth',
+        row: 'columns',
+        column: 'column is-12',
+        label: 'label',
+        input: 'input',
+        select: 'select',
+        field: 'field',
+        inline: 'is-horizontal',
+        right: 'is-pulled-right',
+        left: 'is-pulled-left',
+        center: 'has-text-centered',
+        contentCenter: 'is-centered',
+        icon: 'icon',
+        small: 'is-small',
+        nomargin: 'marginless',
+        button: 'button',
+        groupTr: 'is-selected',
+        dropdown: {
+            container: 'dropdown',
+            trigger: 'dropdown-trigger',
+            menu: 'dropdown-menu',
+            content: 'dropdown-content',
+            item: 'dropdown-item',
+            caret: 'fa fa-angle-down'
+        },
+        pagination: {
+            nav: '',
+            count: '',
+            wrapper: 'pagination',
+            list: 'pagination-list',
+            item: '',
+            link: 'pagination-link',
+            next: '',
+            prev: '',
+            active: 'is-current',
+            disabled: ''
+        }
+    };
+};
+
+/***/ }),
+
+/***/ 906:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _merge = __webpack_require__(730);
+
+var _merge2 = _interopRequireDefault(_merge);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (h, modules, classes, slots) {
+
+  var filterId = 'VueTables__search_' + this.id;
+  var ddpId = 'VueTables__dropdown-pagination_' + this.id;
+  var perpageId = 'VueTables__limit_' + this.id;
+  var perpageValues = __webpack_require__(756).call(this, h);
+
+  var genericFilter = this.hasGenericFilter ? h(
+    'div',
+    { 'class': 'VueTables__search-field' },
+    [h(
+      'label',
+      {
+        attrs: { 'for': filterId },
+        'class': classes.label },
+      [this.display('filter')]
+    ), modules.normalFilter(classes, filterId)]
+  ) : '';
+
+  var perpage = perpageValues.length > 1 ? h(
+    'div',
+    { 'class': 'VueTables__limit-field' },
+    [h(
+      'label',
+      { 'class': classes.label, attrs: { 'for': perpageId }
+      },
+      [this.display('limit')]
+    ), modules.perPage(perpageValues, classes.select, perpageId)]
+  ) : '';
+
+  var dropdownPagination = this.opts.pagination && this.opts.pagination.dropdown ? h(
+    'div',
+    { 'class': 'VueTables__pagination-wrapper' },
+    [h(
+      'div',
+      { 'class': classes.field + ' ' + classes.inline + ' ' + classes.right + ' VueTables__dropdown-pagination',
+        directives: [{
+          name: 'show',
+          value: this.totalPages > 1
+        }]
+      },
+      [h(
+        'label',
+        {
+          attrs: { 'for': ddpId }
+        },
+        [this.display('page')]
+      ), modules.dropdownPagination(classes.select, ddpId)]
+    )]
+  ) : '';
+
+  var columnsDropdown = this.opts.columnsDropdown ? h(
+    'div',
+    { 'class': 'VueTables__columns-dropdown-wrapper' },
+    [modules.columnsDropdown(classes)]
+  ) : '';
+
+  var footerHeadings = this.opts.footerHeadings ? h('tfoot', [h('tr', [modules.headings(classes.right)])]) : '';
+
+  var shouldShowTop = genericFilter || perpage || dropdownPagination || columnsDropdown || slots.beforeFilter || slots.afterFilter || slots.beforeLimit || slots.afterLimit;
+
+  var tableTop = h(
+    'div',
+    { 'class': classes.row, directives: [{
+        name: 'show',
+        value: shouldShowTop
+      }]
     },
-    _delayedResizeCallback: function _delayedResizeCallback() {
+    [h(
+      'div',
+      { 'class': classes.column },
+      [h(
+        'div',
+        { 'class': classes.field + ' ' + classes.inline + ' ' + classes.left + ' VueTables__search' },
+        [slots.beforeFilter, genericFilter, slots.afterFilter]
+      ), h(
+        'div',
+        { 'class': classes.field + ' ' + classes.inline + ' ' + classes.right + ' VueTables__limit' },
+        [slots.beforeLimit, perpage, slots.afterLimit]
+      ), dropdownPagination, columnsDropdown]
+    )]
+  );
+
+  return h(
+    'div',
+    { 'class': "VueTables VueTables--" + this.source },
+    [tableTop, slots.beforeTable, h(
+      'div',
+      { 'class': 'table-responsive' },
+      [h(
+        'table',
+        { 'class': 'VueTables__table ' + (this.opts.skin ? this.opts.skin : classes.table) },
+        [h('thead', [h('tr', [modules.headings(classes.right)]), slots.beforeFilters, modules.columnFilters(classes), slots.afterFilters]), footerHeadings, slots.beforeBody, h('tbody', [slots.prependBody, modules.rows(classes), slots.appendBody]), slots.afterBody]
+      )]
+    ), slots.afterTable, modules.pagination((0, _merge2.default)(classes.pagination, {
+      wrapper: classes.row + ' ' + classes.column + ' ' + classes.contentCenter,
+      nav: classes.center,
+      count: classes.center + ' ' + classes.column
+    })), modules.dropdownPaginationCount()]
+  );
+};
+
+/***/ }),
+
+/***/ 907:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _merge = __webpack_require__(730);
+
+var _merge2 = _interopRequireDefault(_merge);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (h, modules, classes, slots) {
+
+  var filterId = 'VueTables__search_' + this.id;
+  var perpageId = 'VueTables__limit_' + this.id;
+  var perpageValues = __webpack_require__(756).call(this, h);
+
+  var genericFilter = this.hasGenericFilter ? h(
+    'div',
+    { 'class': 'VueTables__search-field' },
+    [h(
+      'label',
+      {
+        attrs: { 'for': filterId },
+        'class': classes.label },
+      [this.display('filter')]
+    ), modules.normalFilter(classes, filterId)]
+  ) : '';
+
+  var perpage = perpageValues.length > 1 ? h(
+    'div',
+    { 'class': 'VueTables__limit-field' },
+    [h(
+      'label',
+      { 'class': classes.label, attrs: { 'for': perpageId }
+      },
+      [this.display('limit')]
+    ), modules.perPage(perpageValues, classes.select, perpageId)]
+  ) : '';
+
+  var columnsDropdown = this.opts.columnsDropdown ? h(
+    'div',
+    { 'class': 'VueTables__columns-dropdown-wrapper' },
+    [modules.columnsDropdown(classes)]
+  ) : '';
+
+  var shouldShowTop = genericFilter || perpage || columnsDropdown || slots.beforeFilter || slots.afterFilter || slots.beforeLimit || slots.afterLimit;
+
+  var tableTop = h(
+    'div',
+    { 'class': classes.row, directives: [{
+        name: 'show',
+        value: shouldShowTop
+      }]
+    },
+    [h(
+      'div',
+      { 'class': classes.column },
+      [h(
+        'div',
+        { 'class': classes.field + ' ' + classes.inline + ' ' + classes.left + ' VueTables__search' },
+        [slots.beforeFilter, genericFilter, slots.afterFilter]
+      ), h(
+        'div',
+        { 'class': classes.field + ' ' + classes.inline + ' ' + classes.right + ' VueTables__limit' },
+        [slots.beforeLimit, perpage, slots.afterLimit]
+      ), columnsDropdown]
+    )]
+  );
+
+  return h(
+    'div',
+    { 'class': "VueTables VueTables--" + this.source },
+    [tableTop, slots.beforeTable, h(
+      'div',
+      { 'class': 'table-responsive' },
+      [h(
+        'table',
+        { 'class': 'VueTables__table ' + (this.opts.skin ? this.opts.skin : classes.table) },
+        [h('thead', [h('tr', [modules.headings(classes.right)]), slots.beforeFilters, modules.columnFilters(classes), slots.afterFilters]), h('tfoot', [h('tr', [h(
+          'td',
+          {
+            attrs: { colspan: this.colspan }
+          },
+          [modules.pagination((0, _merge2.default)(classes.pagination, {
+            list: classes.pagination.list + ' ' + classes.right + ' ' + classes.nomargin,
+            count: '' + classes.left
+          }))]
+        )])]), slots.beforeBody, h('tbody', [slots.prependBody, modules.rows(classes), slots.appendBody]), slots.afterBody]
+      )]
+    ), slots.afterTable]
+  );
+};
+
+/***/ }),
+
+/***/ 908:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (h) {
+  var _this = this;
+
+  return function (classes) {
+
+    var data;
+
+    if (_this.source === 'client') {
+      data = _this.filteredData;
+
+      if (!data.length && _this.source === 'client' && _this.page !== 1) {
+        // data was dynamically removed go to last page
+        _this.setPage(_this.totalPages ? _this.totalPages : 1);
+      }
+    } else {
+      data = _this.tableData;
+    }
+
+    if (_this.count === 0) {
+
+      var colspan = _this.allColumns.length;
+      if (_this.hasChildRow) colspan++;
+
+      return h(
+        'tr',
+        { 'class': 'VueTables__no-results' },
+        [h(
+          'td',
+          { 'class': 'text-center',
+            attrs: { colspan: _this.colspan }
+          },
+          [_this.display(_this.loading ? 'loading' : 'noResults')]
+        )]
+      );
+    }
+
+    var rows = [];
+    var columns;
+    var rowKey = _this.opts.uniqueKey;
+
+    var rowClass;
+    var recordCount = (_this.Page - 1) * _this.limit;
+    var currentGroup;
+    var groupSlot;
+    var groupValue;
+    var groupByContent;
+
+    data.map(function (row, index) {
+
+      if (_this.opts.groupBy && _this.source === 'client' && row[_this.opts.groupBy] !== currentGroup) {
+        groupSlot = _this.getGroupSlot(row[_this.opts.groupBy]);
+        groupValue = row[_this.opts.groupBy];
+
+        groupByContent = _this.opts.toggleGroups ? h(
+          'button',
+          { 'class': classes.button, on: {
+              'click': _this.toggleGroup.bind(_this, groupValue)
+            }
+          },
+          [groupValue, h('span', { 'class': _this.groupToggleIcon(groupValue) })]
+        ) : groupValue;
+
+        rows.push(h(
+          'tr',
+          { 'class': classes.groupTr, on: {
+              'click': _this._toggleGroupDirection.bind(_this)
+            }
+          },
+          [h(
+            'td',
+            {
+              attrs: { colspan: _this.colspan }
+            },
+            [groupByContent, groupSlot]
+          )]
+        ));
+        currentGroup = row[_this.opts.groupBy];
+      }
+
+      if (_this.opts.toggleGroups && _this.collapsedGroups.includes(currentGroup)) {
+        return;
+      }
+
+      index = recordCount + index + 1;
+
+      columns = [];
+
+      if (_this.hasChildRow) {
+        var childRowToggler = h('td', [h('span', {
+          on: {
+            'click': _this.toggleChildRow.bind(_this, row[rowKey])
+          },
+          'class': 'VueTables__child-row-toggler ' + _this.childRowTogglerClass(row[rowKey]) })]);
+        if (_this.opts.childRowTogglerFirst) columns.push(childRowToggler);
+      }
+
+      _this.allColumns.map(function (column) {
+        var rowTemplate = _this.$scopedSlots && _this.$scopedSlots[column];
+
+        columns.push(h(
+          'td',
+          { 'class': _this.columnClass(column) },
+          [rowTemplate ? rowTemplate({ row: row, column: column, index: index }) : _this.render(row, column, index, h)]
+        ));
+      });
+
+      if (_this.hasChildRow && !_this.opts.childRowTogglerFirst) columns.push(childRowToggler);
+
+      rowClass = _this.opts.rowClassCallback ? _this.opts.rowClassCallback(row) : '';
+
+      rows.push(h(
+        'tr',
+        { 'class': rowClass, on: {
+            'click': _this.rowWasClicked.bind(_this, row),
+            'dblclick': _this.rowWasClicked.bind(_this, row)
+          }
+        },
+        [columns, ' ']
+      ));
+
+      rows.push(_this.hasChildRow && _this.openChildRows.includes(row[rowKey]) ? h(
+        'tr',
+        { 'class': 'VueTables__child-row' },
+        [h(
+          'td',
+          {
+            attrs: { colspan: _this.colspan }
+          },
+          [_this._getChildRowTemplate(h, row)]
+        )]
+      ) : h());
+    });
+
+    return rows;
+  };
+};
+
+/***/ }),
+
+/***/ 909:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var debounce = __webpack_require__(736);
+
+module.exports = function (h) {
+    var _this = this;
+
+    return function (classes, id) {
+
+        var search = _this.source == 'client' ? _this.search.bind(_this, _this.data) : _this.serverSearch.bind(_this);
+
+        return h('input', { 'class': classes.input + ' ' + classes.small,
+            attrs: { type: 'text',
+
+                placeholder: _this.display('filterPlaceholder'),
+
+                id: id
+            },
+            domProps: {
+                'value': _this.query
+            },
+            on: {
+                'keyup': _this.opts.debounce ? debounce(search, _this.opts.debounce) : search
+            }
+        });
+    };
+};
+
+/***/ }),
+
+/***/ 910:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var debounce = __webpack_require__(736);
+
+module.exports = function (h) {
+  var _this = this;
+
+  return function (selectClass, id) {
+
+    var pages = [];
+    var selected;
+
+    for (var pag = 1; pag <= _this.totalPages; pag++) {
+      var selected = _this.page == pag;
+      pages.push(h(
+        "option",
+        {
+          domProps: {
+            "value": pag,
+            "selected": selected
+          }
+        },
+        [pag]
+      ));
+    }
+    return h(
+      "select",
+      { "class": selectClass + " dropdown-pagination",
+        directives: [{
+          name: "show",
+          value: _this.totalPages > 1
+        }],
+        attrs: {
+          name: "page",
+
+          id: id
+        },
+        ref: "page",
+        domProps: {
+          "value": _this.page
+        },
+        on: {
+          "change": _this.setPage.bind(_this, null, false)
+        }
+      },
+      [pages]
+    );
+  };
+};
+
+/***/ }),
+
+/***/ 911:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (h) {
+  var _this = this;
+
+  return function () {
+    if (_this.count > 0 && _this.opts.pagination.dropdown) {
+
+      var perPage = parseInt(_this.limit);
+
+      var from = (_this.Page - 1) * perPage + 1;
+      var to = _this.Page == _this.totalPages ? _this.count : from + perPage - 1;
+
+      var parts = _this.opts.texts.count.split('|');
+      var i = Math.min(_this.count == 1 ? 2 : _this.totalPages == 1 ? 1 : 0, parts.length - 1);
+
+      var count = parts[i].replace('{count}', _this.count).replace('{from}', from).replace('{to}', to);
+
+      return h(
+        'div',
+        { 'class': 'VuePagination' },
+        [h(
+          'p',
+          { 'class': 'VuePagination__count' },
+          [count]
+        )]
+      );
+    }
+
+    return '';
+  };
+};
+
+/***/ }),
+
+/***/ 912:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _merge = __webpack_require__(730);
+
+var _merge2 = _interopRequireDefault(_merge);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+module.exports = function (h) {
+  var _this = this;
+
+  return function (classes) {
+    if (!_this.opts.filterByColumn || !_this.opts.filterable) return '';
+
+    var textFilter = __webpack_require__(913).call(_this, h, classes.input);
+    var dateFilter = __webpack_require__(914).call(_this, h);
+    var listFilter = __webpack_require__(915).call(_this, h, classes.select);
+
+    var filters = [];
+    var filter;
+
+    if (_this.hasChildRow && _this.opts.childRowTogglerFirst) filters.push(h('th'));
+
+    _this.allColumns.map(function (column) {
+
+      var filter = '';
+
+      if (_this.filterable(column)) {
+        switch (true) {
+          case _this.isTextFilter(column):
+            filter = textFilter(column);break;
+          case _this.isDateFilter(column):
+            filter = dateFilter(column);break;
+          case _this.isListFilter(column):
+            filter = listFilter(column);break;
+        }
+      }
+
+      if (typeof _this.$slots['filter__' + column] !== 'undefined') {
+        filter = filter ? h('div', [filter, _this.$slots['filter__' + column]]) : _this.$slots['filter__' + column];
+      }
+
+      filters.push(h(
+        'th',
+        { 'class': _this.columnClass(column) },
+        [h(
+          'div',
+          _defineProperty({ 'class': 'VueTables__column-filter' }, 'class', 'VueTables__' + column + '-filter-wrapper'),
+          [filter]
+        )]
+      ));
+    });
+
+    if (_this.hasChildRow && !_this.opts.childRowTogglerFirst) filters.push(h('th'));
+
+    return h(
+      'tr',
+      { 'class': 'VueTables__filters-row' },
+      [filters]
+    );
+  };
+};
+
+/***/ }),
+
+/***/ 913:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var debounce = __webpack_require__(736);
+
+module.exports = function (h, inputClass) {
+  var _this = this;
+
+  var search = this.source == 'client' ? this.search.bind(this, this.data) : this.serverSearch.bind(this);
+
+  if (this.opts.debounce) {
+    var debouncedSearch = debounce(search, this.opts.debounce);
+
+    var onKeyUp = function onKeyUp(e) {
+      if (e.keyCode === 13) {
+        debouncedSearch.clear();
+        search.apply(undefined, arguments);
+      } else {
+        debouncedSearch.apply(undefined, arguments);
+      }
+    };
+  }
+
+  return function (column) {
+    return h('input', {
+      on: {
+        'keyup': _this.opts.debounce ? onKeyUp : search
+      },
+
+      'class': inputClass,
+      attrs: { name: _this._getColumnName(column),
+        type: 'text',
+        placeholder: _this.display('filterBy', { column: _this.getHeading(column) })
+      },
+      domProps: {
+        'value': _this.query[column]
+      }
+    });
+  };
+};
+
+/***/ }),
+
+/***/ 914:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (h) {
+  var _this = this;
+
+  return function (column) {
+    return h(
+      'div',
+      { 'class': 'VueTables__date-filter',
+        attrs: { id: 'VueTables__' + column + '-filter' }
+      },
+      [h(
+        'span',
+        { 'class': 'VueTables__filter-placeholder' },
+        [_this.display('filterBy', { column: _this.getHeading(column) })]
+      )]
+    );
+  };
+};
+
+/***/ }),
+
+/***/ 915:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (h, selectClass) {
       var _this = this;
 
-      this.$nextTick(function () {
-        return _this._resizeCallback();
+      return function (column) {
+
+            var options = [];
+            var selected = void 0;
+
+            var search = _this.source == 'client' ? _this.search.bind(_this, _this.data) : _this.serverSearch.bind(_this);
+
+            var displayable = _this.opts.listColumns[column].filter(function (item) {
+                  return !item.hide;
+            });
+
+            displayable.map(function (option) {
+                  selected = option.id == _this.query[column] && _this.query[column] !== '';
+                  options.push(h(
+                        'option',
+                        {
+                              domProps: {
+                                    'value': option.id,
+                                    'selected': selected
+                              }
+                        },
+                        [option.text]
+                  ));
+            });
+
+            return h(
+                  'div',
+                  { 'class': 'VueTables__list-filter',
+                        attrs: { id: 'VueTables__' + column + '-filter' }
+                  },
+                  [h(
+                        'select',
+                        { 'class': selectClass,
+                              on: {
+                                    'change': search
+                              },
+                              attrs: {
+                                    name: _this._getColumnName(column)
+                              },
+                              domProps: {
+                                    'value': _this.query[column]
+                              }
+                        },
+                        [h(
+                              'option',
+                              {
+                                    attrs: { value: '' }
+                              },
+                              [_this.display('defaultOption', { column: _this.opts.headings[column] ? _this.opts.headings[column] : column })]
+                        ), options]
+                  )]
+            );
+      };
+};
+
+/***/ }),
+
+/***/ 916:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (h) {
+  var _this = this;
+
+  return function (theme) {
+
+    if (_this.opts.pagination && _this.opts.pagination.dropdown) return '';
+
+    var options = {
+      theme: theme,
+      chunk: _this.opts.pagination.chunk,
+      chunksNavigation: _this.opts.pagination.nav,
+      edgeNavigation: _this.opts.pagination.edge,
+      texts: {
+        count: _this.opts.texts.count,
+        first: _this.opts.texts.first,
+        last: _this.opts.texts.last
+      }
+    };
+
+    var name = _this.vuex ? _this.name : _this.id;
+
+    return h("pagination", {
+      ref: "pagination",
+      attrs: { options: options,
+        "for": name,
+        vuex: _this.vuex,
+        records: _this.count,
+        "per-page": parseInt(_this.limit)
+      },
+      on: {
+        "paginate": _this._onPagination.bind(_this)
+      }
+    });
+  };
+};
+
+/***/ }),
+
+/***/ 917:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (h) {
+  var _this = this;
+
+  return function (right) {
+    var sortControl = __webpack_require__(918)(h, right);
+
+    var headings = [];
+
+    if (_this.hasChildRow && _this.opts.childRowTogglerFirst) headings.push(h("th"));
+
+    _this.allColumns.map(function (column) {
+      headings.push(h(
+        "th",
+        {
+          on: {
+            "click": this.orderByColumn.bind(this, column)
+          },
+
+          "class": this.sortableClass(column) },
+        [h(
+          "span",
+          { "class": "VueTables__heading", attrs: { title: this.getHeadingTooltip(column, h) }
+          },
+          [this.getHeading(column, h)]
+        ), sortControl.call(this, column)]
+      ));
+    }.bind(_this));
+
+    if (_this.hasChildRow && !_this.opts.childRowTogglerFirst) headings.push(h("th"));
+
+    return headings;
+  };
+};
+
+/***/ }),
+
+/***/ 918:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (h, right) {
+  return function (column) {
+
+    if (!this.sortable(column)) return '';
+    return h('span', { 'class': 'VueTables__sort-icon ' + right + ' ' + this.sortableChevronClass(column) });
+  };
+};
+
+/***/ }),
+
+/***/ 919:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (h) {
+  var _this = this;
+
+  return function (perpageValues, cls, id) {
+
+    return perpageValues.length > 1 ? h(
+      "select",
+      { "class": cls,
+        attrs: { name: "limit",
+
+          id: id
+        },
+        domProps: {
+          "value": _this.limit
+        },
+        on: {
+          "change": _this.setLimit.bind(_this)
+        }
+      },
+      [perpageValues]
+    ) : '';
+  };
+};
+
+/***/ }),
+
+/***/ 920:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var dropdownWrapper = __webpack_require__(921);
+var dropdownItemWrapper = __webpack_require__(922);
+
+module.exports = function (h) {
+    var _this = this;
+
+    return function (classes) {
+
+        var cols = _this.columns.map(function (column) {
+            return dropdownItemWrapper(h, classes, h(
+                'a',
+                { 'class': classes.dropdown.item,
+                    attrs: { href: '#'
+                    },
+                    on: {
+                        'click': function click() {
+                            return _this.toggleColumn(column);
+                        }
+                    }
+                },
+                [h('input', {
+                    attrs: { type: 'checkbox',
+                        disabled: _this._onlyColumn(column)
+                    },
+                    domProps: {
+                        'value': column,
+                        'checked': _this.allColumns.includes(column)
+                    }
+                }), _this.getHeading(column)]
+            ));
+        });
+
+        return h(
+            'div',
+            { ref: 'columnsdropdown', 'class': classes.dropdown.container + ' ' + classes.right + ' VueTables__columns-dropdown' },
+            [h(
+                'button',
+                {
+                    attrs: { type: 'button' },
+                    'class': classes.button + ' ' + classes.dropdown.trigger,
+                    on: {
+                        'click': _this._toggleColumnsDropdown.bind(_this)
+                    }
+                },
+                [_this.display('columns'), h(
+                    'span',
+                    { 'class': classes.icon + ' ' + classes.small },
+                    [h('i', { 'class': classes.dropdown.caret })]
+                )]
+            ), dropdownWrapper.call(_this, h, classes, cols)]
+        );
+    };
+};
+
+/***/ }),
+
+/***/ 921:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (h, classes, columns) {
+    if (classes.framework === 'bulma') {
+        return h(
+            'div',
+            { 'class': classes.dropdown.menu, style: this.displayColumnsDropdown ? 'display:block' : 'display:none' },
+            [h(
+                'div',
+                { 'class': classes.dropdown.content },
+                [columns]
+            )]
+        );
+    }
+
+    if (classes.framework === 'bootstrap4') {
+        return h(
+            'div',
+            { 'class': classes.dropdown.menu, style: this.displayColumnsDropdown ? 'display:block' : 'display:none' },
+            [columns]
+        );
+    }
+
+    return h(
+        'ul',
+        { 'class': classes.dropdown.menu, style: this.displayColumnsDropdown ? 'display:block' : 'display:none' },
+        [columns]
+    );
+};
+
+/***/ }),
+
+/***/ 922:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (h, classes, item) {
+    if (classes.framework === 'bulma') {
+        return item;
+    }
+
+    return h('li', [item]);
+};
+
+/***/ }),
+
+/***/ 923:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+  return {
+    beforeFilters: this.$slots.beforeFilters ? this.$slots.beforeFilters : '',
+    afterFilters: this.$slots.afterFilters ? this.$slots.afterFilters : '',
+    beforeBody: this.$slots.beforeBody ? this.$slots.beforeBody : '',
+    prependBody: this.$slots.prependBody ? this.$slots.prependBody : '',
+    appendBody: this.$slots.appendBody ? this.$slots.appendBody : '',
+    afterBody: this.$slots.afterBody ? this.$slots.afterBody : '',
+    beforeFilter: this.$slots.beforeFilter ? this.$slots.beforeFilter : '',
+    afterFilter: this.$slots.afterFilter ? this.$slots.afterFilter : '',
+    beforeLimit: this.$slots.beforeLimit ? this.$slots.beforeLimit : '',
+    afterLimit: this.$slots.afterLimit ? this.$slots.afterLimit : '',
+    beforeTable: this.$slots.beforeTable ? this.$slots.beforeTable : '',
+    afterTable: this.$slots.afterTable ? this.$slots.afterTable : ''
+  };
+};
+
+/***/ }),
+
+/***/ 924:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+  return this.opts.filterByColumn ? JSON.stringify(this.query) : this.query;
+};
+
+/***/ }),
+
+/***/ 925:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+  return JSON.stringify(this.customQueries);
+};
+
+/***/ }),
+
+/***/ 926:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var search = __webpack_require__(758);
+var clone = __webpack_require__(929);
+
+module.exports = function () {
+
+  var data = clone(this.tableData);
+
+  var column = this.orderBy.column;
+
+  data = this.search(data);
+
+  if (column) {
+    // dummy var to force compilation
+    if (this.time) this.time = this.time;
+
+    data = this.opts.sortingAlgorithm.call(this, data, column);
+  } else if (this.opts.groupBy) {
+    data = this.opts.sortingAlgorithm.call(this, data, this.opts.groupBy);
+  }
+
+  if (this.vuex) {
+    if (this.count != data.length) this.commit('SET_COUNT', data.length);
+  } else {
+    this.count = data.length;
+  }
+
+  var offset = (this.page - 1) * this.limit;
+
+  this.allFilteredData = JSON.parse(JSON.stringify(data));
+
+  data = data.splice(offset, this.limit);
+
+  return this.applyFilters(data);
+};
+
+/***/ }),
+
+/***/ 927:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+module.exports = function (obj) {
+  var count = 0;
+  for (var prop in obj) {
+    var isDateRange = _typeof(obj[prop]) == 'object';
+    if (isDateRange || obj[prop] && (!isNaN(obj[prop]) || obj[prop].trim())) count++;
+  }
+  return count;
+};
+
+/***/ }),
+
+/***/ 928:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (data, customFilters, customQueries) {
+
+  var passing;
+
+  return data.filter(function (row) {
+
+    passing = true;
+
+    customFilters.forEach(function (filter) {
+      var value = customQueries[filter.name];
+      if (value && !filter.callback(row, value)) passing = false;
+    });
+
+    return passing;
+  });
+};
+
+/***/ }),
+
+/***/ 929:
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(Buffer) {var clone = (function() {
+'use strict';
+
+function _instanceof(obj, type) {
+  return type != null && obj instanceof type;
+}
+
+var nativeMap;
+try {
+  nativeMap = Map;
+} catch(_) {
+  // maybe a reference error because no `Map`. Give it a dummy value that no
+  // value will ever be an instanceof.
+  nativeMap = function() {};
+}
+
+var nativeSet;
+try {
+  nativeSet = Set;
+} catch(_) {
+  nativeSet = function() {};
+}
+
+var nativePromise;
+try {
+  nativePromise = Promise;
+} catch(_) {
+  nativePromise = function() {};
+}
+
+/**
+ * Clones (copies) an Object using deep copying.
+ *
+ * This function supports circular references by default, but if you are certain
+ * there are no circular references in your object, you can save some CPU time
+ * by calling clone(obj, false).
+ *
+ * Caution: if `circular` is false and `parent` contains circular references,
+ * your program may enter an infinite loop and crash.
+ *
+ * @param `parent` - the object to be cloned
+ * @param `circular` - set to true if the object to be cloned may contain
+ *    circular references. (optional - true by default)
+ * @param `depth` - set to a number if the object is only to be cloned to
+ *    a particular depth. (optional - defaults to Infinity)
+ * @param `prototype` - sets the prototype to be used when cloning an object.
+ *    (optional - defaults to parent prototype).
+ * @param `includeNonEnumerable` - set to true if the non-enumerable properties
+ *    should be cloned as well. Non-enumerable properties on the prototype
+ *    chain will be ignored. (optional - false by default)
+*/
+function clone(parent, circular, depth, prototype, includeNonEnumerable) {
+  if (typeof circular === 'object') {
+    depth = circular.depth;
+    prototype = circular.prototype;
+    includeNonEnumerable = circular.includeNonEnumerable;
+    circular = circular.circular;
+  }
+  // maintain two arrays for circular references, where corresponding parents
+  // and children have the same index
+  var allParents = [];
+  var allChildren = [];
+
+  var useBuffer = typeof Buffer != 'undefined';
+
+  if (typeof circular == 'undefined')
+    circular = true;
+
+  if (typeof depth == 'undefined')
+    depth = Infinity;
+
+  // recurse this function so we don't reset allParents and allChildren
+  function _clone(parent, depth) {
+    // cloning null always returns null
+    if (parent === null)
+      return null;
+
+    if (depth === 0)
+      return parent;
+
+    var child;
+    var proto;
+    if (typeof parent != 'object') {
+      return parent;
+    }
+
+    if (_instanceof(parent, nativeMap)) {
+      child = new nativeMap();
+    } else if (_instanceof(parent, nativeSet)) {
+      child = new nativeSet();
+    } else if (_instanceof(parent, nativePromise)) {
+      child = new nativePromise(function (resolve, reject) {
+        parent.then(function(value) {
+          resolve(_clone(value, depth - 1));
+        }, function(err) {
+          reject(_clone(err, depth - 1));
+        });
+      });
+    } else if (clone.__isArray(parent)) {
+      child = [];
+    } else if (clone.__isRegExp(parent)) {
+      child = new RegExp(parent.source, __getRegExpFlags(parent));
+      if (parent.lastIndex) child.lastIndex = parent.lastIndex;
+    } else if (clone.__isDate(parent)) {
+      child = new Date(parent.getTime());
+    } else if (useBuffer && Buffer.isBuffer(parent)) {
+      if (Buffer.allocUnsafe) {
+        // Node.js >= 4.5.0
+        child = Buffer.allocUnsafe(parent.length);
+      } else {
+        // Older Node.js versions
+        child = new Buffer(parent.length);
+      }
+      parent.copy(child);
+      return child;
+    } else if (_instanceof(parent, Error)) {
+      child = Object.create(parent);
+    } else {
+      if (typeof prototype == 'undefined') {
+        proto = Object.getPrototypeOf(parent);
+        child = Object.create(proto);
+      }
+      else {
+        child = Object.create(prototype);
+        proto = prototype;
+      }
+    }
+
+    if (circular) {
+      var index = allParents.indexOf(parent);
+
+      if (index != -1) {
+        return allChildren[index];
+      }
+      allParents.push(parent);
+      allChildren.push(child);
+    }
+
+    if (_instanceof(parent, nativeMap)) {
+      parent.forEach(function(value, key) {
+        var keyChild = _clone(key, depth - 1);
+        var valueChild = _clone(value, depth - 1);
+        child.set(keyChild, valueChild);
       });
     }
-  },
+    if (_instanceof(parent, nativeSet)) {
+      parent.forEach(function(value) {
+        var entryChild = _clone(value, depth - 1);
+        child.add(entryChild);
+      });
+    }
 
-  watch: {
-    resizeBus: function resizeBus(newVal, oldVal) {
-      // eslint-disable-line no-unused-vars
-      this.$data._actualResizeBus = newVal;
-    },
-    '$data._actualResizeBus': function $data_actualResizeBus(newVal, oldVal) {
-      if (oldVal) {
-        oldVal.$off('resize', this._delayedResizeCallback);
+    for (var i in parent) {
+      var attrs;
+      if (proto) {
+        attrs = Object.getOwnPropertyDescriptor(proto, i);
       }
-      if (newVal) {
-        newVal.$on('resize', this._delayedResizeCallback);
+
+      if (attrs && attrs.set == null) {
+        continue;
+      }
+      child[i] = _clone(parent[i], depth - 1);
+    }
+
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(parent);
+      for (var i = 0; i < symbols.length; i++) {
+        // Don't need to worry about cloning a symbol because it is a primitive,
+        // like a number or string.
+        var symbol = symbols[i];
+        var descriptor = Object.getOwnPropertyDescriptor(parent, symbol);
+        if (descriptor && !descriptor.enumerable && !includeNonEnumerable) {
+          continue;
+        }
+        child[symbol] = _clone(parent[symbol], depth - 1);
+        if (!descriptor.enumerable) {
+          Object.defineProperty(child, symbol, {
+            enumerable: false
+          });
+        }
       }
     }
-  },
 
-  destroyed: function destroyed() {
-    if (this.$data._actualResizeBus) {
-      this.$data._actualResizeBus.$off('resize', this._delayedResizeCallback);
+    if (includeNonEnumerable) {
+      var allPropertyNames = Object.getOwnPropertyNames(parent);
+      for (var i = 0; i < allPropertyNames.length; i++) {
+        var propertyName = allPropertyNames[i];
+        var descriptor = Object.getOwnPropertyDescriptor(parent, propertyName);
+        if (descriptor && descriptor.enumerable) {
+          continue;
+        }
+        child[propertyName] = _clone(parent[propertyName], depth - 1);
+        Object.defineProperty(child, propertyName, {
+          enumerable: false
+        });
+      }
     }
+
+    return child;
   }
+
+  return _clone(parent, depth);
+}
+
+/**
+ * Simple flat clone using prototype, accepts only objects, usefull for property
+ * override on FLAT configuration object (no nested props).
+ *
+ * USE WITH CAUTION! This may not behave as you wish if you do not know how this
+ * works.
+ */
+clone.clonePrototype = function clonePrototype(parent) {
+  if (parent === null)
+    return null;
+
+  var c = function () {};
+  c.prototype = parent;
+  return new c();
+};
+
+// private utility functions
+
+function __objToStr(o) {
+  return Object.prototype.toString.call(o);
+}
+clone.__objToStr = __objToStr;
+
+function __isDate(o) {
+  return typeof o === 'object' && __objToStr(o) === '[object Date]';
+}
+clone.__isDate = __isDate;
+
+function __isArray(o) {
+  return typeof o === 'object' && __objToStr(o) === '[object Array]';
+}
+clone.__isArray = __isArray;
+
+function __isRegExp(o) {
+  return typeof o === 'object' && __objToStr(o) === '[object RegExp]';
+}
+clone.__isRegExp = __isRegExp;
+
+function __getRegExpFlags(re) {
+  var flags = '';
+  if (re.global) flags += 'g';
+  if (re.ignoreCase) flags += 'i';
+  if (re.multiline) flags += 'm';
+  return flags;
+}
+clone.__getRegExpFlags = __getRegExpFlags;
+
+return clone;
+})();
+
+if (typeof module === 'object' && module.exports) {
+  module.exports = clone;
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(747).Buffer))
+
+/***/ }),
+
+/***/ 930:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+  this.data.forEach(function (row, index) {
+    this.opts.dateColumns.forEach(function (column) {
+      row[column] = row[column] ? moment(row[column], this.opts.toMomentFormat) : '';
+    }.bind(this));
+  }.bind(this));
+};
+
+/***/ }),
+
+/***/ 931:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _bus = __webpack_require__(731);
+
+var _bus2 = _interopRequireDefault(_bus);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function () {
+  var _this = this;
+
+  var event = 'vue-tables';
+  if (this.name) event += '.' + this.name;
+
+  this.opts.customFilters.forEach(function (filter) {
+    _bus2.default.$off(event + '.filter::' + filter.name);
+    _bus2.default.$on(event + '.filter::' + filter.name, function (value) {
+      _this.customQueries[filter.name] = value;
+      _this.updateState('customQueries', _this.customQueries);
+    });
+  });
+};
+
+/***/ }),
+
+/***/ 932:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (column, ascending) {
+    var multiIndex = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : -1;
+
+
+    var sort = this.defaultSort;
+    var multiSort = this.userMultiSorting[this.currentlySorting.column] ? this.userMultiSorting[this.currentlySorting.column] : this.opts.multiSorting[this.currentlySorting.column];
+    var asc = this.currentlySorting.ascending;
+    var self = this;
+
+    return function (a, b) {
+
+        var aVal = self._getValue(a, column) || '';
+        var bVal = self._getValue(b, column) || '';
+        var dir = ascending ? 1 : -1;
+        var secondaryAsc;
+
+        if (typeof aVal === 'string') aVal = aVal.toLowerCase();
+        if (typeof bVal === 'string') bVal = bVal.toLowerCase();
+
+        if (aVal === bVal && multiSort && multiSort[multiIndex + 1]) {
+            var sortData = multiSort[multiIndex + 1];
+            if (typeof sortData.ascending !== 'undefined') {
+                secondaryAsc = sortData.ascending;
+            } else {
+                secondaryAsc = sortData.matchDir ? asc : !asc;
+            }
+
+            return sort(sortData.column, secondaryAsc, multiIndex + 1)(a, b);
+        }
+
+        return aVal > bVal ? dir : -dir;
+    };
+};
+
+/***/ }),
+
+/***/ 933:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (value) {
+
+    if (this.$scopedSlots && this.$scopedSlots['__group_meta']) {
+        var data = this.opts.groupMeta.find(function (val) {
+            return val.value === value;
+        });
+
+        if (!data) return '';
+
+        return this.$scopedSlots['__group_meta'](data);
+    }
+
+    return '';
+};
+
+/***/ }),
+
+/***/ 934:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _merge = __webpack_require__(730);
+
+var _merge2 = _interopRequireDefault(_merge);
+
+var _data2 = __webpack_require__(752);
+
+var _data3 = _interopRequireDefault(_data2);
+
+var _vuex = __webpack_require__(742);
+
+var _vuex2 = _interopRequireDefault(_vuex);
+
+var _normal = __webpack_require__(743);
+
+var _normal2 = _interopRequireDefault(_normal);
+
+var _table = __webpack_require__(744);
+
+var _table2 = _interopRequireDefault(_table);
+
+var _vuePagination = __webpack_require__(740);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _data = __webpack_require__(753);
+var _created = __webpack_require__(754);
+
+var templateCompiler = __webpack_require__(755);
+
+exports.install = function (Vue, globalOptions, useVuex) {
+  var theme = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'bootstrap3';
+  var template = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 'default';
+
+
+  var state = useVuex ? (0, _vuex2.default)('server') : (0, _normal2.default)();
+
+  var server = _merge2.default.recursive(true, (0, _table2.default)(), {
+    name: 'server-table',
+    components: {
+      Pagination: _vuePagination.Pagination
+    },
+    render: templateCompiler.call(this, template, theme),
+    props: {
+      columns: {
+        type: Array,
+        required: true
+      },
+      url: {
+        type: String
+      },
+      name: {
+        type: String,
+        required: false
+      },
+      options: {
+        type: Object,
+        required: false,
+        default: function _default() {
+          return {};
+        }
+      }
+    },
+    created: function created() {
+
+      if (!this.opts.requestFunction && !this.url) {
+        throw 'vue-tables-2: you must provide either a "url" prop or a custom request function. Aborting';
+      }
+
+      _created(this);
+
+      if (!this.vuex) {
+        this.query = this.initQuery();
+        this.initOrderBy();
+        this.customQueries = this.initCustomFilters();
+      }
+
+      this.loadState();
+
+      this.getData(true).then(function (response) {
+
+        this.setData(response);
+
+        this.loading = false;
+
+        if (this.hasDateFilters()) {
+          setTimeout(function () {
+            this.initDateFilters();
+          }.bind(this), 0);
+        }
+      }.bind(this));
+    },
+    mounted: function mounted() {
+
+      this._setColumnsDropdownCloseListener();
+
+      if (this.vuex) return;
+
+      this.registerServerFilters();
+
+      if (this.options.initialPage) this.setPage(this.options.initialPage, true);
+    },
+    data: function data() {
+      return _merge2.default.recursive(_data(), {
+        source: 'server',
+        loading: true,
+        lastKeyStrokeAt: false,
+        globalOptions: globalOptions
+      }, (0, _data3.default)(useVuex, 'server', this.options.initialPage));
+    },
+    methods: {
+      refresh: __webpack_require__(935),
+      getData: __webpack_require__(936),
+      setData: __webpack_require__(937),
+      serverSearch: __webpack_require__(745),
+      registerServerFilters: __webpack_require__(938),
+      loadState: function loadState() {
+        var _this = this;
+
+        if (!this.opts.saveState) return;
+
+        if (!this.storage.getItem(this.stateKey)) {
+          this.initState();
+          this.activeState = true;
+          return;
+        }
+
+        var state = JSON.parse(this.storage.getItem(this.stateKey));
+
+        if (this.vuex) {
+          this.commit('SET_STATE', {
+            query: state.query,
+            customQueries: state.customQueries,
+            page: state.page,
+            limit: state.perPage,
+            orderBy: state.orderBy
+          });
+        } else {
+          this.page = state.page;
+          this.query = state.query;
+          this.customQueries = state.customQueries;
+          this.limit = state.perPage;
+          this.orderBy = state.orderBy;
+        }
+
+        if (!this.opts.pagination.dropdown) {
+          setTimeout(function () {
+            _this.$refs.pagination.Page = state.page;
+          }, 0);
+        }
+
+        this.activeState = true;
+      }
+    },
+    watch: {
+      url: function url() {
+        this.refresh();
+      }
+    },
+    computed: {
+      totalPages: __webpack_require__(757),
+      filteredQuery: __webpack_require__(939),
+      hasMultiSort: function hasMultiSort() {
+        return this.opts.serverMultiSorting;
+      }
+    }
+
+  }, state);
+
+  Vue.component('v-server-table', server);
+
+  return server;
+};
+
+/***/ }),
+
+/***/ 935:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+  this.serverSearch();
+};
+
+/***/ }),
+
+/***/ 936:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var merge = __webpack_require__(730);
+
+module.exports = function (promiseOnly) {
+  var _data;
+
+  var additionalData = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var emitLoading = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+
+
+  var keys = this.opts.requestKeys;
+
+  var data = (_data = {}, _defineProperty(_data, keys.query, this.filteredQuery), _defineProperty(_data, keys.limit, this.limit), _defineProperty(_data, keys.ascending, this.orderBy.ascending ? 1 : 0), _defineProperty(_data, keys.page, this.page), _defineProperty(_data, keys.byColumn, this.opts.filterByColumn ? 1 : 0), _data);
+
+  if (this.orderBy.hasOwnProperty('column') && this.orderBy.column) data[keys.orderBy] = this.orderBy.column;
+
+  data = merge(data, this.opts.params, this.customQueries, additionalData);
+
+  if (this.hasMultiSort && this.orderBy.column && this.userMultiSorting[this.orderBy.column]) {
+    data.multiSort = this.userMultiSorting[this.orderBy.column];
+  }
+
+  data = this.opts.requestAdapter(data);
+
+  if (emitLoading) {
+    this.dispatch('loading', data);
+  }
+
+  var promise = this.sendRequest(data);
+
+  if (promiseOnly) return promise;
+
+  return promise.then(function (response) {
+    return this.setData(response);
+  }.bind(this));
+};
+
+/***/ }),
+
+/***/ 937:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+module.exports = function (response) {
+
+  var data = this.opts.responseAdapter.call(this, response);
+
+  this.data = this.applyFilters(data.data);
+
+  if (isNaN(data.count)) {
+    console.error('vue-tables-2: invalid \'count\' property. Expected number, got ' + _typeof(data.count));
+    console.error('count equals', data.count);
+    throw new Error();
+  }
+
+  this.count = parseInt(data.count);
+
+  setTimeout(function () {
+    this.dispatch('loaded', response);
+  }.bind(this), 0);
+};
+
+/***/ }),
+
+/***/ 938:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _bus = __webpack_require__(731);
+
+var _bus2 = _interopRequireDefault(_bus);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function () {
+
+  var event = 'vue-tables';
+  if (this.name) event += '.' + this.name;
+
+  this.opts.customFilters.forEach(function (filter) {
+    _bus2.default.$off(event + '.filter::' + filter);
+    _bus2.default.$on(event + '.filter::' + filter, function (value) {
+      this.customQueries[filter] = value;
+      this.updateState('customQueries', this.customQueries);
+      this.refresh();
+    }.bind(this));
+  }.bind(this));
+};
+
+/***/ }),
+
+/***/ 939:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+module.exports = function () {
+
+    if (_typeof(this.query) !== 'object' || this.opts.sendEmptyFilters) {
+        return this.query;
+    }
+
+    var result = {};
+
+    for (var key in this.query) {
+        if (this.query[key] !== '') {
+            result[key] = this.query[key];
+        }
+    }
+
+    return result;
 };
 
 /***/ })

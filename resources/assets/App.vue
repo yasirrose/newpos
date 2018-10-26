@@ -12,6 +12,7 @@ export default {
     name: 'app'
 }
 </script>
+<style  src="assets/css/custom.css"></style>
 <style lang="scss" src="assets/sass/bootstrap/bootstrap.scss"></style>
 <style src="font-awesome/css/font-awesome.css"></style>
 <style src="bootstrap-vue/dist/bootstrap-vue.css"></style>

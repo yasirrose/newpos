@@ -1,10 +1,18 @@
-import layout_routes from './layout'
-
+import layout_routes_admin from './layout_admin';
+import layout_routes_store from './layout_store'
 const routes = [{
-    path: '/',
+    path: '/admin',
     component: resolve => require(['src/layout'], resolve),
-    children: layout_routes
-    }, {
+    children: layout_routes_admin
+    },
+
+    {
+    path: '/store',
+    component: resolve => require(['src/layout'], resolve),
+    children: layout_routes_store
+    },
+    
+    {
         path: '/login',
         component: resolve => require(['pages/login'], resolve),
         meta: {

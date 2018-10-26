@@ -261,8 +261,7 @@
                     </div>
                     <div class="col-lg-12 mt-2">
                         <div class="custom-controls-stacked">
-                            <b-form-radio-group :options="radiooptions">
-                            </b-form-radio-group>
+                            <b-form-radio-group :options="radiooptions"></b-form-radio-group>
                         </div>
                     </div>
                 </div>

@@ -89,7 +89,7 @@ export default {
     mounted()
         {
             this.readPlugins();
-            this.$store.commit('left_menu', 'close')
+           
         },
     methods: {
         addNewPlugin () {

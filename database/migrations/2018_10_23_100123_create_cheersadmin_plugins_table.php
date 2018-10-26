@@ -31,5 +31,6 @@ class CreateCheersadminPluginsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('cheersadmin_plugins');
+
     }
 }

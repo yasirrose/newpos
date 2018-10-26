@@ -32,6 +32,8 @@ mix.webpackConfig({
             'assets': path.resolve(__dirname, 'resources/assets/assets/'),
             'components': path.resolve(__dirname, 'resources/assets/components/'),
             'pages': path.resolve(__dirname, 'resources/assets/components/pages/'),
+            'admin': path.resolve(__dirname, 'resources/assets/components/admin/'),
+            'store': path.resolve(__dirname, 'resources/assets/components/store/'),
             'img': path.resolve(__dirname, 'resources/assets/assets/img/'),
         }
     },
@@ -68,7 +70,7 @@ mix.js('resources/assets/main.js', 'public/')
 
 
 // set path for production link
-mix.setResourceRoot('/newpos/public/')
+mix.setResourceRoot('/GitHub/newpos/public/')
 
 
 // Disable all OS notifications
