@@ -3,7 +3,7 @@ webpackJsonp([25],{
 /***/ 1273:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/logo.png?290f72edefd125c9c36d962815c219d9";
+module.exports = "/newpos/public/images/logo.png?290f72edefd125c9c36d962815c219d9";
 
 /***/ }),
 
@@ -37,13 +37,12 @@ if(false) {
 /***/ 1684:
 /***/ (function(module, exports, __webpack_require__) {
 
-var escape = __webpack_require__(244);
 exports = module.exports = __webpack_require__(49)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n.login-content[data-v-c3a38a2e] {\r\n    margin-top: 7%;\r\n    margin-bottom: 7%;\r\n    -webkit-box-shadow: 0 0 20px #ccc;\r\n            box-shadow: 0 0 20px #ccc;\r\n    background-size: 100% 100%;\r\n    border-radius: 7px;\n}\n.img_backgrond[data-v-c3a38a2e]{\r\n        background-image: url(" + escape(__webpack_require__(827)) + ");\r\n        background-size:cover;\r\n        background-repeat:no-repeat;\r\n        width: 100%;\r\n        padding: 75px 15px;\n}\nlabel[data-v-c3a38a2e]{\r\n    font-size: 14px !important;\n}\n[data-v-c3a38a2e]::-webkit-input-placeholder {\r\n    font-size:14px;\n}\r\n", ""]);
+exports.push([module.i, "\n.login-content[data-v-c3a38a2e] {\r\n    margin-top: 7%;\r\n\tmargin: 0 auto;\r\n    margin-bottom: 7%;\r\n\tpadding: 0px 25px;\r\n    -webkit-box-shadow: 0 0 20px #ccc;\r\n            box-shadow: 0 0 20px #ccc;\r\n    background-size: 100% 100%;\r\n    border-radius: 7px;\r\n\tbackground-color: #fff;\n}\n.img_backgrond[data-v-c3a38a2e]{\r\n        /* background-image: url(/newpos/public/images/Login-03-01.png?d74e560…); */\r\n\t\tbackground-color: #80808014;\r\n        background-size:cover;\r\n        background-repeat:no-repeat;\r\n        width: 100%;\r\n        padding: 75px 15px;\n}\n.form_email_pas[data-v-c3a38a2e] {\r\n\tborder: none;\r\n    border-bottom: 1px solid #ced4da;\r\n    border-radius: unset;\n}\n.log_in_btn[data-v-c3a38a2e] {\r\n\twidth:100%;\n}\nlabel[data-v-c3a38a2e]{\r\n    font-size: 14px !important;\n}\n[data-v-c3a38a2e]::-webkit-input-placeholder {\r\n    font-size:14px;\n}\t\r\n", ""]);
 
 // exports
 
@@ -61,17 +60,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_form__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_js__ = __webpack_require__(260);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_src_validations_validations_js__ = __webpack_require__(785);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -201,12 +189,10 @@ var render = function() {
         "div",
         {
           staticClass:
-            "col-lg-4 offset-lg-4 col-sm-6 offset-sm-3 col-xs-10 offset-xs-1 login-content mt-5"
+            "col-lg-3 offset-lg-5 col-sm-4 offset-sm-3 col-xs-10 offset-xs-1 login-content mt-5"
         },
         [
           _vm._m(0),
-          _vm._v(" "),
-          _vm._m(1),
           _vm._v(" "),
           _vm.seen
             ? _c("b-alert", { attrs: { show: "", variant: "danger" } }, [
@@ -236,10 +222,6 @@ var render = function() {
                         "validate",
                         { attrs: { tag: "div" } },
                         [
-                          _c("label", { attrs: { for: "email" } }, [
-                            _vm._v("E-mail")
-                          ]),
-                          _vm._v(" "),
                           _c("input", {
                             directives: [
                               {
@@ -249,7 +231,7 @@ var render = function() {
                                 expression: "model.email"
                               }
                             ],
-                            staticClass: "form-control",
+                            staticClass: "form-control form_email_pas",
                             attrs: {
                               name: "email",
                               id: "email",
@@ -316,10 +298,6 @@ var render = function() {
                         "validate",
                         { attrs: { tag: "div" } },
                         [
-                          _c("label", { attrs: { for: "password" } }, [
-                            _vm._v("Password")
-                          ]),
-                          _vm._v(" "),
                           _c("input", {
                             directives: [
                               {
@@ -329,7 +307,7 @@ var render = function() {
                                 expression: "model.password"
                               }
                             ],
-                            staticClass: "form-control",
+                            staticClass: "form-control form_email_pas",
                             attrs: {
                               name: "password",
                               id: "password",
@@ -408,9 +386,18 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
+                _c("div", { staticClass: "col-lg-12 col-md-12 text-right" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("input", {
+                      staticClass: "btn btn-success  log_in_btn",
+                      attrs: { type: "submit", value: "Login" }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "col-lg-6 col-md-6" },
+                  { staticClass: "col-lg-12 col-md-12" },
                   [
                     _c(
                       "validate",
@@ -453,37 +440,26 @@ var render = function() {
                         )
                       ],
                       1
-                    )
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "p",
+                        [
+                          _c(
+                            "router-link",
+                            { attrs: { tag: "a", to: "/forgotpassword" } },
+                            [_vm._v("Forgot Your Password ?")]
+                          )
+                        ],
+                        1
+                      )
+                    ])
                   ],
                   1
                 ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-lg-6 col-md-6 text-right" }, [
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("input", {
-                      staticClass: "btn btn-success",
-                      attrs: { type: "submit", value: "Sign In" }
-                    })
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-sm-12 text-center" }, [
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "p",
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { tag: "a", to: "/forgotpassword" } },
-                          [_vm._v("Forgot Your Password ?")]
-                        )
-                      ],
-                      1
-                    )
-                  ])
-                ])
+                _c("br")
               ])
             ]
           )
@@ -501,21 +477,8 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-sm-12 mt-3" }, [
         _c("h2", { staticClass: "text-center" }, [
-          _c("img", { attrs: { src: __webpack_require__(1273), alt: "Logo" } })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-2" }, [
-      _c("div", { staticClass: "col-sm-12" }, [
-        _c("div", { staticClass: "text-center" }, [
           _c("img", {
-            staticClass: "rounded-circle",
-            attrs: { src: __webpack_require__(1687) }
+            attrs: { src: __webpack_require__(1273), alt: "Logo", width: "200" }
           })
         ])
       ])
@@ -530,13 +493,6 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-c3a38a2e", module.exports)
   }
 }
-
-/***/ }),
-
-/***/ 1687:
-/***/ (function(module, exports) {
-
-module.exports = "/GitHub/newpos/public/images/login_user-01.png?7bcbdbdc40b938259be7fa075d209095";
 
 /***/ }),
 
@@ -1938,13 +1894,6 @@ var options = {
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (options);
-
-/***/ }),
-
-/***/ 827:
-/***/ (function(module, exports) {
-
-module.exports = "/GitHub/newpos/public/images/Login-03-01.png?d74e560d86ea931916bcf7f875a009be";
 
 /***/ })
 

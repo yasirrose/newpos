@@ -10,28 +10,28 @@ webpackJsonp([15],{
 /***/ 1080:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/T-shirt.png?b080116e8ddb71cd6af7eb6e1ca435e7";
+module.exports = "/newpos/public/images/T-shirt.png?b080116e8ddb71cd6af7eb6e1ca435e7";
 
 /***/ }),
 
 /***/ 1110:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/shirt70x70.png?f827a8761c7ebb34ecf6a5b3c13ce708";
+module.exports = "/newpos/public/images/shirt70x70.png?f827a8761c7ebb34ecf6a5b3c13ce708";
 
 /***/ }),
 
 /***/ 1111:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/bag70x70.png?d7e1899a1dcecdb2b638943ba986dd37";
+module.exports = "/newpos/public/images/bag70x70.png?d7e1899a1dcecdb2b638943ba986dd37";
 
 /***/ }),
 
 /***/ 1112:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/desk70x70.png?75806cd49a50ba496427f99a8a2f98eb";
+module.exports = "/newpos/public/images/desk70x70.png?75806cd49a50ba496427f99a8a2f98eb";
 
 /***/ }),
 
@@ -1987,77 +1987,77 @@ if (false) {
 /***/ 1404:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/polo_tshirt.jpg?96ef04d0037735255320ad7dccadb7ba";
+module.exports = "/newpos/public/images/polo_tshirt.jpg?96ef04d0037735255320ad7dccadb7ba";
 
 /***/ }),
 
 /***/ 1405:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/desk-calendar.jpg?8c54c5f830edb086201e585a7747e851";
+module.exports = "/newpos/public/images/desk-calendar.jpg?8c54c5f830edb086201e585a7747e851";
 
 /***/ }),
 
 /***/ 1406:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/fabric_bag.png?b080116e8ddb71cd6af7eb6e1ca435e7";
+module.exports = "/newpos/public/images/fabric_bag.png?b080116e8ddb71cd6af7eb6e1ca435e7";
 
 /***/ }),
 
 /***/ 1407:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/book.png?c368ae4848f9bbeab95962cf58a9004b";
+module.exports = "/newpos/public/images/book.png?c368ae4848f9bbeab95962cf58a9004b";
 
 /***/ }),
 
 /***/ 1408:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/wood.png?b76208363533f36dd7546273832018bb";
+module.exports = "/newpos/public/images/wood.png?b76208363533f36dd7546273832018bb";
 
 /***/ }),
 
 /***/ 1409:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/notebook.png?34f0d43791123368613536e0a72367d0";
+module.exports = "/newpos/public/images/notebook.png?34f0d43791123368613536e0a72367d0";
 
 /***/ }),
 
 /***/ 1410:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/WoodStamp.jpg?8c7d4ae256c8d3ff58a88a5e555645a3";
+module.exports = "/newpos/public/images/WoodStamp.jpg?8c7d4ae256c8d3ff58a88a5e555645a3";
 
 /***/ }),
 
 /***/ 1411:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/businesscard.jpg?a8a39ef6bddf5d063ac35fc380254e16";
+module.exports = "/newpos/public/images/businesscard.jpg?a8a39ef6bddf5d063ac35fc380254e16";
 
 /***/ }),
 
 /***/ 1412:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/dark-wine.png?b76208363533f36dd7546273832018bb";
+module.exports = "/newpos/public/images/dark-wine.png?b76208363533f36dd7546273832018bb";
 
 /***/ }),
 
 /***/ 1413:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/terminal.png?9d65412cfce417186c599f40ea5f4b91";
+module.exports = "/newpos/public/images/terminal.png?9d65412cfce417186c599f40ea5f4b91";
 
 /***/ }),
 
 /***/ 1414:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/coffeecup.png?b080116e8ddb71cd6af7eb6e1ca435e7";
+module.exports = "/newpos/public/images/coffeecup.png?b080116e8ddb71cd6af7eb6e1ca435e7";
 
 /***/ }),
 

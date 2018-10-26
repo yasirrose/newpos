@@ -460,42 +460,42 @@ exports.push([module.i, "/*!\n *  Font Awesome 4.7.0 by @davegandy - http://font
 /***/ 302:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.eot?674f50d287a8c48dc19ba404d20fe713";
+module.exports = "/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.eot?674f50d287a8c48dc19ba404d20fe713";
 
 /***/ }),
 
 /***/ 303:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.eot?674f50d287a8c48dc19ba404d20fe713";
+module.exports = "/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.eot?674f50d287a8c48dc19ba404d20fe713";
 
 /***/ }),
 
 /***/ 304:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.woff2?af7ae505a9eed503f8b8e6982036873e";
+module.exports = "/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.woff2?af7ae505a9eed503f8b8e6982036873e";
 
 /***/ }),
 
 /***/ 305:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.woff?fee66e712a8a08eef5805a46892932ad";
+module.exports = "/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.woff?fee66e712a8a08eef5805a46892932ad";
 
 /***/ }),
 
 /***/ 306:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.ttf?b06871f281fee6b241d60582ae9369b9";
+module.exports = "/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.ttf?b06871f281fee6b241d60582ae9369b9";
 
 /***/ }),
 
 /***/ 307:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.svg?912ec66d7572ff821749319396470bde";
+module.exports = "/newpos/public/fonts/vendor/font-awesome/fontawesome-webfont.svg?912ec66d7572ff821749319396470bde";
 
 /***/ }),
 
@@ -6079,7 +6079,7 @@ var mutations = {
 /***/ 708:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/prf4.jpg?fb9fdb254b4b4b10a738dce89ae99078";
+module.exports = "/newpos/public/images/prf4.jpg?fb9fdb254b4b4b10a738dce89ae99078";
 
 /***/ }),
 

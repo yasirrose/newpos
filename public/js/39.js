@@ -519,14 +519,14 @@ if (false) {
 /***/ 1616:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/vue-w_logo1.png?752dadf8a43f4c910a01b6078fb79395";
+module.exports = "/newpos/public/images/vue-w_logo1.png?752dadf8a43f4c910a01b6078fb79395";
 
 /***/ }),
 
 /***/ 1617:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/invoice_code.jpg?4116c893cd8e8a7b55704ef01adaf879";
+module.exports = "/newpos/public/images/invoice_code.jpg?4116c893cd8e8a7b55704ef01adaf879";
 
 /***/ }),
 

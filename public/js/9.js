@@ -3,42 +3,42 @@ webpackJsonp([9],{
 /***/ 1080:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/T-shirt.png?b080116e8ddb71cd6af7eb6e1ca435e7";
+module.exports = "/newpos/public/images/T-shirt.png?b080116e8ddb71cd6af7eb6e1ca435e7";
 
 /***/ }),
 
 /***/ 1109:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/polo.jpg?04dae2076e9a9799e59bf37aaad3f74c";
+module.exports = "/newpos/public/images/polo.jpg?04dae2076e9a9799e59bf37aaad3f74c";
 
 /***/ }),
 
 /***/ 1110:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/shirt70x70.png?f827a8761c7ebb34ecf6a5b3c13ce708";
+module.exports = "/newpos/public/images/shirt70x70.png?f827a8761c7ebb34ecf6a5b3c13ce708";
 
 /***/ }),
 
 /***/ 1111:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/bag70x70.png?d7e1899a1dcecdb2b638943ba986dd37";
+module.exports = "/newpos/public/images/bag70x70.png?d7e1899a1dcecdb2b638943ba986dd37";
 
 /***/ }),
 
 /***/ 1112:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/desk70x70.png?75806cd49a50ba496427f99a8a2f98eb";
+module.exports = "/newpos/public/images/desk70x70.png?75806cd49a50ba496427f99a8a2f98eb";
 
 /***/ }),
 
 /***/ 1113:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/183x338_1.png?349cf0ce764ad8d62af5474872e1a988";
+module.exports = "/newpos/public/images/183x338_1.png?349cf0ce764ad8d62af5474872e1a988";
 
 /***/ }),
 
@@ -2981,21 +2981,21 @@ module.exports = Component.exports
 /***/ 771:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
+module.exports = "/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
 
 /***/ }),
 
 /***/ 774:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
+module.exports = "/newpos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
 
 /***/ }),
 
 /***/ 780:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar1.jpg?2b0314ed7a43445517ca523400549d2d";
+module.exports = "/newpos/public/images/avatar1.jpg?2b0314ed7a43445517ca523400549d2d";
 
 /***/ }),
 

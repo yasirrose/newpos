@@ -99,7 +99,7 @@ exports.push([module.i, "/*!\n *  Weather Icons 2.0\n *  Updated August 1, 2015\
 /***/ 1101:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/fonts/vendor/weathericons/weathericons-regular-webfont.woff?8cac70ebda3f23ce472110d9f21e8593";
+module.exports = "/newpos/public/fonts/vendor/weathericons/weathericons-regular-webfont.woff?8cac70ebda3f23ce472110d9f21e8593";
 
 /***/ }),
 
@@ -7648,7 +7648,7 @@ if (false) {
 /***/ 881:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/weathernew.jpg?27404bda9eab5f7968c8df965824f612";
+module.exports = "/newpos/public/images/weathernew.jpg?27404bda9eab5f7968c8df965824f612";
 
 /***/ })
 

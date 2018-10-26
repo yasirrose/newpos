@@ -10,7 +10,7 @@ webpackJsonp([21],{
 /***/ 1114:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/20.jpg?9d2e66d09f7971f3a965e944bd390d58";
+module.exports = "/newpos/public/images/20.jpg?9d2e66d09f7971f3a965e944bd390d58";
 
 /***/ }),
 

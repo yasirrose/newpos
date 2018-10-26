@@ -439,28 +439,28 @@ return EvEmitter;
 /***/ 1079:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/blog1.jpeg?950db76192e2e5edec26d81e35e3e10e";
+module.exports = "/newpos/public/images/blog1.jpeg?950db76192e2e5edec26d81e35e3e10e";
 
 /***/ }),
 
 /***/ 1082:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/timeline1.jpeg?c24ea823560e1624047db1dd2350f682";
+module.exports = "/newpos/public/images/timeline1.jpeg?c24ea823560e1624047db1dd2350f682";
 
 /***/ }),
 
 /***/ 1085:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/blog2.png?d7053eda85f75f13c436e0c864bd2d85";
+module.exports = "/newpos/public/images/blog2.png?d7053eda85f75f13c436e0c864bd2d85";
 
 /***/ }),
 
 /***/ 1086:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/blog3.jpeg?427d601f9730c14248a8d4c96c6f697f";
+module.exports = "/newpos/public/images/blog3.jpeg?427d601f9730c14248a8d4c96c6f697f";
 
 /***/ }),
 
@@ -21066,14 +21066,14 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /***/ 845:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/profile-coverbg.jpeg?f9d529b73b0abf32afba166473c78231";
+module.exports = "/newpos/public/images/profile-coverbg.jpeg?f9d529b73b0abf32afba166473c78231";
 
 /***/ }),
 
 /***/ 878:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/timeline.jpeg?e0be5e2ba70609c6a4127e4753f5e9fa";
+module.exports = "/newpos/public/images/timeline.jpeg?e0be5e2ba70609c6a4127e4753f5e9fa";
 
 /***/ })
 

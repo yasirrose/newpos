@@ -3,14 +3,14 @@ webpackJsonp([12],{
 /***/ 1083:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/chat_background2.jpeg?7ef0d5f54a1e706071d96e179f086f6e";
+module.exports = "/newpos/public/images/chat_background2.jpeg?7ef0d5f54a1e706071d96e179f086f6e";
 
 /***/ }),
 
 /***/ 1084:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/chat_background3.jpg?5e4f394c357c2550b46126586071ddd0";
+module.exports = "/newpos/public/images/chat_background3.jpg?5e4f394c357c2550b46126586071ddd0";
 
 /***/ }),
 
@@ -213,42 +213,42 @@ var chat = [{
 /***/ 1114:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/20.jpg?9d2e66d09f7971f3a965e944bd390d58";
+module.exports = "/newpos/public/images/20.jpg?9d2e66d09f7971f3a965e944bd390d58";
 
 /***/ }),
 
 /***/ 1131:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/14.jpg?c4b420cf6b3dd25f99b82b307b8ab973";
+module.exports = "/newpos/public/images/14.jpg?c4b420cf6b3dd25f99b82b307b8ab973";
 
 /***/ }),
 
 /***/ 1132:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/15.jpg?7a1f50aa5b80cb03f921bc71f5143b60";
+module.exports = "/newpos/public/images/15.jpg?7a1f50aa5b80cb03f921bc71f5143b60";
 
 /***/ }),
 
 /***/ 1133:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/16.jpg?2b143ffe9c0cf5c28b6db3c3ff2d7dc0";
+module.exports = "/newpos/public/images/16.jpg?2b143ffe9c0cf5c28b6db3c3ff2d7dc0";
 
 /***/ }),
 
 /***/ 1134:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/17.jpg?ecea01436ffda158002f09296d16177f";
+module.exports = "/newpos/public/images/17.jpg?ecea01436ffda158002f09296d16177f";
 
 /***/ }),
 
 /***/ 1135:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/18.jpg?0f36f952d47a3cbb691431424e2511cc";
+module.exports = "/newpos/public/images/18.jpg?0f36f952d47a3cbb691431424e2511cc";
 
 /***/ }),
 
@@ -1048,28 +1048,28 @@ module.exports = Component.exports
 /***/ 771:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
+module.exports = "/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
 
 /***/ }),
 
 /***/ 774:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
+module.exports = "/newpos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
 
 /***/ }),
 
 /***/ 777:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar4.jpg?2bb4ec334d9b5a47d6369df5a4b7cd11";
+module.exports = "/newpos/public/images/avatar4.jpg?2bb4ec334d9b5a47d6369df5a4b7cd11";
 
 /***/ }),
 
 /***/ 791:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar.jpg?cd23a4a129679a15e2583c823c594af2";
+module.exports = "/newpos/public/images/avatar.jpg?cd23a4a129679a15e2583c823c594af2";
 
 /***/ }),
 
@@ -1128,14 +1128,14 @@ module.exports = Component.exports
 /***/ 806:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar5.jpg?4f52473b866c8d274fce38e90ee4883d";
+module.exports = "/newpos/public/images/avatar5.jpg?4f52473b866c8d274fce38e90ee4883d";
 
 /***/ }),
 
 /***/ 813:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar6.jpg?7a7ee17a5a77782a7d07b499cde37807";
+module.exports = "/newpos/public/images/avatar6.jpg?7a7ee17a5a77782a7d07b499cde37807";
 
 /***/ }),
 
@@ -1326,7 +1326,7 @@ if (false) {
 /***/ 879:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/chat_background.png?43832ad56f84e37348a04973c4977af2";
+module.exports = "/newpos/public/images/chat_background.png?43832ad56f84e37348a04973c4977af2";
 
 /***/ })
 

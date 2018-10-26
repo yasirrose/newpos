@@ -3,7 +3,7 @@ webpackJsonp([7],{
 /***/ 1273:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/logo.png?290f72edefd125c9c36d962815c219d9";
+module.exports = "/newpos/public/images/logo.png?290f72edefd125c9c36d962815c219d9";
 
 /***/ }),
 

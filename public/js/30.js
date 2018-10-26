@@ -1792,14 +1792,14 @@ var options = {
 /***/ 827:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/Login-03-01.png?d74e560d86ea931916bcf7f875a009be";
+module.exports = "/newpos/public/images/Login-03-01.png?d74e560d86ea931916bcf7f875a009be";
 
 /***/ }),
 
 /***/ 875:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/logo_black.png?fbee0a480ceaa0fa450dae20c38ebe20";
+module.exports = "/newpos/public/images/logo_black.png?fbee0a480ceaa0fa450dae20c38ebe20";
 
 /***/ })
 

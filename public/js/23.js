@@ -965,35 +965,35 @@ module.exports = Component.exports
 /***/ 771:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
+module.exports = "/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
 
 /***/ }),
 
 /***/ 774:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
+module.exports = "/newpos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
 
 /***/ }),
 
 /***/ 777:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar4.jpg?2bb4ec334d9b5a47d6369df5a4b7cd11";
+module.exports = "/newpos/public/images/avatar4.jpg?2bb4ec334d9b5a47d6369df5a4b7cd11";
 
 /***/ }),
 
 /***/ 780:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar1.jpg?2b0314ed7a43445517ca523400549d2d";
+module.exports = "/newpos/public/images/avatar1.jpg?2b0314ed7a43445517ca523400549d2d";
 
 /***/ }),
 
 /***/ 791:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar.jpg?cd23a4a129679a15e2583c823c594af2";
+module.exports = "/newpos/public/images/avatar.jpg?cd23a4a129679a15e2583c823c594af2";
 
 /***/ })
 

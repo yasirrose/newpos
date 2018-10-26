@@ -3,7 +3,7 @@ webpackJsonp([55],{
 /***/ 1096:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/headsset.jpg?9bf7b22dac0a665a4504bd95cd3b1e44";
+module.exports = "/newpos/public/images/headsset.jpg?9bf7b22dac0a665a4504bd95cd3b1e44";
 
 /***/ }),
 

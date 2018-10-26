@@ -3,21 +3,21 @@ webpackJsonp([16],{
 /***/ 1079:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/blog1.jpeg?950db76192e2e5edec26d81e35e3e10e";
+module.exports = "/newpos/public/images/blog1.jpeg?950db76192e2e5edec26d81e35e3e10e";
 
 /***/ }),
 
 /***/ 1085:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/blog2.png?d7053eda85f75f13c436e0c864bd2d85";
+module.exports = "/newpos/public/images/blog2.png?d7053eda85f75f13c436e0c864bd2d85";
 
 /***/ }),
 
 /***/ 1086:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/blog3.jpeg?427d601f9730c14248a8d4c96c6f697f";
+module.exports = "/newpos/public/images/blog3.jpeg?427d601f9730c14248a8d4c96c6f697f";
 
 /***/ }),
 
@@ -1421,14 +1421,14 @@ if (false) {
 /***/ 1596:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/blog4.jpg?729ddfe07ce040fbddaac8c60ee846d5";
+module.exports = "/newpos/public/images/blog4.jpg?729ddfe07ce040fbddaac8c60ee846d5";
 
 /***/ }),
 
 /***/ 1597:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/blog5.jpg?00c993e6faeeb080fdd0f78b37480110";
+module.exports = "/newpos/public/images/blog5.jpg?00c993e6faeeb080fdd0f78b37480110";
 
 /***/ }),
 
@@ -1487,21 +1487,21 @@ module.exports = Component.exports
 /***/ 771:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
+module.exports = "/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
 
 /***/ }),
 
 /***/ 774:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
+module.exports = "/newpos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
 
 /***/ }),
 
 /***/ 777:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar4.jpg?2bb4ec334d9b5a47d6369df5a4b7cd11";
+module.exports = "/newpos/public/images/avatar4.jpg?2bb4ec334d9b5a47d6369df5a4b7cd11";
 
 /***/ }),
 
@@ -1560,14 +1560,14 @@ module.exports = Component.exports
 /***/ 806:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar5.jpg?4f52473b866c8d274fce38e90ee4883d";
+module.exports = "/newpos/public/images/avatar5.jpg?4f52473b866c8d274fce38e90ee4883d";
 
 /***/ }),
 
 /***/ 813:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar6.jpg?7a7ee17a5a77782a7d07b499cde37807";
+module.exports = "/newpos/public/images/avatar6.jpg?7a7ee17a5a77782a7d07b499cde37807";
 
 /***/ }),
 
@@ -1758,7 +1758,7 @@ if (false) {
 /***/ 845:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/profile-coverbg.jpeg?f9d529b73b0abf32afba166473c78231";
+module.exports = "/newpos/public/images/profile-coverbg.jpeg?f9d529b73b0abf32afba166473c78231";
 
 /***/ })
 

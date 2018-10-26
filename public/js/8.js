@@ -8236,14 +8236,14 @@ if (false) {
 /***/ 1095:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/gal4.jpg?4f8508a2e29e33486c7c77a293f229ef";
+module.exports = "/newpos/public/images/gal4.jpg?4f8508a2e29e33486c7c77a293f229ef";
 
 /***/ }),
 
 /***/ 1096:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/headsset.jpg?9bf7b22dac0a665a4504bd95cd3b1e44";
+module.exports = "/newpos/public/images/headsset.jpg?9bf7b22dac0a665a4504bd95cd3b1e44";
 
 /***/ }),
 
@@ -9914,7 +9914,7 @@ if (false) {
 /***/ 1287:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/gal10.jpg?e54eba8c5c4ca4a21da8b7414c752fc1";
+module.exports = "/newpos/public/images/gal10.jpg?e54eba8c5c4ca4a21da8b7414c752fc1";
 
 /***/ }),
 
@@ -9976,28 +9976,28 @@ module.exports = Component.exports
 /***/ 771:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
+module.exports = "/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
 
 /***/ }),
 
 /***/ 774:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
+module.exports = "/newpos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
 
 /***/ }),
 
 /***/ 780:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar1.jpg?2b0314ed7a43445517ca523400549d2d";
+module.exports = "/newpos/public/images/avatar1.jpg?2b0314ed7a43445517ca523400549d2d";
 
 /***/ }),
 
 /***/ 791:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar.jpg?cd23a4a129679a15e2583c823c594af2";
+module.exports = "/newpos/public/images/avatar.jpg?cd23a4a129679a15e2583c823c594af2";
 
 /***/ }),
 
@@ -11894,7 +11894,7 @@ if (false) {
 /***/ 845:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/profile-coverbg.jpeg?f9d529b73b0abf32afba166473c78231";
+module.exports = "/newpos/public/images/profile-coverbg.jpeg?f9d529b73b0abf32afba166473c78231";
 
 /***/ }),
 
@@ -16404,7 +16404,7 @@ return Chartist;
 /***/ 881:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/weathernew.jpg?27404bda9eab5f7968c8df965824f612";
+module.exports = "/newpos/public/images/weathernew.jpg?27404bda9eab5f7968c8df965824f612";
 
 /***/ })
 

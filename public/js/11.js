@@ -439,21 +439,21 @@ return EvEmitter;
 /***/ 1081:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/900x600_2.png?2e2aeb6d331b77c001ef8faaa588fde2";
+module.exports = "/newpos/public/images/900x600_2.png?2e2aeb6d331b77c001ef8faaa588fde2";
 
 /***/ }),
 
 /***/ 1115:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/900x600.png?2e2aeb6d331b77c001ef8faaa588fde2";
+module.exports = "/newpos/public/images/900x600.png?2e2aeb6d331b77c001ef8faaa588fde2";
 
 /***/ }),
 
 /***/ 1117:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/e6.png?2e2aeb6d331b77c001ef8faaa588fde2";
+module.exports = "/newpos/public/images/e6.png?2e2aeb6d331b77c001ef8faaa588fde2";
 
 /***/ }),
 
@@ -19408,35 +19408,35 @@ exports.push([module.i, "/*!\n * baguetteBox.js\n * @author  feimosi\n * @versio
 /***/ 1131:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/14.jpg?c4b420cf6b3dd25f99b82b307b8ab973";
+module.exports = "/newpos/public/images/14.jpg?c4b420cf6b3dd25f99b82b307b8ab973";
 
 /***/ }),
 
 /***/ 1132:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/15.jpg?7a1f50aa5b80cb03f921bc71f5143b60";
+module.exports = "/newpos/public/images/15.jpg?7a1f50aa5b80cb03f921bc71f5143b60";
 
 /***/ }),
 
 /***/ 1133:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/16.jpg?2b143ffe9c0cf5c28b6db3c3ff2d7dc0";
+module.exports = "/newpos/public/images/16.jpg?2b143ffe9c0cf5c28b6db3c3ff2d7dc0";
 
 /***/ }),
 
 /***/ 1134:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/17.jpg?ecea01436ffda158002f09296d16177f";
+module.exports = "/newpos/public/images/17.jpg?ecea01436ffda158002f09296d16177f";
 
 /***/ }),
 
 /***/ 1135:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/18.jpg?0f36f952d47a3cbb691431424e2511cc";
+module.exports = "/newpos/public/images/18.jpg?0f36f952d47a3cbb691431424e2511cc";
 
 /***/ }),
 
@@ -19764,21 +19764,21 @@ __webpack_require__(1129);
 /***/ 1418:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/e4.png?2e2aeb6d331b77c001ef8faaa588fde2";
+module.exports = "/newpos/public/images/e4.png?2e2aeb6d331b77c001ef8faaa588fde2";
 
 /***/ }),
 
 /***/ 1419:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/900x600_5.png?2e2aeb6d331b77c001ef8faaa588fde2";
+module.exports = "/newpos/public/images/900x600_5.png?2e2aeb6d331b77c001ef8faaa588fde2";
 
 /***/ }),
 
 /***/ 1420:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/e1.png?2e2aeb6d331b77c001ef8faaa588fde2";
+module.exports = "/newpos/public/images/e1.png?2e2aeb6d331b77c001ef8faaa588fde2";
 
 /***/ }),
 

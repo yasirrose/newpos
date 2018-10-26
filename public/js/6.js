@@ -8135,7 +8135,7 @@ exports.push([module.i, "/*!\n *  Weather Icons 2.0\n *  Updated August 1, 2015\
 /***/ 1101:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/fonts/vendor/weathericons/weathericons-regular-webfont.woff?8cac70ebda3f23ce472110d9f21e8593";
+module.exports = "/newpos/public/fonts/vendor/weathericons/weathericons-regular-webfont.woff?8cac70ebda3f23ce472110d9f21e8593";
 
 /***/ }),
 
@@ -15218,7 +15218,7 @@ exports.push([module.i, "/*==Transition code==*/\n.slide-fade-enter-active[data-
 /***/ 1317:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/brick-wall.png?effad1520fc39d8897385d7004d2dbf4";
+module.exports = "/newpos/public/images/brick-wall.png?effad1520fc39d8897385d7004d2dbf4";
 
 /***/ }),
 
@@ -16916,14 +16916,14 @@ if (false) {
 /***/ 1327:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar7.jpg?bb23f91d2f714fc932c3fad89dd68026";
+module.exports = "/newpos/public/images/avatar7.jpg?bb23f91d2f714fc932c3fad89dd68026";
 
 /***/ }),
 
 /***/ 1328:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/user.jpg?dda03c61a04c3684f15f7b551c84c6c5";
+module.exports = "/newpos/public/images/user.jpg?dda03c61a04c3684f15f7b551c84c6c5";
 
 /***/ }),
 
@@ -16985,35 +16985,35 @@ module.exports = Component.exports
 /***/ 771:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
+module.exports = "/newpos/public/images/avatar3.jpg?3291ff41f25c98ba4aff1a1f74e42d1f";
 
 /***/ }),
 
 /***/ 774:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
+module.exports = "/newpos/public/images/avatar2.jpg?a1fb77af62c07cfcb18883dda43816c3";
 
 /***/ }),
 
 /***/ 777:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar4.jpg?2bb4ec334d9b5a47d6369df5a4b7cd11";
+module.exports = "/newpos/public/images/avatar4.jpg?2bb4ec334d9b5a47d6369df5a4b7cd11";
 
 /***/ }),
 
 /***/ 780:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar1.jpg?2b0314ed7a43445517ca523400549d2d";
+module.exports = "/newpos/public/images/avatar1.jpg?2b0314ed7a43445517ca523400549d2d";
 
 /***/ }),
 
 /***/ 791:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar.jpg?cd23a4a129679a15e2583c823c594af2";
+module.exports = "/newpos/public/images/avatar.jpg?cd23a4a129679a15e2583c823c594af2";
 
 /***/ }),
 
@@ -17072,14 +17072,14 @@ module.exports = Component.exports
 /***/ 806:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar5.jpg?4f52473b866c8d274fce38e90ee4883d";
+module.exports = "/newpos/public/images/avatar5.jpg?4f52473b866c8d274fce38e90ee4883d";
 
 /***/ }),
 
 /***/ 813:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/avatar6.jpg?7a7ee17a5a77782a7d07b499cde37807";
+module.exports = "/newpos/public/images/avatar6.jpg?7a7ee17a5a77782a7d07b499cde37807";
 
 /***/ }),
 
@@ -21773,7 +21773,7 @@ return Chartist;
 /***/ 881:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/weathernew.jpg?27404bda9eab5f7968c8df965824f612";
+module.exports = "/newpos/public/images/weathernew.jpg?27404bda9eab5f7968c8df965824f612";
 
 /***/ })
 
