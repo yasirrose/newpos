@@ -35,7 +35,7 @@ exports = module.exports = __webpack_require__(42)(false);
 
 
 // module
-exports.push([module.i, "\n.login-content[data-v-c3a38a2e] {\r\n    margin-top: 7%;\r\n\tmargin: 0 auto;\r\n    margin-bottom: 7%;\r\n\tpadding: 0px 25px;\r\n    -webkit-box-shadow: 0 0 20px #ccc;\r\n            box-shadow: 0 0 20px #ccc;\r\n    background-size: 100% 100%;\r\n    border-radius: 7px;\r\n\tbackground-color: #fff;\n}\n.img_backgrond[data-v-c3a38a2e]{\r\n        /* background-image: url(/newpos/public/images/Login-03-01.png?d74e560…); */\r\n\t\tbackground-color: #80808014;\r\n        background-size:cover;\r\n        background-repeat:no-repeat;\r\n        width: 100%;\r\n        padding: 75px 15px;\n}\n.form_email_pas[data-v-c3a38a2e] {\r\n\tborder: none;\r\n    border-bottom: 1px solid #ced4da;\r\n    border-radius: unset;\n}\n.log_in_btn[data-v-c3a38a2e] {\r\n\twidth:100%;\n}\nlabel[data-v-c3a38a2e]{\r\n    font-size: 14px !important;\n}\n[data-v-c3a38a2e]::-webkit-input-placeholder {\r\n    font-size:14px;\n}\t\r\n", ""]);
+exports.push([module.i, "\n.login-content[data-v-c3a38a2e] {\r\n    margin-top: 7%;\r\n\tmargin: 0 auto;\r\n    margin-bottom: 7%;\r\n\tpadding: 0px 25px;\r\n    -webkit-box-shadow: 0 0 20px #ccc;\r\n            box-shadow: 0 0 20px #ccc;\r\n    background-size: 100% 100%;\r\n    border-radius: 7px;\r\n\tbackground-color: #fff;\n}\n.img_backgrond[data-v-c3a38a2e]{\r\n        /* background-image: url(/newpos/public/images/Login-03-01.png?d74e560…); */\r\n\t\tbackground-color: #80808014;\r\n        background-size:cover;\r\n        background-repeat:no-repeat;\r\n        width: 100%;\r\n        padding: 75px 15px;\n}\n.form_email_pas[data-v-c3a38a2e] {\r\n\tborder: none;\r\n    border-bottom: 1px solid #ced4da;\r\n    border-radius: unset;\r\n\tpadding: 5px 25px;\n}\n.log_in_btn[data-v-c3a38a2e] {\r\n\twidth:100%;\n}\n.custom_bl[data-v-c3a38a2e] {\r\n\t    display: inline-block;\n}\n.font_cus[data-v-c3a38a2e] {\r\n\t\tfont-size:13px;\n}\n.fa_parent[data-v-c3a38a2e] {\r\n\t\tposition: relative;\n}\n.fa_icon[data-v-c3a38a2e] {\r\n\t\tposition: absolute;\r\n\t\ttop: 10px;\r\n\t\tpadding: 0 4px;\n}\nlabel[data-v-c3a38a2e]{\r\n    font-size: 14px !important;\n}\n[data-v-c3a38a2e]::-webkit-input-placeholder {\r\n    font-size:14px;\n}\n@media screen and (max-width:1024px) {\n.res_section[data-v-c3a38a2e] {\r\n\t\tmax-width: 33%;\r\n\t\t-webkit-box-flex: 0;\r\n\t\t    -ms-flex: 0 0 33%;\r\n\t\t        flex: 0 0 33%;\n}\n}\n@media screen and (max-width:768px) {\n.res_section[data-v-c3a38a2e] {\r\n\t\tmax-width: 44%;\r\n\t\t-webkit-box-flex: 0;\r\n\t\t    -ms-flex: 0 0 44%;\r\n\t\t        flex: 0 0 44%;\n}\n}\n@media screen and (max-width:425px) {\n.res_section[data-v-c3a38a2e] {\r\n\t\tmax-width: 100%;\r\n\t\t-webkit-box-flex: 0;\r\n\t\t    -ms-flex: 0 0 100%;\r\n\t\t        flex: 0 0 100%;\n}\n}\r\n", ""]);
 
 // exports
 
@@ -53,6 +53,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_form__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_js__ = __webpack_require__(249);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_src_validations_validations_js__ = __webpack_require__(945);
+//
+//
 //
 //
 //
@@ -182,7 +184,7 @@ var render = function() {
         "div",
         {
           staticClass:
-            "col-lg-3 offset-lg-5 col-sm-4 offset-sm-3 col-xs-10 offset-xs-1 login-content mt-5"
+            "res_section col-lg-3 offset-lg-5 col-sm-4 offset-sm-3 col-xs-10 offset-xs-1 login-content mt-5"
         },
         [
           _vm._m(0),
@@ -213,8 +215,10 @@ var render = function() {
                     [
                       _c(
                         "validate",
-                        { attrs: { tag: "div" } },
+                        { staticClass: "fa_parent", attrs: { tag: "div" } },
                         [
+                          _c("i", { staticClass: "fa fa-envelope-o fa_icon" }),
+                          _vm._v(" "),
                           _c("input", {
                             directives: [
                               {
@@ -289,8 +293,10 @@ var render = function() {
                     [
                       _c(
                         "validate",
-                        { attrs: { tag: "div" } },
+                        { staticClass: "fa_parent", attrs: { tag: "div" } },
                         [
+                          _c("i", { staticClass: "fa fa-lock fa_icon" }),
+                          _vm._v(" "),
                           _c("input", {
                             directives: [
                               {
@@ -390,11 +396,11 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "col-lg-12 col-md-12" },
+                  { staticClass: "col-lg-12 col-md-12 font_cus" },
                   [
                     _c(
                       "validate",
-                      { attrs: { tag: "label" } },
+                      { staticClass: "custom_bl", attrs: { tag: "label" } },
                       [
                         _c(
                           "b-form-checkbox",
@@ -435,7 +441,7 @@ var render = function() {
                       1
                     ),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
+                    _c("div", { staticClass: "custom_bl form-group" }, [
                       _c(
                         "p",
                         [

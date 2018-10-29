@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid img_backgrond">
         <div class="row">
-            <div class="res_section col-lg-3 offset-lg-5 col-sm-4 offset-sm-3 col-xs-10 offset-xs-1 login-content mt-5">
+            <div class="col-lg-3 offset-lg-5 col-sm-4 offset-sm-3 col-xs-10 offset-xs-1 login-content mt-5">
                 <div class="row">
                     <div class="col-sm-12 mt-3">
                         <h2 class="text-center">
@@ -14,8 +14,7 @@
                     <div class="row">
                         <div class="col-sm-12 mt-3 ">
                             <div class="form-group">
-                                <validate tag="div" class="fa_parent">
-									<i class="fa fa-envelope-o fa_icon"></i>
+                                <validate tag="div">
                                     <input v-model="model.email" name="email" id="email" type="email" required autofocus placeholder="E-mail" class="form-control form_email_pas" />
                                     <field-messages name="email" show="$invalid && $submitted" class="text-danger">
                                         <div slot="required">Email is a required field</div>
@@ -26,8 +25,7 @@
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <validate tag="div" class="fa_parent">
-									<i class="fa fa-lock fa_icon"></i>
+                                <validate tag="div">	
                                     <input v-model="model.password" name="password" id="password" type="password" required placeholder="Password" class="form-control form_email_pas" minlength="4" maxlength="10" />
                                     <field-messages name="password" show="$invalid && $submitted" class="text-danger">
                                         <div slot="required">Password is required</div>
@@ -42,14 +40,14 @@
                                 <input type="submit" value="Login" class="btn btn-success  log_in_btn" />
                             </div>
                         </div>
-                        <div class="col-lg-12 col-md-12 font_cus">
-                            <validate tag="label" class="custom_bl">
+                        <div class="col-lg-12 col-md-12">
+                            <validate tag="label">
                                 <b-form-checkbox id="remember" v-model="model.remember">Remember Me</b-form-checkbox>
                                 <field-messages name="remember" show="$invalid && $submitted" class="text-danger">
                                     <div slot="check-box">Terms must be accepted</div>
                                 </field-messages>
                             </validate>
-							<div class="custom_bl form-group">
+							<div class="form-group">
                                 <p>
                                     <router-link tag="a" to="/forgotpassword" class="">Forgot Your Password ?</router-link>
                                 </p>
@@ -141,24 +139,9 @@ export default {
 	border: none;
     border-bottom: 1px solid #ced4da;
     border-radius: unset;
-	padding: 5px 25px;
-	}
+}
 	.log_in_btn {
 	width:100%;
-	}
-	.custom_bl {
-	    display: inline-block;
-	}
-	.font_cus {
-		font-size:13px;
-	}
-	.fa_parent {
-		position: relative;
-	}
-	.fa_icon {
-		position: absolute;
-		top: 10px;
-		padding: 0 4px;
 	}
 label{
     font-size: 14px !important;
@@ -166,22 +149,4 @@ label{
 ::-webkit-input-placeholder {
     font-size:14px;
 }	
-@media screen and (max-width:1024px) {
-	.res_section {
-		max-width: 33%;
-		flex: 0 0 33%;
-	}
-}
-@media screen and (max-width:768px) {
-	.res_section {
-		max-width: 44%;
-		flex: 0 0 44%;
-	}
-}
-@media screen and (max-width:425px) {
-	.res_section {
-		max-width: 100%;
-		flex: 0 0 100%;
-	}
-}
 </style>

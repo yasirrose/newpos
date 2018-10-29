@@ -203,203 +203,188 @@
     }
 </script>
 <style lang="scss" scoped>
-@import "../css/customvariables";
-.header {
-z-index: 1030;
-nav {
-margin-bottom: 0;
-height: 50px;
-background: $header_color;
-background-size: 100% 100%;
-box-shadow: 0px 0px 10px #CCC;
-}
-.nav_bg_c {
-background: #000;
-color: #FFF;
-}
-.bttn_bg {
-background: #000;
-}
-.name_mrgn {
-margin-top: 8px;
-color: #FFF;
-}
-.inner_bttn_a {
-color: #FFF;
-}
-.navbar-right {
-float: right;
-margin-right: 15px;
-}
-.logo {
-display: block;
-float: left;
-height: 50px;
-line-height: 41px;
-padding: 3px 10px;
-text-align: center;
-width: 250px;
-background: $header_color;
-img {
-width: 125px;
-}
-}
-.navbar-right {
-.dropdown-item {
-padding: 0;
-width: 100%;
-outline: none;
-}
-div.dropdown {
->a {
-color: $zoom_color;
-}
-.dropdown-menu>button {
-padding: 10px 15px;
-}
-&.notifications-menu {
-height: 50px;
-.noti-icon {
-font-size: 18px;
-}
-}
->a>i {
-font-size: 23px;
-}
->a {
-display: block;
-padding: 12px;
-}
-&:hover>a {
-background-color: #EDEDED;
-color: #000;
-}
->a.padding-user {
-padding-top: 8px;
-padding-bottom: 6px;
-}
-}
-}
-nav .sidebar-toggle {
-float: left;
-color: $toggle_color;
-font-size: 19px;
-padding-top: 10px;
-}
-}
+    @import "../css/customvariables";
+    .header {
+        z-index: 1030;
+        nav {
+            margin-bottom: 0;
+            height: 50px;
+            background: $header_color;
+            background-size: 100% 100%;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+        .navbar-right {
+            float: right;
+            margin-right: 15px;
+        }
+        .logo {
+            display: block;
+            float: left;
+            height: 50px;
+            line-height: 41px;
+            padding: 3px 10px;
+            text-align: center;
+            width: 250px;
+            background: $header_color;
+            img {
+                width: 125px;
+            }
+        }
+        .navbar-right {
+            .dropdown-item {
+                padding: 0;
+                width: 100%;
+                outline: none;
+            }
+            div.dropdown {
+                >a {
+                    color: $zoom_color;
+                }
+                .dropdown-menu>button {
+                    padding: 10px 15px;
+                }
+                &.notifications-menu {
+                    height: 50px;
+                    .noti-icon {
+                        font-size: 18px;
+                    }
+                }
+                >a>i {
+                    font-size: 23px;
+                }
+                >a {
+                    display: block;
+                    padding: 12px;
+                }
+                &:hover>a {
+                    background-color: #ededed;
+                    color: #000;
+                }
+                >a.padding-user {
+                    padding-top: 8px;
+                    padding-bottom: 6px;
+                }
+            }
+        }
+        nav .sidebar-toggle {
+            float: left;
+            color: $toggle_color;
+            font-size: 19px;
+            padding-top: 10px;
+        }
+    }
 
-.user_name_max {
-display: inline-block;
-max-width: 180px;
-white-space: nowrap;
-overflow: hidden !important;
-text-overflow: ellipsis;
-margin: 0 0 -4px;
-}
+    .user_name_max {
+        display: inline-block;
+        max-width: 180px;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        margin: 0 0 -4px;
+    }
 
-.noti_msg {
-font-size: 16px;
-padding: 10px;
-border: 1px solid #4F90C1;
-border-radius: 50px;
-margin-top: 10px;
-}
+    .noti_msg {
+        font-size: 16px;
+        padding: 10px;
+        border: 1px solid #4f90c1;
+        border-radius: 50px;
+        margin-top: 10px;
+    }
 
-.user.user-menu>button img {
-width: 35px;
-height: 35px;
-}
-/**** END HEADER RIGHT SIDE DROPDOWNS ****/
+    .user.user-menu>button img {
+        width: 35px;
+        height: 35px;
+    }
+    /**** END HEADER RIGHT SIDE DROPDOWNS ****/
 
-@media screen and (max-width: 767px) {
-.dropdown.open .dropdown-menu {
-position: absolute;
-}
-.navbar-right>li>a {
-padding: 10px 12px;
-}
-}
-/* Fix menu positions on xs screens to appear correctly and fully */
+    @media screen and (max-width: 767px) {
+        .dropdown.open .dropdown-menu {
+            position: absolute;
+        }
+        .navbar-right>li>a {
+            padding: 10px 12px;
+        }
+    }
+    /* Fix menu positions on xs screens to appear correctly and fully */
 
-@media (max-width: 560px) {
-body .header .logo,
-body .header nav {
-width: 100%;
-}
-body .header nav .sidebar-toggle {
-padding-left: 15px;
-}
-nav {
-height: 100px !important;
-}
-}
+    @media (max-width: 560px) {
+        body .header .logo,
+        body .header nav {
+            width: 100%;
+        }
+        body .header nav .sidebar-toggle {
+            padding-left: 15px;
+        }
+        nav {
+            height: 100px !important;
+        }
+    }
 
-.notifications_badge_top {
-margin-top: -28px;
-margin-left: 10px;
-position: absolute;
-span {
-top: 1px;
-left: 2px;
-border-radius: 50%;
-font-size: 9px;
-padding: 0.23em 0.45em;
-}
-}
+    .notifications_badge_top {
+        margin-top: -28px;
+        margin-left: 10px;
+        position: absolute;
+        span {
+            top: 1px;
+            left: 2px;
+            border-radius: 50%;
+            font-size: 9px;
+            padding: 0.23em 0.45em;
+        }
+    }
 
-.notifications-menu .dropdown-item {
-width: 100%;
-display: block;
-}
+    .notifications-menu .dropdown-item {
+        width: 100%;
+        display: block;
+    }
 
-.dropdown-footer {
-padding: 10px !important;
-}
+    .dropdown-footer {
+        padding: 10px !important;
+    }
 </style>
 <style type="text/css" lang="scss">
-@import "../css/customvariables";
-.wrapper {
-margin-top: 50px;
-@media screen and (max-width: 560px) {
-margin-top: 100px;
-}
-}
+    @import "../css/customvariables";
+    .wrapper {
+        margin-top: 50px;
+        @media screen and (max-width: 560px) {
+            margin-top: 100px;
+        }
+    }
 
-.sidebar-toggle {
-margin-left: 10px;
-}
+    .sidebar-toggle {
+        margin-left: 10px;
+    }
 
-.bell_bg {
-button.btn-secondary {
-background-color: $bell-color;
-border: none;
-border-radius: 0;
-box-shadow: none !important;
-&:hover {
-background-color: #EDEDED !important
-}
-&:active {
-color: $toggle_color !important;
-}
-} //.btn-secondary:active
-&.show button {
-background-color: $bell-active !important
-}
-&.user_btn .dropdown-toggle{
-padding:7px 9px;
-background-color: #000;
-}
-}
+    .bell_bg {
+        button.btn-secondary {
+            background-color: $bell-color;
+            border: none;
+            border-radius: 0;
+            box-shadow: none !important;
+            &:hover {
+                background-color: #ededed !important
+            }
+            &:active {
+                color: $toggle_color !important;
+            }
+        } //.btn-secondary:active
+        &.show button {
+            background-color: $bell-active !important
+        }
+        &.user_btn  .dropdown-toggle{
+            padding:7px 9px;
+        }
+    }
 
-.tabs_cont,
-.event_date {
-background-color: #FFF !important;
-}
-body.left-hidden aside.right-aside {
-margin-left: 0;
-}
-body.left-hidden .header.fixed-top{
-padding-right: 0 !important;
-}
+    .tabs_cont,
+    .event_date {
+        background-color: #fff !important;
+    }
+    body.left-hidden aside.right-aside {
+        margin-left: 0;
+    }
+    body.left-hidden .header.fixed-top{
+        padding-right: 0 !important;
+    }
 
 </style>
