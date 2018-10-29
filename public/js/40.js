@@ -1,22 +1,22 @@
 webpackJsonp([40],{
 
-/***/ 1436:
+/***/ 1023:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1437);
+var content = __webpack_require__(1024);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(93)("fa18aff2", content, false, {});
+var update = __webpack_require__(71)("7a3c1251", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-544d8501\",\"scoped\":false,\"hasInlineConfig\":true}!./hover.css", function() {
-     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-544d8501\",\"scoped\":false,\"hasInlineConfig\":true}!./hover.css");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1bc80baa\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./modals.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1bc80baa\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./modals.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -27,70 +27,30 @@ if(false) {
 
 /***/ }),
 
-/***/ 1437:
+/***/ 1024:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(49)(false);
+exports = module.exports = __webpack_require__(42)(false);
 // imports
 
 
 // module
-exports.push([module.i, "/*!\r\n * Hover.css (http://ianlunn.github.io/Hover/)\r\n * Version: 2.3.2\r\n * Author: Ian Lunn @IanLunn\r\n * Author URL: http://ianlunn.co.uk/\r\n * Github: https://github.com/IanLunn/Hover\r\n\r\n * Hover.css Copyright Ian Lunn 2017. Generated with Sass.\r\n */\r\n/* 2D TRANSITIONS */\r\n/* Grow */\n.hvr-grow {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\n}\n.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {\r\n  -webkit-transform: scale(1.1);\r\n  transform: scale(1.1);\n}\r\n\r\n/* Shrink */\n.hvr-shrink {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\n}\n.hvr-shrink:hover, .hvr-shrink:focus, .hvr-shrink:active {\r\n  -webkit-transform: scale(0.9);\r\n  transform: scale(0.9);\n}\r\n\r\n/* Pulse */\n@-webkit-keyframes hvr-pulse {\n25% {\r\n    -webkit-transform: scale(1.1);\r\n    transform: scale(1.1);\n}\n75% {\r\n    -webkit-transform: scale(0.9);\r\n    transform: scale(0.9);\n}\n}\n@keyframes hvr-pulse {\n25% {\r\n    -webkit-transform: scale(1.1);\r\n    transform: scale(1.1);\n}\n75% {\r\n    -webkit-transform: scale(0.9);\r\n    transform: scale(0.9);\n}\n}\n.hvr-pulse {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-pulse:hover, .hvr-pulse:focus, .hvr-pulse:active {\r\n  -webkit-animation-name: hvr-pulse;\r\n  animation-name: hvr-pulse;\r\n  -webkit-animation-duration: 1s;\r\n  animation-duration: 1s;\r\n  -webkit-animation-timing-function: linear;\r\n  animation-timing-function: linear;\r\n  -webkit-animation-iteration-count: infinite;\r\n  animation-iteration-count: infinite;\n}\r\n\r\n/* Pulse Grow */\n@-webkit-keyframes hvr-pulse-grow {\nto {\r\n    -webkit-transform: scale(1.1);\r\n    transform: scale(1.1);\n}\n}\n@keyframes hvr-pulse-grow {\nto {\r\n    -webkit-transform: scale(1.1);\r\n    transform: scale(1.1);\n}\n}\n.hvr-pulse-grow {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-pulse-grow:hover, .hvr-pulse-grow:focus, .hvr-pulse-grow:active {\r\n  -webkit-animation-name: hvr-pulse-grow;\r\n  animation-name: hvr-pulse-grow;\r\n  -webkit-animation-duration: 0.3s;\r\n  animation-duration: 0.3s;\r\n  -webkit-animation-timing-function: linear;\r\n  animation-timing-function: linear;\r\n  -webkit-animation-iteration-count: infinite;\r\n  animation-iteration-count: infinite;\r\n  -webkit-animation-direction: alternate;\r\n  animation-direction: alternate;\n}\r\n\r\n/* Pulse Shrink */\n@-webkit-keyframes hvr-pulse-shrink {\nto {\r\n    -webkit-transform: scale(0.9);\r\n    transform: scale(0.9);\n}\n}\n@keyframes hvr-pulse-shrink {\nto {\r\n    -webkit-transform: scale(0.9);\r\n    transform: scale(0.9);\n}\n}\n.hvr-pulse-shrink {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-pulse-shrink:hover, .hvr-pulse-shrink:focus, .hvr-pulse-shrink:active {\r\n  -webkit-animation-name: hvr-pulse-shrink;\r\n  animation-name: hvr-pulse-shrink;\r\n  -webkit-animation-duration: 0.3s;\r\n  animation-duration: 0.3s;\r\n  -webkit-animation-timing-function: linear;\r\n  animation-timing-function: linear;\r\n  -webkit-animation-iteration-count: infinite;\r\n  animation-iteration-count: infinite;\r\n  -webkit-animation-direction: alternate;\r\n  animation-direction: alternate;\n}\r\n\r\n/* Push */\n@-webkit-keyframes hvr-push {\n50% {\r\n    -webkit-transform: scale(0.8);\r\n    transform: scale(0.8);\n}\n100% {\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\n}\n}\n@keyframes hvr-push {\n50% {\r\n    -webkit-transform: scale(0.8);\r\n    transform: scale(0.8);\n}\n100% {\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\n}\n}\n.hvr-push {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-push:hover, .hvr-push:focus, .hvr-push:active {\r\n  -webkit-animation-name: hvr-push;\r\n  animation-name: hvr-push;\r\n  -webkit-animation-duration: 0.3s;\r\n  animation-duration: 0.3s;\r\n  -webkit-animation-timing-function: linear;\r\n  animation-timing-function: linear;\r\n  -webkit-animation-iteration-count: 1;\r\n  animation-iteration-count: 1;\n}\r\n\r\n/* Pop */\n@-webkit-keyframes hvr-pop {\n50% {\r\n    -webkit-transform: scale(1.2);\r\n    transform: scale(1.2);\n}\n}\n@keyframes hvr-pop {\n50% {\r\n    -webkit-transform: scale(1.2);\r\n    transform: scale(1.2);\n}\n}\n.hvr-pop {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-pop:hover, .hvr-pop:focus, .hvr-pop:active {\r\n  -webkit-animation-name: hvr-pop;\r\n  animation-name: hvr-pop;\r\n  -webkit-animation-duration: 0.3s;\r\n  animation-duration: 0.3s;\r\n  -webkit-animation-timing-function: linear;\r\n  animation-timing-function: linear;\r\n  -webkit-animation-iteration-count: 1;\r\n  animation-iteration-count: 1;\n}\r\n\r\n/* Bounce In */\n.hvr-bounce-in {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.5s;\r\n  transition-duration: 0.5s;\n}\n.hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {\r\n  -webkit-transform: scale(1.2);\r\n  transform: scale(1.2);\r\n  -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);\r\n  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);\n}\r\n\r\n/* Bounce Out */\n.hvr-bounce-out {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.5s;\r\n  transition-duration: 0.5s;\n}\n.hvr-bounce-out:hover, .hvr-bounce-out:focus, .hvr-bounce-out:active {\r\n  -webkit-transform: scale(0.8);\r\n  transform: scale(0.8);\r\n  -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);\r\n  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);\n}\r\n\r\n/* Rotate */\n.hvr-rotate {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\n}\n.hvr-rotate:hover, .hvr-rotate:focus, .hvr-rotate:active {\r\n  -webkit-transform: rotate(4deg);\r\n  transform: rotate(4deg);\n}\r\n\r\n/* Grow Rotate */\n.hvr-grow-rotate {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\n}\n.hvr-grow-rotate:hover, .hvr-grow-rotate:focus, .hvr-grow-rotate:active {\r\n  -webkit-transform: scale(1.1) rotate(4deg);\r\n  transform: scale(1.1) rotate(4deg);\n}\r\n\r\n/* Float */\n.hvr-float {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-float:hover, .hvr-float:focus, .hvr-float:active {\r\n  -webkit-transform: translateY(-8px);\r\n  transform: translateY(-8px);\n}\r\n\r\n/* Sink */\n.hvr-sink {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-sink:hover, .hvr-sink:focus, .hvr-sink:active {\r\n  -webkit-transform: translateY(8px);\r\n  transform: translateY(8px);\n}\r\n\r\n/* Bob */\n@-webkit-keyframes hvr-bob {\n0% {\r\n    -webkit-transform: translateY(-8px);\r\n    transform: translateY(-8px);\n}\n50% {\r\n    -webkit-transform: translateY(-4px);\r\n    transform: translateY(-4px);\n}\n100% {\r\n    -webkit-transform: translateY(-8px);\r\n    transform: translateY(-8px);\n}\n}\n@keyframes hvr-bob {\n0% {\r\n    -webkit-transform: translateY(-8px);\r\n    transform: translateY(-8px);\n}\n50% {\r\n    -webkit-transform: translateY(-4px);\r\n    transform: translateY(-4px);\n}\n100% {\r\n    -webkit-transform: translateY(-8px);\r\n    transform: translateY(-8px);\n}\n}\n@-webkit-keyframes hvr-bob-float {\n100% {\r\n    -webkit-transform: translateY(-8px);\r\n    transform: translateY(-8px);\n}\n}\n@keyframes hvr-bob-float {\n100% {\r\n    -webkit-transform: translateY(-8px);\r\n    transform: translateY(-8px);\n}\n}\n.hvr-bob {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-bob:hover, .hvr-bob:focus, .hvr-bob:active {\r\n  -webkit-animation-name: hvr-bob-float, hvr-bob;\r\n  animation-name: hvr-bob-float, hvr-bob;\r\n  -webkit-animation-duration: .3s, 1.5s;\r\n  animation-duration: .3s, 1.5s;\r\n  -webkit-animation-delay: 0s, .3s;\r\n  animation-delay: 0s, .3s;\r\n  -webkit-animation-timing-function: ease-out, ease-in-out;\r\n  animation-timing-function: ease-out, ease-in-out;\r\n  -webkit-animation-iteration-count: 1, infinite;\r\n  animation-iteration-count: 1, infinite;\r\n  -webkit-animation-fill-mode: forwards;\r\n  animation-fill-mode: forwards;\r\n  -webkit-animation-direction: normal, alternate;\r\n  animation-direction: normal, alternate;\n}\r\n\r\n/* Hang */\n@-webkit-keyframes hvr-hang {\n0% {\r\n    -webkit-transform: translateY(8px);\r\n    transform: translateY(8px);\n}\n50% {\r\n    -webkit-transform: translateY(4px);\r\n    transform: translateY(4px);\n}\n100% {\r\n    -webkit-transform: translateY(8px);\r\n    transform: translateY(8px);\n}\n}\n@keyframes hvr-hang {\n0% {\r\n    -webkit-transform: translateY(8px);\r\n    transform: translateY(8px);\n}\n50% {\r\n    -webkit-transform: translateY(4px);\r\n    transform: translateY(4px);\n}\n100% {\r\n    -webkit-transform: translateY(8px);\r\n    transform: translateY(8px);\n}\n}\n@-webkit-keyframes hvr-hang-sink {\n100% {\r\n    -webkit-transform: translateY(8px);\r\n    transform: translateY(8px);\n}\n}\n@keyframes hvr-hang-sink {\n100% {\r\n    -webkit-transform: translateY(8px);\r\n    transform: translateY(8px);\n}\n}\n.hvr-hang {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-hang:hover, .hvr-hang:focus, .hvr-hang:active {\r\n  -webkit-animation-name: hvr-hang-sink, hvr-hang;\r\n  animation-name: hvr-hang-sink, hvr-hang;\r\n  -webkit-animation-duration: .3s, 1.5s;\r\n  animation-duration: .3s, 1.5s;\r\n  -webkit-animation-delay: 0s, .3s;\r\n  animation-delay: 0s, .3s;\r\n  -webkit-animation-timing-function: ease-out, ease-in-out;\r\n  animation-timing-function: ease-out, ease-in-out;\r\n  -webkit-animation-iteration-count: 1, infinite;\r\n  animation-iteration-count: 1, infinite;\r\n  -webkit-animation-fill-mode: forwards;\r\n  animation-fill-mode: forwards;\r\n  -webkit-animation-direction: normal, alternate;\r\n  animation-direction: normal, alternate;\n}\r\n\r\n/* Skew */\n.hvr-skew {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\n}\n.hvr-skew:hover, .hvr-skew:focus, .hvr-skew:active {\r\n  -webkit-transform: skew(-10deg);\r\n  transform: skew(-10deg);\n}\r\n\r\n/* Skew Forward */\n.hvr-skew-forward {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transform-origin: 0 100%;\r\n  transform-origin: 0 100%;\n}\n.hvr-skew-forward:hover, .hvr-skew-forward:focus, .hvr-skew-forward:active {\r\n  -webkit-transform: skew(-10deg);\r\n  transform: skew(-10deg);\n}\r\n\r\n/* Skew Backward */\n.hvr-skew-backward {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transform-origin: 0 100%;\r\n  transform-origin: 0 100%;\n}\n.hvr-skew-backward:hover, .hvr-skew-backward:focus, .hvr-skew-backward:active {\r\n  -webkit-transform: skew(10deg);\r\n  transform: skew(10deg);\n}\r\n\r\n/* Wobble Vertical */\n@-webkit-keyframes hvr-wobble-vertical {\n16.65% {\r\n    -webkit-transform: translateY(8px);\r\n    transform: translateY(8px);\n}\n33.3% {\r\n    -webkit-transform: translateY(-6px);\r\n    transform: translateY(-6px);\n}\n49.95% {\r\n    -webkit-transform: translateY(4px);\r\n    transform: translateY(4px);\n}\n66.6% {\r\n    -webkit-transform: translateY(-2px);\r\n    transform: translateY(-2px);\n}\n83.25% {\r\n    -webkit-transform: translateY(1px);\r\n    transform: translateY(1px);\n}\n100% {\r\n    -webkit-transform: translateY(0);\r\n    transform: translateY(0);\n}\n}\n@keyframes hvr-wobble-vertical {\n16.65% {\r\n    -webkit-transform: translateY(8px);\r\n    transform: translateY(8px);\n}\n33.3% {\r\n    -webkit-transform: translateY(-6px);\r\n    transform: translateY(-6px);\n}\n49.95% {\r\n    -webkit-transform: translateY(4px);\r\n    transform: translateY(4px);\n}\n66.6% {\r\n    -webkit-transform: translateY(-2px);\r\n    transform: translateY(-2px);\n}\n83.25% {\r\n    -webkit-transform: translateY(1px);\r\n    transform: translateY(1px);\n}\n100% {\r\n    -webkit-transform: translateY(0);\r\n    transform: translateY(0);\n}\n}\n.hvr-wobble-vertical {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-wobble-vertical:hover, .hvr-wobble-vertical:focus, .hvr-wobble-vertical:active {\r\n  -webkit-animation-name: hvr-wobble-vertical;\r\n  animation-name: hvr-wobble-vertical;\r\n  -webkit-animation-duration: 1s;\r\n  animation-duration: 1s;\r\n  -webkit-animation-timing-function: ease-in-out;\r\n  animation-timing-function: ease-in-out;\r\n  -webkit-animation-iteration-count: 1;\r\n  animation-iteration-count: 1;\n}\r\n\r\n/* Wobble Horizontal */\n@-webkit-keyframes hvr-wobble-horizontal {\n16.65% {\r\n    -webkit-transform: translateX(8px);\r\n    transform: translateX(8px);\n}\n33.3% {\r\n    -webkit-transform: translateX(-6px);\r\n    transform: translateX(-6px);\n}\n49.95% {\r\n    -webkit-transform: translateX(4px);\r\n    transform: translateX(4px);\n}\n66.6% {\r\n    -webkit-transform: translateX(-2px);\r\n    transform: translateX(-2px);\n}\n83.25% {\r\n    -webkit-transform: translateX(1px);\r\n    transform: translateX(1px);\n}\n100% {\r\n    -webkit-transform: translateX(0);\r\n    transform: translateX(0);\n}\n}\n@keyframes hvr-wobble-horizontal {\n16.65% {\r\n    -webkit-transform: translateX(8px);\r\n    transform: translateX(8px);\n}\n33.3% {\r\n    -webkit-transform: translateX(-6px);\r\n    transform: translateX(-6px);\n}\n49.95% {\r\n    -webkit-transform: translateX(4px);\r\n    transform: translateX(4px);\n}\n66.6% {\r\n    -webkit-transform: translateX(-2px);\r\n    transform: translateX(-2px);\n}\n83.25% {\r\n    -webkit-transform: translateX(1px);\r\n    transform: translateX(1px);\n}\n100% {\r\n    -webkit-transform: translateX(0);\r\n    transform: translateX(0);\n}\n}\n.hvr-wobble-horizontal {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-wobble-horizontal:hover, .hvr-wobble-horizontal:focus, .hvr-wobble-horizontal:active {\r\n  -webkit-animation-name: hvr-wobble-horizontal;\r\n  animation-name: hvr-wobble-horizontal;\r\n  -webkit-animation-duration: 1s;\r\n  animation-duration: 1s;\r\n  -webkit-animation-timing-function: ease-in-out;\r\n  animation-timing-function: ease-in-out;\r\n  -webkit-animation-iteration-count: 1;\r\n  animation-iteration-count: 1;\n}\r\n\r\n/* Wobble To Bottom Right */\n@-webkit-keyframes hvr-wobble-to-bottom-right {\n16.65% {\r\n    -webkit-transform: translate(8px, 8px);\r\n    transform: translate(8px, 8px);\n}\n33.3% {\r\n    -webkit-transform: translate(-6px, -6px);\r\n    transform: translate(-6px, -6px);\n}\n49.95% {\r\n    -webkit-transform: translate(4px, 4px);\r\n    transform: translate(4px, 4px);\n}\n66.6% {\r\n    -webkit-transform: translate(-2px, -2px);\r\n    transform: translate(-2px, -2px);\n}\n83.25% {\r\n    -webkit-transform: translate(1px, 1px);\r\n    transform: translate(1px, 1px);\n}\n100% {\r\n    -webkit-transform: translate(0, 0);\r\n    transform: translate(0, 0);\n}\n}\n@keyframes hvr-wobble-to-bottom-right {\n16.65% {\r\n    -webkit-transform: translate(8px, 8px);\r\n    transform: translate(8px, 8px);\n}\n33.3% {\r\n    -webkit-transform: translate(-6px, -6px);\r\n    transform: translate(-6px, -6px);\n}\n49.95% {\r\n    -webkit-transform: translate(4px, 4px);\r\n    transform: translate(4px, 4px);\n}\n66.6% {\r\n    -webkit-transform: translate(-2px, -2px);\r\n    transform: translate(-2px, -2px);\n}\n83.25% {\r\n    -webkit-transform: translate(1px, 1px);\r\n    transform: translate(1px, 1px);\n}\n100% {\r\n    -webkit-transform: translate(0, 0);\r\n    transform: translate(0, 0);\n}\n}\n.hvr-wobble-to-bottom-right {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-wobble-to-bottom-right:hover, .hvr-wobble-to-bottom-right:focus, .hvr-wobble-to-bottom-right:active {\r\n  -webkit-animation-name: hvr-wobble-to-bottom-right;\r\n  animation-name: hvr-wobble-to-bottom-right;\r\n  -webkit-animation-duration: 1s;\r\n  animation-duration: 1s;\r\n  -webkit-animation-timing-function: ease-in-out;\r\n  animation-timing-function: ease-in-out;\r\n  -webkit-animation-iteration-count: 1;\r\n  animation-iteration-count: 1;\n}\r\n\r\n/* Wobble To Top Right */\n@-webkit-keyframes hvr-wobble-to-top-right {\n16.65% {\r\n    -webkit-transform: translate(8px, -8px);\r\n    transform: translate(8px, -8px);\n}\n33.3% {\r\n    -webkit-transform: translate(-6px, 6px);\r\n    transform: translate(-6px, 6px);\n}\n49.95% {\r\n    -webkit-transform: translate(4px, -4px);\r\n    transform: translate(4px, -4px);\n}\n66.6% {\r\n    -webkit-transform: translate(-2px, 2px);\r\n    transform: translate(-2px, 2px);\n}\n83.25% {\r\n    -webkit-transform: translate(1px, -1px);\r\n    transform: translate(1px, -1px);\n}\n100% {\r\n    -webkit-transform: translate(0, 0);\r\n    transform: translate(0, 0);\n}\n}\n@keyframes hvr-wobble-to-top-right {\n16.65% {\r\n    -webkit-transform: translate(8px, -8px);\r\n    transform: translate(8px, -8px);\n}\n33.3% {\r\n    -webkit-transform: translate(-6px, 6px);\r\n    transform: translate(-6px, 6px);\n}\n49.95% {\r\n    -webkit-transform: translate(4px, -4px);\r\n    transform: translate(4px, -4px);\n}\n66.6% {\r\n    -webkit-transform: translate(-2px, 2px);\r\n    transform: translate(-2px, 2px);\n}\n83.25% {\r\n    -webkit-transform: translate(1px, -1px);\r\n    transform: translate(1px, -1px);\n}\n100% {\r\n    -webkit-transform: translate(0, 0);\r\n    transform: translate(0, 0);\n}\n}\n.hvr-wobble-to-top-right {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-wobble-to-top-right:hover, .hvr-wobble-to-top-right:focus, .hvr-wobble-to-top-right:active {\r\n  -webkit-animation-name: hvr-wobble-to-top-right;\r\n  animation-name: hvr-wobble-to-top-right;\r\n  -webkit-animation-duration: 1s;\r\n  animation-duration: 1s;\r\n  -webkit-animation-timing-function: ease-in-out;\r\n  animation-timing-function: ease-in-out;\r\n  -webkit-animation-iteration-count: 1;\r\n  animation-iteration-count: 1;\n}\r\n\r\n/* Wobble Top */\n@-webkit-keyframes hvr-wobble-top {\n16.65% {\r\n    -webkit-transform: skew(-12deg);\r\n    transform: skew(-12deg);\n}\n33.3% {\r\n    -webkit-transform: skew(10deg);\r\n    transform: skew(10deg);\n}\n49.95% {\r\n    -webkit-transform: skew(-6deg);\r\n    transform: skew(-6deg);\n}\n66.6% {\r\n    -webkit-transform: skew(4deg);\r\n    transform: skew(4deg);\n}\n83.25% {\r\n    -webkit-transform: skew(-2deg);\r\n    transform: skew(-2deg);\n}\n100% {\r\n    -webkit-transform: skew(0);\r\n    transform: skew(0);\n}\n}\n@keyframes hvr-wobble-top {\n16.65% {\r\n    -webkit-transform: skew(-12deg);\r\n    transform: skew(-12deg);\n}\n33.3% {\r\n    -webkit-transform: skew(10deg);\r\n    transform: skew(10deg);\n}\n49.95% {\r\n    -webkit-transform: skew(-6deg);\r\n    transform: skew(-6deg);\n}\n66.6% {\r\n    -webkit-transform: skew(4deg);\r\n    transform: skew(4deg);\n}\n83.25% {\r\n    -webkit-transform: skew(-2deg);\r\n    transform: skew(-2deg);\n}\n100% {\r\n    -webkit-transform: skew(0);\r\n    transform: skew(0);\n}\n}\n.hvr-wobble-top {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transform-origin: 0 100%;\r\n  transform-origin: 0 100%;\n}\n.hvr-wobble-top:hover, .hvr-wobble-top:focus, .hvr-wobble-top:active {\r\n  -webkit-animation-name: hvr-wobble-top;\r\n  animation-name: hvr-wobble-top;\r\n  -webkit-animation-duration: 1s;\r\n  animation-duration: 1s;\r\n  -webkit-animation-timing-function: ease-in-out;\r\n  animation-timing-function: ease-in-out;\r\n  -webkit-animation-iteration-count: 1;\r\n  animation-iteration-count: 1;\n}\r\n\r\n/* Wobble Bottom */\n@-webkit-keyframes hvr-wobble-bottom {\n16.65% {\r\n    -webkit-transform: skew(-12deg);\r\n    transform: skew(-12deg);\n}\n33.3% {\r\n    -webkit-transform: skew(10deg);\r\n    transform: skew(10deg);\n}\n49.95% {\r\n    -webkit-transform: skew(-6deg);\r\n    transform: skew(-6deg);\n}\n66.6% {\r\n    -webkit-transform: skew(4deg);\r\n    transform: skew(4deg);\n}\n83.25% {\r\n    -webkit-transform: skew(-2deg);\r\n    transform: skew(-2deg);\n}\n100% {\r\n    -webkit-transform: skew(0);\r\n    transform: skew(0);\n}\n}\n@keyframes hvr-wobble-bottom {\n16.65% {\r\n    -webkit-transform: skew(-12deg);\r\n    transform: skew(-12deg);\n}\n33.3% {\r\n    -webkit-transform: skew(10deg);\r\n    transform: skew(10deg);\n}\n49.95% {\r\n    -webkit-transform: skew(-6deg);\r\n    transform: skew(-6deg);\n}\n66.6% {\r\n    -webkit-transform: skew(4deg);\r\n    transform: skew(4deg);\n}\n83.25% {\r\n    -webkit-transform: skew(-2deg);\r\n    transform: skew(-2deg);\n}\n100% {\r\n    -webkit-transform: skew(0);\r\n    transform: skew(0);\n}\n}\n.hvr-wobble-bottom {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transform-origin: 100% 0;\r\n  transform-origin: 100% 0;\n}\n.hvr-wobble-bottom:hover, .hvr-wobble-bottom:focus, .hvr-wobble-bottom:active {\r\n  -webkit-animation-name: hvr-wobble-bottom;\r\n  animation-name: hvr-wobble-bottom;\r\n  -webkit-animation-duration: 1s;\r\n  animation-duration: 1s;\r\n  -webkit-animation-timing-function: ease-in-out;\r\n  animation-timing-function: ease-in-out;\r\n  -webkit-animation-iteration-count: 1;\r\n  animation-iteration-count: 1;\n}\r\n\r\n/* Wobble Skew */\n@-webkit-keyframes hvr-wobble-skew {\n16.65% {\r\n    -webkit-transform: skew(-12deg);\r\n    transform: skew(-12deg);\n}\n33.3% {\r\n    -webkit-transform: skew(10deg);\r\n    transform: skew(10deg);\n}\n49.95% {\r\n    -webkit-transform: skew(-6deg);\r\n    transform: skew(-6deg);\n}\n66.6% {\r\n    -webkit-transform: skew(4deg);\r\n    transform: skew(4deg);\n}\n83.25% {\r\n    -webkit-transform: skew(-2deg);\r\n    transform: skew(-2deg);\n}\n100% {\r\n    -webkit-transform: skew(0);\r\n    transform: skew(0);\n}\n}\n@keyframes hvr-wobble-skew {\n16.65% {\r\n    -webkit-transform: skew(-12deg);\r\n    transform: skew(-12deg);\n}\n33.3% {\r\n    -webkit-transform: skew(10deg);\r\n    transform: skew(10deg);\n}\n49.95% {\r\n    -webkit-transform: skew(-6deg);\r\n    transform: skew(-6deg);\n}\n66.6% {\r\n    -webkit-transform: skew(4deg);\r\n    transform: skew(4deg);\n}\n83.25% {\r\n    -webkit-transform: skew(-2deg);\r\n    transform: skew(-2deg);\n}\n100% {\r\n    -webkit-transform: skew(0);\r\n    transform: skew(0);\n}\n}\n.hvr-wobble-skew {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-wobble-skew:hover, .hvr-wobble-skew:focus, .hvr-wobble-skew:active {\r\n  -webkit-animation-name: hvr-wobble-skew;\r\n  animation-name: hvr-wobble-skew;\r\n  -webkit-animation-duration: 1s;\r\n  animation-duration: 1s;\r\n  -webkit-animation-timing-function: ease-in-out;\r\n  animation-timing-function: ease-in-out;\r\n  -webkit-animation-iteration-count: 1;\r\n  animation-iteration-count: 1;\n}\r\n\r\n/* Buzz */\n@-webkit-keyframes hvr-buzz {\n50% {\r\n    -webkit-transform: translateX(3px) rotate(2deg);\r\n    transform: translateX(3px) rotate(2deg);\n}\n100% {\r\n    -webkit-transform: translateX(-3px) rotate(-2deg);\r\n    transform: translateX(-3px) rotate(-2deg);\n}\n}\n@keyframes hvr-buzz {\n50% {\r\n    -webkit-transform: translateX(3px) rotate(2deg);\r\n    transform: translateX(3px) rotate(2deg);\n}\n100% {\r\n    -webkit-transform: translateX(-3px) rotate(-2deg);\r\n    transform: translateX(-3px) rotate(-2deg);\n}\n}\n.hvr-buzz {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-buzz:hover, .hvr-buzz:focus, .hvr-buzz:active {\r\n  -webkit-animation-name: hvr-buzz;\r\n  animation-name: hvr-buzz;\r\n  -webkit-animation-duration: 0.15s;\r\n  animation-duration: 0.15s;\r\n  -webkit-animation-timing-function: linear;\r\n  animation-timing-function: linear;\r\n  -webkit-animation-iteration-count: infinite;\r\n  animation-iteration-count: infinite;\n}\r\n\r\n/* Buzz Out */\n@-webkit-keyframes hvr-buzz-out {\n10% {\r\n    -webkit-transform: translateX(3px) rotate(2deg);\r\n    transform: translateX(3px) rotate(2deg);\n}\n20% {\r\n    -webkit-transform: translateX(-3px) rotate(-2deg);\r\n    transform: translateX(-3px) rotate(-2deg);\n}\n30% {\r\n    -webkit-transform: translateX(3px) rotate(2deg);\r\n    transform: translateX(3px) rotate(2deg);\n}\n40% {\r\n    -webkit-transform: translateX(-3px) rotate(-2deg);\r\n    transform: translateX(-3px) rotate(-2deg);\n}\n50% {\r\n    -webkit-transform: translateX(2px) rotate(1deg);\r\n    transform: translateX(2px) rotate(1deg);\n}\n60% {\r\n    -webkit-transform: translateX(-2px) rotate(-1deg);\r\n    transform: translateX(-2px) rotate(-1deg);\n}\n70% {\r\n    -webkit-transform: translateX(2px) rotate(1deg);\r\n    transform: translateX(2px) rotate(1deg);\n}\n80% {\r\n    -webkit-transform: translateX(-2px) rotate(-1deg);\r\n    transform: translateX(-2px) rotate(-1deg);\n}\n90% {\r\n    -webkit-transform: translateX(1px) rotate(0);\r\n    transform: translateX(1px) rotate(0);\n}\n100% {\r\n    -webkit-transform: translateX(-1px) rotate(0);\r\n    transform: translateX(-1px) rotate(0);\n}\n}\n@keyframes hvr-buzz-out {\n10% {\r\n    -webkit-transform: translateX(3px) rotate(2deg);\r\n    transform: translateX(3px) rotate(2deg);\n}\n20% {\r\n    -webkit-transform: translateX(-3px) rotate(-2deg);\r\n    transform: translateX(-3px) rotate(-2deg);\n}\n30% {\r\n    -webkit-transform: translateX(3px) rotate(2deg);\r\n    transform: translateX(3px) rotate(2deg);\n}\n40% {\r\n    -webkit-transform: translateX(-3px) rotate(-2deg);\r\n    transform: translateX(-3px) rotate(-2deg);\n}\n50% {\r\n    -webkit-transform: translateX(2px) rotate(1deg);\r\n    transform: translateX(2px) rotate(1deg);\n}\n60% {\r\n    -webkit-transform: translateX(-2px) rotate(-1deg);\r\n    transform: translateX(-2px) rotate(-1deg);\n}\n70% {\r\n    -webkit-transform: translateX(2px) rotate(1deg);\r\n    transform: translateX(2px) rotate(1deg);\n}\n80% {\r\n    -webkit-transform: translateX(-2px) rotate(-1deg);\r\n    transform: translateX(-2px) rotate(-1deg);\n}\n90% {\r\n    -webkit-transform: translateX(1px) rotate(0);\r\n    transform: translateX(1px) rotate(0);\n}\n100% {\r\n    -webkit-transform: translateX(-1px) rotate(0);\r\n    transform: translateX(-1px) rotate(0);\n}\n}\n.hvr-buzz-out {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-buzz-out:hover, .hvr-buzz-out:focus, .hvr-buzz-out:active {\r\n  -webkit-animation-name: hvr-buzz-out;\r\n  animation-name: hvr-buzz-out;\r\n  -webkit-animation-duration: 0.75s;\r\n  animation-duration: 0.75s;\r\n  -webkit-animation-timing-function: linear;\r\n  animation-timing-function: linear;\r\n  -webkit-animation-iteration-count: 1;\r\n  animation-iteration-count: 1;\n}\r\n\r\n/* Forward */\n.hvr-forward {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\n}\n.hvr-forward:hover, .hvr-forward:focus, .hvr-forward:active {\r\n  -webkit-transform: translateX(8px);\r\n  transform: translateX(8px);\n}\r\n\r\n/* Backward */\n.hvr-backward {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\n}\n.hvr-backward:hover, .hvr-backward:focus, .hvr-backward:active {\r\n  -webkit-transform: translateX(-8px);\r\n  transform: translateX(-8px);\n}\r\n\r\n/* BACKGROUND TRANSITIONS */\r\n/* Fade */\n.hvr-fade {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  overflow: hidden;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: color, background-color;\r\n  transition-property: color, background-color;\n}\n.hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active {\r\n  background-color: #2098D1;\r\n  color: white;\n}\r\n\r\n/* Back Pulse */\n@-webkit-keyframes hvr-back-pulse {\n50% {\r\n    background-color: rgba(32, 152, 209, 0.75);\n}\n}\n@keyframes hvr-back-pulse {\n50% {\r\n    background-color: rgba(32, 152, 209, 0.75);\n}\n}\n.hvr-back-pulse {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  overflow: hidden;\r\n  -webkit-transition-duration: 0.5s;\r\n  transition-duration: 0.5s;\r\n  -webkit-transition-property: color, background-color;\r\n  transition-property: color, background-color;\n}\n.hvr-back-pulse:hover, .hvr-back-pulse:focus, .hvr-back-pulse:active {\r\n  -webkit-animation-name: hvr-back-pulse;\r\n  animation-name: hvr-back-pulse;\r\n  -webkit-animation-duration: 1s;\r\n  animation-duration: 1s;\r\n  -webkit-animation-delay: 0.5s;\r\n  animation-delay: 0.5s;\r\n  -webkit-animation-timing-function: linear;\r\n  animation-timing-function: linear;\r\n  -webkit-animation-iteration-count: infinite;\r\n  animation-iteration-count: infinite;\r\n  background-color: #2098D1;\r\n  background-color: #2098d1;\r\n  color: white;\n}\r\n\r\n/* Sweep To Right */\n.hvr-sweep-to-right {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  -webkit-transition-property: color;\r\n  transition-property: color;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-sweep-to-right:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background: #2098D1;\r\n  -webkit-transform: scaleX(0);\r\n  transform: scaleX(0);\r\n  -webkit-transform-origin: 0 50%;\r\n  transform-origin: 0 50%;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {\r\n  color: white;\n}\n.hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {\r\n  -webkit-transform: scaleX(1);\r\n  transform: scaleX(1);\n}\r\n\r\n/* Sweep To Left */\n.hvr-sweep-to-left {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  -webkit-transition-property: color;\r\n  transition-property: color;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-sweep-to-left:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background: #2098D1;\r\n  -webkit-transform: scaleX(0);\r\n  transform: scaleX(0);\r\n  -webkit-transform-origin: 100% 50%;\r\n  transform-origin: 100% 50%;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-sweep-to-left:hover, .hvr-sweep-to-left:focus, .hvr-sweep-to-left:active {\r\n  color: white;\n}\n.hvr-sweep-to-left:hover:before, .hvr-sweep-to-left:focus:before, .hvr-sweep-to-left:active:before {\r\n  -webkit-transform: scaleX(1);\r\n  transform: scaleX(1);\n}\r\n\r\n/* Sweep To Bottom */\n.hvr-sweep-to-bottom {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  -webkit-transition-property: color;\r\n  transition-property: color;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-sweep-to-bottom:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background: #2098D1;\r\n  -webkit-transform: scaleY(0);\r\n  transform: scaleY(0);\r\n  -webkit-transform-origin: 50% 0;\r\n  transform-origin: 50% 0;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-sweep-to-bottom:hover, .hvr-sweep-to-bottom:focus, .hvr-sweep-to-bottom:active {\r\n  color: white;\n}\n.hvr-sweep-to-bottom:hover:before, .hvr-sweep-to-bottom:focus:before, .hvr-sweep-to-bottom:active:before {\r\n  -webkit-transform: scaleY(1);\r\n  transform: scaleY(1);\n}\r\n\r\n/* Sweep To Top */\n.hvr-sweep-to-top {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  -webkit-transition-property: color;\r\n  transition-property: color;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-sweep-to-top:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background: #2098D1;\r\n  -webkit-transform: scaleY(0);\r\n  transform: scaleY(0);\r\n  -webkit-transform-origin: 50% 100%;\r\n  transform-origin: 50% 100%;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-sweep-to-top:hover, .hvr-sweep-to-top:focus, .hvr-sweep-to-top:active {\r\n  color: white;\n}\n.hvr-sweep-to-top:hover:before, .hvr-sweep-to-top:focus:before, .hvr-sweep-to-top:active:before {\r\n  -webkit-transform: scaleY(1);\r\n  transform: scaleY(1);\n}\r\n\r\n/* Bounce To Right */\n.hvr-bounce-to-right {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  -webkit-transition-property: color;\r\n  transition-property: color;\r\n  -webkit-transition-duration: 0.5s;\r\n  transition-duration: 0.5s;\n}\n.hvr-bounce-to-right:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background: #2098D1;\r\n  -webkit-transform: scaleX(0);\r\n  transform: scaleX(0);\r\n  -webkit-transform-origin: 0 50%;\r\n  transform-origin: 0 50%;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-duration: 0.5s;\r\n  transition-duration: 0.5s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-bounce-to-right:hover, .hvr-bounce-to-right:focus, .hvr-bounce-to-right:active {\r\n  color: white;\n}\n.hvr-bounce-to-right:hover:before, .hvr-bounce-to-right:focus:before, .hvr-bounce-to-right:active:before {\r\n  -webkit-transform: scaleX(1);\r\n  transform: scaleX(1);\r\n  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);\r\n  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);\n}\r\n\r\n/* Bounce To Left */\n.hvr-bounce-to-left {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  -webkit-transition-property: color;\r\n  transition-property: color;\r\n  -webkit-transition-duration: 0.5s;\r\n  transition-duration: 0.5s;\n}\n.hvr-bounce-to-left:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background: #2098D1;\r\n  -webkit-transform: scaleX(0);\r\n  transform: scaleX(0);\r\n  -webkit-transform-origin: 100% 50%;\r\n  transform-origin: 100% 50%;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-duration: 0.5s;\r\n  transition-duration: 0.5s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-bounce-to-left:hover, .hvr-bounce-to-left:focus, .hvr-bounce-to-left:active {\r\n  color: white;\n}\n.hvr-bounce-to-left:hover:before, .hvr-bounce-to-left:focus:before, .hvr-bounce-to-left:active:before {\r\n  -webkit-transform: scaleX(1);\r\n  transform: scaleX(1);\r\n  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);\r\n  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);\n}\r\n\r\n/* Bounce To Bottom */\n.hvr-bounce-to-bottom {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  -webkit-transition-property: color;\r\n  transition-property: color;\r\n  -webkit-transition-duration: 0.5s;\r\n  transition-duration: 0.5s;\n}\n.hvr-bounce-to-bottom:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background: #2098D1;\r\n  -webkit-transform: scaleY(0);\r\n  transform: scaleY(0);\r\n  -webkit-transform-origin: 50% 0;\r\n  transform-origin: 50% 0;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-duration: 0.5s;\r\n  transition-duration: 0.5s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-bounce-to-bottom:hover, .hvr-bounce-to-bottom:focus, .hvr-bounce-to-bottom:active {\r\n  color: white;\n}\n.hvr-bounce-to-bottom:hover:before, .hvr-bounce-to-bottom:focus:before, .hvr-bounce-to-bottom:active:before {\r\n  -webkit-transform: scaleY(1);\r\n  transform: scaleY(1);\r\n  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);\r\n  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);\n}\r\n\r\n/* Bounce To Top */\n.hvr-bounce-to-top {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  -webkit-transition-property: color;\r\n  transition-property: color;\r\n  -webkit-transition-duration: 0.5s;\r\n  transition-duration: 0.5s;\n}\n.hvr-bounce-to-top:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background: #2098D1;\r\n  -webkit-transform: scaleY(0);\r\n  transform: scaleY(0);\r\n  -webkit-transform-origin: 50% 100%;\r\n  transform-origin: 50% 100%;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-duration: 0.5s;\r\n  transition-duration: 0.5s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-bounce-to-top:hover, .hvr-bounce-to-top:focus, .hvr-bounce-to-top:active {\r\n  color: white;\n}\n.hvr-bounce-to-top:hover:before, .hvr-bounce-to-top:focus:before, .hvr-bounce-to-top:active:before {\r\n  -webkit-transform: scaleY(1);\r\n  transform: scaleY(1);\r\n  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);\r\n  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);\n}\r\n\r\n/* Radial Out */\n.hvr-radial-out {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  overflow: hidden;\r\n  background: #e1e1e1;\r\n  -webkit-transition-property: color;\r\n  transition-property: color;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-radial-out:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background: #2098D1;\r\n  border-radius: 100%;\r\n  -webkit-transform: scale(0);\r\n  transform: scale(0);\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-radial-out:hover, .hvr-radial-out:focus, .hvr-radial-out:active {\r\n  color: white;\n}\n.hvr-radial-out:hover:before, .hvr-radial-out:focus:before, .hvr-radial-out:active:before {\r\n  -webkit-transform: scale(2);\r\n  transform: scale(2);\n}\r\n\r\n/* Radial In */\n.hvr-radial-in {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  overflow: hidden;\r\n  background: #2098D1;\r\n  -webkit-transition-property: color;\r\n  transition-property: color;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-radial-in:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background: #e1e1e1;\r\n  border-radius: 100%;\r\n  -webkit-transform: scale(2);\r\n  transform: scale(2);\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-radial-in:hover, .hvr-radial-in:focus, .hvr-radial-in:active {\r\n  color: white;\n}\n.hvr-radial-in:hover:before, .hvr-radial-in:focus:before, .hvr-radial-in:active:before {\r\n  -webkit-transform: scale(0);\r\n  transform: scale(0);\n}\r\n\r\n/* Rectangle In */\n.hvr-rectangle-in {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  background: #2098D1;\r\n  -webkit-transition-property: color;\r\n  transition-property: color;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-rectangle-in:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background: #e1e1e1;\r\n  -webkit-transform: scale(1);\r\n  transform: scale(1);\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-rectangle-in:hover, .hvr-rectangle-in:focus, .hvr-rectangle-in:active {\r\n  color: white;\n}\n.hvr-rectangle-in:hover:before, .hvr-rectangle-in:focus:before, .hvr-rectangle-in:active:before {\r\n  -webkit-transform: scale(0);\r\n  transform: scale(0);\n}\r\n\r\n/* Rectangle Out */\n.hvr-rectangle-out {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  background: #e1e1e1;\r\n  -webkit-transition-property: color;\r\n  transition-property: color;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-rectangle-out:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background: #2098D1;\r\n  -webkit-transform: scale(0);\r\n  transform: scale(0);\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-rectangle-out:hover, .hvr-rectangle-out:focus, .hvr-rectangle-out:active {\r\n  color: white;\n}\n.hvr-rectangle-out:hover:before, .hvr-rectangle-out:focus:before, .hvr-rectangle-out:active:before {\r\n  -webkit-transform: scale(1);\r\n  transform: scale(1);\n}\r\n\r\n/* Shutter In Horizontal */\n.hvr-shutter-in-horizontal {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  background: #2098D1;\r\n  -webkit-transition-property: color;\r\n  transition-property: color;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-shutter-in-horizontal:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  background: #e1e1e1;\r\n  -webkit-transform: scaleX(1);\r\n  transform: scaleX(1);\r\n  -webkit-transform-origin: 50%;\r\n  transform-origin: 50%;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-shutter-in-horizontal:hover, .hvr-shutter-in-horizontal:focus, .hvr-shutter-in-horizontal:active {\r\n  color: white;\n}\n.hvr-shutter-in-horizontal:hover:before, .hvr-shutter-in-horizontal:focus:before, .hvr-shutter-in-horizontal:active:before {\r\n  -webkit-transform: scaleX(0);\r\n  transform: scaleX(0);\n}\r\n\r\n/* Shutter Out Horizontal */\n.hvr-shutter-out-horizontal {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  background: #e1e1e1;\r\n  -webkit-transition-property: color;\r\n  transition-property: color;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-shutter-out-horizontal:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  background: #2098D1;\r\n  -webkit-transform: scaleX(0);\r\n  transform: scaleX(0);\r\n  -webkit-transform-origin: 50%;\r\n  transform-origin: 50%;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-shutter-out-horizontal:hover, .hvr-shutter-out-horizontal:focus, .hvr-shutter-out-horizontal:active {\r\n  color: white;\n}\n.hvr-shutter-out-horizontal:hover:before, .hvr-shutter-out-horizontal:focus:before, .hvr-shutter-out-horizontal:active:before {\r\n  -webkit-transform: scaleX(1);\r\n  transform: scaleX(1);\n}\r\n\r\n/* Shutter In Vertical */\n.hvr-shutter-in-vertical {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  background: #2098D1;\r\n  -webkit-transition-property: color;\r\n  transition-property: color;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-shutter-in-vertical:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  background: #e1e1e1;\r\n  -webkit-transform: scaleY(1);\r\n  transform: scaleY(1);\r\n  -webkit-transform-origin: 50%;\r\n  transform-origin: 50%;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-shutter-in-vertical:hover, .hvr-shutter-in-vertical:focus, .hvr-shutter-in-vertical:active {\r\n  color: white;\n}\n.hvr-shutter-in-vertical:hover:before, .hvr-shutter-in-vertical:focus:before, .hvr-shutter-in-vertical:active:before {\r\n  -webkit-transform: scaleY(0);\r\n  transform: scaleY(0);\n}\r\n\r\n/* Shutter Out Vertical */\n.hvr-shutter-out-vertical {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  background: #e1e1e1;\r\n  -webkit-transition-property: color;\r\n  transition-property: color;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-shutter-out-vertical:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  background: #2098D1;\r\n  -webkit-transform: scaleY(0);\r\n  transform: scaleY(0);\r\n  -webkit-transform-origin: 50%;\r\n  transform-origin: 50%;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-shutter-out-vertical:hover, .hvr-shutter-out-vertical:focus, .hvr-shutter-out-vertical:active {\r\n  color: white;\n}\n.hvr-shutter-out-vertical:hover:before, .hvr-shutter-out-vertical:focus:before, .hvr-shutter-out-vertical:active:before {\r\n  -webkit-transform: scaleY(1);\r\n  transform: scaleY(1);\n}\r\n\r\n/* BORDER TRANSITIONS */\r\n/* Border Fade */\n.hvr-border-fade {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: box-shadow;\r\n  -webkit-transition-property: -webkit-box-shadow;\r\n  transition-property: -webkit-box-shadow;\r\n  transition-property: box-shadow;\r\n  transition-property: box-shadow, -webkit-box-shadow;\r\n  -webkit-box-shadow: inset 0 0 0 4px #e1e1e1, 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: inset 0 0 0 4px #e1e1e1, 0 0 1px rgba(0, 0, 0, 0);\r\n  /* Hack to improve aliasing on mobile/tablet devices */\n}\n.hvr-border-fade:hover, .hvr-border-fade:focus, .hvr-border-fade:active {\r\n  -webkit-box-shadow: inset 0 0 0 4px #2098D1, 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: inset 0 0 0 4px #2098D1, 0 0 1px rgba(0, 0, 0, 0);\r\n  /* Hack to improve aliasing on mobile/tablet devices */\n}\r\n\r\n/* Hollow */\n.hvr-hollow {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: background;\r\n  transition-property: background;\r\n  -webkit-box-shadow: inset 0 0 0 4px #e1e1e1, 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: inset 0 0 0 4px #e1e1e1, 0 0 1px rgba(0, 0, 0, 0);\r\n  /* Hack to improve aliasing on mobile/tablet devices */\n}\n.hvr-hollow:hover, .hvr-hollow:focus, .hvr-hollow:active {\r\n  background: none;\n}\r\n\r\n/* Trim */\n.hvr-trim {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\n}\n.hvr-trim:before {\r\n  content: '';\r\n  position: absolute;\r\n  border: white solid 4px;\r\n  top: 4px;\r\n  left: 4px;\r\n  right: 4px;\r\n  bottom: 4px;\r\n  opacity: 0;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: opacity;\r\n  transition-property: opacity;\n}\n.hvr-trim:hover:before, .hvr-trim:focus:before, .hvr-trim:active:before {\r\n  opacity: 1;\n}\r\n\r\n/* Ripple Out */\n@-webkit-keyframes hvr-ripple-out {\n100% {\r\n    top: -12px;\r\n    right: -12px;\r\n    bottom: -12px;\r\n    left: -12px;\r\n    opacity: 0;\n}\n}\n@keyframes hvr-ripple-out {\n100% {\r\n    top: -12px;\r\n    right: -12px;\r\n    bottom: -12px;\r\n    left: -12px;\r\n    opacity: 0;\n}\n}\n.hvr-ripple-out {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\n}\n.hvr-ripple-out:before {\r\n  content: '';\r\n  position: absolute;\r\n  border: #e1e1e1 solid 6px;\r\n  top: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  -webkit-animation-duration: 1s;\r\n  animation-duration: 1s;\n}\n.hvr-ripple-out:hover:before, .hvr-ripple-out:focus:before, .hvr-ripple-out:active:before {\r\n  -webkit-animation-name: hvr-ripple-out;\r\n  animation-name: hvr-ripple-out;\n}\r\n\r\n/* Ripple In */\n@-webkit-keyframes hvr-ripple-in {\n100% {\r\n    top: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    opacity: 1;\n}\n}\n@keyframes hvr-ripple-in {\n100% {\r\n    top: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    opacity: 1;\n}\n}\n.hvr-ripple-in {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\n}\n.hvr-ripple-in:before {\r\n  content: '';\r\n  position: absolute;\r\n  border: #e1e1e1 solid 4px;\r\n  top: -12px;\r\n  right: -12px;\r\n  bottom: -12px;\r\n  left: -12px;\r\n  opacity: 0;\r\n  -webkit-animation-duration: 1s;\r\n  animation-duration: 1s;\n}\n.hvr-ripple-in:hover:before, .hvr-ripple-in:focus:before, .hvr-ripple-in:active:before {\r\n  -webkit-animation-name: hvr-ripple-in;\r\n  animation-name: hvr-ripple-in;\n}\r\n\r\n/* Outline Out */\n.hvr-outline-out {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\n}\n.hvr-outline-out:before {\r\n  content: '';\r\n  position: absolute;\r\n  border: #e1e1e1 solid 4px;\r\n  top: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: top, right, bottom, left;\r\n  transition-property: top, right, bottom, left;\n}\n.hvr-outline-out:hover:before, .hvr-outline-out:focus:before, .hvr-outline-out:active:before {\r\n  top: -8px;\r\n  right: -8px;\r\n  bottom: -8px;\r\n  left: -8px;\n}\r\n\r\n/* Outline In */\n.hvr-outline-in {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\n}\n.hvr-outline-in:before {\r\n  pointer-events: none;\r\n  content: '';\r\n  position: absolute;\r\n  border: #e1e1e1 solid 4px;\r\n  top: -16px;\r\n  right: -16px;\r\n  bottom: -16px;\r\n  left: -16px;\r\n  opacity: 0;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: top, right, bottom, left;\r\n  transition-property: top, right, bottom, left;\n}\n.hvr-outline-in:hover:before, .hvr-outline-in:focus:before, .hvr-outline-in:active:before {\r\n  top: -8px;\r\n  right: -8px;\r\n  bottom: -8px;\r\n  left: -8px;\r\n  opacity: 1;\n}\r\n\r\n/* Round Corners */\n.hvr-round-corners {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: border-radius;\r\n  transition-property: border-radius;\n}\n.hvr-round-corners:hover, .hvr-round-corners:focus, .hvr-round-corners:active {\r\n  border-radius: 1em;\n}\r\n\r\n/* Underline From Left */\n.hvr-underline-from-left {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  overflow: hidden;\n}\n.hvr-underline-from-left:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  left: 0;\r\n  right: 100%;\r\n  bottom: 0;\r\n  background: #2098D1;\r\n  height: 4px;\r\n  -webkit-transition-property: right;\r\n  transition-property: right;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-underline-from-left:hover:before, .hvr-underline-from-left:focus:before, .hvr-underline-from-left:active:before {\r\n  right: 0;\n}\r\n\r\n/* Underline From Center */\n.hvr-underline-from-center {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  overflow: hidden;\n}\n.hvr-underline-from-center:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  left: 51%;\r\n  right: 51%;\r\n  bottom: 0;\r\n  background: #2098D1;\r\n  height: 4px;\r\n  -webkit-transition-property: left, right;\r\n  transition-property: left, right;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {\r\n  left: 0;\r\n  right: 0;\n}\r\n\r\n/* Underline From Right */\n.hvr-underline-from-right {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  overflow: hidden;\n}\n.hvr-underline-from-right:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  left: 100%;\r\n  right: 0;\r\n  bottom: 0;\r\n  background: #2098D1;\r\n  height: 4px;\r\n  -webkit-transition-property: left;\r\n  transition-property: left;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-underline-from-right:hover:before, .hvr-underline-from-right:focus:before, .hvr-underline-from-right:active:before {\r\n  left: 0;\n}\r\n\r\n/* Overline From Left */\n.hvr-overline-from-left {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  overflow: hidden;\n}\n.hvr-overline-from-left:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  left: 0;\r\n  right: 100%;\r\n  top: 0;\r\n  background: #2098D1;\r\n  height: 4px;\r\n  -webkit-transition-property: right;\r\n  transition-property: right;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-overline-from-left:hover:before, .hvr-overline-from-left:focus:before, .hvr-overline-from-left:active:before {\r\n  right: 0;\n}\r\n\r\n/* Overline From Center */\n.hvr-overline-from-center {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  overflow: hidden;\n}\n.hvr-overline-from-center:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  left: 51%;\r\n  right: 51%;\r\n  top: 0;\r\n  background: #2098D1;\r\n  height: 4px;\r\n  -webkit-transition-property: left, right;\r\n  transition-property: left, right;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-overline-from-center:hover:before, .hvr-overline-from-center:focus:before, .hvr-overline-from-center:active:before {\r\n  left: 0;\r\n  right: 0;\n}\r\n\r\n/* Overline From Right */\n.hvr-overline-from-right {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  overflow: hidden;\n}\n.hvr-overline-from-right:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  left: 100%;\r\n  right: 0;\r\n  top: 0;\r\n  background: #2098D1;\r\n  height: 4px;\r\n  -webkit-transition-property: left;\r\n  transition-property: left;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-overline-from-right:hover:before, .hvr-overline-from-right:focus:before, .hvr-overline-from-right:active:before {\r\n  left: 0;\n}\r\n\r\n/* Reveal */\n.hvr-reveal {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  overflow: hidden;\n}\n.hvr-reveal:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  left: 0;\r\n  right: 0;\r\n  top: 0;\r\n  bottom: 0;\r\n  border-color: #2098D1;\r\n  border-style: solid;\r\n  border-width: 0;\r\n  -webkit-transition-property: border-width;\r\n  transition-property: border-width;\r\n  -webkit-transition-duration: 0.1s;\r\n  transition-duration: 0.1s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-reveal:hover:before, .hvr-reveal:focus:before, .hvr-reveal:active:before {\r\n  -webkit-transform: translateY(0);\r\n  transform: translateY(0);\r\n  border-width: 4px;\n}\r\n\r\n/* Underline Reveal */\n.hvr-underline-reveal {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  overflow: hidden;\n}\n.hvr-underline-reveal:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  left: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  background: #2098D1;\r\n  height: 4px;\r\n  -webkit-transform: translateY(4px);\r\n  transform: translateY(4px);\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-underline-reveal:hover:before, .hvr-underline-reveal:focus:before, .hvr-underline-reveal:active:before {\r\n  -webkit-transform: translateY(0);\r\n  transform: translateY(0);\n}\r\n\r\n/* Overline Reveal */\n.hvr-overline-reveal {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  overflow: hidden;\n}\n.hvr-overline-reveal:before {\r\n  content: \"\";\r\n  position: absolute;\r\n  z-index: -1;\r\n  left: 0;\r\n  right: 0;\r\n  top: 0;\r\n  background: #2098D1;\r\n  height: 4px;\r\n  -webkit-transform: translateY(-4px);\r\n  transform: translateY(-4px);\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-overline-reveal:hover:before, .hvr-overline-reveal:focus:before, .hvr-overline-reveal:active:before {\r\n  -webkit-transform: translateY(0);\r\n  transform: translateY(0);\n}\r\n\r\n/* SHADOW/GLOW TRANSITIONS */\r\n/* Glow */\n.hvr-glow {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: box-shadow;\r\n  -webkit-transition-property: -webkit-box-shadow;\r\n  transition-property: -webkit-box-shadow;\r\n  transition-property: box-shadow;\r\n  transition-property: box-shadow, -webkit-box-shadow;\n}\n.hvr-glow:hover, .hvr-glow:focus, .hvr-glow:active {\r\n  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);\r\n          box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);\n}\r\n\r\n/* Shadow */\n.hvr-shadow {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: box-shadow;\r\n  -webkit-transition-property: -webkit-box-shadow;\r\n  transition-property: -webkit-box-shadow;\r\n  transition-property: box-shadow;\r\n  transition-property: box-shadow, -webkit-box-shadow;\n}\n.hvr-shadow:hover, .hvr-shadow:focus, .hvr-shadow:active {\r\n  -webkit-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);\r\n          box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);\n}\r\n\r\n/* Grow Shadow */\n.hvr-grow-shadow {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: box-shadow, transform;\r\n  -webkit-transition-property: -webkit-box-shadow, -webkit-transform;\r\n  transition-property: -webkit-box-shadow, -webkit-transform;\r\n  transition-property: box-shadow, transform;\r\n  transition-property: box-shadow, transform, -webkit-box-shadow, -webkit-transform;\n}\n.hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {\r\n  -webkit-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);\r\n          box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);\r\n  -webkit-transform: scale(1.1);\r\n  transform: scale(1.1);\n}\r\n\r\n/* Box Shadow Outset */\n.hvr-box-shadow-outset {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: box-shadow;\r\n  -webkit-transition-property: -webkit-box-shadow;\r\n  transition-property: -webkit-box-shadow;\r\n  transition-property: box-shadow;\r\n  transition-property: box-shadow, -webkit-box-shadow;\n}\n.hvr-box-shadow-outset:hover, .hvr-box-shadow-outset:focus, .hvr-box-shadow-outset:active {\r\n  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);\r\n          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);\n}\r\n\r\n/* Box Shadow Inset */\n.hvr-box-shadow-inset {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: box-shadow;\r\n  -webkit-transition-property: -webkit-box-shadow;\r\n  transition-property: -webkit-box-shadow;\r\n  transition-property: box-shadow;\r\n  transition-property: box-shadow, -webkit-box-shadow;\r\n  -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0);\r\n  /* Hack to improve aliasing on mobile/tablet devices */\n}\n.hvr-box-shadow-inset:hover, .hvr-box-shadow-inset:focus, .hvr-box-shadow-inset:active {\r\n  -webkit-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.6), 0 0 1px rgba(0, 0, 0, 0);\r\n  /* Hack to improve aliasing on mobile/tablet devices */\n}\r\n\r\n/* Float Shadow */\n.hvr-float-shadow {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\n}\n.hvr-float-shadow:before {\r\n  pointer-events: none;\r\n  position: absolute;\r\n  z-index: -1;\r\n  content: '';\r\n  top: 100%;\r\n  left: 5%;\r\n  height: 10px;\r\n  width: 90%;\r\n  opacity: 0;\r\n  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);\r\n  /* W3C */\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform, opacity;\r\n  -webkit-transition-property: opacity, -webkit-transform;\r\n  transition-property: opacity, -webkit-transform;\r\n  transition-property: transform, opacity;\r\n  transition-property: transform, opacity, -webkit-transform;\n}\n.hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {\r\n  -webkit-transform: translateY(-5px);\r\n  transform: translateY(-5px);\r\n  /* move the element up by 5px */\n}\n.hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {\r\n  opacity: 1;\r\n  -webkit-transform: translateY(5px);\r\n  transform: translateY(5px);\r\n  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */\n}\r\n\r\n/* Shadow Radial */\n.hvr-shadow-radial {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\n}\n.hvr-shadow-radial:before, .hvr-shadow-radial:after {\r\n  pointer-events: none;\r\n  position: absolute;\r\n  content: '';\r\n  left: 0;\r\n  width: 100%;\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\r\n  background-repeat: no-repeat;\r\n  height: 5px;\r\n  opacity: 0;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: opacity;\r\n  transition-property: opacity;\n}\n.hvr-shadow-radial:before {\r\n  bottom: 100%;\r\n  background: radial-gradient(ellipse at 50% 150%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);\n}\n.hvr-shadow-radial:after {\r\n  top: 100%;\r\n  background: radial-gradient(ellipse at 50% -50%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);\n}\n.hvr-shadow-radial:hover:before, .hvr-shadow-radial:focus:before, .hvr-shadow-radial:active:before, .hvr-shadow-radial:hover:after, .hvr-shadow-radial:focus:after, .hvr-shadow-radial:active:after {\r\n  opacity: 1;\n}\r\n\r\n/* SPEECH BUBBLES */\r\n/* Bubble Top */\n.hvr-bubble-top {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\n}\n.hvr-bubble-top:before {\r\n  pointer-events: none;\r\n  position: absolute;\r\n  z-index: -1;\r\n  content: '';\r\n  border-style: solid;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  left: calc(50% - 10px);\r\n  top: 0;\r\n  border-width: 0 10px 10px 10px;\r\n  border-color: transparent transparent #e1e1e1 transparent;\n}\n.hvr-bubble-top:hover:before, .hvr-bubble-top:focus:before, .hvr-bubble-top:active:before {\r\n  -webkit-transform: translateY(-10px);\r\n  transform: translateY(-10px);\n}\r\n\r\n/* Bubble Right */\n.hvr-bubble-right {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\n}\n.hvr-bubble-right:before {\r\n  pointer-events: none;\r\n  position: absolute;\r\n  z-index: -1;\r\n  content: '';\r\n  border-style: solid;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  top: calc(50% - 10px);\r\n  right: 0;\r\n  border-width: 10px 0 10px 10px;\r\n  border-color: transparent transparent transparent #e1e1e1;\n}\n.hvr-bubble-right:hover:before, .hvr-bubble-right:focus:before, .hvr-bubble-right:active:before {\r\n  -webkit-transform: translateX(10px);\r\n  transform: translateX(10px);\n}\r\n\r\n/* Bubble Bottom */\n.hvr-bubble-bottom {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\n}\n.hvr-bubble-bottom:before {\r\n  pointer-events: none;\r\n  position: absolute;\r\n  z-index: -1;\r\n  content: '';\r\n  border-style: solid;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  left: calc(50% - 10px);\r\n  bottom: 0;\r\n  border-width: 10px 10px 0 10px;\r\n  border-color: #e1e1e1 transparent transparent transparent;\n}\n.hvr-bubble-bottom:hover:before, .hvr-bubble-bottom:focus:before, .hvr-bubble-bottom:active:before {\r\n  -webkit-transform: translateY(10px);\r\n  transform: translateY(10px);\n}\r\n\r\n/* Bubble Left */\n.hvr-bubble-left {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\n}\n.hvr-bubble-left:before {\r\n  pointer-events: none;\r\n  position: absolute;\r\n  z-index: -1;\r\n  content: '';\r\n  border-style: solid;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  top: calc(50% - 10px);\r\n  left: 0;\r\n  border-width: 10px 10px 10px 0;\r\n  border-color: transparent #e1e1e1 transparent transparent;\n}\n.hvr-bubble-left:hover:before, .hvr-bubble-left:focus:before, .hvr-bubble-left:active:before {\r\n  -webkit-transform: translateX(-10px);\r\n  transform: translateX(-10px);\n}\r\n\r\n/* Bubble Float Top */\n.hvr-bubble-float-top {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\n}\n.hvr-bubble-float-top:before {\r\n  position: absolute;\r\n  z-index: -1;\r\n  content: '';\r\n  left: calc(50% - 10px);\r\n  top: 0;\r\n  border-style: solid;\r\n  border-width: 0 10px 10px 10px;\r\n  border-color: transparent transparent #e1e1e1 transparent;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\n}\n.hvr-bubble-float-top:hover, .hvr-bubble-float-top:focus, .hvr-bubble-float-top:active {\r\n  -webkit-transform: translateY(10px);\r\n  transform: translateY(10px);\n}\n.hvr-bubble-float-top:hover:before, .hvr-bubble-float-top:focus:before, .hvr-bubble-float-top:active:before {\r\n  -webkit-transform: translateY(-10px);\r\n  transform: translateY(-10px);\n}\r\n\r\n/* Bubble Float Right */\n.hvr-bubble-float-right {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\n}\n.hvr-bubble-float-right:before {\r\n  position: absolute;\r\n  z-index: -1;\r\n  top: calc(50% - 10px);\r\n  right: 0;\r\n  content: '';\r\n  border-style: solid;\r\n  border-width: 10px 0 10px 10px;\r\n  border-color: transparent transparent transparent #e1e1e1;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\n}\n.hvr-bubble-float-right:hover, .hvr-bubble-float-right:focus, .hvr-bubble-float-right:active {\r\n  -webkit-transform: translateX(-10px);\r\n  transform: translateX(-10px);\n}\n.hvr-bubble-float-right:hover:before, .hvr-bubble-float-right:focus:before, .hvr-bubble-float-right:active:before {\r\n  -webkit-transform: translateX(10px);\r\n  transform: translateX(10px);\n}\r\n\r\n/* Bubble Float Bottom */\n.hvr-bubble-float-bottom {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\n}\n.hvr-bubble-float-bottom:before {\r\n  position: absolute;\r\n  z-index: -1;\r\n  content: '';\r\n  left: calc(50% - 10px);\r\n  bottom: 0;\r\n  border-style: solid;\r\n  border-width: 10px 10px 0 10px;\r\n  border-color: #e1e1e1 transparent transparent transparent;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\n}\n.hvr-bubble-float-bottom:hover, .hvr-bubble-float-bottom:focus, .hvr-bubble-float-bottom:active {\r\n  -webkit-transform: translateY(-10px);\r\n  transform: translateY(-10px);\n}\n.hvr-bubble-float-bottom:hover:before, .hvr-bubble-float-bottom:focus:before, .hvr-bubble-float-bottom:active:before {\r\n  -webkit-transform: translateY(10px);\r\n  transform: translateY(10px);\n}\r\n\r\n/* Bubble Float Left */\n.hvr-bubble-float-left {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\n}\n.hvr-bubble-float-left:before {\r\n  position: absolute;\r\n  z-index: -1;\r\n  content: '';\r\n  top: calc(50% - 10px);\r\n  left: 0;\r\n  border-style: solid;\r\n  border-width: 10px 10px 10px 0;\r\n  border-color: transparent #e1e1e1 transparent transparent;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\n}\n.hvr-bubble-float-left:hover, .hvr-bubble-float-left:focus, .hvr-bubble-float-left:active {\r\n  -webkit-transform: translateX(10px);\r\n  transform: translateX(10px);\n}\n.hvr-bubble-float-left:hover:before, .hvr-bubble-float-left:focus:before, .hvr-bubble-float-left:active:before {\r\n  -webkit-transform: translateX(-10px);\r\n  transform: translateX(-10px);\n}\r\n\r\n/* ICONS */\r\n/* Icon Back */\n.hvr-icon-back {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.1s;\r\n  transition-duration: 0.1s;\n}\n.hvr-icon-back .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-transition-duration: 0.1s;\r\n  transition-duration: 0.1s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-icon-back:hover .hvr-icon, .hvr-icon-back:focus .hvr-icon, .hvr-icon-back:active .hvr-icon {\r\n  -webkit-transform: translateX(-4px);\r\n  transform: translateX(-4px);\n}\r\n\r\n/* Icon Forward */\n.hvr-icon-forward {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.1s;\r\n  transition-duration: 0.1s;\n}\n.hvr-icon-forward .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-transition-duration: 0.1s;\r\n  transition-duration: 0.1s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-icon-forward:hover .hvr-icon, .hvr-icon-forward:focus .hvr-icon, .hvr-icon-forward:active .hvr-icon {\r\n  -webkit-transform: translateX(4px);\r\n  transform: translateX(4px);\n}\r\n\r\n/* Icon Down */\n@-webkit-keyframes hvr-icon-down {\n0%,\r\n\t50%,\r\n\t100% {\r\n    -webkit-transform: translateY(0);\r\n    transform: translateY(0);\n}\n25%,\r\n\t75% {\r\n    -webkit-transform: translateY(6px);\r\n    transform: translateY(6px);\n}\n}\n@keyframes hvr-icon-down {\n0%,\r\n\t50%,\r\n\t100% {\r\n    -webkit-transform: translateY(0);\r\n    transform: translateY(0);\n}\n25%,\r\n\t75% {\r\n    -webkit-transform: translateY(6px);\r\n    transform: translateY(6px);\n}\n}\r\n/* Icon Down */\n.hvr-icon-down {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-icon-down .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\n}\n.hvr-icon-down:hover .hvr-icon, .hvr-icon-down:focus .hvr-icon, .hvr-icon-down:active .hvr-icon {\r\n  -webkit-animation-name: hvr-icon-down;\r\n  animation-name: hvr-icon-down;\r\n  -webkit-animation-duration: 0.75s;\r\n  animation-duration: 0.75s;\r\n  -webkit-animation-timing-function: ease-out;\r\n  animation-timing-function: ease-out;\n}\r\n\r\n/* Icon Up */\n@-webkit-keyframes hvr-icon-up {\n0%,\r\n\t50%,\r\n\t100% {\r\n    -webkit-transform: translateY(0);\r\n    transform: translateY(0);\n}\n25%,\r\n\t75% {\r\n    -webkit-transform: translateY(-6px);\r\n    transform: translateY(-6px);\n}\n}\n@keyframes hvr-icon-up {\n0%,\r\n\t50%,\r\n\t100% {\r\n    -webkit-transform: translateY(0);\r\n    transform: translateY(0);\n}\n25%,\r\n\t75% {\r\n    -webkit-transform: translateY(-6px);\r\n    transform: translateY(-6px);\n}\n}\r\n/* Icon Up */\n.hvr-icon-up {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-icon-up .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\n}\n.hvr-icon-up:hover .hvr-icon, .hvr-icon-up:focus .hvr-icon, .hvr-icon-up:active .hvr-icon {\r\n  -webkit-animation-name: hvr-icon-up;\r\n  animation-name: hvr-icon-up;\r\n  -webkit-animation-duration: 0.75s;\r\n  animation-duration: 0.75s;\r\n  -webkit-animation-timing-function: ease-out;\r\n  animation-timing-function: ease-out;\n}\r\n\r\n/* Icon Spin */\n.hvr-icon-spin {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-icon-spin .hvr-icon {\r\n  -webkit-transition-duration: 1s;\r\n  transition-duration: 1s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-timing-function: ease-in-out;\r\n  transition-timing-function: ease-in-out;\n}\n.hvr-icon-spin:hover .hvr-icon, .hvr-icon-spin:focus .hvr-icon, .hvr-icon-spin:active .hvr-icon {\r\n  -webkit-transform: rotate(360deg);\r\n  transform: rotate(360deg);\n}\r\n\r\n/* Icon Drop */\n@-webkit-keyframes hvr-icon-drop {\n0% {\r\n    opacity: 0;\n}\n50% {\r\n    opacity: 0;\r\n    -webkit-transform: translateY(-100%);\r\n    transform: translateY(-100%);\n}\n51%,\r\n\t100% {\r\n    opacity: 1;\n}\n}\n@keyframes hvr-icon-drop {\n0% {\r\n    opacity: 0;\n}\n50% {\r\n    opacity: 0;\r\n    -webkit-transform: translateY(-100%);\r\n    transform: translateY(-100%);\n}\n51%,\r\n\t100% {\r\n    opacity: 1;\n}\n}\r\n/* Icon Drop */\n.hvr-icon-drop {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-icon-drop .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\n}\n.hvr-icon-drop:hover .hvr-icon, .hvr-icon-drop:focus .hvr-icon, .hvr-icon-drop:active .hvr-icon {\r\n  opacity: 0;\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-animation-name: hvr-icon-drop;\r\n  animation-name: hvr-icon-drop;\r\n  -webkit-animation-duration: 0.5s;\r\n  animation-duration: 0.5s;\r\n  -webkit-animation-delay: 0.3s;\r\n  animation-delay: 0.3s;\r\n  -webkit-animation-fill-mode: forwards;\r\n  animation-fill-mode: forwards;\r\n  -webkit-animation-timing-function: ease-in-out;\r\n  animation-timing-function: ease-in-out;\r\n  -webkit-animation-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);\r\n  animation-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);\n}\r\n\r\n/* Icon Fade */\n.hvr-icon-fade {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-icon-fade .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-transition-duration: 0.5s;\r\n  transition-duration: 0.5s;\r\n  -webkit-transition-property: color;\r\n  transition-property: color;\n}\n.hvr-icon-fade:hover .hvr-icon, .hvr-icon-fade:focus .hvr-icon, .hvr-icon-fade:active .hvr-icon {\r\n  color: #0F9E5E;\n}\r\n\r\n/* Icon Float Away */\n@-webkit-keyframes hvr-icon-float-away {\n0% {\r\n    opacity: 1;\n}\n100% {\r\n    opacity: 0;\r\n    -webkit-transform: translateY(-1em);\r\n    transform: translateY(-1em);\n}\n}\n@keyframes hvr-icon-float-away {\n0% {\r\n    opacity: 1;\n}\n100% {\r\n    opacity: 0;\r\n    -webkit-transform: translateY(-1em);\r\n    transform: translateY(-1em);\n}\n}\r\n/* Icon Float Away */\n.hvr-icon-float-away {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-icon-float-away .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-animation-duration: 0.5s;\r\n  animation-duration: 0.5s;\r\n  -webkit-animation-fill-mode: forwards;\r\n  animation-fill-mode: forwards;\n}\n.hvr-icon-float-away:hover .hvr-icon, .hvr-icon-float-away:focus .hvr-icon, .hvr-icon-float-away:active .hvr-icon {\r\n  -webkit-animation-name: hvr-icon-float-away;\r\n  animation-name: hvr-icon-float-away;\r\n  -webkit-animation-timing-function: ease-out;\r\n  animation-timing-function: ease-out;\n}\r\n\r\n/* Icon Sink Away */\n@-webkit-keyframes hvr-icon-sink-away {\n0% {\r\n    opacity: 1;\n}\n100% {\r\n    opacity: 0;\r\n    -webkit-transform: translateY(1em);\r\n    transform: translateY(1em);\n}\n}\n@keyframes hvr-icon-sink-away {\n0% {\r\n    opacity: 1;\n}\n100% {\r\n    opacity: 0;\r\n    -webkit-transform: translateY(1em);\r\n    transform: translateY(1em);\n}\n}\r\n/* Icon Sink Away */\n.hvr-icon-sink-away {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-icon-sink-away .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-animation-duration: 0.5s;\r\n  animation-duration: 0.5s;\r\n  -webkit-animation-fill-mode: forwards;\r\n  animation-fill-mode: forwards;\n}\n.hvr-icon-sink-away:hover .hvr-icon, .hvr-icon-sink-away:focus .hvr-icon, .hvr-icon-sink-away:active .hvr-icon {\r\n  -webkit-animation-name: hvr-icon-sink-away;\r\n  animation-name: hvr-icon-sink-away;\r\n  -webkit-animation-timing-function: ease-out;\r\n  animation-timing-function: ease-out;\n}\r\n\r\n/* Icon Grow */\n.hvr-icon-grow {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-icon-grow .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-icon-grow:hover .hvr-icon, .hvr-icon-grow:focus .hvr-icon, .hvr-icon-grow:active .hvr-icon {\r\n  -webkit-transform: scale(1.3) translateZ(0);\r\n  transform: scale(1.3) translateZ(0);\n}\r\n\r\n/* Icon Shrink */\n.hvr-icon-shrink {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-icon-shrink .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-icon-shrink:hover .hvr-icon, .hvr-icon-shrink:focus .hvr-icon, .hvr-icon-shrink:active .hvr-icon {\r\n  -webkit-transform: scale(0.8);\r\n  transform: scale(0.8);\n}\r\n\r\n/* Icon Pulse */\n@-webkit-keyframes hvr-icon-pulse {\n25% {\r\n    -webkit-transform: scale(1.3);\r\n    transform: scale(1.3);\n}\n75% {\r\n    -webkit-transform: scale(0.8);\r\n    transform: scale(0.8);\n}\n}\n@keyframes hvr-icon-pulse {\n25% {\r\n    -webkit-transform: scale(1.3);\r\n    transform: scale(1.3);\n}\n75% {\r\n    -webkit-transform: scale(0.8);\r\n    transform: scale(0.8);\n}\n}\n.hvr-icon-pulse {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-icon-pulse .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-icon-pulse:hover .hvr-icon, .hvr-icon-pulse:focus .hvr-icon, .hvr-icon-pulse:active .hvr-icon {\r\n  -webkit-animation-name: hvr-icon-pulse;\r\n  animation-name: hvr-icon-pulse;\r\n  -webkit-animation-duration: 1s;\r\n  animation-duration: 1s;\r\n  -webkit-animation-timing-function: linear;\r\n  animation-timing-function: linear;\r\n  -webkit-animation-iteration-count: infinite;\r\n  animation-iteration-count: infinite;\n}\r\n\r\n/* Icon Pulse Grow */\n@-webkit-keyframes hvr-icon-pulse-grow {\nto {\r\n    -webkit-transform: scale(1.3);\r\n    transform: scale(1.3);\n}\n}\n@keyframes hvr-icon-pulse-grow {\nto {\r\n    -webkit-transform: scale(1.3);\r\n    transform: scale(1.3);\n}\n}\n.hvr-icon-pulse-grow {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-icon-pulse-grow .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-icon-pulse-grow:hover .hvr-icon, .hvr-icon-pulse-grow:focus .hvr-icon, .hvr-icon-pulse-grow:active .hvr-icon {\r\n  -webkit-animation-name: hvr-icon-pulse-grow;\r\n  animation-name: hvr-icon-pulse-grow;\r\n  -webkit-animation-duration: 0.3s;\r\n  animation-duration: 0.3s;\r\n  -webkit-animation-timing-function: linear;\r\n  animation-timing-function: linear;\r\n  -webkit-animation-iteration-count: infinite;\r\n  animation-iteration-count: infinite;\r\n  -webkit-animation-direction: alternate;\r\n  animation-direction: alternate;\n}\r\n\r\n/* Icon Pulse Shrink */\n@-webkit-keyframes hvr-icon-pulse-shrink {\nto {\r\n    -webkit-transform: scale(0.8);\r\n    transform: scale(0.8);\n}\n}\n@keyframes hvr-icon-pulse-shrink {\nto {\r\n    -webkit-transform: scale(0.8);\r\n    transform: scale(0.8);\n}\n}\n.hvr-icon-pulse-shrink {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\n}\n.hvr-icon-pulse-shrink .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-icon-pulse-shrink:hover .hvr-icon, .hvr-icon-pulse-shrink:focus .hvr-icon, .hvr-icon-pulse-shrink:active .hvr-icon {\r\n  -webkit-animation-name: hvr-icon-pulse-shrink;\r\n  animation-name: hvr-icon-pulse-shrink;\r\n  -webkit-animation-duration: 0.3s;\r\n  animation-duration: 0.3s;\r\n  -webkit-animation-timing-function: linear;\r\n  animation-timing-function: linear;\r\n  -webkit-animation-iteration-count: infinite;\r\n  animation-iteration-count: infinite;\r\n  -webkit-animation-direction: alternate;\r\n  animation-direction: alternate;\n}\r\n\r\n/* Icon Push */\n@-webkit-keyframes hvr-icon-push {\n50% {\r\n    -webkit-transform: scale(0.5);\r\n    transform: scale(0.5);\n}\n}\n@keyframes hvr-icon-push {\n50% {\r\n    -webkit-transform: scale(0.5);\r\n    transform: scale(0.5);\n}\n}\n.hvr-icon-push {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-icon-push .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-icon-push:hover .hvr-icon, .hvr-icon-push:focus .hvr-icon, .hvr-icon-push:active .hvr-icon {\r\n  -webkit-animation-name: hvr-icon-push;\r\n  animation-name: hvr-icon-push;\r\n  -webkit-animation-duration: 0.3s;\r\n  animation-duration: 0.3s;\r\n  -webkit-animation-timing-function: linear;\r\n  animation-timing-function: linear;\r\n  -webkit-animation-iteration-count: 1;\r\n  animation-iteration-count: 1;\n}\r\n\r\n/* Icon Pop */\n@-webkit-keyframes hvr-icon-pop {\n50% {\r\n    -webkit-transform: scale(1.5);\r\n    transform: scale(1.5);\n}\n}\n@keyframes hvr-icon-pop {\n50% {\r\n    -webkit-transform: scale(1.5);\r\n    transform: scale(1.5);\n}\n}\n.hvr-icon-pop {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-icon-pop .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-icon-pop:hover .hvr-icon, .hvr-icon-pop:focus .hvr-icon, .hvr-icon-pop:active .hvr-icon {\r\n  -webkit-animation-name: hvr-icon-pop;\r\n  animation-name: hvr-icon-pop;\r\n  -webkit-animation-duration: 0.3s;\r\n  animation-duration: 0.3s;\r\n  -webkit-animation-timing-function: linear;\r\n  animation-timing-function: linear;\r\n  -webkit-animation-iteration-count: 1;\r\n  animation-iteration-count: 1;\n}\r\n\r\n/* Icon Bounce */\n.hvr-icon-bounce {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-icon-bounce .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-icon-bounce:hover .hvr-icon, .hvr-icon-bounce:focus .hvr-icon, .hvr-icon-bounce:active .hvr-icon {\r\n  -webkit-transform: scale(1.5);\r\n  transform: scale(1.5);\r\n  -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);\r\n  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);\n}\r\n\r\n/* Icon Rotate */\n.hvr-icon-rotate {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-icon-rotate .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-icon-rotate:hover .hvr-icon, .hvr-icon-rotate:focus .hvr-icon, .hvr-icon-rotate:active .hvr-icon {\r\n  -webkit-transform: rotate(20deg);\r\n  transform: rotate(20deg);\n}\r\n\r\n/* Icon Grow Rotate */\n.hvr-icon-grow-rotate {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-icon-grow-rotate .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-icon-grow-rotate:hover .hvr-icon, .hvr-icon-grow-rotate:focus .hvr-icon, .hvr-icon-grow-rotate:active .hvr-icon {\r\n  -webkit-transform: scale(1.5) rotate(12deg);\r\n  transform: scale(1.5) rotate(12deg);\n}\r\n\r\n/* Icon Float */\n.hvr-icon-float {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-icon-float .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-icon-float:hover .hvr-icon, .hvr-icon-float:focus .hvr-icon, .hvr-icon-float:active .hvr-icon {\r\n  -webkit-transform: translateY(-4px);\r\n  transform: translateY(-4px);\n}\r\n\r\n/* Icon Sink */\n.hvr-icon-sink {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-icon-sink .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: transform;\r\n  -webkit-transition-property: -webkit-transform;\r\n  transition-property: -webkit-transform;\r\n  transition-property: transform;\r\n  transition-property: transform, -webkit-transform;\r\n  -webkit-transition-timing-function: ease-out;\r\n  transition-timing-function: ease-out;\n}\n.hvr-icon-sink:hover .hvr-icon, .hvr-icon-sink:focus .hvr-icon, .hvr-icon-sink:active .hvr-icon {\r\n  -webkit-transform: translateY(4px);\r\n  transform: translateY(4px);\n}\r\n\r\n/* Icon Bob */\n@-webkit-keyframes hvr-icon-bob {\n0% {\r\n    -webkit-transform: translateY(-6px);\r\n    transform: translateY(-6px);\n}\n50% {\r\n    -webkit-transform: translateY(-2px);\r\n    transform: translateY(-2px);\n}\n100% {\r\n    -webkit-transform: translateY(-6px);\r\n    transform: translateY(-6px);\n}\n}\n@keyframes hvr-icon-bob {\n0% {\r\n    -webkit-transform: translateY(-6px);\r\n    transform: translateY(-6px);\n}\n50% {\r\n    -webkit-transform: translateY(-2px);\r\n    transform: translateY(-2px);\n}\n100% {\r\n    -webkit-transform: translateY(-6px);\r\n    transform: translateY(-6px);\n}\n}\n@-webkit-keyframes hvr-icon-bob-float {\n100% {\r\n    -webkit-transform: translateY(-6px);\r\n    transform: translateY(-6px);\n}\n}\n@keyframes hvr-icon-bob-float {\n100% {\r\n    -webkit-transform: translateY(-6px);\r\n    transform: translateY(-6px);\n}\n}\n.hvr-icon-bob {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-icon-bob .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\n}\n.hvr-icon-bob:hover .hvr-icon, .hvr-icon-bob:focus .hvr-icon, .hvr-icon-bob:active .hvr-icon {\r\n  -webkit-animation-name: hvr-icon-bob-float, hvr-icon-bob;\r\n  animation-name: hvr-icon-bob-float, hvr-icon-bob;\r\n  -webkit-animation-duration: .3s, 1.5s;\r\n  animation-duration: .3s, 1.5s;\r\n  -webkit-animation-delay: 0s, .3s;\r\n  animation-delay: 0s, .3s;\r\n  -webkit-animation-timing-function: ease-out, ease-in-out;\r\n  animation-timing-function: ease-out, ease-in-out;\r\n  -webkit-animation-iteration-count: 1, infinite;\r\n  animation-iteration-count: 1, infinite;\r\n  -webkit-animation-fill-mode: forwards;\r\n  animation-fill-mode: forwards;\r\n  -webkit-animation-direction: normal, alternate;\r\n  animation-direction: normal, alternate;\n}\r\n\r\n/* Icon Hang */\n@-webkit-keyframes hvr-icon-hang {\n0% {\r\n    -webkit-transform: translateY(6px);\r\n    transform: translateY(6px);\n}\n50% {\r\n    -webkit-transform: translateY(2px);\r\n    transform: translateY(2px);\n}\n100% {\r\n    -webkit-transform: translateY(6px);\r\n    transform: translateY(6px);\n}\n}\n@keyframes hvr-icon-hang {\n0% {\r\n    -webkit-transform: translateY(6px);\r\n    transform: translateY(6px);\n}\n50% {\r\n    -webkit-transform: translateY(2px);\r\n    transform: translateY(2px);\n}\n100% {\r\n    -webkit-transform: translateY(6px);\r\n    transform: translateY(6px);\n}\n}\n@-webkit-keyframes hvr-icon-hang-sink {\n100% {\r\n    -webkit-transform: translateY(6px);\r\n    transform: translateY(6px);\n}\n}\n@keyframes hvr-icon-hang-sink {\n100% {\r\n    -webkit-transform: translateY(6px);\r\n    transform: translateY(6px);\n}\n}\n.hvr-icon-hang {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-icon-hang .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\n}\n.hvr-icon-hang:hover .hvr-icon, .hvr-icon-hang:focus .hvr-icon, .hvr-icon-hang:active .hvr-icon {\r\n  -webkit-animation-name: hvr-icon-hang-sink, hvr-icon-hang;\r\n  animation-name: hvr-icon-hang-sink, hvr-icon-hang;\r\n  -webkit-animation-duration: .3s, 1.5s;\r\n  animation-duration: .3s, 1.5s;\r\n  -webkit-animation-delay: 0s, .3s;\r\n  animation-delay: 0s, .3s;\r\n  -webkit-animation-timing-function: ease-out, ease-in-out;\r\n  animation-timing-function: ease-out, ease-in-out;\r\n  -webkit-animation-iteration-count: 1, infinite;\r\n  animation-iteration-count: 1, infinite;\r\n  -webkit-animation-fill-mode: forwards;\r\n  animation-fill-mode: forwards;\r\n  -webkit-animation-direction: normal, alternate;\r\n  animation-direction: normal, alternate;\n}\r\n\r\n/* Icon Wobble Horizontal */\n@-webkit-keyframes hvr-icon-wobble-horizontal {\n16.65% {\r\n    -webkit-transform: translateX(6px);\r\n    transform: translateX(6px);\n}\n33.3% {\r\n    -webkit-transform: translateX(-5px);\r\n    transform: translateX(-5px);\n}\n49.95% {\r\n    -webkit-transform: translateX(4px);\r\n    transform: translateX(4px);\n}\n66.6% {\r\n    -webkit-transform: translateX(-2px);\r\n    transform: translateX(-2px);\n}\n83.25% {\r\n    -webkit-transform: translateX(1px);\r\n    transform: translateX(1px);\n}\n100% {\r\n    -webkit-transform: translateX(0);\r\n    transform: translateX(0);\n}\n}\n@keyframes hvr-icon-wobble-horizontal {\n16.65% {\r\n    -webkit-transform: translateX(6px);\r\n    transform: translateX(6px);\n}\n33.3% {\r\n    -webkit-transform: translateX(-5px);\r\n    transform: translateX(-5px);\n}\n49.95% {\r\n    -webkit-transform: translateX(4px);\r\n    transform: translateX(4px);\n}\n66.6% {\r\n    -webkit-transform: translateX(-2px);\r\n    transform: translateX(-2px);\n}\n83.25% {\r\n    -webkit-transform: translateX(1px);\r\n    transform: translateX(1px);\n}\n100% {\r\n    -webkit-transform: translateX(0);\r\n    transform: translateX(0);\n}\n}\n.hvr-icon-wobble-horizontal {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-icon-wobble-horizontal .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\n}\n.hvr-icon-wobble-horizontal:hover .hvr-icon, .hvr-icon-wobble-horizontal:focus .hvr-icon, .hvr-icon-wobble-horizontal:active .hvr-icon {\r\n  -webkit-animation-name: hvr-icon-wobble-horizontal;\r\n  animation-name: hvr-icon-wobble-horizontal;\r\n  -webkit-animation-duration: 1s;\r\n  animation-duration: 1s;\r\n  -webkit-animation-timing-function: ease-in-out;\r\n  animation-timing-function: ease-in-out;\r\n  -webkit-animation-iteration-count: 1;\r\n  animation-iteration-count: 1;\n}\r\n\r\n/* Icon Wobble Vertical */\n@-webkit-keyframes hvr-icon-wobble-vertical {\n16.65% {\r\n    -webkit-transform: translateY(6px);\r\n    transform: translateY(6px);\n}\n33.3% {\r\n    -webkit-transform: translateY(-5px);\r\n    transform: translateY(-5px);\n}\n49.95% {\r\n    -webkit-transform: translateY(4px);\r\n    transform: translateY(4px);\n}\n66.6% {\r\n    -webkit-transform: translateY(-2px);\r\n    transform: translateY(-2px);\n}\n83.25% {\r\n    -webkit-transform: translateY(1px);\r\n    transform: translateY(1px);\n}\n100% {\r\n    -webkit-transform: translateY(0);\r\n    transform: translateY(0);\n}\n}\n@keyframes hvr-icon-wobble-vertical {\n16.65% {\r\n    -webkit-transform: translateY(6px);\r\n    transform: translateY(6px);\n}\n33.3% {\r\n    -webkit-transform: translateY(-5px);\r\n    transform: translateY(-5px);\n}\n49.95% {\r\n    -webkit-transform: translateY(4px);\r\n    transform: translateY(4px);\n}\n66.6% {\r\n    -webkit-transform: translateY(-2px);\r\n    transform: translateY(-2px);\n}\n83.25% {\r\n    -webkit-transform: translateY(1px);\r\n    transform: translateY(1px);\n}\n100% {\r\n    -webkit-transform: translateY(0);\r\n    transform: translateY(0);\n}\n}\n.hvr-icon-wobble-vertical {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-icon-wobble-vertical .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\n}\n.hvr-icon-wobble-vertical:hover .hvr-icon, .hvr-icon-wobble-vertical:focus .hvr-icon, .hvr-icon-wobble-vertical:active .hvr-icon {\r\n  -webkit-animation-name: hvr-icon-wobble-vertical;\r\n  animation-name: hvr-icon-wobble-vertical;\r\n  -webkit-animation-duration: 1s;\r\n  animation-duration: 1s;\r\n  -webkit-animation-timing-function: ease-in-out;\r\n  animation-timing-function: ease-in-out;\r\n  -webkit-animation-iteration-count: 1;\r\n  animation-iteration-count: 1;\n}\r\n\r\n/* Icon Buzz */\n@-webkit-keyframes hvr-icon-buzz {\n50% {\r\n    -webkit-transform: translateX(3px) rotate(2deg);\r\n    transform: translateX(3px) rotate(2deg);\n}\n100% {\r\n    -webkit-transform: translateX(-3px) rotate(-2deg);\r\n    transform: translateX(-3px) rotate(-2deg);\n}\n}\n@keyframes hvr-icon-buzz {\n50% {\r\n    -webkit-transform: translateX(3px) rotate(2deg);\r\n    transform: translateX(3px) rotate(2deg);\n}\n100% {\r\n    -webkit-transform: translateX(-3px) rotate(-2deg);\r\n    transform: translateX(-3px) rotate(-2deg);\n}\n}\n.hvr-icon-buzz {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-icon-buzz .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\n}\n.hvr-icon-buzz:hover .hvr-icon, .hvr-icon-buzz:focus .hvr-icon, .hvr-icon-buzz:active .hvr-icon {\r\n  -webkit-animation-name: hvr-icon-buzz;\r\n  animation-name: hvr-icon-buzz;\r\n  -webkit-animation-duration: 0.15s;\r\n  animation-duration: 0.15s;\r\n  -webkit-animation-timing-function: linear;\r\n  animation-timing-function: linear;\r\n  -webkit-animation-iteration-count: infinite;\r\n  animation-iteration-count: infinite;\n}\r\n\r\n/* Icon Buzz Out */\n@-webkit-keyframes hvr-icon-buzz-out {\n10% {\r\n    -webkit-transform: translateX(3px) rotate(2deg);\r\n    transform: translateX(3px) rotate(2deg);\n}\n20% {\r\n    -webkit-transform: translateX(-3px) rotate(-2deg);\r\n    transform: translateX(-3px) rotate(-2deg);\n}\n30% {\r\n    -webkit-transform: translateX(3px) rotate(2deg);\r\n    transform: translateX(3px) rotate(2deg);\n}\n40% {\r\n    -webkit-transform: translateX(-3px) rotate(-2deg);\r\n    transform: translateX(-3px) rotate(-2deg);\n}\n50% {\r\n    -webkit-transform: translateX(2px) rotate(1deg);\r\n    transform: translateX(2px) rotate(1deg);\n}\n60% {\r\n    -webkit-transform: translateX(-2px) rotate(-1deg);\r\n    transform: translateX(-2px) rotate(-1deg);\n}\n70% {\r\n    -webkit-transform: translateX(2px) rotate(1deg);\r\n    transform: translateX(2px) rotate(1deg);\n}\n80% {\r\n    -webkit-transform: translateX(-2px) rotate(-1deg);\r\n    transform: translateX(-2px) rotate(-1deg);\n}\n90% {\r\n    -webkit-transform: translateX(1px) rotate(0);\r\n    transform: translateX(1px) rotate(0);\n}\n100% {\r\n    -webkit-transform: translateX(-1px) rotate(0);\r\n    transform: translateX(-1px) rotate(0);\n}\n}\n@keyframes hvr-icon-buzz-out {\n10% {\r\n    -webkit-transform: translateX(3px) rotate(2deg);\r\n    transform: translateX(3px) rotate(2deg);\n}\n20% {\r\n    -webkit-transform: translateX(-3px) rotate(-2deg);\r\n    transform: translateX(-3px) rotate(-2deg);\n}\n30% {\r\n    -webkit-transform: translateX(3px) rotate(2deg);\r\n    transform: translateX(3px) rotate(2deg);\n}\n40% {\r\n    -webkit-transform: translateX(-3px) rotate(-2deg);\r\n    transform: translateX(-3px) rotate(-2deg);\n}\n50% {\r\n    -webkit-transform: translateX(2px) rotate(1deg);\r\n    transform: translateX(2px) rotate(1deg);\n}\n60% {\r\n    -webkit-transform: translateX(-2px) rotate(-1deg);\r\n    transform: translateX(-2px) rotate(-1deg);\n}\n70% {\r\n    -webkit-transform: translateX(2px) rotate(1deg);\r\n    transform: translateX(2px) rotate(1deg);\n}\n80% {\r\n    -webkit-transform: translateX(-2px) rotate(-1deg);\r\n    transform: translateX(-2px) rotate(-1deg);\n}\n90% {\r\n    -webkit-transform: translateX(1px) rotate(0);\r\n    transform: translateX(1px) rotate(0);\n}\n100% {\r\n    -webkit-transform: translateX(-1px) rotate(0);\r\n    transform: translateX(-1px) rotate(0);\n}\n}\n.hvr-icon-buzz-out {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\n}\n.hvr-icon-buzz-out .hvr-icon {\r\n  -webkit-transform: translateZ(0);\r\n  transform: translateZ(0);\n}\n.hvr-icon-buzz-out:hover .hvr-icon, .hvr-icon-buzz-out:focus .hvr-icon, .hvr-icon-buzz-out:active .hvr-icon {\r\n  -webkit-animation-name: hvr-icon-buzz-out;\r\n  animation-name: hvr-icon-buzz-out;\r\n  -webkit-animation-duration: 0.75s;\r\n  animation-duration: 0.75s;\r\n  -webkit-animation-timing-function: linear;\r\n  animation-timing-function: linear;\r\n  -webkit-animation-iteration-count: 1;\r\n  animation-iteration-count: 1;\n}\r\n\r\n/* CURLS */\r\n/* Curl Top Left */\n.hvr-curl-top-left {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\n}\n.hvr-curl-top-left:before {\r\n  pointer-events: none;\r\n  position: absolute;\r\n  content: '';\r\n  height: 0;\r\n  width: 0;\r\n  top: 0;\r\n  left: 0;\r\n  background: white;\r\n  /* IE9 */\r\n  background: linear-gradient(135deg, white 45%, #aaa 50%, #ccc 56%, white 80%);\r\n  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#000000');\r\n  /*For IE7-8-9*/\r\n  z-index: 1000;\r\n  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);\r\n          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: width, height;\r\n  transition-property: width, height;\n}\n.hvr-curl-top-left:hover:before, .hvr-curl-top-left:focus:before, .hvr-curl-top-left:active:before {\r\n  width: 25px;\r\n  height: 25px;\n}\r\n\r\n/* Curl Top Right */\n.hvr-curl-top-right {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\n}\n.hvr-curl-top-right:before {\r\n  pointer-events: none;\r\n  position: absolute;\r\n  content: '';\r\n  height: 0;\r\n  width: 0;\r\n  top: 0;\r\n  right: 0;\r\n  background: white;\r\n  /* IE9 */\r\n  background: linear-gradient(225deg, white 45%, #aaa 50%, #ccc 56%, white 80%);\r\n  -webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.4);\r\n          box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.4);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: width, height;\r\n  transition-property: width, height;\n}\n.hvr-curl-top-right:hover:before, .hvr-curl-top-right:focus:before, .hvr-curl-top-right:active:before {\r\n  width: 25px;\r\n  height: 25px;\n}\r\n\r\n/* Curl Bottom Right */\n.hvr-curl-bottom-right {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\n}\n.hvr-curl-bottom-right:before {\r\n  pointer-events: none;\r\n  position: absolute;\r\n  content: '';\r\n  height: 0;\r\n  width: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n  background: white;\r\n  /* IE9 */\r\n  background: linear-gradient(315deg, white 45%, #aaa 50%, #ccc 56%, white 80%);\r\n  -webkit-box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.4);\r\n          box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.4);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: width, height;\r\n  transition-property: width, height;\n}\n.hvr-curl-bottom-right:hover:before, .hvr-curl-bottom-right:focus:before, .hvr-curl-bottom-right:active:before {\r\n  width: 25px;\r\n  height: 25px;\n}\r\n\r\n/* Curl Bottom Left */\n.hvr-curl-bottom-left {\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  -webkit-transform: perspective(1px) translateZ(0);\r\n  transform: perspective(1px) translateZ(0);\r\n  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n          box-shadow: 0 0 1px rgba(0, 0, 0, 0);\r\n  position: relative;\n}\n.hvr-curl-bottom-left:before {\r\n  pointer-events: none;\r\n  position: absolute;\r\n  content: '';\r\n  height: 0;\r\n  width: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  background: white;\r\n  /* IE9 */\r\n  background: linear-gradient(45deg, white 45%, #aaa 50%, #ccc 56%, white 80%);\r\n  -webkit-box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.4);\r\n          box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.4);\r\n  -webkit-transition-duration: 0.3s;\r\n  transition-duration: 0.3s;\r\n  -webkit-transition-property: width, height;\r\n  transition-property: width, height;\n}\n.hvr-curl-bottom-left:hover:before, .hvr-curl-bottom-left:focus:before, .hvr-curl-bottom-left:active:before {\r\n  width: 25px;\r\n  height: 25px;\n}\r\n", ""]);
+exports.push([module.i, "\n#modal8 .modal-header,\n#modal8 .modal-footer {\n    background-color: #3a7db5;\n}\n#modal9 .modal-header,\n#modal9 .modal-footer {\n    background-color: #4FC1E9;\n}\n#modal10 .modal-header,\n#modal10 .modal-footer {\n    background-color: #f89a14;\n}\n#modal11 .modal-header,\n#modal11 .modal-footer {\n    background-color: #DC6460;\n}\n#modal13 .modal-header,\n#modal13 .modal-footer {\n    background-color: #dcdcdc;\n}\n#modal12 .modal-header,\n#modal12 .modal-footer {\n    background-color: #09BD8F;\n}\n.header{\n    z-index: 99 !important;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 1438:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(1439);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(93)("babd1618", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-544d8501\",\"scoped\":true,\"hasInlineConfig\":true}!./button.css", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-544d8501\",\"scoped\":true,\"hasInlineConfig\":true}!./button.css");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 1439:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(49)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.btn_rounded[data-v-544d8501] {\r\n    border-radius: 50px;\n}\n.effects .btn[data-v-544d8501] {\r\n    margin: .4em;\r\n    padding: 1em;\r\n    cursor: pointer;\r\n    background: #dcdcdc;\r\n    text-decoration: none;\r\n    color: #333;\n}\n.iconsbtn .btn[data-v-544d8501] {\r\n    padding-right: 3em;\n}\n.btn[data-v-544d8501] {\r\n    cursor: pointer;\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 1440:
+/***/ 1025:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_js_modal__ = __webpack_require__(940);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal__);
 //
 //
 //
@@ -265,1106 +225,776 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
+
+
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_js_modal___default.a);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "buttons",
-    components: {},
-    mounted: function mounted() {},
+    name: "modals",
     data: function data() {
-        return {};
+        return {
+            stop_close: false
+        };
     },
 
-    methods: {}
+    methods: {
+        open_modal: function open_modal() {
+            this.$refs.modal21.show();
+        },
+        stop: function stop(e) {
+            if (!this.stop_close) {
+                return e.preventDefault();
+            }
+        },
+        shown: function shown() {
+            alert("Modal opened");
+        },
+        hidden: function hidden() {
+            alert("Modal Hidden");
+        },
+        success: function success() {
+            alert("OK Clicked");
+        },
+        cancel: function cancel() {
+            alert("Close Clicked");
+        },
+        show: function show() {
+            this.$modal.show('hello-world');
+        },
+        dragpoint: function dragpoint() {
+            this.$modal.show('dragpoint');
+        },
+        second: function second() {
+            this.$modal.show('second');
+        },
+        third: function third() {
+            this.$modal.show('third');
+        },
+        hide: function hide() {
+            this.$modal.hide('hello-world');
+        },
+        login: function login() {
+            this.$modal.show('modallogin');
+        }
+    }
 });
 
 /***/ }),
 
-/***/ 1441:
+/***/ 1026:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "row" }, [
+  return _c(
+    "div",
+    [
       _c(
-        "div",
-        { staticClass: "col-lg-6" },
+        "b-card",
+        {
+          staticClass: "bg-primary-card",
+          attrs: { header: "Modals", "header-tag": "h4" }
+        },
         [
-          _c(
-            "b-card",
-            {
-              staticClass: "bg-deafult-card",
-              attrs: { header: "Basic Buttons", "header-tag": "h4" }
-            },
-            [
-              _c("div", { staticClass: "form-group text-center" }, [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "col-lg-12" },
+              [
                 _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Primary")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-secondary mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Default")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-success mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Success")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-info mt-3 text-white",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Info")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-warning mt-3 text-white",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Warning")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-danger mt-3 text-white",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Danger")]
-                )
-              ])
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-6" },
-        [
-          _c(
-            "b-card",
-            {
-              staticClass: "bg-default-card",
-              attrs: { header: "Outline buttons", "header-tag": "h4" }
-            },
-            [
-              _c("div", { staticClass: "form-group text-center" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-outline-primary mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Primary")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-outline-secondary mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Default")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-outline-success mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Success")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-outline-info mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Info")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-outline-warning mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Warning")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-outline-danger mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Danger")]
-                )
-              ])
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-6" },
-        [
-          _c(
-            "b-card",
-            {
-              staticClass: "bg-default-card",
-              attrs: { header: "Rounded Buttons", "header-tag": "h4" }
-            },
-            [
-              _c("div", { staticClass: "form-group text-center" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "btn btn-outline-primary btn_width btn_rounded mt-3 ",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Primary\n                    ")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "btn btn-outline-secondary btn_width btn_rounded mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Default\n                    ")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "btn btn-outline-success btn_width btn_rounded mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Success\n                    ")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "btn btn-outline-info btn_width btn_rounded mt-3",
-                    attrs: { type: "button" }
-                  },
+                  "b-card",
+                  { staticClass: "bg-primary-card" },
                   [
-                    _vm._v(
-                      "\n                        Info\n                    "
+                    _c(
+                      "b-btn",
+                      {
+                        directives: [
+                          {
+                            name: "b-modal",
+                            rawName: "v-b-modal.modal1",
+                            modifiers: { modal1: true }
+                          }
+                        ],
+                        staticClass: "mt-3 mb-3",
+                        attrs: { variant: "outline-secondary" }
+                      },
+                      [_vm._v("Launch demo modal")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-btn",
+                      {
+                        staticClass: "mt-3 mb-3 ",
+                        attrs: { variant: "outline-secondary" },
+                        on: { click: _vm.open_modal }
+                      },
+                      [_vm._v("Launch modal with ref")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-modal",
+                      {
+                        ref: "modal1",
+                        staticClass: "bg-primary",
+                        attrs: { id: "modal1", title: "Modal" }
+                      },
+                      [_c("h1", [_vm._v("modal")])]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-modal",
+                      {
+                        ref: "modal21",
+                        attrs: { id: "modal21", title: "Modal" }
+                      },
+                      [_c("h1", [_vm._v("modal")])]
                     )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "btn btn-outline-warning btn_width btn_rounded mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Warning\n                    ")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "btn btn-outline-danger btn_width btn_rounded mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [
-                    _vm._v(
-                      "\n                        Danger\n                    "
-                    )
-                  ]
+                  ],
+                  1
                 )
-              ])
-            ]
-          )
-        ],
-        1
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-lg-6 mt-3" },
+              [
+                _c(
+                  "b-card",
+                  { staticClass: "bg-info-card" },
+                  [
+                    _c("h4", [_vm._v("Stop closing on backdrop click")]),
+                    _vm._v(" "),
+                    _c(
+                      "b-btn",
+                      {
+                        directives: [
+                          {
+                            name: "b-modal",
+                            rawName: "v-b-modal.modal2",
+                            modifiers: { modal2: true }
+                          }
+                        ],
+                        attrs: { variant: "outline-secondary" }
+                      },
+                      [_vm._v("Launch demo modal")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-modal",
+                      {
+                        ref: "modal2",
+                        attrs: {
+                          "no-close-on-backdrop": true,
+                          id: "modal2",
+                          title: "Modal"
+                        }
+                      },
+                      [_c("h1", [_vm._v("modal")])]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-lg-6 mt-3" },
+              [
+                _c(
+                  "b-card",
+                  { staticClass: "bg-info-card" },
+                  [
+                    _c("h4", [
+                      _vm._v("Programmatically stop closing of modal")
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "b-btn",
+                      {
+                        directives: [
+                          {
+                            name: "b-modal",
+                            rawName: "v-b-modal.modal3",
+                            modifiers: { modal3: true }
+                          }
+                        ],
+                        attrs: { variant: "outline-secondary" }
+                      },
+                      [_vm._v("Launch demo modal")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-modal",
+                      {
+                        ref: "modal3",
+                        attrs: { id: "modal3", title: "Modal" },
+                        on: { hide: _vm.stop }
+                      },
+                      [
+                        _c("h1", [_vm._v("modal")]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "form-group" },
+                          [
+                            _c(
+                              "b-form-checkbox",
+                              {
+                                model: {
+                                  value: _vm.stop_close,
+                                  callback: function($$v) {
+                                    _vm.stop_close = $$v
+                                  },
+                                  expression: "stop_close"
+                                }
+                              },
+                              [_vm._v("Enable Modal closing")]
+                            )
+                          ],
+                          1
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-lg-4 mt-3" },
+              [
+                _c(
+                  "b-card",
+                  { staticClass: "bg-primary-card" },
+                  [
+                    _c(
+                      "b-btn",
+                      {
+                        directives: [
+                          {
+                            name: "b-modal",
+                            rawName: "v-b-modal.modal4",
+                            modifiers: { modal4: true }
+                          }
+                        ],
+                        attrs: { variant: "outline-secondary" }
+                      },
+                      [_vm._v("Launch small modal")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-modal",
+                      {
+                        attrs: {
+                          id: "modal4",
+                          title: "Small Modal",
+                          size: "sm"
+                        }
+                      },
+                      [_c("h1", [_vm._v("modal")])]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-lg-4 mt-3" },
+              [
+                _c(
+                  "b-card",
+                  { staticClass: "bg-success-card" },
+                  [
+                    _c(
+                      "b-btn",
+                      {
+                        directives: [
+                          {
+                            name: "b-modal",
+                            rawName: "v-b-modal.modal5",
+                            modifiers: { modal5: true }
+                          }
+                        ],
+                        attrs: { variant: "outline-secondary" }
+                      },
+                      [_vm._v("Launch Normal modal")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-modal",
+                      {
+                        attrs: {
+                          id: "modal5",
+                          title: "Normal Modal",
+                          size: "md"
+                        }
+                      },
+                      [_c("h1", [_vm._v("modal")])]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-lg-4 mt-3" },
+              [
+                _c(
+                  "b-card",
+                  { staticClass: "bg-danger-card" },
+                  [
+                    _c(
+                      "b-btn",
+                      {
+                        directives: [
+                          {
+                            name: "b-modal",
+                            rawName: "v-b-modal.modal6",
+                            modifiers: { modal6: true }
+                          }
+                        ],
+                        attrs: { variant: "outline-secondary" }
+                      },
+                      [_vm._v("Launch Large modal")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-modal",
+                      {
+                        attrs: {
+                          id: "modal6",
+                          title: "Large Modal",
+                          size: "lg"
+                        }
+                      },
+                      [_c("h1", [_vm._v("modal")])]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-lg-12 mt-3" },
+              [
+                _c(
+                  "b-card",
+                  { staticClass: "bg-warning-card" },
+                  [
+                    _c(
+                      "b-btn",
+                      {
+                        directives: [
+                          {
+                            name: "b-modal",
+                            rawName: "v-b-modal.modal7",
+                            modifiers: { modal7: true }
+                          }
+                        ],
+                        attrs: { variant: "outline-secondary" }
+                      },
+                      [_vm._v("Launch modal Events")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-modal",
+                      {
+                        attrs: { id: "modal7", title: "Modal" },
+                        on: {
+                          shown: _vm.shown,
+                          hidden: _vm.hidden,
+                          ok: _vm.success,
+                          cancel: _vm.cancel
+                        }
+                      },
+                      [_c("h1", [_vm._v("modal")])]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-lg-4 mt-3" },
+              [
+                _c(
+                  "b-card",
+                  { staticClass: "bg-primary-card" },
+                  [
+                    _c("h4", [_vm._v("Background Primary Modal ")]),
+                    _vm._v(" "),
+                    _c(
+                      "b-btn",
+                      {
+                        directives: [
+                          {
+                            name: "b-modal",
+                            rawName: "v-b-modal.modal8",
+                            modifiers: { modal8: true }
+                          }
+                        ],
+                        attrs: { variant: "outline-primary" }
+                      },
+                      [_vm._v("Primary modal")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-modal",
+                      {
+                        attrs: {
+                          id: "modal8",
+                          title: "Priamry Modal",
+                          size: "md"
+                        }
+                      },
+                      [_c("h1", [_vm._v(" Primary modal")])]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-lg-4 mt-3" },
+              [
+                _c(
+                  "b-card",
+                  { staticClass: "bg-info-card" },
+                  [
+                    _c("h4", [_vm._v("Background Info Modal ")]),
+                    _vm._v(" "),
+                    _c(
+                      "b-btn",
+                      {
+                        directives: [
+                          {
+                            name: "b-modal",
+                            rawName: "v-b-modal.modal9",
+                            modifiers: { modal9: true }
+                          }
+                        ],
+                        attrs: { variant: "outline-info" }
+                      },
+                      [_vm._v("Info modal")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-modal",
+                      { attrs: { id: "modal9", title: "Info Modal" } },
+                      [_c("h1", [_vm._v(" Info modal")])]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-lg-4 mt-3" },
+              [
+                _c(
+                  "b-card",
+                  { staticClass: "bg-warning-card" },
+                  [
+                    _c("h4", [_vm._v("Background Warning Modal ")]),
+                    _vm._v(" "),
+                    _c(
+                      "b-btn",
+                      {
+                        directives: [
+                          {
+                            name: "b-modal",
+                            rawName: "v-b-modal.modal10",
+                            modifiers: { modal10: true }
+                          }
+                        ],
+                        attrs: { variant: "outline-warning" }
+                      },
+                      [_vm._v("Warning modal")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-modal",
+                      { attrs: { id: "modal10", title: "Warning Modal" } },
+                      [_c("h1", [_vm._v(" Warning modal")])]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-lg-4 mt-3" },
+              [
+                _c(
+                  "b-card",
+                  { staticClass: "bg-danger-card" },
+                  [
+                    _c("h4", [_vm._v("Background Danger Modal ")]),
+                    _vm._v(" "),
+                    _c(
+                      "b-btn",
+                      {
+                        directives: [
+                          {
+                            name: "b-modal",
+                            rawName: "v-b-modal.modal11",
+                            modifiers: { modal11: true }
+                          }
+                        ],
+                        attrs: { variant: "outline-danger" }
+                      },
+                      [_vm._v("Danger Modal")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-modal",
+                      { attrs: { id: "modal11", title: "Danger Modal" } },
+                      [_c("h1", [_vm._v("Danger modal")])]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-lg-4 mt-3" },
+              [
+                _c(
+                  "b-card",
+                  { staticClass: "bg-success-card" },
+                  [
+                    _c("h4", [_vm._v("Background Success Modal ")]),
+                    _vm._v(" "),
+                    _c(
+                      "b-btn",
+                      {
+                        directives: [
+                          {
+                            name: "b-modal",
+                            rawName: "v-b-modal.modal12",
+                            modifiers: { modal12: true }
+                          }
+                        ],
+                        attrs: { variant: "outline-success" }
+                      },
+                      [_vm._v("Success Modal")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-modal",
+                      { attrs: { id: "modal12", title: "Success Modal" } },
+                      [_c("h1", [_vm._v(" Success modal")])]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-lg-4 mt-3" },
+              [
+                _c(
+                  "b-card",
+                  { staticClass: "bg-deafult-card" },
+                  [
+                    _c("h4", [_vm._v("Background Deafult Modal ")]),
+                    _vm._v(" "),
+                    _c(
+                      "b-btn",
+                      {
+                        directives: [
+                          {
+                            name: "b-modal",
+                            rawName: "v-b-modal.modal13",
+                            modifiers: { modal13: true }
+                          }
+                        ],
+                        attrs: { variant: "outline-secondary" }
+                      },
+                      [_vm._v("Deafult modal")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "b-modal",
+                      { attrs: { id: "modal13", title: "Deafult Modal" } },
+                      [_c("h1", [_vm._v("modal")])]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ])
+        ]
       ),
       _vm._v(" "),
       _c(
-        "div",
-        { staticClass: "col-lg-6" },
+        "b-card",
+        {
+          staticClass: "bg-primary-card",
+          attrs: { header: "Advanced Modals", "header-tag": "h4" }
+        },
         [
           _c(
-            "b-card",
-            {
-              staticClass: "bg-default-card effects",
-              attrs: { header: "Curls", "header-tag": "h4" }
-            },
-            [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-curl-top-left",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Curl Top Left")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-curl-top-right",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Curl Top Right")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-curl-bottom-right",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Curl Bottom Right")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-curl-bottom-left",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Curl Bottom Left")]
-              )
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-12" },
-        [
+            "modal",
+            { attrs: { name: "hello-world", adaptive: true, draggable: true } },
+            [_c("div", { staticClass: "p-4" }, [_vm._v("Draggable modal")])]
+          ),
+          _vm._v(" "),
           _c(
-            "b-card",
+            "modal",
             {
-              staticClass: "bg-primary-card effects",
-              attrs: { header: "2D Transitions", "header-tag": "h4" }
-            },
-            [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-grow",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Grow")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-shrink",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Shrink")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-pulse",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Pulse")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-pulse-grow",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Pulse Grow")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-pulse-shrink",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Pulse Shrink")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-push",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Push")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-pop",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Pop")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-bounce-in",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Bounce In")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-bounce-out",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Bounce Out")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-rotate",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Rotate")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-grow-rotate",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Grow Rotate")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-float",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Float")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-sink",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Sink")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-bob",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Bob")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-hang",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Hang")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-skew",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Skew")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-skew-forward",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Skew Forward")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-skew-backward",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Skew Backward")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-wobble-horizontal",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Wobble Horizontal")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-wobble-vertical",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Wobble Vertical")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-wobble-to-bottom-right",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Wobble To Bottom Right\n                ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-wobble-to-top-right",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Wobble To Top Right")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-wobble-top",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Wobble Top")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-wobble-bottom",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Wobble Bottom")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-wobble-skew",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Wobble Skew")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-buzz",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Buzz")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-buzz-out",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Buzz Out")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-forward",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Forward")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-backward",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Backward")]
-              )
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-6 " },
-        [
-          _c(
-            "b-card",
-            {
-              staticClass: "bg-info-card effects",
-              attrs: { header: "Border Transitions", "header-tag": "h4" }
-            },
-            [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-border-fade",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Border Fade")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-round-corners",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Round Corners")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-underline-from-left",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Underline From Left")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-underline-from-center",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Underline From Center\n                ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-underline-from-right",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Underline From Right")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-reveal",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Reveal")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-underline-reveal",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Underline Reveal")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-overline-reveal",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Overline Reveal")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-overline-from-left",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Overline From Left")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-overline-from-center",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Overline From Center")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-overline-from-right",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Overline From Right")]
-              )
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-6 " },
-        [
-          _c(
-            "b-card",
-            {
-              staticClass: "bg-success-card effects",
-              attrs: { header: "Background Transitions", "header-tag": "h4" }
-            },
-            [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-sweep-to-right",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Sweep To Right")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-sweep-to-left",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Sweep To Left")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-sweep-to-bottom",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Sweep To Bottom")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-sweep-to-top",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Sweep To Top")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-bounce-to-right",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Bounce To Right")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-bounce-to-left",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Bounce To Left")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-bounce-to-bottom",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Bounce To Bottom")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-bounce-to-top",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Bounce To Top")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-radial-out",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Radial Out")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-rectangle-out",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Rectangle Out")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-shutter-out-horizontal",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Shutter Out Horizontal\n                ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-shutter-out-vertical",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Shutter Out Vertical")]
-              )
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-6" },
-        [
-          _c(
-            "b-card",
-            {
-              staticClass: "bg-warning-card effects",
-              attrs: { header: "Speech Bubbles", "header-tag": "h4" }
-            },
-            [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-bubble-top mb-2",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Bubble Top")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-bubble-right mb-2",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Bubble Right")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-bubble-float-bottom mb-2",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Bubble Float Bottom")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-bubble-bottom mb-2",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Bubble Bottom")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-bubble-left mb-2",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Bubble Left")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-bubble-float-right mb-2",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Bubble Float Right")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-bubble-float-top mb-2",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Bubble Float Top")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-bubble-float-left mb-2",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Bubble Float Left")]
-              )
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-6" },
-        [
-          _c(
-            "b-card",
-            {
-              staticClass: "bg-danger-card effects",
               attrs: {
-                header: "Shadow and Glow Transitions",
-                "header-tag": "h4"
+                name: "dragpoint",
+                adaptive: true,
+                draggable: ".window-header"
               }
             },
             [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-shadow",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Shadow")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-grow-shadow",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Grow Shadow")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-float-shadow",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Float Shadow")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-glow",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Glow")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-shadow-radial",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Shadow Radial")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-box-shadow-outset",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Box Shadow Outset")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default hvr-box-shadow-inset",
-                  attrs: { type: "button" }
-                },
-                [_vm._v("Box Shadow Inset")]
-              )
-            ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-4" },
-        [
-          _c(
-            "b-card",
-            {
-              staticClass: "bg-default-card",
-              attrs: { header: "Buttons Sizes", "header-tag": "h4" }
-            },
-            [
-              _c("div", { staticClass: "form-group text-center" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary btn-sm mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Small button")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-secondary btn-sm mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Small button")]
-                )
+              _c("div", { staticClass: "p-4" }, [
+                _vm._v("Drag on a mentioned point"),
+                _c("span", { staticClass: "float-right window-header" }, [
+                  _c("i", { staticClass: "fa fa-arrows-alt" })
+                ])
               ])
             ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-4" },
-        [
+          ),
+          _vm._v(" "),
           _c(
-            "b-card",
+            "modal",
             {
-              staticClass: "bg-default-card",
-              attrs: { header: "Normal Buttons ", "header-tag": "h4" }
+              attrs: {
+                name: "second",
+                adaptive: true,
+                resizable: true,
+                transition: "slide-fade"
+              }
             },
             [
-              _c("div", { staticClass: "form-group text-center" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary btn-md mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Normal button")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-secondary btn-md mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Normal button")]
-                )
+              _c("div", { staticClass: "p-4" }, [
+                _vm._v("hello, world! second")
               ])
             ]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-lg-4" },
-        [
+          ),
+          _vm._v(" "),
           _c(
-            "b-card",
+            "modal",
             {
-              staticClass: "bg-default-card",
-              attrs: { header: "Large Buttons", "header-tag": "h4" }
+              attrs: {
+                name: "third",
+                adaptive: true,
+                resizable: true,
+                minWidth: 250,
+                minHeight: 250,
+                transition: "bounce"
+              }
             },
-            [
-              _c("div", { staticClass: "form-group text-center" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary btn-lg mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Large button")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-secondary btn-lg mt-3",
-                    attrs: { type: "button" }
-                  },
-                  [_vm._v("Large button")]
-                )
-              ])
-            ]
+            [_c("div", { staticClass: "p-4" }, [_vm._v("hello, world! Third")])]
+          ),
+          _vm._v(" "),
+          _c("modal", { attrs: { name: "modallogin", adaptive: true } }, [
+            _c("div", { staticClass: "p-4" }, [
+              _c("label", { attrs: { for: "modalemail" } }, [_vm._v("Email")]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: { type: "email", id: "modalemail" }
+              }),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "modalpassword" } }, [
+                _vm._v("Password")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: { type: "email", id: "modalpassword" }
+              }),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "btn btn-success mt-2",
+                attrs: { type: "submit", value: "submit" }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "btn btn-primary", on: { click: _vm.show } },
+            [_vm._v("Draggable")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-info text-white",
+              on: { click: _vm.dragpoint }
+            },
+            [_vm._v("Draggable with point")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "btn btn-success", on: { click: _vm.second } },
+            [_vm._v("Resizable")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-info text-white",
+              on: { click: _vm.third }
+            },
+            [_vm._v("Minimum width and height")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "btn btn-primary", on: { click: _vm.login } },
+            [_vm._v("Login modal")]
           )
         ],
         1
       )
-    ])
-  ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -1372,32 +1002,31 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-544d8501", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-1bc80baa", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 725:
+/***/ 726:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(1436)
-  __webpack_require__(1438)
+  __webpack_require__(1023)
 }
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(1440)
+var __vue_script__ = __webpack_require__(1025)
 /* template */
-var __vue_template__ = __webpack_require__(1441)
+var __vue_template__ = __webpack_require__(1026)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-544d8501"
+var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -1408,7 +1037,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/components/pages/buttons.vue"
+Component.options.__file = "resources/assets/components/admin/modals.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -1417,9 +1046,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-544d8501", Component.options)
+    hotAPI.createRecord("data-v-1bc80baa", Component.options)
   } else {
-    hotAPI.reload("data-v-544d8501", Component.options)
+    hotAPI.reload("data-v-1bc80baa", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -1428,6 +1057,1035 @@ if (false) {(function () {
 
 module.exports = Component.exports
 
+
+/***/ }),
+
+/***/ 940:
+/***/ (function(module, exports, __webpack_require__) {
+
+!function(root, factory) {
+     true ? module.exports = factory() : "function" == typeof define && define.amd ? define([], factory) : "object" == typeof exports ? exports["vue-js-modal"] = factory() : root["vue-js-modal"] = factory();
+}(this, function() {
+    return function(modules) {
+        function __webpack_require__(moduleId) {
+            if (installedModules[moduleId]) return installedModules[moduleId].exports;
+            var module = installedModules[moduleId] = {
+                i: moduleId,
+                l: !1,
+                exports: {}
+            };
+            return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
+            module.l = !0, module.exports;
+        }
+        var installedModules = {};
+        return __webpack_require__.m = modules, __webpack_require__.c = installedModules, 
+        __webpack_require__.i = function(value) {
+            return value;
+        }, __webpack_require__.d = function(exports, name, getter) {
+            __webpack_require__.o(exports, name) || Object.defineProperty(exports, name, {
+                configurable: !1,
+                enumerable: !0,
+                get: getter
+            });
+        }, __webpack_require__.n = function(module) {
+            var getter = module && module.__esModule ? function() {
+                return module.default;
+            } : function() {
+                return module;
+            };
+            return __webpack_require__.d(getter, "a", getter), getter;
+        }, __webpack_require__.o = function(object, property) {
+            return Object.prototype.hasOwnProperty.call(object, property);
+        }, __webpack_require__.p = "/dist/", __webpack_require__(__webpack_require__.s = 4);
+    }([ function(module, exports) {
+        module.exports = function(rawScriptExports, compiledTemplate, scopeId, cssModules) {
+            var esModule, scriptExports = rawScriptExports = rawScriptExports || {}, type = typeof rawScriptExports.default;
+            "object" !== type && "function" !== type || (esModule = rawScriptExports, scriptExports = rawScriptExports.default);
+            var options = "function" == typeof scriptExports ? scriptExports.options : scriptExports;
+            if (compiledTemplate && (options.render = compiledTemplate.render, options.staticRenderFns = compiledTemplate.staticRenderFns), 
+            scopeId && (options._scopeId = scopeId), cssModules) {
+                var computed = options.computed || (options.computed = {});
+                Object.keys(cssModules).forEach(function(key) {
+                    var module = cssModules[key];
+                    computed[key] = function() {
+                        return module;
+                    };
+                });
+            }
+            return {
+                esModule: esModule,
+                exports: scriptExports,
+                options: options
+            };
+        };
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        });
+        var _extends = Object.assign || function(target) {
+            for (var i = 1; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var key in source) Object.prototype.hasOwnProperty.call(source, key) && (target[key] = source[key]);
+            }
+            return target;
+        }, generateId = exports.generateId = function() {
+            var index = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : 0;
+            return function() {
+                return (index++).toString();
+            };
+        }();
+        exports.inRange = function(from, to, value) {
+            return value < from ? from : value > to ? to : value;
+        }, exports.createModalEvent = function() {
+            var args = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
+            return _extends({
+                id: generateId(),
+                timestamp: Date.now(),
+                canceled: !1
+            }, args);
+        }, exports.getMutationObserver = function() {
+            if ("undefined" != typeof window) for (var prefixes = [ "", "WebKit", "Moz", "O", "Ms" ], i = 0; i < prefixes.length; i++) {
+                var name = prefixes[i] + "MutationObserver";
+                if (name in window) return window[name];
+            }
+            return !1;
+        };
+    }, function(module, exports) {
+        module.exports = function() {
+            var list = [];
+            return list.toString = function() {
+                for (var result = [], i = 0; i < this.length; i++) {
+                    var item = this[i];
+                    item[2] ? result.push("@media " + item[2] + "{" + item[1] + "}") : result.push(item[1]);
+                }
+                return result.join("");
+            }, list.i = function(modules, mediaQuery) {
+                "string" == typeof modules && (modules = [ [ null, modules, "" ] ]);
+                for (var alreadyImportedModules = {}, i = 0; i < this.length; i++) {
+                    var id = this[i][0];
+                    "number" == typeof id && (alreadyImportedModules[id] = !0);
+                }
+                for (i = 0; i < modules.length; i++) {
+                    var item = modules[i];
+                    "number" == typeof item[0] && alreadyImportedModules[item[0]] || (mediaQuery && !item[2] ? item[2] = mediaQuery : mediaQuery && (item[2] = "(" + item[2] + ") and (" + mediaQuery + ")"), 
+                    list.push(item));
+                }
+            }, list;
+        };
+    }, function(module, exports, __webpack_require__) {
+        function addStylesToDom(styles) {
+            for (var i = 0; i < styles.length; i++) {
+                var item = styles[i], domStyle = stylesInDom[item.id];
+                if (domStyle) {
+                    domStyle.refs++;
+                    for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j](item.parts[j]);
+                    for (;j < item.parts.length; j++) domStyle.parts.push(addStyle(item.parts[j]));
+                    domStyle.parts.length > item.parts.length && (domStyle.parts.length = item.parts.length);
+                } else {
+                    for (var parts = [], j = 0; j < item.parts.length; j++) parts.push(addStyle(item.parts[j]));
+                    stylesInDom[item.id] = {
+                        id: item.id,
+                        refs: 1,
+                        parts: parts
+                    };
+                }
+            }
+        }
+        function createStyleElement() {
+            var styleElement = document.createElement("style");
+            return styleElement.type = "text/css", head.appendChild(styleElement), styleElement;
+        }
+        function addStyle(obj) {
+            var update, remove, styleElement = document.querySelector('style[data-vue-ssr-id~="' + obj.id + '"]');
+            if (styleElement) {
+                if (isProduction) return noop;
+                styleElement.parentNode.removeChild(styleElement);
+            }
+            if (isOldIE) {
+                var styleIndex = singletonCounter++;
+                styleElement = singletonElement || (singletonElement = createStyleElement()), update = applyToSingletonTag.bind(null, styleElement, styleIndex, !1), 
+                remove = applyToSingletonTag.bind(null, styleElement, styleIndex, !0);
+            } else styleElement = createStyleElement(), update = applyToTag.bind(null, styleElement), 
+            remove = function() {
+                styleElement.parentNode.removeChild(styleElement);
+            };
+            return update(obj), function(newObj) {
+                if (newObj) {
+                    if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) return;
+                    update(obj = newObj);
+                } else remove();
+            };
+        }
+        function applyToSingletonTag(styleElement, index, remove, obj) {
+            var css = remove ? "" : obj.css;
+            if (styleElement.styleSheet) styleElement.styleSheet.cssText = replaceText(index, css); else {
+                var cssNode = document.createTextNode(css), childNodes = styleElement.childNodes;
+                childNodes[index] && styleElement.removeChild(childNodes[index]), childNodes.length ? styleElement.insertBefore(cssNode, childNodes[index]) : styleElement.appendChild(cssNode);
+            }
+        }
+        function applyToTag(styleElement, obj) {
+            var css = obj.css, media = obj.media, sourceMap = obj.sourceMap;
+            if (media && styleElement.setAttribute("media", media), sourceMap && (css += "\n/*# sourceURL=" + sourceMap.sources[0] + " */", 
+            css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */"), 
+            styleElement.styleSheet) styleElement.styleSheet.cssText = css; else {
+                for (;styleElement.firstChild; ) styleElement.removeChild(styleElement.firstChild);
+                styleElement.appendChild(document.createTextNode(css));
+            }
+        }
+        var hasDocument = "undefined" != typeof document;
+        if ("undefined" != typeof DEBUG && DEBUG && !hasDocument) throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");
+        var listToStyles = __webpack_require__(24), stylesInDom = {}, head = hasDocument && (document.head || document.getElementsByTagName("head")[0]), singletonElement = null, singletonCounter = 0, isProduction = !1, noop = function() {}, isOldIE = "undefined" != typeof navigator && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase());
+        module.exports = function(parentId, list, _isProduction) {
+            isProduction = _isProduction;
+            var styles = listToStyles(parentId, list);
+            return addStylesToDom(styles), function(newList) {
+                for (var mayRemove = [], i = 0; i < styles.length; i++) {
+                    var item = styles[i], domStyle = stylesInDom[item.id];
+                    domStyle.refs--, mayRemove.push(domStyle);
+                }
+                newList ? (styles = listToStyles(parentId, newList), addStylesToDom(styles)) : styles = [];
+                for (var i = 0; i < mayRemove.length; i++) {
+                    var domStyle = mayRemove[i];
+                    if (0 === domStyle.refs) {
+                        for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
+                        delete stylesInDom[domStyle.id];
+                    }
+                }
+            };
+        };
+        var replaceText = function() {
+            var textStore = [];
+            return function(index, replacement) {
+                return textStore[index] = replacement, textStore.filter(Boolean).join("\n");
+            };
+        }();
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        function _interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {
+                default: obj
+            };
+        }
+        function getModalsContainer(Vue, options, root) {
+            if (!root._dynamicContainer && options.injectModalsContainer) {
+                var modalsContainer = document.createElement("div");
+                document.body.appendChild(modalsContainer), new Vue({
+                    parent: root,
+                    render: function(h) {
+                        return h(_ModalsContainer2.default);
+                    }
+                }).$mount(modalsContainer);
+            }
+            return root._dynamicContainer;
+        }
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        });
+        var _Modal = __webpack_require__(6), _Modal2 = _interopRequireDefault(_Modal), _Dialog = __webpack_require__(5), _Dialog2 = _interopRequireDefault(_Dialog), _ModalsContainer = __webpack_require__(7), _ModalsContainer2 = _interopRequireDefault(_ModalsContainer), Plugin = {
+            install: function(Vue) {
+                var options = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
+                this.installed || (this.installed = !0, this.event = new Vue(), this.rootInstance = null, 
+                this.componentName = options.componentName || "modal", Vue.prototype.$modal = {
+                    show: function(modal, paramsOrProps, params) {
+                        var events = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {};
+                        if ("string" == typeof modal) return void Plugin.event.$emit("toggle", modal, !0, paramsOrProps);
+                        var root = params && params.root ? params.root : Plugin.rootInstance, container = getModalsContainer(Vue, options, root);
+                        if (container) return void container.add(modal, paramsOrProps, params, events);
+                        console.warn("[vue-js-modal] In order to render dynamic modals, a <modals-container> component must be present on the page");
+                    },
+                    hide: function(name, params) {
+                        Plugin.event.$emit("toggle", name, !1, params);
+                    },
+                    toggle: function(name, params) {
+                        Plugin.event.$emit("toggle", name, void 0, params);
+                    }
+                }, Vue.component(this.componentName, _Modal2.default), options.dialog && Vue.component("v-dialog", _Dialog2.default), 
+                options.dynamic && (Vue.component("modals-container", _ModalsContainer2.default), 
+                Vue.mixin({
+                    beforeMount: function() {
+                        null === Plugin.rootInstance && (Plugin.rootInstance = this.$root);
+                    }
+                })));
+            }
+        };
+        exports.default = Plugin;
+    }, function(module, exports, __webpack_require__) {
+        __webpack_require__(21);
+        var Component = __webpack_require__(0)(__webpack_require__(8), __webpack_require__(18), null, null);
+        Component.options.__file = "/Users/yev.vlasenko2/Projects/vue/vue-js-modal/src/Dialog.vue", 
+        Component.esModule && Object.keys(Component.esModule).some(function(key) {
+            return "default" !== key && "__esModule" !== key;
+        }) && console.error("named exports are not supported in *.vue files."), Component.options.functional && console.error("[vue-loader] Dialog.vue: functional components are not supported with templates, they should use render functions."), 
+        module.exports = Component.exports;
+    }, function(module, exports, __webpack_require__) {
+        __webpack_require__(22);
+        var Component = __webpack_require__(0)(__webpack_require__(9), __webpack_require__(19), null, null);
+        Component.options.__file = "/Users/yev.vlasenko2/Projects/vue/vue-js-modal/src/Modal.vue", 
+        Component.esModule && Object.keys(Component.esModule).some(function(key) {
+            return "default" !== key && "__esModule" !== key;
+        }) && console.error("named exports are not supported in *.vue files."), Component.options.functional && console.error("[vue-loader] Modal.vue: functional components are not supported with templates, they should use render functions."), 
+        module.exports = Component.exports;
+    }, function(module, exports, __webpack_require__) {
+        var Component = __webpack_require__(0)(__webpack_require__(10), __webpack_require__(17), null, null);
+        Component.options.__file = "/Users/yev.vlasenko2/Projects/vue/vue-js-modal/src/ModalsContainer.vue", 
+        Component.esModule && Object.keys(Component.esModule).some(function(key) {
+            return "default" !== key && "__esModule" !== key;
+        }) && console.error("named exports are not supported in *.vue files."), Component.options.functional && console.error("[vue-loader] ModalsContainer.vue: functional components are not supported with templates, they should use render functions."), 
+        module.exports = Component.exports;
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        }), exports.default = {
+            name: "VueJsDialog",
+            props: {
+                width: {
+                    type: [ Number, String ],
+                    default: 400
+                },
+                clickToClose: {
+                    type: Boolean,
+                    default: !0
+                },
+                transition: {
+                    type: String,
+                    default: "fade"
+                }
+            },
+            data: function() {
+                return {
+                    params: {},
+                    defaultButtons: [ {
+                        title: "CLOSE"
+                    } ]
+                };
+            },
+            computed: {
+                buttons: function() {
+                    return this.params.buttons || this.defaultButtons;
+                },
+                buttonStyle: function() {
+                    return {
+                        flex: "1 1 " + 100 / this.buttons.length + "%"
+                    };
+                }
+            },
+            methods: {
+                beforeOpened: function(event) {
+                    window.addEventListener("keyup", this.onKeyUp), this.params = event.params || {}, 
+                    this.$emit("before-opened", event);
+                },
+                beforeClosed: function(event) {
+                    window.removeEventListener("keyup", this.onKeyUp), this.params = {}, this.$emit("before-closed", event);
+                },
+                click: function(i, event) {
+                    var source = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : "click", button = this.buttons[i];
+                    button && "function" == typeof button.handler ? button.handler(i, event, {
+                        source: source
+                    }) : this.$modal.hide("dialog");
+                },
+                onKeyUp: function(event) {
+                    if (13 === event.which && this.buttons.length > 0) {
+                        var buttonIndex = 1 === this.buttons.length ? 0 : this.buttons.findIndex(function(button) {
+                            return button.default;
+                        });
+                        -1 !== buttonIndex && this.click(buttonIndex, event, "keypress");
+                    }
+                }
+            }
+        };
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        function _interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {
+                default: obj
+            };
+        }
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        });
+        var _extends = Object.assign || function(target) {
+            for (var i = 1; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var key in source) Object.prototype.hasOwnProperty.call(source, key) && (target[key] = source[key]);
+            }
+            return target;
+        }, _index = __webpack_require__(4), _index2 = _interopRequireDefault(_index), _Resizer = __webpack_require__(16), _Resizer2 = _interopRequireDefault(_Resizer), _util = __webpack_require__(1), _parser = __webpack_require__(12);
+        exports.default = {
+            name: "VueJsModal",
+            props: {
+                name: {
+                    required: !0,
+                    type: String
+                },
+                delay: {
+                    type: Number,
+                    default: 0
+                },
+                resizable: {
+                    type: Boolean,
+                    default: !1
+                },
+                adaptive: {
+                    type: Boolean,
+                    default: !1
+                },
+                draggable: {
+                    type: [ Boolean, String ],
+                    default: !1
+                },
+                scrollable: {
+                    type: Boolean,
+                    default: !1
+                },
+                reset: {
+                    type: Boolean,
+                    default: !1
+                },
+                overlayTransition: {
+                    type: String,
+                    default: "overlay-fade"
+                },
+                transition: {
+                    type: String
+                },
+                clickToClose: {
+                    type: Boolean,
+                    default: !0
+                },
+                classes: {
+                    type: [ String, Array ],
+                    default: "v--modal"
+                },
+                minWidth: {
+                    type: Number,
+                    default: 0,
+                    validator: function(value) {
+                        return value >= 0;
+                    }
+                },
+                minHeight: {
+                    type: Number,
+                    default: 0,
+                    validator: function(value) {
+                        return value >= 0;
+                    }
+                },
+                maxWidth: {
+                    type: Number,
+                    default: 1 / 0
+                },
+                maxHeight: {
+                    type: Number,
+                    default: 1 / 0
+                },
+                width: {
+                    type: [ Number, String ],
+                    default: 600,
+                    validator: _parser.validateNumber
+                },
+                height: {
+                    type: [ Number, String ],
+                    default: 300,
+                    validator: function(value) {
+                        return "auto" === value || (0, _parser.validateNumber)(value);
+                    }
+                },
+                pivotX: {
+                    type: Number,
+                    default: .5,
+                    validator: function(value) {
+                        return value >= 0 && value <= 1;
+                    }
+                },
+                pivotY: {
+                    type: Number,
+                    default: .5,
+                    validator: function(value) {
+                        return value >= 0 && value <= 1;
+                    }
+                }
+            },
+            components: {
+                Resizer: _Resizer2.default
+            },
+            data: function() {
+                return {
+                    visible: !1,
+                    visibility: {
+                        modal: !1,
+                        overlay: !1
+                    },
+                    shift: {
+                        left: 0,
+                        top: 0
+                    },
+                    modal: {
+                        width: 0,
+                        widthType: "px",
+                        height: 0,
+                        heightType: "px",
+                        renderedHeight: 0
+                    },
+                    window: {
+                        width: 0,
+                        height: 0
+                    },
+                    mutationObserver: null
+                };
+            },
+            created: function() {
+                this.setInitialSize();
+            },
+            beforeMount: function() {
+                var _this = this;
+                if (_index2.default.event.$on("toggle", this.handleToggleEvent), window.addEventListener("resize", this.handleWindowResize), 
+                this.handleWindowResize(), this.scrollable && !this.isAutoHeight && console.warn('Modal "' + this.name + '" has scrollable flag set to true but height is not "auto" (' + this.height + ")"), 
+                this.isAutoHeight) {
+                    var MutationObserver = (0, _util.getMutationObserver)();
+                    MutationObserver && (this.mutationObserver = new MutationObserver(function(mutations) {
+                        _this.updateRenderedHeight();
+                    }));
+                }
+                this.clickToClose && window.addEventListener("keyup", this.handleEscapeKeyUp);
+            },
+            beforeDestroy: function() {
+                _index2.default.event.$off("toggle", this.handleToggleEvent), window.removeEventListener("resize", this.handleWindowResize), 
+                this.clickToClose && window.removeEventListener("keyup", this.handleEscapeKeyUp), 
+                this.scrollable && document.body.classList.remove("v--modal-block-scroll");
+            },
+            computed: {
+                isAutoHeight: function() {
+                    return "auto" === this.modal.heightType;
+                },
+                position: function() {
+                    var window = this.window, shift = this.shift, pivotX = this.pivotX, pivotY = this.pivotY, trueModalWidth = this.trueModalWidth, trueModalHeight = this.trueModalHeight, maxLeft = window.width - trueModalWidth, maxTop = window.height - trueModalHeight, left = shift.left + pivotX * maxLeft, top = shift.top + pivotY * maxTop;
+                    return {
+                        left: parseInt((0, _util.inRange)(0, maxLeft, left)),
+                        top: parseInt((0, _util.inRange)(0, maxTop, top))
+                    };
+                },
+                trueModalWidth: function() {
+                    var window = this.window, modal = this.modal, adaptive = this.adaptive, minWidth = this.minWidth, maxWidth = this.maxWidth, value = "%" === modal.widthType ? window.width / 100 * modal.width : modal.width, max = Math.min(window.width, maxWidth);
+                    return adaptive ? (0, _util.inRange)(minWidth, max, value) : value;
+                },
+                trueModalHeight: function() {
+                    var window = this.window, modal = this.modal, isAutoHeight = this.isAutoHeight, adaptive = this.adaptive, maxHeight = this.maxHeight, value = "%" === modal.heightType ? window.height / 100 * modal.height : modal.height;
+                    if (isAutoHeight) return this.modal.renderedHeight;
+                    var max = Math.min(window.height, maxHeight);
+                    return adaptive ? (0, _util.inRange)(this.minHeight, max, value) : value;
+                },
+                overlayClass: function() {
+                    return {
+                        "v--modal-overlay": !0,
+                        scrollable: this.scrollable && this.isAutoHeight
+                    };
+                },
+                modalClass: function() {
+                    return [ "v--modal-box", this.classes ];
+                },
+                modalStyle: function() {
+                    return {
+                        top: this.position.top + "px",
+                        left: this.position.left + "px",
+                        width: this.trueModalWidth + "px",
+                        height: this.isAutoHeight ? "auto" : this.trueModalHeight + "px"
+                    };
+                }
+            },
+            methods: {
+                handleToggleEvent: function(name, state, params) {
+                    if (this.name === name) {
+                        var nextState = void 0 === state ? !this.visible : state;
+                        this.toggle(nextState, params);
+                    }
+                },
+                setInitialSize: function() {
+                    var modal = this.modal, width = (0, _parser.parseNumber)(this.width), height = (0, 
+                    _parser.parseNumber)(this.height);
+                    modal.width = width.value, modal.widthType = width.type, modal.height = height.value, 
+                    modal.heightType = height.type;
+                },
+                handleEscapeKeyUp: function(event) {
+                    27 === event.which && this.visible && this.$modal.hide(this.name);
+                },
+                handleWindowResize: function() {
+                    this.window.width = window.innerWidth, this.window.height = window.innerHeight;
+                },
+                createModalEvent: function() {
+                    var args = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
+                    return (0, _util.createModalEvent)(_extends({
+                        name: this.name,
+                        ref: this.$refs.modal
+                    }, args));
+                },
+                handleModalResize: function(event) {
+                    this.modal.widthType = "px", this.modal.width = event.size.width, this.modal.heightType = "px", 
+                    this.modal.height = event.size.height;
+                    var size = this.modal.size;
+                    this.$emit("resize", this.createModalEvent({
+                        size: size
+                    }));
+                },
+                toggle: function(nextState, params) {
+                    var reset = this.reset, scrollable = this.scrollable, visible = this.visible;
+                    if (visible !== nextState) {
+                        var beforeEventName = visible ? "before-close" : "before-open";
+                        "before-open" === beforeEventName ? (document.activeElement && "BODY" !== document.activeElement.tagName && document.activeElement.blur && document.activeElement.blur(), 
+                        reset && (this.setInitialSize(), this.shift.left = 0, this.shift.top = 0), scrollable && document.body.classList.add("v--modal-block-scroll")) : scrollable && document.body.classList.remove("v--modal-block-scroll");
+                        var stopEventExecution = !1, stop = function() {
+                            stopEventExecution = !0;
+                        }, beforeEvent = this.createModalEvent({
+                            stop: stop,
+                            state: nextState,
+                            params: params
+                        });
+                        this.$emit(beforeEventName, beforeEvent), stopEventExecution || (this.visible = nextState, 
+                        this.visible ? this.startOpeningModal() : this.startClosingModal());
+                    }
+                },
+                getDraggableElement: function() {
+                    var selector = "string" != typeof this.draggable ? ".v--modal-box" : this.draggable;
+                    return selector ? this.$refs.overlay.querySelector(selector) : null;
+                },
+                handleBackgroundClick: function() {
+                    this.clickToClose && this.toggle(!1);
+                },
+                startOpeningModal: function() {
+                    var _this2 = this;
+                    this.visibility.overlay = !0, setTimeout(function() {
+                        _this2.visibility.modal = !0;
+                    }, this.delay);
+                },
+                startClosingModal: function() {
+                    var _this3 = this;
+                    this.visibility.modal = !1, setTimeout(function() {
+                        _this3.visibility.overlay = !1;
+                    }, this.delay);
+                },
+                addDraggableListeners: function() {
+                    var _this4 = this;
+                    if (this.draggable) {
+                        var dragger = this.getDraggableElement();
+                        if (dragger) {
+                            var startX = 0, startY = 0, cachedShiftX = 0, cachedShiftY = 0, getPosition = function(event) {
+                                return event.touches && event.touches.length > 0 ? event.touches[0] : event;
+                            }, handleDraggableMousedown = function(event) {
+                                var target = event.target;
+                                if (!target || "INPUT" !== target.nodeName) {
+                                    var _getPosition = getPosition(event), clientX = _getPosition.clientX, clientY = _getPosition.clientY;
+                                    document.addEventListener("mousemove", _handleDraggableMousemove), document.addEventListener("touchmove", _handleDraggableMousemove), 
+                                    document.addEventListener("mouseup", _handleDraggableMouseup), document.addEventListener("touchend", _handleDraggableMouseup), 
+                                    startX = clientX, startY = clientY, cachedShiftX = _this4.shift.left, cachedShiftY = _this4.shift.top;
+                                }
+                            }, _handleDraggableMousemove = function(event) {
+                                var _getPosition2 = getPosition(event), clientX = _getPosition2.clientX, clientY = _getPosition2.clientY;
+                                _this4.shift.left = cachedShiftX + clientX - startX, _this4.shift.top = cachedShiftY + clientY - startY, 
+                                event.preventDefault();
+                            }, _handleDraggableMouseup = function _handleDraggableMouseup(event) {
+                                document.removeEventListener("mousemove", _handleDraggableMousemove), document.removeEventListener("touchmove", _handleDraggableMousemove), 
+                                document.removeEventListener("mouseup", _handleDraggableMouseup), document.removeEventListener("touchend", _handleDraggableMouseup), 
+                                event.preventDefault();
+                            };
+                            dragger.addEventListener("mousedown", handleDraggableMousedown), dragger.addEventListener("touchstart", handleDraggableMousedown);
+                        }
+                    }
+                },
+                removeDraggableListeners: function() {},
+                updateRenderedHeight: function() {
+                    this.$refs.modal && (this.modal.renderedHeight = this.$refs.modal.getBoundingClientRect().height);
+                },
+                connectObserver: function() {
+                    this.mutationObserver && this.mutationObserver.observe(this.$refs.overlay, {
+                        childList: !0,
+                        attributes: !0,
+                        subtree: !0
+                    });
+                },
+                disconnectObserver: function() {
+                    this.mutationObserver && this.mutationObserver.disconnect();
+                },
+                beforeTransitionEnter: function() {
+                    this.connectObserver();
+                },
+                afterTransitionEnter: function() {
+                    this.addDraggableListeners(), this.$emit("opened", this.createModalEvent({
+                        state: !0
+                    }));
+                },
+                afterTransitionLeave: function() {
+                    this.removeDraggableListeners(), this.disconnectObserver(), this.$emit("closed", this.createModalEvent({
+                        state: !1
+                    }));
+                }
+            }
+        };
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        });
+        var _extends = Object.assign || function(target) {
+            for (var i = 1; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var key in source) Object.prototype.hasOwnProperty.call(source, key) && (target[key] = source[key]);
+            }
+            return target;
+        }, _util = __webpack_require__(1);
+        exports.default = {
+            data: function() {
+                return {
+                    modals: []
+                };
+            },
+            created: function() {
+                this.$root._dynamicContainer = this;
+            },
+            methods: {
+                add: function(component) {
+                    var componentAttrs = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}, _this = this, modalAttrs = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {}, modalListeners = arguments[3], id = (0, 
+                    _util.generateId)(), name = modalAttrs.name || "_dynamic_modal_" + id;
+                    this.modals.push({
+                        id: id,
+                        modalAttrs: _extends({}, modalAttrs, {
+                            name: name
+                        }),
+                        modalListeners: modalListeners,
+                        component: component,
+                        componentAttrs: componentAttrs
+                    }), this.$nextTick(function() {
+                        _this.$modal.show(name);
+                    });
+                },
+                remove: function(id) {
+                    for (var i in this.modals) if (this.modals[i].id === id) return void this.modals.splice(i, 1);
+                }
+            }
+        };
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        });
+        var _util = __webpack_require__(1);
+        exports.default = {
+            name: "VueJsModalResizer",
+            props: {
+                minHeight: {
+                    type: Number,
+                    default: 0
+                },
+                minWidth: {
+                    type: Number,
+                    default: 0
+                }
+            },
+            data: function() {
+                return {
+                    clicked: !1,
+                    size: {}
+                };
+            },
+            mounted: function() {
+                this.$el.addEventListener("mousedown", this.start, !1);
+            },
+            computed: {
+                className: function() {
+                    return {
+                        "vue-modal-resizer": !0,
+                        clicked: this.clicked
+                    };
+                }
+            },
+            methods: {
+                start: function(event) {
+                    this.clicked = !0, window.addEventListener("mousemove", this.mousemove, !1), window.addEventListener("mouseup", this.stop, !1), 
+                    event.stopPropagation(), event.preventDefault();
+                },
+                stop: function() {
+                    this.clicked = !1, window.removeEventListener("mousemove", this.mousemove, !1), 
+                    window.removeEventListener("mouseup", this.stop, !1), this.$emit("resize-stop", {
+                        element: this.$el.parentElement,
+                        size: this.size
+                    });
+                },
+                mousemove: function(event) {
+                    this.resize(event);
+                },
+                resize: function(event) {
+                    var el = this.$el.parentElement;
+                    if (el) {
+                        var width = event.clientX - el.offsetLeft, height = event.clientY - el.offsetTop;
+                        width = (0, _util.inRange)(this.minWidth, window.innerWidth, width), height = (0, 
+                        _util.inRange)(this.minHeight, window.innerHeight, height), this.size = {
+                            width: width,
+                            height: height
+                        }, el.style.width = width + "px", el.style.height = height + "px", this.$emit("resize", {
+                            element: el,
+                            size: this.size
+                        });
+                    }
+                }
+            }
+        };
+    }, function(module, exports, __webpack_require__) {
+        "use strict";
+        Object.defineProperty(exports, "__esModule", {
+            value: !0
+        });
+        var _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(obj) {
+            return typeof obj;
+        } : function(obj) {
+            return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+        }, types = [ {
+            name: "px",
+            regexp: new RegExp("^[-+]?[0-9]*.?[0-9]+px$")
+        }, {
+            name: "%",
+            regexp: new RegExp("^[-+]?[0-9]*.?[0-9]+%$")
+        }, {
+            name: "px",
+            regexp: new RegExp("^[-+]?[0-9]*.?[0-9]+$")
+        } ], getType = function(value) {
+            if ("auto" === value) return {
+                type: value,
+                value: 0
+            };
+            for (var i = 0; i < types.length; i++) {
+                var type = types[i];
+                if (type.regexp.test(value)) return {
+                    type: type.name,
+                    value: parseFloat(value)
+                };
+            }
+            return {
+                type: "",
+                value: value
+            };
+        }, parseNumber = exports.parseNumber = function(value) {
+            switch (void 0 === value ? "undefined" : _typeof(value)) {
+              case "number":
+                return {
+                    type: "px",
+                    value: value
+                };
+
+              case "string":
+                return getType(value);
+
+              default:
+                return {
+                    type: "",
+                    value: value
+                };
+            }
+        };
+        exports.validateNumber = function(value) {
+            if ("string" == typeof value) {
+                var _value = parseNumber(value);
+                return ("%" === _value.type || "px" === _value.type) && _value.value > 0;
+            }
+            return value >= 0;
+        };
+    }, function(module, exports, __webpack_require__) {
+        exports = module.exports = __webpack_require__(2)(), exports.push([ module.i, "\n.vue-dialog div {\n  box-sizing: border-box;\n}\n.vue-dialog .dialog-flex {\n  width: 100%;\n  height: 100%;\n}\n.vue-dialog .dialog-content {\n  flex: 1 0 auto;\n  width: 100%;\n  padding: 15px;\n  font-size: 14px;\n}\n.vue-dialog .dialog-c-title {\n  font-weight: 600;\n  padding-bottom: 15px;\n}\n.vue-dialog .dialog-c-text {\n}\n.vue-dialog .vue-dialog-buttons {\n  display: flex;\n  flex: 0 1 auto;\n  width: 100%;\n  border-top: 1px solid #eee;\n}\n.vue-dialog .vue-dialog-buttons-none {\n  width: 100%;\n  padding-bottom: 15px;\n}\n.vue-dialog-button {\n  font-size: 12px !important;\n  background: transparent;\n  padding: 0;\n  margin: 0;\n  border: 0;\n  cursor: pointer;\n  box-sizing: border-box;\n  line-height: 40px;\n  height: 40px;\n  color: inherit;\n  font: inherit;\n  outline: none;\n}\n.vue-dialog-button:hover {\n  background: rgba(0, 0, 0, 0.01);\n}\n.vue-dialog-button:active {\n  background: rgba(0, 0, 0, 0.025);\n}\n.vue-dialog-button:not(:first-of-type) {\n  border-left: 1px solid #eee;\n}\n", "" ]);
+    }, function(module, exports, __webpack_require__) {
+        exports = module.exports = __webpack_require__(2)(), exports.push([ module.i, "\n.v--modal-block-scroll {\n  overflow: hidden;\n  width: 100vw;\n}\n.v--modal-overlay {\n  position: fixed;\n  box-sizing: border-box;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100vh;\n  background: rgba(0, 0, 0, 0.2);\n  z-index: 999;\n  opacity: 1;\n}\n.v--modal-overlay.scrollable {\n  height: 100%;\n  min-height: 100vh;\n  overflow-y: auto;\n  -webkit-overflow-scrolling: touch;\n}\n.v--modal-overlay .v--modal-background-click {\n  min-height: 100%;\n  width: 100%;\n}\n.v--modal-overlay .v--modal-box {\n  position: relative;\n  overflow: hidden;\n  box-sizing: border-box;\n}\n.v--modal-overlay.scrollable .v--modal-box {\n  margin-bottom: 2px;\n}\n.v--modal {\n  background-color: white;\n  text-align: left;\n  border-radius: 3px;\n  box-shadow: 0 20px 60px -2px rgba(27, 33, 58, 0.4);\n  padding: 0;\n}\n.v--modal.v--modal-fullscreen {\n  width: 100vw;\n  height: 100vh;\n  margin: 0;\n  left: 0;\n  top: 0;\n}\n.v--modal-top-right {\n  display: block;\n  position: absolute;\n  right: 0;\n  top: 0;\n}\n.overlay-fade-enter-active,\n.overlay-fade-leave-active {\n  transition: all 0.2s;\n}\n.overlay-fade-enter,\n.overlay-fade-leave-active {\n  opacity: 0;\n}\n.nice-modal-fade-enter-active,\n.nice-modal-fade-leave-active {\n  transition: all 0.4s;\n}\n.nice-modal-fade-enter,\n.nice-modal-fade-leave-active {\n  opacity: 0;\n  transform: translateY(-20px);\n}\n", "" ]);
+    }, function(module, exports, __webpack_require__) {
+        exports = module.exports = __webpack_require__(2)(), exports.push([ module.i, "\n.vue-modal-resizer {\n  display: block;\n  overflow: hidden;\n  position: absolute;\n  width: 12px;\n  height: 12px;\n  right: 0;\n  bottom: 0;\n  z-index: 9999999;\n  background: transparent;\n  cursor: se-resize;\n}\n.vue-modal-resizer::after {\n  display: block;\n  position: absolute;\n  content: '';\n  background: transparent;\n  left: 0;\n  top: 0;\n  width: 0;\n  height: 0;\n  border-bottom: 10px solid #ddd;\n  border-left: 10px solid transparent;\n}\n.vue-modal-resizer.clicked::after {\n  border-bottom: 10px solid #369be9;\n}\n", "" ]);
+    }, function(module, exports, __webpack_require__) {
+        __webpack_require__(23);
+        var Component = __webpack_require__(0)(__webpack_require__(11), __webpack_require__(20), null, null);
+        Component.options.__file = "/Users/yev.vlasenko2/Projects/vue/vue-js-modal/src/Resizer.vue", 
+        Component.esModule && Object.keys(Component.esModule).some(function(key) {
+            return "default" !== key && "__esModule" !== key;
+        }) && console.error("named exports are not supported in *.vue files."), Component.options.functional && console.error("[vue-loader] Resizer.vue: functional components are not supported with templates, they should use render functions."), 
+        module.exports = Component.exports;
+    }, function(module, exports, __webpack_require__) {
+        module.exports = {
+            render: function() {
+                var _vm = this, _h = _vm.$createElement, _c = _vm._self._c || _h;
+                return _c("div", {
+                    attrs: {
+                        id: "modals-container"
+                    }
+                }, _vm._l(_vm.modals, function(modal) {
+                    return _c("modal", _vm._g(_vm._b({
+                        key: modal.id,
+                        on: {
+                            closed: function($event) {
+                                _vm.remove(modal.id);
+                            }
+                        }
+                    }, "modal", modal.modalAttrs, !1), modal.modalListeners), [ _c(modal.component, _vm._g(_vm._b({
+                        tag: "component",
+                        on: {
+                            close: function($event) {
+                                _vm.$modal.hide(modal.modalAttrs.name);
+                            }
+                        }
+                    }, "component", modal.componentAttrs, !1), _vm.$listeners)) ], 1);
+                }));
+            },
+            staticRenderFns: []
+        }, module.exports.render._withStripped = !0;
+    }, function(module, exports, __webpack_require__) {
+        module.exports = {
+            render: function() {
+                var _vm = this, _h = _vm.$createElement, _c = _vm._self._c || _h;
+                return _c("modal", {
+                    attrs: {
+                        name: "dialog",
+                        height: "auto",
+                        classes: [ "v--modal", "vue-dialog", this.params.class ],
+                        width: _vm.width,
+                        "pivot-y": .3,
+                        adaptive: !0,
+                        clickToClose: _vm.clickToClose,
+                        transition: _vm.transition
+                    },
+                    on: {
+                        "before-open": _vm.beforeOpened,
+                        "before-close": _vm.beforeClosed,
+                        opened: function($event) {
+                            _vm.$emit("opened", $event);
+                        },
+                        closed: function($event) {
+                            _vm.$emit("closed", $event);
+                        }
+                    }
+                }, [ _c("div", {
+                    staticClass: "dialog-content"
+                }, [ _vm.params.title ? _c("div", {
+                    staticClass: "dialog-c-title",
+                    domProps: {
+                        innerHTML: _vm._s(_vm.params.title || "")
+                    }
+                }) : _vm._e(), _vm._v(" "), _c("div", {
+                    staticClass: "dialog-c-text",
+                    domProps: {
+                        innerHTML: _vm._s(_vm.params.text || "")
+                    }
+                }) ]), _vm._v(" "), _vm.buttons ? _c("div", {
+                    staticClass: "vue-dialog-buttons"
+                }, _vm._l(_vm.buttons, function(button, i) {
+                    return _c("button", {
+                        key: i,
+                        class: button.class || "vue-dialog-button",
+                        style: _vm.buttonStyle,
+                        attrs: {
+                            type: "button"
+                        },
+                        domProps: {
+                            innerHTML: _vm._s(button.title)
+                        },
+                        on: {
+                            click: function($event) {
+                                $event.stopPropagation(), _vm.click(i, $event);
+                            }
+                        }
+                    }, [ _vm._v("\n      " + _vm._s(button.title) + "\n    ") ]);
+                })) : _c("div", {
+                    staticClass: "vue-dialog-buttons-none"
+                }) ]);
+            },
+            staticRenderFns: []
+        }, module.exports.render._withStripped = !0;
+    }, function(module, exports, __webpack_require__) {
+        module.exports = {
+            render: function() {
+                var _vm = this, _h = _vm.$createElement, _c = _vm._self._c || _h;
+                return _c("transition", {
+                    attrs: {
+                        name: _vm.overlayTransition
+                    }
+                }, [ _vm.visibility.overlay ? _c("div", {
+                    ref: "overlay",
+                    class: _vm.overlayClass,
+                    attrs: {
+                        "aria-expanded": _vm.visibility.overlay.toString(),
+                        "data-modal": _vm.name
+                    }
+                }, [ _c("div", {
+                    staticClass: "v--modal-background-click",
+                    on: {
+                        mousedown: function($event) {
+                            if ($event.target !== $event.currentTarget) return null;
+                            _vm.handleBackgroundClick($event);
+                        },
+                        touchstart: function($event) {
+                            if ($event.target !== $event.currentTarget) return null;
+                            _vm.handleBackgroundClick($event);
+                        }
+                    }
+                }, [ _c("div", {
+                    staticClass: "v--modal-top-right"
+                }, [ _vm._t("top-right") ], 2), _vm._v(" "), _c("transition", {
+                    attrs: {
+                        name: _vm.transition
+                    },
+                    on: {
+                        "before-enter": _vm.beforeTransitionEnter,
+                        "after-enter": _vm.afterTransitionEnter,
+                        "after-leave": _vm.afterTransitionLeave
+                    }
+                }, [ _vm.visibility.modal ? _c("div", {
+                    ref: "modal",
+                    class: _vm.modalClass,
+                    style: _vm.modalStyle
+                }, [ _vm._t("default"), _vm._v(" "), _vm.resizable && !_vm.isAutoHeight ? _c("resizer", {
+                    attrs: {
+                        "min-width": _vm.minWidth,
+                        "min-height": _vm.minHeight
+                    },
+                    on: {
+                        resize: _vm.handleModalResize
+                    }
+                }) : _vm._e() ], 2) : _vm._e() ]) ], 1) ]) : _vm._e() ]);
+            },
+            staticRenderFns: []
+        }, module.exports.render._withStripped = !0;
+    }, function(module, exports, __webpack_require__) {
+        module.exports = {
+            render: function() {
+                var _vm = this, _h = _vm.$createElement;
+                return (_vm._self._c || _h)("div", {
+                    class: _vm.className
+                });
+            },
+            staticRenderFns: []
+        }, module.exports.render._withStripped = !0;
+    }, function(module, exports, __webpack_require__) {
+        var content = __webpack_require__(13);
+        "string" == typeof content && (content = [ [ module.i, content, "" ] ]), content.locals && (module.exports = content.locals);
+        __webpack_require__(3)("237a7ca4", content, !1);
+    }, function(module, exports, __webpack_require__) {
+        var content = __webpack_require__(14);
+        "string" == typeof content && (content = [ [ module.i, content, "" ] ]), content.locals && (module.exports = content.locals);
+        __webpack_require__(3)("2790b368", content, !1);
+    }, function(module, exports, __webpack_require__) {
+        var content = __webpack_require__(15);
+        "string" == typeof content && (content = [ [ module.i, content, "" ] ]), content.locals && (module.exports = content.locals);
+        __webpack_require__(3)("02ec91af", content, !1);
+    }, function(module, exports) {
+        module.exports = function(parentId, list) {
+            for (var styles = [], newStyles = {}, i = 0; i < list.length; i++) {
+                var item = list[i], id = item[0], css = item[1], media = item[2], sourceMap = item[3], part = {
+                    id: parentId + ":" + i,
+                    css: css,
+                    media: media,
+                    sourceMap: sourceMap
+                };
+                newStyles[id] ? newStyles[id].parts.push(part) : styles.push(newStyles[id] = {
+                    id: id,
+                    parts: [ part ]
+                });
+            }
+            return styles;
+        };
+    } ]);
+});
 
 /***/ })
 

@@ -2,230 +2,198 @@
     <div>
         <div class="row">
             <div class="col-lg-12">
-                <b-card class="mb-2 bg-default-card" header="Form Elements" header-tag="h4">
+                
+                <b-card class="mb-2 bg-success-card" header="Accounts / New Account" header-tag="h4">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group p-10 pull-right">
+                                <div class="col-md-offset-4 col-md-8">
+                                    <button type="button" @click="go_back" class="btn btn-default btn-lg mt-3">Go Back</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div>
                         <form method="" class="form-horizontal">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group p-10">
-                                        <label class="control-label col-md-4" for="text">Text:
-                                        </label>
+                                <div class="col-md-4">
+                                    <b-card header="Store Information" header-tag="h4" class="mb-2 mt-2 bg-default-card" align="left">
+                                        <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="text">Frist:
+                                            </label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="text" placeholder="Some value">
+                                            </div>
+                                        </div>
+                                        <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="text">Last:
+                                            </label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="text" placeholder="Some value">
+                                            </div>
+                                        </div>
+                                        <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="text">Store Name:
+                                            </label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="text" placeholder="Some value">
+                                            </div>
+                                        </div>
+                                        <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="text">Address:
+                                            </label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="text" placeholder="Some value">
+                                            </div>
+                                        </div>
+                                        <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="number">City:
+                                            </label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="text" placeholder="Enter value">
+                                            </div>
+                                        </div>
+                                        <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="number">Zip:
+                                            </label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="text" placeholder="Enter value">
+                                            </div>
+                                        </div>
+                                        <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="number">State:
+                                            </label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="text" placeholder="Enter value">
+                                            </div>
+                                        </div>
+                                        <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="number">Phone:
+                                            </label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="text" placeholder="Enter value">
+                                            </div>
+                                        </div>
+                                        <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="number">Email:</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="text" placeholder="Enter value">
+                                            </div>
+                                        </div>
+                                        <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="number">Status:</label>
+                                            <b-form-radio-group :options="radiooptions"></b-form-radio-group>
+                                        </div>
+                                    </b-card>   
+                                </div>
+                                <div class="col-md-4">
+
+                                    <b-card header="Billing Card Information" header-tag="h4" class="mb-2 mt-2 bg-default-card" align="left">
+                                        <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="text">Card Type</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="text" placeholder="Some value">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="number">Ending Card#</label>
+                                            <div class="col-md-9">
+                                                <input type="number" class="form-control" id="number" placeholder="Enter value">
+                                            </div>
+                                        </div>
+                                        <div class="form-group p-10">
+                                        <label class="control-label col-md-4" for="text">Frist Name:</label>
                                         <div class="col-md-9">
                                             <input type="text" class="form-control" id="text" placeholder="Some value">
                                         </div>
-                                    </div>
-                                    <div class="form-group p-10">
-                                        <label class="control-label col-md-4" for="input_Email">Email:</label>
-                                        <div class="col-md-9">
-                                            <input type="email" class="form-control" id="input_Email" placeholder="Email">
                                         </div>
-                                    </div>
-                                    <div class="form-group p-10">
-                                        <label class="control-label col-md-4" for="input_Password">Password:</label>
-                                        <div class="col-md-9">
-                                            <input type="password" class="form-control" id="input_Password" placeholder="Password">
+                                       <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="text">Address:
+                                            </label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="text" placeholder="Some value">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group p-10">
-                                        <label class="control-label col-md-4" for="disabled">Disabled:
-                                        </label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" id="disabled" placeholder="Disabled input" disabled>
+                                        <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="number">City:
+                                            </label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="text" placeholder="Enter value">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group p-10">
-                                        <label class="control-label col-md-4">Readonly:
-                                        </label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" id="text2" placeholder="Read only" readonly>
+                                        <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="number">Zip:
+                                            </label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="text" placeholder="Enter value">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group p-10">
-                                        <label class="col-md-3 control-label" for="example-select">Select:</label>
-                                        <div class="col-md-9">
-                                            <select id="example-select" name="example-select" class="form-control" size="1">
-                                                <option value="0">
-                                                    Please select
-                                                </option>
-                                                <option value="1">Bootstrap</option>
-                                                <option value="2">CSS</option>
-                                                <option value="3">JavaScript</option>
-                                                <option value="4">HTML</option>
-                                            </select>
+                                        <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="number">State:
+                                            </label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="text" placeholder="Enter value">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group p-10">
-                                        <label class="control-label col-md-4" for="text_area">Text area:</label>
-                                        <div class="col-md-9">
-                                            <textarea rows="4" class="form-control resize_vertical" id="text_area" placeholder="Postal Address"></textarea>
+                                        <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="number">CVV:
+                                            </label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="text" placeholder="Enter value">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group p-10">
-                                        <label class="control-label col-md-5" for="maxlength">Maxlength:
-                                        </label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" maxlength="5" id="maxlength" placeholder="Maxlength is five">
+                                        <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="number">Exp. Date:</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="text" placeholder="Enter value">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group p-10">
-                                        <label class="control-label col-md-4" for="color">Color:
-                                        </label>
-                                        <div class="col-md-9">
-                                            <input type="color" class="form-control" name="color" id="color" value="#428bca">
+                                        <div class="form-group p-10">
+                                            <label class="control-label col-md-4" for="number">Lock Acct.:</label>
+                                             <b-form-checkbox class="primarycheck"></b-form-checkbox>
                                         </div>
-                                    </div>
-                                    <div class="form-group p-10">
-                                        <label class="control-label col-md-4" for="range">Range:
-                                        </label>
-                                        <div class="col-md-9">
-                                            <input type="range" class="form-control" name="range" id="range" value="50">
-                                        </div>
-                                    </div>
-                                    <div class="form-group p-10">
-                                        <label class="control-label col-md-4" for="url">Url:
-                                        </label>
-                                        <div class="col-md-9">
-                                            <input type="url" class="form-control" name="url" value="http://www.example.com/" id="url">
-                                        </div>
-                                    </div>
-                                    <div class="form-group p-10">
-                                        <label class="control-label col-md-4" for="search">Search:
-                                        </label>
-                                        <div class="col-md-9">
-                                            <input type="search" class="form-control" id="search" placeholder="Search value">
-                                        </div>
-                                    </div>
-                                    <div class="form-group p-10">
-                                        <label class="control-label col-md-4" for="number">Number:
-                                        </label>
-                                        <div class="col-md-9">
-                                            <input type="number" class="form-control" id="number" placeholder="Enter value">
-                                        </div>
-                                    </div>
+                                    </b-card> 
+
+
+                                    <h6></h6>
+                                    
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group p-10">
-                                        <label class="control-label col-md-4" for="date">Date:
-                                        </label>
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <input type="date" class="form-control" id="date" value="yyyy-mm-dd" aria-selected="true">
-                                        </div>
+                                <div class="col-md-4">
+                                     <b-card class="mb-2 mt-2 bg-default-card" align="left">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Select Modules</th>
+                                                    <th>Price</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr v-for="plugin in model.pluginsdata">
+                                                    <td>{{ plugin.plugin_name }}</td>
+                                                    <td> {{ plugin.plugin_price }}</td>
+                                                    <td> 
+                                                        <div class="row">
+                                                            <div class="col-lg-4 col-md-6">
+                                                                <div class="custom-controls-stacked text-center">
+                                                                    <b-form-checkbox class="primarycheck"></b-form-checkbox>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
-                                    <div class="form-group p-10">
-                                        <label class="control-label col-md-4" for="time">Time:
-                                        </label>
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <input type="time" class="form-control" id="time" value="14:38:00">
-                                        </div>
-                                    </div>
-                                    <div class="form-group p-10">
-                                        <label class="control-label col-md-4" for="datetime">Datetime:
-                                        </label>
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <input type="datetime-local" class="form-control" id="datetime" value="yyyy-mm-dd T14:38:00">
-                                        </div>
-                                    </div>
-                                    <div class="form-group p-10">
-                                        <label class="control-label col-md-4" for="week">Week:
-                                        </label>
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <input type="week" class="form-control" id="week" value="2017-W28">
-                                        </div>
-                                    </div>
-                                    <div class="form-group p-10">
-                                        <label class="col-md-4 control-label" for="example-multiple-select2">Multiple:</label>
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <select id="example-multiple-select2" name="example-multiple-select" class="form-control" size="5" multiple>
-                                                <option value="1">Option #1</option>
-                                                <option value="2">Option #2</option>
-                                                <option value="3">Option #3</option>
-                                                <option value="4">Option #4</option>
-                                                <option value="5">Option #5</option>
-                                                <option value="6">Option #6</option>
-                                                <option value="7">Option #7</option>
-                                                <option value="8">Option #8</option>
-                                                <option value="9">Option #9</option>
-                                                <option value="10">Option #10</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group p-10">
-                                        <div class="col-md-4">
-                                            <label class="control-label" >Dropdowns</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <b-input-group>
-                                                <b-form-input></b-form-input>
-                                                <template slot="prepend">
-                                                    <b-dropdown text="Action" variant="secondary">
-                                                        <b-dropdown-item>Action</b-dropdown-item>
-                                                        <b-dropdown-item>Action B</b-dropdown-item>
-                                                        <b-dropdown-divider></b-dropdown-divider>
-                                                        <b-dropdown-item>Something else here...</b-dropdown-item>
-                                                    </b-dropdown>
-                                                </template>
-                                            </b-input-group>
-                                            <b-input-group class="mt-3">
-                                                <b-form-input></b-form-input>
-                                                <template slot="append">
-                                                    <b-dropdown text="Action" variant="secondary">
-                                                        <b-dropdown-item>Action</b-dropdown-item>
-                                                        <b-dropdown-item>Action B</b-dropdown-item>
-                                                        <b-dropdown-divider></b-dropdown-divider>
-                                                        <b-dropdown-item>Something else here...</b-dropdown-item>
-                                                    </b-dropdown>
-                                                </template>
-                                            </b-input-group>
-                                        </div>
-                                    </div>
-                                    <div class="form-group p-10">
-                                        <label class="control-label col-md-4">Radios:</label>
-                                        <div class="col-md-8 col-md-offset-2">
-                                            <div class="radio">
-                                                <b-form-radio checked="false">
-                                                    Normal
-                                                </b-form-radio>
-                                            </div>
-                                            <div class="radio">
-                                                <b-form-radio>
-                                                    Checked
-                                                </b-form-radio>
-                                            </div>
-                                            <div class="radio">
-                                                <b-form-radio :disabled=true checked="false">
-                                                    Disabled
-                                                </b-form-radio>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group p-10">
-                                        <label class="control-label col-md-4">Checkbox:</label>
-                                        <div class=" col-md-8 col-md-offset-2">
-                                            <div class="checkbox">
-                                                <b-form-checkbox checked="false">
-                                                    Normal
-                                                </b-form-checkbox>
-                                            </div>
-                                            <div class="checkbox">
-                                                <b-form-checkbox checked="true">
-                                                    Checked
-                                                </b-form-checkbox>
-                                            </div>
-                                            <div class="checkbox">
-                                                <b-form-checkbox :disabled=true>
-                                                    Disabled
-                                                </b-form-checkbox>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group p-10 form-actions">
-                                        <div class="col-md-offset-4 col-md-8">
-                                            <button type="button" class="btn btn-primary">Submit
-                                            </button>
-                                            <button type="reset" class="btn btn-effect-ripple btn-secondary  reset_btn1">
-                                                Reset
-                                            </button>
-                                        </div>
+                                </b-card>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group p-10 form-actions">
+                                    <div class="col-md-offset-4 col-md-8">
+                                        <button type="button" class="btn btn-success">Save</button>
                                     </div>
                                 </div>
                             </div>
@@ -237,13 +205,47 @@
     </div>
 </template>
 <script>
+    require("radiobox.css/dist/css/radiobox.min.css");
 export default {
     name: "formelements",
-    mounted: function() {
+    name: "radios_checkboxes",
+    data(){
+        return{
+           
+            radiooptions: [
+                { text: 'Active', value: '1' },
+                { text: 'Deactive', value: '0' },
+            ],
+            model: {
+                plugin_name: '',
+                plugin_price: '',
+                plugin_status: '',
+                pluginsdata:''
 
+            },
+            data2:{
+                d:""
+            },
+        }
     },
-    destroyed: function() {
+    mounted()
+        {
+            this.readPlugins();
+        },
+    methods: {
 
+        readPlugins()
+        {
+            axios.get('./api/get_plugins')
+                .then(response => {
+                   // this.pluginsdata = response.data.plugins;
+                    this.model.pluginsdata=response.data.plugins;
+                });
+        },
+        go_back()
+        {
+            this.$router.go(-1);
+        }
     }
 }
 </script>

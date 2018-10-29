@@ -21,6 +21,15 @@ const routes = [{
         }
     },
     {
+        path: '/pin',
+        component: resolve => require(['pages/pin'], resolve),
+        meta: {
+            title: "pin",
+            forVisitors : true,
+        }
+    },
+
+    {
         path: '/register',
         component: resolve => require(['pages/register'], resolve),
         meta: {

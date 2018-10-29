@@ -27,24 +27,20 @@
                         </span>
                         <b-dropdown-item exact class="dropdown_content">
                             <router-link to="/admin/distributors" exact class="drpodowtext">
-                                <i class="fa fa-user-o"></i> View
+                                <i class="fa fa-user-o"></i> Accounts
                             </router-link>
                         </b-dropdown-item>
                         <b-dropdown-item exact class="dropdown_content">
-                            <router-link to="" exact class="drpodowtext">
-                                <i class="fa fa-cog"></i> Add
+                            <router-link to="/admin/distributor_import_pricefile" exact class="drpodowtext">
+                                <i class="fa fa-user-o"></i> Import Pricefile
                             </router-link>
                         </b-dropdown-item>
                         <b-dropdown-item exact class="dropdown_content">
-                            <router-link to="" exact class="drpodowtext">
-                                <i class="fa fa-lock"></i> Upload
+                            <router-link to="/admin/distributor_item" exact class="drpodowtext">
+                                <i class="fa fa-user-o"></i> Items
                             </router-link>
                         </b-dropdown-item>
-                        <b-dropdown-item exact class="dropdown_content">
-                            <router-link to="" exact class="drpodowtext">
-                                <i class="fa fa-lock"></i> Import
-                            </router-link>
-                        </b-dropdown-item>
+                        
                     </b-dropdown>
                     <b-dropdown class="user user-menu bell_bg user_btn" right link>
                         <span slot="text">
@@ -55,17 +51,17 @@
                             </router-link>
                         </span>
                         <b-dropdown-item exact class="dropdown_content">
-                            <router-link to="" exact class="drpodowtext">
+                            <router-link to="/admin/item_library" exact class="drpodowtext">
                                 <i class="fa fa-user-o"></i> Item Library
                             </router-link>
                         </b-dropdown-item>
                         <b-dropdown-item exact class="dropdown_content">
-                            <router-link to="" exact class="drpodowtext">
-                                <i class="fa fa-cog"></i> Import
+                            <router-link to="/admin/import_wizard" exact class="drpodowtext">
+                                <i class="fa fa-cog"></i> Import Wizard
                             </router-link>
                         </b-dropdown-item>
                         <b-dropdown-item exact class="dropdown_content">
-                            <router-link to="" exact class="drpodowtext">
+                            <router-link to="/admin/export_item_library" exact class="drpodowtext">
                                 <i class="fa fa-lock"></i> Export
                             </router-link>
                         </b-dropdown-item>
@@ -94,12 +90,26 @@
                             </router-link>
                         </b-dropdown-item>
                     </b-dropdown>
+
+                    <b-dropdown class="user user-menu bell_bg user_btn" right link>
+                        <span slot="text">
+                            <!-- User name-->
+                            <router-link to="" exact class="user_name_max drpodowtext">
+                                <i class="fa fa-user-o"></i> Reports
+                            </router-link>
+                        </span>
+                        <b-dropdown-item exact class="dropdown_content">
+                            <router-link to="/admin/reports_basic" exact class="drpodowtext">
+                                <i class="fa fa-user-o"></i> Basic
+                            </router-link>
+                        </b-dropdown-item>
+                        <b-dropdown-item exact class="dropdown_content">
+                            <router-link to="" exact class="drpodowtext">
+                                <i class="fa fa-cog"></i> Advance
+                            </router-link>
+                        </b-dropdown-item>
+                    </b-dropdown>
                     <div class="dropdown btn-group">
-                        <router-link to="/admin/reports" exact class="user_name_max drpodowtext">
-                            <i class="fa fa-user-o"></i> Reports
-                        </router-link>
-                    </div>
-                     <div class="dropdown btn-group">
                         <router-link to="/admin/ads" exact class="user_name_max drpodowtext">
                             <i class="fa fa-user-o"></i> Ads
                         </router-link>

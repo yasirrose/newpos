@@ -2,7 +2,17 @@
     <div class="row">
        
         <div class="col-lg-12 mb-3">
-            <b-card header="Accounts" header-tag="h4" class="bg-success-card">
+            <b-card header="Distributors" header-tag="h4" class="bg-success-card">
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group pull-right">
+                            <router-link to="/admin/add_distributor"><b>Add Dis.</b></router-link> |
+                            <router-link to="/admin/"><b>Export List</b></router-link> |
+                            <router-link to="/admin/"><b>Print PDF</b></router-link>
+                        </div>
+                    </div>
+                </div>
                 <datatable title="" :rows="rowdata" :columns="columndata"></datatable>
             </b-card>
         </div>

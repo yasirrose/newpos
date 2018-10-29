@@ -1,22 +1,22 @@
 webpackJsonp([9],{
 
-/***/ 1100:
+/***/ 1137:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1101);
+var content = __webpack_require__(1138);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(71)("2bd17c8a", content, false, {});
+var update = __webpack_require__(71)("6400fb00", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-30189407\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./lockscreen.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-30189407\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./lockscreen.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2add6c3b\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./reset_password.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2add6c3b\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./reset_password.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -27,7 +27,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1101:
+/***/ 1138:
 /***/ (function(module, exports, __webpack_require__) {
 
 var escape = __webpack_require__(245);
@@ -36,23 +36,36 @@ exports = module.exports = __webpack_require__(42)(false);
 
 
 // module
-exports.push([module.i, "\n.login-content[data-v-30189407] {\n    margin-top: 8%;\n    margin-bottom: 7%;\n    -webkit-box-shadow: 0 0 30px #ccc;\n            box-shadow: 0 0 30px #ccc;\n    background-size: 100% 100%;\n}\n.user-img[data-v-30189407] {\n    margin-bottom: 10px;\n}\n.img_backgrond[data-v-30189407] {\n    background-image: url(" + escape(__webpack_require__(938)) + ");\n    background-size: cover;\n    height: 100vh;\n    background-repeat: no-repeat;\n    width: 100%;\n    padding: 75px 15px;\n}\nlabel[data-v-30189407] {\n    font-size: 14px !important;\n}\n[data-v-30189407]::-webkit-input-placeholder {\n    font-size: 14px;\n}\n", ""]);
+exports.push([module.i, "\n.login-content[data-v-2add6c3b] {\n    margin-top: 7%;\n    margin-bottom: 7%;\n    padding-bottom: 20px;\n    -webkit-box-shadow: 0 0 30px #ccc;\n            box-shadow: 0 0 30px #ccc;\n    background-repeat: no-repeat;\n    background-size: 100% 100%;\n}\n.img_backgrond[data-v-2add6c3b] {\n    background-image: url(" + escape(__webpack_require__(947)) + ");\n    background-size: cover;\n    height: 100vh;\n    width: 100%;\n}\nlabel[data-v-2add6c3b] {\n    font-size: 14px !important;\n}\n[data-v-2add6c3b]::-webkit-input-placeholder {\n    font-size: 14px;\n}\n.user-message[data-v-2add6c3b] {\n    padding: 15px 0;\n    font-size: 14px;\n    color: #777;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 1102:
+/***/ 1139:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form__ = __webpack_require__(767);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form__ = __webpack_require__(944);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_form__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_src_validations_validations_js__ = __webpack_require__(768);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_src_validations_validations_js__ = __webpack_require__(945);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -97,12 +110,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_form___default.a, __WEBPACK_IMPORTED_MODULE_2_src_validations_validations_js__["a" /* default */]);
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "lockscreen",
+    name: "resetpassword",
     data: function data() {
         return {
             formstate: {},
             model: {
-                password: ''
+                password: "",
+                repeatPassword: ""
             }
         };
     },
@@ -112,7 +126,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
             if (this.formstate.$invalid) {
                 return;
             } else {
-                this.$router.push("/");
+                this.$router.push("/login");
             }
         }
     },
@@ -122,7 +136,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 
 /***/ }),
 
-/***/ 1103:
+/***/ 1140:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -152,92 +166,184 @@ var render = function() {
               }
             },
             [
-              _c(
-                "div",
-                { staticClass: "col-sm-12" },
-                [
-                  _c(
-                    "validate",
-                    { attrs: { tag: "div" } },
-                    [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.model.password,
-                            expression: "model.password"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          name: "password",
-                          type: "password",
-                          required: "",
-                          placeholder: "Password",
-                          minlength: "4",
-                          maxlength: "10"
-                        },
-                        domProps: { value: _vm.model.password },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+              _c("div", { staticClass: "col-md-12" }, [
+                _c("p", { staticClass: "user-message" }, [
+                  _vm._v(" * The Password is case sensitive.")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c(
+                      "validate",
+                      { attrs: { tag: "div" } },
+                      [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.model.password,
+                              expression: "model.password"
                             }
-                            _vm.$set(_vm.model, "password", $event.target.value)
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "field-messages",
-                        {
-                          staticClass: "text-danger",
+                          ],
+                          staticClass: "form-control",
                           attrs: {
                             name: "password",
-                            show: "$invalid && $submitted"
+                            type: "password",
+                            required: "",
+                            placeholder: "Password",
+                            minlength: "4",
+                            maxlength: "10"
+                          },
+                          domProps: { value: _vm.model.password },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.model,
+                                "password",
+                                $event.target.value
+                              )
+                            }
                           }
-                        },
-                        [
-                          _c(
-                            "div",
-                            { attrs: { slot: "required" }, slot: "required" },
-                            [_vm._v("Password is required")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { attrs: { slot: "minlength" }, slot: "minlength" },
-                            [
-                              _vm._v(
-                                "Password should be atleast 4 characters long"
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "field-messages",
+                          {
+                            staticClass: "text-danger",
+                            attrs: {
+                              name: "password",
+                              show: "$invalid && $submitted"
+                            }
+                          },
+                          [
+                            _c(
+                              "div",
+                              { attrs: { slot: "required" }, slot: "required" },
+                              [_vm._v("Password is required")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                attrs: { slot: "minlength" },
+                                slot: "minlength"
+                              },
+                              [
+                                _vm._v(
+                                  "Password should be atleast 4 characters long"
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                attrs: { slot: "maxlength" },
+                                slot: "maxlength"
+                              },
+                              [
+                                _vm._v(
+                                  "Password should be atmost 10 characters long"
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-12" }, [
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c(
+                      "validate",
+                      { attrs: { tag: "div" } },
+                      [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.model.repeatPassword,
+                              expression: "model.repeatPassword"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            name: "repeatpassword",
+                            type: "password",
+                            required: "",
+                            placeholder: "Confirm Password",
+                            sameas: _vm.model.password
+                          },
+                          domProps: { value: _vm.model.repeatPassword },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.model,
+                                "repeatPassword",
+                                $event.target.value
                               )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { attrs: { slot: "maxlength" }, slot: "maxlength" },
-                            [
-                              _vm._v(
-                                "Password should be atmost 10 characters long"
-                              )
-                            ]
-                          )
-                        ]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "field-messages",
+                          {
+                            staticClass: "text-danger",
+                            attrs: {
+                              name: "repeatpassword",
+                              show: "$invalid && $submitted"
+                            }
+                          },
+                          [
+                            _c(
+                              "div",
+                              { attrs: { slot: "required" }, slot: "required" },
+                              [_vm._v("Password confirmatoin is required")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { attrs: { slot: "sameas" }, slot: "sameas" },
+                              [
+                                _vm._v(
+                                  "Password and Confirm password should match"
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-12 mt-4" }, [
                 _c("div", { staticClass: "form-group" }, [
                   _c("input", {
                     staticClass: "btn btn-primary btn-block",
-                    attrs: { type: "submit", value: "Unlock" }
+                    attrs: { type: "submit", value: "Reset Password" }
                   })
                 ])
               ])
@@ -255,20 +361,17 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-12 col-12 mt-4" }, [
+      _c("div", { staticClass: "col-sm-12 mt-4" }, [
         _c("h2", { staticClass: "text-center" }, [
           _c("img", {
-            attrs: { src: __webpack_require__(939), alt: "Logo" }
+            attrs: { src: __webpack_require__(948), alt: "Logo" }
           })
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-lg-12 col-12 mt-4" }, [
+      _c("div", { staticClass: "col-sm-12 mt-4" }, [
         _c("h3", { staticClass: "page-name text-center" }, [
-          _c("img", {
-            staticClass: "rounded-circle img-thumbnail user-img",
-            attrs: { src: __webpack_require__(1104), alt: "user" }
-          })
+          _vm._v("Reset Password")
         ])
       ])
     ])
@@ -279,38 +382,31 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-30189407", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-2add6c3b", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 1104:
-/***/ (function(module, exports) {
-
-module.exports = "/GitHub/newpos/public/images/User-01.png?683c81ea32070f3ec422da6e1d612f51";
-
-/***/ }),
-
-/***/ 727:
+/***/ 734:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(1100)
+  __webpack_require__(1137)
 }
 var normalizeComponent = __webpack_require__(243)
 /* script */
-var __vue_script__ = __webpack_require__(1102)
+var __vue_script__ = __webpack_require__(1139)
 /* template */
-var __vue_template__ = __webpack_require__(1103)
+var __vue_template__ = __webpack_require__(1140)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-30189407"
+var __vue_scopeId__ = "data-v-2add6c3b"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -321,7 +417,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/components/pages/lockscreen.vue"
+Component.options.__file = "resources/assets/components/pages/reset_password.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -330,9 +426,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-30189407", Component.options)
+    hotAPI.createRecord("data-v-2add6c3b", Component.options)
   } else {
-    hotAPI.reload("data-v-30189407", Component.options)
+    hotAPI.reload("data-v-2add6c3b", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -344,7 +440,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 767:
+/***/ 944:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -1673,7 +1769,7 @@ return VueForm;
 
 /***/ }),
 
-/***/ 768:
+/***/ 945:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1693,17 +1789,17 @@ var options = {
 
 /***/ }),
 
-/***/ 938:
+/***/ 947:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/Login-03-01.png?d74e560d86ea931916bcf7f875a009be";
+module.exports = "/newpos/public/images/Login-03-01.png?d74e560d86ea931916bcf7f875a009be";
 
 /***/ }),
 
-/***/ 939:
+/***/ 948:
 /***/ (function(module, exports) {
 
-module.exports = "/GitHub/newpos/public/images/logo_black.png?fbee0a480ceaa0fa450dae20c38ebe20";
+module.exports = "/newpos/public/images/logo_black.png?fbee0a480ceaa0fa450dae20c38ebe20";
 
 /***/ })
 

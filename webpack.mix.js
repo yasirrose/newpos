@@ -70,7 +70,7 @@ mix.js('resources/assets/main.js', 'public/')
 
 
 // set path for production link
-mix.setResourceRoot('/GitHub/newpos/public/')
+mix.setResourceRoot('/newpos/public/')
 
 
 // Disable all OS notifications

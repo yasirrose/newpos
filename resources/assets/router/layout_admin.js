@@ -19,8 +19,41 @@ const layout = [{
     }
 },
 {
+    path: '/admin/add_account',
+    component: resolve => require(['admin/add_account'], resolve),
+    meta: {
+        title: "Accounts",
+        forAuth : true,
+
+    }
+},
+{
     path: '/admin/distributors',
     component: resolve => require(['admin/distributors'], resolve),
+    meta: {
+        title: "Distributors",
+        forAuth : true,
+    }
+},
+{
+    path: '/admin/add_distributor',
+    component: resolve => require(['admin/add_distributor'], resolve),
+    meta: {
+        title: "Distributors",
+        forAuth : true,
+    }
+},
+{
+    path: '/admin/distributor_item',
+    component: resolve => require(['admin/distributor_item'], resolve),
+    meta: {
+        title: "Distributors",
+        forAuth : true,
+    }
+},
+{
+    path: '/admin/distributor_import_pricefile',
+    component: resolve => require(['admin/distributor_import_pricefile'], resolve),
     meta: {
         title: "Distributors",
         forAuth : true,
@@ -29,12 +62,30 @@ const layout = [{
 
 {
     path: '/admin/item_library',
-    component: resolve => require(['admin/blank'], resolve),
+    component: resolve => require(['admin/item_library'], resolve),
     meta: {
         title: "Library",
         forAuth : true,
     }
 },
+{
+    path: '/admin/import_wizard',
+    component: resolve => require(['admin/import_wizard'], resolve),
+    meta: {
+        title: "Library",
+        forAuth : true,
+    }
+},
+
+{
+    path: '/admin/export_item_library',
+    component: resolve => require(['admin/export_item_library'], resolve),
+    meta: {
+        title: "Library",
+        forAuth : true,
+    }
+},
+
 
 {
     path: '/admin/feedback',
@@ -46,8 +97,8 @@ const layout = [{
 },
 
 {
-    path: '/admin/reports',
-    component: resolve => require(['admin/blank'], resolve),
+    path: '/admin/reports_basic',
+    component: resolve => require(['admin/reports_basic'], resolve),
     meta: {
         title: "Reports",
         forAuth : true,
@@ -74,7 +125,7 @@ const layout = [{
 
 {
     path: '/admin/ads',
-    component: resolve => require(['admin/blank'], resolve),
+    component: resolve => require(['admin/ads'], resolve),
     meta: {
         title: "Ads",
         forAuth : true,
@@ -85,6 +136,14 @@ const layout = [{
     component: resolve => require(['admin/user_profile'], resolve),
     meta: {
         title: "Ads",
+        forAuth : true,
+    }
+},
+{
+    path: '/admin/modals',
+    component: resolve => require(['admin/modals'], resolve),
+    meta: {
+        title: "Modals",
         forAuth : true,
     }
 }

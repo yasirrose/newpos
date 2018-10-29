@@ -3,14 +3,14 @@
         <div class="row">
             <div class="col-lg-12">
                 <b-card header="Admin/Profile" header-tag="h4" class="bg-deafult-card">
-                    <div class="">
-                        <ul>
+                    <div class="box-body">
+                        <ul class="styled-ul p-l-25 list-lineheight">
                             <li><b>Support Emails:</b> Add any Support Email #1 or  # 2 and this will allow for us to get emails sent from users within POS in case of a questions.</li>
                             <li><b>Allow IP:</b>  Only these IP address can sign into the the Admin Panel</li>
                             <li><b>Security PIN: </b> Simply add a six digit numberical PIN which will be used when you sign in</li>
                             <li><b>Support Phones:</b> Simply add a cell phones you would like to get text messages from users when they click on Call Me button </li>
                         </ul>
-                        <p> <b>NOTE:</b> If you would like to change any of the field information simply update and Save. </p>
+                         <p><b>NOTE:</b> If you would like to change any of the field information simply update and Save.</p>
                     </div>
                 </b-card>
             </div>
@@ -118,6 +118,7 @@ export default {
     }
 }
 </script>
+<style src="assets/css/custom_typo.css" scoped></style>
 <style type="text/css" scoped>
 #color {
     height: 35px;
