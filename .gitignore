@@ -6,6 +6,16 @@ vendor/
 
 node_modules/
 
+#Ignore folder named public/js
+
+public/js/
 #Ignore file named webpack.mix.js
 
 webpack.mix.js
+
+#Ignore file named webpack.mix.js
+
+public/main.js
+
+public/manifest.js
+public/vendor.js
