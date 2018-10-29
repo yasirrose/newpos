@@ -8,7 +8,7 @@ node_modules/
 
 #Ignore folder named public/js
 
-public/js
+public/js/
 #Ignore file named webpack.mix.js
 
 webpack.mix.js
