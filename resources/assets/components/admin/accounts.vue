@@ -64,7 +64,7 @@ import {
     ClientTable,
     Event
 } from 'vue-tables-2';
-import datatable from "components/plugins/DataTable/DataTable.vue";
+import datatable from "../plugins/DataTable/DataTable.vue";
 Vue.use(ClientTable, {}, false);
 export default {
     name: "advanced_tables",
@@ -78,7 +78,7 @@ export default {
                 "lname": "Wallace",
                 "age": 19,
                 "state": "MD",
-                "button": "<i class='fa fa-pencil text-info mr-3'></i><i class='fa fa-trash text-danger'></i>"
+                "button": "<router-link to='/admin/edit_account'>Edit </router-link>"
             }, {
                 "fname": "Deborah",
                 "lname": "Morrison",

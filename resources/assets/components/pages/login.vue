@@ -79,8 +79,8 @@ export default {
                 email: '',
                 password: '',
                 client_secret: AuthenticationStore.client_secret,
-                client_id : 2, 
-                grant_type: 'password',
+                client_id: AuthenticationStore.client_id,
+                grant_type: AuthenticationStore.grant_type,
             }
         }
     },
@@ -99,7 +99,7 @@ export default {
                         var currentDate = new Date();
                         var expiration =currentDate.setTime(currentDate.getTime() + 120*60*1000);
                         localStorage.setItem('expiration', expiration);
-                        vm.$router.push("/admin/");
+                        vm.$router.push("/pin");
                     }else{
                         this.alertMessage= response.data.message;
                         this.seen=true;
