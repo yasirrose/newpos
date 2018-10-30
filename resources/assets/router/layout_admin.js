@@ -1,5 +1,5 @@
 const layout = [{
-    path: '/admin/',
+    path: '/',
     component: resolve => require(['admin/index'], resolve),
     meta: {
         title: "Dashboard",
@@ -28,6 +28,24 @@ const layout = [{
     }
 },
 {
+    path: '/admin/edit_account',
+    component: resolve => require(['admin/edit_account'], resolve),
+    meta: {
+        title: "Accounts",
+        forAuth : true,
+
+    }
+},
+{
+    path: '/admin/invoice_history',
+    component: resolve => require(['admin/invoice_history'], resolve),
+    meta: {
+        title: "Accounts",
+        forAuth : true,
+
+    }
+},
+{
     path: '/admin/distributors',
     component: resolve => require(['admin/distributors'], resolve),
     meta: {
@@ -38,6 +56,14 @@ const layout = [{
 {
     path: '/admin/add_distributor',
     component: resolve => require(['admin/add_distributor'], resolve),
+    meta: {
+        title: "Distributors",
+        forAuth : true,
+    }
+},
+{
+    path: '/admin/edit_distributor',
+    component: resolve => require(['admin/edit_distributor'], resolve),
     meta: {
         title: "Distributors",
         forAuth : true,
@@ -132,10 +158,18 @@ const layout = [{
     }
 },
 {
+    path: '/admin/view_ads',
+    component: resolve => require(['admin/view_ads'], resolve),
+    meta: {
+        title: "Ads",
+        forAuth : true,
+    }
+},
+{
     path: '/admin/user_profile',
     component: resolve => require(['admin/user_profile'], resolve),
     meta: {
-        title: "Ads",
+        title: "View Ads",
         forAuth : true,
     }
 },

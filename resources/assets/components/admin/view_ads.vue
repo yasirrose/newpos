@@ -1,5 +1,5 @@
 <template>
-    <b-card header="Ads" header-tag="h4" class="bg-success-card">
+    <b-card header="Accounts / Anitoch Ads" header-tag="h4" class="bg-success-card">
         <div class="row">
             <div class="col-lg-6">
                 <div class="row">
@@ -77,26 +77,7 @@
                 <div class="row">
                     <div class="col-lg-6"></div>
                     <div class="col-lg-6">
-                        <button class="btn btn-success">Apply Ads</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <b-card  class="bg-deafult-card">
-                            <div class="box-body">
-                                <ul class="styled-ul p-l-25 list-lineheight">
-                                    <li><b>Updating CFD images and video: </b> Simply upload images and video you like to share on any store. You can either select one particular store or select all store to apply to many accounts</li>
-                                </ul>
-                                <p><b>NOTE: </b>Ads on the left will apply to all selected stores; if you would like to change or update on particular account after updating click view ads and update from within that particular account.</p>
-                            </div>
-                        </b-card>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <datatable title="" :rows="rowdata" :columns="columndata"></datatable>
+                        <button class="btn btn-success">Update</button>
                     </div>
                 </div>
             </div>

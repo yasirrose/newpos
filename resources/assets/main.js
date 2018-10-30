@@ -30,11 +30,11 @@ if (google_analytics_key && google_analytics_key.length) {
 
 }
 
-router.beforeEach((to, from, next) => {
+/*router.beforeEach((to, from, next) => {
   if(to.matched.some(record => record.meta.forVisitors)){
       if(Vue.auth.isAuthenticated()){
         next({ 
-          path : '/'
+          path : '/admin/'
         })
       }
       else next()
@@ -42,13 +42,13 @@ router.beforeEach((to, from, next) => {
     else if(to.matched.some(record => record.meta.forAuth)){
       if( ! Vue.auth.isAuthenticated()){
         next({ 
-          path : '/login'
+          path : '/pin'
         })
       }
       else next()
     }
     else next()
-});
+});*/
 
 
 export const AuthenticationStore = new Vue({

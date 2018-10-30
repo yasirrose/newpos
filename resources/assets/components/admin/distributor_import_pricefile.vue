@@ -58,8 +58,10 @@
                                     <vue-dropzone ref="product_attachment" id="dropzone" :options="dropzoneOptions" @vdropzone-success="uploaded">
                                     </vue-dropzone>
                                 </div>
+                                <br>
                                 <div class="col-md-8 col-md-offset-2">
-                                        <button type="button" class="btn btn-primary">Save</button>
+                                        <button type="button" class="btn btn-success">Save</button>
+                                        <button type="button" class="btn btn-warning">Cancel</button>
                                 </div>
                             </div>
                         </div>

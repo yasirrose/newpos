@@ -1,7 +1,7 @@
 import layout_routes_admin from './layout_admin';
 import layout_routes_store from './layout_store'
 const routes = [{
-    path: '/admin',
+    path: '/',
     component: resolve => require(['src/layout'], resolve),
     children: layout_routes_admin
     },
@@ -24,7 +24,7 @@ const routes = [{
         path: '/pin',
         component: resolve => require(['pages/pin'], resolve),
         meta: {
-            title: "pin",
+            title: "PIN",
             forVisitors : true,
         }
     },

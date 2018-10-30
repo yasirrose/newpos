@@ -163,6 +163,11 @@
                             </router-link>
                         </b-dropdown-item>
                         <b-dropdown-item exact class="dropdown_content">
+                            <router-link to="/admin/lock_screen" exact class="drpodowtext">
+                                <i class="fa fa-lock"></i> Lock Screen
+                            </router-link>
+                        </b-dropdown-item>
+                        <b-dropdown-item exact class="dropdown_content">
                             <router-link to=""  exact class="drpodowtext">
                                 
                                 <button @click="logout" class="drpodowtext"><i class="fa fa-sign-out"></i> Logout</button>
