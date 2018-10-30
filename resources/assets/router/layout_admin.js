@@ -1,5 +1,5 @@
 const layout = [{
-    path: '/',
+    path: '/admin',
     component: resolve => require(['admin/index'], resolve),
     meta: {
         title: "Dashboard",

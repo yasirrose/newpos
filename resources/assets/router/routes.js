@@ -21,7 +21,7 @@ const routes = [{
         }
     },
     {
-        path: '/pin',
+        path: '/',
         component: resolve => require(['pages/pin'], resolve),
         meta: {
             title: "PIN",
