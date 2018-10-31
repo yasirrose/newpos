@@ -1,31 +1,48 @@
 <template>
-    <div class="container-fluid img_backgrond">
-        <div class="row">
-            <div class="col-lg-3 offset-lg-5 col-sm-4 offset-sm-3 col-xs-10 offset-xs-1 login-content mt-5">
-                <div id="phone"> 
-                    <div id="wrapper">    
-                        <div class="key" rel="1">1</div>
-                        <div class="key" rel="2">2</div>
-                        <div class="key" rel="3">3</div>
-                        <div class="clear"></div>
-                        <div class="key" rel="4">4</div>
-                        <div class="key" rel="5">5</div>
-                        <div class="key" rel="6">6</div>
-                        <div class="clear"></div>
-                        <div class="key" rel="7">7</div>
-                        <div class="key" rel="8">8</div>
-                        <div class="key" rel="9">9</div>
-                        <div class="clear"></div>
-                        <div class="key special" rel="*"></div>
-                        <div class="key" rel="1">0</div>
-                        <div class="key special" rel="#"></div>
-                        <div class="clear"></div>
-                        <div class="key nb"></div>
-                        <div class="key phone" rel="Make Call">Sign In</div>
-                        <div class="key nb"></div>
-                        <div class="clear"></div>
+    <!-- <div class="container">
+      <div class="calculator">
+        <div class="content">
+          <form></form>
+        </div>
+      </div>
+    </div> -->
+
+     <div class="container-fluid img_backgrond">
+    <div class="row">
+        <div class="res_section col-lg-4 offset-lg-5 col-sm-4 offset-sm-3 col-xs-10 offset-xs-1 login-content mt-5">
+            <div class="row">
+                <div class="col-sm-12 mt-3">
+                    
+                    <h3 class="text-center">
+
+                         Your Cheers POS PIN
+                    </h3>
+                    <div class="row">
+                      <input type="text" name="tex">
                     </div>
+                    <div class="row">
+                      <div class="buttons">
+                        <div class="element">1</div>
+                        <div class="element">2</div>
+                        <div class="element">3</div>
+                        <div class="element">4</div>
+                        <div class="element">5</div>
+                        <div class="element">6</div>
+                        <div class="element">7</div>
+                        <div class="element">8</div>
+                        <div class="element">9</div>
+                         <div class="element">0</div>
+
+                      </div>
+                    </div>
+                      <div class="sign-in">
+                        <button >Sign In</button><br>
+                        <p>Clear</p>
+                      </div>
                 </div>
+            </div>
+           
+            
             </div>
         </div>
     </div>
@@ -56,68 +73,110 @@ export default {
 }
 </script>
 <style scoped>
-body {
-  font-family: 'Lato', sans-serif;
-  font-weight: 200;
-}
-.login-content {
+  .calculator{
+    padding: 0;
+    margin: 60px auto;
+   border: 1px solid red;
+    width: 50%;
+    height: 200px;
+  }
+  .content{
+    padding: 30px;
+     border: 1px solid red;
+     margin: 15px;
+  }
+  .login-content {
     margin-top: 7%;
-    margin: 0 auto;
+  margin: 0 auto;
     margin-bottom: 7%;
-    padding: 0px 25px;
+  padding: 0px 25px;
     box-shadow: 0 0 20px #ccc;
     background-size: 100% 100%;
     border-radius: 7px;
-    background-color: #fff;
+  background-color: #fff;
 }
-#phone {   background:url(https://blogs.which.co.uk/technology/files/2013/03/iphone_5_hero.jpg) no-repeat 50.4% top;
-  background-size: contain;
-  height:655px;
+    .img_backgrond{
+        /* background-image: url(/newpos/public/images/Login-03-01.png?d74e560…); */
+    background-color: #80808014;
+        background-size:cover;
+        background-repeat:no-repeat;
+        width: 100%;
+        padding: 75px 15px;
+    }
+.mt-3{
+  text-align: center;
+  color: #696565;
 }
-#wrapper {
-  width:252px;
-  height:410px;
-  margin:0 auto 0 auto;
-  position:relative;
-  top:116px;
-  padding:24px 0 0 0;
-  background:#fff;
+    input[type="text"] {
+    text-align: center; 
+    margin: 16px auto;
+    width: 340px;
+    box-sizing: border-box;
+    height: 50px;
+    font-size: 38px;
+    line-height: 44px;
+    padding-left: 5px;
+    text-align: left;
 }
-.key {
-  border-radius: 50px 50px 50px 50px;
-  color:#444;
-  width:70px;
-  height:70px;
-  text-align:center;
-  font-size:30px;
-  float:left;
-  box-sizing:border-box;
-  padding:5px 0 0 0;
-  margin:0 7px 10px 7px;
-  border:1px solid #444;
-  cursor:pointer;
+.buttons {
+     width: 230px;
+    display: block;
+    margin: 30px auto;
+    text-align: center;
 }
-.key span {
-  display:block;
-  color:#444;
-  text-align:center;
-  font-size:12px;
-  text-transform:uppercase;
+.element {
+       border: 1px solid #D9D9D9;
+    border-radius: 50%;
+    color: #909090;
+    font-size: 32px;
+    height: 57px;
+    line-height: 57px;
+    width: 57px;
+    margin-top: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    padding: 0px;
+    display: inline-block;
 }
-.key.special {
-  line-height:60px;
+.element:hover{
+  background-color: #E11B24;
+  cursor: pointer;
+  color: white;
 }
-.key.nb {
-  border:none;
+
+.element:not(first-child) {
+   margin: 6px;
 }
-.key.phone {
-  background:#5CDB74;
-  border:none;
-  color:#FFF;
-  line-height:60px;
-  font-size:40px;
+
+    .sign-in{
+     text-align: center;
+    }
+   .sign-in button {
+    background: none repeat scroll 0 0 #E11B24;
+    border: 1px solid #E11B24;
+    clear: both;
+    display: block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 19px;
+    font-weight: 300;
+    margin: 0 auto;
+    color: white;
+    max-width: 210px;
+    padding: 12px;
+    width: 100%;
 }
-.clear {
-  clear:both;
+.sign-in p {
+   
+    color: #696565;
+}
+@media screen and (max-width: 1024px) {
+   input[type="text"] {
+    width: 70%;
+    height: 40px;
+   }
+   .mt-3 h3{
+    font-size: 22px;
+   }
+
 }
 </style>

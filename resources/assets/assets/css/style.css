@@ -1,0 +1,9 @@
+header {
+    background: #404346;
+}
+.header nav {
+    background: transparent;
+}
+.custom-radio .custom-control-label::before {
+     border-radius: 1px; 
+}

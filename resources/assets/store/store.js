@@ -17,7 +17,7 @@ const store = new Vuex.Store({
         site_name: "Cheers POS",
         page_title: null,
         user: {
-            name: "Nasir",
+            name: "Admin",
             picture: require("img/authors/prf4.jpg"),
             job: "Project Manager"
         },

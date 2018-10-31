@@ -24,7 +24,7 @@ public $successStatus = 200;
             $remember = false;
         }
 
-        if(Auth::attempt(['user_email' => request('email'), 'password' => request('password')],$remember)){ 
+        if(Auth::attempt(['email' => request('email'), 'password' => request('password')],$remember)){ 
             $user = Auth::user(); 
             if($user != "" || $user != null)
             {
