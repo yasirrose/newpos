@@ -190,13 +190,17 @@
                 }
             },
             logout() {
-            let timeout = 1500;
+            /*let timeout = 1500;
             setTimeout( () => {
                 // Logout
                 this.$auth.destroyToken()
                 // Redirect to Login
                 this.$router.replace('/login')
-            }, timeout)
+            }, timeout)*/
+             axios.post('./logout')
+            .then( response =>{                       
+                        this.$router.push("/");
+                })
 
         }
 

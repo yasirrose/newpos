@@ -11,10 +11,15 @@
 |
 */
 
-Auth::routes();
+
+
+Route::post('/login', 'UserController@login');
+Route::post('/user_pin', 'UserController@user_pin');
+Route::get('/isloggedin', 'UserController@isloggedin');
+Route::post('/logout', 'Auth\LoginController@logout');
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('admin');
 });
 
 
@@ -22,4 +27,5 @@ Route::get('/', function () {
 
 
 
-Route::get('/', 'HomeController@index')->name('home');
+/*Route::get('/', 'HomeController@index')->name('admin');
+*/

@@ -2,26 +2,25 @@
     <div class="container-fluid img_backgrond">
         <div class="row">
             <div class="col-lg-3 offset-lg-5 col-sm-4 offset-sm-3 col-xs-10 offset-xs-1 login-content mt-5">
+
+               <b-alert show variant="danger" v-if="seen">{{alertMessage}}</b-alert>
+
                 <div id="phone"> 
-                    <div id="wrapper">    
-                        <div class="key" rel="1">1</div>
-                        <div class="key" rel="2">2</div>
-                        <div class="key" rel="3">3</div>
-                        <div class="clear"></div>
-                        <div class="key" rel="4">4</div>
-                        <div class="key" rel="5">5</div>
-                        <div class="key" rel="6">6</div>
-                        <div class="clear"></div>
-                        <div class="key" rel="7">7</div>
-                        <div class="key" rel="8">8</div>
-                        <div class="key" rel="9">9</div>
-                        <div class="clear"></div>
-                        <div class="key special" rel="*"></div>
-                        <div class="key" rel="1">0</div>
-                        <div class="key special" rel="#"></div>
+                    <input type="text" v-model="model.user_pin" class="form-control">
+                    <div id="wrapper" >    
+                        <input type="submit" value="1"  @click="handleClick($event)" class="key">
+                        <input type="submit" value="2"  @click="Click_two($event)" class="key">
+                        <input type="submit" value="3"  @click="handleClick($event)" class="key">
+                        <input type="submit" value="4"  @click="handleClick($event)" class="key">
+                        <input type="submit" value="5"  @click="handleClick($event)" class="key">
+                        <input type="submit" value="6"  @click="handleClick($event)" class="key">
+                        <input type="submit" value="7"  @click="handleClick($event)" class="key">
+                        <input type="submit" value="8"  @click="handleClick($event)" class="key">
+                        <input type="submit" value="9"  @click="handleClick($event)" class="key">
+                        <input type="submit" value="0"  @click="handleClick($event)" class="key">
                         <div class="clear"></div>
                         <div class="key nb"></div>
-                        <div class="key phone" rel="Make Call">Sign In</div>
+                        <div class="key phone"  @click="onSubmit" >Sign In</div>
                         <div class="key nb"></div>
                         <div class="clear"></div>
                     </div>
@@ -40,18 +39,62 @@ export default {
     data() {
         return {
             formstate: {},
+            clickedButton: null,
+            seen:false,
+            pin : '',
+            model: {
+                user_pin : '',
+            }
             
         }
     },
     methods: {
-       
-    },
-    mounted: function() {
+  
+    handleClick(e) {
+      this.pin = e.target.value;
 
     },
-    destroyed: function() {
+     Click_two(e) {
+      this.pin = e.target.value;
 
     },
+
+    isloggedin() {
+        let vm = this;
+               axios.get('./isloggedin', vm.model)
+                .then( response =>{
+                    if(response.data.message == "success")
+                    {
+                        vm.$router.push("/pin");
+                    }else if(response.data.error == "Unauthorised"){
+                        vm.$router.push("/");
+                    }
+                    
+                })
+            
+        },
+
+    onSubmit() {
+        let vm = this;
+               axios.post('./user_pin', vm.model)
+                .then( response =>{
+                    if(response.data.message == "success")
+                    {
+                        vm.$router.push("/admin/");
+                    }else{
+                        this.alertMessage= response.data.message;
+                        this.seen=true;
+                    }
+                    
+                })
+            
+        }
+    },
+    mounted()
+        {
+          this.isloggedin();
+        }
+   
 
 }
 </script>

@@ -182,6 +182,10 @@ export default {
              url_ad_one: null,
              url_ad_two: null,
              url_ad_three: null,
+
+             url_video_one: null,
+             url_video_two: null,
+             url_video_three: null,
         }
     },
     mounted() {
@@ -230,6 +234,11 @@ export default {
 }
 
 .preview img {
+  max-width: 100%;
+  max-height: 100px;
+}
+
+.preview video {
   max-width: 100%;
   max-height: 100px;
 }

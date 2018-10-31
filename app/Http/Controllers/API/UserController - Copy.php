@@ -24,12 +24,30 @@ public $successStatus = 200;
             $remember = false;
         }
 
-        if(Auth::attempt(['email' => request('email'), 'password' => request('password')],$remember)){ 
-
+        if(Auth::attempt(['user_email' => request('email'), 'password' => request('password')],$remember)){ 
             $user = Auth::user(); 
+            if($user != "" || $user != null)
+            {
+                $userID = $user->user_id;
+            }else
+            {
+                $userID = 0;
+            }
+            //$success['token'] =  $user->createToken('Laravel Password Grant Client')-> accessToken; 
+            $tokenResult = $user->createToken('Personal Access Token');
+            $success['token'] = $tokenResult->accessToken;
+            Session()->put('token', $success['token']);
+            Session()->put('userId', $userID);
+            $updateToken['user_token'] =  $success['token'];
+            User::updateData($userID,$updateToken);
 
+            if($remember == true)
+            {
+                $updateQuery['user_remember_token'] = 'Yes';
+                User::updateData($userID,$updateQuery);
+            }
 
-            return response()->json(['message' => 'success'], $this-> successStatus); 
+            return response()->json(['success' => $success,'token' =>$success['token'],'message' => 'success'], $this-> successStatus); 
         } 
         else{ 
             return response()->json(['error'=>'Unauthorised','message' => 'Email or Password fail']); 

@@ -83,9 +83,11 @@ export default {
             model: {
                 email: '',
                 password: '',
+                remember: '',
                 client_secret: AuthenticationStore.client_secret,
-                client_id : 2, 
-                grant_type: 'password',
+                client_id: AuthenticationStore.client_id,
+                grant_type: AuthenticationStore.grant_type,
+
             }
         }
     },
@@ -95,16 +97,11 @@ export default {
             if (vm.formstate.$invalid) {
                 return;
             } else {
-               axios.post('./api/login', vm.model)
+               axios.post('./login', vm.model)
                 .then( response =>{
-                    if(response.data.token)
+                    if(response.data.message == "success" && response.auth_user !=="")
                     {
-                        var token = response.data.token;
-                        localStorage.setItem('token', token);
-                        var currentDate = new Date();
-                        var expiration =currentDate.setTime(currentDate.getTime() + 120*60*1000);
-                        localStorage.setItem('expiration', expiration);
-                        vm.$router.push("/admin/");
+                        vm.$router.push("/pin");
                     }else{
                         this.alertMessage= response.data.message;
                         this.seen=true;
