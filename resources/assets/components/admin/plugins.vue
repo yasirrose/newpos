@@ -1,10 +1,13 @@
 <template>
-    <div class="row">
-        <div class="col-lg-12">
-            <!-- <b-card header="App Plugins Pricing" header-tag="h4" class="bg-success-card"> -->
+    <div class="row left-space">
+        <div class="col-lg-12m add-price">
                 <h2 class="head-price">App Plugin Pricing</h2>
-                    <div class="table-responsive col-max col-lg-6 col-sm-12 col-xs-12">
+
+                    <!-- <div class="table-responsive col-max col-lg-6 col-sm-12 col-xs-12"> -->
                        <!--  <b-alert show variant="info" v-if="seen">{{message}}</b-alert> -->
+
+                    <div class="table-responsive col-maxx col-lg-6 col-sm-12 col-xs-12">
+
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -14,31 +17,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-
-                               <!--  <tr v-for="plugin in model.pluginsdata">
-                                    <td>{{ plugin.plugin_name }}</td>
-                                    <td> {{ plugin.plugin_price }}</td>
-                                    <td> 
-                                        <div class="row">
-                                            <div class="col-lg-4 col-md-6">
-                                                <div class="custom-controls-stacked">
-                                                    <b-form-radio  value="1" v-model="plugin.plugin_status"class="primaryradio">Active</b-form-radio>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6">
-                                                <div class="custom-controls-stacked">
-                                                    <b-form-radio  value="0" v-model="plugin.plugin_status" class="primaryradio">Deactive</b-form-radio>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr> -->
-
-                                 <tr v-for="(plugin, index) in model.pluginsdata">
+                                <tr v-for="(plugin, index) in model.pluginsdata">
                                     <td><input type="text" name="" v-model="plugin.plugin_name" ></td>
                                     <td><input type="text" name="" v-model="plugin.plugin_price" ></td>
                                     <td> 
-                                        <!-- <b-form-radio-group :options="radiooptions" class="radio-border"></b-form-radio-group> -->
                                         <input type="radio" :id="'Active' + plugin.plugin_id + ''"  value="1" v-model="plugin.plugin_status">
                                         <label :for="'Active' + plugin.plugin_id + ''">Active</label>
 
@@ -53,8 +35,6 @@
                        
                         <button class="btn btn-success" @click="updatePlugin">Update</button>
                     </div>
-            <!-- </b-card>
- -->
             <modal name="modallogin" :adaptive="true">
                 <div class="p-4">
                         <div class="row">
@@ -181,131 +161,140 @@ export default {
 <!-- adding scoped attribute will apply the css to this component only -->
 
 <style scoped>
-  .table-bordered  table{
+ .add-price .table-bordered  table{
         border-collapse: collapse;
     }
    
-   .table-bordered.table-bordered tbody:before {
+ .add-price  .table-bordered.table-bordered tbody:before {
     line-height:3px;
     content:"-";
     display:block;
 }
-   .table-bordered td{
+ .add-price  .table-bordered td{
         padding: 0;
 
     }
-   .table-bordered thead{
+ .add-price  .table-bordered thead{
         border: none;
     }
-    .table-bordered input{
+ .add-price   .table-bordered input{
         padding: 14px;
         border: none;
         outline: none;
     }
-  .table-bordered  input:focus{
+ .add-price .table-bordered  input:focus{
         padding: 14px;
         margin:0;
         border:1px solid #868e96;
         width: 100%;
     }
-    .table-bordered th {
+ .add-price   .table-bordered th {
     border: none;
     background-color: #dcdcdc;
 
 }
-.table-bordered input[type="radio"] {
+.add-price .table-bordered input[type="radio"] {
     display:none; 
 }
-.table-bordered label::before {
+.add-price .table-bordered label::before {
     padding: 7px 10px;
     margin: 6px 4px -3px 11px;
     border: 1px solid #e8d9d9;
     border-radius: 4px;
     content: "";
 }
-.table-bordered input[type="radio"]:checked + label::before{ 
+.add-price .table-bordered input[type="radio"]:checked + label::before{ 
     content: "";
     background-color:#60b360;
     border-color: #4c4;
 }
 
-h2.head-price {
+.add-price h2.head-price {
     margin: 25px 20px;
     font-weight: bold;
 }
+.add-price .col-maxx
+    {
+        max-width: 100%;
+        width: 100%;
 
+    }
 @media screen and (max-width: 1024px){
-    table{
+    .add-price table{
         width: 100%;
 
     }
     
 }
 @media screen and (max-width: 992px){
-    table{
+    .add-price table{
         width: 100%;
     }
-    .col-max{
+    .add-price .col-maxx
+{
         max-width: 100%;
     }
-    .table-responsive {
+    .add-price .table-responsive {
     display: block;
     width: 100%;
 }
 
-    h2.head-price {
+    .add-price h2.head-price {
     margin: 25px 20px;
     font-weight: bold;
 }
 }
 @media screen and (max-width: 768px){
-    table{
+    .add-price table{
         width: 100%;
 
     }
-    .table-responsive {
+    .add-price .table-responsive {
     display: block;
     width: 100%;}
 
-     h2.head-price {
+     .add-price h2.head-price {
    
     margin: 30px 20px 20px 21px;
     font-weight: bold;
 }
- .col-max {
+ .add-price .col-maxx
+ {
         max-width: 100%;
     }
 }
 @media screen and (max-width: 480px){
-    table{
+    .add-price table{
         width: 100%;
 
     }
-    h2.head-price {
+    .add-price h2.head-price {
        margin: 85px 63px 16px 20px;
     font-weight: bold;
 }
-.table-responsive {
+.add-price .table-responsive {
     display: block;
     width: 100%;}
-     .col-max {
+     .col-maxx
+ {
         max-width: 100%;
     }
 }
 
 @media screen and (max-width: 320px){
-    table{
+    .add-price table{
         width: 100%;
 
     }
-    .table-responsive {
+    .add-price .table-responsive {
     display: block;
     width: 100%;}
-    h2.head-price {
+    .add-price h2.head-price {
     margin: 25px 20px;
     font-weight: bold;
 }
- .col-max {
+ .add-price .col-maxx
+ {
         max-width: 100%;
     }
 }

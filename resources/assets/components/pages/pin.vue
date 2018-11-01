@@ -12,7 +12,6 @@
         <div class="res_section col-lg-4 offset-lg-5 col-sm-4 offset-sm-3 col-xs-10 offset-xs-1 login-content mt-5">
             <div class="row">
                 <div class="col-sm-12 mt-3">
-                    
                     <h3 class="text-center">Your Cheers POS PIN
                       <button class="close-x">x</button>
                     </h3>
@@ -170,6 +169,22 @@ input[type="number"] {
     text-align: left;
 }
 
+.close-x{
+background:none;
+    font-size: 20px;
+   
+    border: none;
+    position: absolute;
+    color: #d0cece;
+    margin-top: -9px;
+    right: 0;
+    text-align: center;
+    cursor: pointer;
+}
+.close-x:hover{
+  font-size: 22px;
+ 
+}
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
@@ -215,6 +230,7 @@ input[type=number]::-webkit-outer-spin-button {
     border: 1px solid #E11B24;
     clear: both;
     display: block;
+        cursor: pointer;
     font-family: "Open Sans", sans-serif;
     font-size: 19px;
     font-weight: 300;

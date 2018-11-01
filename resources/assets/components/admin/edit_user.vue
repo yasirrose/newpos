@@ -1,8 +1,11 @@
 <template>
     <div class="row">
+
+
         <div class="col-lg-12">
             <b-card header="Edit user" header-tag="h4" class="bg-success-card">
                 <div class="row">
+                    
                     <div class="col-lg-12 col-12 mb-3">
                         <vue-form class="form-horizontal form-validation" :state="formstate" @submit.prevent="onSubmit">
                             <div class="row">

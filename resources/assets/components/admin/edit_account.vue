@@ -5,17 +5,17 @@
         <h2 class="head-price"><a href="">Accounts/</a>Editing Anitoch Liquor
             <div class="col-md-offset-4 col-md-8 m-t-25 btn-men btn-right" id="primary_nav_wrap">    
             <div class="dropdown">
-  <button class="dropbtn">Tools</button>
-  <div class="dropdown-content">
-    
-    <a href="#">Print PDF</a>
+                  <button class="dropbtn">Tools</button>
+                  <div class="dropdown-content">
+                    
+                         <a href="#">Print PDF</a>
    
-  </div>
-</div>
+                  </div>
+            </div>
         </div>
         </h2>
         
-        <div class="table-responsive col-max col-lg-6 col-sm-12 col-xs-12">
+        <div class="table-responsive col-max p-table-1 col-lg-6 col-sm-12 col-xs-12">
             <table class="tab-1 table table-bordered">
                 <thead>
                     <tr>
@@ -227,7 +227,7 @@
                     <td><input type="" name="" value=""></td>
                 </tr>
                 <tr class="ac-label">
-                    <td><p>State</p></td>
+                    <td><p>Total Credit Trans. YTD</p></td>
                     <td><input type="" name="" value=""></td>
                 </tr>
                 <tr class="ac-label">
@@ -309,7 +309,7 @@
                     <label for="deactive"></label></td>
                 </tr>
                 <tr class="ac-label">
-                    <td><p>Zip</p></td>
+                    <td><p>Kegs Registration & Returns</p></td>
                     <td><p>5.99</p></td>
                     <td class="check-btn"> <input type="radio" name="green" id="deactive">
                     <label for="deactive"></label></td>

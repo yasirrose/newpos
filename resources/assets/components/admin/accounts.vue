@@ -1,55 +1,71 @@
 <template>
     <div class="row">
         <div class="col-lg-12 mb-3">
-            <b-card header="Accounts" header-tag="h4" class="bg-success-card">
+            <!-- <b-card header="Accounts" header-tag="h4" class="bg-success-card"> -->
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="form-group pull-right">
-                            <router-link to="/admin/add_account"><b>Add Acct.</b></router-link> |
-                            <router-link @click.native="text_acct"  to=""><b>Text Acct.</b></router-link> |
-                            <router-link @click.native="email_acct" to=""><b>Email</b></router-link> |
+
+                        <div class="form-group pull-right rigt-100">
+                           <!--  <router-link to="/admin/add_account"><b>Add Acct.</b></router-link> | -->
+                           <!-- Text Acct. -->
+                                  <h2 class="head-price h2-color">Accounts</h2>
+                                <div class="dropdown">
+                                    <button class="dropbtn">Tools</button>
+                                        <div class="dropdown-content">
+                    
+                                            <router-link   to=""> <a href="#">Add Account</a></router-link> 
+                                            <router-link   to=""> <a href="#">Print PDF</a></router-link> 
+                                            <router-link @click.native="text_acct"  to=""> <a href="#">Text</a></router-link> 
+                                            <router-link @click.native="email_acct"  to=""> <a href="#">Email</a></router-link> 
+                                            <router-link   to=""> <a href="#">Export</a></router-link> 
+   
+                                        </div>
+                                </div>
+
+                           
+                            <!-- <router-link @click.native="email_acct" to=""><b>Email</b></router-link> |
                             <router-link to="/admin/"><b>Export List</b></router-link> |
-                            <router-link to="/admin/"><b>Print PDF</b></router-link>
+                            <router-link to="/admin/"><b>Print PDF</b></router-link> -->
                         </div>
                     </div>
                 </div>
 
                 <datatable title="" :rows="rowdata" :columns="columndata"></datatable>
-            </b-card>
-                <modal name="modal_text_acct" :adaptive="true">
+            <!-- </b-card> -->
+                <modal class="modal-color" name="modal_text_acct" :adaptive="true">
                     <div class="p-4">
-                        <h5>Text Account</h5>
+                        <h2>Text Account</h2>
                         <div class="row">
-                            <div class="form-group">
+                            <div class="form-group fwidth-group">
                                 <input   type="text" required placeholder="Subject" class="form-control" />
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group">
+                            <div class="form-group fwidth-group">
                                  <textarea rows="4" class="form-control resize_vertical" id="text_area" placeholder="Message"></textarea>
                             </div>
                         </div>
-                        <div class="row">
-                            <button class="btn btn-primary">Send</button>
+                        <div class="row p-btn">
+                            <button class="btn btn-success padd-btn">Send</button>
                         </div>
                     </div>
                 </modal>
-                <modal name="modal_email_acct" :adaptive="true">
+                <modal class="modal-color" name="modal_email_acct" :adaptive="true">
                     <div class="p-4">
-                        <h5>Email Account</h5>
+                        <h2>Email Account</h2>
                         <div class="row">
-                            <div class="form-group">
+                            <div class="form-group fwidth-group">
                                 <input   type="text" required placeholder="Email Account" class="form-control" />
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group">
+                            <div class="form-group fwidth-group">
                                  <textarea rows="4" class="form-control resize_vertical" id="text_area" placeholder="Message"></textarea>
                             </div>
                         </div>
-                        <div class="row">
-                            <button class="btn btn-primary">Send</button>
+                        <div class="row p-btn">
+                            <button class="btn btn-success padd-btn">Send</button>
                         </div>
                     </div>
                 </modal>
@@ -182,7 +198,7 @@ export default {
                 this.$modal.show('modal_text_acct');
             },
         email_acct () {
-                this.$modal.show('modal_text_acct');
+                this.$modal.show('modal_email_acct');
             },
     }
 }
