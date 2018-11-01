@@ -22,7 +22,7 @@
                     </div>
                     <div class="row">
                       <div class="buttons">
-                        <div class="element">1</div>
+                        <input type="button" name="1" value="1" class="element">
                         <div class="element">2</div>
                         <div class="element">3</div>
                         <div class="element">4</div>
@@ -130,6 +130,7 @@ export default {
     color: #909090;
     font-size: 32px;
     height: 57px;
+    background-color:white;
     line-height: 57px;
     width: 57px;
     margin-top: 5px;
@@ -165,6 +166,7 @@ export default {
     padding: 12px;
     width: 100%;
 }
+
 .sign-in p {
    
     color: #696565;

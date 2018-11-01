@@ -3,7 +3,7 @@
         <div class="col-lg-12">
             <!-- <b-card header="App Plugins Pricing" header-tag="h4" class="bg-success-card"> -->
                 <h2 class="head-price">App Plugin Pricing</h2>
-                    <div class="table-responsive col-lg-6">
+                    <div class="table-responsive col-max col-lg-6 col-sm-12 col-xs-12">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -38,18 +38,12 @@
                                     <td><input type="" name="" value="TECHLEADZ"></td>
                                     <td> 
                                             <!-- <b-form-radio-group :options="radiooptions" class="radio-border"></b-form-radio-group> -->
+                                            
+                                            <input type="radio" name="green" id="active">
                                             <label for="active">Active</label>
-                                            <input type="radio" name="" id="active">
-                                    </td>
-                                </tr>
-                                <tr >
-                                    <td><input type="" name="" value="TECHLEADZ"></td>
-                                    <td><input type="" name="" value="TECHLEADZ"></td>
-                                    <td> 
-                                 
-                                            <!-- <b-form-radio-group :options="radiooptions" class="radio-border"></b-form-radio-group> -->
-                                            <label for="active">Active</label>
-                                            <input type="radio" name="" id="active">
+                                           
+                                            <input type="radio" name="green" id="deactive">
+                                             <label for="deactive">Deactive</label>
                                     </td>
                                 </tr>
                             </tbody>
@@ -170,60 +164,133 @@ export default {
 <!-- adding scoped attribute will apply the css to this component only -->
 
 <style scoped>
-    table{
+  .table-bordered  table{
         border-collapse: collapse;
     }
    
-    tbody:before {
+   .table-bordered.table-bordered tbody:before {
     line-height:3px;
     content:"-";
-    color:white; /* to hide text */
     display:block;
 }
-    td{
+   .table-bordered td{
         padding: 0;
 
     }
-    thead{
+   .table-bordered thead{
         border: none;
     }
-     input{
+    .table-bordered input{
         padding: 14px;
         border: none;
         outline: none;
     }
-    input:focus{
+  .table-bordered  input:focus{
         padding: 14px;
         margin:0;
-        
         border:1px solid #868e96;
         width: 100%;
     }
     .table-bordered th {
-    /* vertical-align: middle; */
     border: none;
     background-color: #dcdcdc;
 
 }
-.custom-radio .custom-control-label::before {
-     border-radius: 0% !important; 
+.table-bordered input[type="radio"] {
+    display:none; 
 }
-.custom-control-label::before {
-    position: absolute;
-    top: 0.40rem;
-    left: 0.1rem;
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    pointer-events: none;
+.table-bordered label::before {
+    padding: 7px 10px;
+    margin: 6px 4px -3px 11px;
+    border: 1px solid #e8d9d9;
+    border-radius: 4px;
     content: "";
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: #dee2e6;
+}
+.table-bordered input[type="radio"]:checked + label::before{ 
+    content: "";
+    background-color:#60b360;
+    border-color: #4c4;
 }
 
+h2.head-price {
+    margin: 25px 20px;
+    font-weight: bold;
+}
 
+@media screen and (max-width: 1024px){
+    table{
+        width: 100%;
+
+    }
+    
+}
+@media screen and (max-width: 992px){
+    table{
+        width: 100%;
+    }
+    .col-max{
+        max-width: 100%;
+    }
+    .table-responsive {
+    display: block;
+    width: 100%;
+}
+
+    h2.head-price {
+    margin: 25px 20px;
+    font-weight: bold;
+}
+}
+@media screen and (max-width: 768px){
+    table{
+        width: 100%;
+
+    }
+    .table-responsive {
+    display: block;
+    width: 100%;}
+
+     h2.head-price {
+   
+    margin: 30px 20px 20px 21px;
+    font-weight: bold;
+}
+ .col-max {
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 480px){
+    table{
+        width: 100%;
+
+    }
+    h2.head-price {
+       margin: 85px 63px 16px 20px;
+    font-weight: bold;
+}
+.table-responsive {
+    display: block;
+    width: 100%;}
+     .col-max {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 320px){
+    table{
+        width: 100%;
+
+    }
+    .table-responsive {
+    display: block;
+    width: 100%;}
+    h2.head-price {
+    margin: 25px 20px;
+    font-weight: bold;
+}
+ .col-max {
+        max-width: 100%;
+    }
+}
 
 </style>
