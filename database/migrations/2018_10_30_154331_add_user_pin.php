@@ -16,6 +16,7 @@ class AddUserPin extends Migration
         //
      Schema::table('users', function($table) {
             $table->string('user_pin')->nullable();
+            $table->integer('admin')->nullable();
         });
 
     }
@@ -30,6 +31,7 @@ class AddUserPin extends Migration
         //
         Schema::table('users', function($table) {
         $table->dropColumn('user_pin');
+        $table->dropColumn('admin');
     });
 
     }

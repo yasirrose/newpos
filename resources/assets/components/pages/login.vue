@@ -109,11 +109,28 @@ export default {
                     
                 })
             }
-        }
+        },
+       /* isloggedin() {
+        let vm = this;
+               axios.get('./isloggedin')
+                .then( response =>{
+                    if(response.data.message == "success")
+                    {
+                        vm.$router.push("/pin");
+                        
+                    }else if(response.data.error == "Unauthorised"){
+                        vm.$router.push("/");
+                    }
+                    
+                })
+            
+        },*/
     },
-    mounted: function() {
-
-    },
+    mounted()
+        {
+          //this.isloggedin();
+          //this.$auth.isAuthenticatedServerSide();
+        },
     destroyed: function() {
 
     },

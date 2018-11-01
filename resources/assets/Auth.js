@@ -33,6 +33,10 @@ export default function (Vue) {
 				return true
 			else
 				return false
+		},
+
+
+		isAuthenticatedServerSide () {
 		}
 	}
 

@@ -25,7 +25,7 @@ const routes = [{
         component: resolve => require(['pages/pin'], resolve),
         meta: {
             title: "PIN",
-            forVisitors : true,
+            forPartialAuth : true,
         }
     },
 

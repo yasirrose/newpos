@@ -14,9 +14,19 @@
 
 
 Route::post('/login', 'UserController@login');
-Route::post('/user_pin', 'UserController@user_pin');
-Route::get('/isloggedin', 'UserController@isloggedin');
-Route::post('/logout', 'Auth\LoginController@logout');
+
+
+//Route::get('/isloggedin', 'UserController@isloggedin');
+
+Route::group(['middleware' => 'AdminMiddleware'], function() {
+
+  Route::get('/isloggedin', 'UserController@isloggedin');
+  Route::post('/user_pin', 'UserController@user_pin');
+  Route::get('/isloggedinComplete', 'UserController@isloggedinComplete');
+
+});
+Route::post('/logout', 'UserController@logout');
+//Route::post('/logout', 'Auth\LoginController@logout');
 
 Route::get('/', function () {
     return view('admin');

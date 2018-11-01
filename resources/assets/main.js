@@ -30,25 +30,87 @@ if (google_analytics_key && google_analytics_key.length) {
 
 }
 
-/*router.beforeEach((to, from, next) => {
+router.beforeEach((to, from, next) => {
   if(to.matched.some(record => record.meta.forVisitors)){
-      if(Vue.auth.isAuthenticated()){
-        next({ 
-          path : '/admin/'
-        })
-      }
-      else next()
-    }
-    else if(to.matched.some(record => record.meta.forAuth)){
-      if( ! Vue.auth.isAuthenticated()){
+
+
+
+ axios.get('./isloggedinComplete')
+      .then( response =>{
+      
+      if(response.data.error == "Unauthorised"){
+           next();
+         }
+         else if(response.data.error == "PINUnauthorised") {
+
         next({ 
           path : '/pin'
         })
-      }
-      else next()
+      
+       } 
+       else if(response.data.error == false) {
+
+          next({ 
+          path : '/admin'
+        })
+      
+       } }); ///
+
+ }
+    else if(to.matched.some(record => record.meta.forPartialAuth)){
+
+      axios.get('./isloggedinComplete')
+      .then( response =>{
+      
+      if(response.data.error == "Unauthorised"){
+
+
+         next({ 
+          path : '/'
+        })}
+         else if(response.data.error == "PINUnauthorised") {
+
+         next();
+      
+       } 
+       else if(response.data.error == false) {
+
+          next({ 
+          path : '/admin'
+        })
+      
+       } }); ///
+    }
+
+    else if(to.matched.some(record => record.meta.forAuth)){
+
+      axios.get('./isloggedinComplete')
+      .then( response =>{
+      
+      if(response.data.error == "Unauthorised"){
+
+
+        next({ 
+          path : '/'
+        })}
+         else if(response.data.error == "PINUnauthorised") {
+
+          next({ 
+          path : '/pin'
+        })
+      
+       } 
+       else if(response.data.error == false) {
+
+         next()
+         store.state.preloader = false
+      
+       } }); ///
     }
     else next()
-});*/
+
+
+});
 
 
 export const AuthenticationStore = new Vue({

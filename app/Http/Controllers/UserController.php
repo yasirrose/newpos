@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Validator;
 use Session;
 use DB;
+
 class UserController extends Controller 
 {
 public $successStatus = 200;
@@ -36,13 +37,14 @@ public $successStatus = 200;
 
     public function isloggedin(Request $request){ 
 
-        $session_user_id = Auth::user()->id; 
+        //$session_user_id = Auth::user(); 
 
-       
-        if($session_user_id !== NULL){
-             return response()->json(['message' => 'success']); 
+       //dd(Auth::user());
+        if(Auth::user() == null){
+              return response()->json(['error'=>'Unauthorised', 'message' => 'Unauthorised']); 
         }else{ 
-            return response()->json(['error'=>'Unauthorised','message' => 'Not Logged In']); 
+           
+            return response()->json(['message' => 'success']); 
         } 
     }
 
@@ -50,14 +52,41 @@ public $successStatus = 200;
     public function user_pin(Request $request){ 
 
         $session_user_id = Auth::user()->id;
-        if (User::where('user_pin', '=', request('user_pin'))->where('id', '=', $session_user_id)->exists()) {
 
+         
+        if ( User::where('user_pin', '=', request('user_pin'))->where('id', '=', $session_user_id)->exists() ) {
+
+            Session()->put('user_pin', request('user_pin')); 
             return response()->json(['message' => 'success'], $this-> successStatus); 
         }
         else{ 
             return response()->json(['error'=>'Unauthorised','message' => 'PIN fail']); 
         } 
     }
+
+
+    public function isloggedinComplete(){ 
+
+        //$session_user_id = Auth::user(); 
+            
+       //dd(Auth::user());
+        if(Session::get('user_pin') == null){
+
+              return response()->json(['error'=>'PINUnauthorised', 'message' => 'PINUnauthorised']); 
+        }else{ 
+           
+            return response()->json(['error' => false,'message' => 'success']); 
+        } 
+    }
+
+     public function logout(){ 
+
+        //$session_user_id = Auth::user(); 
+         Auth::logout();
+         session()->flush();
+
+    }
+
 /** 
      * Register api 
      * 

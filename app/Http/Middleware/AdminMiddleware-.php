@@ -17,12 +17,12 @@ class AdminMiddleware
 
 public function handle($request, Closure $next, $guard = null)
 {
-/*  && Auth::user()->admin==1*/
-if (Auth::guard($guard)->check()  && Auth::user()->admin==1) {
+/*	&& Auth::user()->admin==1*/
+if (Auth::guard($guard)->check() ) {
 return $next($request);
 
 }
-  return response()->json(['error'=>'Unauthorised']); 
+return redirect('/');
 
 }
 
