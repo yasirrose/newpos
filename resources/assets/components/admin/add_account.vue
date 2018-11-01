@@ -281,44 +281,45 @@
 <script>
 require("radiobox.css/dist/css/radiobox.min.css");
 export default {
-name: "formelements",
-name: "radios_checkboxes",
-data(){
-return{
+    name: "formelements",
+    name: "radios_checkboxes",
+    data(){
+        return{
 
-radiooptions: [
-{ text: 'Active', value: '1' },
-{ text: 'Deactive', value: '0' },
-],
-model: {
-plugin_name: '',
-plugin_price: '',
-plugin_status: '',
-pluginsdata:''
-},
-data2:{
-d:""
-},
-}
-},
-mounted()
-{
-this.readPlugins();
-},
-methods: {
-readPlugins()
-{
-axios.get('./api/get_plugins')
-.then(response => {
-// this.pluginsdata = response.data.plugins;
-this.model.pluginsdata=response.data.plugins;
-});
-},
-go_back()
-{
-this.$router.go(-1);
-}
-}
+            radiooptions: [
+                { text: 'Active', value: '1' },
+                { text: 'Deactive', value: '0' },
+            ],
+            model: {
+                plugin_name: '',
+                plugin_price: '',
+                plugin_status: '',
+                pluginsdata:''
+            },
+            data2:{
+                d:""
+            },
+        }
+    },
+    mounted()
+    {
+        this.readPlugins();
+    },
+    methods: {
+        readPlugins(){
+            axios.get('./get_plugins')
+            .then(response => {
+                // this.pluginsdata = response.data.plugins;
+                this.model.pluginsdata=response.data.plugins;
+            });
+        },
+        go_back(){
+            this.$router.go(-1);
+        },
+        updatePlugin(){
+            //this.$router.go(-1);
+        }
+    }
 }
 </script>
 <style scoped src="assets/css/custom.css" rel="stylesheet"></style>

@@ -12,7 +12,7 @@
         <div class="res_section col-lg-4 offset-lg-5 col-sm-4 offset-sm-3 col-xs-10 offset-xs-1 login-content mt-5">
             <div class="row">
                 <div class="col-sm-12 mt-3">
-                    
+                     
                     <h3 class="text-center">Your Cheers POS PIN
                       <button class="close-x">x</button>
                     </h3>
@@ -34,13 +34,22 @@
                         <input type="button" name="8" value="8"  @click="handleClick($event)" @submit.prevent="getButtonName($event)" class="element">
                         <input type="button" name="9" value="9"  @click="handleClick($event)" @submit.prevent="getButtonName($event)" class="element">
                         <input type="button" name="0" value="0"  @click="handleClick($event)" @submit.prevent="getButtonName($event)" class="element">
-
+                        <!-- <div class="element">1</div>
+                        <div class="element">2</div>
+                        <div class="element">3</div> 
+                        <div class="element">4</div>
+                        <div class="element">5</div>
+                        <div class="element">6</div>
+                        <div class="element">7</div>
+                        <div class="element">8</div>
+                        <div class="element">9</div>
+                         <div class="element">0</div>-->
 
                       </div>
                     </div>
                       <div class="sign-in">
                         <button type="button" @click="onSubmit">Sign In</button><br>
-                        <p   v-on:click="reset" >Clear</p>
+                        <p>Clear</p>
                       </div>
                 </div>
             </div>
@@ -68,10 +77,6 @@ export default {
         }
     },
     methods: {
-      reset(){
-        this.model.user_pin = '';
-    },
-
       getButtonName(event) {
             // console.log(event);
       },
@@ -80,6 +85,23 @@ export default {
         this.model.user_pin = parseInt("" + this.model.user_pin + e.target.name) ;
 
       },
+
+      /*isloggedin() {
+        let vm = this;
+               axios.get('./isloggedin')
+                .then( response =>{
+                    if(response.data.message == "success")
+                    {
+                        vm.$router.push("/pin");
+
+                    }else if(response.data.error == "Unauthorised"){
+                        vm.$router.push("/");
+                    }
+                    
+                })
+            
+        },*/
+
       onSubmit() {
         let vm = this;
                axios.post('./user_pin', vm.model)
@@ -96,7 +118,6 @@ export default {
             
         }
     },
-    
      mounted()
         {
           this.$auth.isAuthenticatedServerSide();
@@ -142,6 +163,18 @@ export default {
   text-align: center;
   color: #696565;
 }
+    input[type="number"] {
+    text-align: center; 
+    margin: 16px auto;
+    width: 340px;
+    box-sizing: border-box;
+    height: 50px;
+    font-size: 38px;
+    line-height: 44px;
+    padding-left: 5px;
+    text-align: left;
+}
+
 .close-x{
 background-color: #ffffff;
     font-size: 20px;
@@ -158,18 +191,6 @@ background-color: #ffffff;
   font-size: 25px;
   background-color: #e4dede;
 }
-input[type="number"] {
-    text-align: center; 
-    margin: 16px auto;
-    width: 340px;
-    box-sizing: border-box;
-    height: 50px;
-    font-size: 38px;
-    line-height: 44px;
-    padding-left: 5px;
-    text-align: left;
-}
-
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
@@ -215,6 +236,7 @@ input[type=number]::-webkit-outer-spin-button {
     border: 1px solid #E11B24;
     clear: both;
     display: block;
+        cursor: pointer;
     font-family: "Open Sans", sans-serif;
     font-size: 19px;
     font-weight: 300;

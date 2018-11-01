@@ -66,8 +66,6 @@ public $successStatus = 200;
 
 
     public function isloggedinComplete(){ 
-
-        //$session_user_id = Auth::user(); 
             
        //dd(Auth::user());
         if(Session::get('user_pin') == null){
@@ -79,12 +77,13 @@ public $successStatus = 200;
         } 
     }
 
-     public function logout(){ 
+    public function lockscreen(){ 
+        session()->forget('user_pin');
+    }
 
-        //$session_user_id = Auth::user(); 
-         Auth::logout();
-         session()->flush();
-
+    public function logout(){ 
+        Auth::logout();
+        session()->flush();
     }
 
 /** 

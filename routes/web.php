@@ -24,7 +24,16 @@ Route::group(['middleware' => 'AdminMiddleware'], function() {
   Route::post('/user_pin', 'UserController@user_pin');
   Route::get('/isloggedinComplete', 'UserController@isloggedinComplete');
 
+  // Plugins
+
+	Route::get('/get_plugins', 'API\Cheersadmin\PluginController@getPlugins');
+	Route::post('/add_plugins', 'API\Cheersadmin\PluginController@addPlugins');
+	Route::post('/update_plugins', 'API\Cheersadmin\PluginController@updatePlugins');
+
+
+
 });
+Route::post('/lockscreen', 'UserController@lockscreen');
 Route::post('/logout', 'UserController@logout');
 //Route::post('/logout', 'Auth\LoginController@logout');
 

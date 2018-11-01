@@ -165,7 +165,11 @@
                         </b-dropdown-item>
                         <b-dropdown-item exact class="dropdown_content">
                             <router-link to=""  exact class="drpodowtext">
-                                
+                                <button @click="lockscreen" class="drpodowtext">Lock Screen</button>
+                            </router-link>
+                        </b-dropdown-item>
+                        <b-dropdown-item exact class="dropdown_content">
+                            <router-link to=""  exact class="drpodowtext">
                                 <button @click="logout" class="drpodowtext"> Logout</button>
                             </router-link>
                         </b-dropdown-item>
@@ -189,20 +193,20 @@
                     screenfull.toggle();
                 }
             },
-            logout() {
-            /*let timeout = 1500;
-            setTimeout( () => {
-                // Logout
-                this.$auth.destroyToken()
-                // Redirect to Login
-                this.$router.replace('/login')
-            }, timeout)*/
-             axios.post('./logout')
-            .then( response =>{                       
-                        this.$router.push("/");
+            lockscreen() {
+                axios.post('./lockscreen')
+                .then( response =>{                       
+                    this.$router.push("/pin");
                 })
 
-        }
+            },
+
+            logout() {
+                axios.post('./logout')
+                .then( response =>{                       
+                    this.$router.push("/");
+                })
+            }
 
         }
     }

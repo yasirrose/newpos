@@ -4,6 +4,7 @@
             <!-- <b-card header="App Plugins Pricing" header-tag="h4" class="bg-success-card"> -->
                 <h2 class="head-price">App Plugin Pricing</h2>
                     <div class="table-responsive col-max col-lg-6 col-sm-12 col-xs-12">
+                       <!--  <b-alert show variant="info" v-if="seen">{{message}}</b-alert> -->
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -33,17 +34,16 @@
                                     </td>
                                 </tr> -->
 
-                                 <tr >
-                                    <td><input type="" name="" value="TECHLEADZ"></td>
-                                    <td><input type="" name="" value="TECHLEADZ"></td>
+                                 <tr v-for="(plugin, index) in model.pluginsdata">
+                                    <td><input type="text" name="" v-model="plugin.plugin_name" ></td>
+                                    <td><input type="text" name="" v-model="plugin.plugin_price" ></td>
                                     <td> 
-                                            <!-- <b-form-radio-group :options="radiooptions" class="radio-border"></b-form-radio-group> -->
-                                            
-                                            <input type="radio" name="green" id="active">
-                                            <label for="active">Active</label>
-                                           
-                                            <input type="radio" name="green" id="deactive">
-                                             <label for="deactive">Deactive</label>
+                                        <!-- <b-form-radio-group :options="radiooptions" class="radio-border"></b-form-radio-group> -->
+                                        <input type="radio" :id="'Active' + plugin.plugin_id + ''"  value="1" v-model="plugin.plugin_status">
+                                        <label :for="'Active' + plugin.plugin_id + ''">Active</label>
+
+                                        <input type="radio" :id="'Deactive' + plugin.plugin_id + ''" value="0" v-model="plugin.plugin_status">
+                                         <label :for="'Deactive' + plugin.plugin_id + ''" >Deactive</label>
                                     </td>
                                 </tr>
                             </tbody>
@@ -86,18 +86,17 @@
 
 <script>
  require("radiobox.css/dist/css/radiobox.min.css");
+import miniToastr from 'mini-toastr';
 import Vue from 'vue'
 import VModal from 'vue-js-modal'
 Vue.use(VModal)
+miniToastr.init();
 export default {
     name: "modals",
       name: "radios_checkboxes",
      data() {
             return {
-          radiooptions: [
-                { text: 'Active', value: '1' },
-                { text: 'Deactive', value: '0' },
-            ],
+            seen:false,
             model: {
                 plugin_name: '',
                 plugin_price: '',
@@ -127,15 +126,17 @@ export default {
         },
         readPlugins()
         {
-            axios.get('./api/get_plugins')
+            axios.get('./get_plugins')
                 .then(response => {
+
+                    //console.log(response.data.plugins);
                    // this.pluginsdata = response.data.plugins;
                     this.model.pluginsdata=response.data.plugins;
                 });
         },
         addPlugin() {
             let vm = this;
-                axios.post('./api/add_plugins', vm.model)
+                axios.post('./add_plugins', vm.model)
                 .then( response =>{
                     vm.reset();
                     vm.$modal.hide('modallogin');
@@ -146,9 +147,25 @@ export default {
         updatePlugin () {
             let vm = this;
             vm.data2.d = vm.plugins;
-            axios.post('./api/update_plugins', vm.model)
+            axios.post('./update_plugins', vm.model)
             .then( response =>{
+
+                
                 vm.readPlugins();
+                //alert(response.data.message);
+                if(response.data.message == "Record updated successfully"){
+
+                    vm.message = response.data.message;
+
+                    miniToastr.success(vm.message)
+            /*successMsg() {
+            
+            },*/
+
+                    vm.seen=true;
+                }
+
+                
             })
         },
         reset(){
