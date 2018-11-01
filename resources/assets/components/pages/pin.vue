@@ -32,16 +32,7 @@
                         <input type="button" name="8" value="8"  @click="handleClick($event)" @submit.prevent="getButtonName($event)" class="element">
                         <input type="button" name="9" value="9"  @click="handleClick($event)" @submit.prevent="getButtonName($event)" class="element">
                         <input type="button" name="0" value="0"  @click="handleClick($event)" @submit.prevent="getButtonName($event)" class="element">
-                        <!-- <div class="element">1</div>
-                        <div class="element">2</div>
-                        <div class="element">3</div> 
-                        <div class="element">4</div>
-                        <div class="element">5</div>
-                        <div class="element">6</div>
-                        <div class="element">7</div>
-                        <div class="element">8</div>
-                        <div class="element">9</div>
-                         <div class="element">0</div>-->
+
 
                       </div>
                     </div>
@@ -67,6 +58,7 @@ export default {
     data() {
         return {
             formstate: {},
+
             user_pin : '',
             seen:false,
             model: {
@@ -162,6 +154,7 @@ export default {
   color: #696565;
 }
     input[type="number"] {
+
     text-align: center; 
     margin: 16px auto;
     width: 340px;
@@ -231,6 +224,7 @@ input[type=number]::-webkit-outer-spin-button {
    
     color: #696565;
 }
+
 @media screen and (max-width: 1024px) {
    input[type="text"] {
     width: 70%;

@@ -96,8 +96,6 @@
         document.querySelector('#preloader').remove()
     }
     </script>
-
-    
 </head>
 
 <body>

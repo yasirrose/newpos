@@ -1,42 +1,43 @@
 <template>
     <header class="header fixed-top">
         <nav>
-            
+            <router-link to="/" class="logo">
+                <img src="~img/logo.png" alt="logo" />
+            </router-link>
             <!-- Sidebar toggle button-->
-            
+            <div class="float-left">
+                <a href="javascript:void(0)" class="sidebar-toggle" @click="toggle_menu" >
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
             
             <div class="navbar float-left">
                 <div>
                     <div class="dropdown hidden-xs-down btn-group">
                         <router-link to="/admin/accounts" exact class="user_name_max drpodowtext">
-                            Accounts
+                            <i class="fa fa-user-o"></i> Accounts
                         </router-link>
                     </div>
                     <b-dropdown class="user user-menu bell_bg user_btn" right link>
                         <span slot="text">
                             <!-- User name-->
                             <router-link to="" exact class="user_name_max drpodowtext">
-                                Distributors
+                                <i class="fa fa-user-o"></i> Distributors
                             </router-link>
                         </span>
                         <b-dropdown-item exact class="dropdown_content">
                             <router-link to="/admin/distributors" exact class="drpodowtext">
-                                Accounts
+                                <i class="fa fa-user-o"></i> Accounts
                             </router-link>
                         </b-dropdown-item>
                         <b-dropdown-item exact class="dropdown_content">
                             <router-link to="/admin/distributor_import_pricefile" exact class="drpodowtext">
-                                Import Pricefile
-                            </router-link>
-                        </b-dropdown-item>
-                        <b-dropdown-item exact class="dropdown_content">
-                            <router-link to="/admin/distributor_import_pricefile" exact class="drpodowtext">
-                                New Vendor Pricefile
+                                <i class="fa fa-user-o"></i> Import Pricefile
                             </router-link>
                         </b-dropdown-item>
                         <b-dropdown-item exact class="dropdown_content">
                             <router-link to="/admin/distributor_item" exact class="drpodowtext">
-                                Items
+                                <i class="fa fa-user-o"></i> Items
                             </router-link>
                         </b-dropdown-item>
                         
@@ -46,22 +47,22 @@
                             
                             <!-- User name-->
                             <router-link to="" exact class="user_name_max drpodowtext">
-                                Library
+                                <i class="fa fa-user-o"></i> Library
                             </router-link>
                         </span>
                         <b-dropdown-item exact class="dropdown_content">
                             <router-link to="/admin/item_library" exact class="drpodowtext">
-                                Item Library
+                                <i class="fa fa-user-o"></i> Item Library
                             </router-link>
                         </b-dropdown-item>
                         <b-dropdown-item exact class="dropdown_content">
                             <router-link to="/admin/import_wizard" exact class="drpodowtext">
-                                Import Wizard
+                                <i class="fa fa-cog"></i> Import Wizard
                             </router-link>
                         </b-dropdown-item>
                         <b-dropdown-item exact class="dropdown_content">
                             <router-link to="/admin/export_item_library" exact class="drpodowtext">
-                                Export
+                                <i class="fa fa-lock"></i> Export
                             </router-link>
                         </b-dropdown-item>
                     </b-dropdown>
@@ -70,22 +71,22 @@
                             
                             <!-- User name-->
                             <router-link to="" exact class="user_name_max drpodowtext">
-                                Support
+                                <i class="fa fa-user-o"></i> Support
                             </router-link>
                         </span>
                         <b-dropdown-item exact class="dropdown_content">
                             <router-link to="" exact class="drpodowtext">
-                                Feedback
+                                <i class="fa fa-user-o"></i> Feedback
                             </router-link>
                         </b-dropdown-item>
                         <b-dropdown-item exact class="dropdown_content">
                             <router-link to="" exact class="drpodowtext">
-                                Videos
+                                <i class="fa fa-cog"></i> Videos
                             </router-link>
                         </b-dropdown-item>
                         <b-dropdown-item exact class="dropdown_content">
                             <router-link to="" exact class="drpodowtext">
-                                Facebook
+                                <i class="fa fa-lock"></i> Facebook
                             </router-link>
                         </b-dropdown-item>
                     </b-dropdown>
@@ -94,28 +95,28 @@
                         <span slot="text">
                             <!-- User name-->
                             <router-link to="" exact class="user_name_max drpodowtext">
-                                Reports
+                                <i class="fa fa-user-o"></i> Reports
                             </router-link>
                         </span>
                         <b-dropdown-item exact class="dropdown_content">
                             <router-link to="/admin/reports_basic" exact class="drpodowtext">
-                                Basic
+                                <i class="fa fa-user-o"></i> Basic
                             </router-link>
                         </b-dropdown-item>
                         <b-dropdown-item exact class="dropdown_content">
                             <router-link to="" exact class="drpodowtext">
-                                Advance
+                                <i class="fa fa-cog"></i> Advance
                             </router-link>
                         </b-dropdown-item>
                     </b-dropdown>
                     <div class="dropdown btn-group">
                         <router-link to="/admin/ads" exact class="user_name_max drpodowtext">
-                            Ads
+                            <i class="fa fa-user-o"></i> Ads
                         </router-link>
                     </div>
                     <div class="dropdown btn-group">
                         <router-link to="/admin/plugins" exact class="user_name_max drpodowtext">
-                            Add Plugins
+                            <i class="fa fa-user-o"></i> Add Plugins
                         </router-link>
                     </div>
                     <b-dropdown class="user user-menu bell_bg user_btn" right link >
@@ -123,17 +124,17 @@
                             
                             <!-- User name-->
                             <router-link to="" exact class="user_name_max drpodowtext">
-                                Settings
+                                <i class="fa fa-user-o"></i> Settings
                             </router-link>
                         </span>
                         <b-dropdown-item exact class="dropdown_content">
                             <router-link to="" exact class="drpodowtext">
-                                Plans
+                                <i class="fa fa-user-o"></i> Plans
                             </router-link>
                         </b-dropdown-item>
                         <b-dropdown-item exact class="dropdown_content">
                             <router-link to="" exact class="drpodowtext">
-                                Gateways
+                                <i class="fa fa-cog"></i> Gateways
                             </router-link>
                         </b-dropdown-item>
                     </b-dropdown>
@@ -150,23 +151,21 @@
                     </div>-->
 
                     <!-- User Account: style can be found in dropdown-->
-                    <b-dropdown class="user user-menu bell_bg user_btn admin-setting" right link>
+                    <b-dropdown class="user user-menu bell_bg user_btn" right link>
                         <span slot="text">
-                            <!-- <img :src="this.$store.state.user.picture" class="rounded-circle" alt="User Image"> -->
-                            <button type="button" class="btn btn-secondary dropdown-toggle" ><span ><i class="fa fa-bell-o noti-icon"></i> <div  class="notifications_badge_top"><span class="badge badge-danger">4
-                            </span></div></span></button>
+                            <img :src="this.$store.state.user.picture" class="rounded-circle" alt="User Image">
                             <!-- User name-->
                             <p class="user_name_max">{{this.$store.state.user.name}}</p>
                         </span>
                         <b-dropdown-item exact class="dropdown_content">
                             <router-link to="/admin/user_profile" exact class="drpodowtext">
-                                Profile
+                                <i class="fa fa-user-o"></i> Profile
                             </router-link>
                         </b-dropdown-item>
                         <b-dropdown-item exact class="dropdown_content">
                             <router-link to=""  exact class="drpodowtext">
                                 
-                                <button @click="logout" class="drpodowtext"> Logout</button>
+                                <button @click="logout" class="drpodowtext"><i class="fa fa-sign-out"></i> Logout</button>
                             </router-link>
                         </b-dropdown-item>
                     </b-dropdown>
@@ -203,282 +202,189 @@
         }
     }
 </script>
-<!-- <style scoped src="assets/css/button.css" rel="stylesheet"></style> -->
-
-<style scoped src="assets/css/style.css" rel="stylesheet"></style>
-
 <style lang="scss" scoped>
+    @import "../css/customvariables";
+    .header {
+        z-index: 1030;
+        nav {
+            margin-bottom: 0;
+            height: 50px;
+            background: $header_color;
+            background-size: 100% 100%;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+        .navbar-right {
+            float: right;
+            margin-right: 15px;
+        }
+        .logo {
+            display: block;
+            float: left;
+            height: 50px;
+            line-height: 41px;
+            padding: 3px 10px;
+            text-align: center;
+            width: 250px;
+            background: $header_color;
+            img {
+                width: 125px;
+            }
+        }
+        .navbar-right {
+            .dropdown-item {
+                padding: 0;
+                width: 100%;
+                outline: none;
+            }
+            div.dropdown {
+                >a {
+                    color: $zoom_color;
+                }
+                .dropdown-menu>button {
+                    padding: 10px 15px;
+                }
+                &.notifications-menu {
+                    height: 50px;
+                    .noti-icon {
+                        font-size: 18px;
+                    }
+                }
+                >a>i {
+                    font-size: 23px;
+                }
+                >a {
+                    display: block;
+                    padding: 12px;
+                }
+                &:hover>a {
+                    background-color: #ededed;
+                    color: #000;
+                }
+                >a.padding-user {
+                    padding-top: 8px;
+                    padding-bottom: 6px;
+                }
+            }
+        }
+        nav .sidebar-toggle {
+            float: left;
+            color: $toggle_color;
+            font-size: 19px;
+            padding-top: 10px;
+        }
+    }
 
+    .user_name_max {
+        display: inline-block;
+        max-width: 180px;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        margin: 0 0 -4px;
+    }
 
-@import "../css/customvariables";
-.header {
-z-index: 1030;
-nav {
-margin-bottom: 0;
-/*background: $header_color;*/
-background-size: 100% 100%;
-/*box-shadow: 0px 0px 10px #CCC;*/
-}
-.nav_bg_c {
-background: #000;
-color: #FFF;
-}
-.bttn_bg {
-background: #000;
-}
-.name_mrgn {
-margin-top: 8px;
-color: #FFF;
-}
-.inner_bttn_a {
-color: #FFF;
-}
-.navbar-right {
-float: right;
-margin-right: 15px;
-}
-.logo {
-display: block;
-float: left;
-height: 50px;
-line-height: 41px;
-padding: 3px 10px;
-text-align: center;
-width: 250px;
-img {
-width: 125px;
-}
-}
-.navbar-right {
-.dropdown-item {
-padding: 0;
-width: 100%;
-outline: none;
-}
-div.dropdown {
->a {
-color: $zoom_color;
-}
-.dropdown-menu>button {
-padding: 10px 15px;
-}
-&.notifications-menu {
-height: 50px;
-.noti-icon {
-font-size: 18px;
-}
-}
->a>i {
-font-size: 23px;
-}
->a {
-display: block;
-padding: 12px;
-}
-&:hover>a {
-background-color: #EDEDED;
-color: #000;
-}
->a.padding-user {
-padding-top: 8px;
-padding-bottom: 6px;
-}
-}
-}
-nav .sidebar-toggle {
-float: left;
-color: #fff;
-font-size: 19px;
-padding-top: 10px;
-}
-}
+    .noti_msg {
+        font-size: 16px;
+        padding: 10px;
+        border: 1px solid #4f90c1;
+        border-radius: 50px;
+        margin-top: 10px;
+    }
 
-.user_name_max {
-display: inline-block;
-max-width: 180px;
-white-space: nowrap;
-overflow: hidden !important;
-text-overflow: ellipsis;
-margin: 0 0 -4px;
-}
+    .user.user-menu>button img {
+        width: 35px;
+        height: 35px;
+    }
+    /**** END HEADER RIGHT SIDE DROPDOWNS ****/
 
-.noti_msg {
-font-size: 16px;
-padding: 10px;
-border: 1px solid #4F90C1;
-border-radius: 50px;
-margin-top: 10px;
-}
+    @media screen and (max-width: 767px) {
+        .dropdown.open .dropdown-menu {
+            position: absolute;
+        }
+        .navbar-right>li>a {
+            padding: 10px 12px;
+        }
+    }
+    /* Fix menu positions on xs screens to appear correctly and fully */
 
-.user.user-menu>button img {
-width: 35px;
-height: 35px;
-}
+    @media (max-width: 560px) {
+        body .header .logo,
+        body .header nav {
+            width: 100%;
+        }
+        body .header nav .sidebar-toggle {
+            padding-left: 15px;
+        }
+        nav {
+            height: 100px !important;
+        }
+    }
 
-/**** END HEADER RIGHT SIDE DROPDOWNS ****/
+    .notifications_badge_top {
+        margin-top: -28px;
+        margin-left: 10px;
+        position: absolute;
+        span {
+            top: 1px;
+            left: 2px;
+            border-radius: 50%;
+            font-size: 9px;
+            padding: 0.23em 0.45em;
+        }
+    }
 
-@media screen and (max-width: 767px) {
-.dropdown.open .dropdown-menu {
-position: absolute;
-}
-.navbar-right>li>a {
-padding: 10px 12px;
-}
-}
-/* Fix menu positions on xs screens to appear correctly and fully */
+    .notifications-menu .dropdown-item {
+        width: 100%;
+        display: block;
+    }
 
-@media (max-width: 560px) {
-body .header .logo,
-body .header nav {
-width: 100%;
-}
-body .header nav .sidebar-toggle {
-padding-left: 15px;
-}
-nav {
-height: 100px !important;
-}
-}
-
-.notifications_badge_top {
-margin-top: -28px;
-margin-left: 10px;
-position: absolute;
-span {
-top: 1px;
-left: 2px;
-border-radius: 50%;
-font-size: 9px;
-padding: 0.23em 0.45em;
-}
-}
-
-.notifications-menu .dropdown-item {
-width: 100%;
-display: block;
-}
-
-.dropdown-footer {
-padding: 10px !important;
-}
+    .dropdown-footer {
+        padding: 10px !important;
+    }
 </style>
 <style type="text/css" lang="scss">
-@import "../css/customvariables";
-.wrapper {
-margin-top: 50px;
-@media screen and (max-width: 560px) {
-margin-top: 100px;
-}
-}
+    @import "../css/customvariables";
+    .wrapper {
+        margin-top: 50px;
+        @media screen and (max-width: 560px) {
+            margin-top: 100px;
+        }
+    }
 
-.sidebar-toggle {
-margin-left: 10px;
-}
+    .sidebar-toggle {
+        margin-left: 10px;
+    }
 
+    .bell_bg {
+        button.btn-secondary {
+            background-color: $bell-color;
+            border: none;
+            border-radius: 0;
+            box-shadow: none !important;
+            &:hover {
+                background-color: #ededed !important
+            }
+            &:active {
+                color: $toggle_color !important;
+            }
+        } //.btn-secondary:active
+        &.show button {
+            background-color: $bell-active !important
+        }
+        &.user_btn  .dropdown-toggle{
+            padding:7px 9px;
+        }
+    }
 
-.bell_bg {
-button.btn-secondary {
-background-color:transparent;
-border: none;
-border-radius: 0;
-box-shadow: none !important;
-&:hover {
-background-color: #666666 !important
-}
-&:active {
-color: $toggle_color !important;
-}
-} //.btn-secondary:active
-&.show button {
-background-color: $bell-active !important
-}
-&.user_btn .dropdown-toggle{
-padding:7px 9px;
-}
-}
+    .tabs_cont,
+    .event_date {
+        background-color: #fff !important;
+    }
+    body.left-hidden aside.right-aside {
+        margin-left: 0;
+    }
+    body.left-hidden .header.fixed-top{
+        padding-right: 0 !important;
+    }
 
-.tabs_cont,
-.event_date {
-background-color: #FFF !important;
-}
-body.left-hidden aside.right-aside {
-margin-left: 0;
-}
-body.left-hidden .header.fixed-top{
-padding-right: 0 !important;
-}
-
-
-
-
-.show > .btn-secondary.dropdown-toggle {
-    background: #666666;
-}
-.navbar {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-header .drpodowtext {
-    color: #fff;
-    font-family: arial;
-    font-weight: bold;
-    letter-spacing: 0;
-    line-height: 38px;
-}
-.dropdown-menu {
-    background-color: #f0f1f5;
-}
-header .dropdown-menu .drpodowtext {
-    color: #000;
-    line-height: inherit;
-}
-header .dropdown-menu .dropdown-item {
-    padding: 0 1.5rem;
-}
-header .dropdown-menu .dropdown-item:hover {
-    background: #b7b7b7;
-}
-header .dropdown-menu .drpodowtext:hover {
-    margin-left: 0 !important;
-}
-.dropdown-menu {
-    border-radius: 0;
-}
-.dropdown.btn-group {
-    padding: 11px 0;
-    vertical-align: top;
-}
-.btn-group.b-dropdown.dropdown {
-    padding: 0;
-}
-.dropdown.btn-group a {
-    padding: 0 9px;
-}
-.btn-group.b-dropdown.dropdown a {
-    line-height: 45px;
-    padding: 0 0;
-}
-header .dropdown-menu .drpodowtext {
-    padding: 0 18px !important;
-}
-.admin-setting button.btn-secondary, .admin-setting button.btn-secondary:hover, header .navbar-right .admin-setting.show > .btn-secondary.dropdown-toggle {
-    background: transparent !important;
-    padding: 9px 10px !important;
-}
-.admin-setting p {
-    color: #fff;
-    font-weight: bold;
-}
-header .admin-setting .drpodowtext button {
-    background: transparent;
-    border: medium none;
-    padding: 0 !important;
-}
-.admin-setting .fa.fa-bell-o.noti-icon {
-    color: #747678;
-    font-size: 20px;
-}
-.badge-danger {
-    background: #317ae2;
-}
 </style>
