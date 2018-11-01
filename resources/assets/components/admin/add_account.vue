@@ -4,11 +4,10 @@
         <!-- <b-card header="App Plugins Pricing" header-tag="h4" class="bg-success-card"> -->
         <h2 class="head-price"><a href="">Accounts/</a>New Account</h2>
         <div class="table-responsive col-max col-lg-6 col-sm-12 col-xs-12">
-            <table class="table table-bordered">
+            <table class="table tab-1 table-bordered">
                 <thead>
                     <tr>
-                        <th>Store Information</th>
-                        <th></th>
+                        <th colspan="2">Store Information</th>
                         
                     </tr>
                     
@@ -84,12 +83,11 @@
     <!-- Select Modules -->
     <!--End OF Select Modules -->
     <div class="table-responsive col-max col-lg-6 col-sm-12 col-xs-12">
-        <table class="table table-bordered">
+        <table class="table tab-2 table-bordered">
             <thead>
                 <tr>
-                    <th>Billing Card Information</th>
-                    <th></th>
-                    
+                    <th colspan="2">Billing Card Information</th>
+                   
                 </tr>
             </thead>
             <tbody>
@@ -162,7 +160,7 @@
     <!-- end of Billing card information -->
     <!-- Select Modules -->
     <div class="table-responsive col-max col-lg-6 col-sm-12 col-xs-12">
-        <table class="table table-bordered">
+        <table class="table tab-3 table-bordered">
             <thead>
                 <tr>
                     <th>Select Modules</th>
@@ -209,7 +207,7 @@
                 </tr>
                 <tr class="ac-label">
                     <td><p>Address</p></td>
-                    <td class="check-btn"><p>79.00</p></td>
+                    <td ><p>79.00</p></td>
                     <td class="check-btn"> <input type="radio" name="green" id="deactive">
                     <label for="deactive"></label></td>
                 </tr>
@@ -273,7 +271,7 @@
     </div>
     <!--End OF Select Modules -->
     <div class="col-md-offset-4 col-md-8 m-t-25">    
-            <button class="btn btn-success save-btn" @click="updatePlugin">Save</button>
+            <button class="btn btn-success save-btn" @click="">Save</button>
         </div>
 </div>
 </div>
@@ -303,7 +301,7 @@ d:""
 },
 mounted()
 {
-this.readPlugins();
+//this.readPlugins();
 },
 methods: {
 readPlugins()
@@ -321,7 +319,7 @@ this.$router.go(-1);
 }
 }
 </script>
-<style scoped src="assets/css/custom.css" rel="stylesheet"></style>
+
 <style type="text/css" scoped>
 #color {
 height: 35px;

@@ -1,9 +1,10 @@
 <template>
-    <div class="row">
-        <div class="col-lg-12">
+    <div class="row left-space">
+        <div class="col-lg-12m add-price">
             <!-- <b-card header="App Plugins Pricing" header-tag="h4" class="bg-success-card"> -->
                 <h2 class="head-price">App Plugin Pricing</h2>
-                    <div class="table-responsive col-max col-lg-6 col-sm-12 col-xs-12">
+                    <div class="table-responsive col-maxx
+ col-lg-6 col-sm-12 col-xs-12">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -164,131 +165,140 @@ export default {
 <!-- adding scoped attribute will apply the css to this component only -->
 
 <style scoped>
-  .table-bordered  table{
+ .add-price .table-bordered  table{
         border-collapse: collapse;
     }
    
-   .table-bordered.table-bordered tbody:before {
+ .add-price  .table-bordered.table-bordered tbody:before {
     line-height:3px;
     content:"-";
     display:block;
 }
-   .table-bordered td{
+ .add-price  .table-bordered td{
         padding: 0;
 
     }
-   .table-bordered thead{
+ .add-price  .table-bordered thead{
         border: none;
     }
-    .table-bordered input{
+ .add-price   .table-bordered input{
         padding: 14px;
         border: none;
         outline: none;
     }
-  .table-bordered  input:focus{
+ .add-price .table-bordered  input:focus{
         padding: 14px;
         margin:0;
         border:1px solid #868e96;
         width: 100%;
     }
-    .table-bordered th {
+ .add-price   .table-bordered th {
     border: none;
     background-color: #dcdcdc;
 
 }
-.table-bordered input[type="radio"] {
+.add-price .table-bordered input[type="radio"] {
     display:none; 
 }
-.table-bordered label::before {
+.add-price .table-bordered label::before {
     padding: 7px 10px;
     margin: 6px 4px -3px 11px;
     border: 1px solid #e8d9d9;
     border-radius: 4px;
     content: "";
 }
-.table-bordered input[type="radio"]:checked + label::before{ 
+.add-price .table-bordered input[type="radio"]:checked + label::before{ 
     content: "";
     background-color:#60b360;
     border-color: #4c4;
 }
 
-h2.head-price {
+.add-price h2.head-price {
     margin: 25px 20px;
     font-weight: bold;
 }
+.add-price .col-maxx
+    {
+        max-width: 100%;
+        width: 100%;
 
+    }
 @media screen and (max-width: 1024px){
-    table{
+    .add-price table{
         width: 100%;
 
     }
     
 }
 @media screen and (max-width: 992px){
-    table{
+    .add-price table{
         width: 100%;
     }
-    .col-max{
+    .add-price .col-maxx
+{
         max-width: 100%;
     }
-    .table-responsive {
+    .add-price .table-responsive {
     display: block;
     width: 100%;
 }
 
-    h2.head-price {
+    .add-price h2.head-price {
     margin: 25px 20px;
     font-weight: bold;
 }
 }
 @media screen and (max-width: 768px){
-    table{
+    .add-price table{
         width: 100%;
 
     }
-    .table-responsive {
+    .add-price .table-responsive {
     display: block;
     width: 100%;}
 
-     h2.head-price {
+     .add-price h2.head-price {
    
     margin: 30px 20px 20px 21px;
     font-weight: bold;
 }
- .col-max {
+ .add-price .col-maxx
+ {
         max-width: 100%;
     }
 }
 @media screen and (max-width: 480px){
-    table{
+    .add-price table{
         width: 100%;
 
     }
-    h2.head-price {
+    .add-price h2.head-price {
        margin: 85px 63px 16px 20px;
     font-weight: bold;
 }
-.table-responsive {
+.add-price .table-responsive {
     display: block;
     width: 100%;}
-     .col-max {
+     .col-maxx
+ {
         max-width: 100%;
     }
 }
 
 @media screen and (max-width: 320px){
-    table{
+    .add-price table{
         width: 100%;
 
     }
-    .table-responsive {
+    .add-price .table-responsive {
     display: block;
     width: 100%;}
-    h2.head-price {
+    .add-price h2.head-price {
     margin: 25px 20px;
     font-weight: bold;
 }
- .col-max {
+ .add-price .col-maxx
+ {
         max-width: 100%;
     }
 }
