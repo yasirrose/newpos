@@ -1,9 +1,8 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
-            <!-- <b-card header="App Plugins Pricing" header-tag="h4" class="bg-success-card"> -->
-                <h2 class="head-price">App Plugin Pricing</h2>
-                    <div class="table-responsive col-max col-lg-6 col-sm-12 col-xs-12">
+            <b-card header="App Plugins Pricing" header-tag="h4" class="bg-success-card">
+                    <div class="table-responsive col-lg-6">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -13,8 +12,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-
-                               <!--  <tr v-for="plugin in model.pluginsdata">
+                                <tr v-for="plugin in model.pluginsdata">
                                     <td>{{ plugin.plugin_name }}</td>
                                     <td> {{ plugin.plugin_price }}</td>
                                     <td> 
@@ -31,30 +29,16 @@
                                             </div>
                                         </div>
                                     </td>
-                                </tr> -->
-
-                                 <tr >
-                                    <td><input type="" name="" value="TECHLEADZ"></td>
-                                    <td><input type="" name="" value="TECHLEADZ"></td>
-                                    <td> 
-                                            <!-- <b-form-radio-group :options="radiooptions" class="radio-border"></b-form-radio-group> -->
-                                            
-                                            <input type="radio" name="green" id="active">
-                                            <label for="active">Active</label>
-                                           
-                                            <input type="radio" name="green" id="deactive">
-                                             <label for="deactive">Deactive</label>
-                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="col-md-offset-4 col-md-8 m-t-25">
-                       
+                        <button class="btn btn-primary" @click="addNewPlugin">+ Add New</button>
                         <button class="btn btn-success" @click="updatePlugin">Update</button>
                     </div>
-            <!-- </b-card>
- -->
+            </b-card>
+
             <modal name="modallogin" :adaptive="true">
                 <div class="p-4">
                         <div class="row">
@@ -83,21 +67,16 @@
         </div>
     </div>
 </template>
-
 <script>
- require("radiobox.css/dist/css/radiobox.min.css");
+
 import Vue from 'vue'
 import VModal from 'vue-js-modal'
 Vue.use(VModal)
 export default {
     name: "modals",
-      name: "radios_checkboxes",
      data() {
             return {
-          radiooptions: [
-                { text: 'Active', value: '1' },
-                { text: 'Deactive', value: '0' },
-            ],
+          
             model: {
                 plugin_name: '',
                 plugin_price: '',
@@ -162,135 +141,6 @@ export default {
 </script>
 <!-- styles -->
 <!-- adding scoped attribute will apply the css to this component only -->
-
 <style scoped>
-  .table-bordered  table{
-        border-collapse: collapse;
-    }
-   
-   .table-bordered.table-bordered tbody:before {
-    line-height:3px;
-    content:"-";
-    display:block;
-}
-   .table-bordered td{
-        padding: 0;
-
-    }
-   .table-bordered thead{
-        border: none;
-    }
-    .table-bordered input{
-        padding: 14px;
-        border: none;
-        outline: none;
-    }
-  .table-bordered  input:focus{
-        padding: 14px;
-        margin:0;
-        border:1px solid #868e96;
-        width: 100%;
-    }
-    .table-bordered th {
-    border: none;
-    background-color: #dcdcdc;
-
-}
-.table-bordered input[type="radio"] {
-    display:none; 
-}
-.table-bordered label::before {
-    padding: 7px 10px;
-    margin: 6px 4px -3px 11px;
-    border: 1px solid #e8d9d9;
-    border-radius: 4px;
-    content: "";
-}
-.table-bordered input[type="radio"]:checked + label::before{ 
-    content: "";
-    background-color:#60b360;
-    border-color: #4c4;
-}
-
-h2.head-price {
-    margin: 25px 20px;
-    font-weight: bold;
-}
-
-@media screen and (max-width: 1024px){
-    table{
-        width: 100%;
-
-    }
     
-}
-@media screen and (max-width: 992px){
-    table{
-        width: 100%;
-    }
-    .col-max{
-        max-width: 100%;
-    }
-    .table-responsive {
-    display: block;
-    width: 100%;
-}
-
-    h2.head-price {
-    margin: 25px 20px;
-    font-weight: bold;
-}
-}
-@media screen and (max-width: 768px){
-    table{
-        width: 100%;
-
-    }
-    .table-responsive {
-    display: block;
-    width: 100%;}
-
-     h2.head-price {
-   
-    margin: 30px 20px 20px 21px;
-    font-weight: bold;
-}
- .col-max {
-        max-width: 100%;
-    }
-}
-@media screen and (max-width: 480px){
-    table{
-        width: 100%;
-
-    }
-    h2.head-price {
-       margin: 85px 63px 16px 20px;
-    font-weight: bold;
-}
-.table-responsive {
-    display: block;
-    width: 100%;}
-     .col-max {
-        max-width: 100%;
-    }
-}
-
-@media screen and (max-width: 320px){
-    table{
-        width: 100%;
-
-    }
-    .table-responsive {
-    display: block;
-    width: 100%;}
-    h2.head-price {
-    margin: 25px 20px;
-    font-weight: bold;
-}
- .col-max {
-        max-width: 100%;
-    }
-}
-
 </style>

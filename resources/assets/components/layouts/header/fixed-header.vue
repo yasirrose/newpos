@@ -190,13 +190,17 @@
                 }
             },
             logout() {
-            let timeout = 1500;
+            /*let timeout = 1500;
             setTimeout( () => {
                 // Logout
                 this.$auth.destroyToken()
                 // Redirect to Login
                 this.$router.replace('/login')
-            }, timeout)
+            }, timeout)*/
+             axios.post('./logout')
+            .then( response =>{                       
+                        this.$router.push("/");
+                })
 
         }
 
@@ -208,7 +212,6 @@
 <style scoped src="assets/css/style.css" rel="stylesheet"></style>
 
 <style lang="scss" scoped>
-
 
 @import "../css/customvariables";
 .header {
@@ -375,7 +378,6 @@ margin-top: 100px;
 margin-left: 10px;
 }
 
-
 .bell_bg {
 button.btn-secondary {
 background-color:transparent;
@@ -407,7 +409,6 @@ margin-left: 0;
 body.left-hidden .header.fixed-top{
 padding-right: 0 !important;
 }
-
 
 
 

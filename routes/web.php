@@ -11,7 +11,6 @@
 |
 */
 
-<<<<<<< HEAD
 
 
 Route::post('/login', 'UserController@login');
@@ -28,12 +27,9 @@ Route::group(['middleware' => 'AdminMiddleware'], function() {
 });
 Route::post('/logout', 'UserController@logout');
 //Route::post('/logout', 'Auth\LoginController@logout');
-=======
-Auth::routes();
->>>>>>> dev
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('admin');
 });
 
 
@@ -41,4 +37,5 @@ Route::get('/', function () {
 
 
 
-Route::get('/', 'HomeController@index')->name('home');
+/*Route::get('/', 'HomeController@index')->name('admin');
+*/
