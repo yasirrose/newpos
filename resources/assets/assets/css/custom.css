@@ -1,0 +1,276 @@
+.table-bordered  table {
+    border-collapse: collapse;
+}
+
+.table-bordered td {
+    line-height: 8px;
+}
+
+.table-bordered.table-bordered tbody:before {
+    line-height: 3px;
+    content: "-";
+    display: block;
+}
+
+.table-bordered td {
+    padding: 0;
+    line-height: 0px;
+}
+
+.table-bordered thead {
+    border: none;
+}
+
+.table-bordered input {
+    padding: 1px;
+    border: none;
+    outline: none;
+}
+
+.table-bordered  input:focus {
+    padding: 5px;
+    margin: 0;
+    border: 1px solid #868e96;
+    width: 100%;
+}
+
+.table-bordered th {
+    border: none;
+    background-color: #dcdcdc;
+}
+
+.table-bordered input[type="radio"] {
+    display: none;
+}
+
+.table-bordered label::before {
+    padding: 7px 12px;
+    display: inline-block;
+    margin: 11px 4px -3px 12px;
+    border: 1px solid #e8d9d9;
+    border-radius: 4px;
+    content: "";
+}
+
+.table-bordered input[type="radio"]:checked + label::before {
+    content: "";
+    background-color: #60b360;
+    border-color: #4c4;
+}
+
+.check-btn {
+    text-align: center;
+}
+
+.check-btn label::before {
+    margin: 11px 0px -3px 0px;
+}
+
+.ac-label p {
+    margin-left: 15px;
+    margin-top: 15px;
+    color: black;
+}
+
+h2.head-price {
+    margin: 25px 20px;
+    font-weight: 500;
+    color: #b70b0b;
+}
+
+h2.head-price a {
+    color: black;
+}
+
+.col-max {
+    max-width: 24%;
+    padding: 2px;
+    display: inline-grid;
+}
+
+.save-btn {
+    padding: 8px 30px;
+}
+
+.left-space {
+    margin-left: 10px;
+}
+
+
+.tab-1 td:nth-child(1) {
+    width: 100px;
+}
+.tab-2 td:nth-child(1) {
+    width: 150px;
+}
+.btn-right{
+    float: right;
+    text-align: right;
+    margin-right: 60px;
+}
+button.btn.btn-success.tool-btn {
+    background: none;
+    border: 1px solid gray;
+    color: #7689d2;
+    margin-right: 24px;
+}
+
+button.btn.btn-success.print-btn{
+    background: none;
+    border: 1px solid gray;
+    color: #7689d2;
+    margin-right: 24px;
+    color: #7689d2;
+}
+.dropbtn {
+       background: none;
+    border: 1px solid #f3e9e9;
+    color: #7689d2;
+    border-radius: 4px;
+    padding: 8px 25px;
+    font-size: 16px;
+    
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+     position: absolute; 
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #f3e9e9;
+    background: white;
+    padding: 7px 25px;
+    min-width: 140px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    background: none;
+        border: none;
+    font-size: 17px;
+    text-align: justify;
+    margin: 0px 0px;
+    color: black;
+    display: block;
+
+}
+/*.dropdown-content a:hover {
+    background: none;
+    border: 1px solid gray;
+    text-align: justify;
+    margin: 0px 0px;
+    color: #2a2b2d;
+}*/
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {}
+@media screen and (max-width:1024px) {
+    table {
+        width: 100%;
+    }
+    .col-max {
+    max-width: 97%;
+    padding: 2px;
+   
+    }
+}
+
+@media screen and (max-width:992px) {
+    table {
+        width: 100%;
+    }
+
+    .col-max {
+        max-width: 100%;
+    }
+
+    .table-responsive {
+        display: block;
+        width: 100%;
+    }
+
+    h2.head-price {
+        margin: 25px 20px;
+        font-weight: bold;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    table {
+        width: 100%;
+    }
+
+    .table-responsive {
+        display: block;
+        width: 100%;
+    }
+
+    h2.head-price {
+        margin: 30px 20px 20px 21px;
+        font-weight: bold;
+    }
+
+    .col-max {
+        max-width: 100%;
+    }
+    .col-max {
+    max-width: 95%;
+    padding: 2px;
+   
+    }
+
+}
+
+@media screen and (max-width:480px) {
+    table {
+        width: 100%;
+    }
+    .col-max {
+    max-width: 90%;
+    padding: 2px;
+   
+    }
+
+    h2.head-price {
+        margin: 85px 63px 16px 20px;
+        font-weight: bold;
+    }
+
+    .table-responsive {
+        display: block;
+        width: 100%;
+    }
+
+    .col-max {
+        max-width: 100%;
+    }
+
+}
+
+@media screen and (max-width:320px) {
+    table {
+        width: 100%;
+    }
+
+    .table-responsive {
+        display: block;
+        width: 100%;
+    }
+
+    h2.head-price {
+        margin: 25px 20px;
+        font-weight: bold;
+    }
+
+    .col-max {
+        max-width: 100%;
+    }
+
+}
