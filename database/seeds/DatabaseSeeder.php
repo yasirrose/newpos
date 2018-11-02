@@ -11,11 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-       // $this->call(UsersTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
         $this->command->info('User table seeded!');
 
         //$users = factory(App\User::class, 2)->create();
-        //$this->call(PluginsTableSeeder::class);
+        $this->call(PluginsTableSeeder::class);
         //$this->call(OauthClientTableSeeder::class);
         //$this->call(UserTableSeeder::class);
         //$this->call(OauthPersonalAccessClientTableSeeder::class);
