@@ -153,8 +153,10 @@
                     <b-dropdown class="user user-menu bell_bg user_btn admin-setting" right link>
                         <span slot="text">
                             <!-- <img :src="this.$store.state.user.picture" class="rounded-circle" alt="User Image"> -->
-                            <button type="button" class="btn btn-secondary dropdown-toggle" ><span ><i class="fa fa-bell-o noti-icon"></i> <div  class="notifications_badge_top"><span class="badge badge-danger">4
+                            <!-- <button type="button" class="btn btn-secondary dropdown-toggle" ><span ><i class="fa fa-bell-o noti-icon"></i> <div  class="notifications_badge_top"><span class="badge badge-danger">4
                             </span></div></span></button>
+ -->
+
                             <!-- User name-->
                             <p class="user_name_max">{{this.$store.state.user.name}}</p>
                         </span>
@@ -167,7 +169,7 @@
                             <router-link to=""  exact class="drpodowtext">
                                 <button @click="lockscreen" class="drpodowtext">Lock Screen</button>
                             </router-link>
-                        </b-dropdown-item>
+                        </b-dropdown-item>          
                         <b-dropdown-item exact class="dropdown_content">
                             <router-link to=""  exact class="drpodowtext">
                                 <button @click="logout" class="drpodowtext"> Logout</button>

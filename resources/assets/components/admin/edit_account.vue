@@ -362,7 +362,7 @@
     </div>
     <!--End OF Select Modules -->
         <div class="col-md-offset-4 col-md-8 m-t-25">    
-            <button class="btn btn-success save-btn" @click="updatePlugin">Save</button>
+            <button class="btn btn-success save-btn">Save</button>
         </div>
         <!-- <div class="col-md-offset-4 col-md-8 m-t-25 btn-right">    
             <button class="btn btn-success save-btn tool-btn" @click="updatePlugin">Tools</button><br>
@@ -396,7 +396,7 @@ d:""
 },
 mounted()
 {
-this.readPlugins();
+//this.readPlugins();
 },
 methods: {
 readPlugins()
