@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-sm-12 mt-3">
                     <h3 class="text-center">Your Cheers POS PIN
-                      <button class="close-x">x</button>
+                      <button class="close-x"  @click="logout">x</button>
                     </h3>
                     <b-alert show variant="danger" v-if="seen">{{alertMessage}}</b-alert>
                     <div class="row">
@@ -39,7 +39,7 @@
                     </div>
                       <div class="sign-in">
                         <button type="button" @click="onSubmit">Sign In</button><br>
-                        <p   v-on:click="reset" >Clear</p>
+                        <a v-on:click="reset" >Clear</a>
                       </div>
                 </div>
             </div>
@@ -79,6 +79,12 @@ export default {
         this.model.user_pin = parseInt("" + this.model.user_pin + e.target.name) ;
 
       },
+      logout() {
+                axios.post('./logout')
+                .then( response =>{                       
+                    this.$router.push("/");
+                })
+            },
       onSubmit() {
         let vm = this;
                axios.post('./user_pin', vm.model)

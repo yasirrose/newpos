@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>VueJs-Admin</title>
+    <title>Cheers POS</title>
     <link rel="shortcut icon" href="../resources/assets/assets/img/favicon.jpg" />
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

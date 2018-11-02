@@ -30,7 +30,7 @@ public $successStatus = 200;
             return response()->json(['message' => 'success',  'auth_user' => Auth::user()], $this-> successStatus); 
         } 
         else{ 
-            return response()->json(['error'=>'Unauthorised','message' => 'Email or Password fail']); 
+            return response()->json(['error'=>'Unauthorised','message' => 'The email or password is incorrect or does not exist, please try again.']); 
         } 
     }
 
@@ -60,7 +60,7 @@ public $successStatus = 200;
             return response()->json(['message' => 'success'], $this-> successStatus); 
         }
         else{ 
-            return response()->json(['error'=>'Unauthorised','message' => 'PIN fail']); 
+            return response()->json(['error'=>'Unauthorised','message' => 'Please enter a valid PIN.']); 
         } 
     }
 

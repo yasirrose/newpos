@@ -14,7 +14,7 @@
                 <div class="col-sm-12 mt-3">
                      
                     <h3 class="text-center">Your Cheers POS PIN
-                      <button class="close-x">x</button>
+                      <button class="close-x"  @click="logout">X</button>
                     </h3>
                     <b-alert show variant="danger" v-if="seen">{{alertMessage}}</b-alert>
                     <div class="row">
@@ -102,6 +102,12 @@ export default {
             
         },*/
 
+            logout() {
+                axios.post('./logout')
+                .then( response =>{                       
+                    this.$router.push("/");
+                })
+            },
       onSubmit() {
         let vm = this;
                axios.post('./user_pin', vm.model)
@@ -110,7 +116,7 @@ export default {
                     {
                         vm.$router.push("/admin/");
                     }else{
-                        vm.alertMessage= response.data.error;
+                        vm.alertMessage= response.data.message;
                         vm.seen=true;
                     }
                     

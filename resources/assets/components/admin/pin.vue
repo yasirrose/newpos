@@ -14,8 +14,7 @@
                     <div class="row">
                         
                         
-                        
-                       
+                                
                        
                     </div>
                 </vue-form>

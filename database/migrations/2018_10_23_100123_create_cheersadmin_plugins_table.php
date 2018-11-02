@@ -16,8 +16,8 @@ class CreateCheersadminPluginsTable extends Migration
         Schema::create('cheersadmin_plugins', function (Blueprint $table) {
             $table->increments('plugin_id');
             $table->string('plugin_name')->nullable();
-            $table->string('plugin_status')->nullable();
-            $table->double('plugin_price')->nullable();
+            $table->tinyInteger('plugin_status')->default('0');
+            $table->double('plugin_price')->nullable()->default('0');
             $table->timestamp('plugin_created_at')->nullable();
             $table->timestamp('plugin_updated_at')->nullable();
         });
