@@ -200,14 +200,28 @@ button.btn.btn-success.print-btn{
 .h2-color{
     color: black!important;
 }
-/*.dropdown-content a:hover {
-    background: none;
-    border: 1px solid gray;
-    text-align: justify;
-    margin: 0px 0px;
-    color: #2a2b2d;
-}*/
-
+.img_backgrond[data-v-c3a38a2e] {
+     background-image: none !important; 
+    background-color: none !important;
+    background-size: none !important;
+    background-repeat: none !important;
+    width: 100%;
+    padding: none !important;
+}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+        background: none!important;
+    }
+    .login-content[data-v-c3a38a2e] {
+    margin-top: 7%;
+    margin: 0 auto;
+    margin-bottom: 7%;
+    padding: 25px 75px;
+    -webkit-box-shadow: 0 0 20px #ccc;
+    box-shadow: 0 0 20px #ccc;
+    background-size: 100% 100%;
+    border-radius: 7px;
+    background-color: #fff;
+}
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {}

@@ -112,7 +112,20 @@ export default {
 
 }
 </script>
+
 <style scoped>
+html{
+  height: 100vh;
+}
+.img_backgrond{
+        /* background-image: url(/newpos/public/images/Login-03-01.png?d74e560…); */
+    background-color: #80808014;
+        background-size:cover;
+        background-repeat:no-repeat;
+        width: 100%;
+        padding: 75px 15px;
+        height: 100vh;
+    }
   .calculator{
     padding: 0;
     margin: 60px auto;
@@ -135,14 +148,7 @@ export default {
     border-radius: 7px;
   background-color: #fff;
 }
-    .img_backgrond{
-        /* background-image: url(/newpos/public/images/Login-03-01.png?d74e560…); */
-    background-color: #80808014;
-        background-size:cover;
-        background-repeat:no-repeat;
-        width: 100%;
-        padding: 75px 15px;
-    }
+    
 .mt-3{
   text-align: center;
   color: #696565;
