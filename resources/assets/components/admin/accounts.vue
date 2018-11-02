@@ -5,16 +5,16 @@
 
                 <div class="row">
                     <div class="col-lg-12">
-
+                        <h2 class="head-price h2-color">Accounts</h2>
                         <div class="form-group pull-right rigt-100">
                            <!--  <router-link to="/admin/add_account"><b>Add Acct.</b></router-link> | -->
                            <!-- Text Acct. -->
-                                  <h2 class="head-price h2-color">Accounts</h2>
+                                  
                                 <div class="dropdown">
                                     <button class="dropbtn">Tools</button>
                                         <div class="dropdown-content">
                     
-                                            <router-link   to=""> <a href="#">Add Account</a></router-link> 
+                                            <router-link   to="/admin/add_account"> <a href="#">Add Account</a></router-link> 
                                             <router-link   to=""> <a href="#">Print PDF</a></router-link> 
                                             <router-link @click.native="text_acct"  to=""> <a href="#">Text</a></router-link> 
                                             <router-link @click.native="email_acct"  to=""> <a href="#">Email</a></router-link> 

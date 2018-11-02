@@ -11,9 +11,9 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Modules</th>
-                                    <th>Price</th>
-                                    <th>Status</th>
+                                    <th style="width: 40%;">Modules</th>
+                                    <th style="width: 20%;">Price</th>
+                                    <th style="width: 40%;">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
