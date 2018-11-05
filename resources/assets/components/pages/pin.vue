@@ -242,7 +242,7 @@ input[type=number]::-webkit-outer-spin-button {
     border: 1px solid #E11B24;
     clear: both;
     display: block;
-        cursor: pointer;
+    cursor: pointer;
     font-family: "Open Sans", sans-serif;
     font-size: 19px;
     font-weight: 300;
@@ -252,9 +252,10 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 12px;
     width: 100%;
 }
-.sign-in p {
+.sign-in a {
    
     color: #696565;
+    cursor: pointer;
 }
 @media screen and (max-width: 1024px) {
    input[type="text"] {
