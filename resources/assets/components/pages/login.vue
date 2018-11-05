@@ -138,15 +138,19 @@ export default {
 }
 </script>
 <style scoped>
-.login-content {
+html{
+    height: 100vh;
+}
+.login-content[data-v-c3a38a2e] {
     margin-top: 7%;
-	margin: 0 auto;
+    margin: 0 auto;
     margin-bottom: 7%;
-	padding: 0px 25px;
+    padding: 25px 75px;
+    -webkit-box-shadow: 0 0 20px #ccc;
     box-shadow: 0 0 20px #ccc;
     background-size: 100% 100%;
     border-radius: 7px;
-	background-color: #fff;
+    background-color: #fff;
 }
     .img_backgrond{
         /* background-image: url(/newpos/public/images/Login-03-01.png?d74e560…); */
@@ -155,6 +159,7 @@ export default {
         background-repeat:no-repeat;
         width: 100%;
         padding: 75px 15px;
+        height: 100vh;
     }
 	.form_email_pas {
 	border: none;
@@ -164,6 +169,10 @@ export default {
 	}
 	.log_in_btn {
 	width:100%;
+    color: #fff;
+    border-radius: inherit;
+    background-color: #05841a;
+    border-color: #0f7657;
 	}
 	.custom_bl {
 	    display: inline-block;
@@ -179,6 +188,9 @@ export default {
 		top: 10px;
 		padding: 0 4px;
 	}
+    .login-content input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+        background: none!important;
+    }
 label{
     font-size: 14px !important;
 }
