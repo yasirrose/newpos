@@ -14,11 +14,11 @@
                                     <button class="dropbtn">Tools</button>
                                         <div class="dropdown-content">
                     
-                                            <router-link   to="/admin/add_account"> <a href="#">Add Account</a></router-link> 
-                                            <router-link   to=""> <a href="#">Print PDF</a></router-link> 
+                                            <router-link to="/admin/add_account"> <a >Add Account</a></router-link> 
+                                            <router-link to=""> <a href="#">Print PDF</a></router-link> 
                                             <router-link @click.native="text_acct"  to=""> <a href="#">Text</a></router-link> 
                                             <router-link @click.native="email_acct"  to=""> <a href="#">Email</a></router-link> 
-                                            <router-link   to=""> <a href="#">Export</a></router-link> 
+                                            <router-link to=""> <a href="#">Export</a></router-link> 
    
                                         </div>
                                 </div>
