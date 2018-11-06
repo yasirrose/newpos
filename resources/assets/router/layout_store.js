@@ -1,6 +1,6 @@
 const layout = [{
     path: '/store',
-    component: resolve => require(['store/index2'], resolve),
+    component: resolve => require(['store/index'], resolve),
     meta: {
         title: "Dashboard2",
         forAuth : true,

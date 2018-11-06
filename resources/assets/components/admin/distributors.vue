@@ -2,166 +2,130 @@
     <div class="row">
        
         <div class="col-lg-12 mb-3">
-            <b-card header="Distributors" header-tag="h4" class="bg-success-card">
-                
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="form-group pull-right">
-                            <router-link to="/admin/add_distributor"><b>Add Dis.</b></router-link> |
-                            <router-link to="/admin/"><b>Export List</b></router-link> |
-                            <router-link to="/admin/"><b>Print PDF</b></router-link>
+
+             <div class="container-here">
+
+                    <div class="tabel-main-header">
+                        <div class="in-left">
+                            <h3>Distributors</h3>
+                            <input type="text" placeholder="Search">
+                        </div>
+                        <div class="in-right">
+                            <ul>
+                                <li>
+                                    <a class="tools" href="#">Tools</a>
+                                    <div class="tools-wrapper">
+                                        <div><a href="#">Add Distributor</a></div>
+                                        <div><a href="#">Print PDF</a></div>
+                                        <div><a href="#">Export</a></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <select>
+                                        <option>50</option>
+                                        <option>40</option>
+                                        <option>20</option>
+                                        <option>10</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <a href="#"><span><</span></a>
+                                    <a href="#"><span>1</span></a>
+                                    <a href="#"><span>2</span></a>
+                                    <a href="#"><span>3</span></a>
+                                    <a href="#"><span>></span></a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
+
+                    <table class="table-container-wapper">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Company Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Date Created</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>Glazer of Kansas</td>
+                                <td>john@glazers.com</td>
+                                <td>(788) 999-999</td>
+                                <td>01/10/2018</td>
+                                <td>Active</td>
+                                <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="show-record">Viewing 1 of 50 records </div>
+
                 </div>
-                <datatable title="" :rows="rowdata" :columns="columndata"></datatable>
-            </b-card>
         </div>
     </div>
 </template>
 <script>
-import Vue from 'vue';
-import {
-    ClientTable,
-    Event
-} from 'vue-tables-2';
-import datatable from "components/plugins/DataTable/DataTable.vue";
-Vue.use(ClientTable, {}, false);
+
 export default {
     name: "advanced_tables",
-    components: {
-        datatable
-    },
+
     data() {
         return {
-            rowdata: [{
-                "fname": "Toya",
-                "lname": "Wallace",
-                "age": 19,
-                "state": "MD",
-                "button": "<i class='fa fa-pencil text-info mr-3'></i><i class='fa fa-trash text-danger'></i>"
-            }, {
-                "fname": "Deborah",
-                "lname": "Morrison",
-                "age": 14,
-                "state": "VT",
-                "button": "<i class='fa fa-pencil text-info mr-3'></i><i class='fa fa-trash text-danger'></i>"
-            }, {
-                "fname": "Nerissa",
-                "lname": "Wade",
-                "age": 7,
-                "state": "DE",
-                "button": "<i class='fa fa-pencil text-info mr-3'></i><i class='fa fa-trash text-danger'></i>"
-            }, {
-                "fname": "Glenn",
-                "lname": "Bommi",
-                "age": 8,
-                "state": "MO",
-                "button": "<i class='fa fa-pencil text-info mr-3'></i><i class='fa fa-trash text-danger'></i>"
-            }, {
-                "fname": "Kate",
-                "lname": "Azcunaga",
-                "age": 25,
-                "state": "ME",
-                "button": "<i class='fa fa-pencil text-info mr-3'></i><i class='fa fa-trash text-danger'></i>"
-            }, {
-                "fname": "Jesse",
-                "lname": "Ingham",
-                "age": 50,
-                "state": "OK",
-                "button": "<i class='fa fa-pencil text-info mr-3'></i><i class='fa fa-trash text-danger'></i>"
-            }, {
-                "fname": "Gateri",
-                "lname": "Sergent",
-                "age": 50,
-                "state": "MA",
-                "button": "<i class='fa fa-pencil text-info mr-3'></i><i class='fa fa-trash text-danger'></i>"
-            }, {
-                "fname": "Marian",
-                "lname": "Malmfeldt",
-                "age": 50,
-                "state": "DC",
-                "button": "<i class='fa fa-pencil text-info mr-3'></i><i class='fa fa-trash text-danger'></i>"
-            }],
-
-            columndata: [ // Array of objects
-                {
-                    label: 'Store Name', // Column name
-                    field: 'fname', // Field name from row
-                    numeric: false, // Affects sorting
-                    width: "200px", //width of the column
-                    html: false, // Escapes output if false.
-                }, {
-                    label: 'First Name',
-                    field: 'lname',
-                    numeric: false,
-                    html: false,
-                }, {
-                    label: 'Age',
-                    field: 'age',
-                    numeric: true,
-                    html: false,
-                }, {
-                    label: 'State',
-                    field: 'state',
-                    numeric: false,
-                    html: false,
-                }, {
-                    label: 'Action',
-                    field: 'button',
-                    numeric: false,
-                    html: true,
-                }
-            ],
-            columns: ['id', 'name', 'age'],
-            tableData: [{
-                id: 1,
-                name: "John",
-                age: "20"
-            }, {
-                id: 2,
-                name: "Jane",
-                age: "24"
-            }, {
-                id: 3,
-                name: "Susan",
-                age: "16"
-            }, {
-                id: 4,
-                name: "Chris",
-                age: "55"
-            }, {
-                id: 5,
-                name: "Dan",
-                age: "40"
-            }],
-            tableData2: [],
-            options: {
-                sortIcon: {
-                    base: 'fa',
-                    up: 'fa fa-angle-up',
-                    down: 'fa fa-angle-down'
-                },
-                // see the options API
-                skin: "table-hover table-striped table-bordered",
-                perPage: 7,
-                // footerHeadings: true,
-                highlightMatches: true,
-                pagination: {
-                    chunk: 3,
-                    //set dropdown to true to get dropdown instead of pagenation
-                    dropdown: false
-                }
-            }
+            
+            
         }
     },
     mounted() {
-        axios.get("http://www.filltext.com/?rows=50&id={index}&name={firstName}~{lastName}&age={numberRange|20,60}").then(response => {
-                this.tableData2 = response.data;
-            })
-            .catch(function(error) {
-
-            });
+       
             
     }
 }
 </script>
+<style type="text/css" scoped>
+.container-here{max-width:900px; font-family:arial; margin-top:30px; padding:0px 30px;}
+
+
+.tabel-main-header{clear:both; float:left; width:100%; margin-bottom:5px;}
+.tabel-main-header .in-left{float:left;}
+.tabel-main-header .in-left h3{font-size:18px; font-weight:bold; color:#000;}
+.tabel-main-header .in-left input{display:block; width:150px; height:35px; padding:0px 10px; border:1px solid #b7b7b7; background:none; border-radius:4px;}
+.tabel-main-header .in-right{float:right; margin-top:30px;}
+.tabel-main-header .in-right ul{}
+.tabel-main-header .in-right ul li{float:left; position:relative;}
+.tabel-main-header .in-right ul li span{display:inline-block; text-align:center; color:#000; width:32px; height:32px; line-height:32px;}
+.tabel-main-header .in-right ul li select{height:32px; width:60px; outline:none; border:1px solid #b7b7b7; background:none;}
+.tabel-main-header .in-right ul li a{float:left; margin:0px 3px; height:32px; line-height:32px; border:1px solid #b7b7b7;}
+.tabel-main-header .in-right ul li a.tools{padding:0px 15px;}
+.tabel-main-header .in-right ul li a:hover{background:#f3f3f3;}
+.tabel-main-header .in-right ul li .tools-wrapper{display:none; border:1px solid #b7b7b7; width:115px; background-color:#fff; position:absolute; top:100%; left:0px; z-index:55;}
+.tabel-main-header .in-right ul li .tools-wrapper a{display:block; border:none; float:none; font-size:12px; color:#000; padding:5px 10px;}
+.tabel-main-header .in-right ul li:hover .tools-wrapper{display:block;}
+
+
+.table-container-wapper{}
+.table-container-wapper thead{}
+.table-container-wapper thead tr{}
+.table-container-wapper thead tr th{border:1px solid #b7b7b7; font-size:12px; padding:5px 12px; background:#f3f3f3; font-weight:normal;}
+
+.table-container-wapper thead tr th:nth-child(1){width:5%;}
+.table-container-wapper thead tr th:nth-child(2){width:12%;}
+.table-container-wapper thead tr th:nth-child(3){width:12%;}
+.table-container-wapper thead tr th:nth-child(4){width:12%;}
+.table-container-wapper thead tr th:nth-child(5){width:12%;}
+.table-container-wapper thead tr th:nth-child(6){width:12%;}
+.table-container-wapper thead tr th:nth-child(7){width:10%;}
+
+.table-container-wapper tbody{}
+.table-container-wapper tbody tr{}
+.table-container-wapper tbody tr td{border:1px solid #e5e5e5; font-size:12px; padding:5px 12px;}
+.table-container-wapper tbody tr td a{font-size:12px;}
+
+.show-record{text-align:right; font-size:12px; padding:15px;}
+
+
+</style>

@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
 			$table->string('password');
             $table->string('remember_token')->nullable();
             $table->integer('user_pin')->nullable();
+            $table->string('allow_ip', 50);
             $table->tinyInteger('admin')->default('0');
             $table->timestamps();
 			

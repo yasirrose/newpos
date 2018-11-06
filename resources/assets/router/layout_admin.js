@@ -87,6 +87,16 @@ const layout = [{
 },
 
 {
+    path: '/admin/distributor_new_vendor_pricefile',
+    component: resolve => require(['admin/distributor_new_vendor_pricefile'], resolve),
+    meta: {
+        title: "Distributors",
+        forAuth : true,
+    }
+},
+
+
+{
     path: '/admin/item_library',
     component: resolve => require(['admin/item_library'], resolve),
     meta: {
@@ -157,6 +167,16 @@ const layout = [{
         forAuth : true,
     }
 },
+
+{
+    path: '/admin/account_ads',
+    component: resolve => require(['admin/account_ads'], resolve),
+    meta: {
+        title: "Ads",
+        forAuth : true,
+    }
+},
+
 {
     path: '/admin/view_ads',
     component: resolve => require(['admin/view_ads'], resolve),

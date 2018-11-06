@@ -13,24 +13,6 @@
                     
                 </thead>
                 <tbody>
-                    <!--  <tr v-for="plugin in model.pluginsdata">
-                        <td>{{ plugin.plugin_name }}</td>
-                        <td> {{ plugin.plugin_price }}</td>
-                        <td>
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="custom-controls-stacked">
-                                        <b-form-radio  value="1" v-model="plugin.plugin_status"class="primaryradio">Active</b-form-radio>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="custom-controls-stacked">
-                                        <b-form-radio  value="0" v-model="plugin.plugin_status" class="primaryradio">Deactive</b-form-radio>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                    </tr> -->
                     <tr class="ac-label">
                         <td><p> First </p></td>
                         <td><input type="" name="" value=""></td>
@@ -91,24 +73,6 @@
                 </tr>
             </thead>
             <tbody>
-                <!--  <tr v-for="plugin in model.pluginsdata">
-                    <td>{{ plugin.plugin_name }}</td>
-                    <td> {{ plugin.plugin_price }}</td>
-                    <td>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="custom-controls-stacked">
-                                    <b-form-radio  value="1" v-model="plugin.plugin_status"class="primaryradio">Active</b-form-radio>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="custom-controls-stacked">
-                                    <b-form-radio  value="0" v-model="plugin.plugin_status" class="primaryradio">Deactive</b-form-radio>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr> -->
                 <tr class="ac-label">
                     <td><p> Card Type </p></td>
                     <td><input type="" name="" value=""></td>
